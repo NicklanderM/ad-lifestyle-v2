@@ -19,8 +19,6 @@ import { loadEzeno } from "../pages/products/ezeno.js";
 import { loadZenbru } from "../pages/products/zenbru.js";
 import { loadAlpha } from "../pages/products/alpha.js";
 
-/* ========= NOVOS PRODUTOS ========= */
-
 import { loadAlphaMeta } from "../pages/products/alphameta.js";
 import { loadMinoseed } from "../pages/products/minoseed.js";
 import { loadEvador } from "../pages/products/evador.js";
