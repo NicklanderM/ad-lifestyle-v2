@@ -1,0 +1,221 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   RESET.CSS
+   Luxury Foundation
+   ========================================================== */
+
+/* ========= BOX MODEL ========= */
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* ========= HTML ========= */
+
+html{
+    scroll-behavior:smooth;
+    -webkit-text-size-adjust:100%;
+    text-size-adjust:100%;
+}
+
+/* ========= BODY ========= */
+
+body{
+    min-height:100vh;
+    overflow-x:hidden;
+
+    font-family:"Inter",sans-serif;
+    font-size:16px;
+    line-height:1.5;
+
+    text-rendering:optimizeLegibility;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+
+    background:#F8F5F1;
+    color:#1F1A17;
+}
+
+/* ========= MEDIA ========= */
+
+img,
+picture,
+svg,
+video,
+canvas{
+    display:block;
+    max-width:100%;
+}
+
+img{
+    user-select:none;
+    -webkit-user-drag:none;
+}
+
+/* ========= FORM ========= */
+
+input,
+button,
+textarea,
+select{
+    font:inherit;
+    color:inherit;
+}
+
+button{
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+textarea{
+    resize:vertical;
+}
+
+input,
+textarea,
+select{
+    outline:none;
+}
+
+/* ========= LINKS ========= */
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* ========= LISTS ========= */
+
+ul,
+ol{
+    list-style:none;
+}
+
+/* ========= TABLE ========= */
+
+table{
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* ========= HEADINGS ========= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font:inherit;
+    font-weight:inherit;
+}
+
+/* ========= PARAGRAPH ========= */
+
+p{
+    overflow-wrap:break-word;
+}
+
+/* ========= HR ========= */
+
+hr{
+    border:none;
+}
+
+/* ========= ROOT ========= */
+
+#root{
+    min-height:100vh;
+    position:relative;
+    isolation:isolate;
+}
+
+/* ========= SELECTION ========= */
+
+::selection{
+    background:rgba(198,163,90,.22);
+    color:#1F1A17;
+}
+
+/* ========= SCROLLBAR ========= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#ECE6DC;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#C6A35A;
+    border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#AE8C47;
+}
+
+/* Firefox */
+
+*{
+    scrollbar-width:thin;
+    scrollbar-color:#C6A35A #ECE6DC;
+}
+
+/* ========= FOCUS ========= */
+
+:focus-visible{
+    outline:2px solid #C6A35A;
+    outline-offset:3px;
+}
+
+/* ========= UTILITIES ========= */
+
+[hidden]{
+    display:none !important;
+}
+
+.disabled{
+    pointer-events:none;
+    opacity:.55;
+}
+
+.no-scroll{
+    overflow:hidden;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+.relative{
+    position:relative;
+}
+
+.absolute{
+    position:absolute;
+}
+
+/* ========= REDUCED MOTION ========= */
+
+@media (prefers-reduced-motion:reduce){
+
+    html{
+        scroll-behavior:auto;
+    }
+
+    *,
+    *::before,
+    *::after{
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.01ms !important;
+    }
+
+}

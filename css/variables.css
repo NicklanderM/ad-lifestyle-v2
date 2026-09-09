@@ -1,0 +1,525 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   VARIABLES.CSS
+   Design System & Theme Tokens
+   ========================================================== */
+
+/* ==========================================================
+   TEMA BASE (GOLD)
+   ========================================================== */
+
+:root{
+
+    /* ========= BRAND ========= */
+
+    --primary:#C6A35A;
+    --primary-light:#D8B97B;
+    --primary-dark:#9F7E3A;
+
+    --secondary:#F6F1E8;
+    --accent:#8A6A2F;
+
+    /* ========= NEUTRALS ========= */
+
+    --white:#FFFFFF;
+    --black:#000000;
+
+    --surface:#FFFFFF;
+    --surface-2:#FCFAF7;
+
+    --background:#F8F5F1;
+    --background-soft:#F2ECE3;
+
+    --text:#1F1A17;
+    --text-soft:#6B6257;
+    --text-light:#9B9287;
+
+    --border:rgba(31,26,23,.08);
+    --border-strong:rgba(31,26,23,.14);
+
+    /* ========= GRADIENTS ========= */
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #F8F5F1 0%,
+            #F2ECE3 55%,
+            #EEE6D7 100%
+        );
+
+    --gold-gradient:
+        linear-gradient(
+            135deg,
+            #C6A35A,
+            #E3C98A
+        );
+
+    --glass-gradient:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.75),
+            rgba(255,255,255,.35)
+        );
+
+    /* ========= SHADOWS ========= */
+
+    --shadow-xs:0 2px 8px rgba(0,0,0,.04);
+
+    --shadow-sm:0 8px 18px rgba(0,0,0,.06);
+
+    --shadow-md:0 18px 40px rgba(0,0,0,.08);
+
+    --shadow-lg:0 30px 80px rgba(0,0,0,.12);
+
+    --shadow-gold:
+        0 20px 50px rgba(198,163,90,.22);
+
+    /* ========= GLASS ========= */
+
+    --glass-bg:rgba(255,255,255,.55);
+    --glass-border:rgba(255,255,255,.32);
+    --glass-blur:22px;
+
+    /* ========= RADIUS ========= */
+
+    --radius-xs:8px;
+    --radius-sm:14px;
+    --radius-md:20px;
+    --radius-lg:28px;
+    --radius-xl:36px;
+    --radius-2xl:48px;
+    --radius-full:999px;
+
+    /* ========= SPACING ========= */
+
+    --space-1:4px;
+    --space-2:8px;
+    --space-3:12px;
+    --space-4:16px;
+    --space-5:24px;
+    --space-6:32px;
+    --space-7:48px;
+    --space-8:64px;
+    --space-9:96px;
+    --space-10:140px;
+
+    /* ========= CONTAINERS ========= */
+
+    --container-sm:900px;
+    --container:1280px;
+    --container-lg:1440px;
+
+    /* ========= HEADER ========= */
+
+    --header-height:84px;
+
+    /* ========= TYPOGRAPHY ========= */
+
+    --font-family:"Inter",sans-serif;
+
+    --fs-xs:.75rem;
+    --fs-sm:.875rem;
+    --fs-md:1rem;
+    --fs-lg:1.125rem;
+    --fs-xl:1.25rem;
+    --fs-2xl:1.5rem;
+    --fs-3xl:2rem;
+    --fs-4xl:2.75rem;
+    --fs-5xl:4rem;
+
+    --lh-tight:1.05;
+    --lh-title:1.15;
+    --lh-body:1.8;
+
+    /* ========= Z INDEX ========= */
+
+    --z-loader:99999;
+    --z-header:1000;
+    --z-menu:900;
+    --z-modal:3000;
+    --z-cursor:50;
+
+    /* ========= ANIMATION ========= */
+
+    --ease:cubic-bezier(.22,.61,.36,1);
+
+    --transition-fast:.25s var(--ease);
+    --transition:.45s var(--ease);
+    --transition-slow:.8s var(--ease);
+
+}
+
+/* ==========================================================
+   THEME — ANGEL MOON
+   ========================================================== */
+
+body[data-theme="angel"]{
+
+    --primary:#8B5CF6;
+    --primary-light:#A78BFA;
+    --primary-dark:#6D28D9;
+
+    --secondary:#F3E8FF;
+    --accent:#7C3AED;
+
+    --background:#FCF8FF;
+    --background-soft:#F6EEFF;
+
+    --surface:#FFFFFF;
+    --surface-2:#FBF7FF;
+
+    --text:#2E1065;
+    --text-soft:#5B3A92;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #FCF8FF,
+            #F3E8FF,
+            #E9D5FF
+        );
+
+    --shadow-gold:
+        0 24px 60px rgba(139,92,246,.18);
+
+}
+
+/* ==========================================================
+   THEME — EZENO
+   ========================================================== */
+
+body[data-theme="ezeno"]{
+
+    --primary:#16A34A;
+    --primary-light:#4ADE80;
+    --primary-dark:#166534;
+
+    --secondary:#DCFCE7;
+    --accent:#15803D;
+
+    --background:#F0FDF4;
+    --background-soft:#E9FAEF;
+
+    --surface:#FFFFFF;
+
+    --text:#14532D;
+    --text-soft:#2D6A45;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #F0FDF4,
+            #DCFCE7,
+            #BBF7D0
+        );
+
+    --shadow-gold:
+        0 22px 55px rgba(22,163,74,.18);
+
+}
+
+/* ==========================================================
+   THEME — ZENBRU
+   ========================================================== */
+
+body[data-theme="zenbru"]{
+
+    --primary:#8B5A2B;
+    --primary-light:#B07B45;
+    --primary-dark:#5C3A21;
+
+    --secondary:#F7E7D2;
+    --accent:#A06A39;
+
+    --background:#FAF6F1;
+    --background-soft:#F2E8DD;
+
+    --surface:#FFFDF9;
+
+    --text:#3D2A1C;
+    --text-soft:#6A4A35;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #FFF8F0,
+            #F3E3D0,
+            #E7D3BF
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(139,90,43,.22);
+
+}
+
+/* ==========================================================
+   THEME — ALPHA VMAX
+   ========================================================== */
+
+body[data-theme="alpha"]{
+
+    --primary:#D4AF37;
+    --primary-light:#E7C85C;
+    --primary-dark:#9F7B16;
+
+    --secondary:#2A1E14;
+    --accent:#7C1116;
+
+    --background:#0F0B09;
+    --background-soft:#181310;
+
+    --surface:#1B1512;
+    --surface-2:#241C18;
+
+    --text:#F5F5F5;
+    --text-soft:#D4D4D4;
+    --text-light:#A1A1AA;
+
+    --border:rgba(255,255,255,.08);
+    --border-strong:rgba(255,255,255,.14);
+
+    --glass-bg:rgba(28,22,18,.55);
+    --glass-border:rgba(255,255,255,.08);
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #0F0B09,
+            #1A1411,
+            #352414
+        );
+
+    --shadow-md:
+        0 20px 50px rgba(0,0,0,.45);
+
+    --shadow-lg:
+        0 35px 90px rgba(0,0,0,.65);
+
+    --shadow-gold:
+        0 20px 60px rgba(212,175,55,.18);
+
+}
+
+/* ==========================================================
+   THEME — ALPHAMETA
+   ========================================================== */
+
+body[data-theme="alphameta"]{
+
+    --primary:#C6A35A;
+    --primary-light:#E0C47A;
+    --primary-dark:#9F7E3A;
+
+    --secondary:#F4EBDD;
+    --accent:#80652F;
+
+    --background:#FBF8F2;
+    --background-soft:#F3EBDD;
+
+    --surface:#FFFFFF;
+    --surface-2:#FCFAF6;
+
+    --text:#2B241A;
+    --text-soft:#665B4C;
+    --text-light:#9A9080;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #FBF8F2,
+            #F4EBDD,
+            #E9DEC9
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(198,163,90,.20);
+
+}
+
+/* ==========================================================
+   THEME — MINOSEED
+   ========================================================== */
+
+body[data-theme="minoseed"]{
+
+    --primary:#A67C52;
+    --primary-light:#C5A27A;
+    --primary-dark:#795637;
+
+    --secondary:#F3E9DC;
+    --accent:#8B6847;
+
+    --background:#FCF8F3;
+    --background-soft:#F5ECE1;
+
+    --surface:#FFFFFF;
+    --surface-2:#FBF7F1;
+
+    --text:#3A2B20;
+    --text-soft:#6E5A4A;
+    --text-light:#9D8C7C;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #FCF8F3,
+            #F3E9DC,
+            #E6D5C1
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(166,124,82,.20);
+
+}
+
+/* ==========================================================
+   THEME — EVADOR
+   ========================================================== */
+
+body[data-theme="evador"]{
+
+    --primary:#B48A52;
+    --primary-light:#D2B078;
+    --primary-dark:#866437;
+
+    --secondary:#F4EBDD;
+    --accent:#96703D;
+
+    --background:#FBF8F2;
+    --background-soft:#F3EADD;
+
+    --surface:#FFFFFF;
+    --surface-2:#FCFAF6;
+
+    --text:#33291F;
+    --text-soft:#68594A;
+    --text-light:#9A8C7C;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #FBF8F2,
+            #F4EBDD,
+            #E8D8C2
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(180,138,82,.20);
+
+}
+
+/* ==========================================================
+   THEME — ALPHASPIN ULTRA
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"]{
+
+    --primary:#4F8F8A;
+    --primary-light:#72B5AE;
+    --primary-dark:#326A66;
+
+    --secondary:#E3F1EF;
+    --accent:#39746F;
+
+    --background:#F4FAF9;
+    --background-soft:#EAF4F2;
+
+    --surface:#FFFFFF;
+    --surface-2:#F8FCFB;
+
+    --text:#183B39;
+    --text-soft:#4E6E6B;
+    --text-light:#829A97;
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #F4FAF9,
+            #E3F1EF,
+            #D3E8E5
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(79,143,138,.20);
+
+}
+
+/* ==========================================================
+   THEME — iSMARTS3
+   ========================================================== */
+
+body[data-theme="ismarts3"]{
+
+    --primary:#3B82F6;
+    --primary-light:#60A5FA;
+    --primary-dark:#1D4ED8;
+
+    --secondary:#E8F1FF;
+    --accent:#2563EB;
+
+    --background:#F5F9FF;
+    --background-soft:#EAF2FF;
+
+    --surface:#FFFFFF;
+    --surface-2:#F8FBFF;
+
+    --text:#172554;
+    --text-soft:#475569;
+    --text-light:#94A3B8;
+
+    --border:rgba(23,37,84,.08);
+    --border-strong:rgba(23,37,84,.14);
+
+    --glass-bg:rgba(255,255,255,.60);
+    --glass-border:rgba(255,255,255,.35);
+
+    --hero-gradient:
+        linear-gradient(
+            135deg,
+            #F5F9FF,
+            #E8F1FF,
+            #D9E8FF
+        );
+
+    --shadow-gold:
+        0 22px 60px rgba(59,130,246,.18);
+
+}
+
+/* ==========================================================
+   RESPONSIVE TYPOGRAPHY
+   ========================================================== */
+
+:root{
+
+    --display-size:
+        clamp(3rem,7vw,5.5rem);
+
+    --title-size:
+        clamp(2.2rem,5vw,4rem);
+
+    --subtitle-size:
+        clamp(1.2rem,2vw,1.5rem);
+
+    --body-size:
+        clamp(.95rem,1.3vw,1.05rem);
+
+}
+
+/* ==========================================================
+   SAFE AREA
+   ========================================================== */
+
+:root{
+    --safe-top:env(safe-area-inset-top);
+    --safe-bottom:env(safe-area-inset-bottom);
+}
+
+/* ==========================================================
+   ELEVATION TOKENS
+   ========================================================== */
+
+.elevation-1{box-shadow:var(--shadow-xs);}
+.elevation-2{box-shadow:var(--shadow-sm);}
+.elevation-3{box-shadow:var(--shadow-md);}
+.elevation-4{box-shadow:var(--shadow-lg);}

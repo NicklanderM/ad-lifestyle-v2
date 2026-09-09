@@ -1,0 +1,1094 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   THEMES.CSS
+   Dynamic Product Visual Themes
+   ========================================================== */
+
+
+/* ==========================================================
+   TRANSIÇÃO GLOBAL DE TEMA
+   ========================================================== */
+
+body{
+
+    transition:
+        background .8s ease,
+        color .6s ease;
+
+}
+
+body,
+.navbar,
+.card,
+.bento-card,
+.hero,
+.showcase,
+.btn-primary,
+.service-icon{
+
+    transition:
+        background .6s ease,
+        color .6s ease,
+        border-color .6s ease,
+        box-shadow .6s ease;
+
+}
+
+
+/* ==========================================================
+   TEMA PADRÃO — AD LIFESTYLE
+   ========================================================== */
+
+body[data-theme="default"]{
+
+    background:var(--background);
+
+}
+
+body[data-theme="default"] .hero{
+
+    background:var(--hero-gradient);
+
+}
+
+body[data-theme="default"] .product-glow{
+
+    opacity:.28;
+
+}
+
+body[data-theme="default"] .orb{
+
+    background:rgba(198,163,90,.25);
+
+}
+
+
+/* ==========================================================
+   ANGEL MOON
+   ========================================================== */
+
+body[data-theme="angel"]{
+
+    background:#FCF8FF;
+
+}
+
+body[data-theme="angel"] .hero{
+
+    background:
+        radial-gradient(circle at top right,#E9D5FF,transparent 35%),
+        radial-gradient(circle at bottom left,#F3E8FF,transparent 35%),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="angel"] .product-glow{
+
+    background:
+        radial-gradient(circle,#8B5CF6,transparent 72%);
+
+    opacity:.45;
+
+}
+
+body[data-theme="angel"] .service-icon{
+
+    background:rgba(139,92,246,.12);
+
+}
+
+body[data-theme="angel"] .card::after{
+
+    background:#8B5CF6;
+
+}
+
+body[data-theme="angel"] .orb{
+
+    background:#C4B5FD;
+
+}
+
+body[data-theme="angel"] .blob{
+
+    opacity:.26;
+
+}
+
+
+/* Fundo decorativo */
+
+body[data-theme="angel"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle at 20% 20%,rgba(167,139,250,.08),transparent 30%),
+        radial-gradient(circle at 80% 70%,rgba(139,92,246,.08),transparent 30%);
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   EZENO
+   ========================================================== */
+
+body[data-theme="ezeno"]{
+
+    background:#F0FDF4;
+
+}
+
+body[data-theme="ezeno"] .hero{
+
+    background:
+        radial-gradient(circle at top right,#BBF7D0,transparent 35%),
+        radial-gradient(circle at bottom left,#DCFCE7,transparent 35%),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="ezeno"] .product-glow{
+
+    background:
+        radial-gradient(circle,#16A34A,transparent 72%);
+
+    opacity:.42;
+
+}
+
+body[data-theme="ezeno"] .service-icon{
+
+    background:rgba(22,163,74,.12);
+
+}
+
+body[data-theme="ezeno"] .card::after{
+
+    background:#16A34A;
+
+}
+
+body[data-theme="ezeno"] .orb{
+
+    background:#4ADE80;
+
+}
+
+
+/* Padrão orgânico */
+
+body[data-theme="ezeno"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(rgba(22,163,74,.04) 1px,transparent 1px);
+
+    background-size:26px 26px;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   ZENBRU
+   ========================================================== */
+
+body[data-theme="zenbru"]{
+
+    background:#FAF6F1;
+
+}
+
+body[data-theme="zenbru"] .hero{
+
+    background:
+        radial-gradient(circle at top right,#E7D3BF,transparent 35%),
+        radial-gradient(circle at bottom left,#F3E3D0,transparent 35%),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="zenbru"] .product-glow{
+
+    background:
+        radial-gradient(circle,#8B5A2B,transparent 72%);
+
+    opacity:.42;
+
+}
+
+body[data-theme="zenbru"] .service-icon{
+
+    background:rgba(139,90,43,.12);
+
+}
+
+body[data-theme="zenbru"] .card::after{
+
+    background:#8B5A2B;
+
+}
+
+body[data-theme="zenbru"] .orb{
+
+    background:#B07B45;
+
+}
+
+
+/* Textura subtil */
+
+body[data-theme="zenbru"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.35;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 18px,
+            rgba(139,90,43,.025) 19px
+        );
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   ALPHA VMAX
+   ========================================================== */
+
+body[data-theme="alpha"]{
+
+    background:#0F0B09;
+
+    color:#F5F5F5;
+
+}
+
+body[data-theme="alpha"] .hero{
+
+    background:
+        radial-gradient(circle at top right,rgba(212,175,55,.08),transparent 35%),
+        radial-gradient(circle at bottom left,rgba(124,17,22,.10),transparent 40%),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="alpha"] .navbar{
+
+    border-bottom:1px solid rgba(255,255,255,.06);
+
+}
+
+body[data-theme="alpha"] .glass{
+
+    background:rgba(28,22,18,.55);
+
+    border:1px solid rgba(255,255,255,.06);
+
+}
+
+body[data-theme="alpha"] .product-glow{
+
+    background:
+        radial-gradient(circle,#D4AF37,transparent 72%);
+
+    opacity:.45;
+
+}
+
+body[data-theme="alpha"] .service-icon{
+
+    background:rgba(212,175,55,.08);
+
+}
+
+body[data-theme="alpha"] .card::after{
+
+    background:#D4AF37;
+
+}
+
+body[data-theme="alpha"] .orb{
+
+    background:#D4AF37;
+
+}
+
+
+/* Partículas douradas */
+
+body[data-theme="alpha"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(rgba(212,175,55,.10) 1px,transparent 1px);
+
+    background-size:42px 42px;
+
+    opacity:.35;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   ALPHAMETA
+   ========================================================== */
+
+body[data-theme="alphameta"]{
+
+    background:#FBF8F2;
+
+}
+
+body[data-theme="alphameta"] .hero{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(224,196,122,.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(244,235,221,.75),
+            transparent 40%
+        ),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="alphameta"] .product-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            #C6A35A,
+            transparent 72%
+        );
+
+    opacity:.32;
+
+}
+
+body[data-theme="alphameta"] .service-icon{
+
+    background:rgba(198,163,90,.12);
+
+}
+
+body[data-theme="alphameta"] .card::after{
+
+    background:#C6A35A;
+
+}
+
+body[data-theme="alphameta"] .orb{
+
+    background:#E0C47A;
+
+}
+
+body[data-theme="alphameta"] .blob{
+
+    opacity:.20;
+
+}
+
+
+/* Textura nutricional subtil */
+
+body[data-theme="alphameta"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(
+            rgba(198,163,90,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:32px 32px;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   MINOSEED
+   ========================================================== */
+
+body[data-theme="minoseed"]{
+
+    background:#FCF8F3;
+
+}
+
+body[data-theme="minoseed"] .hero{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(197,162,122,.38),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(243,233,220,.75),
+            transparent 40%
+        ),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="minoseed"] .product-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            #A67C52,
+            transparent 72%
+        );
+
+    opacity:.32;
+
+}
+
+body[data-theme="minoseed"] .service-icon{
+
+    background:rgba(166,124,82,.12);
+
+}
+
+body[data-theme="minoseed"] .card::after{
+
+    background:#A67C52;
+
+}
+
+body[data-theme="minoseed"] .orb{
+
+    background:#C5A27A;
+
+}
+
+body[data-theme="minoseed"] .blob{
+
+    opacity:.22;
+
+}
+
+
+/* Fundo orgânico subtil */
+
+body[data-theme="minoseed"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 18% 25%,
+            rgba(166,124,82,.055),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 82% 72%,
+            rgba(197,162,122,.055),
+            transparent 30%
+        );
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   EVADOR
+   ========================================================== */
+
+body[data-theme="evador"]{
+
+    background:#FBF8F2;
+
+}
+
+body[data-theme="evador"] .hero{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(210,176,120,.34),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(244,235,221,.72),
+            transparent 40%
+        ),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="evador"] .product-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            #B48A52,
+            transparent 72%
+        );
+
+    opacity:.34;
+
+}
+
+body[data-theme="evador"] .service-icon{
+
+    background:rgba(180,138,82,.12);
+
+}
+
+body[data-theme="evador"] .card::after{
+
+    background:#B48A52;
+
+}
+
+body[data-theme="evador"] .orb{
+
+    background:#D2B078;
+
+}
+
+body[data-theme="evador"] .blob{
+
+    opacity:.22;
+
+}
+
+
+/* Atmosfera premium */
+
+body[data-theme="evador"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(180,138,82,.045),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(150,112,61,.04),
+            transparent 30%
+        );
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   ALPHASPIN ULTRA
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"]{
+
+    background:#F4FAF9;
+
+}
+
+body[data-theme="alphaspin-ultra"] .hero{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(114,181,174,.38),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(227,241,239,.80),
+            transparent 40%
+        ),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="alphaspin-ultra"] .product-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            #4F8F8A,
+            transparent 72%
+        );
+
+    opacity:.34;
+
+}
+
+body[data-theme="alphaspin-ultra"] .service-icon{
+
+    background:rgba(79,143,138,.12);
+
+}
+
+body[data-theme="alphaspin-ultra"] .card::after{
+
+    background:#4F8F8A;
+
+}
+
+body[data-theme="alphaspin-ultra"] .orb{
+
+    background:#72B5AE;
+
+}
+
+body[data-theme="alphaspin-ultra"] .blob{
+
+    opacity:.25;
+
+}
+
+
+/* Padrão tecnológico suave */
+
+body[data-theme="alphaspin-ultra"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        linear-gradient(
+            rgba(79,143,138,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(79,143,138,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:40px 40px;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   iSMARTS3
+   ========================================================== */
+
+body[data-theme="ismarts3"]{
+
+    background:#F5F9FF;
+
+}
+
+body[data-theme="ismarts3"] .hero{
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(96,165,250,.34),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom left,
+            rgba(232,241,255,.82),
+            transparent 40%
+        ),
+        var(--hero-gradient);
+
+}
+
+body[data-theme="ismarts3"] .product-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            #3B82F6,
+            transparent 72%
+        );
+
+    opacity:.30;
+
+}
+
+body[data-theme="ismarts3"] .service-icon{
+
+    background:rgba(59,130,246,.10);
+
+}
+
+body[data-theme="ismarts3"] .card::after{
+
+    background:#3B82F6;
+
+}
+
+body[data-theme="ismarts3"] .orb{
+
+    background:#60A5FA;
+
+}
+
+body[data-theme="ismarts3"] .blob{
+
+    opacity:.22;
+
+}
+
+
+/* Ambiente tecnológico */
+
+body[data-theme="ismarts3"]::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background-image:
+        radial-gradient(
+            rgba(59,130,246,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:34px 34px;
+
+    z-index:-1;
+
+}
+
+
+/* ==========================================================
+   GLASS ADAPTATIVO
+   ========================================================== */
+
+.glass{
+
+    background:var(--glass-bg);
+
+    backdrop-filter:blur(var(--glass-blur));
+
+    border:1px solid var(--glass-border);
+
+}
+
+body[data-theme="alpha"] .glass{
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.45);
+
+}
+
+
+/* ==========================================================
+   BOTÕES TEMÁTICOS
+   ========================================================== */
+
+body[data-theme="angel"] .btn-primary{
+
+    background:linear-gradient(135deg,#8B5CF6,#A78BFA);
+
+}
+
+body[data-theme="ezeno"] .btn-primary{
+
+    background:linear-gradient(135deg,#16A34A,#4ADE80);
+
+}
+
+body[data-theme="zenbru"] .btn-primary{
+
+    background:linear-gradient(135deg,#8B5A2B,#B07B45);
+
+}
+
+body[data-theme="alpha"] .btn-primary{
+
+    background:linear-gradient(135deg,#D4AF37,#E7C85C);
+
+    color:#18120E;
+
+}
+
+
+/* ==========================================================
+   NOVOS BOTÕES TEMÁTICOS
+   ========================================================== */
+
+body[data-theme="alphameta"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #C6A35A,
+            #E0C47A
+        );
+
+    color:#2B241A;
+
+}
+
+body[data-theme="minoseed"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #A67C52,
+            #C5A27A
+        );
+
+    color:#FFFFFF;
+
+}
+
+body[data-theme="evador"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #B48A52,
+            #D2B078
+        );
+
+    color:#33291F;
+
+}
+
+body[data-theme="alphaspin-ultra"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #4F8F8A,
+            #72B5AE
+        );
+
+    color:#FFFFFF;
+
+}
+
+body[data-theme="ismarts3"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #3B82F6,
+            #60A5FA
+        );
+
+    color:#FFFFFF;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR TEMÁTICA
+   ========================================================== */
+
+body[data-theme="angel"]::-webkit-scrollbar-thumb{
+
+    background:#8B5CF6;
+
+}
+
+body[data-theme="ezeno"]::-webkit-scrollbar-thumb{
+
+    background:#16A34A;
+
+}
+
+body[data-theme="zenbru"]::-webkit-scrollbar-thumb{
+
+    background:#8B5A2B;
+
+}
+
+body[data-theme="alpha"]::-webkit-scrollbar-thumb{
+
+    background:#D4AF37;
+
+}
+
+
+/* ==========================================================
+   NOVAS SCROLLBARS TEMÁTICAS
+   ========================================================== */
+
+body[data-theme="alphameta"]::-webkit-scrollbar-thumb{
+
+    background:#C6A35A;
+
+}
+
+body[data-theme="minoseed"]::-webkit-scrollbar-thumb{
+
+    background:#A67C52;
+
+}
+
+body[data-theme="evador"]::-webkit-scrollbar-thumb{
+
+    background:#B48A52;
+
+}
+
+body[data-theme="alphaspin-ultra"]::-webkit-scrollbar-thumb{
+
+    background:#4F8F8A;
+
+}
+
+body[data-theme="ismarts3"]::-webkit-scrollbar-thumb{
+
+    background:#3B82F6;
+
+}
+
+
+/* ==========================================================
+   SELECÇÃO DE TEXTO
+   ========================================================== */
+
+body[data-theme="angel"]::selection{
+
+    background:rgba(139,92,246,.22);
+
+}
+
+body[data-theme="ezeno"]::selection{
+
+    background:rgba(22,163,74,.22);
+
+}
+
+body[data-theme="zenbru"]::selection{
+
+    background:rgba(139,90,43,.22);
+
+}
+
+body[data-theme="alpha"]::selection{
+
+    background:rgba(212,175,55,.28);
+
+    color:#FFF;
+
+}
+
+
+/* ==========================================================
+   NOVAS SELECÇÕES TEMÁTICAS
+   ========================================================== */
+
+body[data-theme="alphameta"]::selection{
+
+    background:rgba(198,163,90,.24);
+
+    color:#2B241A;
+
+}
+
+body[data-theme="minoseed"]::selection{
+
+    background:rgba(166,124,82,.22);
+
+    color:#3A2B20;
+
+}
+
+body[data-theme="evador"]::selection{
+
+    background:rgba(180,138,82,.22);
+
+    color:#33291F;
+
+}
+
+body[data-theme="alphaspin-ultra"]::selection{
+
+    background:rgba(79,143,138,.20);
+
+    color:#183B39;
+
+}
+
+body[data-theme="ismarts3"]::selection{
+
+    background:rgba(59,130,246,.20);
+
+    color:#172554;
+
+}

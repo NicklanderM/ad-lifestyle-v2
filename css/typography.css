@@ -1,0 +1,498 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   TYPOGRAPHY.CSS
+   Luxury Editorial Typography System
+   ========================================================== */
+
+/* ========= BASE ========= */
+
+body{
+    font-family:var(--font-family);
+    font-size:var(--body-size);
+    line-height:var(--lh-body);
+    color:var(--text);
+    font-weight:400;
+}
+
+/* ========= HEADINGS ========= */
+
+h1,h2,h3,h4,h5,h6{
+    font-weight:700;
+    color:var(--text);
+    letter-spacing:-0.03em;
+    line-height:var(--lh-title);
+}
+
+h1{
+    font-size:clamp(3rem,7vw,5.5rem);
+}
+
+h2{
+    font-size:clamp(2.3rem,5vw,4rem);
+}
+
+h3{
+    font-size:clamp(1.5rem,2vw,2rem);
+}
+
+h4{
+    font-size:1.25rem;
+}
+
+h5{
+    font-size:1rem;
+}
+
+h6{
+    font-size:.875rem;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+/* ========= DISPLAY ========= */
+
+.display{
+    font-size:var(--display-size);
+    font-weight:800;
+    line-height:0.95;
+    letter-spacing:-0.05em;
+    color:var(--text);
+}
+
+.display-lg{
+    font-size:clamp(4rem,9vw,7rem);
+    font-weight:800;
+    line-height:.88;
+}
+
+.display-sm{
+    font-size:clamp(2.4rem,4vw,3.5rem);
+    font-weight:700;
+}
+
+/* ========= TITLES ========= */
+
+.section-title{
+    font-size:var(--title-size);
+    font-weight:700;
+    line-height:1.08;
+    color:var(--text);
+    margin-bottom:16px;
+}
+
+.section-subtitle{
+    font-size:var(--subtitle-size);
+    font-weight:500;
+    color:var(--text-soft);
+    line-height:1.7;
+}
+
+/* ========= LABEL ========= */
+
+.label{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    font-size:.75rem;
+    font-weight:700;
+
+    letter-spacing:.18em;
+    text-transform:uppercase;
+
+    color:var(--primary);
+
+    margin-bottom:18px;
+}
+
+.label::before{
+    content:"";
+    width:36px;
+    height:1px;
+    background:var(--primary);
+}
+
+/* ========= PARAGRAPHS ========= */
+
+p{
+    color:var(--text-soft);
+    line-height:var(--lh-body);
+    font-size:1rem;
+}
+
+.text{
+    color:var(--text-soft);
+    line-height:1.8;
+}
+
+.text-lg{
+    font-size:1.125rem;
+    line-height:1.9;
+}
+
+.text-xl{
+    font-size:1.25rem;
+    line-height:1.9;
+}
+
+.text-sm{
+    font-size:.875rem;
+    color:var(--text-light);
+}
+
+.lead{
+    font-size:1.25rem;
+    font-weight:400;
+    line-height:1.9;
+    color:var(--text-soft);
+    max-width:760px;
+}
+
+/* ========= FONT WEIGHT ========= */
+
+.light{font-weight:300;}
+.regular{font-weight:400;}
+.medium{font-weight:500;}
+.semibold{font-weight:600;}
+.bold{font-weight:700;}
+.extrabold{font-weight:800;}
+
+/* ========= ALIGN ========= */
+
+.text-center{text-align:center;}
+.text-left{text-align:left;}
+.text-right{text-align:right;}
+
+/* ========= COLORS ========= */
+
+.text-primary{color:var(--primary);}
+.text-accent{color:var(--accent);}
+.text-white{color:#fff;}
+.text-muted{color:var(--text-light);}
+.text-soft{color:var(--text-soft);}
+
+/* ========= METRICS ========= */
+
+.metric{
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+}
+
+.metric-number{
+    font-size:clamp(2.2rem,5vw,4rem);
+    font-weight:800;
+    color:var(--primary);
+    line-height:1;
+    letter-spacing:-0.04em;
+}
+
+.metric-label{
+    font-size:.95rem;
+    color:var(--text-soft);
+}
+
+/* ========= QUOTE ========= */
+
+blockquote{
+    position:relative;
+    padding-left:28px;
+    font-size:1.125rem;
+    line-height:1.9;
+    color:var(--text-soft);
+}
+
+blockquote::before{
+    content:"“";
+
+    position:absolute;
+    left:-6px;
+    top:-18px;
+
+    font-size:4rem;
+    color:var(--primary);
+
+    opacity:.25;
+
+    font-family:Georgia, serif;
+}
+
+/* ========= LIST ========= */
+
+.list{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.list li{
+    display:flex;
+    align-items:flex-start;
+    gap:12px;
+    color:var(--text-soft);
+}
+
+.list li::before{
+    content:"";
+
+    width:8px;
+    height:8px;
+
+    margin-top:10px;
+
+    border-radius:50%;
+    background:var(--primary);
+
+    flex-shrink:0;
+}
+
+/* ========= EMPHASIS ========= */
+
+strong{
+    color:var(--text);
+    font-weight:700;
+}
+
+em{
+    font-style:italic;
+}
+
+/* ========= LINK ========= */
+
+.link{
+    color:var(--primary);
+    font-weight:600;
+    transition:var(--transition-fast);
+}
+
+.link:hover{
+    opacity:.75;
+}
+
+/* ========= DIVIDER TITLE ========= */
+
+.title-divider{
+    width:80px;
+    height:3px;
+
+    border-radius:999px;
+
+    background:var(--gold-gradient);
+
+    margin:22px 0;
+}
+
+/* ========= HERO ========= */
+
+.hero-title{
+    font-size:clamp(3.5rem,8vw,6rem);
+    font-weight:800;
+    line-height:.92;
+    letter-spacing:-0.06em;
+    color:var(--text);
+}
+
+.hero-sub{
+    font-size:1.125rem;
+    line-height:1.9;
+    color:var(--text-soft);
+    max-width:620px;
+}
+
+/* ========= FOOTER ========= */
+
+.footer-title{
+    color:#fff;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.footer-text{
+    color:rgba(255,255,255,.7);
+    line-height:1.8;
+    font-size:.95rem;
+}
+
+/* ========= ALPHA THEME ========= */
+
+body[data-theme="alpha"] h1,
+body[data-theme="alpha"] h2,
+body[data-theme="alpha"] h3,
+body[data-theme="alpha"] h4,
+body[data-theme="alpha"] h5{
+    color:#F8F8F8;
+}
+
+body[data-theme="alpha"] p,
+body[data-theme="alpha"] .text,
+body[data-theme="alpha"] .lead{
+    color:rgba(255,255,255,.78);
+}
+
+body[data-theme="alpha"] .metric-number{
+    color:#D4AF37;
+}
+
+/* ==========================================================
+   ALPHAMETA THEME
+   ========================================================== */
+
+body[data-theme="alphameta"] h1,
+body[data-theme="alphameta"] h2,
+body[data-theme="alphameta"] h3,
+body[data-theme="alphameta"] h4,
+body[data-theme="alphameta"] h5{
+    color:#2B241A;
+}
+
+body[data-theme="alphameta"] p,
+body[data-theme="alphameta"] .text,
+body[data-theme="alphameta"] .lead{
+    color:#665B4C;
+}
+
+body[data-theme="alphameta"] .metric-number{
+    color:#C6A35A;
+}
+
+/* ==========================================================
+   MINOSEED THEME
+   ========================================================== */
+
+body[data-theme="minoseed"] h1,
+body[data-theme="minoseed"] h2,
+body[data-theme="minoseed"] h3,
+body[data-theme="minoseed"] h4,
+body[data-theme="minoseed"] h5{
+    color:#3A2B20;
+}
+
+body[data-theme="minoseed"] p,
+body[data-theme="minoseed"] .text,
+body[data-theme="minoseed"] .lead{
+    color:#6E5A4A;
+}
+
+body[data-theme="minoseed"] .metric-number{
+    color:#A67C52;
+}
+
+/* ==========================================================
+   EVADOR THEME
+   ========================================================== */
+
+body[data-theme="evador"] h1,
+body[data-theme="evador"] h2,
+body[data-theme="evador"] h3,
+body[data-theme="evador"] h4,
+body[data-theme="evador"] h5{
+    color:#33291F;
+}
+
+body[data-theme="evador"] p,
+body[data-theme="evador"] .text,
+body[data-theme="evador"] .lead{
+    color:#68594A;
+}
+
+body[data-theme="evador"] .metric-number{
+    color:#B48A52;
+}
+
+/* ==========================================================
+   ALPHASPIN ULTRA THEME
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] h1,
+body[data-theme="alphaspin-ultra"] h2,
+body[data-theme="alphaspin-ultra"] h3,
+body[data-theme="alphaspin-ultra"] h4,
+body[data-theme="alphaspin-ultra"] h5{
+    color:#183B39;
+}
+
+body[data-theme="alphaspin-ultra"] p,
+body[data-theme="alphaspin-ultra"] .text,
+body[data-theme="alphaspin-ultra"] .lead{
+    color:#4E6E6B;
+}
+
+body[data-theme="alphaspin-ultra"] .metric-number{
+    color:#4F8F8A;
+}
+
+/* ==========================================================
+   iSMARTS3 THEME
+   ========================================================== */
+
+body[data-theme="ismarts3"] h1,
+body[data-theme="ismarts3"] h2,
+body[data-theme="ismarts3"] h3,
+body[data-theme="ismarts3"] h4,
+body[data-theme="ismarts3"] h5{
+    color:#172554;
+}
+
+body[data-theme="ismarts3"] p,
+body[data-theme="ismarts3"] .text,
+body[data-theme="ismarts3"] .lead{
+    color:#475569;
+}
+
+body[data-theme="ismarts3"] .metric-number{
+    color:#3B82F6;
+}
+
+/* ========= RESPONSIVE ========= */
+
+@media (max-width:1024px){
+
+    .hero-title{
+        font-size:4rem;
+    }
+
+    .display-lg{
+        font-size:5rem;
+    }
+
+}
+
+@media (max-width:768px){
+
+    .hero-title{
+        font-size:3rem;
+    }
+
+    .section-title{
+        font-size:2.2rem;
+    }
+
+    .lead{
+        font-size:1.05rem;
+    }
+
+    .metric-number{
+        font-size:2.5rem;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .hero-title{
+        font-size:2.5rem;
+    }
+
+    .display{
+        font-size:2.8rem;
+    }
+
+    .section-title{
+        font-size:1.9rem;
+    }
+
+    p{
+        font-size:.95rem;
+    }
+
+}

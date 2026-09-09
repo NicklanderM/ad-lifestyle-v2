@@ -1,0 +1,622 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   ANIMATIONS.CSS
+   Luxury Motion System
+   ========================================================== */
+
+/* ==========================================================
+   PAGE TRANSITIONS
+   ========================================================== */
+
+.page-enter{
+    opacity:0;
+    transform:translateY(30px) scale(.985);
+}
+
+.page-enter-active{
+    opacity:1;
+    transform:translateY(0) scale(1);
+
+    transition:
+        opacity .65s cubic-bezier(.22,.61,.36,1),
+        transform .65s cubic-bezier(.22,.61,.36,1);
+}
+
+.page-leave{
+    opacity:0;
+    transform:translateY(20px);
+
+    transition:
+        opacity .25s ease,
+        transform .25s ease;
+}
+
+/* ==========================================================
+   REVEAL SYSTEM
+   ========================================================== */
+
+.reveal,
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale{
+
+    opacity:0;
+
+    transition:
+        opacity .9s cubic-bezier(.22,.61,.36,1),
+        transform .9s cubic-bezier(.22,.61,.36,1);
+
+    will-change:transform,opacity;
+}
+
+.reveal{
+    transform:translateY(40px);
+}
+
+.reveal-up{
+    transform:translateY(70px);
+}
+
+.reveal-left{
+    transform:translateX(-60px);
+}
+
+.reveal-right{
+    transform:translateX(60px);
+}
+
+.reveal-scale{
+    transform:scale(.92);
+}
+
+.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* Delay Utilities */
+
+.delay-1{transition-delay:.08s;}
+.delay-2{transition-delay:.16s;}
+.delay-3{transition-delay:.24s;}
+.delay-4{transition-delay:.32s;}
+.delay-5{transition-delay:.40s;}
+
+/* ==========================================================
+   CURSOR GLOW
+   ========================================================== */
+
+.cursor-glow{
+
+    position:fixed;
+
+    width:280px;
+    height:280px;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transform:translate(-50%,-50%);
+
+    z-index:var(--z-cursor);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,163,90,.18),
+            transparent 70%
+        );
+
+    filter:blur(18px);
+
+    transition:
+        transform .18s ease,
+        opacity .3s ease;
+
+    opacity:.8;
+}
+
+.cursor-glow.active{
+
+    transform:
+        translate(-50%,-50%)
+        scale(.88);
+
+    opacity:1;
+}
+
+/* Alpha Theme */
+
+body[data-theme="alpha"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.16),
+            transparent 70%
+        );
+
+}
+
+/* ==========================================================
+   PRODUCT THEME CURSOR GLOW
+   ========================================================== */
+
+/* AlphaMeta */
+body[data-theme="alphameta"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,163,90,.16),
+            transparent 70%
+        );
+
+}
+
+/* Minoseed */
+body[data-theme="minoseed"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(166,124,82,.16),
+            transparent 70%
+        );
+
+}
+
+/* Evador */
+body[data-theme="evador"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(180,138,82,.16),
+            transparent 70%
+        );
+
+}
+
+/* AlphaSpin Ultra */
+body[data-theme="alphaspin-ultra"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(79,143,138,.15),
+            transparent 70%
+        );
+
+}
+
+/* iSMARTS3 */
+body[data-theme="ismarts3"] .cursor-glow{
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(59,130,246,.15),
+            transparent 70%
+        );
+
+}
+
+/* ==========================================================
+   SCROLL PROGRESS
+   ========================================================== */
+
+.scroll-progress{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    height:3px;
+
+    width:0;
+
+    z-index:9999;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--primary-light)
+        );
+
+    transition:width .08s linear;
+}
+
+/* ==========================================================
+   MAGNETIC BUTTON
+   ========================================================== */
+
+.btn{
+    will-change:transform;
+}
+
+/* ==========================================================
+   FLOATING OBJECTS
+   ========================================================== */
+
+.floating{
+    animation:floating 7s ease-in-out infinite;
+}
+
+.floating-slow{
+    animation:floating 11s ease-in-out infinite;
+}
+
+.floating-fast{
+    animation:floating 4.5s ease-in-out infinite;
+}
+
+/* ==========================================================
+   PARALLAX LAYERS
+   ========================================================== */
+
+.parallax{
+    will-change:transform;
+    transition:transform .08s linear;
+}
+
+/* ==========================================================
+   HERO ORBS
+   ========================================================== */
+
+.orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(45px);
+
+    opacity:.18;
+
+    animation:orb 12s infinite ease-in-out;
+}
+
+.orb.gold{
+
+    background:#D8B97B;
+
+}
+
+.orb.purple{
+
+    background:#A78BFA;
+
+}
+
+.orb.green{
+
+    background:#4ADE80;
+
+}
+
+.orb.brown{
+
+    background:#B07B45;
+
+}
+
+/* ==========================================================
+   AURORA
+   ========================================================== */
+
+.aurora-wave{
+
+    position:absolute;
+    inset:-30%;
+
+    background:
+        conic-gradient(
+            from 180deg,
+            transparent,
+            rgba(255,255,255,.12),
+            transparent,
+            rgba(198,163,90,.10),
+            transparent
+        );
+
+    animation:rotateAurora 18s linear infinite;
+
+    opacity:.55;
+}
+
+/* ==========================================================
+   CARD HOVER
+   ========================================================== */
+
+.card,
+.product-card,
+.bento-card{
+
+    transform-origin:center;
+
+    will-change:transform;
+}
+
+.card:hover,
+.product-card:hover,
+.bento-card:hover{
+
+    transition:
+        transform .45s cubic-bezier(.22,.61,.36,1),
+        box-shadow .45s ease;
+}
+
+/* ==========================================================
+   IMAGE ZOOM
+   ========================================================== */
+
+.zoom img{
+
+    transition:
+        transform .8s cubic-bezier(.22,.61,.36,1);
+}
+
+.zoom:hover img{
+
+    transform:scale(1.08);
+}
+
+/* ==========================================================
+   SHIMMER
+   ========================================================== */
+
+.shimmer{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.shimmer::before{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            120deg,
+            transparent 20%,
+            rgba(255,255,255,.45) 50%,
+            transparent 80%
+        );
+
+    transform:translateX(-120%);
+
+    animation:shimmer 3.2s infinite;
+}
+
+/* ==========================================================
+   FADE IN
+   ========================================================== */
+
+.fade-in{
+    animation:fadeIn .8s ease forwards;
+}
+
+.fade-up{
+    animation:fadeUp .8s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+/* ==========================================================
+   PULSE
+   ========================================================== */
+
+.pulse{
+    animation:pulse 2.4s infinite;
+}
+
+/* ==========================================================
+   ROTATE
+   ========================================================== */
+
+.spin{
+    animation:spin 1s linear infinite;
+}
+
+/* ==========================================================
+   BLUR IN
+   ========================================================== */
+
+.blur-in{
+
+    animation:blurIn .9s ease forwards;
+}
+
+/* ==========================================================
+   KEYFRAMES
+   ========================================================== */
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+@keyframes blurIn{
+
+    from{
+        opacity:0;
+        filter:blur(14px);
+        transform:translateY(30px);
+    }
+
+    to{
+        opacity:1;
+        filter:blur(0);
+        transform:none;
+    }
+
+}
+
+@keyframes pulse{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.06);
+    }
+
+}
+
+@keyframes spin{
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes floating{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-16px);
+    }
+
+}
+
+@keyframes orb{
+
+    0%,100%{
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    25%{
+        transform:
+            translate(20px,-18px)
+            scale(1.08);
+    }
+
+    50%{
+        transform:
+            translate(-16px,12px)
+            scale(.95);
+    }
+
+    75%{
+        transform:
+            translate(10px,24px)
+            scale(1.04);
+    }
+
+}
+
+@keyframes rotateAurora{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+@keyframes shimmer{
+
+    0%{
+        transform:translateX(-120%);
+    }
+
+    100%{
+        transform:translateX(120%);
+    }
+
+}
+
+/* Blob Animation */
+
+@keyframes float{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+    25%{
+        transform:
+            translateY(-20px)
+            scale(1.05);
+    }
+
+    50%{
+        transform:
+            translateY(12px)
+            scale(.96);
+    }
+
+    75%{
+        transform:
+            translateY(-10px)
+            scale(1.02);
+    }
+
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation:none !important;
+        transition:none !important;
+
+    }
+
+    .reveal,
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale{
+
+        opacity:1;
+        transform:none;
+    }
+
+}
