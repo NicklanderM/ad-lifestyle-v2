@@ -106,7 +106,7 @@ return`
                 <img
                     class="parallax"
                     data-speed="30"
-                    src="./assets/products/angel.png"
+                    src="./assets/images/angel.png"
                     alt="Angel Moon">
 
             </div>
