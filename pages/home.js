@@ -509,7 +509,7 @@ return`
                                 <div class="icon-circle">📅</div>
 
                                 <div>
-                                    <strong>08 de Agosto de 2026</strong><br>
+                                    <strong>20 de Setembro de 2026</strong><br>
                                     Sábado
                                 </div>
 
