@@ -332,7 +332,7 @@ body[data-theme="alpha"] .navbar{
 .hero-actions{
     display:flex;
     gap:18px;
-    margin-top:42px;
+    margin-top:48px;
     flex-wrap:wrap;
 }
 
@@ -342,15 +342,13 @@ body[data-theme="alpha"] .navbar{
 
 .hero-product{
     position:relative;
-    width:min(460px,100%);
+    width:min(540px,100%);
 }
 
 .hero-product img{
     width:100%;
     position:relative;
     z-index:3;
-
-    filter:drop-shadow(0 30px 60px rgba(0,0,0,.18));
 }
 
 .product-glow{
