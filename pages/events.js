@@ -24,16 +24,9 @@ import { applyTheme } from "../js/theme.js";
 const WHATSAPP_NUMBER = "244924964666";
 
 const SOCIALS = {
-
-    instagram:
-        "https://www.instagram.com/ad.ambassadoracademy21?stkn=MXI2MmVmZDZwZzBhZw%3D%3D",
-
-    facebook:
-        "https://web.facebook.com/ad.ambassadoracademy21/",
-
-    tiktok:
-        "https://www.tiktok.com/@adbdlifestyle"
-
+    instagram: "https://www.instagram.com/ad.ambassadoracademy21/",
+    facebook: "https://web.facebook.com/ad.ambassadoracademy21/",
+    tiktok: "https://www.tiktok.com/@adbdlifestyle"
 };
 
 
