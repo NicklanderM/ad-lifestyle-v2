@@ -1,25 +1,12 @@
-
-```javascript
 /* ==========================================================
    AD LIFESTYLE — EVENTS.JS
    Premium Events Page
-   ----------------------------------------------------------
-   Sistema:
-   - Hero dinâmico
-   - Evento mais próximo
-   - Timeline cronológica
-   - Eventos passados / actuais / futuros
-   - Memórias sociais
-   - Modal de detalhes
-   - Reserva WhatsApp
-   - Partilha
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
 
-
 /* ==========================================================
-   CONFIGURAÇÃO
+   CONFIGURAÇÕES GERAIS
    ========================================================== */
 
 const WHATSAPP_NUMBER = "244924964666";
@@ -30,209 +17,90 @@ const SOCIALS = {
     tiktok: "https://www.tiktok.com/@adbdlifestyle"
 };
 
-
 /* ==========================================================
-   BASE DE DADOS DOS EVENTOS
+   DADOS DOS EVENTOS
    ========================================================== */
 
 const EVENTS_DATA = [
 
-    /* ======================================================
-       EVENTO PASSADO
-       ====================================================== */
-
     {
-        id: "dupla-oportunidade-agosto-2026",
+        id: "dupla-oportunidade-2026",
 
         title: "Dupla Oportunidade",
 
-        shortTitle: "Dupla Oportunidade",
+        subtitle: "Saúde, Bem-Estar, Longevidade e Negócios Internacionais",
 
-        subtitle:
-            "Saúde, bem-estar, longevidade e oportunidades de negócio.",
+        date: "08",
+
+        month: "AGO",
+
+        year: "2026",
+
+        fullDate: "08 de Agosto de 2026",
+
+        time: "15h00",
+
+        location: "Sala de Conferências do Fly Hotel",
+
+        address: "Luanda — Próximo ao antigo Aeroporto Doméstico",
+
+        price: "2.500 Kz",
+
+        status: "past",
+
+        category: "Conferência",
+
+        image: "assets/images/events/dupla-oportunidade.jpg",
 
         description:
-            "Um encontro dedicado à descoberta de novas perspectivas sobre saúde, bem-estar, desenvolvimento pessoal e oportunidades de negócio internacional.",
-
-        dateLabel:
-            "08 de Agosto de 2026",
-
-        start:
-            "2026-08-08T15:00:00",
-
-        end:
-            "2026-08-08T19:00:00",
-
-        timeLabel:
-            "15h00",
-
-        location:
-            "Fly Hotel — Luanda",
-
-        venue:
-            "Sala de Conferências do Fly Hotel",
-
-        category:
-            "Experiência AD Lifestyle",
-
-        image:
-            "assets/hotel/fly.png",
-
-        price:
-            "2.500 Kz",
-
-        status:
-            "past",
-
-        memoryUrl:
-            "",
-
-        descriptionShort:
-            "Uma experiência marcada por conhecimento, networking e novas perspectivas.",
+            "Uma experiência criada para aproximar pessoas, conhecimento, saúde, desenvolvimento pessoal, bem-estar e novas possibilidades de crescimento através de negócios internacionais.",
 
         highlights: [
-
             "Saúde e bem-estar",
-
-            "Medicina holística",
-
-            "Negócios internacionais",
-
-            "Networking"
-
-        ]
-
-    },
-
-
-    /* ======================================================
-       EVENTO PRÓXIMO
-       ====================================================== */
-
-    {
-        id:
-            "grande-apresentacao-setembro-2026",
-
-        title:
-            "Grande Apresentação de Dupla Oportunidade",
-
-        shortTitle:
-            "Grande Apresentação de Dupla Oportunidade",
-
-        subtitle:
-            "Saúde, Bem-estar, Longevidade e Negócios Internacionais.",
-
-        description:
-            "Uma apresentação especial da BZZWorld e Academy 21, criada para apresentar novas perspectivas sobre saúde, desenvolvimento humano, liderança e oportunidades de negócio.",
-
-        dateLabel:
-            "20 de Setembro de 2026",
-
-        start:
-            "2026-09-20T15:00:00",
-
-        end:
-            "2026-09-20T19:00:00",
-
-        timeLabel:
-            "15h00",
-
-        location:
-            "Fly Hotel — Luanda",
-
-        venue:
-            "Sala de Conferências do Fly Hotel",
-
-        category:
-            "Evento Oficial AD Lifestyle",
-
-        image:
-            "assets/hotel/fly.png",
-
-        price:
-            "2.500 Kz",
-
-        status:
-            "upcoming",
-
-        memoryUrl:
-            "",
-
-        descriptionShort:
-            "Saúde, bem-estar, longevidade, liderança e negócios internacionais.",
-
-        highlights: [
-
-            "Saúde",
-
-            "Bem-estar",
-
             "Longevidade",
-
-            "Negócios internacionais"
-
+            "Medicina holística",
+            "Desenvolvimento pessoal",
+            "Educação empreendedora",
+            "Negócios internacionais",
+            "Networking"
         ],
 
-        speakers: [
+        speaker: "A. Abdoulahi",
 
-            "Dr. Mike Mahindo",
+        speakerRole: "Academy Twenty One / BZZWorld",
 
-            "A. Abdoulahi",
-
-            "Academy 21"
-
-        ]
-
+        whatsappMessage:
+            "Olá! Gostaria de saber mais informações sobre o evento Dupla Oportunidade."
     }
 
 ];
 
-
 /* ==========================================================
-   ENTRADA PRINCIPAL
+   INICIALIZAÇÃO
    ========================================================== */
 
-export function loadEvents(){
+export function loadEvents() {
 
     applyTheme("angel");
 
-    const app =
-        document.getElementById("app");
+    const app = document.getElementById("app");
 
-
-    if(!app){
-
+    if (!app) {
         console.error(
-            "AD Lifestyle Events: elemento #app não encontrado."
+            "[AD LIFESTYLE] Elemento #app não encontrado."
         );
 
         return;
-
     }
 
-
     app.innerHTML = `
-
         ${hero()}
-
-        ${eventsTimeline()}
-
         ${overview()}
-
-        ${schedule()}
-
+        ${eventsTimeline()}
         ${speakers()}
-
         ${venue()}
-
-        ${tickets()}
-
         ${cta()}
-
-        ${eventModal()}
-
     `;
-
 
     initialiseEvents();
 
@@ -240,57 +108,113 @@ export function loadEvents(){
 
 
 /* ==========================================================
-   UTILITÁRIOS DE DATA
+   INICIALIZAÇÃO DOS EVENTOS
    ========================================================== */
 
-function getEventState(event){
+function initialiseEvents() {
 
-    const now =
-        new Date();
+    bindEventButtons();
 
-    const start =
-        new Date(event.start);
+    bindModalEvents();
 
-    const end =
-        new Date(event.end);
+    initialiseRevealAnimations();
 
-
-    if(now < start){
-
-        return "upcoming";
-
-    }
-
-
-    if(
-        now >= start &&
-        now <= end
-    ){
-
-        return "live";
-
-    }
-
-
-    return "past";
+    initialiseCountdowns();
 
 }
 
 
 /* ==========================================================
-   EVENTOS ORDENADOS
+   ESTADO DO EVENTO
    ========================================================== */
 
-function getSortedEvents(){
+function getEventState(event) {
 
-    return [...EVENTS_DATA].sort(
+    if (!event) {
+        return "unknown";
+    }
 
-        (a,b) =>
+    const now = new Date();
 
-            new Date(a.start) -
-            new Date(b.start)
-
+    const eventDate = new Date(
+        `${event.year}-${getMonthNumber(event.month)}-${event.date}T${convertTime(event.time)}:00`
     );
+
+    if (Number.isNaN(eventDate.getTime())) {
+        return event.status || "unknown";
+    }
+
+    if (eventDate.getTime() < now.getTime()) {
+        return "past";
+    }
+
+    return "upcoming";
+
+}
+
+
+/* ==========================================================
+   CONVERSÃO DE MÊS
+   ========================================================== */
+
+function getMonthNumber(month) {
+
+    const months = {
+        JAN: "01",
+        FEV: "02",
+        MAR: "03",
+        ABR: "04",
+        MAI: "05",
+        JUN: "06",
+        JUL: "07",
+        AGO: "08",
+        SET: "09",
+        OUT: "10",
+        NOV: "11",
+        DEZ: "12"
+    };
+
+    return months[String(month).toUpperCase()] || "01";
+
+}
+
+
+/* ==========================================================
+   CONVERSÃO DE HORA
+   ========================================================== */
+
+function convertTime(time) {
+
+    if (!time) {
+        return "00:00";
+    }
+
+    return String(time)
+        .replace("h", ":")
+        .trim();
+
+}
+
+
+/* ==========================================================
+   ORDENAÇÃO DOS EVENTOS
+   ========================================================== */
+
+function getSortedEvents() {
+
+    return [...EVENTS_DATA].sort((a, b) => {
+
+        const dateA = new Date(
+            `${a.year}-${getMonthNumber(a.month)}-${a.date}T${convertTime(a.time)}:00`
+        );
+
+        const dateB = new Date(
+            `${b.year}-${getMonthNumber(b.month)}-${b.date}T${convertTime(b.time)}:00`
+        );
+
+        return dateA - dateB;
+
+    });
 
 }
 
@@ -299,67 +223,27 @@ function getSortedEvents(){
    EVENTO MAIS PRÓXIMO
    ========================================================== */
 
-function getNearestEvent(){
+function getNearestEvent() {
 
-    const now =
-        new Date();
+    const events = getSortedEvents();
 
-
-    const upcoming =
-        EVENTS_DATA
-
-            .filter(
-                event =>
-                    new Date(event.start) > now
-            )
-
-            .sort(
-                (a,b) =>
-                    new Date(a.start) -
-                    new Date(b.start)
-            );
-
-
-    if(upcoming.length){
-
-        return upcoming[0];
-
+    if (!events.length) {
+        return null;
     }
 
+    const now = new Date();
 
-    const live =
-        EVENTS_DATA
+    const upcoming = events.find(event => {
 
-            .filter(event => {
+        const date = new Date(
+            `${event.year}-${getMonthNumber(event.month)}-${event.date}T${convertTime(event.time)}:00`
+        );
 
-                const start =
-                    new Date(event.start);
+        return date.getTime() >= now.getTime();
 
-                const end =
-                    new Date(event.end);
+    });
 
-                return (
-                    now >= start &&
-                    now <= end
-                );
-
-            });
-
-
-    if(live.length){
-
-        return live[0];
-
-    }
-
-
-    return EVENTS_DATA
-        .slice()
-        .sort(
-            (a,b) =>
-                new Date(b.start) -
-                new Date(a.start)
-        )[0];
+    return upcoming || events[events.length - 1];
 
 }
 
@@ -368,29 +252,32 @@ function getNearestEvent(){
    HERO
    ========================================================== */
 
-function hero(){
+function hero() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
-
-    if(!event){
+    if (!event) {
 
         return `
+            <section class="events-hero events-hero-empty">
 
-            <section class="hero page">
+                <div class="events-hero-overlay"></div>
 
-                <div class="container">
+                <div class="events-container">
 
-                    <div class="hero-content">
+                    <div class="events-hero-content">
 
-                        <h1 class="hero-title">
-                            Eventos AD Lifestyle
+                        <span class="events-eyebrow">
+                            AD Lifestyle
+                        </span>
+
+                        <h1>
+                            Eventos
                         </h1>
 
-                        <p class="hero-sub">
-                            Experiências que conectam pessoas,
-                            conhecimento e oportunidades.
+                        <p>
+                            Experiências, conhecimento, desenvolvimento
+                            e oportunidades.
                         </p>
 
                     </div>
@@ -398,149 +285,215 @@ function hero(){
                 </div>
 
             </section>
-
         `;
 
     }
 
+    const state = getEventState(event);
 
-    const state =
-        getEventState(event);
-
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
+    const heroAction =
+        state === "past"
+            ? `
+                <button
+                    type="button"
+                    class="events-btn events-btn-primary"
+                    data-event-action="view"
+                    data-event-id="${event.id}"
+                >
+                    <span>Ver Memórias</span>
+                    <span class="events-btn-arrow">→</span>
+                </button>
+            `
+            : `
+                <button
+                    type="button"
+                    class="events-btn events-btn-primary"
+                    data-event-action="reserve"
+                    data-event-id="${event.id}"
+                >
+                    <span>Reservar Lugar</span>
+                    <span class="events-btn-arrow">→</span>
+                </button>
+            `;
 
     return `
+        <section class="events-hero">
 
-<section class="hero page">
+            <div class="events-hero-background"></div>
 
-    <div class="aurora">
+            <div class="events-hero-overlay"></div>
 
-        <div class="blob blob-1"></div>
+            <div class="events-container">
 
-        <div class="blob blob-2"></div>
+                <div class="events-hero-content reveal">
 
-        <div class="blob blob-3"></div>
+                    <span class="events-eyebrow">
+                        ${event.category}
+                    </span>
 
-    </div>
+                    <h1>
+                        ${event.title}
+                    </h1>
 
+                    <p class="events-hero-subtitle">
+                        ${event.subtitle}
+                    </p>
 
-    <div class="container hero-grid">
+                    <div class="events-hero-meta">
 
-        <div class="hero-content">
+                        <div class="events-meta-item">
 
-            <span class="badge ${stateClass}">
+                            <span class="events-meta-icon">
+                                📅
+                            </span>
 
-                ${stateLabel}
+                            <div>
+                                <strong>
+                                    ${event.fullDate}
+                                </strong>
 
-            </span>
+                                <small>
+                                    ${event.time}
+                                </small>
+                            </div>
 
+                        </div>
 
-            <h1 class="hero-title">
+                        <div class="events-meta-item">
 
-                ${event.title}
+                            <span class="events-meta-icon">
+                                📍
+                            </span>
 
-            </h1>
+                            <div>
+                                <strong>
+                                    ${event.location}
+                                </strong>
 
+                                <small>
+                                    ${event.address}
+                                </small>
+                            </div>
 
-            <p class="hero-sub">
+                        </div>
 
-                ${event.subtitle}
+                    </div>
 
-            </p>
+                    <div class="events-hero-actions">
 
+                        ${heroAction}
 
-            <div class="hero-meta">
+                        <button
+                            type="button"
+                            class="events-btn events-btn-outline"
+                            data-event-action="details"
+                            data-event-id="${event.id}"
+                        >
+                            Saber mais
+                        </button>
 
-                <span>
-                    📅 ${event.dateLabel}
-                </span>
+                    </div>
 
-                <span>
-                    🕒 ${event.timeLabel}
-                </span>
-
-                <span>
-                    📍 ${event.location}
-                </span>
-
-            </div>
-
-
-            <div class="hero-actions">
-
-                ${
-                    state === "past"
-
-                    ?
-
-                    `
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="memory"
-                        data-event-id="${event.id}">
-
-                        Ver Memórias
-
-                    </button>
-
-                    `
-
-                    :
-
-                    `
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="ticket">
-
-                        Reservar Lugar
-
-                    </button>
-
-                    `
-                }
-
-
-                <button
-                    class="btn btn-glass"
-                    data-action="timeline">
-
-                    Explorar Eventos
-
-                </button>
+                </div>
 
             </div>
 
-        </div>
+        </section>
+    `;
+
+}
 
 
-        <div class="hero-visual">
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
 
-            <div class="hero-product">
+function overview() {
 
-                <div class="product-glow"></div>
+    return `
+        <section class="events-overview">
 
-                <img
-                    src="${event.image}"
-                    alt="${event.title}">
+            <div class="events-container">
+
+                <div class="events-section-heading reveal">
+
+                    <span class="events-eyebrow">
+                        Experiências que transformam
+                    </span>
+
+                    <h2>
+                        Mais do que eventos.
+                        <span>Experiências.</span>
+                    </h2>
+
+                    <p>
+                        Criamos encontros que aproximam pessoas,
+                        conhecimento, desenvolvimento pessoal,
+                        bem-estar e oportunidades.
+                    </p>
+
+                </div>
+
+                <div class="events-overview-grid">
+
+                    <article class="events-feature-card reveal">
+
+                        <div class="events-feature-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Conhecimento
+                        </h3>
+
+                        <p>
+                            Conteúdos e experiências pensados para
+                            ampliar perspectivas e desenvolver novas
+                            competências.
+                        </p>
+
+                    </article>
+
+                    <article class="events-feature-card reveal">
+
+                        <div class="events-feature-icon">
+                            ◈
+                        </div>
+
+                        <h3>
+                            Networking
+                        </h3>
+
+                        <p>
+                            Conecte-se com pessoas que partilham
+                            objectivos, ambições e vontade de crescer.
+                        </p>
+
+                    </article>
+
+                    <article class="events-feature-card reveal">
+
+                        <div class="events-feature-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Oportunidades
+                        </h3>
+
+                        <p>
+                            Descubra novas possibilidades de aprendizagem,
+                            desenvolvimento e empreendedorismo.
+                        </p>
+
+                    </article>
+
+                </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-`;
+        </section>
+    `;
 
 }
 
@@ -549,644 +502,281 @@ function hero(){
    TIMELINE
    ========================================================== */
 
-function eventsTimeline(){
+function eventsTimeline() {
 
-    const events =
-        getSortedEvents();
+    const events = getSortedEvents();
 
+    if (!events.length) {
+
+        return `
+            <section class="events-timeline-section">
+
+                <div class="events-container">
+
+                    <div class="events-section-heading">
+
+                        <span class="events-eyebrow">
+                            Agenda
+                        </span>
+
+                        <h2>
+                            Próximos eventos
+                        </h2>
+
+                        <p>
+                            Novas experiências serão anunciadas em breve.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+        `;
+
+    }
 
     return `
+        <section
+            class="events-timeline-section"
+            id="agenda"
+        >
 
-<section
-    class="section events-history"
-    id="events-history">
+            <div class="events-container">
 
-    <div class="container">
+                <div class="events-section-heading reveal">
 
-        <div class="section-center reveal">
+                    <span class="events-eyebrow">
+                        Agenda
+                    </span>
 
-            <span class="label">
-                Jornada AD Lifestyle
-            </span>
+                    <h2>
+                        Eventos
+                    </h2>
 
+                    <p>
+                        Descubra os encontros que fazem parte da nossa
+                        jornada.
+                    </p>
 
-            <h2 class="section-title">
-                Eventos & Memórias
-            </h2>
+                </div>
 
+                <div class="events-timeline">
 
-            <p class="text-lg mt-2">
+                    ${events.map(timelineEvent).join("")}
 
-                Uma linha do tempo das experiências que
-                construímos juntos — das que já aconteceram
-                às que ainda estão por vir.
+                </div>
 
-            </p>
+            </div>
 
-        </div>
-
-
-        <div class="events-timeline mt-5">
-
-            ${
-                events
-
-                    .map(
-                        event =>
-                            timelineEvent(event)
-                    )
-
-                    .join("")
-            }
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
+        </section>
+    `;
 
 }
 
 
 /* ==========================================================
-   ITEM DA TIMELINE
+   EVENTO DA TIMELINE
    ========================================================== */
 
-function timelineEvent(event){
+function timelineEvent(event) {
 
-    const state =
-        getEventState(event);
+    const state = getEventState(event);
 
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
-
-    const date =
-        formatTimelineDate(event.start);
-
-
-    return `
-
-<div
-    class="event-timeline-item ${stateClass} reveal"
-    data-event-id="${event.id}">
-
-
-    <div class="event-timeline-marker">
-
-        <span></span>
-
-    </div>
-
-
-    <div class="event-timeline-date">
-
-        <strong>
-            ${date.day}
-        </strong>
-
-        <span>
-            ${date.month}
-        </span>
-
-        <small>
-            ${date.year}
-        </small>
-
-    </div>
-
-
-    <article class="event-timeline-card">
-
-
-        <div class="event-timeline-image">
-
-            <img
-                src="${event.image}"
-                alt="${event.title}">
-
-
-            <span class="event-status ${stateClass}">
-
-                ${stateLabel}
-
-            </span>
-
-        </div>
-
-
-        <div class="event-timeline-content">
-
-            <span class="label">
-
-                ${event.category}
-
-            </span>
-
-
-            <h3>
-                ${event.shortTitle}
-            </h3>
-
-
-            <p class="text">
-
-                ${event.descriptionShort}
-
-            </p>
-
-
-            <div class="event-mini-info">
-
-                <span>
-                    🕒 ${event.timeLabel}
-                </span>
-
-                <span>
-                    📍 ${event.location}
-                </span>
-
-            </div>
-
-
-            <div class="event-card-actions">
-
-
+    const cardAction =
+        state === "past"
+            ? `
                 <button
-                    class="btn btn-outline btn-small"
-                    data-action="details"
-                    data-event-id="${event.id}">
-
-                    Ver detalhes
-
+                    type="button"
+                    class="events-card-button"
+                    data-event-action="view"
+                    data-event-id="${event.id}"
+                >
+                    Ver memórias
+                    <span>→</span>
                 </button>
+            `
+            : `
+                <button
+                    type="button"
+                    class="events-card-button"
+                    data-event-action="reserve"
+                    data-event-id="${event.id}"
+                >
+                    Reservar lugar
+                    <span>→</span>
+                </button>
+            `;
 
+    return `
+        <article
+            class="
+                events-card
+                events-card-${state}
+                reveal
+            "
+            data-event-id="${event.id}"
+        >
 
-                ${
-                    state === "past"
+            <div class="events-card-date">
 
-                    ?
+                <strong>
+                    ${event.date}
+                </strong>
 
-                    `
+                <span>
+                    ${event.month}
+                </span>
 
-                    <button
-                        class="btn btn-glass btn-small"
-                        data-action="memory"
-                        data-event-id="${event.id}">
-
-                        ✦ Ver Memórias
-
-                    </button>
-
-                    `
-
-                    :
-
-                    `
-
-                    <button
-                        class="btn btn-primary btn-small"
-                        data-action="event-ticket">
-
-                        Participar
-
-                    </button>
-
-                    `
-                }
+                <small>
+                    ${event.year}
+                </small>
 
             </div>
 
-        </div>
+            <div class="events-card-line">
+                <span></span>
+            </div>
 
-    </article>
+            <div class="events-card-content">
 
-</div>
+                <div class="events-card-top">
 
-`;
+                    <span class="events-card-category">
+                        ${event.category}
+                    </span>
 
-}
+                    ${
+                        state === "past"
+                            ? `
+                                <span class="events-status events-status-past">
+                                    Realizado
+                                </span>
+                            `
+                            : `
+                                <span class="events-status events-status-upcoming">
+                                    Próximo
+                                </span>
+                            `
+                    }
 
+                </div>
 
-/* ==========================================================
-   ESTADOS
-   ========================================================== */
+                <h3>
+                    ${event.title}
+                </h3>
 
-function getStateLabel(state){
+                <h4>
+                    ${event.subtitle}
+                </h4>
 
-    switch(state){
+                <p>
+                    ${event.description}
+                </p>
 
-        case "live":
+                <div class="events-card-info">
 
-            return "A decorrer agora";
+                    <span>
+                        🕒 ${event.time}
+                    </span>
 
+                    <span>
+                        📍 ${event.location}
+                    </span>
 
-        case "past":
+                    <span>
+                        🎟 ${event.price}
+                    </span>
 
-            return "Evento realizado";
+                </div>
 
+                <div class="events-card-footer">
 
-        default:
+                    ${cardAction}
 
-            return "Próximo evento";
+                </div>
 
-    }
+            </div>
 
-}
-
-
-function getStateClass(state){
-
-    switch(state){
-
-        case "live":
-
-            return "event-live";
-
-
-        case "past":
-
-            return "event-past";
-
-
-        default:
-
-            return "event-upcoming";
-
-    }
-
-}
-
-
-/* ==========================================================
-   DATA FORMATADA
-   ========================================================== */
-
-function formatTimelineDate(dateString){
-
-    const date =
-        new Date(dateString);
-
-
-    const months = [
-
-        "JAN",
-        "FEV",
-        "MAR",
-        "ABR",
-        "MAI",
-        "JUN",
-        "JUL",
-        "AGO",
-        "SET",
-        "OUT",
-        "NOV",
-        "DEZ"
-
-    ];
-
-
-    return {
-
-        day:
-            String(
-                date.getDate()
-            ).padStart(2,"0"),
-
-        month:
-            months[
-                date.getMonth()
-            ],
-
-        year:
-            date.getFullYear()
-
-    };
+        </article>
+    `;
 
 }
 
 
 /* ==========================================================
-   VISÃO GERAL
+   ORADORES / PARTICIPANTES
    ========================================================== */
 
-function overview(){
+function speakers() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
-
-    if(!event){
-
+    if (!event) {
         return "";
-
     }
 
-
     return `
+        <section
+            class="events-speakers"
+            id="speakers"
+        >
 
-<section class="section">
+            <div class="events-container">
 
-<div class="container">
+                <div class="events-section-heading reveal">
 
-<div class="section-center reveal">
+                    <span class="events-eyebrow">
+                        Participação especial
+                    </span>
 
-<span class="label">
-Informações Gerais
-</span>
+                    <h2>
+                        Pessoas que inspiram
+                    </h2>
 
+                    <p>
+                        Conhecimento partilhado por pessoas comprometidas
+                        com desenvolvimento, saúde, bem-estar e crescimento.
+                    </p>
 
-<h2 class="section-title">
-Tudo o que precisa de saber
-</h2>
+                </div>
 
-</div>
+                <div class="events-speakers-grid">
 
+                    <article class="events-speaker-card reveal">
 
-<div class="grid grid-4 mt-5">
+                        <div class="events-speaker-avatar">
 
-${info(
-    "📅",
-    "Data",
-    event.dateLabel
-)}
+                            <span>
+                                A
+                            </span>
 
+                        </div>
 
-${info(
-    "🕒",
-    "Horário",
-    event.timeLabel
-)}
+                        <div class="events-speaker-info">
 
+                            <span class="events-speaker-label">
+                                Participante / Orador
+                            </span>
 
-${info(
-    "📍",
-    "Local",
-    event.location
-)}
+                            <h3>
+                                ${event.speaker}
+                            </h3>
 
+                            <p>
+                                ${event.speakerRole}
+                            </p>
 
-${info(
-    "🎟️",
-    "Ingresso",
-    event.price
-)}
+                        </div>
 
-</div>
+                    </article>
 
-</div>
+                </div>
 
-</section>
+            </div>
 
-`;
-
-}
-
-
-function info(
-    icon,
-    title,
-    value
-){
-
-    return `
-
-<div class="stat-card reveal">
-
-<div class="service-icon">
-
-${icon}
-
-</div>
-
-
-<h3>
-${title}
-</h3>
-
-
-<p class="text mt-1">
-
-${value}
-
-</p>
-
-</div>
-
-`;
-
-}
-
-
-/* ==========================================================
-   CRONOGRAMA
-   ========================================================== */
-
-function schedule(){
-
-    return `
-
-<section
-    class="section"
-    id="schedule">
-
-<div class="container">
-
-<div class="section-center reveal">
-
-<span class="label">
-Cronograma
-</span>
-
-
-<h2 class="section-title">
-Programa Oficial
-</h2>
-
-</div>
-
-
-<div class="timeline mt-5">
-
-${agenda(
-    "15h00",
-    "Recepção & Credenciamento"
-)}
-
-
-${agenda(
-    "15h30",
-    "Abertura Oficial"
-)}
-
-
-${agenda(
-    "16h00",
-    "Saúde & Medicina Holística"
-)}
-
-
-${agenda(
-    "16h45",
-    "Apresentação BZZWorld"
-)}
-
-
-${agenda(
-    "17h30",
-    "Academy 21 & Liderança"
-)}
-
-
-${agenda(
-    "18h00",
-    "Networking & Encerramento"
-)}
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
-}
-
-
-function agenda(
-    hour,
-    title
-){
-
-    return `
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot">
-🕒
-</div>
-
-
-<div class="timeline-content">
-
-<span class="badge">
-${hour}
-</span>
-
-
-<h3 class="mt-2">
-${title}
-</h3>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/* ==========================================================
-   ORADORES
-   ========================================================== */
-
-function speakers(){
-
-    return `
-
-<section class="section-sm">
-
-<div class="container">
-
-<div class="section-center reveal">
-
-<span class="label">
-Participação Especial
-</span>
-
-
-<h2 class="section-title">
-Oradores do Evento
-</h2>
-
-</div>
-
-
-<div class="grid grid-3 mt-5">
-
-${speaker(
-    "Dr. Mike Mahindo",
-    "Medicina Holística",
-    "assets/images/2.png"
-)}
-
-
-${speaker(
-    "A. Abdoulahi",
-    "Liderança",
-    "assets/images/1.png"
-)}
-
-
-${speaker(
-    "Academy 21",
-    "Desenvolvimento Humano",
-    "assets/images/a21.png"
-)}
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
-}
-
-
-function speaker(
-    name,
-    role,
-    image
-){
-
-    return `
-
-<div class="card reveal service-card">
-
-<div
-    class="avatar"
-    style="margin:auto">
-
-<img
-    src="${image}"
-    alt="${name}">
-
-</div>
-
-
-<h3 class="mt-3">
-${name}
-</h3>
-
-
-<p class="text">
-${role}
-</p>
-
-</div>
-
-`;
+        </section>
+    `;
 
 }
 
@@ -1195,237 +785,94 @@ ${role}
    LOCAL
    ========================================================== */
 
-function venue(){
+function venue() {
 
-    return `
+    const event = getNearestEvent();
 
-<section class="section">
-
-<div class="container">
-
-<div class="split">
-
-<div class="split-content reveal-left">
-
-<span class="label">
-Local do Evento
-</span>
-
-
-<h2 class="section-title">
-Fly Hotel
-Luanda
-</h2>
-
-
-<p class="text mt-3">
-
-Sala de Conferências do Fly Hotel,
-ao lado da área de desembarque do antigo
-Aeroporto Doméstico.
-
-</p>
-
-
-<div class="icon-list mt-4">
-
-${feature(
-    "Estacionamento disponível"
-)}
-
-
-${feature(
-    "Sala climatizada"
-)}
-
-
-${feature(
-    "Acesso facilitado"
-)}
-
-
-${feature(
-    "Ambiente executivo"
-)}
-
-</div>
-
-</div>
-
-
-<div class="split-image reveal-right">
-
-<img
-    src="assets/hotel/fly.png"
-    alt="Fly Hotel">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
-}
-
-
-function feature(text){
-
-    return `
-
-<div class="icon-item">
-
-<div class="icon-circle">
-✓
-</div>
-
-
-<div>
-<strong>
-${text}
-</strong>
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/* ==========================================================
-   BILHETES
-   ========================================================== */
-
-function tickets(){
-
-    const event =
-        getNearestEvent();
-
-
-    if(!event){
-
+    if (!event) {
         return "";
-
     }
-
-
-    const state =
-        getEventState(event);
-
-
-    if(state === "past"){
-
-        return `
-
-<section class="section">
-
-<div class="container">
-
-<div class="glass-panel section-center reveal">
-
-<span class="badge">
-Experiência AD Lifestyle
-</span>
-
-
-<h2 class="section-title mt-2">
-Explore as nossas memórias
-</h2>
-
-
-<p class="text-lg">
-
-Reviva momentos de eventos anteriores e
-acompanhe as próximas experiências.
-
-</p>
-
-
-<button
-    class="btn btn-primary mt-4"
-    data-action="timeline">
-
-    Ver Linha do Tempo
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
-    }
-
 
     return `
+        <section
+            class="events-venue"
+            id="venue"
+        >
 
-<section class="section">
+            <div class="events-container">
 
-<div class="container">
+                <div class="events-venue-card reveal">
 
-<div class="section-center reveal">
+                    <div class="events-venue-content">
 
-<span class="label">
-Bilhetes
-</span>
+                        <span class="events-eyebrow">
+                            Local do evento
+                        </span>
 
+                        <h2>
+                            ${event.location}
+                        </h2>
 
-<h2 class="section-title">
-Reserve o seu lugar
-</h2>
+                        <p>
+                            ${event.address}
+                        </p>
 
-</div>
+                        <div class="events-venue-details">
 
+                            <div>
+                                <span>📍</span>
 
-<div class="showcase mt-5">
+                                <strong>
+                                    Luanda
+                                </strong>
+                            </div>
 
-<div class="showcase-bg"></div>
+                            <div>
+                                <span>🕒</span>
 
+                                <strong>
+                                    ${event.time}
+                                </strong>
+                            </div>
 
-<div class="showcase-content">
+                            <div>
+                                <span>📅</span>
 
-<div class="between">
+                                <strong>
+                                    ${event.fullDate}
+                                </strong>
+                            </div>
 
-<div>
+                        </div>
 
-<h2 class="display">
-${event.price}
-</h2>
+                    </div>
 
+                    <div class="events-venue-map">
 
-<p class="text">
-Ingresso individual para participação completa.
-</p>
+                        <div class="events-map-placeholder">
 
-</div>
+                            <span class="events-map-pin">
+                                📍
+                            </span>
 
+                            <strong>
+                                ${event.location}
+                            </strong>
 
-<button
-    class="btn btn-secondary"
-    data-action="ticket">
+                            <small>
+                                ${event.address}
+                            </small>
 
-    Reservar Agora
+                        </div>
 
-</button>
+                    </div>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
-
-</div>
-
-</section>
-
-`;
+        </section>
+    `;
 
 }
 
@@ -1434,838 +881,155 @@ Ingresso individual para participação completa.
    CTA
    ========================================================== */
 
-function cta(){
+function cta() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
+    if (!event) {
+        return "";
+    }
 
-    const state =
-        event
-            ? getEventState(event)
-            : "past";
+    const state = getEventState(event);
 
-
-    return `
-
-<section class="section">
-
-<div class="container">
-
-<div class="glass-panel section-center">
-
-<span class="badge badge-gold">
-Experiências que conectam
-</span>
-
-
-<h2 class="section-title mt-2">
-Faça parte desta jornada
-</h2>
-
-
-<p class="text-lg">
-
-Acompanhe os eventos da AD Lifestyle,
-partilhe conhecimento e descubra novas
-possibilidades através de experiências
-que aproximam pessoas, ideias e oportunidades.
-
-</p>
-
-
-<div class="hero-actions center mt-4">
-
-${
-    state === "past"
-
-    ?
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="timeline">
-
-        Ver Eventos
-
-    </button>
-
-    `
-
-    :
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="ticket">
-
-        Reservar Lugar
-
-    </button>
-
-    `
-}
-
-
-<button
-    class="btn btn-outline"
-    data-action="share">
-
-    Partilhar Evento
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
-}
-
-
-/* ==========================================================
-   MODAL DE DETALHES
-   ========================================================== */
-
-function eventModal(){
+    const ctaAction =
+        state === "past"
+            ? `
+                <button
+                    type="button"
+                    class="events-btn events-btn-light"
+                    data-event-action="view"
+                    data-event-id="${event.id}"
+                >
+                    Ver detalhes do evento
+                    <span>→</span>
+                </button>
+            `
+            : `
+                <button
+                    type="button"
+                    class="events-btn events-btn-light"
+                    data-event-action="reserve"
+                    data-event-id="${event.id}"
+                >
+                    Quero participar
+                    <span>→</span>
+                </button>
+            `;
 
     return `
+        <section class="events-cta">
 
-<div
-    class="event-modal"
-    id="event-modal"
-    aria-hidden="true">
+            <div class="events-cta-glow"></div>
 
-    <div
-        class="event-modal-backdrop"
-        data-action="close-modal">
-    </div>
+            <div class="events-container">
 
+                <div class="events-cta-content reveal">
 
-    <div
-        class="event-modal-dialog"
-        role="dialog"
-        aria-modal="true">
+                    <span class="events-eyebrow">
+                        Faça parte
+                    </span>
 
-        <button
-            class="event-modal-close"
-            data-action="close-modal"
-            aria-label="Fechar">
+                    <h2>
+                        O próximo passo
+                        <span>começa consigo.</span>
+                    </h2>
 
-            ×
+                    <p>
+                        Esteja presente nas próximas experiências
+                        da AD Lifestyle e faça parte de uma comunidade
+                        orientada para conhecimento, crescimento e
+                        novas oportunidades.
+                    </p>
 
-        </button>
+                    ${ctaAction}
 
+                </div>
 
-        <div
-            class="event-modal-content"
-            id="event-modal-content">
-        </div>
+            </div>
 
-    </div>
-
-</div>
-
-`;
+        </section>
+    `;
 
 }
 
 
 /* ==========================================================
-   CONTEÚDO DO MODAL
+   BOTÕES
    ========================================================== */
 
-function buildEventModal(event){
-
-    const state =
-        getEventState(event);
-
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
-
-    const highlights =
-        event.highlights
-            ?.map(
-                item =>
-                    `<li>✓ ${item}</li>`
-            )
-            .join("")
-        || "";
-
-
-    return `
-
-<div class="event-modal-image">
-
-<img
-    src="${event.image}"
-    alt="${event.title}">
-
-
-<span class="event-status ${stateClass}">
-    ${stateLabel}
-</span>
-
-</div>
-
-
-<div class="event-modal-body">
-
-<span class="label">
-    ${event.category}
-</span>
-
-
-<h2>
-    ${event.title}
-</h2>
-
-
-<p class="text-lg">
-    ${event.description}
-</p>
-
-
-<div class="event-modal-meta">
-
-<div>
-
-<strong>
-Data
-</strong>
-
-<span>
-${event.dateLabel}
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-Horário
-</strong>
-
-<span>
-${event.timeLabel}
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-Local
-</strong>
-
-<span>
-${event.venue}
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-Ingresso
-</strong>
-
-<span>
-${event.price}
-</span>
-
-</div>
-
-</div>
-
-
-${
-    highlights
-
-    ?
-
-    `
-
-    <div class="event-highlights">
-
-        <h3>
-            Destaques
-        </h3>
-
-        <ul>
-            ${highlights}
-        </ul>
-
-    </div>
-
-    `
-
-    :
-
-    ""
-}
-
-
-<div class="event-modal-actions">
-
-${
-    state === "past"
-
-    ?
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="memory"
-        data-event-id="${event.id}">
-
-        ✦ Ver Memórias
-
-    </button>
-
-    `
-
-    :
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="ticket">
-
-        Reservar Lugar
-
-    </button>
-
-    `
-}
-
-</div>
-
-</div>
-
-`;
-
-}
-
-
-/* ==========================================================
-   INTERACTIVIDADE PRINCIPAL
-   ========================================================== */
-
-function initialiseEvents(){
-
-    initialiseSchedule();
-
-    initialiseReservation();
-
-    initialiseShare();
-
-    initialiseTimeline();
-
-    initialiseModal();
-
-    initialiseMemoryButtons();
-
-    initialiseEventTicketButtons();
-
-    initialiseReveal();
-
-}
-
-
-/* ==========================================================
-   SCROLL PARA CRONOGRAMA
-   ========================================================== */
-
-function initialiseSchedule(){
-
-    document
-        .querySelectorAll(
-            '[data-action="schedule"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    document
-                        .getElementById("schedule")
-                        ?.scrollIntoView({
-                            behavior:"smooth"
-                        });
-
-                }
-            );
-
-        });
-
-}
-
-
-/* ==========================================================
-   RESERVA
-   ========================================================== */
-
-function initialiseReservation(){
-
-    document
-        .querySelectorAll(
-            '[data-action="ticket"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                openWhatsAppReservation
-            );
-
-        });
-
-}
-
-
-function initialiseEventTicketButtons(){
-
-    document
-        .querySelectorAll(
-            '[data-action="event-ticket"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                openWhatsAppReservation
-            );
-
-        });
-
-}
-
-
-function openWhatsAppReservation(){
-
-    const event =
-        getNearestEvent();
-
-
-    const title =
-        event?.title ||
-        "Evento AD Lifestyle";
-
-
-    const message =
-        encodeURIComponent(
-
-            `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${title}".`
-
+function bindEventButtons() {
+
+    document.querySelectorAll(
+        "[data-event-action]"
+    ).forEach(button => {
+
+        button.addEventListener(
+            "click",
+            handleEventAction
         );
 
+    });
 
-    window.open(
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
-        "_blank"
+}
+
+
+/* ==========================================================
+   ACÇÕES DOS BOTÕES
+   ========================================================== */
+
+function handleEventAction(event) {
+
+    const button = event.currentTarget;
+
+    const action = button.dataset.eventAction;
+
+    const eventId = button.dataset.eventId;
+
+    const selectedEvent = EVENTS_DATA.find(
+        item => item.id === eventId
     );
 
-}
-
-
-/* ==========================================================
-   PARTILHAR
-   ========================================================== */
-
-function initialiseShare(){
-
-    document
-        .querySelectorAll(
-            '[data-action="share"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                async ()=>{
-
-                    const event =
-                        getNearestEvent();
-
-
-                    const title =
-                        event?.title ||
-                        "Evento AD Lifestyle";
-
-
-                    const shareText =
-                        `${title} — ${event?.dateLabel || ""}, ${event?.location || ""}. Junta-te à AD Lifestyle!`;
-
-
-                    const shareUrl =
-                        window.location.href;
-
-
-                    if(
-                        navigator.share
-                    ){
-
-                        try{
-
-                            await navigator.share({
-
-                                title:
-                                    title,
-
-                                text:
-                                    shareText,
-
-                                url:
-                                    shareUrl
-
-                            });
-
-                        }
-
-                        catch(error){
-
-                            if(
-                                error?.name !==
-                                "AbortError"
-                            ){
-
-                                openWhatsAppShare(
-                                    shareText,
-                                    shareUrl
-                                );
-
-                            }
-
-                        }
-
-                        return;
-
-                    }
-
-
-                    openWhatsAppShare(
-                        shareText,
-                        shareUrl
-                    );
-
-                }
-            );
-
-        });
-
-}
-
-
-function openWhatsAppShare(
-    text,
-    url
-){
-
-    const message =
-        encodeURIComponent(
-            `${text}\n${url}`
-        );
-
-
-    window.open(
-        `https://wa.me/?text=${message}`,
-        "_blank"
-    );
-
-}
-
-
-/* ==========================================================
-   TIMELINE
-   ========================================================== */
-
-function initialiseTimeline(){
-
-    document
-        .querySelectorAll(
-            '[data-action="timeline"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    document
-                        .getElementById(
-                            "events-history"
-                        )
-                        ?.scrollIntoView({
-                            behavior:"smooth",
-                            block:"start"
-                        });
-
-                }
-            );
-
-        });
-
-}
-
-
-/* ==========================================================
-   MODAL
-   ========================================================== */
-
-function initialiseModal(){
-
-    document
-        .querySelectorAll(
-            '[data-action="details"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    const event =
-                        EVENTS_DATA.find(
-                            item =>
-                                item.id ===
-                                button.dataset.eventId
-                        );
-
-
-                    if(!event){
-
-                        return;
-
-                    }
-
-
-                    openEventModal(event);
-
-                }
-            );
-
-        });
-
-
-    document
-        .querySelectorAll(
-            '[data-action="close-modal"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                closeEventModal
-            );
-
-        });
-
-
-    document.addEventListener(
-        "keydown",
-        event=>{
-
-            if(
-                event.key === "Escape"
-            ){
-
-                closeEventModal();
-
-            }
-
-        }
-    );
-
-}
-
-
-/* ==========================================================
-   ABRIR MODAL
-   ========================================================== */
-
-function openEventModal(event){
-
-    const modal =
-        document.getElementById(
-            "event-modal"
-        );
-
-
-    const content =
-        document.getElementById(
-            "event-modal-content"
-        );
-
-
-    if(
-        !modal ||
-        !content
-    ){
-
+    if (!selectedEvent) {
         return;
+    }
+
+    switch (action) {
+
+        case "details":
+            openEventModal(selectedEvent);
+            break;
+
+        case "view":
+            openEventModal(selectedEvent);
+            break;
+
+        case "reserve":
+            openWhatsApp(selectedEvent);
+            break;
+
+        default:
+            console.warn(
+                "[AD LIFESTYLE] Acção desconhecida:",
+                action
+            );
 
     }
 
-
-    content.innerHTML =
-        buildEventModal(event);
-
-
-    modal.classList.add(
-        "is-open"
-    );
-
-
-    modal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-
-    document.body.classList.add(
-        "modal-open"
-    );
-
-
-    content
-        .querySelectorAll(
-            '[data-action="memory"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    openMemory(
-                        event
-                    );
-
-                }
-            );
-
-        });
-
-
-    content
-        .querySelectorAll(
-            '[data-action="ticket"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                openWhatsAppReservation
-            );
-
-        });
-
 }
 
 
 /* ==========================================================
-   FECHAR MODAL
+   WHATSAPP
    ========================================================== */
 
-function closeEventModal(){
+function openWhatsApp(event) {
 
-    const modal =
-        document.getElementById(
-            "event-modal"
-        );
-
-
-    if(!modal){
-
-        return;
-
-    }
-
-
-    modal.classList.remove(
-        "is-open"
-    );
-
-
-    modal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-
-    document.body.classList.remove(
-        "modal-open"
-    );
-
-}
-
-
-/* ==========================================================
-   MEMÓRIAS
-   ========================================================== */
-
-function initialiseMemoryButtons(){
-
-    document
-        .querySelectorAll(
-            '[data-action="memory"]'
-        )
-        .forEach(button=>{
-
-            button.addEventListener(
-                "click",
-                ()=>{
-
-                    const event =
-                        EVENTS_DATA.find(
-                            item =>
-                                item.id ===
-                                button.dataset.eventId
-                        );
-
-
-                    if(event){
-
-                        openMemory(
-                            event
-                        );
-
-                    }
-
-                }
-            );
-
-        });
-
-}
-
-
-function openMemory(event){
+    const message =
+        event.whatsappMessage ||
+        `Olá! Gostaria de saber mais informações sobre o evento ${event.title}.`;
 
     const url =
-        event.memoryUrl ||
-        SOCIALS.instagram;
-
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(
         url,
@@ -2277,169 +1041,837 @@ function openMemory(event){
 
 
 /* ==========================================================
-   ANIMAÇÕES REVEAL
+   MODAL
    ========================================================== */
 
-function initialiseReveal(){
+function openEventModal(event) {
 
-    if(
-        typeof IntersectionObserver ===
-        "undefined"
-    ){
+    const existingModal =
+        document.getElementById("event-modal");
 
-        document
-            .querySelectorAll(
-                ".reveal"
-            )
-            .forEach(element=>{
+    if (existingModal) {
+        existingModal.remove();
+    }
 
-                element.classList.add(
-                    "visible"
-                );
+    document.body.insertAdjacentHTML(
+        "beforeend",
+        buildEventModal(event)
+    );
 
-            });
+    requestAnimationFrame(() => {
+
+        const modal =
+            document.getElementById("event-modal");
+
+        if (modal) {
+
+            modal.classList.add(
+                "events-modal-visible"
+            );
+
+            document.body.classList.add(
+                "events-modal-open"
+            );
+
+        }
+
+    });
+
+    bindModalEvents();
+
+}
+
+
+/* ==========================================================
+   CONSTRUÇÃO DO MODAL
+   ========================================================== */
+
+function buildEventModal(event) {
+
+    const state = getEventState(event);
+
+    const highlightsHtml =
+        Array.isArray(event.highlights) &&
+        event.highlights.length
+            ? `
+                <div class="events-modal-highlights">
+
+                    <h4>
+                        Destaques
+                    </h4>
+
+                    <ul>
+
+                        ${event.highlights
+                            .map(item => `
+                                <li>
+                                    <span>✓</span>
+                                    <span>${item}</span>
+                                </li>
+                            `)
+                            .join("")
+                        }
+
+                    </ul>
+
+                </div>
+            `
+            : "";
+
+    const modalAction =
+        state === "past"
+            ? `
+                <button
+                    type="button"
+                    class="events-btn events-btn-primary"
+                    data-modal-action="close"
+                >
+                    Fechar
+                </button>
+            `
+            : `
+                <button
+                    type="button"
+                    class="events-btn events-btn-primary"
+                    data-modal-action="reserve"
+                    data-event-id="${event.id}"
+                >
+                    Reservar lugar
+                    <span>→</span>
+                </button>
+            `;
+
+    return `
+        <div
+            class="events-modal"
+            id="event-modal"
+            aria-hidden="true"
+        >
+
+            <div
+                class="events-modal-backdrop"
+                data-modal-action="close"
+            ></div>
+
+            <div
+                class="events-modal-dialog"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="event-modal-title"
+            >
+
+                <button
+                    type="button"
+                    class="events-modal-close"
+                    data-modal-action="close"
+                    aria-label="Fechar"
+                >
+                    ×
+                </button>
+
+                <div class="events-modal-header">
+
+                    <span class="events-card-category">
+                        ${event.category}
+                    </span>
+
+                    <span
+                        class="
+                            events-status
+                            ${
+                                state === "past"
+                                    ? "events-status-past"
+                                    : "events-status-upcoming"
+                            }
+                        "
+                    >
+                        ${
+                            state === "past"
+                                ? "Realizado"
+                                : "Próximo evento"
+                        }
+                    </span>
+
+                </div>
+
+                <div class="events-modal-date">
+
+                    <strong>
+                        ${event.date}
+                    </strong>
+
+                    <div>
+
+                        <span>
+                            ${event.month}
+                        </span>
+
+                        <small>
+                            ${event.year}
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="events-modal-body">
+
+                    <h2 id="event-modal-title">
+                        ${event.title}
+                    </h2>
+
+                    <h3>
+                        ${event.subtitle}
+                    </h3>
+
+                    <p class="events-modal-description">
+                        ${event.description}
+                    </p>
+
+                    <div class="events-modal-info">
+
+                        <div>
+
+                            <span>
+                                📅
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Data
+                                </small>
+
+                                <strong>
+                                    ${event.fullDate}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                🕒
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Horário
+                                </small>
+
+                                <strong>
+                                    ${event.time}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                📍
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Local
+                                </small>
+
+                                <strong>
+                                    ${event.location}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                🎟
+                            </span>
+
+                            <div>
+
+                                <small>
+                                    Ingresso
+                                </small>
+
+                                <strong>
+                                    ${event.price}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    ${highlightsHtml}
+
+                    <div class="events-modal-speaker">
+
+                        <span>
+                            Participação especial
+                        </span>
+
+                        <strong>
+                            ${event.speaker}
+                        </strong>
+
+                        <small>
+                            ${event.speakerRole}
+                        </small>
+
+                    </div>
+
+                </div>
+
+                <div class="events-modal-footer">
+
+                    ${modalAction}
+
+                    <button
+                        type="button"
+                        class="events-modal-share"
+                        data-modal-action="share"
+                        data-event-id="${event.id}"
+                    >
+                        Partilhar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+    `;
+
+}
+
+
+/* ==========================================================
+   EVENTOS DO MODAL
+   ========================================================== */
+
+function bindModalEvents() {
+
+    const modal =
+        document.getElementById("event-modal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.querySelectorAll(
+        "[data-modal-action]"
+    ).forEach(element => {
+
+        element.addEventListener(
+            "click",
+            handleModalAction
+        );
+
+    });
+
+}
+
+
+/* ==========================================================
+   ACÇÕES DO MODAL
+   ========================================================== */
+
+function handleModalAction(event) {
+
+    const element =
+        event.currentTarget;
+
+    const action =
+        element.dataset.modalAction;
+
+    if (action === "close") {
+
+        closeEventModal();
 
         return;
+    }
+
+    if (action === "reserve") {
+
+        const eventId =
+            element.dataset.eventId;
+
+        const selectedEvent =
+            EVENTS_DATA.find(
+                item => item.id === eventId
+            );
+
+        if (selectedEvent) {
+            openWhatsApp(selectedEvent);
+        }
+
+        return;
+    }
+
+    if (action === "share") {
+
+        const eventId =
+            element.dataset.eventId;
+
+        const selectedEvent =
+            EVENTS_DATA.find(
+                item => item.id === eventId
+            );
+
+        if (selectedEvent) {
+            shareEvent(selectedEvent);
+        }
 
     }
 
+}
+
+
+/* ==========================================================
+   FECHAR MODAL
+   ========================================================== */
+
+function closeEventModal() {
+
+    const modal =
+        document.getElementById("event-modal");
+
+    if (!modal) {
+        return;
+    }
+
+    modal.classList.remove(
+        "events-modal-visible"
+    );
+
+    document.body.classList.remove(
+        "events-modal-open"
+    );
+
+    setTimeout(() => {
+
+        modal.remove();
+
+    }, 250);
+
+}
+
+
+/* ==========================================================
+   PARTILHAR EVENTO
+   ========================================================== */
+
+async function shareEvent(event) {
+
+    const shareData = {
+
+        title:
+            `${event.title} — AD Lifestyle`,
+
+        text:
+            `${event.title} — ${event.subtitle}`,
+
+        url:
+            window.location.href
+
+    };
+
+    try {
+
+        if (
+            navigator.share &&
+            typeof navigator.share === "function"
+        ) {
+
+            await navigator.share(
+                shareData
+            );
+
+            return;
+        }
+
+    } catch (error) {
+
+        if (
+            error &&
+            error.name === "AbortError"
+        ) {
+            return;
+        }
+
+    }
+
+    try {
+
+        await navigator.clipboard.writeText(
+            window.location.href
+        );
+
+        showToast(
+            "Link copiado para a área de transferência."
+        );
+
+    } catch (error) {
+
+        console.warn(
+            "[AD LIFESTYLE] Não foi possível copiar o link.",
+            error
+        );
+
+        showToast(
+            "Não foi possível partilhar o evento."
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   TOAST
+   ========================================================== */
+
+function showToast(message) {
+
+    const existingToast =
+        document.querySelector(
+            ".events-toast"
+        );
+
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    const toast =
+        document.createElement("div");
+
+    toast.className =
+        "events-toast";
+
+    toast.textContent =
+        message;
+
+    document.body.appendChild(
+        toast
+    );
+
+    requestAnimationFrame(() => {
+
+        toast.classList.add(
+            "events-toast-visible"
+        );
+
+    });
+
+    setTimeout(() => {
+
+        toast.classList.remove(
+            "events-toast-visible"
+        );
+
+        setTimeout(() => {
+
+            toast.remove();
+
+        }, 250);
+
+    }, 3000);
+
+}
+
+
+/* ==========================================================
+   ANIMAÇÕES DE REVEAL
+   ========================================================== */
+
+function initialiseRevealAnimations() {
+
+    const elements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+    if (!elements.length) {
+        return;
+    }
+
+    if (
+        typeof IntersectionObserver ===
+        "undefined"
+    ) {
+
+        elements.forEach(element => {
+
+            element.classList.add(
+                "is-visible"
+            );
+
+        });
+
+        return;
+    }
 
     const observer =
         new IntersectionObserver(
+            entries => {
 
-            entries=>{
+                entries.forEach(entry => {
 
-                entries.forEach(
-                    entry=>{
+                    if (
+                        entry.isIntersecting
+                    ) {
 
-                        if(
-                            entry.isIntersecting
-                        ){
+                        entry.target.classList.add(
+                            "is-visible"
+                        );
 
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
+                        observer.unobserve(
+                            entry.target
+                        );
 
                     }
-                );
+
+                });
 
             },
-
             {
-                threshold:0.12
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             }
-
         );
 
+    elements.forEach(element => {
+
+        observer.observe(
+            element
+        );
+
+    });
+
+}
+
+
+/* ==========================================================
+   COUNTDOWNS
+   ========================================================== */
+
+function initialiseCountdowns() {
 
     document
         .querySelectorAll(
-            ".reveal"
+            "[data-countdown]"
         )
-        .forEach(
-            element =>
-                observer.observe(
-                    element
-                )
-        );
+        .forEach(element => {
+
+            const eventId =
+                element.dataset.countdown;
+
+            const event =
+                EVENTS_DATA.find(
+                    item => item.id === eventId
+                );
+
+            if (!event) {
+                return;
+            }
+
+            updateCountdown(
+                element,
+                event
+            );
+
+            const interval =
+                setInterval(() => {
+
+                    if (
+                        !document.body.contains(
+                            element
+                        )
+                    ) {
+
+                        clearInterval(
+                            interval
+                        );
+
+                        return;
+                    }
+
+                    updateCountdown(
+                        element,
+                        event
+                    );
+
+                }, 1000);
+
+        });
 
 }
 
 
 /* ==========================================================
-   API OPCIONAL
+   ACTUALIZAÇÃO DO COUNTDOWN
    ========================================================== */
 
-export function addEvent(event){
+function updateCountdown(
+    element,
+    event
+) {
 
-    if(
-        !event ||
-        !event.id ||
-        !event.title ||
-        !event.start
-    ){
-
-        console.warn(
-            "AD Lifestyle Events: evento inválido."
+    const target =
+        new Date(
+            `${event.year}-${getMonthNumber(event.month)}-${event.date}T${convertTime(event.time)}:00`
         );
 
-        return false;
+    const now =
+        new Date();
 
+    const difference =
+        target.getTime() -
+        now.getTime();
+
+    if (difference <= 0) {
+
+        element.innerHTML = `
+            <span>
+                Evento realizado
+            </span>
+        `;
+
+        return;
     }
 
-
-    const exists =
-        EVENTS_DATA.some(
-            item =>
-                item.id === event.id
+    const totalSeconds =
+        Math.floor(
+            difference / 1000
         );
 
-
-    if(exists){
-
-        console.warn(
-            `AD Lifestyle Events: o evento "${event.id}" já existe.`
+    const days =
+        Math.floor(
+            totalSeconds / 86400
         );
 
-        return false;
+    const hours =
+        Math.floor(
+            (totalSeconds % 86400) / 3600
+        );
 
-    }
+    const minutes =
+        Math.floor(
+            (totalSeconds % 3600) / 60
+        );
 
+    const seconds =
+        totalSeconds % 60;
 
-    EVENTS_DATA.push(
-        event
-    );
+    element.innerHTML = `
+        <div class="events-countdown-item">
 
+            <strong>
+                ${String(days).padStart(2, "0")}
+            </strong>
 
-    return true;
+            <span>
+                Dias
+            </span>
+
+        </div>
+
+        <div class="events-countdown-item">
+
+            <strong>
+                ${String(hours).padStart(2, "0")}
+            </strong>
+
+            <span>
+                Horas
+            </span>
+
+        </div>
+
+        <div class="events-countdown-item">
+
+            <strong>
+                ${String(minutes).padStart(2, "0")}
+            </strong>
+
+            <span>
+                Min.
+            </span>
+
+        </div>
+
+        <div class="events-countdown-item">
+
+            <strong>
+                ${String(seconds).padStart(2, "0")}
+            </strong>
+
+            <span>
+                Seg.
+            </span>
+
+        </div>
+    `;
 
 }
 
 
 /* ==========================================================
-   ACTUALIZAR MEMÓRIA DE UM EVENTO
+   TECLADO — ESC FECHA MODAL
    ========================================================== */
 
-export function updateEventMemory(
-    eventId,
-    memoryUrl
-){
+document.addEventListener(
+    "keydown",
+    event => {
 
-    const event =
-        EVENTS_DATA.find(
-            item =>
-                item.id === eventId
-        );
+        if (
+            event.key === "Escape"
+        ) {
 
+            const modal =
+                document.getElementById(
+                    "event-modal"
+                );
 
-    if(!event){
+            if (modal) {
+                closeEventModal();
+            }
 
-        console.warn(
-            `AD Lifestyle Events: evento "${eventId}" não encontrado.`
-        );
-
-        return false;
+        }
 
     }
-
-
-    event.memoryUrl =
-        memoryUrl;
-
-
-    return true;
-
-}
+);
 
 
 /* ==========================================================
-   FIM
+   API PÚBLICA OPCIONAL
    ========================================================== */
-```
+
+export {
+
+    EVENTS_DATA,
+
+    getNearestEvent,
+
+    openEventModal,
+
+    closeEventModal,
+
+    shareEvent
+
+};
+
+
+/* ==========================================================
+   FIM — EVENTS.JS
+   ========================================================== */
