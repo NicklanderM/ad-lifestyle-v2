@@ -1,6 +1,6 @@
 /* ==========================================================
    AD LIFESTYLE — CONTACT.JS
-   Luxury Contact Page
+   Premium Contact Page
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -14,6 +14,7 @@ export function loadContact(){
     app.innerHTML = `
         ${hero()}
         ${contacts()}
+        ${socials()}
         ${location()}
         ${form()}
         ${faq()}
@@ -32,7 +33,7 @@ function hero(){
 
 return `
 
-<section class="hero page">
+<section class="hero page contact-hero">
 
     <div class="aurora">
 
@@ -47,23 +48,18 @@ return `
         <div class="hero-content">
 
             <span class="badge">
-
                 Contacte a AD Lifestyle
-
             </span>
 
             <h1 class="hero-title">
-
                 Estamos prontos para
                 falar consigo.
-
             </h1>
 
             <p class="hero-sub">
-
-                Esclareça dúvidas, solicite informações sobre
-                produtos, serviços ou participe nos nossos eventos.
-
+                Tem alguma questão, pretende conhecer os nossos
+                produtos ou deseja saber mais sobre as nossas
+                oportunidades? Estamos disponíveis para ajudar.
             </p>
 
             <div class="hero-actions">
@@ -72,11 +68,7 @@ return `
                     class="btn btn-primary"
                     data-action="whatsapp">
 
-                    <span class="btn-icon">
-
-                        ${icon("whatsapp")}
-
-                    </span>
+                    ${icon("whatsapp")}
 
                     WhatsApp
 
@@ -86,13 +78,9 @@ return `
                     class="btn btn-glass"
                     data-action="form">
 
-                    <span class="btn-icon">
+                    ${icon("message")}
 
-                        ${icon("message")}
-
-                    </span>
-
-                    Enviar Mensagem
+                    Enviar mensagem
 
                 </button>
 
@@ -130,68 +118,61 @@ function contacts(){
 
 return `
 
-<section class="section">
+<section class="section contact-section">
 
 <div class="container">
 
-<div class="section-center reveal">
+    <div class="section-center reveal">
 
-<span class="label">
+        <span class="label">
+            Contactos
+        </span>
 
-Informações
+        <h2 class="section-title">
+            Fale directamente connosco
+        </h2>
 
-</span>
+        <p class="text mt-2">
+            Escolha o canal que melhor se adapta à sua necessidade.
+        </p>
 
-<h2 class="section-title">
+    </div>
 
-Fale connosco pelos nossos canais oficiais
+    <div class="grid grid-2 contact-grid mt-5">
 
-</h2>
+        ${contact(
+            icon("whatsapp"),
+            "WhatsApp",
+            "+244 924 964 666",
+            "Atendimento directo",
+            "whatsapp"
+        )}
 
-<p class="text mt-2">
+        ${contact(
+            icon("email"),
+            "E-mail",
+            "adbzzworlddistribuidor@email.com",
+            "Informações e pedidos",
+            "email"
+        )}
 
-Estamos disponíveis para esclarecer dúvidas, apresentar
-soluções, receber pedidos e orientar cada contacto.
+        ${contact(
+            icon("location"),
+            "Localização",
+            "Prenda – Catambor",
+            "Junto ao Arreiou",
+            "location"
+        )}
 
-</p>
+        ${contact(
+            icon("clock"),
+            "Horário",
+            "08h00 – 18h00",
+            "Segunda a Sábado",
+            "clock"
+        )}
 
-</div>
-
-<div class="grid grid-2 mt-5">
-
-${contact(
-    icon("whatsapp"),
-    "WhatsApp",
-    "+244 924 964 666",
-    "Atendimento directo",
-    "whatsapp"
-)}
-
-${contact(
-    icon("email"),
-    "E-mail",
-    "adbzzworlddistribuidor@email.com",
-    "Pedidos e informações",
-    "email"
-)}
-
-${contact(
-    icon("location"),
-    "Localização",
-    "Cassequel–Teixeira, Luanda",
-    "Angola",
-    "location"
-)}
-
-${contact(
-    icon("clock"),
-    "Horário de atendimento",
-    "Segunda a Sábado",
-    "08h00–18h00",
-    "clock"
-)}
-
-</div>
+    </div>
 
 </div>
 
@@ -205,43 +186,145 @@ function contact(iconSvg,title,value,description,type){
 
 return `
 
-<div class="card reveal contact-card">
+<div
+    class="card reveal contact-card"
+    data-contact="${type}">
 
-    <div class="between">
+    <div class="contact-card-top">
 
-        <div class="service-icon">
-
+        <div class="service-icon contact-icon">
             ${iconSvg}
-
         </div>
 
-        <span class="contact-arrow">
-
+        <span class="contact-card-arrow">
             ${icon("arrow")}
-
         </span>
 
     </div>
 
-    <h3 class="mt-2">
+    <div class="contact-card-body">
 
-        ${title}
+        <h3>
+            ${title}
+        </h3>
 
-    </h3>
+        <p class="contact-value">
+            ${value}
+        </p>
 
-    <p class="text mt-1">
+        <span class="contact-description">
+            ${description}
+        </span>
 
-        ${value}
-
-    </p>
-
-    <small class="text contact-description">
-
-        ${description}
-
-    </small>
+    </div>
 
 </div>
+
+`;
+
+}
+
+/* ==========================================================
+   REDES SOCIAIS
+   ========================================================== */
+
+function socials(){
+
+return `
+
+<section class="section-sm">
+
+<div class="container">
+
+    <div class="social-panel reveal">
+
+        <div class="social-intro">
+
+            <span class="label">
+                Redes sociais
+            </span>
+
+            <h3>
+                Acompanhe a AD Lifestyle
+            </h3>
+
+            <p class="text">
+                Conteúdos, novidades, produtos, eventos
+                e oportunidades.
+            </p>
+
+        </div>
+
+        <div class="social-links">
+
+            ${social(
+                "facebook",
+                "Facebook",
+                "AD Lifestyle",
+                "https://web.facebook.com/ad.ambassadoracademy21/"
+            )}
+
+            ${social(
+                "instagram",
+                "Instagram",
+                "@ad.ambassadoracademy21",
+                "https://www.instagram.com/ad.ambassadoracademy21/"
+            )}
+
+            ${social(
+                "tiktok",
+                "TikTok",
+                "@adbdlifestyle",
+                "https://www.tiktok.com/@adbdlifestyle"
+            )}
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+`;
+
+}
+
+function social(iconType,title,handle,url){
+
+return `
+
+<a
+    href="${url}"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="social-link">
+
+    <span class="social-icon">
+
+        ${icon(iconType)}
+
+    </span>
+
+    <span class="social-info">
+
+        <strong>
+            ${title}
+        </strong>
+
+        <small>
+            ${handle}
+        </small>
+
+    </span>
+
+    <span class="social-arrow">
+
+        ${icon("arrow")}
+
+    </span>
+
+</a>
 
 `;
 
@@ -255,153 +338,148 @@ function location(){
 
 return `
 
-<section class="section">
+<section class="section location-section">
 
 <div class="container">
 
-<div class="section-center reveal">
+    <div class="section-center reveal">
 
-<span class="label">
-
-Onde estamos
-
-</span>
-
-<h2 class="section-title">
-
-Visite a AD Lifestyle
-
-</h2>
-
-<p class="text mt-2">
-
-Encontre-nos em Luanda através das coordenadas oficiais
-da nossa localização.
-
-</p>
-
-</div>
-
-<div class="split mt-5">
-
-    <div class="split-content reveal-left">
-
-        <span class="badge badge-gold">
-
-            Localização oficial
-
+        <span class="label">
+            Localização
         </span>
 
-        <h3 class="section-title mt-2">
-
-            Cassequel–Teixeira
-
-        </h3>
+        <h2 class="section-title">
+            Encontre-nos em Luanda
+        </h2>
 
         <p class="text mt-2">
-
-            Luanda, Angola
-
+            Estamos localizados em Prenda – Catambor,
+            junto ao Arreiou.
         </p>
-
-        <div class="location-details mt-4">
-
-            <div class="icon-item">
-
-                <div class="icon-circle">
-
-                    ${icon("location")}
-
-                </div>
-
-                <div>
-
-                    <strong>Coordenadas</strong>
-
-                    <p class="text">
-
-                        8°50'06.90"S 13°13'38.93"E
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="icon-item">
-
-                <div class="icon-circle">
-
-                    ${icon("navigation")}
-
-                </div>
-
-                <div>
-
-                    <strong>Referência</strong>
-
-                    <p class="text">
-
-                        Cassequel–Teixeira, Luanda
-
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="hero-actions mt-4">
-
-                <button
-                    class="btn btn-primary"
-                    data-action="maps">
-
-                    ${icon("navigation")}
-
-                    Abrir no Google Maps
-
-                </button>
-
-            </div>
-
-        </div>
 
     </div>
 
-    <div class="split-image reveal-right">
+    <div class="location-layout mt-5">
 
-        <div class="map-card">
+        <!-- INFORMAÇÃO -->
 
-            <div class="map-header">
+        <div class="location-information reveal-left">
+
+            <div class="location-heading">
+
+                <span class="location-symbol">
+                    ${icon("location")}
+                </span>
 
                 <div>
 
                     <span class="label">
+                        AD Lifestyle
+                    </span>
 
+                    <h3>
+                        Prenda – Catambor
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <div class="location-list">
+
+                <div class="location-item">
+
+                    <span class="location-item-icon">
+                        ${icon("location")}
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Morada
+                        </strong>
+
+                        <p>
+                            Luanda, Angola
+                        </p>
+
+                        <p>
+                            Prenda – Catambor,
+                            junto ao Arreiou
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="location-item">
+
+                    <span class="location-item-icon">
+                        ${icon("navigation")}
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Coordenadas
+                        </strong>
+
+                        <p>
+                            8°50'06.90"S
+                            13°13'38.93"E
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <button
+                class="btn btn-primary location-button"
+                data-action="maps">
+
+                ${icon("navigation")}
+
+                Abrir no Google Maps
+
+            </button>
+
+        </div>
+
+
+        <!-- MAPA -->
+
+        <div class="location-map-card reveal-right">
+
+            <div class="map-topbar">
+
+                <div>
+
+                    <span>
                         LOCALIZAÇÃO
-
                     </span>
 
                     <strong>
-
                         AD Lifestyle
-
                     </strong>
 
                 </div>
 
-                <span class="map-pin">
+                <div class="map-status">
 
-                    ${icon("location")}
+                    <span></span>
 
-                </span>
+                    Luanda
+
+                </div>
 
             </div>
 
             <div class="map-frame">
 
                 <iframe
-                    title="Localização da AD Lifestyle"
+                    title="Localização AD Lifestyle"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925&layer=mapnik&marker=-8.83525%2C13.22748"
                     loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade">
@@ -409,31 +487,33 @@ da nossa localização.
 
             </div>
 
-            <div class="map-footer">
+            <div class="map-bottom">
 
-                <span>
+                <div>
 
                     ${icon("location")}
 
-                    Cassequel–Teixeira · Luanda
+                    <span>
+                        Prenda – Catambor
+                    </span>
 
-                </span>
+                </div>
 
-                <span>
+                <div>
 
                     ${icon("check")}
 
-                    Localização oficial
+                    <span>
+                        Junto ao Arreiou
+                    </span>
 
-                </span>
+                </div>
 
             </div>
 
         </div>
 
     </div>
-
-</div>
 
 </div>
 
@@ -455,131 +535,115 @@ return `
 
 <div class="container-sm">
 
-<div class="glass-panel">
+<div class="glass-panel contact-form-panel">
 
-<div class="section-center">
+    <div class="section-center">
 
-<span class="label">
+        <span class="label">
+            Mensagem
+        </span>
 
-Mensagem
+        <h2 class="section-title">
+            Envie-nos uma mensagem
+        </h2>
 
-</span>
+        <p class="text mt-2">
+            Preencha os seus dados. A mensagem será encaminhada
+            directamente para o nosso WhatsApp.
+        </p>
 
-<h2 class="section-title">
+    </div>
 
-Envie-nos uma mensagem
+    <form id="contactForm" class="mt-5">
 
-</h2>
+        <div class="grid grid-2">
 
-<p class="text mt-2">
+            <div class="input-group">
 
-Preencha os seus dados e entraremos em contacto consigo
-através do WhatsApp.
+                <label for="name">
+                    Nome
+                </label>
 
-</p>
+                <input
+                    type="text"
+                    class="input"
+                    id="name"
+                    placeholder="O seu nome">
 
-</div>
+            </div>
 
-<form id="contactForm" class="mt-5">
+            <div class="input-group">
 
-<div class="grid grid-2">
+                <label for="phone">
+                    Telefone
+                </label>
 
-<div class="input-group">
+                <input
+                    type="tel"
+                    class="input"
+                    id="phone"
+                    placeholder="+244">
 
-<label for="name">
+            </div>
 
-Nome
+        </div>
 
-</label>
+        <div class="input-group mt-3">
 
-<input
-type="text"
-class="input"
-id="name"
-placeholder="O seu nome">
+            <label for="email">
+                E-mail
+            </label>
 
-</div>
+            <input
+                type="email"
+                class="input"
+                id="email"
+                placeholder="exemplo@email.com">
 
-<div class="input-group">
+        </div>
 
-<label for="phone">
+        <div class="input-group mt-3">
 
-Telefone
+            <label for="subject">
+                Assunto
+            </label>
 
-</label>
+            <input
+                type="text"
+                class="input"
+                id="subject"
+                placeholder="Como podemos ajudar?">
 
-<input
-type="tel"
-class="input"
-id="phone"
-placeholder="+244">
+        </div>
 
-</div>
+        <div class="input-group mt-3">
 
-</div>
+            <label for="message">
+                Mensagem
+            </label>
 
-<div class="input-group mt-3">
+            <textarea
+                class="input textarea"
+                id="message"
+                placeholder="Escreva aqui a sua mensagem..."></textarea>
 
-<label for="email">
+        </div>
 
-E-mail
+        <div class="center mt-4">
 
-</label>
+            <button
+                type="submit"
+                class="btn btn-primary">
 
-<input
-type="email"
-class="input"
-id="email"
-placeholder="exemplo@email.com">
+                ${icon("whatsapp")}
 
-</div>
+                Enviar para WhatsApp
 
-<div class="input-group mt-3">
+            </button>
 
-<label for="subject">
+        </div>
 
-Assunto
-
-</label>
-
-<input
-type="text"
-class="input"
-id="subject"
-placeholder="Como podemos ajudar?">
-
-</div>
-
-<div class="input-group mt-3">
-
-<label for="message">
-
-Mensagem
-
-</label>
-
-<textarea
-class="input textarea"
-id="message"
-placeholder="Escreva aqui a sua mensagem..."></textarea>
-
-</div>
-
-<div class="center mt-4">
-
-<button
-type="submit"
-class="btn btn-primary">
-
-${icon("whatsapp")}
-
-Enviar para WhatsApp
-
-</button>
-
-</div>
-
-</form>
+    </form>
 
 </div>
 
@@ -603,51 +667,41 @@ return `
 
 <div class="container-sm">
 
-<div class="section-center">
+    <div class="section-center">
 
-<span class="label">
+        <span class="label">
+            Perguntas Frequentes
+        </span>
 
-Perguntas Frequentes
+        <h2 class="section-title">
+            Antes de nos contactar
+        </h2>
 
-</span>
+    </div>
 
-<h2 class="section-title">
+    <div class="faq mt-5">
 
-Antes de nos contactar
+        ${question(
+            "Como posso comprar os produtos?",
+            "Pode adquirir os nossos produtos através do WhatsApp ou junto de um distribuidor oficial."
+        )}
 
-</h2>
+        ${question(
+            "Realizam entregas em Luanda?",
+            "Sim. As entregas são organizadas de acordo com a disponibilidade e localização."
+        )}
 
-<p class="text mt-2">
+        ${question(
+            "Como participar nos eventos?",
+            "Basta reservar o seu lugar através do WhatsApp e efectuar a confirmação da inscrição."
+        )}
 
-Algumas respostas rápidas para as questões mais frequentes.
+        ${question(
+            "Posso tornar-me parceiro?",
+            "Sim. Entre em contacto connosco para conhecer a oportunidade de negócios internacionais."
+        )}
 
-</p>
-
-</div>
-
-<div class="faq mt-5">
-
-${question(
-"Como posso comprar os produtos?",
-"Pode adquirir os nossos produtos através do WhatsApp ou junto de um distribuidor oficial."
-)}
-
-${question(
-"Realizam entregas em Luanda?",
-"Sim. As entregas são organizadas de acordo com a disponibilidade e localização."
-)}
-
-${question(
-"Como participar nos eventos?",
-"Basta reservar o seu lugar através do WhatsApp e efectuar a confirmação da inscrição."
-)}
-
-${question(
-"Posso tornar-me parceiro?",
-"Sim. Entre em contacto connosco para conhecer a oportunidade de negócios internacionais."
-)}
-
-</div>
+    </div>
 
 </div>
 
@@ -663,33 +717,27 @@ return `
 
 <div class="faq-item">
 
-<button
-class="faq-question"
-type="button">
+    <button
+        class="faq-question"
+        type="button">
 
-<span>
+        <span>
+            ${q}
+        </span>
 
-${q}
+        <span class="faq-plus">
+            +
+        </span>
 
-</span>
+    </button>
 
-<span class="faq-plus">
+    <div class="faq-answer">
 
-+
+        <p>
+            ${a}
+        </p>
 
-</span>
-
-</button>
-
-<div class="faq-answer">
-
-<p>
-
-${a}
-
-</p>
-
-</div>
+    </div>
 
 </div>
 
@@ -709,48 +757,42 @@ return `
 
 <div class="container">
 
-<div class="showcase">
+    <div class="showcase">
 
-<div class="showcase-bg"></div>
+        <div class="showcase-bg"></div>
 
-<div class="showcase-content section-center">
+        <div class="showcase-content section-center">
 
-<span class="badge badge-gold">
+            <span class="badge badge-gold">
+                AD Lifestyle
+            </span>
 
-AD Lifestyle
+            <h2 class="section-title mt-2">
+                Vamos conversar.
+            </h2>
 
-</span>
+            <p class="text-lg">
+                Estamos a um contacto de distância.
+                Fale connosco e descubra como podemos ajudar.
+            </p>
 
-<h2 class="section-title mt-2">
+            <div class="hero-actions center mt-4">
 
-Vamos crescer juntos.
+                <button
+                    class="btn btn-primary"
+                    data-action="whatsapp">
 
-</h2>
+                    ${icon("whatsapp")}
 
-<p class="text-lg">
+                    Iniciar conversa
 
-A sua jornada de saúde, bem-estar e desenvolvimento
-começa com uma simples conversa.
+                </button>
 
-</p>
+            </div>
 
-<div class="hero-actions center mt-4">
+        </div>
 
-<button
-class="btn btn-primary"
-data-action="whatsapp">
-
-${icon("whatsapp")}
-
-Iniciar Conversa
-
-</button>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
@@ -774,8 +816,8 @@ function icon(type){
                 C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.1 1.6 5.8L.1 24
                 l6.5-1.7a11.9 11.9 0 0 0 5.5 1.4h.1
                 c6.6 0 11.9-5.3 11.9-11.9
-                0-3.2-1.3-6.1-3.6-8.3Z
-                M12.2 21.6h-.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.9 1
+                0-3.2-1.3-6.1-3.6-8.3ZM12.2 21.6h-.1
+                c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.9 1
                 1-3.8-.2-.3a9.7 9.7 0 1 1 8.3 4.6Zm5.3-7.3
                 c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2
                 -.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1
@@ -790,6 +832,28 @@ function icon(type){
             </svg>
         `,
 
+        facebook: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v2H6v4h3v5h4v-5h3.3l.7-4H13V9c0-.7.3-1 1-1Z"/>
+            </svg>
+        `,
+
+        instagram: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="5"/>
+                <circle cx="12" cy="12" r="4"/>
+                <circle cx="17.5" cy="6.5" r="1"/>
+            </svg>
+        `,
+
+        tiktok: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M15 3h3c.3 1.7 1.3 3 3 3.7V10
+                c-1.1-.1-2.1-.5-3-1v6.2A6.8 6.8 0 1 1 12 8.5v3.1
+                a3.8 3.8 0 1 0 3 3.7V3Z"/>
+            </svg>
+        `,
+
         email: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 4H4a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h16
@@ -801,13 +865,8 @@ function icon(type){
 
         location: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 1.5A8.5 8.5 0 0 0 3.5 10
-                c0 6.1 8.5 12.5 8.5 12.5S20.5 16.1 20.5 10
-                A8.5 8.5 0 0 0 12 1.5Zm0 18.1
-                C9.5 17.5 5.5 13.3 5.5 10a6.5 6.5 0 1 1 13 0
-                c0 3.3-4 7.5-6.5 9.6Zm0-13.1
-                A3.5 3.5 0 1 0 12 13.5 3.5 3.5 0 0 0 12 6.5Zm0 5
-                a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"/>
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.8 8 12 8 12s8-6.2 8-12
+                a8 8 0 0 0-8-8Zm0 11a3 3 0 1 1 3-3 3 3 0 0 1-3 3Z"/>
             </svg>
         `,
 
@@ -828,10 +887,9 @@ function icon(type){
 
         message: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20 3H4a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h3v3
-                l4-3h9a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 12
-                a1 1 0 0 1-1 1h-9.7L9 17.5V16H4a1 1 0 0 1-1-1V6
-                a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v9Z"/>
+                <path d="M20 3H4a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h3v3l4-3h9
+                a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Zm1 12a1 1 0 0 1-1 1h-9.7L9
+                17.5V16H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v9Z"/>
             </svg>
         `,
 
@@ -861,13 +919,9 @@ function icon(type){
 function initialiseContact(){
 
     initialiseFAQ();
-
     initialiseWhatsApp();
-
     initialiseForm();
-
     initialiseMaps();
-
     initialiseScroll();
 
 }
@@ -878,17 +932,17 @@ function initialiseContact(){
 
 function initialiseFAQ(){
 
-    const items=document.querySelectorAll(".faq-item");
+    const items = document.querySelectorAll(".faq-item");
 
-    items.forEach(item=>{
+    items.forEach(item => {
 
-        const button=item.querySelector(".faq-question");
+        const button = item.querySelector(".faq-question");
 
-        button.addEventListener("click",()=>{
+        button.addEventListener("click", () => {
 
-            items.forEach(other=>{
+            items.forEach(other => {
 
-                if(other!==item){
+                if(other !== item){
 
                     other.classList.remove("active");
 
@@ -912,12 +966,12 @@ function initialiseScroll(){
 
     document
         .querySelector('[data-action="form"]')
-        ?.addEventListener("click",()=>{
+        ?.addEventListener("click", () => {
 
             document
                 .getElementById("contact-form")
                 ?.scrollIntoView({
-                    behavior:"smooth"
+                    behavior: "smooth"
                 });
 
         });
@@ -932,9 +986,9 @@ function initialiseWhatsApp(){
 
     document
         .querySelectorAll('[data-action="whatsapp"]')
-        .forEach(button=>{
+        .forEach(button => {
 
-            button.addEventListener("click",()=>{
+            button.addEventListener("click", () => {
 
                 window.open(
                     "https://wa.me/244924964666",
@@ -955,10 +1009,10 @@ function initialiseMaps(){
 
     document
         .querySelector('[data-action="maps"]')
-        ?.addEventListener("click",()=>{
+        ?.addEventListener("click", () => {
 
             window.open(
-                "https://www.google.com/maps?q=8.83525,-13.22748",
+                "https://www.google.com/maps?q=-8.83525,13.22748",
                 "_blank"
             );
 
@@ -972,21 +1026,30 @@ function initialiseMaps(){
 
 function initialiseForm(){
 
-    const form=document.getElementById("contactForm");
+    const form = document.getElementById("contactForm");
 
     if(!form) return;
 
-    form.addEventListener("submit",e=>{
+    form.addEventListener("submit", e => {
 
         e.preventDefault();
 
-        const name=document.getElementById("name").value.trim();
-        const phone=document.getElementById("phone").value.trim();
-        const email=document.getElementById("email").value.trim();
-        const subject=document.getElementById("subject").value.trim();
-        const message=document.getElementById("message").value.trim();
+        const name =
+            document.getElementById("name").value.trim();
 
-        const text=encodeURIComponent(
+        const phone =
+            document.getElementById("phone").value.trim();
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const subject =
+            document.getElementById("subject").value.trim();
+
+        const message =
+            document.getElementById("message").value.trim();
+
+        const text = encodeURIComponent(
 
 `Olá AD Lifestyle!
 
