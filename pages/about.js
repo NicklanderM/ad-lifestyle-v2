@@ -254,19 +254,13 @@ return `
 
         </div>
 
-        <div class="split mt-5">
+               <div class="boss-chefe">
 
-            <div class="split-image reveal-left">
+                    <img
+                        src="assets/images/abdoulahi.png"
+                        alt="CEO & Founder ">
 
-                <div class="card ceo-card">
-
-                    <div class="avatar ceo-avatar">
-
-                        <img
-                            src="assets/images/abdoulahi.png"
-                            alt="Abdoulahi Doucoure — CEO da AD Lifestyle">
-
-                    </div>
+                </div>
 
                     <span class="badge badge-gold mt-3">
 
