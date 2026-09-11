@@ -13,7 +13,7 @@ import { loadHome } from "../pages/home.js";
 import { loadServices } from "../pages/services.js";
 import { loadEvents } from "../pages/events.js";
 import { loadContact } from "../pages/contact.js";
-import { loadContact } from "../pages/about.js";
+import { loadAbout } from "../pages/about.js";
 
 import { loadAngel } from "../pages/products/angel.js";
 import { loadEzeno } from "../pages/products/ezeno.js";
