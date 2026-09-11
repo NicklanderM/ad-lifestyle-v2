@@ -331,10 +331,8 @@ function createFooter(){
 
                         </a>
 
-                        <a href="">
-
-                            WhatsApp
-
+                       <a href="#" onclick="AD.whatsapp('Olá AD Lifestyle!'); return false;">
+                        WhatsApp
                         </a>
                                                 <a href="https://web.facebook.com/ad.ambassadoracademy21">
 
