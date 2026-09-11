@@ -1,4 +1,3 @@
-```javascript
 /* ==========================================================
    AD LIFESTYLE — EVENTS.JS
    Premium Events Page
@@ -35,10 +34,6 @@ const SOCIALS = {
    ========================================================== */
 
 const EVENTS_DATA = [
-
-    /* ======================================================
-       EVENTO PASSADO
-       ====================================================== */
 
     {
         id: "dupla-oportunidade-agosto-2026",
@@ -80,9 +75,6 @@ const EVENTS_DATA = [
         price:
             "2.500 Kz",
 
-        status:
-            "past",
-
         memoryUrl:
             "",
 
@@ -90,23 +82,12 @@ const EVENTS_DATA = [
             "Uma experiência marcada por conhecimento, networking e novas perspectivas.",
 
         highlights: [
-
             "Saúde e bem-estar",
-
             "Medicina holística",
-
             "Negócios internacionais",
-
             "Networking"
-
         ]
-
     },
-
-
-    /* ======================================================
-       EVENTO PRÓXIMO
-       ====================================================== */
 
     {
         id:
@@ -151,9 +132,6 @@ const EVENTS_DATA = [
         price:
             "2.500 Kz",
 
-        status:
-            "upcoming",
-
         memoryUrl:
             "",
 
@@ -161,27 +139,17 @@ const EVENTS_DATA = [
             "Saúde, bem-estar, longevidade, liderança e negócios internacionais.",
 
         highlights: [
-
             "Saúde",
-
             "Bem-estar",
-
             "Longevidade",
-
             "Negócios internacionais"
-
         ],
 
         speakers: [
-
             "Dr. Mike Mahindo",
-
             "A. Abdoulahi",
-
             "Academy 21"
-
         ]
-
     }
 
 ];
@@ -191,50 +159,34 @@ const EVENTS_DATA = [
    ENTRADA PRINCIPAL
    ========================================================== */
 
-export function loadEvents(){
+export function loadEvents() {
 
     applyTheme("angel");
 
-    const app =
-        document.getElementById("app");
+    const app = document.getElementById("app");
 
-
-    if(!app){
+    if (!app) {
 
         console.error(
             "AD Lifestyle Events: elemento #app não encontrado."
         );
 
         return;
-
     }
 
-
     app.innerHTML = `
-
         ${hero()}
-
         ${eventsTimeline()}
-
         ${overview()}
-
         ${schedule()}
-
         ${speakers()}
-
         ${venue()}
-
         ${tickets()}
-
         ${cta()}
-
         ${eventModal()}
-
     `;
 
-
     initialiseEvents();
-
 }
 
 
@@ -242,37 +194,21 @@ export function loadEvents(){
    UTILITÁRIOS DE DATA
    ========================================================== */
 
-function getEventState(event){
+function getEventState(event) {
 
-    const now =
-        new Date();
+    const now = new Date();
+    const start = new Date(event.start);
+    const end = new Date(event.end);
 
-    const start =
-        new Date(event.start);
-
-    const end =
-        new Date(event.end);
-
-
-    if(now < start){
-
+    if (now < start) {
         return "upcoming";
-
     }
 
-
-    if(
-        now >= start &&
-        now <= end
-    ){
-
+    if (now >= start && now <= end) {
         return "live";
-
     }
-
 
     return "past";
-
 }
 
 
@@ -280,17 +216,12 @@ function getEventState(event){
    EVENTOS ORDENADOS
    ========================================================== */
 
-function getSortedEvents(){
+function getSortedEvents() {
 
     return [...EVENTS_DATA].sort(
-
-        (a,b) =>
-
-            new Date(a.start) -
-            new Date(b.start)
-
+        (a, b) =>
+            new Date(a.start) - new Date(b.start)
     );
-
 }
 
 
@@ -298,68 +229,57 @@ function getSortedEvents(){
    EVENTO MAIS PRÓXIMO
    ========================================================== */
 
-function getNearestEvent(){
+function getNearestEvent() {
 
-    const now =
-        new Date();
+    const now = new Date();
 
+    /*
+     * Primeiro: evento que está a decorrer.
+     */
+    const live = EVENTS_DATA
+        .filter(event => {
 
-    const upcoming =
-        EVENTS_DATA
+            const start = new Date(event.start);
+            const end = new Date(event.end);
 
-            .filter(
-                event =>
-                    new Date(event.start) > now
-            )
+            return now >= start && now <= end;
 
-            .sort(
-                (a,b) =>
-                    new Date(a.start) -
-                    new Date(b.start)
-            );
+        })
+        .sort(
+            (a, b) =>
+                new Date(a.start) - new Date(b.start)
+        );
 
-
-    if(upcoming.length){
-
-        return upcoming[0];
-
-    }
-
-
-    const live =
-        EVENTS_DATA
-
-            .filter(event => {
-
-                const start =
-                    new Date(event.start);
-
-                const end =
-                    new Date(event.end);
-
-                return (
-                    now >= start &&
-                    now <= end
-                );
-
-            });
-
-
-    if(live.length){
-
+    if (live.length) {
         return live[0];
-
     }
 
+    /*
+     * Segundo: próximo evento.
+     */
+    const upcoming = EVENTS_DATA
+        .filter(
+            event =>
+                new Date(event.start) > now
+        )
+        .sort(
+            (a, b) =>
+                new Date(a.start) - new Date(b.start)
+        );
 
+    if (upcoming.length) {
+        return upcoming[0];
+    }
+
+    /*
+     * Terceiro: evento passado mais recente.
+     */
     return EVENTS_DATA
         .slice()
         .sort(
-            (a,b) =>
-                new Date(b.start) -
-                new Date(a.start)
-        )[0];
-
+            (a, b) =>
+                new Date(b.start) - new Date(a.start)
+        )[0] || null;
 }
 
 
@@ -367,16 +287,13 @@ function getNearestEvent(){
    HERO
    ========================================================== */
 
-function hero(){
+function hero() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
-
-    if(!event){
+    if (!event) {
 
         return `
-
             <section class="hero page">
 
                 <div class="container">
@@ -397,150 +314,112 @@ function hero(){
                 </div>
 
             </section>
-
         `;
-
     }
 
+    const state = getEventState(event);
+    const stateLabel = getStateLabel(state);
+    const stateClass = getStateClass(state);
 
-    const state =
-        getEventState(event);
-
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
-
-    return `
-
-<section class="hero page">
-
-    <div class="aurora">
-
-        <div class="blob blob-1"></div>
-
-        <div class="blob blob-2"></div>
-
-        <div class="blob blob-3"></div>
-
-    </div>
-
-
-    <div class="container hero-grid">
-
-        <div class="hero-content">
-
-            <span class="badge ${stateClass}">
-
-                ${stateLabel}
-
-            </span>
-
-
-            <h1 class="hero-title">
-
-                ${event.title}
-
-            </h1>
-
-
-            <p class="hero-sub">
-
-                ${event.subtitle}
-
-            </p>
-
-
-            <div class="hero-meta">
-
-                <span>
-                    📅 ${event.dateLabel}
-                </span>
-
-                <span>
-                    🕒 ${event.timeLabel}
-                </span>
-
-                <span>
-                    📍 ${event.location}
-                </span>
-
-            </div>
-
-
-            <div class="hero-actions">
-
-                ${
-                    state === "past"
-
-                    ?
-
-                    `
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="memory"
-                        data-event-id="${event.id}">
-
-                        Ver Memórias
-
-                    </button>
-
-                    `
-
-                    :
-
-                    `
-
-                    <button
-                        class="btn btn-primary"
-                        data-action="ticket">
-
-                        Reservar Lugar
-
-                    </button>
-
-                    `
-                }
-
-
+    const actionButton =
+        state === "past"
+            ? `
                 <button
-                    class="btn btn-glass"
-                    data-action="timeline">
+                    class="btn btn-primary"
+                    data-action="memory"
+                    data-event-id="${event.id}">
 
-                    Explorar Eventos
+                    Ver Memórias
 
                 </button>
+            `
+            : `
+                <button
+                    class="btn btn-primary"
+                    data-action="ticket">
+
+                    Reservar Lugar
+
+                </button>
+            `;
+
+    return `
+        <section class="hero page">
+
+            <div class="aurora">
+
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
 
             </div>
 
-        </div>
+            <div class="container hero-grid">
 
+                <div class="hero-content">
 
-        <div class="hero-visual">
+                    <span class="badge ${stateClass}">
+                        ${stateLabel}
+                    </span>
 
-            <div class="hero-product">
+                    <h1 class="hero-title">
+                        ${event.title}
+                    </h1>
 
-                <div class="product-glow"></div>
+                    <p class="hero-sub">
+                        ${event.subtitle}
+                    </p>
 
-                <img
-                    src="${event.image}"
-                    alt="${event.title}">
+                    <div class="hero-meta">
+
+                        <span>
+                            📅 ${event.dateLabel}
+                        </span>
+
+                        <span>
+                            🕒 ${event.timeLabel}
+                        </span>
+
+                        <span>
+                            📍 ${event.location}
+                        </span>
+
+                    </div>
+
+                    <div class="hero-actions">
+
+                        ${actionButton}
+
+                        <button
+                            class="btn btn-glass"
+                            data-action="timeline">
+
+                            Explorar Eventos
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="hero-product">
+
+                        <div class="product-glow"></div>
+
+                        <img
+                            src="${event.image}"
+                            alt="${event.title}">
+
+                    </div>
+
+                </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
@@ -548,64 +427,47 @@ function hero(){
    TIMELINE
    ========================================================== */
 
-function eventsTimeline(){
+function eventsTimeline() {
 
-    const events =
-        getSortedEvents();
-
+    const events = getSortedEvents();
 
     return `
+        <section
+            class="section events-history"
+            id="events-history">
 
-<section
-    class="section events-history"
-    id="events-history">
+            <div class="container">
 
-    <div class="container">
+                <div class="section-center reveal">
 
-        <div class="section-center reveal">
+                    <span class="label">
+                        Jornada AD Lifestyle
+                    </span>
 
-            <span class="label">
-                Jornada AD Lifestyle
-            </span>
+                    <h2 class="section-title">
+                        Eventos & Memórias
+                    </h2>
 
+                    <p class="text-lg mt-2">
+                        Uma linha do tempo das experiências que
+                        construímos juntos — das que já aconteceram
+                        às que ainda estão por vir.
+                    </p>
 
-            <h2 class="section-title">
-                Eventos & Memórias
-            </h2>
+                </div>
 
+                <div class="events-timeline mt-5">
 
-            <p class="text-lg mt-2">
+                    ${events
+                        .map(event => timelineEvent(event))
+                        .join("")}
 
-                Uma linha do tempo das experiências que
-                construímos juntos — das que já aconteceram
-                às que ainda estão por vir.
+                </div>
 
-            </p>
+            </div>
 
-        </div>
-
-
-        <div class="events-timeline mt-5">
-
-            ${
-                events
-
-                    .map(
-                        event =>
-                            timelineEvent(event)
-                    )
-
-                    .join("")
-            }
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
@@ -613,164 +475,121 @@ function eventsTimeline(){
    ITEM DA TIMELINE
    ========================================================== */
 
-function timelineEvent(event){
+function timelineEvent(event) {
 
-    const state =
-        getEventState(event);
+    const state = getEventState(event);
+    const stateLabel = getStateLabel(state);
+    const stateClass = getStateClass(state);
+    const date = formatTimelineDate(event.start);
 
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
-
-    const date =
-        formatTimelineDate(event.start);
-
-
-    return `
-
-<div
-    class="event-timeline-item ${stateClass} reveal"
-    data-event-id="${event.id}">
-
-
-    <div class="event-timeline-marker">
-
-        <span></span>
-
-    </div>
-
-
-    <div class="event-timeline-date">
-
-        <strong>
-            ${date.day}
-        </strong>
-
-        <span>
-            ${date.month}
-        </span>
-
-        <small>
-            ${date.year}
-        </small>
-
-    </div>
-
-
-    <article class="event-timeline-card">
-
-
-        <div class="event-timeline-image">
-
-            <img
-                src="${event.image}"
-                alt="${event.title}">
-
-
-            <span class="event-status ${stateClass}">
-
-                ${stateLabel}
-
-            </span>
-
-        </div>
-
-
-        <div class="event-timeline-content">
-
-            <span class="label">
-
-                ${event.category}
-
-            </span>
-
-
-            <h3>
-                ${event.shortTitle}
-            </h3>
-
-
-            <p class="text">
-
-                ${event.descriptionShort}
-
-            </p>
-
-
-            <div class="event-mini-info">
-
-                <span>
-                    🕒 ${event.timeLabel}
-                </span>
-
-                <span>
-                    📍 ${event.location}
-                </span>
-
-            </div>
-
-
-            <div class="event-card-actions">
-
-
+    const actionButton =
+        state === "past"
+            ? `
                 <button
-                    class="btn btn-outline btn-small"
-                    data-action="details"
+                    class="btn btn-glass btn-small"
+                    data-action="memory"
                     data-event-id="${event.id}">
 
-                    Ver detalhes
+                    ✦ Ver Memórias
 
                 </button>
+            `
+            : `
+                <button
+                    class="btn btn-primary btn-small"
+                    data-action="event-ticket">
 
+                    Participar
 
-                ${
-                    state === "past"
+                </button>
+            `;
 
-                    ?
+    return `
+        <div
+            class="event-timeline-item ${stateClass} reveal"
+            data-event-id="${event.id}">
 
-                    `
+            <div class="event-timeline-marker">
+                <span></span>
+            </div>
 
-                    <button
-                        class="btn btn-glass btn-small"
-                        data-action="memory"
-                        data-event-id="${event.id}">
+            <div class="event-timeline-date">
 
-                        ✦ Ver Memórias
+                <strong>
+                    ${date.day}
+                </strong>
 
-                    </button>
+                <span>
+                    ${date.month}
+                </span>
 
-                    `
-
-                    :
-
-                    `
-
-                    <button
-                        class="btn btn-primary btn-small"
-                        data-action="event-ticket">
-
-                        Participar
-
-                    </button>
-
-                    `
-                }
+                <small>
+                    ${date.year}
+                </small>
 
             </div>
 
+            <article class="event-timeline-card">
+
+                <div class="event-timeline-image">
+
+                    <img
+                        src="${event.image}"
+                        alt="${event.title}">
+
+                    <span class="event-status ${stateClass}">
+                        ${stateLabel}
+                    </span>
+
+                </div>
+
+                <div class="event-timeline-content">
+
+                    <span class="label">
+                        ${event.category}
+                    </span>
+
+                    <h3>
+                        ${event.shortTitle}
+                    </h3>
+
+                    <p class="text">
+                        ${event.descriptionShort}
+                    </p>
+
+                    <div class="event-mini-info">
+
+                        <span>
+                            🕒 ${event.timeLabel}
+                        </span>
+
+                        <span>
+                            📍 ${event.location}
+                        </span>
+
+                    </div>
+
+                    <div class="event-card-actions">
+
+                        <button
+                            class="btn btn-outline btn-small"
+                            data-action="details"
+                            data-event-id="${event.id}">
+
+                            Ver detalhes
+
+                        </button>
+
+                        ${actionButton}
+
+                    </div>
+
+                </div>
+
+            </article>
+
         </div>
-
-    </article>
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -778,49 +597,35 @@ function timelineEvent(event){
    ESTADOS
    ========================================================== */
 
-function getStateLabel(state){
+function getStateLabel(state) {
 
-    switch(state){
+    switch (state) {
 
         case "live":
-
             return "A decorrer agora";
 
-
         case "past":
-
             return "Evento realizado";
 
-
         default:
-
             return "Próximo evento";
-
     }
-
 }
 
 
-function getStateClass(state){
+function getStateClass(state) {
 
-    switch(state){
+    switch (state) {
 
         case "live":
-
             return "event-live";
 
-
         case "past":
-
             return "event-past";
 
-
         default:
-
             return "event-upcoming";
-
     }
-
 }
 
 
@@ -828,14 +633,11 @@ function getStateClass(state){
    DATA FORMATADA
    ========================================================== */
 
-function formatTimelineDate(dateString){
+function formatTimelineDate(dateString) {
 
-    const date =
-        new Date(dateString);
-
+    const date = new Date(dateString);
 
     const months = [
-
         "JAN",
         "FEV",
         "MAR",
@@ -848,27 +650,13 @@ function formatTimelineDate(dateString){
         "OUT",
         "NOV",
         "DEZ"
-
     ];
 
-
     return {
-
-        day:
-            String(
-                date.getDate()
-            ).padStart(2,"0"),
-
-        month:
-            months[
-                date.getMonth()
-            ],
-
-        year:
-            date.getFullYear()
-
+        day: String(date.getDate()).padStart(2, "0"),
+        month: months[date.getMonth()],
+        year: date.getFullYear()
     };
-
 }
 
 
@@ -876,111 +664,85 @@ function formatTimelineDate(dateString){
    VISÃO GERAL
    ========================================================== */
 
-function overview(){
+function overview() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
-
-    if(!event){
-
+    if (!event) {
         return "";
-
     }
 
-
     return `
+        <section class="section">
 
-<section class="section">
+            <div class="container">
 
-<div class="container">
+                <div class="section-center reveal">
 
-<div class="section-center reveal">
+                    <span class="label">
+                        Informações Gerais
+                    </span>
 
-<span class="label">
-Informações Gerais
-</span>
+                    <h2 class="section-title">
+                        Tudo o que precisa de saber
+                    </h2>
 
+                </div>
 
-<h2 class="section-title">
-Tudo o que precisa de saber
-</h2>
+                <div class="grid grid-4 mt-5">
 
-</div>
+                    ${info(
+                        "📅",
+                        "Data",
+                        event.dateLabel
+                    )}
 
+                    ${info(
+                        "🕒",
+                        "Horário",
+                        event.timeLabel
+                    )}
 
-<div class="grid grid-4 mt-5">
+                    ${info(
+                        "📍",
+                        "Local",
+                        event.location
+                    )}
 
-${info(
-    "📅",
-    "Data",
-    event.dateLabel
-)}
+                    ${info(
+                        "🎟️",
+                        "Ingresso",
+                        event.price
+                    )}
 
+                </div>
 
-${info(
-    "🕒",
-    "Horário",
-    event.timeLabel
-)}
+            </div>
 
-
-${info(
-    "📍",
-    "Local",
-    event.location
-)}
-
-
-${info(
-    "🎟️",
-    "Ingresso",
-    event.price
-)}
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
-function info(
-    icon,
-    title,
-    value
-){
+function info(icon, title, value) {
 
     return `
+        <div class="stat-card reveal">
 
-<div class="stat-card reveal">
+            <div class="service-icon">
+                ${icon}
+            </div>
 
-<div class="service-icon">
+            <h3>
+                ${title}
+            </h3>
 
-${icon}
+            <p class="text mt-1">
+                ${value}
+            </p>
 
-</div>
-
-
-<h3>
-${title}
-</h3>
-
-
-<p class="text mt-1">
-
-${value}
-
-</p>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
@@ -988,109 +750,91 @@ ${value}
    CRONOGRAMA
    ========================================================== */
 
-function schedule(){
+function schedule() {
 
     return `
+        <section
+            class="section"
+            id="schedule">
 
-<section
-    class="section"
-    id="schedule">
+            <div class="container">
 
-<div class="container">
+                <div class="section-center reveal">
 
-<div class="section-center reveal">
+                    <span class="label">
+                        Cronograma
+                    </span>
 
-<span class="label">
-Cronograma
-</span>
+                    <h2 class="section-title">
+                        Programa Oficial
+                    </h2>
 
+                </div>
 
-<h2 class="section-title">
-Programa Oficial
-</h2>
+                <div class="timeline mt-5">
 
-</div>
+                    ${agenda(
+                        "15h00",
+                        "Recepção & Credenciamento"
+                    )}
 
+                    ${agenda(
+                        "15h30",
+                        "Abertura Oficial"
+                    )}
 
-<div class="timeline mt-5">
+                    ${agenda(
+                        "16h00",
+                        "Saúde & Medicina Holística"
+                    )}
 
-${agenda(
-    "15h00",
-    "Recepção & Credenciamento"
-)}
+                    ${agenda(
+                        "16h45",
+                        "Apresentação BZZWorld"
+                    )}
 
+                    ${agenda(
+                        "17h30",
+                        "Academy 21 & Liderança"
+                    )}
 
-${agenda(
-    "15h30",
-    "Abertura Oficial"
-)}
+                    ${agenda(
+                        "18h00",
+                        "Networking & Encerramento"
+                    )}
 
+                </div>
 
-${agenda(
-    "16h00",
-    "Saúde & Medicina Holística"
-)}
+            </div>
 
-
-${agenda(
-    "16h45",
-    "Apresentação BZZWorld"
-)}
-
-
-${agenda(
-    "17h30",
-    "Academy 21 & Liderança"
-)}
-
-
-${agenda(
-    "18h00",
-    "Networking & Encerramento"
-)}
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
-function agenda(
-    hour,
-    title
-){
+function agenda(hour, title) {
 
     return `
+        <div class="timeline-item reveal">
 
-<div class="timeline-item reveal">
+            <div class="timeline-dot">
+                🕒
+            </div>
 
-<div class="timeline-dot">
-🕒
-</div>
+            <div class="timeline-content">
 
+                <span class="badge">
+                    ${hour}
+                </span>
 
-<div class="timeline-content">
+                <h3 class="mt-2">
+                    ${title}
+                </h3>
 
-<span class="badge">
-${hour}
-</span>
+            </div>
 
-
-<h3 class="mt-2">
-${title}
-</h3>
-
-</div>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
@@ -1098,95 +842,79 @@ ${title}
    ORADORES
    ========================================================== */
 
-function speakers(){
+function speakers() {
 
     return `
+        <section class="section-sm">
 
-<section class="section-sm">
+            <div class="container">
 
-<div class="container">
+                <div class="section-center reveal">
 
-<div class="section-center reveal">
+                    <span class="label">
+                        Participação Especial
+                    </span>
 
-<span class="label">
-Participação Especial
-</span>
+                    <h2 class="section-title">
+                        Oradores do Evento
+                    </h2>
 
+                </div>
 
-<h2 class="section-title">
-Oradores do Evento
-</h2>
+                <div class="grid grid-3 mt-5">
 
-</div>
+                    ${speaker(
+                        "Dr. Mike Mahindo",
+                        "Medicina Holística",
+                        "assets/images/2.png"
+                    )}
 
+                    ${speaker(
+                        "A. Abdoulahi",
+                        "Liderança",
+                        "assets/images/1.png"
+                    )}
 
-<div class="grid grid-3 mt-5">
+                    ${speaker(
+                        "Academy 21",
+                        "Desenvolvimento Humano",
+                        "assets/images/a21.png"
+                    )}
 
-${speaker(
-    "Dr. Mike Mahindo",
-    "Medicina Holística",
-    "assets/images/2.png"
-)}
+                </div>
 
+            </div>
 
-${speaker(
-    "A. Abdoulahi",
-    "Liderança",
-    "assets/images/1.png"
-)}
-
-
-${speaker(
-    "Academy 21",
-    "Desenvolvimento Humano",
-    "assets/images/a21.png"
-)}
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
-function speaker(
-    name,
-    role,
-    image
-){
+function speaker(name, role, image) {
 
     return `
+        <div class="card reveal service-card">
 
-<div class="card reveal service-card">
+            <div
+                class="avatar"
+                style="margin:auto">
 
-<div
-    class="avatar"
-    style="margin:auto">
+                <img
+                    src="${image}"
+                    alt="${name}">
 
-<img
-    src="${image}"
-    alt="${name}">
+            </div>
 
-</div>
+            <h3 class="mt-3">
+                ${name}
+            </h3>
 
+            <p class="text">
+                ${role}
+            </p>
 
-<h3 class="mt-3">
-${name}
-</h3>
-
-
-<p class="text">
-${role}
-</p>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
@@ -1194,104 +922,88 @@ ${role}
    LOCAL
    ========================================================== */
 
-function venue(){
+function venue() {
 
     return `
+        <section class="section">
 
-<section class="section">
+            <div class="container">
 
-<div class="container">
+                <div class="split">
 
-<div class="split">
+                    <div class="split-content reveal-left">
 
-<div class="split-content reveal-left">
+                        <span class="label">
+                            Local do Evento
+                        </span>
 
-<span class="label">
-Local do Evento
-</span>
+                        <h2 class="section-title">
+                            Fly Hotel
+                            Luanda
+                        </h2>
 
+                        <p class="text mt-3">
+                            Sala de Conferências do Fly Hotel,
+                            ao lado da área de desembarque do antigo
+                            Aeroporto Doméstico.
+                        </p>
 
-<h2 class="section-title">
-Fly Hotel
-Luanda
-</h2>
+                        <div class="icon-list mt-4">
 
+                            ${feature(
+                                "Estacionamento disponível"
+                            )}
 
-<p class="text mt-3">
+                            ${feature(
+                                "Sala climatizada"
+                            )}
 
-Sala de Conferências do Fly Hotel,
-ao lado da área de desembarque do antigo
-Aeroporto Doméstico.
+                            ${feature(
+                                "Acesso facilitado"
+                            )}
 
-</p>
+                            ${feature(
+                                "Ambiente executivo"
+                            )}
 
+                        </div>
 
-<div class="icon-list mt-4">
+                    </div>
 
-${feature(
-    "Estacionamento disponível"
-)}
+                    <div class="split-image reveal-right">
 
+                        <img
+                            src="assets/hotel/fly.png"
+                            alt="Fly Hotel">
 
-${feature(
-    "Sala climatizada"
-)}
+                    </div>
 
+                </div>
 
-${feature(
-    "Acesso facilitado"
-)}
+            </div>
 
-
-${feature(
-    "Ambiente executivo"
-)}
-
-</div>
-
-</div>
-
-
-<div class="split-image reveal-right">
-
-<img
-    src="assets/hotel/fly.png"
-    alt="Fly Hotel">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
-function feature(text){
+function feature(text) {
 
     return `
+        <div class="icon-item">
 
-<div class="icon-item">
+            <div class="icon-circle">
+                ✓
+            </div>
 
-<div class="icon-circle">
-✓
-</div>
+            <div>
+                <strong>
+                    ${text}
+                </strong>
+            </div>
 
-
-<div>
-<strong>
-${text}
-</strong>
-</div>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
@@ -1299,133 +1011,109 @@ ${text}
    BILHETES
    ========================================================== */
 
-function tickets(){
+function tickets() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
-
-    if(!event){
-
+    if (!event) {
         return "";
-
     }
 
+    const state = getEventState(event);
 
-    const state =
-        getEventState(event);
-
-
-    if(state === "past"){
+    if (state === "past") {
 
         return `
+            <section class="section">
 
-<section class="section">
+                <div class="container">
 
-<div class="container">
+                    <div class="glass-panel section-center reveal">
 
-<div class="glass-panel section-center reveal">
+                        <span class="badge">
+                            Experiência AD Lifestyle
+                        </span>
 
-<span class="badge">
-Experiência AD Lifestyle
-</span>
+                        <h2 class="section-title mt-2">
+                            Explore as nossas memórias
+                        </h2>
 
+                        <p class="text-lg">
+                            Reviva momentos de eventos anteriores e
+                            acompanhe as próximas experiências.
+                        </p>
 
-<h2 class="section-title mt-2">
-Explore as nossas memórias
-</h2>
+                        <button
+                            class="btn btn-primary mt-4"
+                            data-action="timeline">
 
+                            Ver Linha do Tempo
 
-<p class="text-lg">
+                        </button>
 
-Reviva momentos de eventos anteriores e
-acompanhe as próximas experiências.
+                    </div>
 
-</p>
+                </div>
 
-
-<button
-    class="btn btn-primary mt-4"
-    data-action="timeline">
-
-    Ver Linha do Tempo
-
-</button>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+            </section>
+        `;
     }
 
-
     return `
+        <section class="section">
 
-<section class="section">
+            <div class="container">
 
-<div class="container">
+                <div class="section-center reveal">
 
-<div class="section-center reveal">
+                    <span class="label">
+                        Bilhetes
+                    </span>
 
-<span class="label">
-Bilhetes
-</span>
+                    <h2 class="section-title">
+                        Reserve o seu lugar
+                    </h2>
 
+                </div>
 
-<h2 class="section-title">
-Reserve o seu lugar
-</h2>
+                <div class="showcase mt-5">
 
-</div>
+                    <div class="showcase-bg"></div>
 
+                    <div class="showcase-content">
 
-<div class="showcase mt-5">
+                        <div class="between">
 
-<div class="showcase-bg"></div>
+                            <div>
 
+                                <h2 class="display">
+                                    ${event.price}
+                                </h2>
 
-<div class="showcase-content">
+                                <p class="text">
+                                    Ingresso individual para participação completa.
+                                </p>
 
-<div class="between">
+                            </div>
 
-<div>
+                            <button
+                                class="btn btn-secondary"
+                                data-action="ticket">
 
-<h2 class="display">
-${event.price}
-</h2>
+                                Reservar Agora
 
+                            </button>
 
-<p class="text">
-Ingresso individual para participação completa.
-</p>
+                        </div>
 
-</div>
+                    </div>
 
+                </div>
 
-<button
-    class="btn btn-secondary"
-    data-action="ticket">
+            </div>
 
-    Reservar Agora
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
@@ -1433,147 +1121,120 @@ Ingresso individual para participação completa.
    CTA
    ========================================================== */
 
-function cta(){
+function cta() {
 
-    const event =
-        getNearestEvent();
+    const event = getNearestEvent();
 
+    const state = event
+        ? getEventState(event)
+        : "past";
 
-    const state =
-        event
-            ? getEventState(event)
-            : "past";
+    const mainButton =
+        state === "past"
+            ? `
+                <button
+                    class="btn btn-primary"
+                    data-action="timeline">
 
+                    Ver Eventos
+
+                </button>
+            `
+            : `
+                <button
+                    class="btn btn-primary"
+                    data-action="ticket">
+
+                    Reservar Lugar
+
+                </button>
+            `;
 
     return `
+        <section class="section">
 
-<section class="section">
+            <div class="container">
 
-<div class="container">
+                <div class="glass-panel section-center">
 
-<div class="glass-panel section-center">
+                    <span class="badge badge-gold">
+                        Experiências que conectam
+                    </span>
 
-<span class="badge badge-gold">
-Experiências que conectam
-</span>
+                    <h2 class="section-title mt-2">
+                        Faça parte desta jornada
+                    </h2>
 
+                    <p class="text-lg">
+                        Acompanhe os eventos da AD Lifestyle,
+                        partilhe conhecimento e descubra novas
+                        possibilidades através de experiências
+                        que aproximam pessoas, ideias e oportunidades.
+                    </p>
 
-<h2 class="section-title mt-2">
-Faça parte desta jornada
-</h2>
+                    <div class="hero-actions center mt-4">
 
+                        ${mainButton}
 
-<p class="text-lg">
+                        <button
+                            class="btn btn-outline"
+                            data-action="share">
 
-Acompanhe os eventos da AD Lifestyle,
-partilhe conhecimento e descubra novas
-possibilidades através de experiências
-que aproximam pessoas, ideias e oportunidades.
+                            Partilhar Evento
 
-</p>
+                        </button>
 
+                    </div>
 
-<div class="hero-actions center mt-4">
+                </div>
 
-${
-    state === "past"
+            </div>
 
-    ?
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="timeline">
-
-        Ver Eventos
-
-    </button>
-
-    `
-
-    :
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="ticket">
-
-        Reservar Lugar
-
-    </button>
-
-    `
-}
-
-
-<button
-    class="btn btn-outline"
-    data-action="share">
-
-    Partilhar Evento
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-`;
-
+        </section>
+    `;
 }
 
 
 /* ==========================================================
-   MODAL DE DETALHES
+   MODAL
    ========================================================== */
 
-function eventModal(){
+function eventModal() {
 
     return `
-
-<div
-    class="event-modal"
-    id="event-modal"
-    aria-hidden="true">
-
-    <div
-        class="event-modal-backdrop"
-        data-action="close-modal">
-    </div>
-
-
-    <div
-        class="event-modal-dialog"
-        role="dialog"
-        aria-modal="true">
-
-        <button
-            class="event-modal-close"
-            data-action="close-modal"
-            aria-label="Fechar">
-
-            ×
-
-        </button>
-
-
         <div
-            class="event-modal-content"
-            id="event-modal-content">
+            class="event-modal"
+            id="event-modal"
+            aria-hidden="true">
+
+            <div
+                class="event-modal-backdrop"
+                data-action="close-modal">
+            </div>
+
+            <div
+                class="event-modal-dialog"
+                role="dialog"
+                aria-modal="true">
+
+                <button
+                    class="event-modal-close"
+                    data-action="close-modal"
+                    aria-label="Fechar">
+
+                    ×
+
+                </button>
+
+                <div
+                    class="event-modal-content"
+                    id="event-modal-content">
+                </div>
+
+            </div>
+
         </div>
-
-    </div>
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -1581,19 +1242,11 @@ function eventModal(){
    CONTEÚDO DO MODAL
    ========================================================== */
 
-function buildEventModal(event){
+function buildEventModal(event) {
 
-    const state =
-        getEventState(event);
-
-
-    const stateLabel =
-        getStateLabel(state);
-
-
-    const stateClass =
-        getStateClass(state);
-
+    const state = getEventState(event);
+    const stateLabel = getStateLabel(state);
+    const stateClass = getStateClass(state);
 
     const highlights =
         event.highlights
@@ -1604,212 +1257,165 @@ function buildEventModal(event){
             .join("")
         || "";
 
+    const action =
+        state === "past"
+            ? `
+                <button
+                    class="btn btn-primary"
+                    data-action="memory"
+                    data-event-id="${event.id}">
+
+                    ✦ Ver Memórias
+
+                </button>
+            `
+            : `
+                <button
+                    class="btn btn-primary"
+                    data-action="ticket">
+
+                    Reservar Lugar
+
+                </button>
+            `;
 
     return `
+        <div class="event-modal-image">
 
-<div class="event-modal-image">
+            <img
+                src="${event.image}"
+                alt="${event.title}">
 
-<img
-    src="${event.image}"
-    alt="${event.title}">
+            <span class="event-status ${stateClass}">
+                ${stateLabel}
+            </span>
 
+        </div>
 
-<span class="event-status ${stateClass}">
-    ${stateLabel}
-</span>
+        <div class="event-modal-body">
 
-</div>
+            <span class="label">
+                ${event.category}
+            </span>
 
+            <h2>
+                ${event.title}
+            </h2>
 
-<div class="event-modal-body">
+            <p class="text-lg">
+                ${event.description}
+            </p>
 
-<span class="label">
-    ${event.category}
-</span>
+            <div class="event-modal-meta">
 
+                <div>
+                    <strong>
+                        Data
+                    </strong>
 
-<h2>
-    ${event.title}
-</h2>
+                    <span>
+                        ${event.dateLabel}
+                    </span>
+                </div>
 
+                <div>
+                    <strong>
+                        Horário
+                    </strong>
 
-<p class="text-lg">
-    ${event.description}
-</p>
+                    <span>
+                        ${event.timeLabel}
+                    </span>
+                </div>
 
+                <div>
+                    <strong>
+                        Local
+                    </strong>
 
-<div class="event-modal-meta">
+                    <span>
+                        ${event.venue}
+                    </span>
+                </div>
 
-<div>
+                <div>
+                    <strong>
+                        Ingresso
+                    </strong>
 
-<strong>
-Data
-</strong>
+                    <span>
+                        ${event.price}
+                    </span>
+                </div>
 
-<span>
-${event.dateLabel}
-</span>
+            </div>
 
-</div>
+            ${
+                highlights
+                    ? `
+                        <div class="event-highlights">
 
+                            <h3>
+                                Destaques
+                            </h3>
 
-<div>
+                            <ul>
+                                ${highlights}
+                            </ul>
 
-<strong>
-Horário
-</strong>
+                        </div>
+                    `
+                    : ""
+            }
 
-<span>
-${event.timeLabel}
-</span>
+            <div class="event-modal-actions">
 
-</div>
+                ${action}
 
+            </div>
 
-<div>
-
-<strong>
-Local
-</strong>
-
-<span>
-${event.venue}
-</span>
-
-</div>
-
-
-<div>
-
-<strong>
-Ingresso
-</strong>
-
-<span>
-${event.price}
-</span>
-
-</div>
-
-</div>
-
-
-${
-    highlights
-
-    ?
-
-    `
-
-    <div class="event-highlights">
-
-        <h3>
-            Destaques
-        </h3>
-
-        <ul>
-            ${highlights}
-        </ul>
-
-    </div>
-
-    `
-
-    :
-
-    ""
-}
-
-
-<div class="event-modal-actions">
-
-${
-    state === "past"
-
-    ?
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="memory"
-        data-event-id="${event.id}">
-
-        ✦ Ver Memórias
-
-    </button>
-
-    `
-
-    :
-
-    `
-
-    <button
-        class="btn btn-primary"
-        data-action="ticket">
-
-        Reservar Lugar
-
-    </button>
-
-    `
-}
-
-</div>
-
-</div>
-
-`;
-
+        </div>
+    `;
 }
 
 
 /* ==========================================================
-   INTERACTIVIDADE PRINCIPAL
+   INTERACTIVIDADE
    ========================================================== */
 
-function initialiseEvents(){
+function initialiseEvents() {
 
     initialiseSchedule();
-
     initialiseReservation();
-
     initialiseShare();
-
     initialiseTimeline();
-
     initialiseModal();
-
     initialiseMemoryButtons();
-
     initialiseEventTicketButtons();
-
     initialiseReveal();
-
 }
 
 
 /* ==========================================================
-   SCROLL PARA CRONOGRAMA
+   CRONOGRAMA
    ========================================================== */
 
-function initialiseSchedule(){
+function initialiseSchedule() {
 
     document
         .querySelectorAll(
             '[data-action="schedule"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
 
                     document
                         .getElementById("schedule")
                         ?.scrollIntoView({
-                            behavior:"smooth"
+                            behavior: "smooth"
                         });
 
                 }
@@ -1824,13 +1430,13 @@ function initialiseSchedule(){
    RESERVA
    ========================================================== */
 
-function initialiseReservation(){
+function initialiseReservation() {
 
     document
         .querySelectorAll(
             '[data-action="ticket"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
@@ -1842,13 +1448,13 @@ function initialiseReservation(){
 }
 
 
-function initialiseEventTicketButtons(){
+function initialiseEventTicketButtons() {
 
     document
         .querySelectorAll(
             '[data-action="event-ticket"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
@@ -1860,93 +1466,70 @@ function initialiseEventTicketButtons(){
 }
 
 
-function openWhatsAppReservation(){
+function openWhatsAppReservation() {
 
-    const event =
-        getNearestEvent();
-
+    const event = getNearestEvent();
 
     const title =
         event?.title ||
         "Evento AD Lifestyle";
 
-
-    const message =
-        encodeURIComponent(
-
-            `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${title}".`
-
-        );
-
+    const message = encodeURIComponent(
+        `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${title}".`
+    );
 
     window.open(
         `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
-
 }
 
 
 /* ==========================================================
-   PARTILHAR
+   PARTILHA
    ========================================================== */
 
-function initialiseShare(){
+function initialiseShare() {
 
     document
         .querySelectorAll(
             '[data-action="share"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                async ()=>{
+                async () => {
 
-                    const event =
-                        getNearestEvent();
-
+                    const event = getNearestEvent();
 
                     const title =
                         event?.title ||
                         "Evento AD Lifestyle";
 
-
                     const shareText =
                         `${title} — ${event?.dateLabel || ""}, ${event?.location || ""}. Junta-te à AD Lifestyle!`;
-
 
                     const shareUrl =
                         window.location.href;
 
+                    if (navigator.share) {
 
-                    if(
-                        navigator.share
-                    ){
-
-                        try{
+                        try {
 
                             await navigator.share({
-
-                                title:
-                                    title,
-
-                                text:
-                                    shareText,
-
-                                url:
-                                    shareUrl
-
+                                title,
+                                text: shareText,
+                                url: shareUrl
                             });
 
-                        }
+                        } catch (error) {
 
-                        catch(error){
-
-                            if(
+                            if (
                                 error?.name !==
                                 "AbortError"
-                            ){
+                            ) {
 
                                 openWhatsAppShare(
                                     shareText,
@@ -1958,9 +1541,7 @@ function initialiseShare(){
                         }
 
                         return;
-
                     }
-
 
                     openWhatsAppShare(
                         shareText,
@@ -1975,22 +1556,17 @@ function initialiseShare(){
 }
 
 
-function openWhatsAppShare(
-    text,
-    url
-){
+function openWhatsAppShare(text, url) {
 
-    const message =
-        encodeURIComponent(
-            `${text}\n${url}`
-        );
-
+    const message = encodeURIComponent(
+        `${text}\n${url}`
+    );
 
     window.open(
         `https://wa.me/?text=${message}`,
-        "_blank"
+        "_blank",
+        "noopener,noreferrer"
     );
-
 }
 
 
@@ -1998,25 +1574,23 @@ function openWhatsAppShare(
    TIMELINE
    ========================================================== */
 
-function initialiseTimeline(){
+function initialiseTimeline() {
 
     document
         .querySelectorAll(
             '[data-action="timeline"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
 
                     document
-                        .getElementById(
-                            "events-history"
-                        )
+                        .getElementById("events-history")
                         ?.scrollIntoView({
-                            behavior:"smooth",
-                            block:"start"
+                            behavior: "smooth",
+                            block: "start"
                         });
 
                 }
@@ -2031,17 +1605,17 @@ function initialiseTimeline(){
    MODAL
    ========================================================== */
 
-function initialiseModal(){
+function initialiseModal() {
 
     document
         .querySelectorAll(
             '[data-action="details"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
 
                     const event =
                         EVENTS_DATA.find(
@@ -2050,13 +1624,9 @@ function initialiseModal(){
                                 button.dataset.eventId
                         );
 
-
-                    if(!event){
-
+                    if (!event) {
                         return;
-
                     }
-
 
                     openEventModal(event);
 
@@ -2070,7 +1640,7 @@ function initialiseModal(){
         .querySelectorAll(
             '[data-action="close-modal"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
@@ -2079,67 +1649,36 @@ function initialiseModal(){
 
         });
 
-
-    document.addEventListener(
-        "keydown",
-        event=>{
-
-            if(
-                event.key === "Escape"
-            ){
-
-                closeEventModal();
-
-            }
-
-        }
-    );
-
 }
 
 
-/* ==========================================================
-   ABRIR MODAL
-   ========================================================== */
-
-function openEventModal(event){
+function openEventModal(event) {
 
     const modal =
         document.getElementById(
             "event-modal"
         );
 
-
     const content =
         document.getElementById(
             "event-modal-content"
         );
 
-
-    if(
-        !modal ||
-        !content
-    ){
-
+    if (!modal || !content) {
         return;
-
     }
-
 
     content.innerHTML =
         buildEventModal(event);
-
 
     modal.classList.add(
         "is-open"
     );
 
-
     modal.setAttribute(
         "aria-hidden",
         "false"
     );
-
 
     document.body.classList.add(
         "modal-open"
@@ -2150,15 +1689,13 @@ function openEventModal(event){
         .querySelectorAll(
             '[data-action="memory"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
 
-                    openMemory(
-                        event
-                    );
+                    openMemory(event);
 
                 }
             );
@@ -2170,7 +1707,7 @@ function openEventModal(event){
         .querySelectorAll(
             '[data-action="ticket"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
@@ -2182,40 +1719,29 @@ function openEventModal(event){
 }
 
 
-/* ==========================================================
-   FECHAR MODAL
-   ========================================================== */
-
-function closeEventModal(){
+function closeEventModal() {
 
     const modal =
         document.getElementById(
             "event-modal"
         );
 
-
-    if(!modal){
-
+    if (!modal) {
         return;
-
     }
-
 
     modal.classList.remove(
         "is-open"
     );
-
 
     modal.setAttribute(
         "aria-hidden",
         "true"
     );
 
-
     document.body.classList.remove(
         "modal-open"
     );
-
 }
 
 
@@ -2223,17 +1749,17 @@ function closeEventModal(){
    MEMÓRIAS
    ========================================================== */
 
-function initialiseMemoryButtons(){
+function initialiseMemoryButtons() {
 
     document
         .querySelectorAll(
             '[data-action="memory"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
 
                     const event =
                         EVENTS_DATA.find(
@@ -2242,13 +1768,8 @@ function initialiseMemoryButtons(){
                                 button.dataset.eventId
                         );
 
-
-                    if(event){
-
-                        openMemory(
-                            event
-                        );
-
+                    if (event) {
+                        openMemory(event);
                     }
 
                 }
@@ -2259,19 +1780,17 @@ function initialiseMemoryButtons(){
 }
 
 
-function openMemory(event){
+function openMemory(event) {
 
     const url =
         event.memoryUrl ||
         SOCIALS.instagram;
-
 
     window.open(
         url,
         "_blank",
         "noopener,noreferrer"
     );
-
 }
 
 
@@ -2279,18 +1798,18 @@ function openMemory(event){
    ANIMAÇÕES REVEAL
    ========================================================== */
 
-function initialiseReveal(){
+function initialiseReveal() {
 
-    if(
+    if (
         typeof IntersectionObserver ===
         "undefined"
-    ){
+    ) {
 
         document
             .querySelectorAll(
                 ".reveal"
             )
-            .forEach(element=>{
+            .forEach(element => {
 
                 element.classList.add(
                     "visible"
@@ -2299,26 +1818,23 @@ function initialiseReveal(){
             });
 
         return;
-
     }
 
 
     const observer =
         new IntersectionObserver(
-
-            entries=>{
+            entries => {
 
                 entries.forEach(
-                    entry=>{
+                    entry => {
 
-                        if(
+                        if (
                             entry.isIntersecting
-                        ){
+                        ) {
 
                             entry.target.classList.add(
                                 "visible"
                             );
-
 
                             observer.unobserve(
                                 entry.target
@@ -2330,11 +1846,9 @@ function initialiseReveal(){
                 );
 
             },
-
             {
-                threshold:0.12
+                threshold: 0.12
             }
-
         );
 
 
@@ -2356,21 +1870,20 @@ function initialiseReveal(){
    API OPCIONAL
    ========================================================== */
 
-export function addEvent(event){
+export function addEvent(event) {
 
-    if(
+    if (
         !event ||
         !event.id ||
         !event.title ||
         !event.start
-    ){
+    ) {
 
         console.warn(
             "AD Lifestyle Events: evento inválido."
         );
 
         return false;
-
     }
 
 
@@ -2381,24 +1894,19 @@ export function addEvent(event){
         );
 
 
-    if(exists){
+    if (exists) {
 
         console.warn(
             `AD Lifestyle Events: o evento "${event.id}" já existe.`
         );
 
         return false;
-
     }
 
 
-    EVENTS_DATA.push(
-        event
-    );
-
+    EVENTS_DATA.push(event);
 
     return true;
-
 }
 
 
@@ -2409,7 +1917,7 @@ export function addEvent(event){
 export function updateEventMemory(
     eventId,
     memoryUrl
-){
+) {
 
     const event =
         EVENTS_DATA.find(
@@ -2418,27 +1926,39 @@ export function updateEventMemory(
         );
 
 
-    if(!event){
+    if (!event) {
 
         console.warn(
             `AD Lifestyle Events: evento "${eventId}" não encontrado.`
         );
 
         return false;
-
     }
 
 
     event.memoryUrl =
         memoryUrl;
 
-
     return true;
-
 }
 
 
 /* ==========================================================
-   FIM
+   TECLA ESC — FECHAR MODAL
    ========================================================== */
-```
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if (event.key === "Escape") {
+            closeEventModal();
+        }
+
+    }
+);
+
+
+/* ==========================================================
+   FIM DO EVENTS.JS
+   ========================================================== */
