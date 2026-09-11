@@ -628,7 +628,7 @@ return `
                 <div class="partner-logo">
 
                     <img
-                        src="assets/partners/bzzworld.png"
+                        src="assets/bzzworld.png"
                         alt="BZZWorld">
 
                 </div>
@@ -681,7 +681,7 @@ return `
                 <div class="partner-logo">
 
                     <img
-                        src="assets/partners/a21.png"
+                        src="assets/a21.png"
                         alt="Academy Twenty One">
 
                 </div>
