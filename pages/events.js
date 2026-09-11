@@ -24,26 +24,21 @@ import { applyTheme } from "../js/theme.js";
 const WHATSAPP_NUMBER = "244924964666";
 
 const SOCIALS = {
-    instagram: "https://www.instagram.com/ad.ambassadoracademy21?stkn=MXI2MmVmZDZwZzBhZw%3D%3D",
-    facebook: "https://web.facebook.com/ad.ambassadoracademy21/",
-    tiktok: https://www.tiktok.com/@adbdlifestyle"
+
+    instagram:
+        "https://www.instagram.com/ad.ambassadoracademy21?stkn=MXI2MmVmZDZwZzBhZw%3D%3D",
+
+    facebook:
+        "https://web.facebook.com/ad.ambassadoracademy21/",
+
+    tiktok:
+        "https://www.tiktok.com/@adbdlifestyle"
+
 };
 
 
 /* ==========================================================
    BASE DE DADOS DOS EVENTOS
-   ----------------------------------------------------------
-   Para adicionar um novo evento, basta criar um novo objecto.
-
-   memoryUrl:
-   - Coloque aqui o link exacto da publicação do evento.
-   - Pode ser Instagram, Facebook ou TikTok.
-
-   start:
-   - Data/hora de início.
-
-   end:
-   - Data/hora de término.
    ========================================================== */
 
 const EVENTS_DATA = [
@@ -68,9 +63,11 @@ const EVENTS_DATA = [
         dateLabel:
             "08 de Agosto de 2026",
 
-        start: "2026-08-08T15:00:00",
+        start:
+            "2026-08-08T15:00:00",
 
-        end: "2026-08-08T19:00:00",
+        end:
+            "2026-08-08T19:00:00",
 
         timeLabel:
             "15h00",
@@ -100,22 +97,30 @@ const EVENTS_DATA = [
             "Uma experiência marcada por conhecimento, networking e novas perspectivas.",
 
         highlights: [
+
             "Saúde e bem-estar",
+
             "Medicina holística",
+
             "Negócios internacionais",
+
             "Networking"
+
         ]
+
     },
 
 
     /* ======================================================
-       EVENTO ACTUAL / PRÓXIMO
+       EVENTO PRÓXIMO
        ====================================================== */
 
     {
-        id: "grande-apresentacao-setembro-2026",
+        id:
+            "grande-apresentacao-setembro-2026",
 
-        title: "Grande Apresentação de Dupla Oportunidade",
+        title:
+            "Grande Apresentação de Dupla Oportunidade",
 
         shortTitle:
             "Grande Apresentação de Dupla Oportunidade",
@@ -163,17 +168,27 @@ const EVENTS_DATA = [
             "Saúde, bem-estar, longevidade, liderança e negócios internacionais.",
 
         highlights: [
+
             "Saúde",
+
             "Bem-estar",
+
             "Longevidade",
+
             "Negócios internacionais"
+
         ],
 
         speakers: [
+
             "Dr. Mike Mahindo",
+
             "A. Abdoulahi",
+
             "Academy 21"
+
         ]
+
     }
 
 ];
@@ -187,15 +202,20 @@ export function loadEvents(){
 
     applyTheme("angel");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
+
 
     if(!app){
+
         console.error(
             "AD Lifestyle Events: elemento #app não encontrado."
         );
 
         return;
+
     }
+
 
     app.innerHTML = `
 
@@ -219,6 +239,7 @@ export function loadEvents(){
 
     `;
 
+
     initialiseEvents();
 
 }
@@ -230,21 +251,35 @@ export function loadEvents(){
 
 function getEventState(event){
 
-    const now = new Date();
+    const now =
+        new Date();
 
-    const start = new Date(event.start);
+    const start =
+        new Date(event.start);
 
-    const end = new Date(event.end);
+    const end =
+        new Date(event.end);
+
 
     if(now < start){
+
         return "upcoming";
+
     }
 
-    if(now >= start && now <= end){
+
+    if(
+        now >= start &&
+        now <= end
+    ){
+
         return "live";
+
     }
+
 
     return "past";
+
 }
 
 
@@ -254,34 +289,42 @@ function getEventState(event){
 
 function getSortedEvents(){
 
-    return [...EVENTS_DATA].sort((a,b)=>{
+    return [...EVENTS_DATA].sort(
 
-        return new Date(a.start) - new Date(b.start);
+        (a,b) =>
 
-    });
+            new Date(a.start) -
+            new Date(b.start)
+
+    );
 
 }
 
 
 /* ==========================================================
    EVENTO MAIS PRÓXIMO
-   ----------------------------------------------------------
-   Mantém a filosofia do Hero:
-   o Hero nunca precisa ser actualizado manualmente.
    ========================================================== */
 
 function getNearestEvent(){
 
-    const now = new Date();
+    const now =
+        new Date();
 
-    const upcoming = EVENTS_DATA
 
-        .filter(event => new Date(event.start) > now)
+    const upcoming =
+        EVENTS_DATA
 
-        .sort(
-            (a,b) =>
-                new Date(a.start) - new Date(b.start)
-        );
+            .filter(
+                event =>
+                    new Date(event.start) > now
+            )
+
+            .sort(
+                (a,b) =>
+                    new Date(a.start) -
+                    new Date(b.start)
+            );
+
 
     if(upcoming.length){
 
@@ -289,17 +332,25 @@ function getNearestEvent(){
 
     }
 
-    const live = EVENTS_DATA
 
-        .filter(event => {
+    const live =
+        EVENTS_DATA
 
-            const start = new Date(event.start);
+            .filter(event => {
 
-            const end = new Date(event.end);
+                const start =
+                    new Date(event.start);
 
-            return now >= start && now <= end;
+                const end =
+                    new Date(event.end);
 
-        });
+                return (
+                    now >= start &&
+                    now <= end
+                );
+
+            });
+
 
     if(live.length){
 
@@ -307,11 +358,13 @@ function getNearestEvent(){
 
     }
 
+
     return EVENTS_DATA
         .slice()
         .sort(
             (a,b) =>
-                new Date(b.start) - new Date(a.start)
+                new Date(b.start) -
+                new Date(a.start)
         )[0];
 
 }
@@ -323,38 +376,51 @@ function getNearestEvent(){
 
 function hero(){
 
-    const event = getNearestEvent();
+    const event =
+        getNearestEvent();
+
 
     if(!event){
 
         return `
+
             <section class="hero page">
+
                 <div class="container">
+
                     <div class="hero-content">
+
                         <h1 class="hero-title">
                             Eventos AD Lifestyle
                         </h1>
+
                         <p class="hero-sub">
                             Experiências que conectam pessoas,
                             conhecimento e oportunidades.
                         </p>
+
                     </div>
+
                 </div>
+
             </section>
+
         `;
 
     }
 
-    const state = getEventState(event);
 
-    const stateLabel = getStateLabel(state);
+    const state =
+        getEventState(event);
 
-    const stateClass = getStateClass(state);
 
-    const primaryAction =
-        state === "past"
-            ? "Ver Memórias"
-            : "Reservar Lugar";
+    const stateLabel =
+        getStateLabel(state);
+
+
+    const stateClass =
+        getStateClass(state);
+
 
     return `
 
@@ -370,6 +436,7 @@ function hero(){
 
     </div>
 
+
     <div class="container hero-grid">
 
         <div class="hero-content">
@@ -380,17 +447,20 @@ function hero(){
 
             </span>
 
+
             <h1 class="hero-title">
 
                 ${event.title}
 
             </h1>
 
+
             <p class="hero-sub">
 
                 ${event.subtitle}
 
             </p>
+
 
             <div class="hero-meta">
 
@@ -408,38 +478,42 @@ function hero(){
 
             </div>
 
+
             <div class="hero-actions">
 
                 ${
                     state === "past"
 
-                        ? `
+                    ?
 
-                        <button
-                            class="btn btn-primary"
-                            data-action="memory"
-                            data-event-id="${event.id}">
+                    `
 
-                            Ver Memórias
+                    <button
+                        class="btn btn-primary"
+                        data-action="memory"
+                        data-event-id="${event.id}">
 
-                        </button>
+                        Ver Memórias
 
-                        `
+                    </button>
 
-                        :
+                    `
 
-                        `
+                    :
 
-                        <button
-                            class="btn btn-primary"
-                            data-action="ticket">
+                    `
 
-                            Reservar Lugar
+                    <button
+                        class="btn btn-primary"
+                        data-action="ticket">
 
-                        </button>
+                        Reservar Lugar
 
-                        `
+                    </button>
+
+                    `
                 }
+
 
                 <button
                     class="btn btn-glass"
@@ -483,7 +557,9 @@ function hero(){
 
 function eventsTimeline(){
 
-    const events = getSortedEvents();
+    const events =
+        getSortedEvents();
+
 
     return `
 
@@ -499,14 +575,18 @@ function eventsTimeline(){
                 Jornada AD Lifestyle
             </span>
 
+
             <h2 class="section-title">
                 Eventos & Memórias
             </h2>
 
+
             <p class="text-lg mt-2">
+
                 Uma linha do tempo das experiências que
                 construímos juntos — das que já aconteceram
                 às que ainda estão por vir.
+
             </p>
 
         </div>
@@ -514,15 +594,15 @@ function eventsTimeline(){
 
         <div class="events-timeline mt-5">
 
-            ${events
-                .map(
-                    (event,index) =>
-                        timelineEvent(
-                            event,
-                            index
-                        )
-                )
-                .join("")
+            ${
+                events
+
+                    .map(
+                        event =>
+                            timelineEvent(event)
+                    )
+
+                    .join("")
             }
 
         </div>
@@ -540,21 +620,30 @@ function eventsTimeline(){
    ITEM DA TIMELINE
    ========================================================== */
 
-function timelineEvent(event,index){
+function timelineEvent(event){
 
-    const state = getEventState(event);
+    const state =
+        getEventState(event);
 
-    const stateLabel = getStateLabel(state);
 
-    const stateClass = getStateClass(state);
+    const stateLabel =
+        getStateLabel(state);
 
-    const date = formatTimelineDate(event.start);
+
+    const stateClass =
+        getStateClass(state);
+
+
+    const date =
+        formatTimelineDate(event.start);
+
 
     return `
 
 <div
     class="event-timeline-item ${stateClass} reveal"
     data-event-id="${event.id}">
+
 
     <div class="event-timeline-marker">
 
@@ -582,11 +671,13 @@ function timelineEvent(event,index){
 
     <article class="event-timeline-card">
 
+
         <div class="event-timeline-image">
 
             <img
                 src="${event.image}"
                 alt="${event.title}">
+
 
             <span class="event-status ${stateClass}">
 
@@ -605,9 +696,11 @@ function timelineEvent(event,index){
 
             </span>
 
+
             <h3>
                 ${event.shortTitle}
             </h3>
+
 
             <p class="text">
 
@@ -631,6 +724,7 @@ function timelineEvent(event,index){
 
             <div class="event-card-actions">
 
+
                 <button
                     class="btn btn-outline btn-small"
                     data-action="details"
@@ -644,32 +738,34 @@ function timelineEvent(event,index){
                 ${
                     state === "past"
 
-                        ? `
+                    ?
 
-                        <button
-                            class="btn btn-glass btn-small"
-                            data-action="memory"
-                            data-event-id="${event.id}">
+                    `
 
-                            ✦ Ver Memórias
+                    <button
+                        class="btn btn-glass btn-small"
+                        data-action="memory"
+                        data-event-id="${event.id}">
 
-                        </button>
+                        ✦ Ver Memórias
 
-                        `
+                    </button>
 
-                        :
+                    `
 
-                        `
+                    :
 
-                        <button
-                            class="btn btn-primary btn-small"
-                            data-action="event-ticket">
+                    `
 
-                            Participar
+                    <button
+                        class="btn btn-primary btn-small"
+                        data-action="event-ticket">
 
-                        </button>
+                        Participar
 
-                        `
+                    </button>
+
+                    `
                 }
 
             </div>
@@ -694,12 +790,17 @@ function getStateLabel(state){
     switch(state){
 
         case "live":
+
             return "A decorrer agora";
 
+
         case "past":
+
             return "Evento realizado";
 
+
         default:
+
             return "Próximo evento";
 
     }
@@ -712,12 +813,17 @@ function getStateClass(state){
     switch(state){
 
         case "live":
+
             return "event-live";
 
+
         case "past":
+
             return "event-past";
 
+
         default:
+
             return "event-upcoming";
 
     }
@@ -731,9 +837,12 @@ function getStateClass(state){
 
 function formatTimelineDate(dateString){
 
-    const date = new Date(dateString);
+    const date =
+        new Date(dateString);
+
 
     const months = [
+
         "JAN",
         "FEV",
         "MAR",
@@ -746,7 +855,9 @@ function formatTimelineDate(dateString){
         "OUT",
         "NOV",
         "DEZ"
+
     ];
+
 
     return {
 
@@ -774,13 +885,16 @@ function formatTimelineDate(dateString){
 
 function overview(){
 
-    const event = getNearestEvent();
+    const event =
+        getNearestEvent();
+
 
     if(!event){
 
         return "";
 
     }
+
 
     return `
 
@@ -793,6 +907,7 @@ function overview(){
 <span class="label">
 Informações Gerais
 </span>
+
 
 <h2 class="section-title">
 Tudo o que precisa de saber
@@ -809,17 +924,20 @@ ${info(
     event.dateLabel
 )}
 
+
 ${info(
     "🕒",
     "Horário",
     event.timeLabel
 )}
 
+
 ${info(
     "📍",
     "Local",
     event.location
 )}
+
 
 ${info(
     "🎟️",
@@ -838,22 +956,32 @@ ${info(
 }
 
 
-function info(icon,title,value){
+function info(
+    icon,
+    title,
+    value
+){
 
     return `
 
 <div class="stat-card reveal">
 
 <div class="service-icon">
+
 ${icon}
+
 </div>
+
 
 <h3>
 ${title}
 </h3>
 
+
 <p class="text mt-1">
+
 ${value}
+
 </p>
 
 </div>
@@ -883,6 +1011,7 @@ function schedule(){
 Cronograma
 </span>
 
+
 <h2 class="section-title">
 Programa Oficial
 </h2>
@@ -897,25 +1026,30 @@ ${agenda(
     "Recepção & Credenciamento"
 )}
 
+
 ${agenda(
     "15h30",
     "Abertura Oficial"
 )}
+
 
 ${agenda(
     "16h00",
     "Saúde & Medicina Holística"
 )}
 
+
 ${agenda(
     "16h45",
     "Apresentação BZZWorld"
 )}
 
+
 ${agenda(
     "17h30",
     "Academy 21 & Liderança"
 )}
+
 
 ${agenda(
     "18h00",
@@ -933,7 +1067,10 @@ ${agenda(
 }
 
 
-function agenda(hour,title){
+function agenda(
+    hour,
+    title
+){
 
     return `
 
@@ -943,11 +1080,13 @@ function agenda(hour,title){
 🕒
 </div>
 
+
 <div class="timeline-content">
 
 <span class="badge">
 ${hour}
 </span>
+
 
 <h3 class="mt-2">
 ${title}
@@ -980,6 +1119,7 @@ function speakers(){
 Participação Especial
 </span>
 
+
 <h2 class="section-title">
 Oradores do Evento
 </h2>
@@ -995,11 +1135,13 @@ ${speaker(
     "assets/images/2.png"
 )}
 
+
 ${speaker(
     "A. Abdoulahi",
     "Liderança",
     "assets/images/1.png"
 )}
+
 
 ${speaker(
     "Academy 21",
@@ -1018,7 +1160,11 @@ ${speaker(
 }
 
 
-function speaker(name,role,image){
+function speaker(
+    name,
+    role,
+    image
+){
 
     return `
 
@@ -1034,9 +1180,11 @@ function speaker(name,role,image){
 
 </div>
 
+
 <h3 class="mt-3">
 ${name}
 </h3>
+
 
 <p class="text">
 ${role}
@@ -1069,10 +1217,12 @@ function venue(){
 Local do Evento
 </span>
 
+
 <h2 class="section-title">
 Fly Hotel
 Luanda
 </h2>
+
 
 <p class="text mt-3">
 
@@ -1089,13 +1239,16 @@ ${feature(
     "Estacionamento disponível"
 )}
 
+
 ${feature(
     "Sala climatizada"
 )}
 
+
 ${feature(
     "Acesso facilitado"
 )}
+
 
 ${feature(
     "Ambiente executivo"
@@ -1109,8 +1262,8 @@ ${feature(
 <div class="split-image reveal-right">
 
 <img
-src="assets/hotel/fly.png"
-alt="Fly Hotel">
+    src="assets/hotel/fly.png"
+    alt="Fly Hotel">
 
 </div>
 
@@ -1135,6 +1288,7 @@ function feature(text){
 ✓
 </div>
 
+
 <div>
 <strong>
 ${text}
@@ -1154,7 +1308,9 @@ ${text}
 
 function tickets(){
 
-    const event = getNearestEvent();
+    const event =
+        getNearestEvent();
+
 
     if(!event){
 
@@ -1162,7 +1318,10 @@ function tickets(){
 
     }
 
-    const state = getEventState(event);
+
+    const state =
+        getEventState(event);
+
 
     if(state === "past"){
 
@@ -1178,20 +1337,25 @@ function tickets(){
 Experiência AD Lifestyle
 </span>
 
+
 <h2 class="section-title mt-2">
 Explore as nossas memórias
 </h2>
 
+
 <p class="text-lg">
+
 Reviva momentos de eventos anteriores e
 acompanhe as próximas experiências.
+
 </p>
 
-<button
-class="btn btn-primary mt-4"
-data-action="timeline">
 
-Ver Linha do Tempo
+<button
+    class="btn btn-primary mt-4"
+    data-action="timeline">
+
+    Ver Linha do Tempo
 
 </button>
 
@@ -1205,6 +1369,7 @@ Ver Linha do Tempo
 
     }
 
+
     return `
 
 <section class="section">
@@ -1217,6 +1382,7 @@ Ver Linha do Tempo
 Bilhetes
 </span>
 
+
 <h2 class="section-title">
 Reserve o seu lugar
 </h2>
@@ -1228,6 +1394,7 @@ Reserve o seu lugar
 
 <div class="showcase-bg"></div>
 
+
 <div class="showcase-content">
 
 <div class="between">
@@ -1238,6 +1405,7 @@ Reserve o seu lugar
 ${event.price}
 </h2>
 
+
 <p class="text">
 Ingresso individual para participação completa.
 </p>
@@ -1246,10 +1414,10 @@ Ingresso individual para participação completa.
 
 
 <button
-class="btn btn-secondary"
-data-action="ticket">
+    class="btn btn-secondary"
+    data-action="ticket">
 
-Reservar Agora
+    Reservar Agora
 
 </button>
 
@@ -1274,12 +1442,15 @@ Reservar Agora
 
 function cta(){
 
-    const event = getNearestEvent();
+    const event =
+        getNearestEvent();
+
 
     const state =
         event
             ? getEventState(event)
             : "past";
+
 
     return `
 
@@ -1314,41 +1485,41 @@ que aproximam pessoas, ideias e oportunidades.
 ${
     state === "past"
 
-        ?
+    ?
 
-        `
+    `
 
-        <button
-            class="btn btn-primary"
-            data-action="timeline">
+    <button
+        class="btn btn-primary"
+        data-action="timeline">
 
-            Ver Eventos
+        Ver Eventos
 
-        </button>
+    </button>
 
-        `
+    `
 
-        :
+    :
 
-        `
+    `
 
-        <button
-            class="btn btn-primary"
-            data-action="ticket">
+    <button
+        class="btn btn-primary"
+        data-action="ticket">
 
-            Reservar Lugar
+        Reservar Lugar
 
-        </button>
+    </button>
 
-        `
+    `
 }
 
 
 <button
-class="btn btn-outline"
-data-action="share">
+    class="btn btn-outline"
+    data-action="share">
 
-Partilhar Evento
+    Partilhar Evento
 
 </button>
 
@@ -1402,7 +1573,6 @@ function eventModal(){
         <div
             class="event-modal-content"
             id="event-modal-content">
-
         </div>
 
     </div>
@@ -1420,18 +1590,25 @@ function eventModal(){
 
 function buildEventModal(event){
 
-    const state = getEventState(event);
+    const state =
+        getEventState(event);
 
-    const stateLabel = getStateLabel(state);
 
-    const stateClass = getStateClass(state);
+    const stateLabel =
+        getStateLabel(state);
 
-    const highlights = event.highlights
-        ?.map(
-            item =>
-                `<li>✓ ${item}</li>`
-        )
-        .join("")
+
+    const stateClass =
+        getStateClass(state);
+
+
+    const highlights =
+        event.highlights
+            ?.map(
+                item =>
+                    `<li>✓ ${item}</li>`
+            )
+            .join("")
         || "";
 
 
@@ -1440,11 +1617,12 @@ function buildEventModal(event){
 <div class="event-modal-image">
 
 <img
-src="${event.image}"
-alt="${event.title}">
+    src="${event.image}"
+    alt="${event.title}">
+
 
 <span class="event-status ${stateClass}">
-${stateLabel}
+    ${stateLabel}
 </span>
 
 </div>
@@ -1453,39 +1631,71 @@ ${stateLabel}
 <div class="event-modal-body">
 
 <span class="label">
-${event.category}
+    ${event.category}
 </span>
 
+
 <h2>
-${event.title}
+    ${event.title}
 </h2>
 
 
 <p class="text-lg">
-${event.description}
+    ${event.description}
 </p>
 
 
 <div class="event-modal-meta">
 
 <div>
-<strong>Data</strong>
-<span>${event.dateLabel}</span>
+
+<strong>
+Data
+</strong>
+
+<span>
+${event.dateLabel}
+</span>
+
 </div>
 
-<div>
-<strong>Horário</strong>
-<span>${event.timeLabel}</span>
-</div>
 
 <div>
-<strong>Local</strong>
-<span>${event.venue}</span>
+
+<strong>
+Horário
+</strong>
+
+<span>
+${event.timeLabel}
+</span>
+
 </div>
 
+
 <div>
-<strong>Ingresso</strong>
-<span>${event.price}</span>
+
+<strong>
+Local
+</strong>
+
+<span>
+${event.venue}
+</span>
+
+</div>
+
+
+<div>
+
+<strong>
+Ingresso
+</strong>
+
+<span>
+${event.price}
+</span>
+
 </div>
 
 </div>
@@ -1494,26 +1704,27 @@ ${event.description}
 ${
     highlights
 
-        ?
+    ?
 
-        `
+    `
 
-        <div class="event-highlights">
+    <div class="event-highlights">
 
-            <h3>
-                Destaques
-            </h3>
+        <h3>
+            Destaques
+        </h3>
 
-            <ul>
-                ${highlights}
-            </ul>
+        <ul>
+            ${highlights}
+        </ul>
 
-        </div>
+    </div>
 
-        `
+    `
 
-        : ""
+    :
 
+    ""
 }
 
 
@@ -1522,34 +1733,34 @@ ${
 ${
     state === "past"
 
-        ?
+    ?
 
-        `
+    `
 
-        <button
-            class="btn btn-primary"
-            data-action="memory"
-            data-event-id="${event.id}">
+    <button
+        class="btn btn-primary"
+        data-action="memory"
+        data-event-id="${event.id}">
 
-            ✦ Ver Memórias
+        ✦ Ver Memórias
 
-        </button>
+    </button>
 
-        `
+    `
 
-        :
+    :
 
-        `
+    `
 
-        <button
-            class="btn btn-primary"
-            data-action="ticket">
+    <button
+        class="btn btn-primary"
+        data-action="ticket">
 
-            Reservar Lugar
+        Reservar Lugar
 
-        </button>
+    </button>
 
-        `
+    `
 }
 
 </div>
@@ -1658,18 +1869,21 @@ function initialiseEventTicketButtons(){
 
 function openWhatsAppReservation(){
 
-    const event = getNearestEvent();
+    const event =
+        getNearestEvent();
+
 
     const title =
         event?.title ||
         "Evento AD Lifestyle";
 
 
-    const message = encodeURIComponent(
+    const message =
+        encodeURIComponent(
 
-        `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${title}".`
+            `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${title}".`
 
-    );
+        );
 
 
     window.open(
@@ -1699,13 +1913,15 @@ function initialiseShare(){
                     const event =
                         getNearestEvent();
 
+
                     const title =
                         event?.title ||
                         "Evento AD Lifestyle";
 
-                    const shareText =
 
+                    const shareText =
                         `${title} — ${event?.dateLabel || ""}, ${event?.location || ""}. Junta-te à AD Lifestyle!`;
+
 
                     const shareUrl =
                         window.location.href;
@@ -1730,7 +1946,9 @@ function initialiseShare(){
 
                             });
 
-                        }catch(error){
+                        }
+
+                        catch(error){
 
                             if(
                                 error?.name !==
@@ -1773,6 +1991,7 @@ function openWhatsAppShare(
         encodeURIComponent(
             `${text}\n${url}`
         );
+
 
     window.open(
         `https://wa.me/?text=${message}`,
@@ -1838,11 +2057,13 @@ function initialiseModal(){
                                 button.dataset.eventId
                         );
 
+
                     if(!event){
 
                         return;
 
                     }
+
 
                     openEventModal(event);
 
@@ -1884,12 +2105,17 @@ function initialiseModal(){
 }
 
 
+/* ==========================================================
+   ABRIR MODAL
+   ========================================================== */
+
 function openEventModal(event){
 
     const modal =
         document.getElementById(
             "event-modal"
         );
+
 
     const content =
         document.getElementById(
@@ -1914,6 +2140,7 @@ function openEventModal(event){
     modal.classList.add(
         "is-open"
     );
+
 
     modal.setAttribute(
         "aria-hidden",
@@ -1962,6 +2189,10 @@ function openEventModal(event){
 }
 
 
+/* ==========================================================
+   FECHAR MODAL
+   ========================================================== */
+
 function closeEventModal(){
 
     const modal =
@@ -1981,6 +2212,7 @@ function closeEventModal(){
         "is-open"
     );
 
+
     modal.setAttribute(
         "aria-hidden",
         "true"
@@ -1996,12 +2228,6 @@ function closeEventModal(){
 
 /* ==========================================================
    MEMÓRIAS
-   ----------------------------------------------------------
-   Cada evento pode ter um URL próprio.
-
-   Se memoryUrl estiver vazio:
-   - abre o Instagram oficial da AD Lifestyle
-   - evita links falsos/inventados
    ========================================================== */
 
 function initialiseMemoryButtons(){
@@ -2022,6 +2248,7 @@ function initialiseMemoryButtons(){
                                 item.id ===
                                 button.dataset.eventId
                         );
+
 
                     if(event){
 
@@ -2057,8 +2284,6 @@ function openMemory(event){
 
 /* ==========================================================
    ANIMAÇÕES REVEAL
-   ----------------------------------------------------------
-   Compatível com o sistema de animações existente.
    ========================================================== */
 
 function initialiseReveal(){
@@ -2087,6 +2312,7 @@ function initialiseReveal(){
 
     const observer =
         new IntersectionObserver(
+
             entries=>{
 
                 entries.forEach(
@@ -2100,6 +2326,7 @@ function initialiseReveal(){
                                 "visible"
                             );
 
+
                             observer.unobserve(
                                 entry.target
                             );
@@ -2110,9 +2337,11 @@ function initialiseReveal(){
                 );
 
             },
+
             {
                 threshold:0.12
             }
+
         );
 
 
@@ -2132,8 +2361,6 @@ function initialiseReveal(){
 
 /* ==========================================================
    API OPCIONAL
-   ----------------------------------------------------------
-   Permite adicionar eventos dinamicamente no futuro.
    ========================================================== */
 
 export function addEvent(event){
@@ -2172,7 +2399,10 @@ export function addEvent(event){
     }
 
 
-    EVENTS_DATA.push(event);
+    EVENTS_DATA.push(
+        event
+    );
+
 
     return true;
 
@@ -2180,15 +2410,7 @@ export function addEvent(event){
 
 
 /* ==========================================================
-   API OPCIONAL
-   ----------------------------------------------------------
-   Permite actualizar a memória de um evento.
-
-   Exemplo:
-   updateEventMemory(
-       "dupla-oportunidade-agosto-2026",
-       "https://www.instagram.com/p/..."
-   );
+   ACTUALIZAR MEMÓRIA DE UM EVENTO
    ========================================================== */
 
 export function updateEventMemory(
