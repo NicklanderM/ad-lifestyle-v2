@@ -120,7 +120,12 @@ function createHeader(){
                 <a data-route="/events">Eventos</a>
 
                 <a data-route="/contact">Contacto</a>
+                
+                <a data-route="/products">Produtos</a>
+              
+                <a data-route="/about">Sobre Nós</a>
 
+                
             </div>
 
             <button id="menuToggle" class="menu-toggle">
@@ -142,6 +147,10 @@ function createHeader(){
         <a data-route="/events">Eventos</a>
 
         <a data-route="/contact">Contacto</a>
+
+        <a data-route="/products">Produtos</a>
+              
+        <a data-route="/about">Sobre Nós</a>
 
     </aside>
 
@@ -259,6 +268,10 @@ function createFooter(){
                         <a data-route="/services">Serviços</a>
 
                         <a data-route="/events">Eventos</a>
+                     
+                        <a data-route="/products">Produtos</a>
+              
+                        <a data-route="/about">Sobre Nós</a>
 
                     </div>
 
