@@ -331,9 +331,20 @@ function createFooter(){
 
                         </a>
 
-                        <a href="#">
+                        <a href="https://wa.me/${number}?text=${encodeURIComponent(message)};">
 
                             WhatsApp
+
+                        </a>
+                                                <a href="https://web.facebook.com/ad.ambassadoracademy21">
+
+                            Facebook
+
+                        </a>
+
+                                                <a href="https://www.instagram.com/ad.ambassadoracademy21?stkn=MXI2MmVmZDZwZzBhZw==">
+
+                            Instagram
 
                         </a>
 
