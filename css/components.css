@@ -325,20 +325,10 @@ body[data-theme="alpha"] .navbar{
 }
 
 .hero-content{
-    display:flex;
-    flex-direction:column;
-    gap:28px;
+    position:relative;
+    z-index:2;
 }
 
-.hero-title{
-    line-height:1.15;
-    letter-spacing:-1px;
-    margin:8px 0;
-}
-.hero-sub{
-    line-height:1.9;
-    max-width:620px;
-}
 .hero-actions{
     display:flex;
     gap:18px;
