@@ -121,7 +121,7 @@ function createHeader(){
 
                 <a data-route="/contact">Contacto</a>
                 
-                <a data-route="/products">Produtos</a>
+                <a data-route="/exploreProducts">Produtos</a>
               
                 <a data-route="/about">Sobre Nós</a>
 
