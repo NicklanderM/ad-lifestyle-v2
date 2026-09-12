@@ -11,7 +11,9 @@ export function loadAbout(){
 
     const app = document.getElementById("app");
 
-    app.innerHTML = `
+app.innerHTML = `
+    <div class="about-page">
+
         ${hero()}
         ${whoWeAre()}
         ${ceo()}
@@ -20,7 +22,9 @@ export function loadAbout(){
         ${partners()}
         ${principles()}
         ${cta()}
-    `;
+
+    </div>
+`;
 
     initialiseAbout();
 
