@@ -12,7 +12,7 @@ import { applyTheme } from "../js/theme.js";
 
 export function loadContact(){
 
-    applyTheme("angel");
+     applyTheme("default");
 
     const app = document.getElementById("app");
 
