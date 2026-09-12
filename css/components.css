@@ -4119,3 +4119,955 @@ body[data-theme="ismarts3"] .input:focus{
         border:1px solid #ccc;
     }
 }
+
+
+```css
+/* ==========================================================
+   AD LIFESTYLE V2
+   ANGEL MOON — COMPONENT EXTENSIONS
+   Complemento específico para pages/products/angel.js
+   ========================================================== */
+
+
+/* ==========================================================
+   ANGEL — HERO
+   ========================================================== */
+
+.angel-hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.angel-hero .hero-grid{
+    align-items:center;
+}
+
+.angel-hero .hero-content{
+    max-width:680px;
+}
+
+.angel-hero .hero-title{
+    max-width:760px;
+    line-height:1.05;
+}
+
+.angel-hero .hero-title span{
+    color:var(--color-gold,#b9975b);
+}
+
+.angel-hero .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-top:28px;
+}
+
+.angel-hero .hero-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 20px;
+    margin-top:22px;
+    color:var(--text-secondary,#766f68);
+    font-size:13px;
+}
+
+.angel-hero .hero-meta span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+}
+
+.angel-product-card{
+    position:relative;
+    width:100%;
+    max-width:500px;
+    margin-inline:auto;
+    padding:18px;
+    border:1px solid rgba(185,151,91,.16);
+    border-radius:28px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.98),
+            rgba(250,247,242,.96)
+        );
+    box-shadow:
+        0 24px 70px rgba(43,32,21,.08);
+}
+
+.product-image-wrapper{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:430px;
+    overflow:hidden;
+    border-radius:22px;
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(185,151,91,.08),
+            transparent 68%
+        );
+}
+
+.product-main-image{
+    display:block;
+    width:100%;
+    max-width:410px;
+    height:auto;
+    object-fit:contain;
+    filter:drop-shadow(
+        0 20px 30px rgba(35,25,16,.10)
+    );
+}
+
+.product-image-caption{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    padding:18px 8px 4px;
+}
+
+.product-image-caption strong{
+    font-size:16px;
+}
+
+
+/* ==========================================================
+   ANGEL — TECHNOLOGY
+   ========================================================== */
+
+.angel-technology{
+    position:relative;
+}
+
+.angel-technology-card{
+    position:relative;
+    min-height:190px;
+    padding:28px;
+    overflow:hidden;
+}
+
+.angel-card-number{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    margin-bottom:22px;
+    border:1px solid rgba(185,151,91,.22);
+    border-radius:50%;
+    color:var(--color-gold,#b9975b);
+    background:rgba(185,151,91,.06);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+.angel-card-content h3{
+    margin:0;
+}
+
+
+/* ==========================================================
+   ANGEL — BENEFITS
+   ========================================================== */
+
+.angel-benefit-card{
+    min-height:210px;
+    padding:28px;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease;
+}
+
+.angel-benefit-card:hover{
+    transform:translateY(-4px);
+    border-color:rgba(185,151,91,.25);
+    box-shadow:
+        0 18px 45px rgba(43,32,21,.07);
+}
+
+.angel-benefit-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    margin-bottom:18px;
+    border-radius:14px;
+    background:rgba(185,151,91,.08);
+    font-size:21px;
+}
+
+
+/* ==========================================================
+   ANGEL — INFORMATION TOGGLE
+   ========================================================== */
+
+.angel-more-information{
+    width:100%;
+    margin-top:28px;
+}
+
+.angel-details-toggle{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:18px 22px;
+    border:1px solid rgba(185,151,91,.18);
+    border-radius:16px;
+    background:#fff;
+    color:var(--text-primary,#211b16);
+    font-family:inherit;
+    font-size:14px;
+    font-weight:700;
+    text-align:left;
+    cursor:pointer;
+    transition:
+        border-color .3s ease,
+        background .3s ease,
+        box-shadow .3s ease;
+}
+
+.angel-details-toggle:hover{
+    border-color:rgba(185,151,91,.40);
+    background:#fcfaf7;
+    box-shadow:
+        0 10px 30px rgba(43,32,21,.06);
+}
+
+.angel-details-toggle:focus-visible{
+    outline:2px solid rgba(185,151,91,.55);
+    outline-offset:3px;
+}
+
+.angel-details-icon{
+    width:32px;
+    height:32px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border:1px solid rgba(185,151,91,.25);
+    border-radius:50%;
+    color:var(--color-gold,#b9975b);
+    font-size:20px;
+    font-weight:400;
+    line-height:1;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.angel-more-information.active
+.angel-details-icon{
+    transform:rotate(45deg);
+    background:var(--color-gold,#b9975b);
+    color:#fff;
+}
+
+.angel-details-content{
+    display:grid;
+    grid-template-rows:0fr;
+    opacity:0;
+    transition:
+        grid-template-rows .45s ease,
+        opacity .3s ease;
+}
+
+.angel-details-content > *{
+    min-height:0;
+    overflow:hidden;
+}
+
+.angel-more-information.active
+.angel-details-content{
+    grid-template-rows:1fr;
+    opacity:1;
+    padding-top:18px;
+}
+
+
+/* ==========================================================
+   ANGEL — DETAILS GRID
+   ========================================================== */
+
+.angel-details-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+    gap:20px;
+}
+
+.angel-detail-card{
+    padding:25px;
+    border:1px solid rgba(185,151,91,.14);
+    border-radius:20px;
+    background:#fcfaf7;
+}
+
+.angel-detail-card h3{
+    margin-top:8px;
+}
+
+.angel-detail-card-wide{
+    grid-column:1 / -1;
+}
+
+.angel-detail-list{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.angel-detail-item,
+.icon-list-item{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    color:var(--text-primary,#211b16);
+    font-size:13px;
+    line-height:1.5;
+}
+
+.icon-circle{
+    width:24px;
+    height:24px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border-radius:50%;
+    background:rgba(185,151,91,.10);
+    color:var(--color-gold,#b9975b);
+    font-size:11px;
+    font-weight:700;
+}
+
+
+/* ==========================================================
+   ANGEL — COMPOSITION
+   ========================================================== */
+
+.angel-composition-grid{
+    display:grid;
+    grid-template-columns:
+        minmax(0,.9fr)
+        minmax(0,1.1fr);
+    gap:60px;
+    align-items:center;
+}
+
+.angel-composition-visual{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.angel-composition-image{
+    width:100%;
+    max-width:470px;
+    padding:24px;
+    border:1px solid rgba(185,151,91,.14);
+    border-radius:28px;
+    background:#fcfaf7;
+}
+
+.angel-composition-image img{
+    display:block;
+    width:100%;
+    height:auto;
+    object-fit:contain;
+}
+
+.angel-composition-content{
+    width:100%;
+}
+
+.angel-composition-items{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+}
+
+.angel-composition-item{
+    display:grid;
+    grid-template-columns:48px minmax(0,1fr);
+    gap:16px;
+    align-items:start;
+    padding:20px;
+    border:1px solid rgba(185,151,91,.12);
+    border-radius:18px;
+    background:#fff;
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.angel-composition-item:hover{
+    transform:translateX(3px);
+    border-color:rgba(185,151,91,.24);
+    box-shadow:
+        0 12px 28px rgba(43,32,21,.05);
+}
+
+.angel-composition-number{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:48px;
+    height:48px;
+    border-radius:14px;
+    background:rgba(185,151,91,.08);
+    color:var(--color-gold,#b9975b);
+    font-size:12px;
+    font-weight:700;
+}
+
+
+/* ==========================================================
+   ANGEL — SPECIFICATIONS
+   ========================================================== */
+
+.angel-composition-specs{
+    padding:40px;
+    border:1px solid rgba(185,151,91,.12);
+    border-radius:26px;
+    background:#fff;
+}
+
+.angel-spec-card{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    min-height:74px;
+    padding:18px 20px;
+}
+
+.angel-spec-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    flex-shrink:0;
+    border-radius:12px;
+    background:rgba(185,151,91,.08);
+    font-size:18px;
+}
+
+.angel-spec-card strong{
+    font-size:14px;
+}
+
+.angel-spec-list{
+    display:grid;
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+    gap:14px;
+    padding:20px;
+    border:1px solid rgba(185,151,91,.12);
+    border-radius:18px;
+    background:#fcfaf7;
+}
+
+
+/* ==========================================================
+   ANGEL — 7 PROPERTIES
+   ========================================================== */
+
+.angel-properties{
+    width:100%;
+}
+
+.angel-property-card{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:128px;
+    padding:22px;
+    border:1px solid rgba(185,151,91,.12);
+    border-radius:18px;
+    background:#fff;
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+}
+
+.angel-property-card:hover{
+    transform:translateY(-3px);
+    border-color:rgba(185,151,91,.28);
+    box-shadow:
+        0 14px 32px rgba(43,32,21,.06);
+}
+
+.angel-property-number{
+    color:var(--color-gold,#b9975b);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:.08em;
+}
+
+
+/* ==========================================================
+   ANGEL — CERTIFICATION
+   ========================================================== */
+
+.angel-certification{
+    position:relative;
+    width:100%;
+}
+
+.angel-certification-grid{
+    display:grid;
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+    gap:18px;
+}
+
+.angel-certification-card{
+    overflow:hidden;
+    border:1px solid rgba(185,151,91,.14);
+    border-radius:20px;
+    background:#fff;
+    box-shadow:
+        0 10px 30px rgba(43,32,21,.04);
+}
+
+.angel-certification-image{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:240px;
+    padding:12px;
+    overflow:hidden;
+    background:#fcfaf7;
+}
+
+.angel-certification-image img{
+    display:block;
+    width:100%;
+    height:240px;
+    object-fit:contain;
+}
+
+.angel-certification-missing{
+    position:absolute;
+    inset:0;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    padding:20px;
+    text-align:center;
+    color:var(--text-secondary,#766f68);
+    background:#fcfaf7;
+}
+
+.angel-certification-missing span{
+    color:var(--text-primary,#211b16);
+    font-size:13px;
+    font-weight:700;
+}
+
+.angel-certification-missing small{
+    font-size:11px;
+}
+
+.angel-certification-image.missing
+.angel-certification-missing{
+    display:flex;
+}
+
+.angel-certification-image.missing img{
+    display:none;
+}
+
+.angel-certification-caption{
+    padding:16px 18px 18px;
+}
+
+.angel-certification-caption strong{
+    font-size:13px;
+    line-height:1.45;
+}
+
+
+/* ==========================================================
+   ANGEL — VARIANTS
+   ========================================================== */
+
+.angel-variants{
+    position:relative;
+}
+
+.angel-variant-card{
+    overflow:hidden;
+}
+
+.angel-variant-card .product-card-image{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:300px;
+    padding:22px;
+    background:#fcfaf7;
+}
+
+.angel-variant-card .product-card-image img{
+    display:block;
+    width:100%;
+    max-width:280px;
+    height:260px;
+    object-fit:contain;
+}
+
+.angel-variant-card .product-card-content{
+    padding:24px;
+}
+
+.angel-variant-size{
+    display:block;
+    margin-top:7px;
+    color:var(--color-gold,#b9975b);
+    font-size:16px;
+}
+
+
+/* ==========================================================
+   ANGEL — FAQ
+   ========================================================== */
+
+.angel-faq{
+    position:relative;
+}
+
+.angel-faq-list{
+    width:100%;
+    max-width:900px;
+    margin-inline:auto;
+}
+
+.angel-faq-item{
+    overflow:hidden;
+    border-bottom:1px solid rgba(185,151,91,.14);
+}
+
+.angel-faq-item:first-child{
+    border-top:1px solid rgba(185,151,91,.14);
+}
+
+.angel-faq-question{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    padding:22px 4px;
+    border:0;
+    background:transparent;
+    color:var(--text-primary,#211b16);
+    font-family:inherit;
+    font-size:15px;
+    font-weight:700;
+    text-align:left;
+    cursor:pointer;
+}
+
+.angel-faq-question:focus-visible{
+    outline:2px solid rgba(185,151,91,.5);
+    outline-offset:2px;
+    border-radius:6px;
+}
+
+.angel-faq-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:30px;
+    height:30px;
+    flex-shrink:0;
+    border:1px solid rgba(185,151,91,.22);
+    border-radius:50%;
+    color:var(--color-gold,#b9975b);
+    font-size:18px;
+    font-weight:400;
+    transition:
+        transform .3s ease,
+        background .3s ease,
+        color .3s ease;
+}
+
+.angel-faq-item.active
+.angel-faq-icon{
+    transform:rotate(45deg);
+    background:var(--color-gold,#b9975b);
+    color:#fff;
+}
+
+.angel-faq-answer{
+    display:grid;
+    grid-template-rows:0fr;
+    opacity:0;
+    transition:
+        grid-template-rows .4s ease,
+        opacity .3s ease;
+}
+
+.angel-faq-answer > div{
+    min-height:0;
+    overflow:hidden;
+}
+
+.angel-faq-item.active
+.angel-faq-answer{
+    grid-template-rows:1fr;
+    opacity:1;
+    padding-bottom:20px;
+}
+
+.angel-faq-answer p{
+    max-width:780px;
+}
+
+
+/* ==========================================================
+   ANGEL — CTA
+   ========================================================== */
+
+.angel-cta{
+    position:relative;
+}
+
+.angel-cta-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+    padding:52px;
+    border:1px solid rgba(185,151,91,.18);
+    border-radius:30px;
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #fcfaf7
+        );
+    box-shadow:
+        0 22px 60px rgba(43,32,21,.06);
+}
+
+.angel-cta-content{
+    max-width:650px;
+}
+
+.angel-cta-content h2{
+    margin-top:10px;
+    max-width:700px;
+}
+
+.angel-cta-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    flex-shrink:0;
+}
+
+
+/* ==========================================================
+   ANGEL — ACCESSIBILITY / MOTION
+   ========================================================== */
+
+@media(prefers-reduced-motion:reduce){
+
+    .angel-benefit-card,
+    .angel-composition-item,
+    .angel-property-card,
+    .angel-details-content,
+    .angel-details-icon,
+    .angel-faq-answer,
+    .angel-faq-icon{
+        transition:none !important;
+    }
+
+}
+
+
+/* ==========================================================
+   ANGEL — TABLET
+   ========================================================== */
+
+@media(max-width:1000px){
+
+    .angel-composition-grid{
+        grid-template-columns:1fr;
+        gap:38px;
+    }
+
+    .angel-composition-visual{
+        order:1;
+    }
+
+    .angel-composition-content{
+        order:2;
+    }
+
+    .angel-certification-grid{
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .angel-cta-box{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .angel-cta-actions{
+        width:100%;
+    }
+
+}
+
+
+/* ==========================================================
+   ANGEL — MOBILE
+   ========================================================== */
+
+@media(max-width:700px){
+
+    .angel-hero .hero-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .angel-hero .hero-actions .btn{
+        width:100%;
+    }
+
+    .angel-hero .hero-meta{
+        flex-direction:column;
+        gap:9px;
+    }
+
+    .product-image-wrapper{
+        min-height:300px;
+    }
+
+    .angel-product-card{
+        padding:12px;
+        border-radius:22px;
+    }
+
+    .product-image-caption{
+        padding:14px 5px 3px;
+    }
+
+    .angel-technology-card,
+    .angel-benefit-card{
+        min-height:auto;
+    }
+
+    .angel-details-toggle{
+        padding:16px 17px;
+        font-size:13px;
+    }
+
+    .angel-details-grid{
+        grid-template-columns:1fr;
+    }
+
+    .angel-detail-card-wide{
+        grid-column:auto;
+    }
+
+    .angel-composition-specs{
+        padding:24px 18px;
+        border-radius:20px;
+    }
+
+    .angel-spec-list{
+        grid-template-columns:1fr;
+        padding:16px;
+    }
+
+    .angel-certification-grid{
+        grid-template-columns:1fr;
+    }
+
+    .angel-certification-image{
+        min-height:220px;
+    }
+
+    .angel-certification-image img{
+        height:220px;
+    }
+
+    .angel-variant-card .product-card-image{
+        min-height:250px;
+    }
+
+    .angel-variant-card .product-card-image img{
+        height:220px;
+    }
+
+    .angel-cta-box{
+        padding:30px 22px;
+        border-radius:22px;
+    }
+
+    .angel-cta-actions{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .angel-cta-actions .btn{
+        width:100%;
+    }
+
+}
+
+
+/* ==========================================================
+   ANGEL — SMALL MOBILE
+   ========================================================== */
+
+@media(max-width:420px){
+
+    .angel-composition-item{
+        grid-template-columns:40px minmax(0,1fr);
+        gap:12px;
+        padding:16px;
+    }
+
+    .angel-composition-number{
+        width:40px;
+        height:40px;
+    }
+
+    .angel-property-card{
+        min-height:105px;
+        padding:18px;
+    }
+
+    .angel-faq-question{
+        padding:18px 0;
+        font-size:14px;
+    }
+
+    .angel-faq-icon{
+        width:28px;
+        height:28px;
+    }
+
+}
+```
