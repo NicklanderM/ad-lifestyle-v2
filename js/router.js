@@ -1,20 +1,57 @@
+```js
 /* ==========================================================
    AD LIFESTYLE V2
    ROUTER.JS
    SPA History Router
+   Versão robusta de importação
    ========================================================== */
 
 import { setRoute } from "./state.js";
 import { scrollTop } from "./app.js";
 
-/* ========= IMPORTAÇÃO DAS PÁGINAS ========= */
+
+/* ==========================================================
+   IMPORTAÇÃO DAS PÁGINAS
+   ========================================================== */
 
 import { loadHome } from "../pages/home.js";
 import { loadServices } from "../pages/services.js";
 import { loadEvents } from "../pages/events.js";
-import { loadContact } from "../pages/contact-page.js";
+
+/*
+   Contacto:
+   Importação por namespace para evitar erro de export nomeado.
+*/
+import * as ContactPage from "../pages/contact-page.js";
+
 import { loadAbout } from "../pages/about.js";
 import { loadProducts } from "../pages/products.js";
+
+
+/* ==========================================================
+   RESOLUÇÃO DO CONTACTO
+   ========================================================== */
+
+const loadContact =
+    typeof ContactPage.loadContact === "function"
+        ? ContactPage.loadContact
+        : typeof ContactPage.default === "function"
+            ? ContactPage.default
+            : null;
+
+
+if(!loadContact){
+
+    console.error(
+        "AD LIFESTYLE: contact-page.js não disponibiliza loadContact nem export default."
+    );
+
+}
+
+
+/* ==========================================================
+   PRODUTOS
+   ========================================================== */
 
 import { loadAngel } from "../pages/products/angel.js";
 import { loadEzeno } from "../pages/products/ezeno.js";
@@ -27,45 +64,60 @@ import { loadEvador } from "../pages/products/evador.js";
 import { loadAlphaSpinUltra } from "../pages/products/alphaspin-ultra.js";
 import { loadISmartS3 } from "../pages/products/ismarts3.js";
 
+
 /* ==========================================================
    DEFINIÇÃO DAS ROTAS
    ========================================================== */
 
 const routes = {
 
-    "/": loadHome,
+    "/":
+        loadHome,
 
-    "/services": loadServices,
+    "/services":
+        loadServices,
 
-    "/events": loadEvents,
+    "/events":
+        loadEvents,
 
-    "/contact": loadContact,
-   
-    "/products": loadProducts,
-   
-    "/about": loadAbout,
+    "/contact":
+        loadContact,
 
-    "/angel": loadAngel,
+    "/products":
+        loadProducts,
 
-    "/ezeno": loadEzeno,
+    "/about":
+        loadAbout,
 
-    "/zenbru": loadZenbru,
+    "/angel":
+        loadAngel,
 
-    "/alpha": loadAlpha,
+    "/ezeno":
+        loadEzeno,
 
-    /* ========= NOVOS PRODUTOS ========= */
+    "/zenbru":
+        loadZenbru,
 
-    "/alphameta": loadAlphaMeta,
+    "/alpha":
+        loadAlpha,
 
-    "/minoseed": loadMinoseed,
+    "/alphameta":
+        loadAlphaMeta,
 
-    "/evador": loadEvador,
+    "/minoseed":
+        loadMinoseed,
 
-    "/alphaspin-ultra": loadAlphaSpinUltra,
+    "/evador":
+        loadEvador,
 
-    "/ismarts3": loadISmartS3
+    "/alphaspin-ultra":
+        loadAlphaSpinUltra,
+
+    "/ismarts3":
+        loadISmartS3
 
 };
+
 
 /* ==========================================================
    INICIALIZAÇÃO
@@ -73,17 +125,32 @@ const routes = {
 
 export function initRouter(){
 
-    document.addEventListener("click", handleNavigation);
+    document.addEventListener(
+        "click",
+        handleNavigation
+    );
 
-    window.addEventListener("popstate", ()=>{
 
-        render(location.pathname,false);
+    window.addEventListener(
+        "popstate",
+        function(){
 
-    });
+            render(
+                location.pathname,
+                false
+            );
 
-    render(location.pathname,false);
+        }
+    );
+
+
+    render(
+        location.pathname,
+        false
+    );
 
 }
+
 
 /* ==========================================================
    NAVEGAÇÃO
@@ -91,13 +158,29 @@ export function initRouter(){
 
 export function navigate(path){
 
-    if(location.pathname===path) return;
+    if(
+        location.pathname === path
+    ){
 
-    history.pushState({}, "", path);
+        return;
 
-    render(path,true);
+    }
+
+
+    history.pushState(
+        {},
+        "",
+        path
+    );
+
+
+    render(
+        path,
+        true
+    );
 
 }
+
 
 /* ==========================================================
    INTERCEPTAR LINKS
@@ -105,35 +188,62 @@ export function navigate(path){
 
 function handleNavigation(event){
 
-    const link = event.target.closest("[data-route]");
+    const link =
+        event.target.closest(
+            "[data-route]"
+        );
 
-    if(!link) return;
+
+    if(!link){
+
+        return;
+
+    }
+
 
     event.preventDefault();
 
-    const route = link.dataset.route;
+
+    const route =
+        link.dataset.route;
+
 
     navigate(route);
 
 }
 
+
 /* ==========================================================
    RENDERIZAÇÃO
    ========================================================== */
 
-function render(path, animate = true){
+function render(
+    path,
+    animate = true
+){
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    if(!app) return;
 
-    const page = routes[path];
+    if(!app){
+
+        return;
+
+    }
+
+
+    const page =
+        routes[path];
+
 
     setRoute(path);
 
+
     updateActiveLinks(path);
 
-    if(!page){
+
+    if(typeof page !== "function"){
 
         render404();
 
@@ -141,19 +251,30 @@ function render(path, animate = true){
 
     }
 
+
     if(animate){
 
-        app.classList.add("page-leave");
+        app.classList.add(
+            "page-leave"
+        );
 
-        setTimeout(()=>{
 
-            app.classList.remove("page-leave");
+        setTimeout(
+            function(){
 
-            page();
+                app.classList.remove(
+                    "page-leave"
+                );
 
-            revealPage();
 
-        },220);
+                page();
+
+
+                revealPage();
+
+            },
+            220
+        );
 
     }else{
 
@@ -163,9 +284,11 @@ function render(path, animate = true){
 
     }
 
+
     scrollTop();
 
 }
+
 
 /* ==========================================================
    REVEAL DA PÁGINA
@@ -173,26 +296,47 @@ function render(path, animate = true){
 
 function revealPage(){
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    app.classList.add("page-enter");
 
-    requestAnimationFrame(()=>{
+    if(!app){
 
-        app.classList.add("page-enter-active");
+        return;
 
-        setTimeout(()=>{
+    }
 
-            app.classList.remove(
-                "page-enter",
+
+    app.classList.add(
+        "page-enter"
+    );
+
+
+    requestAnimationFrame(
+        function(){
+
+            app.classList.add(
                 "page-enter-active"
             );
 
-        },700);
 
-    });
+            setTimeout(
+                function(){
+
+                    app.classList.remove(
+                        "page-enter",
+                        "page-enter-active"
+                    );
+
+                },
+                700
+            );
+
+        }
+    );
 
 }
+
 
 /* ==========================================================
    LINKS ACTIVOS
@@ -202,16 +346,23 @@ function updateActiveLinks(path){
 
     document
         .querySelectorAll("[data-route]")
-        .forEach(link=>{
+        .forEach(
+            function(link){
 
-            const active =
-                link.dataset.route === path;
+                const active =
+                    link.dataset.route === path;
 
-            link.classList.toggle("active",active);
 
-        });
+                link.classList.toggle(
+                    "active",
+                    active
+                );
+
+            }
+        );
 
 }
+
 
 /* ==========================================================
    404
@@ -219,49 +370,72 @@ function updateActiveLinks(path){
 
 function render404(){
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    app.innerHTML = `
 
-    <section class="hero">
+    if(!app){
 
-        <div class="container section-center">
+        return;
 
-            <span class="label">
-                Página não encontrada
-            </span>
+    }
 
-            <h1 class="display">
-                404
-            </h1>
 
-            <p class="lead">
-                A página que procura não existe ou foi movida.
-            </p>
+    app.innerHTML =
 
-            <div class="hero-actions center">
+        '<section class="hero">' +
 
-                <button
-                    class="btn btn-primary"
-                    id="backHome">
+            '<div class="container section-center">' +
 
-                    Voltar ao início
+                '<span class="label">',
+                    'Página não encontrada',
+                '</span>' +
 
-                </button>
+                '<h1 class="display">',
+                    '404',
+                '</h1>' +
 
-            </div>
+                '<p class="lead">',
+                    'A página que procura não existe ou foi movida.',
+                '</p>' +
 
-        </div>
+                '<div class="hero-actions center">' +
 
-    </section>
+                    '<button ' +
+                        'class="btn btn-primary" ' +
+                        'type="button" ' +
+                        'id="backHome">' +
 
-    `;
+                        'Voltar ao início' +
 
-    document
-        .getElementById("backHome")
-        .onclick = ()=>navigate("/");
+                    '</button>' +
+
+                '</div>' +
+
+            '</div>' +
+
+        '</section>';
+
+
+    const backHome =
+        document.getElementById(
+            "backHome"
+        );
+
+
+    if(backHome){
+
+        backHome.onclick =
+            function(){
+
+                navigate("/");
+
+            };
+
+    }
 
 }
+
 
 /* ==========================================================
    UTILITÁRIOS
@@ -273,11 +447,16 @@ export function currentRoute(){
 
 }
 
+
 export function routeExists(path){
 
-    return Object.hasOwn(routes,path);
+    return Object.hasOwn(
+        routes,
+        path
+    );
 
 }
+
 
 /* ==========================================================
    API GLOBAL
@@ -287,6 +466,8 @@ window.Router = {
 
     navigate,
 
-    current: currentRoute
+    current:
+        currentRoute
 
 };
+```
