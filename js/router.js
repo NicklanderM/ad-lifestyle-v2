@@ -12,7 +12,7 @@ import { scrollTop } from "./app.js";
 import { loadHome } from "../pages/home.js";
 import { loadServices } from "../pages/services.js";
 import { loadEvents } from "../pages/events.js";
-import { loadContact } from "../pages/contact.js";
+import { loadContact } from "../pages/contact-page.js";
 import { loadAbout } from "../pages/about.js";
 import { loadProducts } from "../pages/products.js";
 
