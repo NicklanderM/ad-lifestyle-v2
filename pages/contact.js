@@ -1,8 +1,8 @@
 ```text
 /* ==========================================================
-   AD LIFESTYLE — CONTACT.JS
-   Premium Institutional Contact Page
-   Versão definitiva — SPA / ES Modules
+   AD LIFESTYLE — CONTACT PAGE
+   Página institucional de contacto
+   ES Modules • SPA • Sem template strings
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -23,15 +23,9 @@ const GOOGLE_MAPS_URL =
 const CONTACT_EMAIL =
     "adbzzworlddistribuidor@email.com";
 
-const CONTACT_IMAGE =
-    new URL(
-        "../assets/images/contact-hero.png",
-        import.meta.url
-    ).href;
-
 
 /* ==========================================================
-   ENTRADA DA PÁGINA
+   EXPORT PRINCIPAL
    ========================================================== */
 
 export function loadContact(){
@@ -41,13 +35,15 @@ export function loadContact(){
     const app =
         document.getElementById("app");
 
+
     if(!app){
 
         console.error(
-            "AD LIFESTYLE: elemento #app não encontrado."
+            "AD LIFESTYLE: #app não encontrado."
         );
 
         return;
+
     }
 
 
@@ -55,11 +51,17 @@ export function loadContact(){
         '<div class="contact-page">' +
 
             renderHero() +
-            renderContacts() +
+
+            renderContactCards() +
+
             renderSocials() +
+
             renderLocation() +
+
             renderForm() +
+
             renderFAQ() +
+
             renderCTA() +
 
         '</div>';
@@ -88,9 +90,7 @@ function renderHero(){
 
             '</div>',
 
-
             '<div class="container hero-grid">',
-
 
                 '<div class="hero-content">',
 
@@ -98,18 +98,15 @@ function renderHero(){
                         'Contacte a AD Lifestyle',
                     '</span>',
 
-
                     '<h1 class="hero-title">',
                         'Estamos prontos para falar consigo.',
                     '</h1>',
-
 
                     '<p class="hero-sub">',
                         'Tem uma questão, pretende conhecer os nossos produtos ',
                         'ou deseja saber mais sobre a nossa actividade? ',
                         'Escolha o canal que preferir.',
                     '</p>',
-
 
                     '<div class="hero-actions">',
 
@@ -126,7 +123,6 @@ function renderHero(){
 
                         '</button>',
 
-
                         '<button ',
                             'class="btn btn-glass" ',
                             'type="button" ',
@@ -142,28 +138,21 @@ function renderHero(){
 
                     '</div>',
 
-
                     '<div class="contact-hero-meta">',
 
                         '<span>',
                             icon("shield"),
-                            '<span>',
-                                'Atendimento directo',
-                            '</span>',
+                            '<span>Atendimento directo</span>',
                         '</span>',
-
 
                         '<span>',
                             icon("clock"),
-                            '<span>',
-                                'Segunda a Sábado',
-                            '</span>',
+                            '<span>Segunda a Sábado</span>',
                         '</span>',
 
                     '</div>',
 
                 '</div>',
-
 
                 '<div class="hero-visual">',
 
@@ -174,20 +163,15 @@ function renderHero(){
                             'aria-hidden="true">',
                         '</div>',
 
-
                         '<div ',
                             'class="contact-hero-orbit" ',
                             'aria-hidden="true">',
                         '</div>',
 
-
                         '<img ',
-                            'src="',
-                            CONTACT_IMAGE,
-                            '" ',
-                            'alt="AD Lifestyle — Contacto" ',
+                            'src="assets/images/contact-hero.png" ',
+                            'alt="Contacto com a AD Lifestyle" ',
                             'loading="eager">',
-
 
                         '<div class="contact-hero-card">',
 
@@ -195,11 +179,9 @@ function renderHero(){
                                 'AD LIFESTYLE',
                             '</span>',
 
-
                             '<strong>',
                                 'Estamos consigo.',
                             '</strong>',
-
 
                             '<span>',
                                 'Luanda · Angola',
@@ -224,7 +206,7 @@ function renderHero(){
    CONTACTOS
    ========================================================== */
 
-function renderContacts(){
+function renderContactCards(){
 
     return [
 
@@ -232,18 +214,15 @@ function renderContacts(){
 
             '<div class="container">',
 
-
                 '<div class="section-center reveal">',
 
                     '<span class="label">',
                         'Contactos',
                     '</span>',
 
-
                     '<h2 class="section-title">',
                         'Fale directamente connosco',
                     '</h2>',
-
 
                     '<p class="text mt-2">',
                         'Escolha o canal que melhor se adapta à sua necessidade.',
@@ -251,9 +230,7 @@ function renderContacts(){
 
                 '</div>',
 
-
                 '<div class="contact-cards-grid mt-5">',
-
 
                     contactCard(
                         "whatsapp",
@@ -263,7 +240,6 @@ function renderContacts(){
                         "Falar agora"
                     ),
 
-
                     contactCard(
                         "email",
                         "E-mail",
@@ -271,7 +247,6 @@ function renderContacts(){
                         "Informações e pedidos",
                         "Enviar e-mail"
                     ),
-
 
                     contactCard(
                         "location",
@@ -281,7 +256,6 @@ function renderContacts(){
                         "Ver localização"
                     ),
 
-
                     contactCard(
                         "clock",
                         "Horário",
@@ -289,7 +263,6 @@ function renderContacts(){
                         "Segunda a Sábado",
                         "Atendimento"
                     ),
-
 
                 '</div>',
 
@@ -319,7 +292,6 @@ function contactCard(
             type,
             '">',
 
-
             '<span class="contact-card-top">',
 
                 '<span ',
@@ -329,7 +301,6 @@ function contactCard(
                     icon(type),
 
                 '</span>',
-
 
                 '<span ',
                     'class="contact-card-arrow" ',
@@ -341,25 +312,21 @@ function contactCard(
 
             '</span>',
 
-
             '<span class="contact-card-body">',
 
                 '<span class="contact-card-label">',
                     description,
                 '</span>',
 
-
                 '<span class="contact-card-title">',
                     title,
                 '</span>',
-
 
                 '<span class="contact-value">',
                     value,
                 '</span>',
 
             '</span>',
-
 
             '<span class="contact-card-footer">',
 
@@ -370,7 +337,6 @@ function contactCard(
                 icon("arrow-right"),
 
             '</span>',
-
 
         '</button>'
 
@@ -393,18 +359,15 @@ function renderSocials(){
 
                 '<div class="contact-social-panel reveal">',
 
-
                     '<div class="contact-social-intro">',
 
                         '<span class="label">',
                             'Redes sociais',
                         '</span>',
 
-
                         '<h3>',
                             'Continue a conversa nas nossas plataformas.',
                         '</h3>',
-
 
                         '<p class="text">',
                             'Acompanhe conteúdos, novidades, produtos, eventos e oportunidades.',
@@ -412,9 +375,7 @@ function renderSocials(){
 
                     '</div>',
 
-
                     '<div class="social-links">',
-
 
                         socialLink(
                             "facebook",
@@ -423,14 +384,12 @@ function renderSocials(){
                             "https://web.facebook.com/ad.ambassadoracademy21/"
                         ),
 
-
                         socialLink(
                             "instagram",
                             "Instagram",
                             "@ad.ambassadoracademy21",
                             "https://www.instagram.com/ad.ambassadoracademy21/"
                         ),
-
 
                         socialLink(
                             "tiktok",
@@ -439,14 +398,12 @@ function renderSocials(){
                             "https://www.tiktok.com/@adbdlifestyle"
                         ),
 
-
                         socialLink(
                             "whatsapp",
                             "WhatsApp",
                             "+244 924 964 666",
                             WHATSAPP_URL
                         ),
-
 
                     '</div>',
 
@@ -478,7 +435,6 @@ function socialLink(
             'rel="noopener noreferrer" ',
             'class="social-link">',
 
-
             '<span ',
                 'class="social-icon" ',
                 'aria-hidden="true">',
@@ -487,20 +443,17 @@ function socialLink(
 
             '</span>',
 
-
             '<span class="social-info">',
 
                 '<strong>',
                     title,
                 '</strong>',
 
-
                 '<small>',
                     handle,
                 '</small>',
 
             '</span>',
-
 
             '<span ',
                 'class="social-arrow" ',
@@ -509,7 +462,6 @@ function socialLink(
                 icon("arrow-up-right"),
 
             '</span>',
-
 
         '</a>'
 
@@ -530,18 +482,15 @@ function renderLocation(){
 
             '<div class="container">',
 
-
                 '<div class="section-center reveal">',
 
                     '<span class="label">',
                         'Localização',
                     '</span>',
 
-
                     '<h2 class="section-title">',
                         'Encontre-nos em Luanda',
                     '</h2>',
-
 
                     '<p class="text mt-2">',
                         'Estamos em Prenda – Catambor, junto ao Arreiou.',
@@ -549,12 +498,9 @@ function renderLocation(){
 
                 '</div>',
 
-
                 '<div class="location-layout mt-5">',
 
-
                     '<div class="location-information reveal-left">',
-
 
                         '<div class="location-information-header">',
 
@@ -566,13 +512,11 @@ function renderLocation(){
 
                             '</div>',
 
-
                             '<div>',
 
                                 '<span class="label">',
                                     'AD Lifestyle',
                                 '</span>',
-
 
                                 '<h3>',
                                     'Prenda – Catambor',
@@ -582,14 +526,10 @@ function renderLocation(){
 
                         '</div>',
 
-
-                        '<div ',
-                            'class="location-information-line">',
+                        '<div class="location-information-line">',
                         '</div>',
 
-
                         '<div class="location-list">',
-
 
                             '<div class="location-item">',
 
@@ -600,7 +540,6 @@ function renderLocation(){
                                     icon("location"),
 
                                 '</span>',
-
 
                                 '<div>',
 
@@ -620,7 +559,6 @@ function renderLocation(){
 
                             '</div>',
 
-
                             '<div class="location-item">',
 
                                 '<span ',
@@ -631,13 +569,11 @@ function renderLocation(){
 
                                 '</span>',
 
-
                                 '<div>',
 
                                     '<strong>',
                                         'Coordenadas',
                                     '</strong>',
-
 
                                     '<p>',
                                         '8°50\'06.90&quot;S 13°13\'38.93&quot;E',
@@ -646,7 +582,6 @@ function renderLocation(){
                                 '</div>',
 
                             '</div>',
-
 
                             '<div class="location-item">',
 
@@ -658,18 +593,15 @@ function renderLocation(){
 
                                 '</span>',
 
-
                                 '<div>',
 
                                     '<strong>',
                                         'Atendimento',
                                     '</strong>',
 
-
                                     '<p>',
                                         'Segunda a Sábado',
                                     '</p>',
-
 
                                     '<p>',
                                         '08h00 – 18h00',
@@ -680,7 +612,6 @@ function renderLocation(){
                             '</div>',
 
                         '</div>',
-
 
                         '<button ',
                             'class="btn btn-primary location-button" ',
@@ -697,12 +628,9 @@ function renderLocation(){
 
                         '</button>',
 
-
                     '</div>',
 
-
                     '<div class="location-map-card reveal-right">',
-
 
                         '<div class="map-topbar">',
 
@@ -713,13 +641,11 @@ function renderLocation(){
                                     'aria-hidden="true">',
                                 '</span>',
 
-
                                 '<div>',
 
                                     '<span>',
                                         'LOCALIZAÇÃO',
                                     '</span>',
-
 
                                     '<strong>',
                                         'AD Lifestyle',
@@ -729,73 +655,49 @@ function renderLocation(){
 
                             '</div>',
 
-
                             '<span class="map-city">',
                                 'Luanda',
                             '</span>',
 
                         '</div>',
 
-
                         '<div class="map-frame">',
 
                             '<iframe ',
                                 'title="Mapa da localização da AD Lifestyle" ',
-                                'src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925%26layer=mapnik%26marker=-8.83525%2C13.22748" ',
+                                'src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925&layer=mapnik&marker=-8.83525%2C13.22748" ',
                                 'loading="lazy" ',
                                 'referrerpolicy="no-referrer-when-downgrade">',
                             '</iframe>',
-
 
                             '<div ',
                                 'class="map-marker" ',
                                 'aria-hidden="true">',
 
-
-                                '<span ',
-                                    'class="map-marker-pulse">',
+                                '<span class="map-marker-pulse">',
                                 '</span>',
-
 
                                 '<span class="map-marker-icon">',
-
                                     icon("location"),
-
                                 '</span>',
-
 
                             '</div>',
 
                         '</div>',
-
 
                         '<div class="map-bottom">',
 
-
                             '<div>',
-
                                 icon("location"),
-
-                                '<span>',
-                                    'Prenda – Catambor',
-                                '</span>',
-
+                                '<span>Prenda – Catambor</span>',
                             '</div>',
-
 
                             '<div>',
-
                                 icon("check"),
-
-                                '<span>',
-                                    'Junto ao Arreiou',
-                                '</span>',
-
+                                '<span>Junto ao Arreiou</span>',
                             '</div>',
-
 
                         '</div>',
-
 
                     '</div>',
 
@@ -818,55 +720,42 @@ function renderForm(){
 
     return [
 
-        '<section ',
-            'class="section" ',
-            'id="contact-form">',
-
+        '<section class="section" id="contact-form">',
 
             '<div class="container-sm">',
 
-
                 '<div class="contact-form-panel reveal">',
-
 
                     '<div ',
                         'class="contact-form-header section-center">',
-
 
                         '<span class="label">',
                             'Mensagem',
                         '</span>',
 
-
                         '<h2 class="section-title">',
                             'Vamos conversar.',
                         '</h2>',
-
 
                         '<p class="text mt-2">',
                             'Envie os seus dados e a sua mensagem. ',
                             'Ao submeter, será aberta uma conversa directamente no WhatsApp.',
                         '</p>',
 
-
                     '</div>',
-
 
                     '<form ',
                         'id="contactForm" ',
                         'class="contact-form mt-5" ',
                         'novalidate>',
 
-
                         '<div class="form-grid">',
-
 
                             '<div class="input-group">',
 
                                 '<label for="name">',
                                     'Nome',
                                 '</label>',
-
 
                                 '<input ',
                                     'type="text" ',
@@ -877,16 +766,13 @@ function renderForm(){
                                     'placeholder="O seu nome" ',
                                     'required>',
 
-
                             '</div>',
-
 
                             '<div class="input-group">',
 
                                 '<label for="phone">',
                                     'Telefone',
                                 '</label>',
-
 
                                 '<input ',
                                     'type="tel" ',
@@ -896,19 +782,15 @@ function renderForm(){
                                     'autocomplete="tel" ',
                                     'placeholder="+244 9XX XXX XXX">',
 
-
                             '</div>',
 
-
                         '</div>',
-
 
                         '<div class="input-group mt-3">',
 
                             '<label for="email">',
                                 'E-mail',
                             '</label>',
-
 
                             '<input ',
                                 'type="email" ',
@@ -918,16 +800,13 @@ function renderForm(){
                                 'autocomplete="email" ',
                                 'placeholder="exemplo@email.com">',
 
-
                         '</div>',
-
 
                         '<div class="input-group mt-3">',
 
                             '<label for="subject">',
                                 'Assunto',
                             '</label>',
-
 
                             '<input ',
                                 'type="text" ',
@@ -937,16 +816,13 @@ function renderForm(){
                                 'placeholder="Como podemos ajudar?" ',
                                 'required>',
 
-
                         '</div>',
-
 
                         '<div class="input-group mt-3">',
 
                             '<label for="message">',
                                 'Mensagem',
                             '</label>',
-
 
                             '<textarea ',
                                 'class="input textarea" ',
@@ -957,12 +833,9 @@ function renderForm(){
                                 'required>',
                             '</textarea>',
 
-
                         '</div>',
 
-
                         '<div class="contact-form-footer">',
-
 
                             '<span class="form-security">',
 
@@ -973,7 +846,6 @@ function renderForm(){
                                 '</span>',
 
                             '</span>',
-
 
                             '<button ',
                                 'type="submit" ',
@@ -987,9 +859,7 @@ function renderForm(){
 
                             '</button>',
 
-
                         '</div>',
-
 
                     '</form>',
 
@@ -1016,18 +886,15 @@ function renderFAQ(){
 
             '<div class="container-sm">',
 
-
                 '<div class="section-center reveal">',
 
                     '<span class="label">',
                         'Perguntas frequentes',
                     '</span>',
 
-
                     '<h2 class="section-title">',
                         'Antes de nos contactar',
                     '</h2>',
-
 
                     '<p class="text mt-2">',
                         'Algumas respostas rápidas às questões que recebemos com maior frequência.',
@@ -1035,33 +902,27 @@ function renderFAQ(){
 
                 '</div>',
 
-
                 '<div class="faq contact-faq mt-5">',
-
 
                     faqItem(
                         "Como posso comprar os produtos?",
                         "Pode entrar em contacto connosco através do WhatsApp para conhecer a disponibilidade dos produtos e as condições de aquisição."
                     ),
 
-
                     faqItem(
                         "Realizam entregas em Luanda?",
                         "As entregas podem ser organizadas de acordo com a disponibilidade e a localização. Fale connosco para verificar as condições aplicáveis."
                     ),
-
 
                     faqItem(
                         "Como posso participar nos eventos?",
                         "Entre em contacto connosco através do WhatsApp para conhecer os próximos eventos, condições de participação e processo de inscrição."
                     ),
 
-
                     faqItem(
                         "Posso tornar-me parceiro?",
                         "Sim. Podemos apresentar-lhe a nossa actividade, o ecossistema e as possibilidades existentes. O primeiro passo é entrar em contacto connosco."
                     ),
-
 
                 '</div>',
 
@@ -1080,17 +941,14 @@ function faqItem(questionText, answerText){
 
         '<div class="faq-item">',
 
-
             '<button ',
                 'class="faq-question" ',
                 'type="button" ',
                 'aria-expanded="false">',
 
-
                 '<span>',
                     questionText,
                 '</span>',
-
 
                 '<span ',
                     'class="faq-plus" ',
@@ -1100,9 +958,7 @@ function faqItem(questionText, answerText){
 
                 '</span>',
 
-
             '</button>',
-
 
             '<div class="faq-answer">',
 
@@ -1111,7 +967,6 @@ function faqItem(questionText, answerText){
                 '</p>',
 
             '</div>',
-
 
         '</div>'
 
@@ -1139,27 +994,21 @@ function renderCTA(){
                         'aria-hidden="true">',
                     '</div>',
 
-
                     '<div class="showcase-content section-center">',
-
 
                         '<span class="badge badge-gold">',
                             'AD Lifestyle',
                         '</span>',
 
-
                         '<h2 class="section-title mt-2">',
                             'Estamos a um contacto de distância.',
                         '</h2>',
-
 
                         '<p class="text-lg">',
                             'Uma pergunta pode ser o início de uma nova possibilidade.',
                         '</p>',
 
-
                         '<div class="hero-actions center mt-4">',
-
 
                             '<button ',
                                 'class="btn btn-primary" ',
@@ -1174,9 +1023,7 @@ function renderCTA(){
 
                             '</button>',
 
-
                         '</div>',
-
 
                     '</div>',
 
@@ -1199,142 +1046,80 @@ function icon(type){
 
     const icons = {
 
-
         whatsapp:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.1 1.6 5.8L.1 24l6.5-1.7a11.9 11.9 0 0 0 5.5 1.4h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.3Z"></path>' +
-
             '</svg>',
-
 
         facebook:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M14 8h3V4h-3c-3.3 0-5 1.7-5 5v2H6v4h3v5h4v-5h3.3l.7-4H13V9c0-.7.3-1 1-1Z"></path>' +
-
             '</svg>',
-
 
         instagram:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<rect x="3" y="3" width="18" height="18" rx="5"></rect>' +
-
                 '<circle cx="12" cy="12" r="4"></circle>' +
-
                 '<circle cx="17.5" cy="6.5" r="1"></circle>' +
-
             '</svg>',
-
 
         tiktok:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M15 3h3c.3 1.7 1.3 3 3 3.7V10c-1.1-.1-2.1-.5-3-1v6.2A6.8 6.8 0 1 1 12 8.5v3.1a3.8 3.8 0 1 0 3 3.7V3Z"></path>' +
-
             '</svg>',
-
 
         email:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<rect x="2" y="4" width="20" height="16" rx="3"></rect>' +
-
                 '<path d="m3 6 9 7 9-7"></path>' +
-
             '</svg>',
-
 
         location:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M12 2a8 8 0 0 0-8 8c0 5.8 8 12 8 12s8-6.2 8-12a8 8 0 0 0-8-8Z"></path>' +
-
                 '<circle cx="12" cy="10" r="2.7"></circle>' +
-
             '</svg>',
-
 
         navigation:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
-                '<path d="m21.5 2.5-19 7.2c-.8.3-.8 1.4 0 1.7l7.4 2.7 2.7 7.4c.3.8 1.4.8 1.7 0l7.2-19c.3-.8-.3-1.4-1-1Zm-8.4 15.4-1.8-4.9 6.9-6.9-5.1 11.8Z"></path>' +
-
+                '<path d="m21.5 2.5-19 7.2c-.8.3-.8 1.4 0 1.7l7.4 2.7 2.7 7.4c.3.8 1.4 1.4 1.7 0l7.2-19c.3-.8-.3-1.4-1-1Zm-8.4 15.4-1.8-4.9 6.9-6.9-5.1 11.8Z"></path>' +
             '</svg>',
-
 
         clock:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<circle cx="12" cy="12" r="9"></circle>' +
-
                 '<path d="M12 7v5l3 2"></path>' +
-
             '</svg>',
-
 
         message:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M20 3H4a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h3v3l4-3h9a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Z"></path>' +
-
             '</svg>',
-
 
         "arrow-right":
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M4 12h15m-6-6 6 6-6 6"></path>' +
-
             '</svg>',
-
 
         "arrow-up-right":
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M7 17 17 7M8 7h9v9"></path>' +
-
             '</svg>',
-
 
         check:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="m5 12 4 4L19 6"></path>' +
-
             '</svg>',
-
 
         plus:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M12 5v14M5 12h14"></path>' +
-
             '</svg>',
 
-
         shield:
-
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
-
                 '<path d="M12 3 20 6v5c0 5.2-3.4 8.6-8 10-4.6-1.4-8-4.8-8-10V6l8-3Z"></path>' +
-
                 '<path d="m9 12 2 2 4-4"></path>' +
-
             '</svg>'
 
     };
@@ -1355,9 +1140,9 @@ function initialiseContact(){
 
     initialiseWhatsApp();
 
-    initialiseMaps();
-
     initialiseContactCards();
+
+    initialiseMaps();
 
     initialiseForm();
 
@@ -1445,7 +1230,7 @@ function initialiseFAQ(){
 
 
 /* ==========================================================
-   SCROLL PARA FORMULÁRIO
+   SCROLL
    ========================================================== */
 
 function initialiseScroll(){
@@ -1468,18 +1253,17 @@ function initialiseScroll(){
                     );
 
 
-                if(!target){
-                    return;
+                if(target){
+
+                    target.scrollIntoView({
+
+                        behavior: "smooth",
+
+                        block: "start"
+
+                    });
+
                 }
-
-
-                target.scrollIntoView({
-
-                    behavior: "smooth",
-
-                    block: "start"
-
-                });
 
             }
         );
@@ -1495,14 +1279,9 @@ function initialiseScroll(){
 
 function openWhatsApp(message){
 
-    const finalMessage =
-        message ||
-        "Olá AD Lifestyle!";
-
-
-    const encodedMessage =
+    const text =
         encodeURIComponent(
-            finalMessage
+            message || "Olá AD Lifestyle!"
         );
 
 
@@ -1510,7 +1289,7 @@ function openWhatsApp(message){
 
         WHATSAPP_URL +
         "?text=" +
-        encodedMessage,
+        text,
 
         "_blank",
 
@@ -1548,7 +1327,7 @@ function initialiseWhatsApp(){
 
 
 /* ==========================================================
-   CARTÕES DE CONTACTO
+   CARTÕES
    ========================================================== */
 
 function initialiseContactCards(){
@@ -1571,44 +1350,33 @@ function initialiseContactCards(){
                     );
 
 
-                switch(type){
+                if(type === "whatsapp"){
 
-                    case "whatsapp":
+                    openWhatsApp(
+                        "Olá AD Lifestyle! Gostaria de obter mais informações."
+                    );
 
-                        openWhatsApp(
-                            "Olá AD Lifestyle! Gostaria de obter mais informações."
-                        );
+                    return;
 
-                        break;
-
-
-                    case "email":
-
-                        window.location.href =
-                            "mailto:" +
-                            CONTACT_EMAIL;
-
-                        break;
+                }
 
 
-                    case "location":
+                if(type === "email"){
 
-                        openMaps();
+                    window.location.href =
+                        "mailto:" +
+                        CONTACT_EMAIL;
 
-                        break;
+                    return;
+
+                }
 
 
-                    case "clock":
+                if(type === "location"){
 
-                        window.scrollTo({
+                    openMaps();
 
-                            top: 0,
-
-                            behavior: "smooth"
-
-                        });
-
-                        break;
+                    return;
 
                 }
 
@@ -1647,15 +1415,14 @@ function initialiseMaps(){
         );
 
 
-    if(!button){
-        return;
+    if(button){
+
+        button.addEventListener(
+            "click",
+            openMaps
+        );
+
     }
-
-
-    button.addEventListener(
-        "click",
-        openMaps
-    );
 
 }
 
@@ -1766,6 +1533,7 @@ function initialiseForm(){
 
 
                 return;
+
             }
 
 
@@ -1791,13 +1559,10 @@ function initialiseForm(){
                 "\n\n" +
 
                 "Assunto:\n" +
-
                 subject +
-
                 "\n\n" +
 
                 "Mensagem:\n" +
-
                 message;
 
 
@@ -1811,22 +1576,15 @@ function initialiseForm(){
 }
 
 
-/* ==========================================================
-   UTILITÁRIOS DO FORMULÁRIO
-   ========================================================== */
-
 function getValue(id){
 
     const element =
         document.getElementById(id);
 
 
-    if(!element){
-        return "";
-    }
-
-
-    return element.value.trim();
+    return element
+        ? element.value.trim()
+        : "";
 
 }
 
@@ -1897,6 +1655,6 @@ function clearFieldStates(form){
 
 
 /* ==========================================================
-   FIM
+   FIM DO MÓDULO
    ========================================================== */
 ```
