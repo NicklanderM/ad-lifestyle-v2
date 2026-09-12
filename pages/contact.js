@@ -1105,11 +1105,9 @@ function initialiseForm(){
         return;
     }
 
-
     form.addEventListener("submit", function(event){
 
         event.preventDefault();
-
 
         var nameElement =
             document.getElementById("name");
@@ -1126,7 +1124,6 @@ function initialiseForm(){
         var messageElement =
             document.getElementById("message");
 
-
         var name =
             nameElement ? nameElement.value.trim() : "";
 
@@ -1142,7 +1139,6 @@ function initialiseForm(){
         var message =
             messageElement ? messageElement.value.trim() : "";
 
-
         if(!name || !subject || !message){
 
             form.classList.add("form-invalid");
@@ -1151,9 +1147,7 @@ function initialiseForm(){
 
         }
 
-
         form.classList.remove("form-invalid");
-
 
         var text =
             "Olá AD Lifestyle!\n\n" +
@@ -1165,10 +1159,15 @@ function initialiseForm(){
             "Mensagem:\n" +
             message;
 
-
         openWhatsApp(text);
 
     });
 
 }
-```
+
+
+/* ==========================================================
+   EXPORTAÇÃO
+   ========================================================== */
+
+export { loadContact };
