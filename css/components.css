@@ -1185,3 +1185,1098 @@ body[data-theme="ismarts3"] .input:focus{
     }
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE — ABOUT PAGE COMPONENTS
+   Institutional Premium Layer
+   IMPORTANTE:
+   Todas as regras estão isoladas em .about-page
+   e não afectam as restantes páginas.
+   ========================================================== */
+
+
+/* ==========================================================
+   01. VARIÁVEIS EXCLUSIVAS DA ABOUT
+   ========================================================== */
+
+.about-page{
+
+    /* ---------- CORES ---------- */
+
+    --about-gold:#b8944e;
+    --about-gold-light:#d7bc7a;
+    --about-gold-soft:rgba(184,148,78,.12);
+    --about-gold-border:rgba(184,148,78,.28);
+
+    --about-dark:#17130e;
+    --about-dark-soft:#241d15;
+
+    --about-text:#26221d;
+    --about-text-soft:#6f685f;
+    --about-text-muted:#91897f;
+
+    --about-white:#ffffff;
+    --about-surface:#faf9f7;
+    --about-surface-soft:#f5f2ed;
+
+    --about-border:rgba(31,27,22,.09);
+    --about-border-strong:rgba(31,27,22,.14);
+
+    /* ---------- SOMBRAS ---------- */
+
+    --about-shadow-sm:
+        0 8px 24px rgba(24,20,15,.06);
+
+    --about-shadow-md:
+        0 18px 50px rgba(24,20,15,.09);
+
+    --about-shadow-lg:
+        0 30px 80px rgba(24,20,15,.13);
+
+    /* ---------- RAIOS ---------- */
+
+    --about-radius-sm:12px;
+    --about-radius-md:18px;
+    --about-radius-lg:26px;
+    --about-radius-xl:34px;
+
+    /* ---------- ESPAÇAMENTO ---------- */
+
+    --about-gap-xs:8px;
+    --about-gap-sm:14px;
+    --about-gap-md:20px;
+    --about-gap-lg:28px;
+    --about-gap-xl:40px;
+    --about-gap-2xl:56px;
+
+    /* ---------- TRANSIÇÕES ---------- */
+
+    --about-transition:
+        .35s cubic-bezier(.2,.7,.2,1);
+
+    /* ---------- BORDA ---------- */
+
+    --about-line:
+        1px solid var(--about-border);
+
+}
+
+
+/* ==========================================================
+   02. HERO
+   ========================================================== */
+
+.about-page .about-hero{
+    position:relative;
+    overflow:hidden;
+}
+
+.about-page .about-hero .hero-grid{
+    position:relative;
+    z-index:2;
+}
+
+.about-page .about-hero .hero-title{
+    max-width:680px;
+    letter-spacing:-.035em;
+}
+
+.about-page .about-hero .hero-sub{
+    max-width:620px;
+    line-height:1.75;
+}
+
+.about-page .about-hero .hero-actions{
+    gap:12px;
+}
+
+
+/* ==========================================================
+   03. HERO — IMAGEM DO CEO
+   ========================================================== */
+
+.about-page .about-leader-visual{
+
+    position:relative;
+
+    width:min(100%, 500px);
+    min-height:520px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    overflow:hidden;
+
+    border-radius:var(--about-radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.96),
+            rgba(247,243,235,.88)
+        );
+
+    border:
+        1px solid var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-lg);
+}
+
+.about-page .about-leader-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    top:40px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(184,148,78,.18),
+            transparent 68%
+        );
+
+    filter:blur(5px);
+
+    pointer-events:none;
+}
+
+.about-page .about-leader-visual img{
+
+    position:relative;
+    z-index:2;
+
+    display:block;
+
+    width:100%;
+    height:520px;
+
+    object-fit:contain;
+    object-position:center bottom;
+
+    filter:
+        drop-shadow(
+            0 20px 35px rgba(0,0,0,.14)
+        );
+}
+
+
+/* ==========================================================
+   04. HERO — LEADER CAPTION
+   ========================================================== */
+
+.about-page .hero-leader-caption{
+
+    position:absolute;
+
+    left:22px;
+    right:22px;
+    bottom:22px;
+
+    z-index:4;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border:
+        1px solid rgba(184,148,78,.20);
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.08);
+}
+
+.about-page .hero-leader-caption span{
+
+    font-size:11px;
+    font-weight:700;
+
+    letter-spacing:.14em;
+    text-transform:uppercase;
+
+    color:var(--about-gold);
+}
+
+.about-page .hero-leader-caption strong{
+
+    margin-top:4px;
+
+    font-size:17px;
+    line-height:1.25;
+
+    color:var(--about-dark);
+}
+
+
+/* ==========================================================
+   05. QUEM SOMOS
+   ========================================================== */
+
+.about-page .about-introduction{
+    align-items:center;
+}
+
+.about-page .about-introduction .split-content{
+    padding-right:12px;
+}
+
+.about-page .about-introduction .text{
+    color:var(--about-text-soft);
+    line-height:1.78;
+}
+
+
+/* ==========================================================
+   06. BENTO
+   ========================================================== */
+
+.about-page .about-bento{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:16px;
+
+    width:100%;
+}
+
+.about-page .about-bento .card{
+
+    position:relative;
+
+    min-width:0;
+
+    padding:24px;
+
+    border-radius:var(--about-radius-md);
+
+    border:
+        1px solid var(--about-border);
+
+    background:
+        rgba(255,255,255,.82);
+
+    box-shadow:
+        var(--about-shadow-sm);
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .about-bento .card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .about-bento-main{
+
+    grid-column:1 / -1;
+
+    padding:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f7f3eb
+        );
+}
+
+.about-page .about-bento h3,
+.about-page .about-bento h4{
+
+    color:var(--about-dark);
+}
+
+.about-page .about-bento .text{
+
+    color:var(--about-text-soft);
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   07. ÍCONES
+   ========================================================== */
+
+.about-page .service-icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex:none;
+
+    border-radius:14px;
+
+    color:var(--about-gold);
+
+    background:
+        var(--about-gold-soft);
+
+    border:
+        1px solid var(--about-gold-border);
+}
+
+.about-page .service-icon svg{
+
+    width:23px;
+    height:23px;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.65;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.about-page .btn svg{
+
+    width:18px;
+    height:18px;
+
+    flex:none;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.8;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.about-page .icon-circle svg{
+
+    width:19px;
+    height:19px;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.7;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+
+/* ==========================================================
+   08. CEO PROFILE
+   ========================================================== */
+
+.about-page .ceo-profile{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--about-radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #f5f1e9
+        );
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .ceo-photo{
+
+    position:relative;
+
+    width:100%;
+
+    min-height:500px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8f6f2,
+            #ece6db
+        );
+}
+
+.about-page .ceo-photo::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(15,12,8,.14),
+            transparent 45%
+        );
+
+    pointer-events:none;
+}
+
+.about-page .ceo-photo img{
+
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    height:500px;
+
+    object-fit:contain;
+    object-position:center bottom;
+}
+
+.about-page .ceo-profile-info{
+
+    padding:24px 26px 28px;
+}
+
+.about-page .ceo-profile-info h3{
+
+    color:var(--about-dark);
+}
+
+.about-page .ceo-profile-info .text{
+
+    color:var(--about-text-soft);
+}
+
+
+/* ==========================================================
+   09. ICON LIST
+   ========================================================== */
+
+.about-page .icon-list{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:16px;
+}
+
+.about-page .icon-list.compact{
+    gap:12px;
+}
+
+.about-page .icon-item{
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:13px;
+
+    min-width:0;
+}
+
+.about-page .icon-item .icon-circle{
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex:none;
+
+    border-radius:50%;
+
+    color:var(--about-gold);
+
+    background:
+        var(--about-gold-soft);
+
+    border:
+        1px solid var(--about-gold-border);
+}
+
+.about-page .icon-item strong{
+
+    display:block;
+
+    color:var(--about-dark);
+
+    font-size:14px;
+    line-height:1.4;
+}
+
+.about-page .icon-item .text{
+
+    margin-top:3px;
+
+    color:var(--about-text-soft);
+
+    font-size:13px;
+    line-height:1.55;
+}
+
+
+/* ==========================================================
+   10. PRINCIPLE CARDS
+   ========================================================== */
+
+.about-page .principle-card{
+
+    position:relative;
+
+    height:100%;
+
+    padding:28px;
+
+    border-radius:var(--about-radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf8f4
+        );
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .principle-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .principle-card-header{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.about-page .principle-index{
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.14em;
+    text-transform:uppercase;
+
+    color:var(--about-gold);
+}
+
+.about-page .principle-card h3{
+
+    color:var(--about-dark);
+}
+
+.about-page .principle-card .text{
+
+    color:var(--about-text-soft);
+
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   11. TIMELINE
+   ========================================================== */
+
+.about-page .premium-timeline{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:18px;
+}
+
+.about-page .premium-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:30px;
+
+    left:8%;
+    right:8%;
+
+    height:1px;
+
+    background:
+        var(--about-gold-border);
+
+    z-index:0;
+}
+
+.about-page .premium-timeline .timeline-item{
+
+    position:relative;
+    z-index:1;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:18px;
+
+    min-width:0;
+}
+
+.about-page .timeline-dot{
+
+    width:60px;
+    height:60px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    color:var(--about-gold);
+
+    background:
+        var(--about-white);
+
+    border:
+        1px solid var(--about-gold-border);
+
+    box-shadow:
+        0 8px 20px rgba(0,0,0,.06);
+}
+
+.about-page .timeline-dot span{
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:.08em;
+}
+
+.about-page .timeline-content{
+
+    padding:22px;
+
+    min-height:190px;
+
+    border-radius:var(--about-radius-md);
+
+    background:
+        var(--about-white);
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+}
+
+.about-page .timeline-content h3{
+
+    color:var(--about-dark);
+}
+
+.about-page .timeline-content .text{
+
+    color:var(--about-text-soft);
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   12. PARTNER CARDS
+   ========================================================== */
+
+.about-page .partner-card{
+
+    position:relative;
+
+    height:100%;
+
+    padding:30px;
+
+    border-radius:var(--about-radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #faf8f4
+        );
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .partner-card:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .partner-card-top{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.about-page .partner-logo{
+
+    height:56px;
+
+    display:flex;
+    align-items:center;
+    justify-content:flex-start;
+
+    max-width:210px;
+}
+
+.about-page .partner-logo img{
+
+    display:block;
+
+    max-width:190px;
+    max-height:54px;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+}
+
+.about-page .partner-card h2{
+
+    color:var(--about-dark);
+}
+
+.about-page .partner-card > .text{
+
+    color:var(--about-text-soft);
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   13. STRATEGIC CARDS
+   ========================================================== */
+
+.about-page .strategic-card{
+
+    height:100%;
+
+    padding:25px;
+
+    border-radius:var(--about-radius-md);
+
+    background:
+        var(--about-white);
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .strategic-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .strategic-card h3{
+
+    color:var(--about-dark);
+}
+
+.about-page .strategic-card .text{
+
+    color:var(--about-text-soft);
+
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   14. GLASS PANEL — APENAS ABOUT
+   ========================================================== */
+
+.about-page .glass-panel{
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+}
+
+
+/* ==========================================================
+   15. SHOWCASE / CTA
+   ========================================================== */
+
+.about-page .showcase{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--about-radius-xl);
+
+    border:
+        1px solid var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-lg);
+}
+
+.about-page .showcase-content{
+
+    position:relative;
+    z-index:2;
+
+    padding:72px 48px;
+}
+
+.about-page .showcase .section-title{
+
+    max-width:680px;
+}
+
+.about-page .showcase .text-lg{
+
+    max-width:650px;
+
+    color:var(--about-text-soft);
+
+    line-height:1.75;
+}
+
+
+/* ==========================================================
+   16. RESPONSIVIDADE ABOUT — TABLET
+   ========================================================== */
+
+@media (max-width:1024px){
+
+    .about-page .premium-timeline{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+    .about-page .premium-timeline::before{
+        display:none;
+    }
+
+    .about-page .about-leader-visual{
+
+        min-height:460px;
+    }
+
+    .about-page .about-leader-visual img{
+
+        height:460px;
+    }
+
+    .about-page .ceo-photo{
+
+        min-height:440px;
+    }
+
+    .about-page .ceo-photo img{
+
+        height:440px;
+    }
+
+}
+
+
+/* ==========================================================
+   17. RESPONSIVIDADE ABOUT — MOBILE
+   ========================================================== */
+
+@media (max-width:720px){
+
+    .about-page .about-bento{
+
+        grid-template-columns:1fr;
+    }
+
+    .about-page .about-bento-main{
+
+        grid-column:auto;
+    }
+
+    .about-page .about-leader-visual{
+
+        min-height:380px;
+
+        border-radius:24px;
+    }
+
+    .about-page .about-leader-visual img{
+
+        height:380px;
+    }
+
+    .about-page .hero-leader-caption{
+
+        left:14px;
+        right:14px;
+        bottom:14px;
+
+        padding:13px 15px;
+    }
+
+    .about-page .ceo-photo{
+
+        min-height:380px;
+    }
+
+    .about-page .ceo-photo img{
+
+        height:380px;
+    }
+
+    .about-page .ceo-profile-info{
+
+        padding:20px;
+    }
+
+    .about-page .principle-card,
+    .about-page .partner-card,
+    .about-page .strategic-card{
+
+        padding:22px;
+    }
+
+    .about-page .premium-timeline{
+
+        grid-template-columns:1fr;
+    }
+
+    .about-page .timeline-content{
+
+        min-height:auto;
+    }
+
+    .about-page .showcase-content{
+
+        padding:48px 24px;
+    }
+
+    .about-page .partner-card-top{
+
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+}
+
+
+/* ==========================================================
+   18. REDUÇÃO DE MOVIMENTO
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .about-page .card,
+    .about-page .principle-card,
+    .about-page .partner-card,
+    .about-page .strategic-card{
+
+        transition:none;
+    }
+
+}
