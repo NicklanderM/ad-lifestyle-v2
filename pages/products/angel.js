@@ -133,30 +133,60 @@ return`
 
             <h2 class="section-title">
                 Estrutura Inteligente
-                em 6 Camadas
+                em 7 Camadas
             </h2>
 
             <p class="lead">
-                Cada camada foi concebida para oferecer
-                absorção eficiente, conforto prolongado e
-                respirabilidade durante todo o dia.
+                A estrutura Angel Moon combina diferentes
+                camadas concebidas para proporcionar absorção,
+                conforto, ventilação e protecção durante a utilização.
             </p>
 
         </div>
 
         <div class="timeline mt-6">
 
-            ${layer("1","Película respirável","Permite circulação de ar, reduzindo a sensação de humidade.")}
+            ${layer(
+                "1",
+                "Película respirável",
+                "Permite circulação de ar e contribui para uma utilização mais confortável."
+            )}
 
-            ${layer("2","Algodão Premium","Toque extremamente suave e delicado para a pele.")}
+            ${layer(
+                "2",
+                "Superfície de contacto suave",
+                "Desenvolvida para proporcionar um contacto delicado e confortável com a pele."
+            )}
 
-            ${layer("3","Negative Ion Core","Tecnologia central desenvolvida para proporcionar maior sensação de frescura e conforto.")}
+            ${layer(
+                "3",
+                "Negative Ion Core",
+                "Núcleo tecnológico associado à banda de iões negativos, Nano Silver, biomagnetismo e infravermelho longínquo."
+            )}
 
-            ${layer("4","SAP Ultra Absorvente","Retém líquidos rapidamente, ajudando a manter a superfície seca.")}
+            ${layer(
+                "4",
+                "SAP Ultra Absorvente",
+                "Núcleo concebido para absorver e reter líquidos de forma eficiente."
+            )}
 
-            ${layer("5","Camada Antibacteriana","Contribui para uma utilização mais higiénica e confortável.")}
+            ${layer(
+                "5",
+                "Camada Antibacteriana",
+                "Camada integrada na estrutura do produto, associada a uma experiência de utilização mais higiénica."
+            )}
 
-            ${layer("6","Base Impermeável","Protecção contra fugas sem comprometer a flexibilidade.")}
+            ${layer(
+                "6",
+                "Camada de distribuição",
+                "Ajuda a distribuir o líquido pela superfície absorvente, favorecendo uma utilização uniforme."
+            )}
+
+            ${layer(
+                "7",
+                "Base Impermeável",
+                "Ajuda a proteger contra fugas, mantendo a flexibilidade e o conforto do penso."
+            )}
 
         </div>
 
@@ -209,28 +239,241 @@ return`
         <div class="section-center reveal">
 
             <span class="label">
-                Benefícios
+                Benefícios & Características
             </span>
 
             <h2 class="section-title">
                 Muito além da absorção
             </h2>
 
+            <p class="lead">
+                Conheça as principais características,
+                propriedades e alegações associadas ao
+                Angel Moon.
+            </p>
+
         </div>
 
-        <div class="grid grid-3 mt-6">
 
-            ${benefit("🌸","Conforto prolongado","Sensação agradável durante horas.")}
+        <!-- ==================================================
+             CONFORTO
+             ================================================== -->
 
-            ${benefit("💜","Frescura","Tecnologia de iões negativos.")}
+        <div class="section-center mt-6 reveal">
 
-            ${benefit("🛡️","Alta absorção","Ajuda a manter a superfície seca.")}
+            <span class="label">
+                Conforto diário
+            </span>
 
-            ${benefit("🌿","Respirável","Favorece circulação de ar.")}
+        </div>
 
-            ${benefit("☁️","Suavidade","Algodão delicado para uso diário.")}
+        <div class="grid grid-3 mt-4">
 
-            ${benefit("✨","Bem-estar","Experiência íntima premium.")}
+            ${benefit(
+                "🌸",
+                "Conforto prolongado",
+                "Superfície desenvolvida para proporcionar uma sensação suave e confortável durante a utilização."
+            )}
+
+            ${benefit(
+                "☁️",
+                "Contacto suave",
+                "A estrutura foi concebida para proporcionar um contacto delicado com a pele."
+            )}
+
+            ${benefit(
+                "🌿",
+                "Respirabilidade",
+                "A estrutura respirável favorece a circulação de ar e ajuda a reduzir a sensação de humidade."
+            )}
+
+            ${benefit(
+                "💧",
+                "Gestão da humidade",
+                "A tecnologia absorvente foi concebida para ajudar a manter a superfície mais seca durante a utilização."
+            )}
+
+            ${benefit(
+                "✨",
+                "Sensação de frescura",
+                "A tecnologia Negative Ion Core está associada a uma experiência de utilização mais fresca e confortável."
+            )}
+
+            ${benefit(
+                "🌺",
+                "Controlo de odores",
+                "O produto apresenta uma propriedade desodorizante associada à sua tecnologia."
+            )}
+
+        </div>
+
+
+        <!-- ==================================================
+             TECNOLOGIA
+             ================================================== -->
+
+        <div class="section-center mt-6 reveal">
+
+            <span class="label">
+                Negative Ion Core
+            </span>
+
+        </div>
+
+        <div class="grid grid-3 mt-4">
+
+            ${benefit(
+                "⚡",
+                "Iões negativos",
+                "Tecnologia integrada na banda central do produto."
+            )}
+
+            ${benefit(
+                "🛡️",
+                "Nano Silver",
+                "Tecnologia incorporada na estrutura Negative Ion Core."
+            )}
+
+            ${benefit(
+                "🧲",
+                "Biomagnetismo",
+                "Componente tecnológico indicado na estrutura do produto."
+            )}
+
+            ${benefit(
+                "☀️",
+                "Infravermelho longínquo",
+                "Tecnologia indicada como parte integrante da banda tecnológica."
+            )}
+
+            ${benefit(
+                "🦠",
+                "Propriedade antibacteriana",
+                "O produto é apresentado com características antibacterianas."
+            )}
+
+            ${benefit(
+                "🌱",
+                "Tecnologia integrada",
+                "Combinação de diferentes elementos tecnológicos numa única estrutura."
+            )}
+
+        </div>
+
+
+        <!-- ==================================================
+             CARACTERÍSTICAS ESPECÍFICAS
+             ================================================== -->
+
+        <div class="section-center mt-6 reveal">
+
+            <span class="label">
+                Características do produto
+            </span>
+
+        </div>
+
+        <div class="grid grid-3 mt-4">
+
+            ${benefit(
+                "💨",
+                "Super absorção",
+                "Estrutura desenvolvida para elevada capacidade de absorção."
+            )}
+
+            ${benefit(
+                "🌬️",
+                "Ventilação",
+                "Favorece a circulação de ar na estrutura do penso."
+            )}
+
+            ${benefit(
+                "🧼",
+                "Higiénico",
+                "Concebido para utilização íntima com foco no conforto e higiene."
+            )}
+
+            ${benefit(
+                "👗",
+                "Fino e flexível",
+                "Estrutura fina e flexível para facilitar a adaptação ao corpo."
+            )}
+
+            ${benefit(
+                "🌸",
+                "Odorização",
+                "A tecnologia é apresentada com efeito desodorizante."
+            )}
+
+            ${benefit(
+                "💜",
+                "Uso confortável",
+                "Pensado para utilização prolongada com foco no conforto."
+            )}
+
+        </div>
+
+
+        <!-- ==================================================
+             ALEGAÇÕES DO PRODUTO
+             ================================================== -->
+
+        <div class="section-center mt-6 reveal">
+
+            <span class="label">
+                Informações do fabricante
+            </span>
+
+            <h3 class="section-title">
+                Outras características comunicadas
+            </h3>
+
+            <p class="text mt-2">
+                As informações abaixo correspondem às características
+                e alegações fornecidas para o produto e devem ser
+                interpretadas de acordo com a documentação técnica
+                e certificações oficiais disponíveis.
+            </p>
+
+        </div>
+
+        <div class="grid grid-3 mt-4">
+
+            ${benefit(
+                "🌿",
+                "Conforto íntimo",
+                "Apresentado como uma solução orientada para conforto e bem-estar durante a utilização."
+            )}
+
+            ${benefit(
+                "💧",
+                "Humidade",
+                "Apresentado com capacidade de ajudar na gestão da humidade vaginal."
+            )}
+
+            ${benefit(
+                "🌸",
+                "Desconforto menstrual",
+                "O fabricante associa o produto ao conforto durante o período menstrual."
+            )}
+
+            ${benefit(
+                "🛡️",
+                "Infecções",
+                "O fabricante apresenta propriedades associadas ao combate de microrganismos; estas alegações devem ser confirmadas através de documentação técnica."
+            )}
+
+            ${benefit(
+                "⚕️",
+                "Bem-estar feminino",
+                "O produto é apresentado pelo fabricante com diversas alegações relacionadas com o bem-estar íntimo feminino."
+            )}
+
+            ${benefit(
+                "👨",
+                "Utilização masculina",
+                "Segundo a informação fornecida, o produto também é apresentado para determinadas utilizações masculinas."
+            )}
 
         </div>
 
@@ -265,7 +508,7 @@ return`
 }
 
 /* ==========================================================
-   COMPOSITION
+   COMPOSITION + SPECIFICATIONS + CERTIFICATIONS
    ========================================================== */
 
 function composition(){
@@ -290,17 +533,20 @@ return`
                 </h2>
 
                 <p class="text">
-                    O Angel Moon combina fibras macias,
-                    núcleo ultra absorvente e tecnologia
-                    Negative Ion Core para proporcionar
-                    conforto, leveza e elevada qualidade.
+                    O Angel Moon combina diferentes materiais
+                    e tecnologias numa estrutura desenvolvida
+                    para proporcionar conforto, absorção,
+                    ventilação e uma experiência de utilização
+                    diferenciada.
                 </p>
 
                 <div class="icon-list mt-4">
 
-                    ${comp("Algodão Premium")}
+                    ${comp("Algodão / superfície suave")}
 
                     ${comp("Negative Ion Core")}
+
+                    ${comp("Nano Silver")}
 
                     ${comp("SAP Ultra Absorvente")}
 
@@ -319,6 +565,221 @@ return`
                 <img
                     src="./assets/products/angel.png"
                     alt="Angel Moon">
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             NORMAS E PROPRIEDADES
+             ================================================== -->
+
+        <div class="angel-specifications mt-6">
+
+            <div class="section-center reveal">
+
+                <span class="label">
+                    Especificações
+                </span>
+
+                <h2 class="section-title">
+                    Normas e propriedades
+                </h2>
+
+                <p class="lead">
+                    Principais características apresentadas
+                    na documentação e materiais informativos
+                    do Angel Moon.
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-3 mt-5">
+
+                ${specification(
+                    "21 Academy",
+                    "Marca / estrutura de distribuição"
+                )}
+
+                ${specification(
+                    "Efeito desodorizante",
+                    "Tecnologia apresentada com função de controlo de odores."
+                )}
+
+                ${specification(
+                    "Efeito antibacteriano",
+                    "Característica apresentada na documentação do produto."
+                )}
+
+                ${specification(
+                    "Permeável ao ar",
+                    "Estrutura concebida para favorecer a ventilação."
+                )}
+
+                ${specification(
+                    "Super absorvente",
+                    "Estrutura de elevada capacidade de absorção."
+                )}
+
+                ${specification(
+                    "Confortável",
+                    "Desenvolvido para proporcionar uma experiência confortável."
+                )}
+
+                ${specification(
+                    "Tecnologia SmartCore",
+                    "Estrutura tecnológica integrada no produto."
+                )}
+
+                ${specification(
+                    "Flexível",
+                    "Estrutura concebida para acompanhar os movimentos."
+                )}
+
+                ${specification(
+                    "Fina",
+                    "Formato fino para maior discrição durante a utilização."
+                )}
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             NEGATIVE ION CORE
+             ================================================== -->
+
+        <div class="angel-ion-panel mt-6 reveal">
+
+            <div class="angel-ion-content">
+
+                <span class="label">
+                    Negative Ion Core
+                </span>
+
+                <h2 class="section-title">
+                    Tecnologia de iões negativos
+                </h2>
+
+                <p class="text mt-2">
+                    A banda tecnológica do Angel Moon é apresentada
+                    com uma combinação de Nano Silver, iões negativos,
+                    biomagnetismo e infravermelho longínquo.
+                </p>
+
+                <div class="icon-list mt-4">
+
+                    ${comp("Nano Silver")}
+
+                    ${comp("Iões negativos")}
+
+                    ${comp("Biomagnetismo")}
+
+                    ${comp("Infravermelho longínquo")}
+
+                    ${comp("Efeito desodorizante")}
+
+                    ${comp("Propriedade antibacteriana")}
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             CERTIFICATIONS
+             ================================================== -->
+
+        <div class="angel-certifications mt-6">
+
+            <div class="section-center reveal">
+
+                <span class="label">
+                    Certificações
+                </span>
+
+                <h2 class="section-title">
+                    Certificações e documentação
+                </h2>
+
+                <p class="lead">
+                    Área reservada para apresentação das
+                    certificações, normas e documentos oficiais
+                    associados ao Angel Moon.
+                </p>
+
+            </div>
+
+
+            <div class="angel-certifications-grid mt-5">
+
+                ${certification(
+                    "Certificação 01",
+                    "./assets/products/certifications/angel-cert-01.png",
+                    "Certificação oficial do produto"
+                )}
+
+                ${certification(
+                    "Certificação 02",
+                    "./assets/products/certifications/angel-cert-02.png",
+                    "Norma ou certificação aplicável"
+                )}
+
+                ${certification(
+                    "Certificação 03",
+                    "./assets/products/certifications/angel-cert-03.png",
+                    "Documento técnico / certificação"
+                )}
+
+                ${certification(
+                    "Certificação 04",
+                    "./assets/products/certifications/angel-cert-04.png",
+                    "Certificação adicional"
+                )}
+
+            </div>
+
+        </div>
+
+
+        <!-- ==================================================
+             PROPRIEDADES DO ANGEL MOON
+             ================================================== -->
+
+        <div class="angel-properties mt-6">
+
+            <div class="section-center reveal">
+
+                <span class="label">
+                    As 7 propriedades
+                </span>
+
+                <h2 class="section-title">
+                    A tecnologia Angel Moon
+                </h2>
+
+            </div>
+
+            <div class="grid grid-3 mt-5">
+
+                ${property("01","Flexível")}
+
+                ${property("02","Fina")}
+
+                ${property("03","Super absorvente")}
+
+                ${property("04","Ventilação óptima")}
+
+                ${property("05","Higiénico")}
+
+                ${property("06","Saudável")}
+
+                ${property("07","Estilosa")}
 
             </div>
 
@@ -345,6 +806,96 @@ return`
     </div>
 
 </div>
+
+`;
+
+}
+
+function specification(title,text){
+
+return`
+
+<div class="card service-card reveal">
+
+    <div class="service-icon">
+        ✓
+    </div>
+
+    <h3>
+        ${title}
+    </h3>
+
+    <p class="text mt-2">
+        ${text}
+    </p>
+
+</div>
+
+`;
+
+}
+
+function property(number,text){
+
+return`
+
+<div class="card service-card reveal">
+
+    <div class="service-icon">
+        ${number}
+    </div>
+
+    <h3>
+        ${text}
+    </h3>
+
+</div>
+
+`;
+
+}
+
+function certification(title,image,description){
+
+return`
+
+<article class="angel-certification-card reveal">
+
+    <div class="angel-certification-image">
+
+        <img
+            src="${image}"
+            alt="${title}"
+            loading="lazy"
+            onerror="this.parentElement.classList.add('missing');">
+
+        <div class="angel-certification-placeholder">
+
+            <span>
+                Imagem da certificação
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="angel-certification-info">
+
+        <span class="label">
+            Certificação
+        </span>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p class="text mt-1">
+            ${description}
+        </p>
+
+    </div>
+
+</article>
 
 `;
 
@@ -450,13 +1001,40 @@ return`
 
         <div class="faq mt-5">
 
-            ${question("O que é o Negative Ion Core?","É o núcleo tecnológico presente no Angel Moon, desenvolvido para proporcionar uma sensação superior de frescura e conforto durante a utilização.")}
+            ${question(
+                "O que é o Negative Ion Core?",
+                "É o núcleo tecnológico presente no Angel Moon, associado a uma banda que combina elementos como Nano Silver, iões negativos, biomagnetismo e infravermelho longínquo."
+            )}
 
-            ${question("Qual a diferença entre Dia e Noite?","A versão Noite possui maior comprimento e cobertura para proporcionar maior protecção durante o período nocturno.")}
+            ${question(
+                "Quantas camadas possui o Angel Moon?",
+                "A informação fornecida para esta versão do produto indica uma estrutura composta por 7 camadas."
+            )}
 
-            ${question("Existe uma versão para uso diário?","Sim. A versão Panty Liner foi concebida especificamente para protecção diária e conforto contínuo.")}
+            ${question(
+                "Quais são as principais propriedades do Angel Moon?",
+                "Entre as propriedades apresentadas estão flexibilidade, estrutura fina, elevada absorção, ventilação, higiene, conforto e tecnologia SmartCore."
+            )}
 
-            ${question("O Angel Moon é confortável para peles sensíveis?","A sua superfície em algodão premium foi desenvolvida para proporcionar um toque extremamente suave e agradável.")}
+            ${question(
+                "O Angel Moon é respirável?",
+                "Sim. A estrutura é apresentada como permeável ao ar, favorecendo a ventilação durante a utilização."
+            )}
+
+            ${question(
+                "O Angel Moon possui efeito desodorizante?",
+                "Segundo a documentação fornecida para o produto, o Angel Moon apresenta uma propriedade desodorizante associada à sua tecnologia."
+            )}
+
+            ${question(
+                "O produto possui certificações?",
+                "Esta página possui uma área específica para apresentar as certificações e documentos oficiais do produto. As imagens devem ser inseridas apenas quando a documentação correspondente estiver disponível."
+            )}
+
+            ${question(
+                "As propriedades terapêuticas são comprovadas clinicamente?",
+                "As alegações relacionadas com efeitos terapêuticos devem ser avaliadas de acordo com a documentação técnica, certificações e evidência clínica oficialmente disponibilizadas pelo fabricante ou pelas entidades competentes."
+            )}
 
         </div>
 
