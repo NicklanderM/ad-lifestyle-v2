@@ -7,17 +7,16 @@
 
 import { applyTheme } from "../js/theme.js";
 
-console.log("CONTACT.JS — VERSÃO ESTÁVEL CARREGADA");
+console.log("CONTACT.JS CARREGADO");
 
-
-export function loadContact(){
+function loadContact(){
 
     applyTheme("angel");
 
     var app = document.getElementById("app");
 
     if(!app){
-        console.error("AD LIFESTYLE: elemento #app não encontrado.");
+        console.error("AD LIFESTYLE: #app não encontrado.");
         return;
     }
 
@@ -34,7 +33,6 @@ export function loadContact(){
 
     initialiseContact();
 }
-
 
 /* ==========================================================
    HERO
