@@ -1,13 +1,17 @@
-```js
+```text
 /* ==========================================================
    AD LIFESTYLE V2
    ROUTER.JS
    SPA History Router
-   Versão robusta de importação
+   Versão estável — sem dependência circular
+   ========================================================== */
+
+
+/* ==========================================================
+   IMPORTAÇÃO DO ESTADO
    ========================================================== */
 
 import { setRoute } from "./state.js";
-import { scrollTop } from "./app.js";
 
 
 /* ==========================================================
@@ -15,38 +19,16 @@ import { scrollTop } from "./app.js";
    ========================================================== */
 
 import { loadHome } from "../pages/home.js";
+
 import { loadServices } from "../pages/services.js";
+
 import { loadEvents } from "../pages/events.js";
 
-/*
-   Contacto:
-   Importação por namespace para evitar erro de export nomeado.
-*/
-import * as ContactPage from "../pages/contact-page.js";
+import { loadContact } from "../pages/contact-page.js";
 
 import { loadAbout } from "../pages/about.js";
+
 import { loadProducts } from "../pages/products.js";
-
-
-/* ==========================================================
-   RESOLUÇÃO DO CONTACTO
-   ========================================================== */
-
-const loadContact =
-    typeof ContactPage.loadContact === "function"
-        ? ContactPage.loadContact
-        : typeof ContactPage.default === "function"
-            ? ContactPage.default
-            : null;
-
-
-if(!loadContact){
-
-    console.error(
-        "AD LIFESTYLE: contact-page.js não disponibiliza loadContact nem export default."
-    );
-
-}
 
 
 /* ==========================================================
@@ -54,19 +36,26 @@ if(!loadContact){
    ========================================================== */
 
 import { loadAngel } from "../pages/products/angel.js";
+
 import { loadEzeno } from "../pages/products/ezeno.js";
+
 import { loadZenbru } from "../pages/products/zenbru.js";
+
 import { loadAlpha } from "../pages/products/alpha.js";
 
 import { loadAlphaMeta } from "../pages/products/alphameta.js";
+
 import { loadMinoseed } from "../pages/products/minoseed.js";
+
 import { loadEvador } from "../pages/products/evador.js";
+
 import { loadAlphaSpinUltra } from "../pages/products/alphaspin-ultra.js";
+
 import { loadISmartS3 } from "../pages/products/ismarts3.js";
 
 
 /* ==========================================================
-   DEFINIÇÃO DAS ROTAS
+   ROTAS
    ========================================================== */
 
 const routes = {
@@ -120,6 +109,23 @@ const routes = {
 
 
 /* ==========================================================
+   SCROLL TOP
+   ========================================================== */
+
+function scrollTop(){
+
+    window.scrollTo({
+
+        top: 0,
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* ==========================================================
    INICIALIZAÇÃO
    ========================================================== */
 
@@ -136,7 +142,7 @@ export function initRouter(){
         function(){
 
             render(
-                location.pathname,
+                window.location.pathname,
                 false
             );
 
@@ -145,7 +151,7 @@ export function initRouter(){
 
 
     render(
-        location.pathname,
+        window.location.pathname,
         false
     );
 
@@ -159,7 +165,8 @@ export function initRouter(){
 export function navigate(path){
 
     if(
-        location.pathname === path
+        typeof path !== "string" ||
+        !path
     ){
 
         return;
@@ -167,7 +174,16 @@ export function navigate(path){
     }
 
 
-    history.pushState(
+    if(
+        window.location.pathname === path
+    ){
+
+        return;
+
+    }
+
+
+    window.history.pushState(
         {},
         "",
         path
@@ -183,13 +199,24 @@ export function navigate(path){
 
 
 /* ==========================================================
-   INTERCEPTAR LINKS
+   LINKS INTERNOS
    ========================================================== */
 
 function handleNavigation(event){
 
+    const target =
+        event.target;
+
+
+    if(!target){
+
+        return;
+
+    }
+
+
     const link =
-        event.target.closest(
+        target.closest(
             "[data-route]"
         );
 
@@ -205,7 +232,16 @@ function handleNavigation(event){
 
 
     const route =
-        link.dataset.route;
+        link.getAttribute(
+            "data-route"
+        );
+
+
+    if(!route){
+
+        return;
+
+    }
 
 
     navigate(route);
@@ -219,11 +255,13 @@ function handleNavigation(event){
 
 function render(
     path,
-    animate = true
+    animate
 ){
 
     const app =
-        document.getElementById("app");
+        document.getElementById(
+            "app"
+        );
 
 
     if(!app){
@@ -243,7 +281,9 @@ function render(
     updateActiveLinks(path);
 
 
-    if(typeof page !== "function"){
+    if(
+        typeof page !== "function"
+    ){
 
         render404();
 
@@ -259,7 +299,7 @@ function render(
         );
 
 
-        setTimeout(
+        window.setTimeout(
             function(){
 
                 app.classList.remove(
@@ -267,7 +307,22 @@ function render(
                 );
 
 
-                page();
+                try{
+
+                    page();
+
+                }catch(error){
+
+                    console.error(
+                        "AD LIFESTYLE: erro ao carregar a página:",
+                        error
+                    );
+
+                    renderError();
+
+                    return;
+
+                }
 
 
                 revealPage();
@@ -278,7 +333,23 @@ function render(
 
     }else{
 
-        page();
+        try{
+
+            page();
+
+        }catch(error){
+
+            console.error(
+                "AD LIFESTYLE: erro ao carregar a página:",
+                error
+            );
+
+            renderError();
+
+            return;
+
+        }
+
 
         revealPage();
 
@@ -291,13 +362,15 @@ function render(
 
 
 /* ==========================================================
-   REVEAL DA PÁGINA
+   REVEAL
    ========================================================== */
 
 function revealPage(){
 
     const app =
-        document.getElementById("app");
+        document.getElementById(
+            "app"
+        );
 
 
     if(!app){
@@ -307,12 +380,21 @@ function revealPage(){
     }
 
 
+    app.classList.remove(
+        "page-enter",
+        "page-enter-active"
+    );
+
+
+    void app.offsetWidth;
+
+
     app.classList.add(
         "page-enter"
     );
 
 
-    requestAnimationFrame(
+    window.requestAnimationFrame(
         function(){
 
             app.classList.add(
@@ -320,7 +402,7 @@ function revealPage(){
             );
 
 
-            setTimeout(
+            window.setTimeout(
                 function(){
 
                     app.classList.remove(
@@ -345,12 +427,16 @@ function revealPage(){
 function updateActiveLinks(path){
 
     document
-        .querySelectorAll("[data-route]")
+        .querySelectorAll(
+            "[data-route]"
+        )
         .forEach(
             function(link){
 
                 const active =
-                    link.dataset.route === path;
+                    link.getAttribute(
+                        "data-route"
+                    ) === path;
 
 
                 link.classList.toggle(
@@ -365,13 +451,15 @@ function updateActiveLinks(path){
 
 
 /* ==========================================================
-   404
+   ERRO 404
    ========================================================== */
 
 function render404(){
 
     const app =
-        document.getElementById("app");
+        document.getElementById(
+            "app"
+        );
 
 
     if(!app){
@@ -425,12 +513,94 @@ function render404(){
 
     if(backHome){
 
-        backHome.onclick =
+        backHome.addEventListener(
+            "click",
             function(){
 
                 navigate("/");
 
-            };
+            }
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   ERRO DE CARREGAMENTO
+   ========================================================== */
+
+function renderError(){
+
+    const app =
+        document.getElementById(
+            "app"
+        );
+
+
+    if(!app){
+
+        return;
+
+    }
+
+
+    app.innerHTML =
+
+        '<section class="hero">' +
+
+            '<div class="container section-center">' +
+
+                '<span class="label">',
+                    'AD Lifestyle',
+                '</span>' +
+
+                '<h1 class="display">',
+                    'Ocorreu um erro',
+                '</h1>' +
+
+                '<p class="lead">',
+                    'Não foi possível carregar esta página.',
+                '</p>' +
+
+                '<div class="hero-actions center">' +
+
+                    '<button ' +
+                        'class="btn btn-primary" ' +
+                        'type="button" ' +
+                        'id="retryPage">' +
+
+                        'Tentar novamente' +
+
+                    '</button>' +
+
+                '</div>' +
+
+            '</div>' +
+
+        '</section>';
+
+
+    const retry =
+        document.getElementById(
+            "retryPage"
+        );
+
+
+    if(retry){
+
+        retry.addEventListener(
+            "click",
+            function(){
+
+                render(
+                    window.location.pathname,
+                    false
+                );
+
+            }
+        );
 
     }
 
@@ -443,7 +613,7 @@ function render404(){
 
 export function currentRoute(){
 
-    return location.pathname;
+    return window.location.pathname;
 
 }
 
@@ -467,7 +637,10 @@ window.Router = {
     navigate,
 
     current:
-        currentRoute
+        currentRoute,
+
+    exists:
+        routeExists
 
 };
 ```
