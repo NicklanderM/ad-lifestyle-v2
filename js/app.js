@@ -121,7 +121,7 @@ function createHeader(){
 
                 <a data-route="/contact">Contacto</a>
                 
-                <a data-route="/exploreProducts">Produtos</a>
+                <a data-route="/products">Produtos</a>
               
                 <a data-route="/about">Sobre Nós</a>
 
@@ -263,7 +263,7 @@ function createFooter(){
 
                     <div class="footer-links">
 
-                        <a data-route="/">Quem Somos</a>
+                        <a data-route="/about">Quem Somos</a>
 
                         <a data-route="/services">Serviços</a>
 
