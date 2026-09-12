@@ -4,6 +4,8 @@
    Premium Institutional Contact Page
    ========================================================== */
 
+   console.log("CONTACT.JS — VERSÃO ACTUAL CARREGADA");
+
 import { applyTheme } from "../js/theme.js";
 
 export function loadContact(){
