@@ -1654,6 +1654,13 @@ function clearFieldStates(form){
 }
 
 
+export {
+    loadContact
+};
+
+export default loadContact;
+
+
 /* ==========================================================
    FIM DO MÓDULO
    ========================================================== */
