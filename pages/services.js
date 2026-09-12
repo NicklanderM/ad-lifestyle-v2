@@ -7,7 +7,7 @@ import { applyTheme } from "../js/theme.js";
 
 export function loadServices(){
 
-    applyTheme("angel");
+     applyTheme("default");
 
     const app = document.getElementById("app");
 
