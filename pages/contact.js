@@ -1,8 +1,8 @@
-```js
+```text
 /* ==========================================================
    AD LIFESTYLE — CONTACT.JS
    Premium Institutional Contact Page
-   Estável • Sem template strings
+   Versão definitiva — SPA / ES Modules
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -13,13 +13,21 @@ import { applyTheme } from "../js/theme.js";
    ========================================================== */
 
 const WHATSAPP_NUMBER = "244924964666";
-const WHATSAPP_URL = "https://wa.me/" + WHATSAPP_NUMBER;
+
+const WHATSAPP_URL =
+    "https://wa.me/" + WHATSAPP_NUMBER;
 
 const GOOGLE_MAPS_URL =
     "https://www.google.com/maps?q=-8.83525,13.22748";
 
 const CONTACT_EMAIL =
     "adbzzworlddistribuidor@email.com";
+
+const CONTACT_IMAGE =
+    new URL(
+        "../assets/images/contact-hero.png",
+        import.meta.url
+    ).href;
 
 
 /* ==========================================================
@@ -42,22 +50,17 @@ export function loadContact(){
         return;
     }
 
+
     app.innerHTML =
         '<div class="contact-page">' +
 
-            hero() +
-
-            contacts() +
-
-            socials() +
-
-            locationSection() +
-
-            contactFormSection() +
-
-            faq() +
-
-            cta() +
+            renderHero() +
+            renderContacts() +
+            renderSocials() +
+            renderLocation() +
+            renderForm() +
+            renderFAQ() +
+            renderCTA() +
 
         '</div>';
 
@@ -71,7 +74,7 @@ export function loadContact(){
    HERO
    ========================================================== */
 
-function hero(){
+function renderHero(){
 
     return [
 
@@ -84,6 +87,7 @@ function hero(){
                 '<div class="blob blob-3"></div>',
 
             '</div>',
+
 
             '<div class="container hero-grid">',
 
@@ -101,7 +105,8 @@ function hero(){
 
 
                     '<p class="hero-sub">',
-                        'Tem uma questão, pretende conhecer os nossos produtos ou deseja saber mais sobre a nossa actividade? ',
+                        'Tem uma questão, pretende conhecer os nossos produtos ',
+                        'ou deseja saber mais sobre a nossa actividade? ',
                         'Escolha o canal que preferir.',
                     '</p>',
 
@@ -111,18 +116,28 @@ function hero(){
                         '<button ',
                             'class="btn btn-primary" ',
                             'type="button" ',
-                            'data-action="whatsapp">',
+                            'data-contact-action="whatsapp">',
+
                             icon("whatsapp"),
-                            '<span>WhatsApp</span>',
+
+                            '<span>',
+                                'WhatsApp',
+                            '</span>',
+
                         '</button>',
 
 
                         '<button ',
                             'class="btn btn-glass" ',
                             'type="button" ',
-                            'data-action="form">',
+                            'data-contact-action="form">',
+
                             icon("message"),
-                            '<span>Enviar mensagem</span>',
+
+                            '<span>',
+                                'Enviar mensagem',
+                            '</span>',
+
                         '</button>',
 
                     '</div>',
@@ -132,12 +147,17 @@ function hero(){
 
                         '<span>',
                             icon("shield"),
-                            '<span>Atendimento directo</span>',
+                            '<span>',
+                                'Atendimento directo',
+                            '</span>',
                         '</span>',
+
 
                         '<span>',
                             icon("clock"),
-                            '<span>Segunda a Sábado</span>',
+                            '<span>',
+                                'Segunda a Sábado',
+                            '</span>',
                         '</span>',
 
                     '</div>',
@@ -149,7 +169,11 @@ function hero(){
 
                     '<div class="hero-product contact-hero-visual">',
 
-                        '<div class="product-glow" aria-hidden="true"></div>',
+                        '<div ',
+                            'class="product-glow" ',
+                            'aria-hidden="true">',
+                        '</div>',
+
 
                         '<div ',
                             'class="contact-hero-orbit" ',
@@ -158,10 +182,11 @@ function hero(){
 
 
                         '<img ',
-                            'src="assets/images/contact-hero.png" ',
-                            'alt="Contacto com a AD Lifestyle" ',
+                            'src="',
+                            CONTACT_IMAGE,
+                            '" ',
+                            'alt="AD Lifestyle — Contacto" ',
                             'loading="eager">',
-                        '',
 
 
                         '<div class="contact-hero-card">',
@@ -170,9 +195,11 @@ function hero(){
                                 'AD LIFESTYLE',
                             '</span>',
 
+
                             '<strong>',
                                 'Estamos consigo.',
                             '</strong>',
+
 
                             '<span>',
                                 'Luanda · Angola',
@@ -194,10 +221,10 @@ function hero(){
 
 
 /* ==========================================================
-   CONTACTOS DIRECTOS
+   CONTACTOS
    ========================================================== */
 
-function contacts(){
+function renderContacts(){
 
     return [
 
@@ -212,9 +239,11 @@ function contacts(){
                         'Contactos',
                     '</span>',
 
+
                     '<h2 class="section-title">',
                         'Fale directamente connosco',
                     '</h2>',
+
 
                     '<p class="text mt-2">',
                         'Escolha o canal que melhor se adapta à sua necessidade.',
@@ -258,7 +287,7 @@ function contacts(){
                         "Horário",
                         "08h00 – 18h00",
                         "Segunda a Sábado",
-                        "Horário de atendimento"
+                        "Atendimento"
                     ),
 
 
@@ -296,14 +325,18 @@ function contactCard(
                 '<span ',
                     'class="service-icon contact-icon" ',
                     'aria-hidden="true">',
+
                     icon(type),
+
                 '</span>',
 
 
                 '<span ',
                     'class="contact-card-arrow" ',
                     'aria-hidden="true">',
+
                     icon("arrow-up-right"),
+
                 '</span>',
 
             '</span>',
@@ -350,7 +383,7 @@ function contactCard(
    REDES SOCIAIS
    ========================================================== */
 
-function socials(){
+function renderSocials(){
 
     return [
 
@@ -417,7 +450,6 @@ function socials(){
 
                     '</div>',
 
-
                 '</div>',
 
             '</div>',
@@ -447,8 +479,12 @@ function socialLink(
             'class="social-link">',
 
 
-            '<span class="social-icon" aria-hidden="true">',
+            '<span ',
+                'class="social-icon" ',
+                'aria-hidden="true">',
+
                 icon(iconType),
+
             '</span>',
 
 
@@ -458,6 +494,7 @@ function socialLink(
                     title,
                 '</strong>',
 
+
                 '<small>',
                     handle,
                 '</small>',
@@ -465,8 +502,12 @@ function socialLink(
             '</span>',
 
 
-            '<span class="social-arrow" aria-hidden="true">',
+            '<span ',
+                'class="social-arrow" ',
+                'aria-hidden="true">',
+
                 icon("arrow-up-right"),
+
             '</span>',
 
 
@@ -481,7 +522,7 @@ function socialLink(
    LOCALIZAÇÃO
    ========================================================== */
 
-function locationSection(){
+function renderLocation(){
 
     return [
 
@@ -520,7 +561,9 @@ function locationSection(){
                             '<div ',
                                 'class="location-symbol" ',
                                 'aria-hidden="true">',
+
                                 icon("location"),
+
                             '</div>',
 
 
@@ -540,7 +583,9 @@ function locationSection(){
                         '</div>',
 
 
-                        '<div class="location-information-line"></div>',
+                        '<div ',
+                            'class="location-information-line">',
+                        '</div>',
 
 
                         '<div class="location-list">',
@@ -551,8 +596,11 @@ function locationSection(){
                                 '<span ',
                                     'class="location-item-icon" ',
                                     'aria-hidden="true">',
+
                                     icon("location"),
+
                                 '</span>',
+
 
                                 '<div>',
 
@@ -578,14 +626,18 @@ function locationSection(){
                                 '<span ',
                                     'class="location-item-icon" ',
                                     'aria-hidden="true">',
+
                                     icon("navigation"),
+
                                 '</span>',
+
 
                                 '<div>',
 
                                     '<strong>',
                                         'Coordenadas',
                                     '</strong>',
+
 
                                     '<p>',
                                         '8°50\'06.90&quot;S 13°13\'38.93&quot;E',
@@ -601,8 +653,11 @@ function locationSection(){
                                 '<span ',
                                     'class="location-item-icon" ',
                                     'aria-hidden="true">',
+
                                     icon("clock"),
+
                                 '</span>',
+
 
                                 '<div>',
 
@@ -610,9 +665,11 @@ function locationSection(){
                                         'Atendimento',
                                     '</strong>',
 
+
                                     '<p>',
                                         'Segunda a Sábado',
                                     '</p>',
+
 
                                     '<p>',
                                         '08h00 – 18h00',
@@ -622,14 +679,13 @@ function locationSection(){
 
                             '</div>',
 
-
                         '</div>',
 
 
                         '<button ',
                             'class="btn btn-primary location-button" ',
                             'type="button" ',
-                            'data-action="maps">',
+                            'data-contact-action="maps">',
 
                             icon("navigation"),
 
@@ -664,6 +720,7 @@ function locationSection(){
                                         'LOCALIZAÇÃO',
                                     '</span>',
 
+
                                     '<strong>',
                                         'AD Lifestyle',
                                     '</strong>',
@@ -682,10 +739,9 @@ function locationSection(){
 
                         '<div class="map-frame">',
 
-
                             '<iframe ',
                                 'title="Mapa da localização da AD Lifestyle" ',
-                                'src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925&amp;layer=mapnik&amp;marker=-8.83525%2C13.22748" ',
+                                'src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925%26layer=mapnik%26marker=-8.83525%2C13.22748" ',
                                 'loading="lazy" ',
                                 'referrerpolicy="no-referrer-when-downgrade">',
                             '</iframe>',
@@ -695,15 +751,20 @@ function locationSection(){
                                 'class="map-marker" ',
                                 'aria-hidden="true">',
 
-                                '<span class="map-marker-pulse">',
+
+                                '<span ',
+                                    'class="map-marker-pulse">',
                                 '</span>',
+
 
                                 '<span class="map-marker-icon">',
+
                                     icon("location"),
+
                                 '</span>',
 
-                            '</div>',
 
+                            '</div>',
 
                         '</div>',
 
@@ -738,9 +799,7 @@ function locationSection(){
 
                     '</div>',
 
-
                 '</div>',
-
 
             '</div>',
 
@@ -755,18 +814,24 @@ function locationSection(){
    FORMULÁRIO
    ========================================================== */
 
-function contactFormSection(){
+function renderForm(){
 
     return [
 
-        '<section class="section" id="contact-form">',
+        '<section ',
+            'class="section" ',
+            'id="contact-form">',
+
 
             '<div class="container-sm">',
+
 
                 '<div class="contact-form-panel reveal">',
 
 
-                    '<div class="contact-form-header section-center">',
+                    '<div ',
+                        'class="contact-form-header section-center">',
+
 
                         '<span class="label">',
                             'Mensagem',
@@ -782,6 +847,7 @@ function contactFormSection(){
                             'Envie os seus dados e a sua mensagem. ',
                             'Ao submeter, será aberta uma conversa directamente no WhatsApp.',
                         '</p>',
+
 
                     '</div>',
 
@@ -801,6 +867,7 @@ function contactFormSection(){
                                     'Nome',
                                 '</label>',
 
+
                                 '<input ',
                                     'type="text" ',
                                     'class="input" ',
@@ -809,6 +876,7 @@ function contactFormSection(){
                                     'autocomplete="name" ',
                                     'placeholder="O seu nome" ',
                                     'required>',
+
 
                             '</div>',
 
@@ -819,6 +887,7 @@ function contactFormSection(){
                                     'Telefone',
                                 '</label>',
 
+
                                 '<input ',
                                     'type="tel" ',
                                     'class="input" ',
@@ -826,6 +895,7 @@ function contactFormSection(){
                                     'name="phone" ',
                                     'autocomplete="tel" ',
                                     'placeholder="+244 9XX XXX XXX">',
+
 
                             '</div>',
 
@@ -839,6 +909,7 @@ function contactFormSection(){
                                 'E-mail',
                             '</label>',
 
+
                             '<input ',
                                 'type="email" ',
                                 'class="input" ',
@@ -846,6 +917,7 @@ function contactFormSection(){
                                 'name="email" ',
                                 'autocomplete="email" ',
                                 'placeholder="exemplo@email.com">',
+
 
                         '</div>',
 
@@ -856,6 +928,7 @@ function contactFormSection(){
                                 'Assunto',
                             '</label>',
 
+
                             '<input ',
                                 'type="text" ',
                                 'class="input" ',
@@ -863,6 +936,7 @@ function contactFormSection(){
                                 'name="subject" ',
                                 'placeholder="Como podemos ajudar?" ',
                                 'required>',
+
 
                         '</div>',
 
@@ -873,6 +947,7 @@ function contactFormSection(){
                                 'Mensagem',
                             '</label>',
 
+
                             '<textarea ',
                                 'class="input textarea" ',
                                 'id="message" ',
@@ -881,6 +956,7 @@ function contactFormSection(){
                                 'placeholder="Escreva aqui a sua mensagem..." ',
                                 'required>',
                             '</textarea>',
+
 
                         '</div>',
 
@@ -917,7 +993,6 @@ function contactFormSection(){
 
                     '</form>',
 
-
                 '</div>',
 
             '</div>',
@@ -933,7 +1008,7 @@ function contactFormSection(){
    FAQ
    ========================================================== */
 
-function faq(){
+function renderFAQ(){
 
     return [
 
@@ -964,25 +1039,25 @@ function faq(){
                 '<div class="faq contact-faq mt-5">',
 
 
-                    question(
+                    faqItem(
                         "Como posso comprar os produtos?",
                         "Pode entrar em contacto connosco através do WhatsApp para conhecer a disponibilidade dos produtos e as condições de aquisição."
                     ),
 
 
-                    question(
+                    faqItem(
                         "Realizam entregas em Luanda?",
                         "As entregas podem ser organizadas de acordo com a disponibilidade e a localização. Fale connosco para verificar as condições aplicáveis."
                     ),
 
 
-                    question(
+                    faqItem(
                         "Como posso participar nos eventos?",
                         "Entre em contacto connosco através do WhatsApp para conhecer os próximos eventos, condições de participação e processo de inscrição."
                     ),
 
 
-                    question(
+                    faqItem(
                         "Posso tornar-me parceiro?",
                         "Sim. Podemos apresentar-lhe a nossa actividade, o ecossistema e as possibilidades existentes. O primeiro passo é entrar em contacto connosco."
                     ),
@@ -999,20 +1074,23 @@ function faq(){
 }
 
 
-function question(q, a){
+function faqItem(questionText, answerText){
 
     return [
 
         '<div class="faq-item">',
+
 
             '<button ',
                 'class="faq-question" ',
                 'type="button" ',
                 'aria-expanded="false">',
 
+
                 '<span>',
-                    q,
+                    questionText,
                 '</span>',
+
 
                 '<span ',
                     'class="faq-plus" ',
@@ -1022,16 +1100,18 @@ function question(q, a){
 
                 '</span>',
 
+
             '</button>',
 
 
             '<div class="faq-answer">',
 
                 '<p>',
-                    a,
+                    answerText,
                 '</p>',
 
             '</div>',
+
 
         '</div>'
 
@@ -1041,10 +1121,10 @@ function question(q, a){
 
 
 /* ==========================================================
-   CTA FINAL
+   CTA
    ========================================================== */
 
-function cta(){
+function renderCTA(){
 
     return [
 
@@ -1054,10 +1134,14 @@ function cta(){
 
                 '<div class="showcase contact-cta">',
 
-                    '<div class="showcase-bg" aria-hidden="true"></div>',
+                    '<div ',
+                        'class="showcase-bg" ',
+                        'aria-hidden="true">',
+                    '</div>',
 
 
                     '<div class="showcase-content section-center">',
+
 
                         '<span class="badge badge-gold">',
                             'AD Lifestyle',
@@ -1076,10 +1160,11 @@ function cta(){
 
                         '<div class="hero-actions center mt-4">',
 
+
                             '<button ',
                                 'class="btn btn-primary" ',
                                 'type="button" ',
-                                'data-action="whatsapp">',
+                                'data-contact-action="whatsapp">',
 
                                 icon("whatsapp"),
 
@@ -1089,7 +1174,9 @@ function cta(){
 
                             '</button>',
 
+
                         '</div>',
+
 
                     '</div>',
 
@@ -1179,7 +1266,7 @@ function icon(type){
 
             '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
 
-                '<path d="m21.5 2.5-19 7.2c-.8.3-.8 1.4 0 1.7l7.4 2.7 2.7 7.4c.3.8 1.4 1.4 1.7 0l7.2-19c.3-.8-.3-1.4-1-1Zm-8.4 15.4-1.8-4.9 6.9-6.9-5.1 11.8Z"></path>' +
+                '<path d="m21.5 2.5-19 7.2c-.8.3-.8 1.4 0 1.7l7.4 2.7 2.7 7.4c.3.8 1.4.8 1.7 0l7.2-19c.3-.8-.3-1.4-1-1Zm-8.4 15.4-1.8-4.9 6.9-6.9-5.1 11.8Z"></path>' +
 
             '</svg>',
 
@@ -1259,7 +1346,7 @@ function icon(type){
 
 
 /* ==========================================================
-   INICIALIZAÇÃO GERAL
+   INICIALIZAÇÃO
    ========================================================== */
 
 function initialiseContact(){
@@ -1268,11 +1355,11 @@ function initialiseContact(){
 
     initialiseWhatsApp();
 
-    initialiseForm();
-
     initialiseMaps();
 
     initialiseContactCards();
+
+    initialiseForm();
 
     initialiseScroll();
 
@@ -1312,7 +1399,9 @@ function initialiseFAQ(){
 
                 items.forEach(function(other){
 
-                    other.classList.remove("active");
+                    other.classList.remove(
+                        "active"
+                    );
 
 
                     const otherButton =
@@ -1335,7 +1424,9 @@ function initialiseFAQ(){
 
                 if(!isActive){
 
-                    item.classList.add("active");
+                    item.classList.add(
+                        "active"
+                    );
 
 
                     button.setAttribute(
@@ -1359,28 +1450,28 @@ function initialiseFAQ(){
 
 function initialiseScroll(){
 
-    const button =
-        document.querySelector(
-            '.contact-page [data-action="form"]'
+    const buttons =
+        document.querySelectorAll(
+            '.contact-page [data-contact-action="form"]'
         );
 
 
-    if(!button){
-        return;
-    }
+    buttons.forEach(function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                const target =
+                    document.getElementById(
+                        "contact-form"
+                    );
 
 
-    button.addEventListener(
-        "click",
-        function(){
+                if(!target){
+                    return;
+                }
 
-            const target =
-                document.getElementById(
-                    "contact-form"
-                );
-
-
-            if(target){
 
                 target.scrollIntoView({
 
@@ -1391,9 +1482,9 @@ function initialiseScroll(){
                 });
 
             }
+        );
 
-        }
-    );
+    });
 
 }
 
@@ -1404,9 +1495,14 @@ function initialiseScroll(){
 
 function openWhatsApp(message){
 
-    const text =
+    const finalMessage =
+        message ||
+        "Olá AD Lifestyle!";
+
+
+    const encodedMessage =
         encodeURIComponent(
-            message || "Olá AD Lifestyle!"
+            finalMessage
         );
 
 
@@ -1414,7 +1510,7 @@ function openWhatsApp(message){
 
         WHATSAPP_URL +
         "?text=" +
-        text,
+        encodedMessage,
 
         "_blank",
 
@@ -1429,7 +1525,7 @@ function initialiseWhatsApp(){
 
     const buttons =
         document.querySelectorAll(
-            '.contact-page [data-action="whatsapp"]'
+            '.contact-page [data-contact-action="whatsapp"]'
         );
 
 
@@ -1475,31 +1571,45 @@ function initialiseContactCards(){
                     );
 
 
-                if(type === "whatsapp"){
+                switch(type){
 
-                    openWhatsApp(
-                        "Olá AD Lifestyle! Gostaria de obter mais informações."
-                    );
+                    case "whatsapp":
 
-                    return;
-                }
+                        openWhatsApp(
+                            "Olá AD Lifestyle! Gostaria de obter mais informações."
+                        );
 
-
-                if(type === "email"){
-
-                    window.location.href =
-                        "mailto:" +
-                        CONTACT_EMAIL;
-
-                    return;
-                }
+                        break;
 
 
-                if(type === "location"){
+                    case "email":
 
-                    openMaps();
+                        window.location.href =
+                            "mailto:" +
+                            CONTACT_EMAIL;
 
-                    return;
+                        break;
+
+
+                    case "location":
+
+                        openMaps();
+
+                        break;
+
+
+                    case "clock":
+
+                        window.scrollTo({
+
+                            top: 0,
+
+                            behavior: "smooth"
+
+                        });
+
+                        break;
+
                 }
 
             }
@@ -1533,25 +1643,25 @@ function initialiseMaps(){
 
     const button =
         document.querySelector(
-            '.contact-page [data-action="maps"]'
+            '.contact-page [data-contact-action="maps"]'
         );
 
 
-    if(button){
-
-        button.addEventListener(
-            "click",
-            openMaps
-        );
-
+    if(!button){
+        return;
     }
+
+
+    button.addEventListener(
+        "click",
+        openMaps
+    );
 
 }
 
 
-```js
 /* ==========================================================
-   FORMULÁRIO — FINAL
+   FORMULÁRIO
    ========================================================== */
 
 function initialiseForm(){
@@ -1711,9 +1821,12 @@ function getValue(id){
         document.getElementById(id);
 
 
-    return element
-        ? element.value.trim()
-        : "";
+    if(!element){
+        return "";
+    }
+
+
+    return element.value.trim();
 
 }
 
@@ -1733,24 +1846,30 @@ function markInvalid(id){
         document.getElementById(id);
 
 
-    if(element){
-
-        element.classList.add(
-            "is-invalid"
-        );
-
-
-        element.setAttribute(
-            "aria-invalid",
-            "true"
-        );
-
+    if(!element){
+        return;
     }
+
+
+    element.classList.add(
+        "is-invalid"
+    );
+
+
+    element.setAttribute(
+        "aria-invalid",
+        "true"
+    );
 
 }
 
 
 function clearFieldStates(form){
+
+    if(!form){
+        return;
+    }
+
 
     form.classList.remove(
         "form-invalid"
@@ -1778,6 +1897,6 @@ function clearFieldStates(form){
 
 
 /* ==========================================================
-   FIM DO CONTACT.JS
+   FIM
    ========================================================== */
 ```
