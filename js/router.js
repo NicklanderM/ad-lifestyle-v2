@@ -1,4 +1,4 @@
-```text
+
 /* ==========================================================
    AD LIFESTYLE V2
    ROUTER.JS
@@ -643,4 +643,4 @@ window.Router = {
         routeExists
 
 };
-```
+
