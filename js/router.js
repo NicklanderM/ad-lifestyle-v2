@@ -14,6 +14,7 @@ import { loadServices } from "../pages/services.js";
 import { loadEvents } from "../pages/events.js";
 import { loadContact } from "../pages/contact.js";
 import { loadAbout } from "../pages/about.js";
+import { loadProducts } from "../pages/products.js";
 
 import { loadAngel } from "../pages/products/angel.js";
 import { loadEzeno } from "../pages/products/ezeno.js";
@@ -39,6 +40,8 @@ const routes = {
     "/events": loadEvents,
 
     "/contact": loadContact,
+   
+    "/products": loadProducts,
    
     "/about": loadAbout,
 
