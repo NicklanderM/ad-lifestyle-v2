@@ -23,28 +23,18 @@ export function loadAngel(){
     if(!app) return;
 
     app.innerHTML = `
-
         ${hero()}
-
         ${technology()}
-
         ${benefits()}
-
         ${composition()}
-
         ${variants()}
-
         ${faq()}
-
         ${cta()}
-
     `;
 
     initialiseAngel();
 
 }
-
-
 /* ==========================================================
    HERO
    ========================================================== */
