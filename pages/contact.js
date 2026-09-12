@@ -1549,8 +1549,9 @@ function initialiseMaps(){
 }
 
 
+```js
 /* ==========================================================
-   FORMULÁRIO
+   FORMULÁRIO — FINAL
    ========================================================== */
 
 function initialiseForm(){
@@ -1700,6 +1701,10 @@ function initialiseForm(){
 }
 
 
+/* ==========================================================
+   UTILITÁRIOS DO FORMULÁRIO
+   ========================================================== */
+
 function getValue(id){
 
     const element =
@@ -1707,9 +1712,7 @@ function getValue(id){
 
 
     return element
-
         ? element.value.trim()
-
         : "";
 
 }
@@ -1772,4 +1775,9 @@ function clearFieldStates(form){
         });
 
 }
+
+
+/* ==========================================================
+   FIM DO CONTACT.JS
+   ========================================================== */
 ```
