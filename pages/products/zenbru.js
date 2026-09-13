@@ -22,21 +22,13 @@ export function loadZenbru(){
     if(!app) return;
 
     app.innerHTML = `
-
         ${hero()}
-
         ${ingredients()}
-
         ${benefits()}
-
         ${experience()}
-
         ${howToPrepare()}
-
         ${faq()}
-
         ${cta()}
-
     `;
 
     initialiseZenbru();
