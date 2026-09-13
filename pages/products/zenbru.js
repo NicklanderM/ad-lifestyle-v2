@@ -10,7 +10,7 @@ import { ripple, stagger } from "../../js/animations.js";
 
 
 /* ==========================================================
-   LOAD ZENBRU PAGE
+   LOAD ZENBRU
    ========================================================== */
 
 export function loadZenbru(){
@@ -21,15 +21,33 @@ export function loadZenbru(){
 
     if(!app) return;
 
+
     app.innerHTML = `
-        ${hero()}
-        ${ingredients()}
-        ${benefits()}
-        ${experience()}
-        ${howToPrepare()}
-        ${faq()}
-        ${cta()}
+
+        <div
+            class="page-zenbru"
+            data-product-page="zenbru">
+
+            ${hero()}
+
+            ${composition()}
+
+            ${benefits()}
+
+            ${origins()}
+
+            ${experience()}
+
+            ${howToPrepare()}
+
+            ${faq()}
+
+            ${cta()}
+
+        </div>
+
     `;
+
 
     initialiseZenbru();
 
@@ -49,7 +67,9 @@ return `
     <div class="aurora">
 
         <div class="blob blob-1"></div>
+
         <div class="blob blob-2"></div>
+
         <div class="blob blob-3"></div>
 
     </div>
@@ -57,31 +77,35 @@ return `
 
     <div class="container hero-grid">
 
+
         <div class="hero-content reveal">
 
+
             <span class="badge">
-                Functional Coffee Collection
+                Zenbru · Functional Coffee
             </span>
 
 
             <h1 class="hero-title">
+
                 Zenbru
-                Premium
-                Coffee
+                <span>Premium Coffee</span>
+
             </h1>
 
 
             <p class="hero-sub">
 
-                Um café funcional de perfil premium,
-                desenvolvido para combinar café Robusta,
-                ginseng e gengibre numa experiência
-                aromática diferenciada.
+                Uma experiência de café funcional que
+                combina café Robusta, ginseng coreano
+                e gengibre numa proposta premium de
+                sabor, aroma e lifestyle.
 
             </p>
 
 
             <div class="hero-actions">
+
 
                 <button
                     class="btn btn-primary"
@@ -95,52 +119,66 @@ return `
 
                 <button
                     class="btn btn-glass"
-                    id="coffeeBtn"
+                    id="zenbruCompositionBtn"
                     type="button">
 
                     Ver Composição
 
                 </button>
 
+
             </div>
 
 
             <div class="zenbru-hero-highlights">
 
+
                 <span>
                     ✓ Café Robusta
                 </span>
 
+
                 <span>
-                    ✓ Ginseng
+                    ✓ Ginseng Coreano
                 </span>
+
 
                 <span>
                     ✓ Gengibre
                 </span>
 
+
                 <span>
-                    ✓ Baixo índice glicémico*
+                    ✓ Perfil Premium
                 </span>
+
 
             </div>
 
 
             <p class="zenbru-disclaimer">
 
-                *Característica comunicada na documentação
-                apresentada para o produto.
+                Características funcionais e nutricionais
+                apresentadas com base no material promocional
+                disponibilizado para o produto.
 
             </p>
+
 
         </div>
 
 
         <div class="hero-visual reveal-right">
 
+
             <div class="hero-product floating">
 
+
                 <div class="product-glow"></div>
+
+
+                <div class="zenbru-gold-ring"></div>
+
 
                 <img
                     class="parallax"
@@ -150,9 +188,12 @@ return `
                     loading="eager"
                 >
 
+
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -164,20 +205,22 @@ return `
 
 
 /* ==========================================================
-   INGREDIENTS
+   COMPOSITION
    ========================================================== */
 
-function ingredients(){
+function composition(){
 
 return `
 
 <section
-    id="coffee"
-    class="section zenbru-ingredients">
+    id="zenbru-composition"
+    class="section zenbru-composition">
 
     <div class="container">
 
+
         <div class="section-center reveal">
+
 
             <span class="label">
                 Composição Premium
@@ -186,20 +229,21 @@ return `
 
             <h2 class="section-title">
 
-                Ingredientes seleccionados
-                para uma experiência diferenciada
+                Três elementos.
+                Uma experiência Zenbru.
 
             </h2>
 
 
             <p class="lead">
 
-                O Zenbru combina ingredientes e
-                características seleccionadas para
-                criar um perfil de sabor e utilização
-                distinto.
+                O material de apresentação do produto
+                destaca café Robusta, ginseng coreano
+                e gengibre como elementos principais
+                da composição.
 
             </p>
+
 
         </div>
 
@@ -210,50 +254,57 @@ return `
             ${ingredient(
                 "☕",
                 "Café Robusta",
-                "Grãos de origem Brasil e Vietname, apresentados como a base do perfil de café Zenbru."
+                "A base da bebida, com referências de origem ao Brasil e ao Vietname."
             )}
 
 
             ${ingredient(
                 "🌿",
-                "Ginseng",
-                "Extracto de ginseng coreano apresentado como um dos componentes funcionais da fórmula."
+                "Ginseng Coreano",
+                "Extracto de ginseng apresentado na comunicação do produto como ingrediente funcional."
             )}
 
 
             ${ingredient(
                 "🫚",
                 "Gengibre",
-                "Ingrediente vegetal tradicionalmente utilizado em bebidas e preparações alimentares."
+                "Ingrediente vegetal utilizado para complementar o perfil funcional e aromático."
             )}
+
 
         </div>
 
 
-        <div class="zenbru-more-information mt-5">
+        <div class="zenbru-information mt-6">
+
 
             <button
                 class="zenbru-details-toggle"
                 type="button"
                 aria-expanded="false">
 
+
                 <span>
                     Ver detalhes da composição
                 </span>
 
+
                 <span class="zenbru-details-icon">
                     +
                 </span>
+
 
             </button>
 
 
             <div class="zenbru-details-content">
 
+
                 <div class="zenbru-details-grid">
 
 
                     <article class="zenbru-detail-card">
+
 
                         <span class="label">
                             01 — Café Robusta
@@ -267,9 +318,9 @@ return `
 
                         <p class="text mt-2">
 
-                            A informação apresentada para o
-                            produto identifica café Robusta
-                            proveniente do Brasil e do Vietname.
+                            A documentação fornecida identifica
+                            grãos de café Robusta associados
+                            ao Brasil e ao Vietname.
 
                         </p>
 
@@ -277,27 +328,32 @@ return `
                         <div class="zenbru-detail-list mt-3">
 
                             ${detailItem(
-                                "Brasil — aproximadamente 100 a 800 m de altitude"
+                                "Brasil"
                             )}
 
-                            ${detailItem(
-                                "Brasil — solo argiloso e forte retenção de água"
-                            )}
 
                             ${detailItem(
-                                "Vietname — aproximadamente 600 a 1000 m de altitude"
+                                "Vietname"
                             )}
 
+
                             ${detailItem(
-                                "Vietname — solos vulcânicos ricos em minerais"
+                                "Perfis de altitude distintos"
+                            )}
+
+
+                            ${detailItem(
+                                "Características de solo destacadas"
                             )}
 
                         </div>
+
 
                     </article>
 
 
                     <article class="zenbru-detail-card">
+
 
                         <span class="label">
                             02 — Ginseng
@@ -305,16 +361,15 @@ return `
 
 
                         <h3>
-                            Extracto de Ginseng
+                            Ginseng Coreano
                         </h3>
 
 
                         <p class="text mt-2">
 
-                            A apresentação do produto refere
-                            ginseng coreano de qualidade superior
-                            e indica um teor de ginsenosidos
-                            igual ou superior a 7%.
+                            A apresentação fornecida refere
+                            ginseng coreano e indica um teor
+                            de ginsenosidos igual ou superior a 7%.
 
                         </p>
 
@@ -325,24 +380,29 @@ return `
                                 "Ginseng coreano"
                             )}
 
+
                             ${detailItem(
                                 "Ginsenosidos ≥ 7%"
                             )}
 
-                            ${detailItem(
-                                "Protecção celular — alegação apresentada"
-                            )}
 
                             ${detailItem(
-                                "Acção antioxidante — alegação apresentada"
+                                "Componente funcional declarado"
+                            )}
+
+
+                            ${detailItem(
+                                "Perfil vegetal"
                             )}
 
                         </div>
+
 
                     </article>
 
 
                     <article class="zenbru-detail-card">
+
 
                         <span class="label">
                             03 — Gengibre
@@ -356,9 +416,10 @@ return `
 
                         <p class="text mt-2">
 
-                            O material apresentado identifica
-                            o gengibre como um dos ingredientes
-                            funcionais da composição.
+                            O gengibre integra a composição
+                            apresentada e está associado
+                            no material a compostos como
+                            gingerol e curcumina.
 
                         </p>
 
@@ -366,27 +427,34 @@ return `
                         <div class="zenbru-detail-list mt-3">
 
                             ${detailItem(
+                                "Gingerol"
+                            )}
+
+
+                            ${detailItem(
                                 "Curcumina — característica comunicada"
                             )}
 
-                            ${detailItem(
-                                "Gingerol — característica comunicada"
-                            )}
 
                             ${detailItem(
-                                "Propriedades antioxidantes — alegação apresentada"
+                                "Ingrediente vegetal"
                             )}
 
+
                             ${detailItem(
-                                "Propriedades antibacterianas — alegação apresentada"
+                                "Perfil aromático"
                             )}
 
                         </div>
 
+
                     </article>
 
 
-                    <article class="zenbru-detail-card zenbru-detail-card-wide">
+                    <article
+                        class="zenbru-detail-card
+                               zenbru-detail-card-wide">
+
 
                         <span class="label">
                             Informação adicional
@@ -394,39 +462,41 @@ return `
 
 
                         <h3>
-                            Características comunicadas
+                            Características nutricionais comunicadas
                         </h3>
 
 
                         <p class="text mt-2">
 
-                            A documentação de apresentação
-                            fornecida para o Zenbru inclui
-                            referências ao ácido clorogénico,
+                            O material fornecido também apresenta
+                            referências a ácido clorogénico,
                             actividade antioxidante e outras
-                            propriedades associadas aos seus
-                            ingredientes.
+                            propriedades associadas aos ingredientes.
 
                         </p>
 
 
                         <p class="text mt-2">
 
-                            Estas referências são apresentadas
-                            como informação do produto e não
-                            devem ser interpretadas como
+                            Essas referências pertencem à
+                            comunicação apresentada para o produto
+                            e não devem ser interpretadas como
                             diagnóstico, tratamento ou garantia
                             de resultados médicos.
 
                         </p>
 
+
                     </article>
+
 
                 </div>
 
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -441,7 +511,9 @@ function ingredient(icon, title, text){
 
 return `
 
-<article class="card service-card zenbru-ingredient-card reveal">
+<article
+    class="card service-card zenbru-ingredient-card reveal">
+
 
     <div class="service-icon">
         ${icon}
@@ -456,6 +528,7 @@ return `
     <p class="text mt-2">
         ${text}
     </p>
+
 
 </article>
 
@@ -476,12 +549,18 @@ return `
 
     <div class="container">
 
+
         <div class="split">
 
 
             <div class="split-image reveal-left">
 
+
                 <div class="zenbru-benefit-image">
+
+
+                    <div class="zenbru-image-glow"></div>
+
 
                     <img
                         src="./assets/products/zenbru.png"
@@ -489,12 +568,15 @@ return `
                         loading="lazy"
                     >
 
+
                 </div>
+
 
             </div>
 
 
             <div class="split-content reveal-right">
+
 
                 <span class="label">
                     Destaques
@@ -502,72 +584,90 @@ return `
 
 
                 <h2 class="section-title">
-                    Muito mais do que uma chávena de café
+
+                    Sabor.
+                    Energia.
+                    Experiência.
+
                 </h2>
 
 
                 <p class="text mt-3">
 
-                    Uma combinação pensada para quem
-                    valoriza sabor, composição e uma
-                    experiência premium.
+                    Uma combinação concebida para
+                    acompanhar uma rotina de café
+                    com uma identidade funcional
+                    e premium.
 
                 </p>
 
 
                 <div class="icon-list mt-4">
 
+
                     ${check(
-                        "Perfil de café Robusta"
+                        "Café Robusta como base da bebida"
                     )}
+
 
                     ${check(
                         "Ginseng coreano"
                     )}
 
+
                     ${check(
                         "Gengibre"
                     )}
 
-                    ${check(
-                        "Aroma e sabor diferenciados"
-                    )}
 
                     ${check(
-                        "Baixo índice glicémico — característica comunicada"
+                        "Perfil aromático diferenciado"
                     )}
 
+
                     ${check(
-                        "Ideal para integrar uma rotina de café"
+                        "Proposta funcional"
                     )}
+
+
+                    ${check(
+                        "Experiência premium"
+                    )}
+
 
                 </div>
 
 
-                <div class="zenbru-more-information mt-5">
+                <div class="zenbru-information mt-5">
+
 
                     <button
                         class="zenbru-details-toggle"
                         type="button"
                         aria-expanded="false">
 
+
                         <span>
                             Ver informações funcionais
                         </span>
 
+
                         <span class="zenbru-details-icon">
                             +
                         </span>
+
 
                     </button>
 
 
                     <div class="zenbru-details-content">
 
+
                         <div class="zenbru-details-grid">
 
 
                             <article class="zenbru-detail-card">
+
 
                                 <span class="label">
                                     Ginseng
@@ -575,34 +675,41 @@ return `
 
 
                                 <h3>
-                                    Características apresentadas
+                                    Características comunicadas
                                 </h3>
 
 
                                 <div class="zenbru-detail-list mt-3">
 
+
+                                    ${detailItem(
+                                        "Protecção celular — alegação apresentada"
+                                    )}
+
+
+                                    ${detailItem(
+                                        "Actividade antioxidante — alegação apresentada"
+                                    )}
+
+
                                     ${detailItem(
                                         "Regeneração celular — alegação apresentada"
                                     )}
 
-                                    ${detailItem(
-                                        "Neutralização de radicais livres — alegação apresentada"
-                                    )}
 
                                     ${detailItem(
-                                        "Apoio à protecção celular — alegação apresentada"
+                                        "Envelhecimento — referência promocional"
                                     )}
 
-                                    ${detailItem(
-                                        "Retardamento do envelhecimento — alegação apresentada"
-                                    )}
 
                                 </div>
+
 
                             </article>
 
 
                             <article class="zenbru-detail-card">
+
 
                                 <span class="label">
                                     Gengibre
@@ -610,34 +717,43 @@ return `
 
 
                                 <h3>
-                                    Características apresentadas
+                                    Compostos destacados
                                 </h3>
 
 
                                 <div class="zenbru-detail-list mt-3">
 
-                                    ${detailItem(
-                                        "Curcumina"
-                                    )}
 
                                     ${detailItem(
                                         "Gingerol"
                                     )}
 
-                                    ${detailItem(
-                                        "Acção antioxidante — alegação apresentada"
-                                    )}
 
                                     ${detailItem(
-                                        "Acção antibacteriana — alegação apresentada"
+                                        "Curcumina"
                                     )}
+
+
+                                    ${detailItem(
+                                        "Actividade antioxidante — alegação apresentada"
+                                    )}
+
+
+                                    ${detailItem(
+                                        "Actividade antibacteriana — alegação apresentada"
+                                    )}
+
 
                                 </div>
+
 
                             </article>
 
 
-                            <article class="zenbru-detail-card zenbru-detail-card-wide">
+                            <article
+                                class="zenbru-detail-card
+                                       zenbru-detail-card-wide">
+
 
                                 <span class="label">
                                     Índice glicémico
@@ -645,37 +761,34 @@ return `
 
 
                                 <h3>
-                                    Baixo índice glicémico
+                                    Característica comunicada
                                 </h3>
 
 
                                 <p class="text mt-2">
 
-                                    Uma das imagens fornecidas
-                                    apresenta o Zenbru com a indicação
-                                    “Índice Glicémico Baixo” e referência
-                                    a certificação por Temasek Polytechnic.
+                                    A documentação fornecida
+                                    apresenta o Zenbru como
+                                    produto de baixo índice glicémico,
+                                    incluindo referência a certificação
+                                    por Temasek Polytechnic.
 
                                 </p>
 
-
-                                <p class="text mt-2">
-
-                                    Esta informação deve ser utilizada
-                                    conforme a documentação oficial
-                                    correspondente ao produto.
-
-                                </p>
 
                             </article>
+
 
                         </div>
 
                     </div>
 
+
                 </div>
 
+
             </div>
+
 
         </div>
 
@@ -694,15 +807,160 @@ return `
 
 <div class="icon-item">
 
+
     <div class="icon-circle">
         ✓
     </div>
+
 
     <div>
         ${text}
     </div>
 
+
 </div>
+
+`;
+
+}
+
+
+/* ==========================================================
+   ORIGINS
+   ========================================================== */
+
+function origins(){
+
+return `
+
+<section class="section zenbru-origins">
+
+    <div class="container">
+
+
+        <div class="section-center reveal">
+
+
+            <span class="label">
+                Origem & Qualidade
+            </span>
+
+
+            <h2 class="section-title">
+
+                Do grão à experiência
+
+            </h2>
+
+
+            <p class="lead">
+
+                O café Robusta apresentado no material
+                possui referências geográficas específicas
+                e diferentes características de cultivo.
+
+            </p>
+
+
+        </div>
+
+
+        <div class="bento mt-6">
+
+
+            <div class="bento-card span-6 reveal">
+
+
+                <span class="label">
+                    Brasil
+                </span>
+
+
+                <h3>
+                    Café Robusta
+                </h3>
+
+
+                <p class="text mt-2">
+
+                    A apresentação refere altitudes
+                    aproximadas entre 100 e 800 metros,
+                    além de solos argilosos com forte
+                    retenção de água.
+
+                </p>
+
+
+                <div class="zenbru-origin-symbol">
+                    BR
+                </div>
+
+
+            </div>
+
+
+            <div class="bento-card span-6 reveal delay-1">
+
+
+                <span class="label">
+                    Vietname
+                </span>
+
+
+                <h3>
+                    Café Robusta
+                </h3>
+
+
+                <p class="text mt-2">
+
+                    O material refere altitudes
+                    aproximadas entre 600 e 1000 metros
+                    e solos vulcânicos ricos em minerais.
+
+                </p>
+
+
+                <div class="zenbru-origin-symbol">
+                    VN
+                </div>
+
+
+            </div>
+
+
+            <div class="bento-card span-12 reveal delay-2">
+
+
+                <span class="label">
+                    ZENBRU
+                </span>
+
+
+                <h3>
+                    Uma identidade construída em torno do café
+                </h3>
+
+
+                <p class="text mt-2">
+
+                    A combinação de café Robusta, ginseng
+                    coreano e gengibre procura oferecer
+                    uma experiência distinta dentro da
+                    categoria de café funcional.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
 
 `;
 
@@ -721,109 +979,117 @@ return `
 
     <div class="container">
 
+
         <div class="section-center reveal">
 
+
             <span class="label">
-                Experiência Zenbru
+                Zenbru Lifestyle
             </span>
 
 
             <h2 class="section-title">
 
-                Um ritual pensado
-                para o seu dia
+                Uma nova forma
+                de viver o café
 
             </h2>
 
 
             <p class="lead">
 
-                Sabor, aroma e uma composição
-                diferenciada numa experiência
-                premium.
+                O Zenbru combina a familiaridade
+                de uma chávena de café com uma
+                composição diferenciada e um
+                posicionamento funcional.
 
             </p>
 
+
         </div>
 
 
-        <div class="bento mt-6">
+        <div class="grid grid-3 mt-6">
 
 
-            <div class="bento-card span-7 reveal">
-
-                <span class="label">
-                    Café
-                </span>
-
-
-                <h3>
-                    Perfil Robusta
-                </h3>
+            ${experienceCard(
+                "☕",
+                "Café",
+                "Uma base Robusta com referências de origem ao Brasil e ao Vietname."
+            )}
 
 
-                <p class="text mt-2">
-
-                    Uma base de café seleccionada
-                    a partir de grãos Robusta associados
-                    ao Brasil e ao Vietname.
-
-                </p>
-
-            </div>
+            ${experienceCard(
+                "🌿",
+                "Ginseng",
+                "Extracto de ginseng coreano destacado na composição."
+            )}
 
 
-            <div class="bento-card span-5 reveal delay-1">
-
-                <span class="label">
-                    Botânicos
-                </span>
-
-
-                <h3>
-                    Ginseng + Gengibre
-                </h3>
+            ${experienceCard(
+                "🫚",
+                "Gengibre",
+                "Ingrediente vegetal que complementa a identidade funcional da bebida."
+            )}
 
 
-                <p class="text mt-2">
-
-                    Dois ingredientes vegetais que
-                    complementam o perfil funcional
-                    apresentado para a bebida.
-
-                </p>
-
-            </div>
+            ${experienceCard(
+                "⚡",
+                "Energia",
+                "Uma experiência pensada para acompanhar momentos activos do dia."
+            )}
 
 
-            <div class="bento-card span-12 reveal delay-2">
-
-                <span class="label">
-                    AD Lifestyle
-                </span>
-
-
-                <h3>
-                    Filosofia Zenbru
-                </h3>
+            ${experienceCard(
+                "✨",
+                "Premium",
+                "Apresentação e posicionamento orientados para uma experiência diferenciada."
+            )}
 
 
-                <p class="text mt-2">
-
-                    Uma proposta que combina
-                    qualidade, experiência, estilo de vida
-                    e uma abordagem de bem-estar.
-
-                </p>
-
-            </div>
+            ${experienceCard(
+                "🌍",
+                "Lifestyle",
+                "Uma bebida integrada numa visão moderna de bem-estar e estilo de vida."
+            )}
 
 
         </div>
+
 
     </div>
 
 </section>
+
+`;
+
+}
+
+
+function experienceCard(icon, title, text){
+
+return `
+
+<article
+    class="card service-card zenbru-experience-card reveal">
+
+
+    <div class="service-icon">
+        ${icon}
+    </div>
+
+
+    <h3>
+        ${title}
+    </h3>
+
+
+    <p class="text mt-2">
+        ${text}
+    </p>
+
+
+</article>
 
 `;
 
@@ -842,7 +1108,9 @@ return `
 
     <div class="container-sm">
 
+
         <div class="section-center reveal">
+
 
             <span class="label">
                 Preparação
@@ -850,16 +1118,19 @@ return `
 
 
             <h2 class="section-title">
-                Simples de preparar
+
+                O ritual Zenbru
+
             </h2>
 
 
             <p class="lead">
 
-                Um processo simples para transformar
-                a sua chávena num momento Zenbru.
+                Prepare a sua bebida seguindo
+                as instruções oficiais da embalagem.
 
             </p>
+
 
         </div>
 
@@ -869,28 +1140,28 @@ return `
 
             ${step(
                 "1",
-                "Aquecer",
-                "Prepare aproximadamente 180–200 ml de água quente."
+                "Prepare",
+                "Prepare água e uma chávena limpa para a bebida."
             )}
 
 
             ${step(
                 "2",
-                "Adicionar",
-                "Adicione a quantidade recomendada de Zenbru à chávena."
+                "Adicione",
+                "Adicione a quantidade recomendada de Zenbru, de acordo com as instruções oficiais."
             )}
 
 
             ${step(
                 "3",
-                "Misturar",
-                "Mexa cuidadosamente até obter uma mistura homogénea."
+                "Misture",
+                "Misture cuidadosamente até obter uma preparação homogénea."
             )}
 
 
             ${step(
                 "4",
-                "Desfrutar",
+                "Desfrute",
                 "Aprecie o aroma, o sabor e a experiência Zenbru."
             )}
 
@@ -900,20 +1171,24 @@ return `
 
         <div class="zenbru-preparation-note mt-5">
 
+
             <span class="label">
-                Nota
+                Nota importante
             </span>
 
 
             <p class="text mt-2">
 
-                Para preparar correctamente o produto,
-                siga sempre as instruções presentes na
-                respectiva embalagem.
+                A quantidade, temperatura da água
+                e modo exacto de preparação devem
+                seguir sempre as indicações da
+                embalagem oficial.
 
             </p>
 
+
         </div>
+
 
     </div>
 
@@ -930,12 +1205,14 @@ return `
 
 <div class="timeline-item reveal">
 
+
     <div class="timeline-dot">
         ${number}
     </div>
 
 
     <div class="timeline-content">
+
 
         <h3>
             ${title}
@@ -946,7 +1223,9 @@ return `
             ${text}
         </p>
 
+
     </div>
+
 
 </div>
 
@@ -967,7 +1246,9 @@ return `
 
     <div class="container-sm">
 
+
         <div class="section-center reveal">
+
 
             <span class="label">
                 Perguntas Frequentes
@@ -978,6 +1259,7 @@ return `
                 Tudo sobre o Zenbru
             </h2>
 
+
         </div>
 
 
@@ -986,44 +1268,63 @@ return `
 
             ${question(
                 "O que é o Zenbru?",
-                "O Zenbru é apresentado como um café funcional premium que combina café Robusta, ginseng e gengibre."
+                "O Zenbru é apresentado como um café funcional premium que combina café Robusta, ginseng coreano e gengibre."
             )}
 
 
             ${question(
                 "Quais são os principais ingredientes?",
-                "A informação fornecida identifica café Robusta, extracto de ginseng coreano e gengibre como componentes principais."
+                "A apresentação fornecida identifica café Robusta, extracto de ginseng coreano e gengibre."
             )}
 
 
             ${question(
                 "De onde vem o café Robusta?",
-                "A apresentação fornecida indica origens no Brasil e no Vietname, incluindo diferentes condições de altitude e solo."
+                "O material disponibilizado faz referência ao Brasil e ao Vietname como origens dos grãos Robusta apresentados."
             )}
 
 
             ${question(
-                "O Zenbru tem ginseng?",
-                "Sim. A documentação fornecida apresenta extracto de ginseng coreano e indica um teor de ginsenosidos igual ou superior a 7%."
+                "O Zenbru contém ginseng?",
+                "Sim. A documentação fornecida destaca extracto de ginseng coreano e refere um teor de ginsenosidos igual ou superior a 7%."
             )}
 
 
             ${question(
                 "O Zenbru contém gengibre?",
-                "Sim. O gengibre é apresentado como um dos componentes do produto, com referência a curcumina e gingerol."
+                "Sim. O gengibre integra a composição apresentada, com referências a gingerol e curcumina."
             )}
 
 
             ${question(
-                "O Zenbru possui baixo índice glicémico?",
-                "Uma das imagens fornecidas apresenta o produto com a indicação de baixo índice glicémico e referência a certificação por Temasek Polytechnic. Consulte a documentação oficial para confirmação."
+                "O Zenbru é apresentado como tendo baixo índice glicémico?",
+                "Sim. Uma das apresentações fornecidas indica baixo índice glicémico e faz referência a certificação por Temasek Polytechnic."
             )}
 
 
             ${question(
-                "Pode substituir tratamento ou orientação médica?",
-                "Não. As características funcionais apresentadas não devem ser interpretadas como diagnóstico, tratamento ou garantia de resultados médicos. Questões de saúde devem ser avaliadas por um profissional de saúde."
+                "Como devo preparar o Zenbru?",
+                "A preparação deve seguir a quantidade e as instruções apresentadas na embalagem oficial do produto."
             )}
+
+
+            ${question(
+                "O Zenbru é um medicamento?",
+                "Não deve ser apresentado como medicamento. As características funcionais e nutricionais divulgadas não substituem diagnóstico, tratamento ou aconselhamento de um profissional de saúde."
+            )}
+
+
+            ${question(
+                "O Zenbru garante benefícios médicos?",
+                "Não. As propriedades e benefícios referidos no material promocional devem ser entendidos como informações de apresentação do produto e não como garantias clínicas."
+            )}
+
+
+            ${question(
+                "Onde posso obter mais informações?",
+                "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade e aquisição."
+            )}
+
 
         </div>
 
@@ -1042,10 +1343,12 @@ return `
 
 <div class="faq-item">
 
+
     <button
         class="faq-question"
         type="button"
         aria-expanded="false">
+
 
         <span>
             ${questionText}
@@ -1056,16 +1359,20 @@ return `
             +
         </span>
 
+
     </button>
 
 
     <div class="faq-answer">
 
+
         <p>
             ${answerText}
         </p>
 
+
     </div>
+
 
 </div>
 
@@ -1086,33 +1393,37 @@ return `
 
     <div class="container">
 
+
         <div class="showcase">
+
 
             <div class="showcase-content section-center">
 
+
                 <span class="badge">
-                    Zenbru Coffee
+                    Zenbru Premium Coffee
                 </span>
 
 
                 <h2 class="section-title mt-3">
 
-                    Transforme cada chávena
-                    num momento especial
+                    Mais do que café.
+                    Uma experiência.
 
                 </h2>
 
 
                 <p class="lead">
 
-                    Descubra uma experiência de café
-                    que combina Robusta, ginseng,
-                    gengibre e um perfil premium.
+                    Descubra uma combinação de café Robusta,
+                    ginseng e gengibre criada para uma
+                    experiência premium.
 
                 </p>
 
 
                 <div class="hero-actions center mt-4">
+
 
                     <button
                         class="btn btn-primary"
@@ -1133,11 +1444,23 @@ return `
 
                     </button>
 
+
                 </div>
+
+
+                <p class="zenbru-cta-disclaimer mt-4">
+
+                    Informação apresentada com base no
+                    material disponibilizado para o produto.
+
+                </p>
+
 
             </div>
 
+
         </div>
+
 
     </div>
 
@@ -1158,13 +1481,16 @@ return `
 
 <div class="zenbru-detail-item">
 
+
     <span class="icon-circle">
         ✓
     </span>
 
+
     <span>
         ${text}
     </span>
+
 
 </div>
 
@@ -1174,20 +1500,19 @@ return `
 
 
 /* ==========================================================
-   INITIALISE ZENBRU
+   INITIALISE
    ========================================================== */
 
 function initialiseZenbru(){
 
-    /*
-     * Card animations
-     */
 
     try{
 
-        stagger(".service-card");
+        stagger(".zenbru-ingredient-card");
 
         stagger(".zenbru-detail-card");
+
+        stagger(".zenbru-experience-card");
 
     }catch(error){
 
@@ -1199,14 +1524,12 @@ function initialiseZenbru(){
     }
 
 
-    /*
-     * Ripple effects
-     */
-
     try{
 
         document
-            .querySelectorAll(".btn")
+            .querySelectorAll(
+                ".page-zenbru .btn"
+            )
             .forEach(button => {
 
                 ripple(button);
@@ -1224,63 +1547,25 @@ function initialiseZenbru(){
 
 
     /*
-     * Composition button
+     * Composition
      */
 
     document
-        .getElementById("coffeeBtn")
+        .getElementById("zenbruCompositionBtn")
         ?.addEventListener(
             "click",
             () => {
 
                 document
-                    .getElementById("coffee")
+                    .getElementById("zenbru-composition")
                     ?.scrollIntoView({
+
                         behavior:"smooth",
                         block:"start"
+
                     });
 
             }
-        );
-
-
-    /*
-     * Back home
-     */
-
-    document
-        .getElementById("backHome")
-        ?.addEventListener(
-            "click",
-            () => {
-
-                navigate("/");
-
-            }
-        );
-
-
-    /*
-     * Buy Zenbru
-     */
-
-    document
-        .getElementById("buyZenbru")
-        ?.addEventListener(
-            "click",
-            openWhats
-        );
-
-
-    /*
-     * WhatsApp CTA
-     */
-
-    document
-        .getElementById("zenbruWhats")
-        ?.addEventListener(
-            "click",
-            openWhats
         );
 
 
@@ -1290,7 +1575,7 @@ function initialiseZenbru(){
 
     document
         .querySelectorAll(
-            ".zenbru-details-toggle"
+            ".page-zenbru .zenbru-details-toggle"
         )
         .forEach(button => {
 
@@ -1300,8 +1585,9 @@ function initialiseZenbru(){
 
                     const container =
                         button.closest(
-                            ".zenbru-more-information"
+                            ".zenbru-information"
                         );
+
 
                     if(!container) return;
 
@@ -1335,7 +1621,7 @@ function initialiseZenbru(){
 
     document
         .querySelectorAll(
-            ".zenbru-faq .faq-question"
+            ".page-zenbru .faq-question"
         )
         .forEach(button => {
 
@@ -1348,6 +1634,7 @@ function initialiseZenbru(){
                             ".faq-item"
                         );
 
+
                     if(!item) return;
 
 
@@ -1357,44 +1644,32 @@ function initialiseZenbru(){
                         );
 
 
-                    /*
-                     * Fechar os restantes
-                     */
-
                     document
                         .querySelectorAll(
-                            ".zenbru-faq .faq-item"
+                            ".page-zenbru .faq-item"
                         )
-                        .forEach(otherItem => {
+                        .forEach(other => {
 
-                            if(otherItem !== item){
+                            if(other !== item){
 
-                                otherItem.classList.remove(
+                                other.classList.remove(
                                     "active"
                                 );
 
-                                const otherButton =
-                                    otherItem.querySelector(
+
+                                other
+                                    .querySelector(
                                         ".faq-question"
-                                    );
-
-                                if(otherButton){
-
-                                    otherButton.setAttribute(
+                                    )
+                                    ?.setAttribute(
                                         "aria-expanded",
                                         "false"
                                     );
-
-                                }
 
                             }
 
                         });
 
-
-                    /*
-                     * Abrir/fechar actual
-                     */
 
                     item.classList.toggle(
                         "active",
@@ -1412,11 +1687,51 @@ function initialiseZenbru(){
 
         });
 
+
+    /*
+     * Home
+     */
+
+    document
+        .getElementById("backHome")
+        ?.addEventListener(
+            "click",
+            () => {
+
+                navigate("/");
+
+            }
+        );
+
+
+    /*
+     * Buy
+     */
+
+    document
+        .getElementById("buyZenbru")
+        ?.addEventListener(
+            "click",
+            openWhats
+        );
+
+
+    /*
+     * WhatsApp
+     */
+
+    document
+        .getElementById("zenbruWhats")
+        ?.addEventListener(
+            "click",
+            openWhats
+        );
+
 }
 
 
 /* ==========================================================
-   OPEN WHATSAPP
+   WHATSAPP
    ========================================================== */
 
 function openWhats(){
@@ -1426,7 +1741,7 @@ function openWhats(){
 
 
     const message =
-        "Olá AD Lifestyle! Tenho interesse no Zenbru Premium Coffee e gostaria de saber mais informações.";
+        "Olá AD Lifestyle! Tenho interesse no Zenbru Premium Coffee e gostaria de receber mais informações sobre o produto.";
 
 
     const url =
@@ -1440,4 +1755,3 @@ function openWhats(){
     );
 
 }
-
