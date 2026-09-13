@@ -21,26 +21,31 @@ export function loadAlpha(){
 
     if(!app) return;
 
-    app.innerHTML = `
+  app.innerHTML = `
 
-        ${hero()}
+<div
+    class="page-alpha"
+    data-product-page="alpha-vmax">
 
-        ${composition()}
+    ${hero()}
 
-        ${benefits()}
+    ${composition()}
 
-        ${ingredients()}
+    ${benefits()}
 
-        ${usage()}
+    ${ingredients()}
 
-        ${performance()}
+    ${usage()}
 
-        ${faq()}
+    ${performance()}
 
-        ${cta()}
+    ${faq()}
 
-    `;
+    ${cta()}
 
+</div>
+
+`;
     initialiseAlpha();
 
 }
