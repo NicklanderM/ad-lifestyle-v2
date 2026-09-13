@@ -282,248 +282,260 @@ body[data-theme="zenbru"]::before{
 
 
 /* ==========================================================
+   AD LIFESTYLE V2
    ALPHA VMAX
-   THEME — BLUE / GOLD PREMIUM
+   FINAL PAGE OVERRIDE
+   BLUE / GOLD ONLY
    ========================================================== */
 
-body[data-theme="alpha"]{
 
-    --alpha-blue:#0347B3;
-    --alpha-blue-dark:#02389E;
-    --alpha-blue-light:#1D5DC4;
+/* ==========================================================
+   IDENTIDADE
+   ========================================================== */
 
-    --alpha-gold:#D8A74D;
-    --alpha-gold-light:#F4D681;
-    --alpha-gold-dark:#B98732;
+.page-alpha{
 
-    --alpha-white:#EEF2F8;
-    --alpha-navy:#0D265E;
+    --alpha-blue: #0347B3;
+    --alpha-blue-dark: #02389E;
+    --alpha-blue-light: #1D5DC4;
 
-    background:
-        #EEF2F8;
+    --alpha-gold: #D8A74D;
+    --alpha-gold-light: #F4D681;
+    --alpha-gold-dark: #B98732;
 
-    color:
-        #0D265E;
+    --alpha-white: #EEF2F8;
+    --alpha-navy: #0D265E;
+
+    --alpha-text: #10285F;
+    --alpha-text-soft: #4C5F7D;
+
+    --alpha-surface: #FFFFFF;
+    --alpha-surface-soft: #F2F6FC;
 
 }
 
 
 /* ==========================================================
-   FUNDO GLOBAL
+   PÁGINA
    ========================================================== */
 
-body[data-theme="alpha"]{
+.page-alpha{
+
+    background:
+        #EEF2F8 !important;
+
+    color:
+        #10285F !important;
+
+}
+
+
+/* ==========================================================
+   TODOS OS ELEMENTOS DE TEXTO
+   ========================================================== */
+
+.page-alpha p,
+.page-alpha .text,
+.page-alpha .lead{
+
+    color:
+        #10285F !important;
+
+}
+
+
+.page-alpha h1,
+.page-alpha h2,
+.page-alpha h3,
+.page-alpha h4,
+.page-alpha h5,
+.page-alpha h6{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .label{
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   HERO — EXCEPÇÃO: FUNDO ESCURO
+   ========================================================== */
+
+.page-alpha .alpha-hero{
 
     background:
 
         radial-gradient(
-            circle at 85% 10%,
-            rgba(29,93,196,.08),
+            circle at 85% 18%,
+            rgba(216,167,77,.18),
             transparent 28%
         ),
 
         radial-gradient(
-            circle at 10% 85%,
-            rgba(216,167,77,.06),
-            transparent 30%
-        ),
-
-        #EEF2F8;
-
-}
-
-
-/* ==========================================================
-   HERO
-   ========================================================== */
-
-body[data-theme="alpha"] .hero{
-
-    background:
-
-        radial-gradient(
-            circle at 82% 18%,
-            rgba(29,93,196,.30),
+            circle at 12% 85%,
+            rgba(29,93,196,.25),
             transparent 34%
-        ),
-
-        radial-gradient(
-            circle at 18% 82%,
-            rgba(216,167,77,.10),
-            transparent 32%
         ),
 
         linear-gradient(
             135deg,
-            #011F5C 0%,
-            #02389E 52%,
-            #0347B3 100%
-        );
+            #071B4B,
+            #02389E,
+            #0347B3
+        ) !important;
+
+}
+
+
+/* HERO TEXT */
+
+.page-alpha .alpha-hero h1,
+.page-alpha .alpha-hero h2,
+.page-alpha .alpha-hero h3{
 
     color:
-        #EEF2F8;
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-hero p,
+.page-alpha .alpha-hero .hero-sub{
+
+    color:
+        rgba(255,255,255,.82) !important;
+
+}
+
+
+.page-alpha .alpha-hero .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-hero .label{
+
+    color:
+        #F4D681 !important;
 
 }
 
 
 /* ==========================================================
-   HERO — TÍTULOS
+   HERO TITLE GOLD
    ========================================================== */
 
-body[data-theme="alpha"] .hero-title{
+.page-alpha .alpha-hero .hero-title span{
 
     color:
-        #EEF2F8;
+        #F4D681 !important;
 
-    text-shadow:
-        0 15px 45px
-        rgba(0,0,0,.25);
+    background:none !important;
 
-}
+    -webkit-background-clip:
+        initial !important;
 
+    background-clip:
+        initial !important;
 
-body[data-theme="alpha"] .hero-title span{
-
-    color:
-        #D8A74D;
-
-}
-
-
-body[data-theme="alpha"] .hero-sub{
-
-    color:
-        rgba(238,242,248,.78);
+    -webkit-text-fill-color:
+        #F4D681 !important;
 
 }
 
 
 /* ==========================================================
-   NAVBAR
+   HERO HIGHLIGHTS
    ========================================================== */
 
-body[data-theme="alpha"] .navbar{
+.page-alpha .alpha-hero-highlights span{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+/* ==========================================================
+   HERO DISCLAIMER
+   ========================================================== */
+
+.page-alpha .alpha-disclaimer{
+
+    color:
+        rgba(255,255,255,.56) !important;
+
+}
+
+
+/* ==========================================================
+   HERO BADGE
+   ========================================================== */
+
+.page-alpha .alpha-hero .badge{
+
+    color:
+        #F4D681 !important;
 
     background:
-        rgba(1,31,92,.82);
-
-    border-bottom:
-        1px solid
-        rgba(216,167,77,.16);
-
-    backdrop-filter:
-        blur(18px);
-
-}
-
-
-body[data-theme="alpha"] .navbar a{
-
-    color:
-        rgba(238,242,248,.82);
-
-}
-
-
-body[data-theme="alpha"] .navbar a:hover{
-
-    color:
-        #F4D681;
-
-}
-
-
-/* ==========================================================
-   GLASS
-   ========================================================== */
-
-body[data-theme="alpha"] .glass{
-
-    background:
-        rgba(13,38,94,.55);
+        rgba(216,167,77,.12) !important;
 
     border:
         1px solid
-        rgba(238,242,248,.12);
-
-    box-shadow:
-        0 20px 55px
-        rgba(1,31,92,.16);
-
-    backdrop-filter:
-        blur(16px);
+        rgba(244,214,129,.34) !important;
 
 }
 
 
 /* ==========================================================
-   BOTÕES
+   HERO BOTÕES
    ========================================================== */
 
-body[data-theme="alpha"] .btn-primary{
+.page-alpha .alpha-hero .btn-primary{
 
     background:
         linear-gradient(
             135deg,
             #D8A74D,
             #F4D681
-        );
+        ) !important;
 
     color:
-        #09245C;
+        #071B4B !important;
+
+}
+
+
+.page-alpha .alpha-hero .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
 
     border:
         1px solid
-        rgba(216,167,77,.55);
-
-    box-shadow:
-        0 15px 35px
-        rgba(216,167,77,.20);
-
-}
-
-
-body[data-theme="alpha"] .btn-primary:hover{
-
-    background:
-        linear-gradient(
-            135deg,
-            #F4D681,
-            #D8A74D
-        );
-
-    box-shadow:
-        0 20px 45px
-        rgba(216,167,77,.32);
-
-}
-
-
-body[data-theme="alpha"] .btn-glass{
-
-    background:
-        rgba(238,242,248,.06);
-
-    border:
-        1px solid
-        rgba(238,242,248,.20);
-
-    color:
-        #EEF2F8;
-
-    backdrop-filter:
-        blur(14px);
-
-}
-
-
-body[data-theme="alpha"] .btn-glass:hover{
-
-    background:
-        rgba(238,242,248,.12);
-
-    border-color:
-        rgba(216,167,77,.40);
+        rgba(255,255,255,.22) !important;
 
 }
 
@@ -532,324 +544,739 @@ body[data-theme="alpha"] .btn-glass:hover{
    PRODUCT GLOW
    ========================================================== */
 
-body[data-theme="alpha"] .product-glow{
+.page-alpha .product-glow{
 
     background:
 
         radial-gradient(
             circle,
-            rgba(216,167,77,.65) 0%,
-            rgba(29,93,196,.30) 38%,
+            rgba(216,167,77,.42),
+            rgba(3,71,179,.20) 42%,
             transparent 72%
-        );
-
-    opacity:
-        .55;
+        ) !important;
 
 }
 
 
 /* ==========================================================
-   HERO PRODUCT
+   CARDS CLAROS
    ========================================================== */
 
-body[data-theme="alpha"] .hero-product img{
-
-    filter:
-
-        drop-shadow(
-            0 35px 55px
-            rgba(0,0,0,.38)
-        );
-
-}
-
-
-body[data-theme="alpha"] .hero-product:hover img{
-
-    filter:
-
-        drop-shadow(
-            0 45px 70px
-            rgba(0,0,0,.45)
-        );
-
-}
-
-
-/* ==========================================================
-   SERVICE ICON
-   ========================================================== */
-
-body[data-theme="alpha"] .service-icon{
+.page-alpha .card,
+.page-alpha .service-card,
+.page-alpha .alpha-ingredient-card,
+.page-alpha .alpha-detail-card,
+.page-alpha .bento-card,
+.page-alpha .faq-item{
 
     background:
-        rgba(3,71,179,.08);
-
-    border:
-        1px solid
-        rgba(216,167,77,.18);
+        #FFFFFF !important;
 
     color:
-        #0347B3;
-
-}
-
-
-/* ==========================================================
-   CARDS
-   ========================================================== */
-
-body[data-theme="alpha"] .card{
-
-    background:
-        rgba(255,255,255,.88);
-
-    border:
-        1px solid
-        rgba(13,38,94,.08);
-
-    box-shadow:
-        0 20px 55px
-        rgba(13,38,94,.07);
-
-}
-
-
-body[data-theme="alpha"] .card:hover{
+        #10285F !important;
 
     border-color:
-        rgba(216,167,77,.30);
-
-    box-shadow:
-        0 25px 65px
-        rgba(13,38,94,.12);
+        rgba(3,71,179,.15) !important;
 
 }
 
 
-body[data-theme="alpha"] .card::after{
+/* CARD TITLES */
 
-    background:
-        linear-gradient(
-            90deg,
-            #D8A74D,
-            #F4D681
-        );
+.page-alpha .card h3,
+.page-alpha .service-card h3,
+.page-alpha .alpha-ingredient-card h3,
+.page-alpha .alpha-detail-card h3,
+.page-alpha .bento-card h3{
+
+    color:
+        #0D265E !important;
 
 }
 
 
-/* ==========================================================
-   ORBS / ELEMENTOS DECORATIVOS
-   ========================================================== */
+/* CARD TEXT */
 
-body[data-theme="alpha"] .orb{
+.page-alpha .card p,
+.page-alpha .service-card p,
+.page-alpha .alpha-ingredient-card p,
+.page-alpha .alpha-detail-card p,
+.page-alpha .bento-card p{
 
-    background:
-        #D8A74D;
-
-    box-shadow:
-        0 0 35px
-        rgba(216,167,77,.35);
+    color:
+        #4C5F7D !important;
 
 }
 
 
 /* ==========================================================
-   BADGES
+   ICONES
    ========================================================== */
 
-body[data-theme="alpha"] .badge{
+.page-alpha .service-icon{
 
     background:
-        rgba(216,167,77,.08);
+        rgba(3,71,179,.08) !important;
+
+    color:
+        #0347B3 !important;
 
     border:
         1px solid
-        rgba(216,167,77,.35);
-
-    color:
-        #F4D681;
+        rgba(216,167,77,.28) !important;
 
 }
 
 
 /* ==========================================================
-   TÍTULOS DE SECÇÃO
+   INFORMATION BOX
    ========================================================== */
 
-body[data-theme="alpha"] .section-title{
+.page-alpha .alpha-information{
 
-    color:
-        #0D265E;
+    background:
+        #FFFFFF !important;
+
+    border-color:
+        rgba(3,71,179,.15) !important;
 
 }
 
 
-body[data-theme="alpha"] .section-subtitle{
+.page-alpha .alpha-details-toggle{
 
     color:
-        rgba(13,38,94,.65);
+        #0D265E !important;
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-details-toggle span:first-child{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-details-icon{
+
+    background:
+        #0347B3 !important;
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha
+.alpha-information.active
+.alpha-details-icon{
+
+    background:
+        #D8A74D !important;
+
+    color:
+        #0D265E !important;
 
 }
 
 
 /* ==========================================================
-   LINKS / ACCENT
+   DETAIL CARD
    ========================================================== */
 
-body[data-theme="alpha"] a{
+.page-alpha .alpha-detail-card{
 
-    --accent:
-        #D8A74D;
+    background:
+        #F2F6FC !important;
 
 }
 
 
-body[data-theme="alpha"] a:hover{
+.page-alpha .alpha-detail-card h3{
 
     color:
-        #B98732;
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-detail-card p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-detail-card .label{
+
+    color:
+        #B98732 !important;
 
 }
 
 
 /* ==========================================================
-   LINHAS DECORATIVAS
+   DETAIL LIST
    ========================================================== */
 
-body[data-theme="alpha"] .line,
-body[data-theme="alpha"] .divider{
+.page-alpha .alpha-detail-item{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-detail-item .icon-circle{
+
+    background:
+        rgba(3,71,179,.09) !important;
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-alpha .alpha-benefits{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-benefits .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-benefits .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-benefits .icon-item{
+
+    color:
+        #10285F !important;
+
+}
+
+
+.page-alpha .alpha-benefits .icon-circle{
+
+    background:
+        rgba(3,71,179,.09) !important;
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   BENTO CLARO
+   ========================================================== */
+
+.page-alpha .alpha-ingredients{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card .label{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-bento-symbol{
+
+    color:
+        rgba(3,71,179,.055) !important;
+
+}
+
+
+/* ==========================================================
+   USAGE
+   ========================================================== */
+
+.page-alpha .alpha-usage{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-usage .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-usage .lead{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content{
+
+    background:
+        #F2F6FC !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-dot{
+
+    background:
+        #0347B3 !important;
+
+    color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(216,167,77,.40) !important;
+
+}
+
+
+.page-alpha .alpha-usage-note{
+
+    background:
+        rgba(3,71,179,.045) !important;
+
+}
+
+
+.page-alpha .alpha-usage-note .label{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-usage-note .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+   ESTA SECÇÃO É ESCURA
+   ========================================================== */
+
+.page-alpha .alpha-performance{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(216,167,77,.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071B4B,
+            #02389E
+        ) !important;
+
+}
+
+
+/* PERFORMANCE TEXT */
+
+.page-alpha .alpha-performance h1,
+.page-alpha .alpha-performance h2,
+.page-alpha .alpha-performance h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-performance p,
+.page-alpha .alpha-performance .text,
+.page-alpha .alpha-performance .lead{
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.page-alpha .alpha-performance .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-performance .label{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+/* PERFORMANCE CARDS */
+
+.page-alpha .alpha-performance .bento-card{
+
+    background:
+        rgba(255,255,255,.06) !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12) !important;
+
+}
+
+
+/* MÉTRICAS */
+
+.page-alpha .alpha-performance .metric-number{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+.page-alpha .alpha-performance .metric-label{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-alpha .alpha-faq{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-item{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question{
+
+    color:
+        #0D265E !important;
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question span:first-child{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question span:last-child{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-answer{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-answer p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+/* ==========================================================
+   CTA — ESCURO
+   ========================================================== */
+
+.page-alpha .alpha-cta{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-cta .showcase{
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(216,167,77,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071B4B,
+            #02389E
+        ) !important;
+
+}
+
+
+/* CTA TEXT */
+
+.page-alpha .alpha-cta h1,
+.page-alpha .alpha-cta h2,
+.page-alpha .alpha-cta h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-cta .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-cta .lead{
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.page-alpha .alpha-cta .badge{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+.page-alpha .alpha-cta-disclaimer{
+
+    color:
+        rgba(255,255,255,.52) !important;
+
+}
+
+
+/* CTA BOTÃO */
+
+.page-alpha .alpha-cta .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #D8A74D,
+            #F4D681
+        ) !important;
+
+    color:
+        #071B4B !important;
+
+}
+
+
+.page-alpha .alpha-cta .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   LINK / HOVER
+   ========================================================== */
+
+.page-alpha a{
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+.page-alpha a:hover{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+/* ==========================================================
+   ELIMINA QUALQUER VESTÍGIO DE CASTANHO ANTIGO
+   ========================================================== */
+
+.page-alpha,
+.page-alpha *,
+.page-alpha *::before,
+.page-alpha *::after{
+
+    --brown:
+        transparent;
+
+}
+
+
+/* ==========================================================
+   PROTECÇÃO CONTRA CORES ANTIGAS
+   ========================================================== */
+
+.page-alpha .card::after,
+.page-alpha .service-card::after{
 
     background:
         linear-gradient(
             90deg,
-            transparent,
-            #D8A74D,
-            transparent
-        );
-
-}
-
-
-/* ==========================================================
-   PARTICULAS DOURADAS
-   ========================================================== */
-
-body[data-theme="alpha"]::before{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background-image:
-
-        radial-gradient(
-            rgba(216,167,77,.13) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        42px 42px;
-
-    opacity:
-        .28;
-
-    z-index:
-        -1;
-
-}
-
-
-/* ==========================================================
-   PARTICULAS AZUIS
-   ========================================================== */
-
-body[data-theme="alpha"]::after{
-
-    content:"";
-
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(29,93,196,.07),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 80% 75%,
-            rgba(3,71,179,.06),
-            transparent 28%
-        );
-
-    z-index:
-        -2;
-
-}
-
-
-/* ==========================================================
-   SCROLLBAR
-   ========================================================== */
-
-body[data-theme="alpha"]::-webkit-scrollbar{
-
-    width:
-        8px;
-
-}
-
-
-body[data-theme="alpha"]::-webkit-scrollbar-track{
-
-    background:
-        #EEF2F8;
-
-}
-
-
-body[data-theme="alpha"]::-webkit-scrollbar-thumb{
-
-    border-radius:
-        999px;
-
-    background:
-
-        linear-gradient(
-            180deg,
             #0347B3,
             #D8A74D
-        );
+        ) !important;
+
+}
+
+
+.page-alpha .orb{
+
+    background:
+        #D8A74D !important;
 
 }
 
 
 /* ==========================================================
-   SELECÇÃO DE TEXTO
+   RESPONSIVE
    ========================================================== */
 
-body[data-theme="alpha"] ::selection{
+@media (max-width:700px){
 
-    background:
-        #D8A74D;
+    .page-alpha .alpha-hero{
 
-    color:
-        #0D265E;
+        background:
+            linear-gradient(
+                180deg,
+                #071B4B,
+                #02389E
+            ) !important;
+
+    }
 
 }
-
 /* ==========================================================
    ALPHAMETA
    ========================================================== */
