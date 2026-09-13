@@ -9167,3 +9167,1598 @@ body[data-theme="ismarts3"] .input:focus{
     }
 
 }
+
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   ALPHAMETA
+   PAGE-SCOPED COMPONENT SYSTEM
+   ========================================================== */
+
+.page-alphameta{
+
+    --alphameta-orange:#F1940A;
+    --alphameta-orange-dark:#ED6407;
+
+    --alphameta-gold:#FCC20C;
+    --alphameta-gold-light:#F9D14A;
+
+    --alphameta-red:#DF2107;
+    --alphameta-red-dark:#A23404;
+
+    --alphameta-silver:#B9B0B2;
+    --alphameta-silver-light:#F0E9DF;
+
+    --alphameta-brown:#471D0A;
+
+    --alphameta-white:#FFFFFF;
+
+    --alphameta-text:#471D0A;
+    --alphameta-muted:#725442;
+
+    --alphameta-surface:#FFFFFF;
+    --alphameta-surface-soft:#FFF9F1;
+
+}
+
+
+/* ==========================================================
+   ROOT
+   ========================================================== */
+
+.page-alphameta{
+
+    position:relative;
+
+    isolation:isolate;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        var(--alphameta-text) !important;
+
+}
+
+
+/* ==========================================================
+   TEXTO GLOBAL
+   ========================================================== */
+
+.page-alphameta h1,
+.page-alphameta h2,
+.page-alphameta h3,
+.page-alphameta h4,
+.page-alphameta h5,
+.page-alphameta h6{
+
+    color:
+        var(--alphameta-brown) !important;
+
+}
+
+
+.page-alphameta p{
+
+    color:
+        var(--alphameta-text) !important;
+
+}
+
+
+.page-alphameta .text{
+
+    color:
+        var(--alphameta-muted) !important;
+
+}
+
+
+.page-alphameta .lead{
+
+    color:
+        var(--alphameta-muted) !important;
+
+}
+
+
+.page-alphameta .label{
+
+    color:
+        var(--alphameta-orange-dark) !important;
+
+}
+
+
+.page-alphameta .section-title{
+
+    color:
+        var(--alphameta-brown) !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.page-alphameta .alphameta-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(252,194,12,.24),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(241,148,10,.24),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #471D0A,
+            #A23404,
+            #ED6407
+        ) !important;
+
+}
+
+
+.page-alphameta .alphameta-hero h1,
+.page-alphameta .alphameta-hero h2,
+.page-alphameta .alphameta-hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta .alphameta-hero .hero-sub{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-hero
+.hero-title
+span{
+
+    color:
+        #F9D14A !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F9D14A !important;
+
+}
+
+
+/* ==========================================================
+   HERO BADGE
+   ========================================================== */
+
+.page-alphameta .alphameta-hero .badge{
+
+    color:
+        #F9D14A !important;
+
+    background:
+        rgba(252,194,12,.13) !important;
+
+    border:
+        1px solid
+        rgba(249,209,74,.34) !important;
+
+}
+
+
+/* ==========================================================
+   HERO HIGHLIGHTS
+   ========================================================== */
+
+.page-alphameta .alphameta-hero-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px 18px;
+
+    margin-top:24px;
+
+}
+
+
+.page-alphameta
+.alphameta-hero-highlights span{
+
+    color:
+        #FFFFFF !important;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ==========================================================
+   HERO DISCLAIMER
+   ========================================================== */
+
+.page-alphameta .alphameta-disclaimer{
+
+    max-width:650px;
+
+    margin-top:20px;
+
+    color:
+        rgba(255,255,255,.56) !important;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
+
+.page-alphameta .product-glow{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(252,194,12,.46),
+            rgba(241,148,10,.20) 42%,
+            transparent 72%
+        ) !important;
+
+}
+
+
+.page-alphameta .hero-product img{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:
+        min(100%,520px);
+
+    width:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 55px
+            rgba(71,29,10,.30)
+        );
+
+}
+
+
+/* ==========================================================
+   GOLD RING
+   ========================================================== */
+
+.page-alphameta .alphameta-gold-ring{
+
+    position:absolute;
+
+    width:390px;
+
+    height:390px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(249,209,74,.55);
+
+    box-shadow:
+
+        0 0 45px
+        rgba(252,194,12,.18),
+
+        inset 0 0 35px
+        rgba(252,194,12,.08);
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   BLOB
+   ========================================================== */
+
+.page-alphameta .blob-1{
+
+    background:
+        #FCC20C !important;
+
+}
+
+
+.page-alphameta .blob-2{
+
+    background:
+        #DF2107 !important;
+
+}
+
+
+.page-alphameta .blob-3{
+
+    background:
+        #F9D14A !important;
+
+}
+
+
+/* ==========================================================
+   CARDS
+   ========================================================== */
+
+.page-alphameta .card,
+.page-alphameta .service-card,
+.page-alphameta .alphameta-ingredient-card,
+.page-alphameta .alphameta-detail-card,
+.page-alphameta .bento-card,
+.page-alphameta .faq-item{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #471D0A !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.16) !important;
+
+    box-shadow:
+        0 20px 60px
+        rgba(71,29,10,.08);
+
+}
+
+
+/* ==========================================================
+   CARD TITLES
+   ========================================================== */
+
+.page-alphameta .card h3,
+.page-alphameta .service-card h3,
+.page-alphameta .alphameta-detail-card h3,
+.page-alphameta .bento-card h3{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+/* ==========================================================
+   CARD TEXT
+   ========================================================== */
+
+.page-alphameta .card p,
+.page-alphameta .service-card p,
+.page-alphameta .alphameta-detail-card p,
+.page-alphameta .bento-card p{
+
+    color:
+        #725442 !important;
+
+}
+
+
+/* ==========================================================
+   CARD ACCENT
+   ========================================================== */
+
+.page-alphameta
+.alphameta-ingredient-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #F1940A,
+            #FCC20C,
+            #DF2107
+        ) !important;
+
+}
+
+
+/* ==========================================================
+   ICON
+   ========================================================== */
+
+.page-alphameta .service-icon{
+
+    background:
+        rgba(241,148,10,.09) !important;
+
+    color:
+        #ED6407 !important;
+
+    border:
+        1px solid
+        rgba(252,194,12,.28) !important;
+
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+.page-alphameta .alphameta-information{
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.16) !important;
+
+    border-radius:
+        20px;
+
+    overflow:hidden;
+
+}
+
+
+.page-alphameta .alphameta-details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 24px;
+
+    border:0;
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #471D0A !important;
+
+    font:inherit;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.page-alphameta
+.alphameta-details-toggle
+span:first-child{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta .alphameta-details-icon{
+
+    width:32px;
+
+    height:32px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:
+        #ED6407 !important;
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-information.active
+.alphameta-details-icon{
+
+    background:
+        #FCC20C !important;
+
+    color:
+        #471D0A !important;
+
+}
+
+
+/* ==========================================================
+   DETAILS
+   ========================================================== */
+
+.page-alphameta .alphameta-details-content{
+
+    display:grid;
+
+    grid-template-rows:0fr;
+
+    transition:
+        grid-template-rows .45s ease;
+
+}
+
+
+.page-alphameta
+.alphameta-information.active
+.alphameta-details-content{
+
+    grid-template-rows:1fr;
+
+}
+
+
+.page-alphameta
+.alphameta-details-content
+> div{
+
+    min-height:0;
+
+    overflow:hidden;
+
+}
+
+
+.page-alphameta .alphameta-details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+    padding:
+        0 24px 24px;
+
+}
+
+
+.page-alphameta .alphameta-detail-card{
+
+    padding:25px;
+
+    background:
+        #FFF9F1 !important;
+
+}
+
+
+.page-alphameta .alphameta-detail-card .label{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-detail-card-wide{
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* ==========================================================
+   DETAIL ITEMS
+   ========================================================== */
+
+.page-alphameta .alphameta-detail-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    color:
+        #725442 !important;
+
+    font-size:
+        14px;
+
+}
+
+
+.page-alphameta
+.alphameta-detail-item
+.icon-circle{
+
+    width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(241,148,10,.10) !important;
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-alphameta .alphameta-benefits{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-benefits
+.section-title{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-benefits
+.text{
+
+    color:
+        #725442 !important;
+
+}
+
+
+.page-alphameta .icon-item{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta .icon-circle{
+
+    background:
+        rgba(241,148,10,.10) !important;
+
+    color:
+        #ED6407 !important;
+
+    border:
+        1px solid
+        rgba(252,194,12,.20);
+
+}
+
+
+/* ==========================================================
+   BENEFIT IMAGE
+   ========================================================== */
+
+.page-alphameta .alphameta-benefit-image{
+
+    position:relative;
+
+    min-height:480px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.page-alphameta .alphameta-benefit-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:460px;
+
+    width:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 30px 45px
+            rgba(71,29,10,.20)
+        );
+
+}
+
+
+.page-alphameta .alphameta-image-glow{
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(252,194,12,.28),
+            rgba(241,148,10,.13),
+            transparent 70%
+        );
+
+    filter:
+        blur(25px);
+
+}
+
+
+/* ==========================================================
+   INGREDIENTS
+   ========================================================== */
+
+.page-alphameta .alphameta-ingredients{
+
+    background:
+        #FFF9F1 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-ingredients
+.bento-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-ingredients
+.bento-card h3{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-ingredients
+.bento-card .text{
+
+    color:
+        #725442 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-ingredients
+.bento-card .label{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+.page-alphameta .alphameta-bento-symbol{
+
+    position:absolute;
+
+    right:25px;
+
+    bottom:5px;
+
+    font-size:110px;
+
+    font-weight:900;
+
+    color:
+        rgba(241,148,10,.07) !important;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   ROUTINE
+   ========================================================== */
+
+.page-alphameta .alphameta-routine{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.section-title{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.lead{
+
+    color:
+        #725442 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.timeline-dot{
+
+    background:
+        #ED6407 !important;
+
+    color:
+        #FFFFFF !important;
+
+    border-color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(252,194,12,.45) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.timeline-content{
+
+    background:
+        #FFF9F1 !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.15) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.timeline-content h3{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-routine
+.timeline-content .text{
+
+    color:
+        #725442 !important;
+
+}
+
+
+.page-alphameta .alphameta-routine-note{
+
+    padding:24px;
+
+    border-radius:18px;
+
+    background:
+        rgba(241,148,10,.05) !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.14);
+
+}
+
+
+.page-alphameta
+.alphameta-routine-note
+.label{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+/* ==========================================================
+   CERTIFICATIONS
+   ========================================================== */
+
+.page-alphameta
+.alphameta-certifications{
+
+    background:
+        #FFF9F1 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-certification-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:22px;
+
+}
+
+
+.page-alphameta .alphameta-certificate{
+
+    padding:30px;
+
+    min-height:230px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.15);
+
+    border-radius:
+        22px;
+
+    box-shadow:
+        0 20px 55px
+        rgba(71,29,10,.07);
+
+}
+
+
+.page-alphameta .alphameta-certificate-mark{
+
+    min-height:100px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:
+        15px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FFF9F1,
+            #F0E9DF
+        );
+
+    color:
+        #ED6407;
+
+    font-weight:900;
+
+    letter-spacing:.08em;
+
+}
+
+
+.page-alphameta
+.alphameta-certificate
+.label{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-certification-note{
+
+    padding:24px;
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(241,148,10,.14);
+
+    border-radius:
+        18px;
+
+}
+
+
+.page-alphameta
+.alphameta-certification-note
+.text{
+
+    color:
+        #725442 !important;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE — ESCURA
+   ========================================================== */
+
+.page-alphameta .alphameta-performance{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(252,194,12,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #471D0A,
+            #A23404,
+            #ED6407
+        ) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.lead{
+
+    color:
+        rgba(255,255,255,.75) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.label{
+
+    color:
+        #F9D14A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.bento-card{
+
+    background:
+        rgba(255,255,255,.07) !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12) !important;
+
+    box-shadow:none;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.bento-card h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.bento-card .text{
+
+    color:
+        rgba(255,255,255,.70) !important;
+
+}
+
+
+/* ==========================================================
+   METRICS
+   ========================================================== */
+
+.page-alphameta
+.alphameta-performance
+.metric-number{
+
+    color:
+        #F9D14A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-performance
+.metric-label{
+
+    color:
+        rgba(255,255,255,.86) !important;
+
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-alphameta .alphameta-faq{
+
+    background:
+        #FFF9F1 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-faq
+.faq-item{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-faq
+.faq-question{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-faq
+.faq-question span:first-child{
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-faq
+.faq-question span:last-child{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+.page-alphameta
+.alphameta-faq
+.faq-answer p{
+
+    color:
+        #725442 !important;
+
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.page-alphameta .alphameta-cta{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.showcase{
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(252,194,12,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #471D0A,
+            #A23404,
+            #ED6407
+        ) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.lead{
+
+    color:
+        rgba(255,255,255,.75) !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.badge{
+
+    color:
+        #F9D14A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FCC20C,
+            #F9D14A
+        ) !important;
+
+    color:
+        #471D0A !important;
+
+}
+
+
+.page-alphameta
+.alphameta-cta
+.btn-glass{
+
+    color:
+        #FFFFFF !important;
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    border-color:
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+.page-alphameta .alphameta-cta-disclaimer{
+
+    color:
+        rgba(255,255,255,.52) !important;
+
+}
+
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+
+.page-alphameta a{
+
+    color:
+        #ED6407 !important;
+
+}
+
+
+.page-alphameta a:hover{
+
+    color:
+        #DF2107 !important;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width:900px){
+
+    .page-alphameta
+    .alphameta-details-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-detail-card-wide{
+
+        grid-column:auto;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-certification-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .page-alphameta
+    .alphameta-hero{
+
+        min-height:auto;
+
+        padding-top:100px;
+
+        padding-bottom:80px;
+
+    }
+
+
+    .page-alphameta
+    .hero-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-alphameta
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-hero-highlights{
+
+        justify-content:center;
+
+    }
+
+
+    .page-alphameta
+    .hero-visual{
+
+        margin-top:35px;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-gold-ring{
+
+        width:300px;
+
+        height:300px;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-benefit-image{
+
+        min-height:360px;
+
+    }
+
+}
+
+
+@media (max-width:520px){
+
+    .page-alphameta
+    .alphameta-hero-highlights{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align:left;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-details-toggle{
+
+        padding:18px;
+
+        font-size:14px;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-details-grid{
+
+        padding:
+            0 16px 16px;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-detail-card{
+
+        padding:20px;
+
+    }
+
+
+    .page-alphameta
+    .alphameta-certification-grid{
+
+        gap:15px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .page-alphameta *,
+    .page-alphameta *::before,
+    .page-alphameta *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
