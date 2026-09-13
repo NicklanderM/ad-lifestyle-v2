@@ -1,30 +1,61 @@
 /* ==========================================================
-   AD LIFESTYLE — ABOUT.JS
-   Premium Institutional About Page
+   AD LIFESTYLE V2
+   ABOUT.JS
+   Premium Institutional Brand Experience
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
+import { navigate } from "../js/router.js";
+import { ripple, stagger } from "../js/animations.js";
+
+/* ==========================================================
+   LOAD
+   ========================================================== */
 
 export function loadAbout(){
 
-     applyTheme("default");
+    applyTheme("default");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-app.innerHTML = `
-    <div class="about-page">
+    if(!app){
 
-        ${hero()}
-        ${whoWeAre()}
-        ${ceo()}
-        ${visionMissionValues()}
-        ${journey()}
-        ${partners()}
-        ${principles()}
-        ${cta()}
+        console.error(
+            "AD Lifestyle About: elemento #app não encontrado."
+        );
 
-    </div>
-`;
+        return;
+
+    }
+
+    app.innerHTML = `
+
+        <div class="about-page">
+
+            ${hero()}
+
+            ${manifesto()}
+
+            ${whoWeAre()}
+
+            ${ecosystem()}
+
+            ${leadership()}
+
+            ${visionMissionValues()}
+
+            ${journey()}
+
+            ${principles()}
+
+            ${future()}
+
+            ${cta()}
+
+        </div>
+
+    `;
 
     initialiseAbout();
 
@@ -38,7 +69,7 @@ function hero(){
 
 return `
 
-<section class="hero page about-hero">
+<section class="hero about-hero">
 
     <div class="aurora">
 
@@ -48,81 +79,132 @@ return `
 
     </div>
 
-    <div class="container hero-grid">
 
-        <div class="hero-content">
+    <div class="about-hero-grid container">
 
-            <span class="badge">
+        <div class="about-hero-copy reveal">
 
-                Sobre a AD Lifestyle
-
+            <span class="label">
+                AD Lifestyle · Our Story
             </span>
+
+
+            <span class="about-eyebrow">
+                PEOPLE · WELLNESS · KNOWLEDGE · OPPORTUNITY
+            </span>
+
 
             <h1 class="hero-title">
 
-                Uma visão.
-                Um propósito.
-                Um futuro.
+                Uma visão
+                <span>transformada em movimento.</span>
 
             </h1>
 
+
             <p class="hero-sub">
 
-                Uma organização orientada para o desenvolvimento
-                humano, bem-estar, educação empreendedora,
-                liderança e construção de novas possibilidades.
+                A AD Lifestyle nasceu para criar pontes entre
+                pessoas, soluções de bem-estar, conhecimento,
+                desenvolvimento pessoal e novas possibilidades
+                de evolução.
 
             </p>
+
 
             <div class="hero-actions">
 
                 <button
                     class="btn btn-primary"
-                    data-action="journey">
+                    data-action="story">
 
-                    ${icon("arrow-down")}
-
-                    Conheça a nossa história
+                    Descobrir a nossa história
 
                 </button>
+
 
                 <button
                     class="btn btn-glass"
                     data-action="contact">
 
-                    ${icon("message")}
-
-                    Fale connosco
+                    Falar connosco
 
                 </button>
 
             </div>
 
+
+            <div class="about-hero-signature">
+
+                <span>
+                    AD LIFESTYLE
+                </span>
+
+                <div></div>
+
+                <small>
+                    Creating Bridges
+                </small>
+
+            </div>
+
         </div>
 
-        <div class="hero-visual">
 
-            <div class="hero-product about-leader-visual">
+        <div class="about-hero-visual reveal-right">
 
-                <div class="product-glow"></div>
+            <div class="about-hero-stage">
 
-                <img
-                    src="assets/images/abdoulahi.png"
-                    alt="Abdoulahi Doucoure — CEO da AD Lifestyle">
+                <div class="about-stage-grid"></div>
 
-                <div class="hero-leader-caption">
 
-                    <span>
+                <div class="about-orbit orbit-1"></div>
 
-                        CEO & Founder
+                <div class="about-orbit orbit-2"></div>
 
+                <div class="about-orbit orbit-3"></div>
+
+
+                <div class="about-brand-disc">
+
+                    <span class="about-brand-mark">
+                        AD
                     </span>
 
                     <strong>
-
-                        Abdoulahi Doucoure
-
+                        LIFESTYLE
                     </strong>
+
+                    <small>
+                        CREATING BRIDGES
+                    </small>
+
+                </div>
+
+
+                <div class="about-floating-node node-wellness">
+
+                    <span></span>
+
+                    WELLNESS
+
+                </div>
+
+
+                <div class="about-floating-node node-academy">
+
+                    <span></span>
+
+                    ACADEMY 21
+
+                </div>
+
+
+                <div class="about-floating-node node-events">
+
+                    <span></span>
+
+                    EVENTS
 
                 </div>
 
@@ -139,14 +221,76 @@ return `
 }
 
 /* ==========================================================
-   QUEM SOMOS
+   MANIFESTO
+   ========================================================== */
+
+function manifesto(){
+
+return `
+
+<section class="section about-manifesto">
+
+    <div class="container">
+
+        <div class="about-manifesto-inner reveal">
+
+            <span class="label">
+                Manifesto
+            </span>
+
+
+            <h2>
+
+                Não queremos apenas
+                <strong>vender.</strong>
+
+                <br>
+
+                Queremos
+                <strong>conectar.</strong>
+
+            </h2>
+
+
+            <p>
+
+                Conectar pessoas a soluções.
+                Pessoas a conhecimento.
+                Pessoas a comunidades.
+                E pessoas a possibilidades
+                que talvez ainda não conheçam.
+
+            </p>
+
+
+            <div class="about-manifesto-line"></div>
+
+
+            <span class="about-manifesto-signature">
+                AD LIFESTYLE
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+/* ==========================================================
+   WHO WE ARE
    ========================================================== */
 
 function whoWeAre(){
 
 return `
 
-<section class="section">
+<section
+    id="story"
+    class="section about-who">
 
     <div class="container">
 
@@ -155,148 +299,104 @@ return `
             <div class="split-content reveal-left">
 
                 <span class="label">
-
                     Quem Somos
-
                 </span>
+
 
                 <h2 class="section-title">
 
-                    Mais do que uma marca,
-                    uma visão de futuro.
+                    Uma organização
+                    criada para
+                    <span>criar pontes.</span>
 
                 </h2>
 
-                <p class="text mt-3">
-
-                    A AD Lifestyle nasceu com o propósito de
-                    aproximar pessoas de conhecimento, novas
-                    possibilidades de crescimento e caminhos
-                    de desenvolvimento pessoal e profissional.
-
-                </p>
 
                 <p class="text mt-3">
 
-                    A nossa actividade integra bem-estar,
-                    desenvolvimento pessoal, educação
-                    empreendedora, liderança, networking,
-                    comunicação e apresentação de produtos
-                    e soluções disponibilizados pelos nossos
-                    parceiros.
+                    A AD Lifestyle é uma organização orientada
+                    para aproximar pessoas de soluções de
+                    bem-estar, conhecimento, desenvolvimento
+                    pessoal e novas possibilidades de evolução.
 
                 </p>
+
 
                 <p class="text mt-3">
 
-                    Acreditamos que uma transformação sustentável
-                    começa quando uma pessoa decide aprender,
-                    evoluir e agir.
+                    A nossa actividade integra dois grandes
+                    universos complementares: a componente
+                    de Wellness, através dos produtos e soluções
+                    BZZWORLD, e a componente de Evolution,
+                    desenvolvida em ligação com a Academy Twenty One.
 
                 </p>
+
+
+                <p class="text mt-3">
+
+                    Mais do que apresentar produtos ou informação,
+                    queremos construir relações, experiências,
+                    conhecimento e uma estrutura preparada
+                    para crescer.
+
+                </p>
+
+
+                <div class="about-keywords">
+
+                    <span>
+                        Wellness
+                    </span>
+
+                    <span>
+                        Technology
+                    </span>
+
+                    <span>
+                        Development
+                    </span>
+
+                    <span>
+                        Opportunity
+                    </span>
+
+                </div>
 
             </div>
 
+
             <div class="split-image reveal-right">
 
-                <div class="bento about-bento">
+                <div class="about-visual-card">
 
-                    <div class="card about-bento-main">
+                    <div class="about-visual-number">
+                        01
+                    </div>
 
-                        <div class="service-icon">
 
-                            ${icon("organization")}
+                    <div class="about-visual-center">
 
-                        </div>
-
-                        <span class="label mt-3">
-
-                            Organização
-
+                        <span>
+                            AD
                         </span>
 
-                        <h3 class="mt-2">
+                        <strong>
+                            LIFESTYLE
+                        </strong>
 
-                            Uma estrutura pensada
-                            para crescer.
-
-                        </h3>
-
-                        <p class="text mt-2">
-
-                            Processos, comunicação e relacionamento
-                            orientados para uma construção sólida
-                            e sustentável.
-
-                        </p>
+                        <small>
+                            PEOPLE · IDEAS · FUTURE
+                        </small>
 
                     </div>
 
-                    <div class="card">
 
-                        <div class="service-icon">
+                    <div class="about-visual-line line-a"></div>
 
-                            ${icon("globe")}
+                    <div class="about-visual-line line-b"></div>
 
-                        </div>
-
-                        <h4 class="mt-2">
-
-                            Visão Internacional
-
-                        </h4>
-
-                        <p class="text mt-1">
-
-                            Preparação para novos horizontes.
-
-                        </p>
-
-                    </div>
-
-                    <div class="card">
-
-                        <div class="service-icon">
-
-                            ${icon("graduation")}
-
-                        </div>
-
-                        <h4 class="mt-2">
-
-                            Academy 21
-
-                        </h4>
-
-                        <p class="text mt-1">
-
-                            Educação, liderança e evolução.
-
-                        </p>
-
-                    </div>
-
-                    <div class="card">
-
-                        <div class="service-icon">
-
-                            ${icon("wellness")}
-
-                        </div>
-
-                        <h4 class="mt-2">
-
-                            Bem-estar
-
-                        </h4>
-
-                        <p class="text mt-1">
-
-                            Saúde, prevenção e longevidade.
-
-                        </p>
-
-                    </div>
+                    <div class="about-visual-line line-c"></div>
 
                 </div>
 
@@ -313,148 +413,302 @@ return `
 }
 
 /* ==========================================================
-   CEO
+   ECOSYSTEM
    ========================================================== */
 
-function ceo(){
+function ecosystem(){
 
 return `
 
-<section class="section-sm">
+<section class="section about-ecosystem">
 
     <div class="container">
 
         <div class="section-center reveal">
 
             <span class="label">
-
-                Liderança
-
+                O nosso ecossistema
             </span>
+
 
             <h2 class="section-title">
 
-                A pessoa por detrás da visão
+                Dois universos.
+                <span>Uma direcção.</span>
 
             </h2>
 
-            <p class="text-lg">
 
-                Uma visão ganha força quando existe liderança
-                preparada para a transformar em movimento.
+            <p class="lead">
+
+                A força da AD Lifestyle está na combinação
+                entre bem-estar e evolução.
 
             </p>
 
         </div>
 
-        <div class="split mt-5">
 
-            <div class="split-image reveal-left">
+        <div class="about-ecosystem-grid mt-6">
 
-                <div class="ceo-profile">
 
-                    <div class="ceo-photo">
+            <article
+                class="about-ecosystem-card ecosystem-wellness reveal">
 
-                        <img
-                            src="assets/images/abdoulahi.png"
-                            alt="Abdoulahi Doucoure">
+                <div class="ecosystem-index">
+                    01
+                </div>
 
-                    </div>
 
-                    <div class="ceo-profile-info">
+                <div class="ecosystem-icon">
+                    ◌
+                </div>
 
-                        <span class="badge badge-gold">
 
-                            CEO & Founder
+                <span>
+                    BZZWORLD
+                </span>
 
-                        </span>
 
-                        <h3 class="mt-2">
+                <h3>
+                    Wellness
+                </h3>
 
-                            Abdoulahi Doucoure
 
-                        </h3>
+                <p>
+                    Produtos, experiências e soluções associadas
+                    ao universo de saúde, bem-estar e Lifestyle.
+                </p>
 
-                        <p class="text">
 
-                            Chief Executive Officer
-                            da AD Lifestyle
+                <div class="ecosystem-tags">
 
-                        </p>
+                    <span>
+                        Produtos
+                    </span>
 
-                    </div>
+                    <span>
+                        Wellness
+                    </span>
+
+                    <span>
+                        Lifestyle
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <div class="about-ecosystem-connector reveal">
+
+                <span>
+                    +
+                </span>
+
+                <div></div>
+
+            </div>
+
+
+            <article
+                class="about-ecosystem-card ecosystem-academy reveal">
+
+                <div class="ecosystem-index">
+                    02
+                </div>
+
+
+                <div class="ecosystem-icon">
+                    21
+                </div>
+
+
+                <span>
+                    ACADEMY TWENTY ONE
+                </span>
+
+
+                <h3>
+                    Evolution
+                </h3>
+
+
+                <p>
+                    Educação, liderança, comunicação,
+                    desenvolvimento pessoal e empreendedorismo.
+                </p>
+
+
+                <div class="ecosystem-tags">
+
+                    <span>
+                        Educação
+                    </span>
+
+                    <span>
+                        Liderança
+                    </span>
+
+                    <span>
+                        Networking
+                    </span>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <div class="about-ecosystem-statement reveal">
+
+            <strong>
+                AD Lifestyle
+            </strong>
+
+
+            <span>
+                O ponto onde Wellness encontra Evolution.
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+/* ==========================================================
+   LEADERSHIP
+   ========================================================== */
+
+function leadership(){
+
+return `
+
+<section class="section about-leadership">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Liderança
+            </span>
+
+
+            <h2 class="section-title">
+
+                Uma visão precisa
+                <span>de alguém que a lidere.</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="about-leader-layout mt-6">
+
+
+            <div class="about-leader-profile reveal-left">
+
+                <div class="about-leader-photo">
+
+                    <img
+                        src="assets/images/abdoulahi.png"
+                        alt="Abdoulahi Doucoure">
+
+                </div>
+
+
+                <div class="about-leader-card">
+
+                    <span>
+                        CEO & FOUNDER
+                    </span>
+
+
+                    <h3>
+                        Abdoulahi Doucoure
+                    </h3>
+
+
+                    <small>
+                        AD Lifestyle
+                    </small>
 
                 </div>
 
             </div>
 
-            <div class="split-content reveal-right">
+
+            <div class="about-leader-content reveal-right">
 
                 <span class="label">
-
-                    Abdoulahi Doucoure
-
+                    Founder
                 </span>
+
 
                 <h2 class="section-title">
 
                     Liderar é transformar
-                    visão em movimento.
+                    <span>uma ideia em movimento.</span>
 
                 </h2>
 
-                <p class="text mt-3">
 
-                    Abdoulahi Doucoure é o CEO da AD Lifestyle
-                    e uma das principais forças por detrás da
-                    construção da nossa visão, identidade e
-                    direcção estratégica.
+                <p class="text-lg">
 
-                </p>
-
-                <p class="text mt-3">
-
-                    A sua liderança assenta numa perspectiva
-                    de crescimento contínuo, valorização das
-                    pessoas, aprendizagem e criação de
-                    oportunidades.
+                    Abdoulahi Doucoure está ligado à construção
+                    da visão estratégica da AD Lifestyle e ao
+                    desenvolvimento da organização como uma
+                    estrutura orientada para crescimento,
+                    relacionamento e criação de oportunidades.
 
                 </p>
 
+
                 <p class="text mt-3">
 
-                    Sob a sua orientação, a AD Lifestyle procura
-                    construir uma presença sólida, profissional
-                    e preparada para acompanhar a evolução
-                    das novas formas de empreendedorismo,
-                    comunicação e desenvolvimento humano.
+                    A liderança assenta numa perspectiva de
+                    aprendizagem contínua, valorização das pessoas,
+                    profissionalismo e construção de uma visão
+                    preparada para o futuro.
 
                 </p>
 
-                <div class="icon-list mt-4">
 
-                    ${feature(
-                        "eye",
-                        "Visão orientada para o futuro",
+                <div class="about-leader-principles">
+
+                    ${leaderPoint(
+                        "01",
+                        "Visão",
                         "Pensar para além do presente."
                     )}
 
-                    ${feature(
-                        "users",
-                        "Desenvolvimento de pessoas",
-                        "Crescer através das pessoas."
+
+                    ${leaderPoint(
+                        "02",
+                        "Pessoas",
+                        "Colocar desenvolvimento humano no centro."
                     )}
 
-                    ${feature(
-                        "award",
-                        "Liderança pelo exemplo",
-                        "Praticar aquilo que defendemos."
+
+                    ${leaderPoint(
+                        "03",
+                        "Consistência",
+                        "Construir com disciplina e continuidade."
                     )}
 
-                    ${feature(
-                        "chart",
-                        "Crescimento sustentável",
-                        "Construir com consistência."
+
+                    ${leaderPoint(
+                        "04",
+                        "Futuro",
+                        "Preparar hoje a organização de amanhã."
                     )}
 
                 </div>
@@ -471,239 +725,29 @@ return `
 
 }
 
-/* ==========================================================
-   VISÃO / MISSÃO / VALORES
-   ========================================================== */
 
-function visionMissionValues(){
-
-return `
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-center reveal">
-
-            <span class="label">
-
-                O que nos orienta
-
-            </span>
-
-            <h2 class="section-title">
-
-                Visão, Missão & Valores
-
-            </h2>
-
-            <p class="text-lg">
-
-                Três pilares que orientam as nossas decisões,
-                relações e ambição.
-
-            </p>
-
-        </div>
-
-        <div class="grid grid-3 mt-5">
-
-            ${principleCard(
-                "eye",
-                "A Nossa Visão",
-                "Futuro",
-                `
-                Tornar a AD Lifestyle uma referência em
-                desenvolvimento humano, empreendedorismo,
-                bem-estar e construção de oportunidades,
-                começando em Angola e evoluindo para uma
-                presença cada vez mais ampla.
-                `
-            )}
-
-            ${principleCard(
-                "target",
-                "A Nossa Missão",
-                "Acção",
-                `
-                Criar um ecossistema de aprendizagem,
-                relacionamento e oportunidades onde
-                pessoas possam desenvolver competências,
-                descobrir novas possibilidades e avançar
-                na construção dos seus objectivos.
-                `
-            )}
-
-            ${principleCard(
-                "gem",
-                "Os Nossos Valores",
-                "Princípios",
-                `
-                Integridade, respeito, aprendizagem contínua,
-                responsabilidade, liderança, disciplina,
-                colaboração, inovação e excelência.
-                `
-            )}
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
-
-}
-
-function principleCard(iconType,title,subtitle,text){
+function leaderPoint(
+    number,
+    title,
+    text
+){
 
 return `
 
-<div class="card reveal principle-card">
+<div class="about-leader-point">
 
-    <div class="principle-card-header">
+    <span>
+        ${number}
+    </span>
 
-        <div class="service-icon">
+    <div>
 
-            ${icon(iconType)}
-
-        </div>
-
-        <span class="principle-index">
-
-            ${subtitle}
-
-        </span>
-
-    </div>
-
-    <h3 class="mt-3">
-
-        ${title}
-
-    </h3>
-
-    <p class="text mt-2">
-
-        ${text}
-
-    </p>
-
-</div>
-
-`;
-
-}
-
-/* ==========================================================
-   A NOSSA JORNADA
-   ========================================================== */
-
-function journey(){
-
-return `
-
-<section class="section-sm" id="journey">
-
-    <div class="container">
-
-        <div class="section-center reveal">
-
-            <span class="label">
-
-                A Nossa Jornada
-
-            </span>
-
-            <h2 class="section-title">
-
-                Um ano de construção.
-
-                <br>
-
-                O próximo capítulo começa agora.
-
-            </h2>
-
-            <p class="text-lg">
-
-                Cada etapa representa uma decisão,
-                uma aprendizagem e um passo em frente.
-
-            </p>
-
-        </div>
-
-        <div class="timeline premium-timeline mt-5">
-
-            ${journeyItem(
-                "01",
-                "O início",
-                "O nascimento da AD Lifestyle e a definição da nossa identidade, propósito e direcção."
-            )}
-
-            ${journeyItem(
-                "02",
-                "Construção",
-                "Desenvolvimento da presença digital, comunicação, relacionamento e estrutura de actividade."
-            )}
-
-            ${journeyItem(
-                "03",
-                "Expansão",
-                "Aproximação a pessoas, comunidades e parceiros com interesses alinhados com a nossa visão."
-            )}
-
-            ${journeyItem(
-                "04",
-                "O próximo capítulo",
-                "Profissionalizar, consolidar e preparar a organização para novas possibilidades de crescimento."
-            )}
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
-
-}
-
-function journeyItem(number,title,text){
-
-return `
-
-<div class="timeline-item reveal">
-
-    <div class="timeline-dot">
-
-        <span>
-
-            ${number}
-
-        </span>
-
-    </div>
-
-    <div class="timeline-content">
-
-        <span class="label">
-
-            ETAPA ${number}
-
-        </span>
-
-        <h3 class="mt-1">
-
+        <strong>
             ${title}
+        </strong>
 
-        </h3>
-
-        <p class="text mt-1">
-
+        <p>
             ${text}
-
         </p>
 
     </div>
@@ -715,269 +759,191 @@ return `
 }
 
 /* ==========================================================
-   PARCEIROS / ECOSSISTEMA
+   VISION / MISSION / VALUES
    ========================================================== */
 
-function partners(){
+function visionMissionValues(){
 
 return `
 
-<section class="section">
+<section class="section about-principles">
 
     <div class="container">
 
         <div class="section-center reveal">
 
             <span class="label">
-
-                Ecossistema & Parcerias
-
+                O que nos orienta
             </span>
+
 
             <h2 class="section-title">
 
-                Uma visão construída
-                através de conexões.
+                Visão.
+                Missão.
+                <span>Valores.</span>
 
             </h2>
 
-            <p class="text-lg">
-
-                Trabalhamos para desenvolver conhecimento,
-                relacionamento e preparação através de
-                diferentes componentes do nosso ecossistema.
-
-            </p>
-
         </div>
 
-        <div class="grid grid-2 mt-5">
 
-            <div class="card reveal partner-card">
-
-                <div class="partner-card-top">
-
-                    <div class="partner-logo">
-
-                        <img
-                            src="assets/images/bzzworld.png"
-                            alt="BZZWORLD">
-
-                    </div>
-
-                    <span class="badge">
-
-                        Parceiro Internacional
-
-                    </span>
-
-                </div>
-
-                <h2 class="mt-3">
-
-                    BZZWORLD
-
-                </h2>
-
-                <p class="text mt-2">
-
-                    A BZZWORLD representa a componente
-                    internacional ligada a produtos,
-                    saúde, bem-estar e lifestyle que
-                    integra a nossa visão de futuro.
-
-                </p>
-
-                <div class="icon-list compact mt-4">
-
-                    ${feature(
-                        "globe",
-                        "Parceiro internacional",
-                        "Presença e visão global."
-                    )}
-
-                    ${feature(
-                        "wellness",
-                        "Produtos Premium",
-                        "Saúde, bem-estar e lifestyle."
-                    )}
-
-                </div>
-
-                <div class="mt-4">
-
-                    <span class="text">
-
-                        A AD Lifestyle posiciona-se actualmente
-                        numa fase de preparação e desenvolvimento,
-                        acompanhando a evolução da oportunidade
-                        internacional.
-
-                    </span>
-
-                </div>
-
-            </div>
+        <div class="about-principles-grid mt-6">
 
 
-            <div class="card reveal partner-card">
+            ${principle(
+                "01",
+                "Visão",
+                "Futuro",
+                "Construir uma referência em bem-estar, desenvolvimento humano, educação empreendedora e criação de novas possibilidades."
+            )}
 
-                <div class="partner-card-top">
 
-                    <div class="partner-logo">
+            ${principle(
+                "02",
+                "Missão",
+                "Acção",
+                "Criar pontes entre pessoas, soluções, conhecimento e comunidades através de uma experiência profissional e sustentável."
+            )}
 
-                        <img
-                            src="assets/images/a21.png"
-                            alt="Academy Twenty One">
 
-                    </div>
-
-                    <span class="badge">
-
-                        Desenvolvimento
-
-                    </span>
-
-                </div>
-
-                <h2 class="mt-3">
-
-                    Academy Twenty One
-
-                </h2>
-
-                <p class="text mt-2">
-
-                    A Academy Twenty One representa uma
-                    componente de formação, liderança,
-                    desenvolvimento pessoal e educação
-                    empreendedora.
-
-                </p>
-
-                <div class="icon-list compact mt-4">
-
-                    ${feature(
-                        "graduation",
-                        "Formação",
-                        "Aprendizagem contínua."
-                    )}
-
-                    ${feature(
-                        "award",
-                        "Liderança",
-                        "Desenvolvimento de pessoas."
-                    )}
-
-                </div>
-
-                <div class="mt-4">
-
-                    <span class="text">
-
-                        O conhecimento e a formação são elementos
-                        fundamentais na construção da nossa
-                        preparação para o futuro.
-
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="glass-panel mt-5 reveal">
-
-            <div class="section-center">
-
-                <span class="badge badge-gold">
-
-                    Posicionamento estratégico
-
-                </span>
-
-                <p class="text-lg mt-3">
-
-                    A AD Lifestyle actua actualmente como uma
-                    organização independente de preparação,
-                    educação e desenvolvimento humano,
-                    posicionando-se para integrar futuramente
-                    a expansão oficial da BZZWORLD em Angola.
-
-                </p>
-
-            </div>
+            ${principle(
+                "03",
+                "Valores",
+                "Princípios",
+                "Integridade, respeito, disciplina, responsabilidade, aprendizagem contínua, colaboração, liderança, inovação e excelência."
+            )}
 
         </div>
 
     </div>
 
 </section>
+
+`;
+
+}
+
+
+function principle(
+    number,
+    title,
+    subtitle,
+    text
+){
+
+return `
+
+<article class="about-principle-card reveal">
+
+    <div class="about-principle-top">
+
+        <span>
+            ${number}
+        </span>
+
+        <small>
+            ${subtitle}
+        </small>
+
+    </div>
+
+
+    <h3>
+        ${title}
+    </h3>
+
+
+    <p>
+        ${text}
+    </p>
+
+
+    <div class="about-principle-line"></div>
+
+</article>
 
 `;
 
 }
 
 /* ==========================================================
-   PORQUE ESTAMOS A CONSTRUIR ISTO?
+   JOURNEY
    ========================================================== */
 
-function principles(){
+function journey(){
 
 return `
 
-<section class="section-sm">
+<section
+    id="journey"
+    class="section about-journey">
 
     <div class="container">
 
         <div class="section-center reveal">
 
             <span class="label">
-
-                A nossa construção
-
+                A nossa jornada
             </span>
+
 
             <h2 class="section-title">
 
-                Porque estamos a construir isto?
+                Não estamos apenas
+                a começar.
+                <span>Estamos a construir.</span>
 
             </h2>
 
-            <p class="text-lg">
 
-                Porque uma grande visão precisa de uma
-                estrutura preparada para a sustentar.
+            <p class="lead">
+
+                Cada etapa representa uma decisão,
+                uma aprendizagem e uma nova responsabilidade.
 
             </p>
 
         </div>
 
-        <div class="grid grid-4 mt-5">
 
-            ${strategicCard(
-                "organization",
-                "Organização",
-                "Processos profissionais desde o primeiro dia."
+        <div class="about-journey-track mt-6">
+
+            <div class="about-journey-line"></div>
+
+
+            ${journeyItem(
+                "01",
+                "Fundação",
+                "Definição da identidade, propósito e direcção da AD Lifestyle."
             )}
 
-            ${strategicCard(
-                "sparkles",
-                "Imagem Premium",
-                "Uma identidade visual consistente, elegante e preparada para representar a nossa visão."
+
+            ${journeyItem(
+                "02",
+                "Estrutura",
+                "Construção da presença digital, comunicação e organização."
             )}
 
-            ${strategicCard(
-                "users",
-                "Equipa preparada",
-                "Conhecimento, liderança e desenvolvimento através da Academy Twenty One."
+
+            ${journeyItem(
+                "03",
+                "Ecossistema",
+                "Integração dos universos BZZWORLD e Academy Twenty One."
             )}
 
-            ${strategicCard(
-                "chart",
-                "Escalabilidade",
-                "Uma estrutura pensada para crescer e acompanhar novas oportunidades."
+
+            ${journeyItem(
+                "04",
+                "Experiência",
+                "Desenvolvimento de produtos, campanhas, eventos e relacionamento."
+            )}
+
+
+            ${journeyItem(
+                "05",
+                "Expansão",
+                "Preparação para uma presença mais ampla e novas possibilidades."
             )}
 
         </div>
@@ -990,31 +956,245 @@ return `
 
 }
 
-function strategicCard(iconType,title,text){
+
+function journeyItem(
+    number,
+    title,
+    text
+){
 
 return `
 
-<div class="card reveal strategic-card">
+<div class="about-journey-item reveal">
 
-    <div class="service-icon">
+    <div class="about-journey-marker">
+        ${number}
+    </div>
 
-        ${icon(iconType)}
+
+    <div class="about-journey-content">
+
+        <span>
+            ETAPA ${number}
+        </span>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
 
     </div>
 
-    <h3 class="mt-3">
+</div>
 
+`;
+
+}
+
+/* ==========================================================
+   PRINCIPLES
+   ========================================================== */
+
+function principles(){
+
+return `
+
+<section class="section-sm about-foundation">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                A nossa fundação
+            </span>
+
+
+            <h2 class="section-title">
+
+                O que nunca
+                <span>queremos perder.</span>
+
+            </h2>
+
+        </div>
+
+
+        <div class="grid grid-4 mt-6">
+
+
+            ${foundation(
+                "01",
+                "Integridade",
+                "Construímos relações baseadas em confiança, clareza e responsabilidade."
+            )}
+
+
+            ${foundation(
+                "02",
+                "Aprendizagem",
+                "Continuamos a aprender porque o futuro exige preparação."
+            )}
+
+
+            ${foundation(
+                "03",
+                "Excelência",
+                "Cada detalhe importa quando queremos criar uma referência."
+            )}
+
+
+            ${foundation(
+                "04",
+                "Pessoas",
+                "Nenhuma visão é maior do que as pessoas que a fazem avançar."
+            )}
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+
+function foundation(
+    number,
+    title,
+    text
+){
+
+return `
+
+<article class="about-foundation-card reveal">
+
+    <span>
+        ${number}
+    </span>
+
+
+    <h3>
         ${title}
-
     </h3>
 
-    <p class="text mt-2">
 
+    <p>
         ${text}
-
     </p>
 
-</div>
+</article>
+
+`;
+
+}
+
+/* ==========================================================
+   FUTURE
+   ========================================================== */
+
+function future(){
+
+return `
+
+<section class="section about-future">
+
+    <div class="container">
+
+        <div class="about-future-panel">
+
+            <div class="about-future-grid"></div>
+
+
+            <div class="about-future-copy reveal">
+
+                <span class="label">
+                    O próximo capítulo
+                </span>
+
+
+                <h2>
+
+                    Hoje construímos
+                    <strong>
+                        a organização
+                    </strong>
+
+                    que queremos ver
+                    <strong>
+                        amanhã.
+                    </strong>
+
+                </h2>
+
+
+                <p>
+
+                    A nossa ambição é consolidar a AD Lifestyle
+                    como uma referência em Angola, criar uma
+                    experiência digital cada vez mais forte,
+                    desenvolver a comunidade e preparar a
+                    organização para novas oportunidades.
+
+                </p>
+
+
+                <div class="about-future-tags">
+
+                    <span>
+                        Angola
+                    </span>
+
+                    <span>
+                        Internacional
+                    </span>
+
+                    <span>
+                        Wellness
+                    </span>
+
+                    <span>
+                        Academy
+                    </span>
+
+                    <span>
+                        Innovation
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-future-visual reveal-right">
+
+                <div class="future-circle">
+
+                    <span>
+                        AD
+                    </span>
+
+
+                    <small>
+                        2026 →
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 `;
 
@@ -1028,56 +1208,58 @@ function cta(){
 
 return `
 
-<section class="section">
+<section class="section about-final">
 
     <div class="container">
 
-        <div class="showcase">
+        <div class="about-final-panel">
 
-            <div class="showcase-bg"></div>
+            <div class="about-final-orbit"></div>
 
-            <div class="showcase-content section-center">
 
-                <span class="badge badge-gold">
+            <div class="about-final-content reveal">
 
-                    O próximo capítulo
-
+                <span>
+                    AD LIFESTYLE
                 </span>
 
-                <h2 class="section-title mt-2">
 
-                    Estamos a construir
-                    uma referência nacional.
+                <h2>
+
+                    A visão está lançada.
+                    <strong>
+                        Agora começa o movimento.
+                    </strong>
 
                 </h2>
 
-                <p class="text-lg">
 
-                    Uma visão começa com uma ideia.
-                    Uma organização transforma essa ideia
-                    em movimento.
+                <p>
+
+                    Conheça os nossos produtos,
+                    acompanhe os nossos eventos,
+                    descubra o nosso ecossistema
+                    e faça parte da próxima etapa.
 
                 </p>
 
-                <div class="hero-actions center mt-4">
+
+                <div class="hero-actions center">
 
                     <button
                         class="btn btn-primary"
-                        data-action="contact">
+                        data-action="products">
 
-                        ${icon("whatsapp")}
-
-                        Falar no WhatsApp
+                        Explorar Produtos
 
                     </button>
 
+
                     <button
-                        class="btn btn-outline"
-                        data-action="products">
+                        class="btn btn-glass"
+                        data-action="contact">
 
-                        ${icon("box")}
-
-                        Explorar Produtos
+                        Falar Connosco
 
                     </button>
 
@@ -1096,256 +1278,231 @@ return `
 }
 
 /* ==========================================================
-   FEATURE
-   ========================================================== */
-
-function feature(iconType,title,text){
-
-return `
-
-<div class="icon-item">
-
-    <div class="icon-circle">
-
-        ${icon(iconType)}
-
-    </div>
-
-    <div>
-
-        <strong>
-
-            ${title}
-
-        </strong>
-
-        <p class="text">
-
-            ${text}
-
-        </p>
-
-    </div>
-
-</div>
-
-`;
-
-}
-
-/* ==========================================================
-   ÍCONES SVG
-   ========================================================== */
-
-function icon(type){
-
-    const icons = {
-
-        "arrow-down": `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 4v13m0 0 5-5m-5 5-5-5"/>
-            </svg>
-        `,
-
-        message: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20 3H4a3 3 0 0 0-3 3v9a3 3 0 0 0 3 3h3v3l4-3h9a3 3 0 0 0 3-3V6a3 3 0 0 0-3-3Z"/>
-            </svg>
-        `,
-
-        whatsapp: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .2 5.3.2 11.9c0 2.1.6 4.1 1.6 5.8L.1 24l6.5-1.7a11.9 11.9 0 0 0 5.5 1.4h.1c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.3-6.1-3.6-8.3ZM12.2 21.6h-.1c-1.7 0-3.4-.5-4.8-1.3l-.3-.2-3.9 1 1-3.8-.2-.3a9.7 9.7 0 1 1 8.3 4.6Z"/>
-            </svg>
-        `,
-
-        organization: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                <path d="M8 8h8M8 12h8M8 16h5"/>
-            </svg>
-        `,
-
-        globe: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>
-            </svg>
-        `,
-
-        graduation: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m3 9 9-5 9 5-9 5-9-5Z"/>
-                <path d="M7 11v5c2 2 8 2 10 0v-5M21 9v6"/>
-            </svg>
-        `,
-
-        wellness: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 21S4 16 4 9a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 7-8 12-8 12Z"/>
-                <path d="M12 7v7M8.5 10.5h7"/>
-            </svg>
-        `,
-
-        eye: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/>
-                <circle cx="12" cy="12" r="2.5"/>
-            </svg>
-        `,
-
-        target: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="12" r="8"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="12" cy="12" r="1"/>
-            </svg>
-        `,
-
-        gem: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m6 3 6 0 6 0 3 5-9 13L3 8l3-5Z"/>
-                <path d="m3 8 18 0M9 3l3 5 3-5M9 8l3 13 3-13"/>
-            </svg>
-        `,
-
-        users: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="9" cy="8" r="3"/>
-                <path d="M3 20c0-3 2.5-5 6-5s6 2 6 5"/>
-                <path d="M16 11c2.5.2 4 1.6 4 4M16 5a3 3 0 0 1 0 6"/>
-            </svg>
-        `,
-
-        award: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <circle cx="12" cy="8" r="5"/>
-                <path d="m9 12-1 9 4-2 4 2-1-9"/>
-            </svg>
-        `,
-
-        chart: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M4 19V5M4 19h17"/>
-                <path d="m7 15 4-4 3 2 6-7"/>
-            </svg>
-        `,
-
-        sparkles: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m12 2 1.5 5.5L19 9l-5.5 1.5L12 16l-1.5-5.5L5 9l5.5-1.5L12 2ZM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"/>
-            </svg>
-        `,
-
-        box: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/>
-                <path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>
-            </svg>
-        `
-
-    };
-
-    return icons[type] || "";
-
-}
-
-/* ==========================================================
-   INTERACTIVIDADE
+   INITIALISE
    ========================================================== */
 
 function initialiseAbout(){
 
-    initialiseJourney();
+    const root =
+        document.querySelector(
+            ".about-page"
+        );
 
-    initialiseContact();
 
-    initialiseHome();
+    if(!root) return;
 
-    initialiseProducts();
 
-}
+    stagger(
+        ".about-page .about-ecosystem-card"
+    );
 
-/* ==========================================================
-   JORNADA
-   ========================================================== */
 
-function initialiseJourney(){
+    stagger(
+        ".about-page .about-foundation-card"
+    );
 
-    document
-        .querySelector('[data-action="journey"]')
-        ?.addEventListener("click",()=>{
 
-            document
-                .getElementById("journey")
-                ?.scrollIntoView({
-                    behavior:"smooth"
-                });
-
-        });
-
-}
-
-/* ==========================================================
-   CONTACTO
-   ========================================================== */
-
-function initialiseContact(){
-
-    document
-        .querySelectorAll('[data-action="contact"]')
+    root
+        .querySelectorAll(".btn")
         .forEach(button=>{
 
-            button.addEventListener("click",()=>{
-
-                const message = encodeURIComponent(
-                    "Olá AD Lifestyle! Gostaria de conhecer melhor a AD Lifestyle e os seus projectos."
-                );
-
-                window.open(
-                    `https://wa.me/244924964666?text=${message}`,
-                    "_blank"
-                );
-
-            });
+            ripple(button);
 
         });
 
-}
 
-/* ==========================================================
-   HOME
-   ========================================================== */
+    /* ------------------------------------------------------
+       STORY
+       ------------------------------------------------------ */
 
-function initialiseHome(){
+    root
+        .querySelector(
+            '[data-action="story"]'
+        )
+        ?.addEventListener(
+            "click",
+            ()=>{
 
-    /*
-       Mantido para compatibilidade com a arquitectura
-       existente do projecto.
-    */
+                root
+                    .querySelector(
+                        "#story"
+                    )
+                    ?.scrollIntoView({
 
-}
+                        behavior:"smooth",
 
-/* ==========================================================
-   PRODUTOS
-   ========================================================== */
+                        block:"start"
 
-function initialiseProducts(){
-
-    document
-        .querySelector('[data-action="products"]')
-        ?.addEventListener("click",()=>{
-
-            if(window.AD?.navigate){
-
-                window.AD.navigate("/products");
-
-                return;
+                    });
 
             }
+        );
 
-            window.location.hash = "#/products";
+
+    /* ------------------------------------------------------
+       JOURNEY
+       ------------------------------------------------------ */
+
+    root
+        .querySelector(
+            '[data-action="journey"]'
+        )
+        ?.addEventListener(
+            "click",
+            ()=>{
+
+                root
+                    .querySelector(
+                        "#journey"
+                    )
+                    ?.scrollIntoView({
+
+                        behavior:"smooth",
+
+                        block:"start"
+
+                    });
+
+            }
+        );
+
+
+    /* ------------------------------------------------------
+       CONTACT
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(
+            '[data-action="contact"]'
+        )
+        .forEach(button=>{
+
+            button.addEventListener(
+                "click",
+                ()=>{
+
+                    const message =
+                        "Olá AD Lifestyle! Gostaria de conhecer melhor a organização e os seus projectos.";
+
+
+                    window.open(
+
+                        `https://wa.me/244924964666?text=${encodeURIComponent(message)}`,
+
+                        "_blank",
+
+                        "noopener,noreferrer"
+
+                    );
+
+                }
+            );
 
         });
+
+
+    /* ------------------------------------------------------
+       PRODUCTS
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(
+            '[data-action="products"]'
+        )
+        .forEach(button=>{
+
+            button.addEventListener(
+                "click",
+                ()=>{
+
+                    navigate(
+                        "/products"
+                    );
+
+                }
+            );
+
+        });
+
+
+    /* ------------------------------------------------------
+       REVEAL
+       ------------------------------------------------------ */
+
+    initialiseReveal();
+
+}
+
+
+/* ==========================================================
+   REVEAL
+   ========================================================== */
+
+function initialiseReveal(){
+
+    const elements =
+        document.querySelectorAll(
+            ".about-page .reveal"
+        );
+
+
+    if(
+        typeof IntersectionObserver ===
+        "undefined"
+    ){
+
+        elements.forEach(
+            element =>
+                element.classList.add(
+                    "visible"
+                )
+        );
+
+        return;
+
+    }
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries=>{
+
+                entries.forEach(
+                    entry=>{
+
+                        if(
+                            entry.isIntersecting
+                        ){
+
+                            entry.target.classList.add(
+                                "visible"
+                            );
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+
+            {
+                threshold:.10
+            }
+
+        );
+
+
+    elements.forEach(
+        element =>
+            observer.observe(
+                element
+            )
+    );
 
 }
