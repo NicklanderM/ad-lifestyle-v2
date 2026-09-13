@@ -10,7 +10,7 @@ import { navigate } from "../js/router.js";
 import { ripple } from "../js/animations.js";
 
 /* ==========================================================
-   DATA
+   PRODUCTS DATA
    ========================================================== */
 
 const PRODUCTS = [
@@ -144,12 +144,49 @@ const PRODUCTS = [
 ];
 
 /* ==========================================================
+   ICONS
+   ========================================================== */
+
+const icons = {
+
+    arrow: `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13"></path>
+            <path d="M13 6l6 6-6 6"></path>
+        </svg>
+    `,
+
+    prev: `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 12H5"></path>
+            <path d="M11 6l-6 6 6 6"></path>
+        </svg>
+    `,
+
+    next: `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h14"></path>
+            <path d="M13 6l6 6-6 6"></path>
+        </svg>
+    `,
+
+    search: `
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
+            <path d="m16.5 16.5 4 4"></path>
+        </svg>
+    `
+
+};
+
+/* ==========================================================
    STATE
    ========================================================== */
 
 let currentSlide = 0;
 let slideTimer = null;
 let isAnimating = false;
+let keyboardBound = false;
 
 /* ==========================================================
    MAIN
@@ -159,18 +196,23 @@ export function loadProducts(){
 
     applyTheme("default");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
     if(!app){
 
         console.error(
-            "AD LIFESTYLE: #app não encontrado."
+            "AD LIFESTYLE: elemento #app não encontrado."
         );
 
         return;
     }
 
+    currentSlide = 0;
+    isAnimating = false;
+
     app.innerHTML = `
+
         <main class="products-page">
 
             ${renderHero()}
@@ -186,6 +228,7 @@ export function loadProducts(){
             ${renderCTA()}
 
         </main>
+
     `;
 
     initialiseProducts();
@@ -198,7 +241,8 @@ export function loadProducts(){
 
 function renderHero(){
 
-    const product = PRODUCTS[0];
+    const product =
+        PRODUCTS[0];
 
     return `
 
@@ -211,7 +255,9 @@ function renderHero(){
 
             <div class="products-hero-glow"></div>
 
-            <div class="products-container">
+            <div class="products-container products-hero-container">
+
+                <!-- TOP -->
 
                 <div class="products-hero-top">
 
@@ -233,6 +279,8 @@ function renderHero(){
                     </div>
 
                 </div>
+
+                <!-- MAIN -->
 
                 <div class="products-hero-main">
 
@@ -274,6 +322,7 @@ function renderHero(){
                         <div class="products-hero-actions">
 
                             <button
+                                type="button"
                                 class="products-button products-button-gold"
                                 id="productsDiscover"
                             >
@@ -287,6 +336,7 @@ function renderHero(){
                             </button>
 
                             <button
+                                type="button"
                                 class="products-button products-button-outline"
                                 id="productsCatalogue"
                             >
@@ -297,9 +347,14 @@ function renderHero(){
 
                     </div>
 
+                    <!-- PRODUCT -->
+
                     <div class="products-hero-product">
 
-                        <div class="products-hero-product-orbit"></div>
+                        <div
+                            class="products-hero-product-orbit"
+                            aria-hidden="true"
+                        ></div>
 
                         <div
                             class="products-hero-product-image"
@@ -309,11 +364,15 @@ function renderHero(){
                             <img
                                 src="${product.image}"
                                 alt="${product.name}"
+                                loading="eager"
                             >
 
                         </div>
 
-                        <div class="products-hero-product-shadow"></div>
+                        <div
+                            class="products-hero-product-shadow"
+                            aria-hidden="true"
+                        ></div>
 
                         <div class="products-hero-label">
 
@@ -321,7 +380,7 @@ function renderHero(){
                                 FEATURED
                             </span>
 
-                            <strong>
+                            <strong id="productsHeroLabel">
                                 ${product.name}
                             </strong>
 
@@ -330,6 +389,8 @@ function renderHero(){
                     </div>
 
                 </div>
+
+                <!-- CONTROLS -->
 
                 <div class="products-hero-controls">
 
@@ -370,10 +431,16 @@ function renderHero(){
 
                 </div>
 
-                <div class="products-thumbs">
+                <!-- THUMBNAILS -->
+
+                <div
+                    class="products-thumbs"
+                    aria-label="Produtos em destaque"
+                >
 
                     ${PRODUCTS.map(
-                        (item, index) => `
+                        (item,index) => `
+
                             <button
                                 type="button"
                                 class="products-thumb ${
@@ -383,18 +450,24 @@ function renderHero(){
                                 }"
                                 data-slide="${index}"
                                 aria-label="Ver ${item.name}"
+                                aria-pressed="${
+                                    index === 0
+                                        ? "true"
+                                        : "false"
+                                }"
                             >
 
                                 <img
                                     src="${item.image}"
-                                    alt="${item.name}"
+                                    alt=""
                                 >
 
                                 <span>
-                                    0${index + 1}
+                                    ${String(index + 1).padStart(2,"0")}
                                 </span>
 
                             </button>
+
                         `
                     ).join("")}
 
@@ -405,6 +478,7 @@ function renderHero(){
         </section>
 
     `;
+
 }
 
 /* ==========================================================
@@ -433,7 +507,10 @@ function renderCategories(){
 
     return `
 
-        <section class="products-categories">
+        <section
+            class="products-categories"
+            id="products-categories"
+        >
 
             <div class="products-container">
 
@@ -453,9 +530,9 @@ function renderCategories(){
                     </div>
 
                     <p>
-                        Descubra diferentes áreas do catálogo
-                        e encontre soluções que podem fazer parte
-                        do seu estilo de vida.
+                        Explore diferentes áreas do catálogo
+                        e descubra produtos para diferentes
+                        estilos de vida e necessidades.
                     </p>
 
                 </div>
@@ -499,6 +576,7 @@ function renderCategories(){
         </section>
 
     `;
+
 }
 
 /* ==========================================================
@@ -513,7 +591,10 @@ function categoryCard(
 
     return `
 
-        <article class="products-category-card">
+        <article
+            class="products-category-card"
+            data-category-card="${title}"
+        >
 
             <span class="products-category-number">
                 ${number}
@@ -556,7 +637,7 @@ function renderCatalogue(){
 
             <div class="products-container">
 
-                <div class="products-section-heading products-section-heading-centred">
+                <div class="products-section-heading">
 
                     <div>
 
@@ -572,18 +653,174 @@ function renderCatalogue(){
                     </div>
 
                     <p>
-                        Explore o catálogo completo da AD Lifestyle.
-                        Cada produto possui uma identidade própria
-                        e uma experiência dedicada.
+                        Pesquise pelo nome do produto ou
+                        organize o catálogo por categoria.
                     </p>
 
                 </div>
 
-                <div class="products-grid">
+                <!-- SEARCH + FILTER -->
 
-                    ${PRODUCTS.map(
-                        productCard
-                    ).join("")}
+                <div class="products-catalogue-tools">
+
+                    <div class="products-search">
+
+                        ${icons.search}
+
+                        <input
+                            type="search"
+                            id="productsSearch"
+                            placeholder="Pesquisar produto..."
+                            autocomplete="off"
+                            aria-label="Pesquisar produto"
+                        >
+
+                        <button
+                            type="button"
+                            id="productsClearSearch"
+                            aria-label="Limpar pesquisa"
+                        >
+                            ×
+                        </button>
+
+                    </div>
+
+                    <div
+                        class="products-category-filters"
+                        id="productsCategoryFilters"
+                    >
+
+                        <button
+                            type="button"
+                            class="products-filter active"
+                            data-category="all"
+                        >
+                            Todos
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="CUIDADO FEMININO"
+                        >
+                            Feminino
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="SAÚDE ORAL"
+                        >
+                            Saúde Oral
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="CAFÉ FUNCIONAL"
+                        >
+                            Café
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="PERFORMANCE"
+                        >
+                            Performance
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="NUTRIÇÃO"
+                        >
+                            Nutrição
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="BELEZA & BEM-ESTAR"
+                        >
+                            Beleza
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="CUIDADOS PREMIUM"
+                        >
+                            Cuidados
+                        </button>
+
+                        <button
+                            type="button"
+                            class="products-filter"
+                            data-category="SMART LIVING"
+                        >
+                            Smart Living
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="products-results-info"
+                    id="productsResultsInfo"
+                >
+                    <span>
+                        ${PRODUCTS.length} produtos
+                    </span>
+                </div>
+
+                <!-- PRODUCTS -->
+
+                <div
+                    class="products-grid"
+                    id="productsGrid"
+                >
+
+                    ${PRODUCTS
+                        .map(
+                            (product,index) =>
+                                productCard(
+                                    product,
+                                    index
+                                )
+                        )
+                        .join("")}
+
+                </div>
+
+                <!-- EMPTY -->
+
+                <div
+                    class="products-empty"
+                    id="productsEmpty"
+                >
+
+                    <div class="products-empty-icon">
+                        ${icons.search}
+                    </div>
+
+                    <strong>
+                        Nenhum produto encontrado.
+                    </strong>
+
+                    <p>
+                        Tente outro termo de pesquisa
+                        ou seleccione outra categoria.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="products-button products-button-outline"
+                        id="productsResetFilters"
+                    >
+                        Limpar filtros
+                    </button>
 
                 </div>
 
@@ -599,14 +836,20 @@ function renderCatalogue(){
    PRODUCT CARD
    ========================================================== */
 
-function productCard(product, index){
+function productCard(
+    product,
+    index
+){
 
     return `
 
         <article
             class="products-card"
             data-product="${product.id}"
-            data-index="${index}"
+            data-category="${product.category}"
+            data-name="${product.name.toLowerCase()}"
+            data-description="${product.description.toLowerCase()}"
+            data-tags="${product.tags.join(" ").toLowerCase()}"
         >
 
             <div class="products-card-image">
@@ -615,7 +858,10 @@ function productCard(product, index){
                     ${String(index + 1).padStart(2,"0")}
                 </span>
 
-                <div class="products-card-glow"></div>
+                <div
+                    class="products-card-glow"
+                    aria-hidden="true"
+                ></div>
 
                 <img
                     src="${product.image}"
@@ -661,10 +907,11 @@ function productCard(product, index){
                     type="button"
                     class="products-card-button"
                     data-product-action="${product.id}"
+                    aria-label="Descobrir ${product.name}"
                 >
 
                     <span>
-                        Descobrir
+                        Descobrir produto
                     </span>
 
                     ${icons.arrow}
@@ -722,9 +969,9 @@ function renderFeatured(){
                         </p>
 
                         <p>
-                            Entre diferentes universos de wellness,
-                            nutrição, performance, beleza e smart
-                            living, procuramos apresentar possibilidades
+                            Entre wellness, nutrição, performance,
+                            beleza e smart living, procuramos
+                            apresentar diferentes possibilidades
                             para diferentes estilos de vida.
                         </p>
 
@@ -733,11 +980,13 @@ function renderFeatured(){
                             class="products-button products-button-dark"
                             id="productsFeaturedButton"
                         >
+
                             <span>
                                 Ver todos os produtos
                             </span>
 
                             ${icons.arrow}
+
                         </button>
 
                     </div>
@@ -781,26 +1030,22 @@ function renderPhilosophy(){
 
                     <article>
 
-                        <span>
-                            01
-                        </span>
+                        <span>01</span>
 
                         <h3>
                             Wellness
                         </h3>
 
                         <p>
-                            Soluções e experiências orientadas
-                            para cuidado, bem-estar e lifestyle.
+                            Soluções e experiências ligadas
+                            ao cuidado, bem-estar e lifestyle.
                         </p>
 
                     </article>
 
                     <article>
 
-                        <span>
-                            02
-                        </span>
+                        <span>02</span>
 
                         <h3>
                             Conhecimento
@@ -815,9 +1060,7 @@ function renderPhilosophy(){
 
                     <article>
 
-                        <span>
-                            03
-                        </span>
+                        <span>03</span>
 
                         <h3>
                             Inovação
@@ -832,9 +1075,7 @@ function renderPhilosophy(){
 
                     <article>
 
-                        <span>
-                            04
-                        </span>
+                        <span>04</span>
 
                         <h3>
                             Pessoas
@@ -906,11 +1147,13 @@ function renderCTA(){
                             class="products-button products-button-gold"
                             id="productsCTAWhats"
                         >
+
                             <span>
                                 Falar no WhatsApp
                             </span>
 
                             ${icons.arrow}
+
                         </button>
 
                         <button
@@ -918,9 +1161,11 @@ function renderCTA(){
                             class="products-button products-button-outline"
                             id="productsCTAHome"
                         >
+
                             <span>
                                 Voltar ao início
                             </span>
+
                         </button>
 
                     </div>
@@ -936,42 +1181,13 @@ function renderCTA(){
 }
 
 /* ==========================================================
-   ICONS
-   ========================================================== */
-
-const icons = {
-
-    arrow: `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h13"></path>
-            <path d="M13 6l6 6-6 6"></path>
-        </svg>
-    `,
-
-    prev: `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19 12H5"></path>
-            <path d="M11 6l-6 6 6 6"></path>
-        </svg>
-    `,
-
-    next: `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M5 12h14"></path>
-            <path d="M13 6l6 6-6 6"></path>
-        </svg>
-    `
-
-};
-
-/* ==========================================================
    INITIALISE
    ========================================================== */
 
 function initialiseProducts(){
 
     /* ------------------------------------------------------
-       Buttons
+       Ripple
        ------------------------------------------------------ */
 
     document
@@ -995,9 +1211,15 @@ function initialiseProducts(){
         ?.addEventListener(
             "click",
             () => {
+
+                pauseSlideshow();
+
                 changeSlide(
                     currentSlide - 1
                 );
+
+                startSlideshow();
+
             }
         );
 
@@ -1006,9 +1228,15 @@ function initialiseProducts(){
         ?.addEventListener(
             "click",
             () => {
+
+                pauseSlideshow();
+
                 changeSlide(
                     currentSlide + 1
                 );
+
+                startSlideshow();
+
             }
         );
 
@@ -1026,12 +1254,15 @@ function initialiseProducts(){
                 "click",
                 () => {
 
-                    const index =
+                    pauseSlideshow();
+
+                    changeSlide(
                         Number(
                             button.dataset.slide
-                        );
+                        )
+                    );
 
-                    changeSlide(index);
+                    startSlideshow();
 
                 }
             );
@@ -1059,7 +1290,7 @@ function initialiseProducts(){
         );
 
     /* ------------------------------------------------------
-       Catalogue buttons
+       Catalogue
        ------------------------------------------------------ */
 
     document
@@ -1068,6 +1299,17 @@ function initialiseProducts(){
             "click",
             scrollToCatalogue
         );
+
+    document
+        .getElementById("productsFeaturedButton")
+        ?.addEventListener(
+            "click",
+            scrollToCatalogue
+        );
+
+    /* ------------------------------------------------------
+       Product cards
+       ------------------------------------------------------ */
 
     document
         .querySelectorAll(
@@ -1110,48 +1352,122 @@ function initialiseProducts(){
         });
 
     /* ------------------------------------------------------
-       Featured
+       Search
        ------------------------------------------------------ */
 
-    document
-        .getElementById("productsFeaturedButton")
-        ?.addEventListener(
-            "click",
-            scrollToCatalogue
+    const searchInput =
+        document.getElementById(
+            "productsSearch"
         );
 
-    /* ------------------------------------------------------
-       CTA
-       ------------------------------------------------------ */
-
-    document
-        .getElementById("productsCTAWhats")
-        ?.addEventListener(
-            "click",
-            openWhatsApp
-        );
-
-    document
-        .getElementById("productsCTAHome")
-        ?.addEventListener(
-            "click",
-            () => navigate("/")
-        );
-
-    /* ------------------------------------------------------
-       Keyboard navigation
-       ------------------------------------------------------ */
-
-    document.addEventListener(
-        "keydown",
-        handleKeyboard
+    searchInput?.addEventListener(
+        "input",
+        applyProductFilters
     );
+
+    /* ------------------------------------------------------
+       Clear search
+       ------------------------------------------------------ */
+
+    document
+        .getElementById(
+            "productsClearSearch"
+        )
+        ?.addEventListener(
+            "click",
+            () => {
+
+                if(searchInput){
+
+                    searchInput.value =
+                        "";
+
+                }
+
+                applyProductFilters();
+
+                searchInput?.focus();
+
+            }
+        );
+
+    /* ------------------------------------------------------
+       Categories
+       ------------------------------------------------------ */
+
+    document
+        .querySelectorAll(
+            ".products-filter"
+        )
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                () => {
+
+                    document
+                        .querySelectorAll(
+                            ".products-filter"
+                        )
+                        .forEach(
+                            filter => {
+
+                                filter.classList.remove(
+                                    "active"
+                                );
+
+                                filter.setAttribute(
+                                    "aria-pressed",
+                                    "false"
+                                );
+
+                            }
+                        );
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                    button.setAttribute(
+                        "aria-pressed",
+                        "true"
+                    );
+
+                    applyProductFilters();
+
+                }
+            );
+
+        });
+
+    /* ------------------------------------------------------
+       Reset filters
+       ------------------------------------------------------ */
+
+    document
+        .getElementById(
+            "productsResetFilters"
+        )
+        ?.addEventListener(
+            "click",
+            resetProductFilters
+        );
+
+    /* ------------------------------------------------------
+       Keyboard
+       ------------------------------------------------------ */
+
+    bindKeyboard();
 
     /* ------------------------------------------------------
        Auto slideshow
        ------------------------------------------------------ */
 
     startSlideshow();
+
+    /* ------------------------------------------------------
+       Hero hover
+       ------------------------------------------------------ */
 
     const hero =
         document.querySelector(
@@ -1173,16 +1489,22 @@ function initialiseProducts(){
     }
 
     /* ------------------------------------------------------
-       Touch swipe
+       Touch
        ------------------------------------------------------ */
 
     initialiseSwipe();
 
     /* ------------------------------------------------------
-       Initial reveals
+       Reveal
        ------------------------------------------------------ */
 
     initialiseReveal();
+
+    /* ------------------------------------------------------
+       Initial results
+       ------------------------------------------------------ */
+
+    applyProductFilters();
 
 }
 
@@ -1196,8 +1518,6 @@ function changeSlide(index){
         return;
     }
 
-    isAnimating = true;
-
     const total =
         PRODUCTS.length;
 
@@ -1209,7 +1529,8 @@ function changeSlide(index){
         index = 0;
     }
 
-    currentSlide = index;
+    currentSlide =
+        index;
 
     const product =
         PRODUCTS[currentSlide];
@@ -1219,8 +1540,7 @@ function changeSlide(index){
             "productsHeroImage"
         );
 
-    const oldImage =
-        imageWrap?.querySelector("img");
+    isAnimating = true;
 
     if(imageWrap){
 
@@ -1231,25 +1551,15 @@ function changeSlide(index){
         setTimeout(
             () => {
 
-                if(oldImage){
-                    oldImage.remove();
-                }
+                imageWrap.innerHTML = `
 
-                const img =
-                    document.createElement(
-                        "img"
-                    );
+                    <img
+                        src="${product.image}"
+                        alt="${product.name}"
+                        loading="eager"
+                    >
 
-                img.src =
-                    product.image;
-
-                img.alt =
-                    product.name;
-
-                img.loading =
-                    "eager";
-
-                imageWrap.appendChild(img);
+                `;
 
             },
             180
@@ -1265,11 +1575,13 @@ function changeSlide(index){
                 isAnimating = false;
 
             },
-            580
+            520
         );
 
     }else{
+
         isAnimating = false;
+
     }
 
     updateHeroText(
@@ -1283,7 +1595,7 @@ function changeSlide(index){
 }
 
 /* ==========================================================
-   UPDATE HERO TEXT
+   UPDATE HERO
    ========================================================== */
 
 function updateHeroText(product){
@@ -1318,6 +1630,11 @@ function updateHeroText(product){
             "productsSlideName"
         );
 
+    const label =
+        document.getElementById(
+            "productsHeroLabel"
+        );
+
     if(title){
 
         title.classList.remove(
@@ -1347,7 +1664,9 @@ function updateHeroText(product){
 
     if(tags){
         tags.innerHTML =
-            renderHeroTags(product);
+            renderHeroTags(
+                product
+            );
     }
 
     if(number){
@@ -1360,6 +1679,11 @@ function updateHeroText(product){
     if(slideName){
         slideName.textContent =
             product.category;
+    }
+
+    if(label){
+        label.textContent =
+            product.name;
     }
 
 }
@@ -1375,11 +1699,21 @@ function updateThumbnails(){
             ".products-thumb"
         )
         .forEach(
-            (button, index) => {
+            (button,index) => {
+
+                const active =
+                    index === currentSlide;
 
                 button.classList.toggle(
                     "active",
-                    index === currentSlide
+                    active
+                );
+
+                button.setAttribute(
+                    "aria-pressed",
+                    active
+                        ? "true"
+                        : "false"
                 );
 
             }
@@ -1413,7 +1747,7 @@ function resetProgress(){
 }
 
 /* ==========================================================
-   SLIDESHOW
+   AUTO SLIDESHOW
    ========================================================== */
 
 function startSlideshow(){
@@ -1447,7 +1781,7 @@ function pauseSlideshow(){
 }
 
 /* ==========================================================
-   OPEN PRODUCT
+   PRODUCT ROUTE
    ========================================================== */
 
 function openProduct(id){
@@ -1456,31 +1790,227 @@ function openProduct(id){
         return;
     }
 
+    /*
+       Mantido conforme a estrutura
+       anterior do projecto.
+    */
+
     navigate(
-        `/products/${id}`
+        "/" + id
     );
 
 }
 
 /* ==========================================================
-   CATALOGUE SCROLL
+   SCROLL CATALOGUE
    ========================================================== */
 
 function scrollToCatalogue(){
 
-    const target =
+    const catalogue =
         document.getElementById(
             "catalogue"
         );
 
-    if(!target){
+    if(!catalogue){
         return;
     }
 
-    target.scrollIntoView({
+    catalogue.scrollIntoView({
         behavior:"smooth",
         block:"start"
     });
+
+}
+
+/* ==========================================================
+   SEARCH + CATEGORY FILTER
+   ========================================================== */
+
+function applyProductFilters(){
+
+    const input =
+        document.getElementById(
+            "productsSearch"
+        );
+
+    const searchTerm =
+        input
+            ? input.value
+                .trim()
+                .toLowerCase()
+            : "";
+
+    const activeFilter =
+        document.querySelector(
+            ".products-filter.active"
+        );
+
+    const selectedCategory =
+        activeFilter
+            ? activeFilter.dataset.category
+            : "all";
+
+    const cards =
+        document.querySelectorAll(
+            ".products-card"
+        );
+
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+
+        const name =
+            card.dataset.name || "";
+
+        const category =
+            card.dataset.category
+                ?.toLowerCase() || "";
+
+        const description =
+            card.dataset.description || "";
+
+        const tags =
+            card.dataset.tags || "";
+
+        const searchableText =
+            [
+                name,
+                category,
+                description,
+                tags
+            ]
+                .join(" ")
+                .toLowerCase();
+
+        const matchesSearch =
+            !searchTerm ||
+            searchableText.includes(
+                searchTerm
+            );
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            category ===
+                selectedCategory.toLowerCase();
+
+        const visible =
+            matchesSearch &&
+            matchesCategory;
+
+        card.classList.toggle(
+            "product-hidden",
+            !visible
+        );
+
+        if(visible){
+            visibleCount++;
+        }
+
+    });
+
+    updateResultsCount(
+        visibleCount
+    );
+
+    updateEmptyState(
+        visibleCount === 0
+    );
+
+}
+
+/* ==========================================================
+   RESULT COUNT
+   ========================================================== */
+
+function updateResultsCount(count){
+
+    const info =
+        document.getElementById(
+            "productsResultsInfo"
+        );
+
+    if(!info){
+        return;
+    }
+
+    const suffix =
+        count === 1
+            ? "produto"
+            : "produtos";
+
+    info.innerHTML = `
+        <span>
+            ${count} ${suffix}
+        </span>
+    `;
+
+}
+
+/* ==========================================================
+   EMPTY STATE
+   ========================================================== */
+
+function updateEmptyState(isEmpty){
+
+    const empty =
+        document.getElementById(
+            "productsEmpty"
+        );
+
+    if(!empty){
+        return;
+    }
+
+    empty.classList.toggle(
+        "visible",
+        isEmpty
+    );
+
+}
+
+/* ==========================================================
+   RESET FILTERS
+   ========================================================== */
+
+function resetProductFilters(){
+
+    const input =
+        document.getElementById(
+            "productsSearch"
+        );
+
+    if(input){
+        input.value = "";
+    }
+
+    document
+        .querySelectorAll(
+            ".products-filter"
+        )
+        .forEach(
+            button => {
+
+                const active =
+                    button.dataset.category ===
+                    "all";
+
+                button.classList.toggle(
+                    "active",
+                    active
+                );
+
+                button.setAttribute(
+                    "aria-pressed",
+                    active
+                        ? "true"
+                        : "false"
+                );
+
+            }
+        );
+
+    applyProductFilters();
 
 }
 
@@ -1504,39 +2034,75 @@ function openWhatsApp(){
    KEYBOARD
    ========================================================== */
 
-function handleKeyboard(event){
+function bindKeyboard(){
 
-    const tag =
-        document.activeElement?.tagName;
-
-    if(
-        tag === "INPUT" ||
-        tag === "TEXTAREA" ||
-        tag === "SELECT"
-    ){
+    if(keyboardBound){
         return;
     }
 
-    if(event.key === "ArrowRight"){
+    keyboardBound = true;
 
-        changeSlide(
-            currentSlide + 1
-        );
+    document.addEventListener(
+        "keydown",
+        event => {
 
-    }
+            const tag =
+                document.activeElement
+                    ?.tagName;
 
-    if(event.key === "ArrowLeft"){
+            if(
+                tag === "INPUT" ||
+                tag === "TEXTAREA" ||
+                tag === "SELECT"
+            ){
+                return;
+            }
 
-        changeSlide(
-            currentSlide - 1
-        );
+            if(
+                !document.querySelector(
+                    ".products-page"
+                )
+            ){
+                return;
+            }
 
-    }
+            if(
+                event.key ===
+                "ArrowRight"
+            ){
+
+                pauseSlideshow();
+
+                changeSlide(
+                    currentSlide + 1
+                );
+
+                startSlideshow();
+
+            }
+
+            if(
+                event.key ===
+                "ArrowLeft"
+            ){
+
+                pauseSlideshow();
+
+                changeSlide(
+                    currentSlide - 1
+                );
+
+                startSlideshow();
+
+            }
+
+        }
+    );
 
 }
 
 /* ==========================================================
-   TOUCH
+   SWIPE
    ========================================================== */
 
 function initialiseSwipe(){
@@ -1557,7 +2123,8 @@ function initialiseSwipe(){
         event => {
 
             startX =
-                event.changedTouches[0].clientX;
+                event.changedTouches[0]
+                    .clientX;
 
         },
         {
@@ -1570,7 +2137,8 @@ function initialiseSwipe(){
         event => {
 
             const endX =
-                event.changedTouches[0].clientX;
+                event.changedTouches[0]
+                    .clientX;
 
             const distance =
                 endX - startX;
@@ -1580,6 +2148,8 @@ function initialiseSwipe(){
             ){
                 return;
             }
+
+            pauseSlideshow();
 
             if(distance < 0){
 
@@ -1594,6 +2164,8 @@ function initialiseSwipe(){
                 );
 
             }
+
+            startSlideshow();
 
         },
         {
@@ -1626,10 +2198,13 @@ function initialiseReveal(){
     ){
 
         elements.forEach(
-            element =>
+            element => {
+
                 element.classList.add(
                     "products-visible"
-                )
+                );
+
+            }
         );
 
         return;
@@ -1661,17 +2236,18 @@ function initialiseReveal(){
 
             },
             {
-                threshold:.1,
+                threshold:.08,
                 rootMargin:
-                    "0px 0px -35px"
+                    "0px 0px -30px"
             }
         );
 
     elements.forEach(
-        element =>
+        element => {
             observer.observe(
                 element
-            )
+            );
+        }
     );
 
 }
