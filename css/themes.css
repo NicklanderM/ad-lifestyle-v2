@@ -2003,71 +2003,306 @@ body[data-theme="minoseed"]::-webkit-scrollbar-thumb{
 }
 
 /* ==========================================================
+   AD LIFESTYLE V2
    EVADOR
+   THEME — BLACK / GOLD
    ========================================================== */
 
 body[data-theme="evador"]{
 
-    background:#FBF8F2;
+    --evador-black:
+        #080808;
+
+    --evador-black-soft:
+        #111111;
+
+    --evador-black-light:
+        #181818;
+
+    --evador-gold:
+        #D4AF37;
+
+    --evador-gold-light:
+        #F1D57A;
+
+    --evador-gold-dark:
+        #A67C16;
+
+    --evador-champagne:
+        #E7D39B;
+
+    --evador-white:
+        #FFFFFF;
+
+    --evador-silver:
+        #D8D8D8;
+
+
+    background:
+        #080808 !important;
+
+    color:
+        #FFFFFF !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="evador"]{
+
+    background:
+
+        radial-gradient(
+            circle at 88% 6%,
+            rgba(212,175,55,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 8% 50%,
+            rgba(212,175,55,.06),
+            transparent 30%
+        ),
+
+        #080808 !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="evador"] .navbar{
+
+    background:
+        rgba(8,8,8,.97) !important;
+
+    border-bottom:
+        1px solid
+        rgba(212,175,55,.18) !important;
+
+}
+
+
+body[data-theme="evador"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="evador"] .navbar a:hover{
+
+    color:
+        #F1D57A !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="evador"] .hero{
 
     background:
+
         radial-gradient(
-            circle at top right,
-            rgba(210,176,120,.34),
-            transparent 35%
+            circle at 80% 18%,
+            rgba(212,175,55,.18),
+            transparent 30%
         ),
+
         radial-gradient(
-            circle at bottom left,
-            rgba(244,235,221,.72),
-            transparent 40%
+            circle at 12% 82%,
+            rgba(255,255,255,.05),
+            transparent 28%
         ),
-        var(--hero-gradient);
+
+        linear-gradient(
+            135deg,
+            #080808 0%,
+            #181818 50%,
+            #080808 100%
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="evador"] .hero h1,
+body[data-theme="evador"] .hero h2,
+body[data-theme="evador"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="evador"] .hero p{
+
+    color:
+        rgba(255,255,255,.78) !important;
+
+}
+
+
+body[data-theme="evador"] .hero-title span{
+
+    color:
+        #F1D57A !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F1D57A !important;
+
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+body[data-theme="evador"] .badge{
+
+    color:
+        #F1D57A !important;
+
+    background:
+        rgba(212,175,55,.10) !important;
+
+    border:
+        1px solid
+        rgba(241,213,122,.35) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="evador"] .hero .btn-primary,
+body[data-theme="evador"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #F1D57A
+        ) !important;
+
+    color:
+        #080808 !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+body[data-theme="evador"] .hero .btn-glass,
+body[data-theme="evador"] .showcase .btn-glass{
+
+    background:
+        rgba(255,255,255,.05) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="evador"] .product-glow{
 
     background:
+
         radial-gradient(
             circle,
-            #B48A52,
+            rgba(212,175,55,.45),
+            rgba(212,175,55,.14) 42%,
             transparent 72%
-        );
+        ) !important;
 
-    opacity:.34;
-
-}
-
-body[data-theme="evador"] .service-icon{
-
-    background:rgba(180,138,82,.12);
+    opacity:
+        .95 !important;
 
 }
 
-body[data-theme="evador"] .card::after{
 
-    background:#B48A52;
-
-}
+/* ==========================================================
+   ORB / BLOBS
+   ========================================================== */
 
 body[data-theme="evador"] .orb{
 
-    background:#D2B078;
+    background:
+        #D4AF37 !important;
 
 }
+
+
+body[data-theme="evador"] .blob-1{
+
+    background:
+        #D4AF37 !important;
+
+}
+
+
+body[data-theme="evador"] .blob-2{
+
+    background:
+        #F1D57A !important;
+
+}
+
+
+body[data-theme="evador"] .blob-3{
+
+    background:
+        #FFFFFF !important;
+
+}
+
 
 body[data-theme="evador"] .blob{
 
-    opacity:.22;
+    opacity:
+        .16 !important;
 
 }
 
 
-/* Atmosfera premium */
+/* ==========================================================
+   TEXTURE
+   ========================================================== */
 
 body[data-theme="evador"]::before{
 
@@ -2079,22 +2314,55 @@ body[data-theme="evador"]::before{
 
     pointer-events:none;
 
-    background:
+    background-image:
+
         radial-gradient(
-            circle at 20% 20%,
-            rgba(180,138,82,.045),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 75%,
-            rgba(150,112,61,.04),
-            transparent 30%
+            rgba(212,175,55,.075) 1px,
+            transparent 1px
         );
 
-    z-index:-1;
+    background-size:
+        42px 42px;
+
+    opacity:
+        .20;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="evador"] ::selection{
+
+    background:
+        #D4AF37 !important;
+
+    color:
+        #080808 !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="evador"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #A67C16,
+            #D4AF37,
+            #F1D57A
+        ) !important;
+
+}
 
 /* ==========================================================
    AD LIFESTYLE V2
