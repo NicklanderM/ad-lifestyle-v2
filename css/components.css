@@ -5774,3 +5774,3091 @@ body[data-theme="ismarts3"] .input:focus{
 
 }
 
+/* ==========================================================
+   AD LIFESTYLE V2
+   ALPHAVMAX — COMPONENT SYSTEM
+   Premium Blue & Gold Product Theme
+   ========================================================== */
+
+
+/* ==========================================================
+   01. ALPHAVMAX — VARIÁVEIS
+   ========================================================== */
+
+:root{
+
+    --alphavmax-blue: #0347B3;
+    --alphavmax-blue-dark: #02389E;
+    --alphavmax-blue-deep: #011F5C;
+    --alphavmax-blue-light: #1D5DC4;
+
+    --alphavmax-gold: #D8A74D;
+    --alphavmax-gold-light: #F4D681;
+    --alphavmax-gold-dark: #B98732;
+
+    --alphavmax-white: #EEF2F8;
+    --alphavmax-white-pure: #FFFFFF;
+
+    --alphavmax-navy: #0D265E;
+    --alphavmax-navy-soft: #183A78;
+
+    --alphavmax-glass:
+        rgba(238,242,248,.07);
+
+    --alphavmax-glass-strong:
+        rgba(238,242,248,.11);
+
+    --alphavmax-border:
+        rgba(216,167,77,.22);
+
+    --alphavmax-border-light:
+        rgba(238,242,248,.14);
+
+    --alphavmax-shadow:
+        0 25px 70px rgba(2,56,158,.20);
+
+    --alphavmax-shadow-deep:
+        0 35px 100px rgba(1,31,92,.30);
+
+    --alphavmax-gold-shadow:
+        0 20px 55px rgba(216,167,77,.18);
+
+    --alphavmax-radius:
+        24px;
+
+    --alphavmax-radius-lg:
+        34px;
+}
+
+
+/* ==========================================================
+   02. ALPHAVMAX — BASE
+   ========================================================== */
+
+.alpha-page,
+.alpha-section{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.alpha-section{
+    padding:110px 0;
+}
+
+.alpha-container{
+    position:relative;
+    width:min(1180px, 92%);
+    margin:0 auto;
+    z-index:2;
+}
+
+.alpha-page img{
+    max-width:100%;
+    height:auto;
+}
+
+.alpha-page button{
+    font-family:inherit;
+}
+
+.alpha-page strong{
+    font-weight:700;
+}
+
+.alpha-page h1,
+.alpha-page h2,
+.alpha-page h3,
+.alpha-page h4,
+.alpha-page p{
+    margin-top:0;
+}
+
+
+/* ==========================================================
+   03. ALPHAVMAX — HERO
+   ========================================================== */
+
+.alpha-hero{
+
+    position:relative;
+
+    min-height:
+        min(850px, calc(100vh - 70px));
+
+    display:flex;
+    align-items:center;
+
+    background:
+
+        radial-gradient(
+            circle at 82% 25%,
+            rgba(29,93,196,.28),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(216,167,77,.08),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #011F5C 0%,
+            #02389E 52%,
+            #0347B3 100%
+        );
+
+    color:var(--alphavmax-white);
+
+    isolation:isolate;
+}
+
+
+/* HERO GRID */
+
+.alpha-hero .hero-grid{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(380px, .95fr);
+
+    align-items:center;
+
+    gap:60px;
+
+    width:min(1200px, 92%);
+    margin:0 auto;
+
+    z-index:5;
+}
+
+
+/* HERO CONTENT */
+
+.alpha-hero .hero-content{
+    position:relative;
+    z-index:6;
+    max-width:650px;
+}
+
+
+/* HERO BADGE */
+
+.alpha-hero .badge{
+
+    display:inline-flex;
+
+    align-items:center;
+    gap:9px;
+
+    padding:9px 17px;
+
+    margin-bottom:22px;
+
+    border:1px solid
+        rgba(216,167,77,.42);
+
+    border-radius:999px;
+
+    background:
+        rgba(216,167,77,.08);
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:
+        .13em;
+
+    text-transform:
+        uppercase;
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.12);
+}
+
+
+.alpha-hero .badge::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--alphavmax-gold);
+
+    box-shadow:
+        0 0 14px
+        rgba(216,167,77,.8);
+}
+
+
+/* HERO TITLE */
+
+.alpha-hero .hero-title{
+
+    margin:0 0 20px;
+
+    font-size:
+        clamp(56px, 8vw, 104px);
+
+    line-height:.9;
+
+    font-weight:800;
+
+    letter-spacing:-.055em;
+
+    color:
+        var(--alphavmax-white);
+
+    text-shadow:
+        0 15px 50px rgba(0,0,0,.25);
+
+    position:relative;
+}
+
+
+/* GOLD TITLE DETAIL */
+
+.alpha-hero .hero-title::after{
+
+    content:"Vmax";
+
+    display:block;
+
+    margin-top:5px;
+
+    font-size:
+        .54em;
+
+    line-height:1;
+
+    letter-spacing:
+        -.035em;
+
+    color:
+        var(--alphavmax-gold-light);
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--alphavmax-gold-dark),
+            var(--alphavmax-gold-light),
+            var(--alphavmax-gold)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    filter:
+        drop-shadow(
+            0 8px 22px
+            rgba(216,167,77,.18)
+        );
+}
+
+
+/* HERO SUBTITLE */
+
+.alpha-hero .hero-sub{
+
+    max-width:650px;
+
+    margin-bottom:30px;
+
+    color:
+        rgba(238,242,248,.82);
+
+    font-size:
+        clamp(16px, 1.7vw, 19px);
+
+    line-height:1.8;
+}
+
+
+/* HERO ACTIONS */
+
+.alpha-hero .hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:14px;
+
+    margin-bottom:30px;
+}
+
+
+/* ==========================================================
+   04. ALPHAVMAX — HERO BUTTONS
+   ========================================================== */
+
+.alpha-hero .btn-primary,
+.alpha-cta .btn-primary{
+
+    border:1px solid
+        var(--alphavmax-gold);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alphavmax-gold),
+            var(--alphavmax-gold-light)
+        );
+
+    color:
+        #09245C;
+
+    box-shadow:
+        0 16px 40px
+        rgba(216,167,77,.22);
+}
+
+.alpha-hero .btn-primary:hover,
+.alpha-cta .btn-primary:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 22px 50px
+        rgba(216,167,77,.32);
+}
+
+
+.alpha-hero .btn-glass,
+.alpha-cta .btn-glass{
+
+    border:
+        1px solid
+        rgba(238,242,248,.20);
+
+    background:
+        rgba(238,242,248,.07);
+
+    color:
+        var(--alphavmax-white);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+.alpha-hero .btn-glass:hover,
+.alpha-cta .btn-glass:hover{
+
+    background:
+        rgba(238,242,248,.12);
+
+    border-color:
+        rgba(216,167,77,.40);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ==========================================================
+   05. ALPHAVMAX — HERO HIGHLIGHTS
+   ========================================================== */
+
+.alpha-highlights{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:10px;
+
+    max-width:650px;
+}
+
+
+.alpha-highlight{
+
+    padding:13px 14px;
+
+    border:
+        1px solid
+        var(--alphavmax-border-light);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+}
+
+.alpha-highlight:hover{
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(216,167,77,.38);
+
+    background:
+        rgba(255,255,255,.075);
+}
+
+
+.alpha-highlight strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:13px;
+}
+
+.alpha-highlight span{
+
+    display:block;
+
+    color:
+        rgba(238,242,248,.66);
+
+    font-size:11px;
+}
+
+
+/* ==========================================================
+   06. ALPHAVMAX — HERO DISCLAIMER
+   ========================================================== */
+
+.alpha-disclaimer{
+
+    max-width:640px;
+
+    margin-top:18px;
+
+    color:
+        rgba(238,242,248,.55);
+
+    font-size:11px;
+
+    line-height:1.6;
+}
+
+
+/* ==========================================================
+   07. ALPHAVMAX — HERO PRODUCT
+   ========================================================== */
+
+.alpha-hero .hero-visual{
+
+    position:relative;
+
+    min-height:580px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    z-index:3;
+}
+
+
+.alpha-hero .hero-product{
+
+    position:relative;
+
+    width:
+        min(520px, 100%);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+}
+
+
+.alpha-hero .hero-product img{
+
+    position:relative;
+
+    width:
+        min(450px, 90%);
+
+    max-height:620px;
+
+    object-fit:contain;
+
+    z-index:4;
+
+    filter:
+        drop-shadow(
+            0 35px 55px
+            rgba(0,0,0,.34)
+        );
+
+    transition:
+        transform .5s ease,
+        filter .5s ease;
+}
+
+
+.alpha-hero .hero-product:hover img{
+
+    transform:
+        translateY(-10px)
+        scale(1.025);
+
+    filter:
+        drop-shadow(
+            0 45px 70px
+            rgba(0,0,0,.42)
+        );
+}
+
+
+/* ==========================================================
+   08. ALPHAVMAX — GOLD RING
+   ========================================================== */
+
+.alpha-gold-ring{
+
+    position:absolute;
+
+    width:410px;
+    height:410px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(216,167,77,.45);
+
+    box-shadow:
+        0 0 0 18px
+        rgba(216,167,77,.025),
+
+        0 0 80px
+        rgba(216,167,77,.16);
+
+    animation:
+        alphaRingPulse 5s ease-in-out infinite;
+
+    z-index:1;
+}
+
+
+.alpha-gold-ring::before,
+.alpha-gold-ring::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:18px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(244,214,129,.12);
+}
+
+
+.alpha-gold-ring::after{
+
+    inset:42px;
+
+    border-color:
+        rgba(216,167,77,.10);
+}
+
+
+@keyframes alphaRingPulse{
+
+    0%,
+    100%{
+        transform:scale(1);
+        opacity:.75;
+    }
+
+    50%{
+        transform:scale(1.04);
+        opacity:1;
+    }
+}
+
+
+/* ==========================================================
+   09. ALPHAVMAX — AURORA
+   ========================================================== */
+
+.alpha-hero .aurora{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+
+.alpha-hero .blob{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:
+        blur(80px);
+
+    opacity:.22;
+
+    pointer-events:none;
+}
+
+
+.alpha-hero .blob-1{
+
+    width:380px;
+    height:380px;
+
+    top:-120px;
+    right:-80px;
+
+    background:
+        #1D5DC4;
+
+    animation:
+        alphaAuroraOne 12s ease-in-out infinite alternate;
+}
+
+
+.alpha-hero .blob-2{
+
+    width:300px;
+    height:300px;
+
+    bottom:-100px;
+    left:-100px;
+
+    background:
+        #D8A74D;
+
+    opacity:.09;
+
+    animation:
+        alphaAuroraTwo 14s ease-in-out infinite alternate;
+}
+
+
+.alpha-hero .blob-3{
+
+    width:260px;
+    height:260px;
+
+    top:45%;
+    left:42%;
+
+    background:
+        #1D5DC4;
+
+    opacity:.10;
+
+    animation:
+        alphaAuroraThree 10s ease-in-out infinite alternate;
+}
+
+
+@keyframes alphaAuroraOne{
+
+    from{
+        transform:translate3d(0,0,0);
+    }
+
+    to{
+        transform:translate3d(-60px,40px,0);
+    }
+}
+
+
+@keyframes alphaAuroraTwo{
+
+    from{
+        transform:translate3d(0,0,0);
+    }
+
+    to{
+        transform:translate3d(70px,-45px,0);
+    }
+}
+
+
+@keyframes alphaAuroraThree{
+
+    from{
+        transform:translate3d(0,0,0) scale(1);
+    }
+
+    to{
+        transform:translate3d(-40px,30px,0) scale(1.15);
+    }
+}
+
+
+/* ==========================================================
+   10. ALPHAVMAX — SECTION HEADER
+   ========================================================== */
+
+.alpha-section-header{
+
+    max-width:760px;
+
+    margin:
+        0 auto 55px;
+
+    text-align:center;
+}
+
+
+.alpha-section-header .eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:14px;
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+
+.alpha-section-header h2{
+
+    margin-bottom:16px;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:
+        clamp(34px, 5vw, 58px);
+
+    line-height:1.02;
+
+    letter-spacing:-.04em;
+}
+
+
+.alpha-section-header p{
+
+    color:
+        rgba(13,38,94,.68);
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   11. ALPHAVMAX — COMPOSITION
+   ========================================================== */
+
+.alpha-composition{
+
+    background:
+        var(--alphavmax-white);
+}
+
+
+.alpha-composition-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:18px;
+}
+
+
+.alpha-composition-card{
+
+    position:relative;
+
+    min-height:245px;
+
+    padding:28px;
+
+    border:
+        1px solid
+        rgba(13,38,94,.09);
+
+    border-radius:
+        var(--alphavmax-radius);
+
+    background:
+        rgba(255,255,255,.90);
+
+    box-shadow:
+        0 18px 55px
+        rgba(13,38,94,.07);
+
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+.alpha-composition-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120px;
+    height:120px;
+
+    right:-50px;
+    top:-50px;
+
+    border-radius:50%;
+
+    background:
+        rgba(216,167,77,.09);
+}
+
+
+.alpha-composition-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(216,167,77,.28);
+
+    box-shadow:
+        0 25px 65px
+        rgba(13,38,94,.12);
+}
+
+
+.alpha-card-number{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:42px;
+    height:42px;
+
+    margin-bottom:22px;
+
+    border-radius:13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alphavmax-blue),
+            var(--alphavmax-blue-dark)
+        );
+
+    color:
+        var(--alphavmax-white);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(3,71,179,.20);
+}
+
+
+.alpha-composition-card h3{
+
+    margin-bottom:10px;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:20px;
+}
+
+
+.alpha-composition-card p{
+
+    color:
+        rgba(13,38,94,.62);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   12. ALPHAVMAX — INFORMATION TOGGLE
+   ========================================================== */
+
+.alpha-information{
+
+    margin-top:42px;
+
+    border-radius:
+        var(--alphavmax-radius-lg);
+
+    border:
+        1px solid
+        rgba(13,38,94,.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(3,71,179,.035),
+            rgba(216,167,77,.035)
+        );
+
+    overflow:hidden;
+}
+
+
+.alpha-details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:22px 28px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    text-align:left;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease;
+}
+
+
+.alpha-details-toggle:hover{
+
+    background:
+        rgba(3,71,179,.035);
+}
+
+
+.alpha-details-toggle span{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+
+.alpha-details-toggle span::before{
+
+    content:"";
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:
+        var(--alphavmax-gold);
+
+    box-shadow:
+        0 0 12px
+        rgba(216,167,77,.55);
+}
+
+
+.alpha-details-toggle::after{
+
+    content:"+";
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(13,38,94,.12);
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:20px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+
+.alpha-details-toggle[aria-expanded="true"]::after{
+
+    content:"−";
+
+    background:
+        rgba(216,167,77,.08);
+
+    transform:
+        rotate(180deg);
+}
+
+
+.alpha-details-content{
+
+    display:none;
+
+    padding:
+        0 28px 28px;
+}
+
+
+.alpha-details-content.is-open{
+
+    display:block;
+
+    animation:
+        alphaDetailsIn .35s ease;
+}
+
+
+@keyframes alphaDetailsIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+.alpha-details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:14px;
+}
+
+
+.alpha-detail-card{
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(13,38,94,.08);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.76);
+}
+
+
+.alpha-detail-card h4{
+
+    margin-bottom:8px;
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:15px;
+}
+
+
+.alpha-detail-card p{
+
+    color:
+        rgba(13,38,94,.62);
+
+    font-size:13px;
+
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   13. ALPHAVMAX — BENEFITS
+   ========================================================== */
+
+.alpha-benefits{
+
+    background:
+        #F8FAFD;
+}
+
+
+.alpha-benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        .9fr 1.1fr;
+
+    align-items:center;
+
+    gap:80px;
+}
+
+
+.alpha-benefits-visual{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:520px;
+}
+
+
+.alpha-benefits-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(3,71,179,.15),
+            transparent 68%
+        );
+}
+
+
+.alpha-benefits-visual img{
+
+    position:relative;
+
+    width:min(470px,100%);
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 30px 45px
+            rgba(13,38,94,.18)
+        );
+
+    z-index:2;
+
+    transition:
+        transform .5s ease;
+}
+
+
+.alpha-benefits-visual:hover img{
+
+    transform:
+        translateY(-8px)
+        scale(1.015);
+}
+
+
+.alpha-benefits-content{
+
+    max-width:620px;
+}
+
+
+.alpha-benefits-content .eyebrow{
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+
+.alpha-benefits-content h2{
+
+    margin:
+        12px 0 20px;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:
+        clamp(34px, 5vw, 56px);
+
+    line-height:1.04;
+
+    letter-spacing:-.04em;
+}
+
+
+.alpha-benefits-content > p{
+
+    margin-bottom:30px;
+
+    color:
+        rgba(13,38,94,.67);
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+/* BENEFIT LIST */
+
+.alpha-benefit-list{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0,1fr));
+
+    gap:13px;
+}
+
+
+.alpha-benefit-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:12px;
+
+    padding:15px;
+
+    border:
+        1px solid
+        rgba(13,38,94,.07);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.alpha-benefit-item:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(216,167,77,.25);
+
+    box-shadow:
+        0 15px 35px
+        rgba(13,38,94,.07);
+}
+
+
+.alpha-benefit-item::before{
+
+    content:"✓";
+
+    flex:
+        0 0 24px;
+
+    width:24px;
+    height:24px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(3,71,179,.10);
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:12px;
+
+    font-weight:900;
+}
+
+
+.alpha-benefit-item span{
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:13px;
+
+    line-height:1.5;
+}
+
+
+/* ==========================================================
+   14. ALPHAVMAX — INGREDIENTS
+   ========================================================== */
+
+.alpha-ingredients{
+
+    position:relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #011F5C,
+            #02389E 55%,
+            #0347B3
+        );
+
+    color:
+        var(--alphavmax-white);
+}
+
+
+.alpha-ingredients .alpha-section-header .eyebrow{
+
+    color:
+        var(--alphavmax-gold-light);
+}
+
+
+.alpha-ingredients .alpha-section-header h2{
+
+    color:
+        var(--alphavmax-white);
+}
+
+
+.alpha-ingredients .alpha-section-header p{
+
+    color:
+        rgba(238,242,248,.67);
+}
+
+
+/* INGREDIENT BENTO */
+
+.alpha-ingredients-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0,1fr));
+
+    gap:16px;
+}
+
+
+.alpha-ingredient-card{
+
+    position:relative;
+
+    min-height:260px;
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    border:
+        1px solid
+        rgba(238,242,248,.12);
+
+    border-radius:
+        var(--alphavmax-radius);
+
+    background:
+        rgba(255,255,255,.055);
+
+    backdrop-filter:
+        blur(15px);
+
+    overflow:hidden;
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease;
+}
+
+
+.alpha-ingredient-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(216,167,77,.16),
+            transparent 42%
+        );
+
+    pointer-events:none;
+}
+
+
+.alpha-ingredient-card:hover{
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(216,167,77,.38);
+
+    background:
+        rgba(255,255,255,.075);
+}
+
+
+.alpha-ingredient-icon{
+
+    position:absolute;
+
+    top:25px;
+    right:25px;
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(216,167,77,.25);
+
+    background:
+        rgba(216,167,77,.08);
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+
+.alpha-ingredient-card h3{
+
+    position:relative;
+
+    margin-bottom:9px;
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:21px;
+}
+
+
+.alpha-ingredient-card p{
+
+    position:relative;
+
+    margin:0;
+
+    color:
+        rgba(238,242,248,.68);
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   15. ALPHAVMAX — USAGE
+   ========================================================== */
+
+.alpha-usage{
+
+    background:
+        var(--alphavmax-white);
+}
+
+
+.alpha-usage-timeline{
+
+    position:relative;
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:25px;
+}
+
+
+.alpha-usage-timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:32px;
+
+    left:16%;
+
+    right:16%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--alphavmax-gold),
+            transparent
+        );
+
+    opacity:.55;
+}
+
+
+.alpha-usage-step{
+
+    position:relative;
+
+    text-align:center;
+
+    z-index:2;
+}
+
+
+.alpha-usage-number{
+
+    width:64px;
+    height:64px;
+
+    margin:
+        0 auto 22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(216,167,77,.55);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alphavmax-blue),
+            var(--alphavmax-blue-dark)
+        );
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:15px;
+
+    font-weight:800;
+
+    box-shadow:
+        0 15px 35px
+        rgba(3,71,179,.20);
+}
+
+
+.alpha-usage-step h3{
+
+    margin-bottom:10px;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:20px;
+}
+
+
+.alpha-usage-step p{
+
+    max-width:230px;
+
+    margin:
+        0 auto;
+
+    color:
+        rgba(13,38,94,.62);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+
+.alpha-usage-note{
+
+    max-width:800px;
+
+    margin:55px auto 0;
+
+    padding:20px 24px;
+
+    border:
+        1px solid
+        rgba(216,167,77,.22);
+
+    border-radius:18px;
+
+    background:
+        rgba(216,167,77,.055);
+
+    color:
+        rgba(13,38,94,.70);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    text-align:center;
+}
+
+
+/* ==========================================================
+   16. ALPHAVMAX — PERFORMANCE
+   ========================================================== */
+
+.alpha-performance{
+
+    background:
+        #F7F9FC;
+}
+
+
+.alpha-performance-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+
+    margin-bottom:22px;
+}
+
+
+.alpha-performance-card{
+
+    position:relative;
+
+    padding:32px;
+
+    min-height:220px;
+
+    border-radius:
+        var(--alphavmax-radius);
+
+    border:
+        1px solid
+        rgba(13,38,94,.08);
+
+    background:
+        #FFFFFF;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 18px 50px
+        rgba(13,38,94,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+.alpha-performance-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+        0 28px 65px
+        rgba(13,38,94,.11);
+}
+
+
+.alpha-performance-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    right:-60px;
+    bottom:-60px;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(216,167,77,.08);
+}
+
+
+.alpha-performance-code{
+
+    margin-bottom:15px;
+
+    color:
+        var(--alphavmax-gold-dark);
+
+    font-size:12px;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+
+    text-transform:uppercase;
+}
+
+
+.alpha-performance-card h3{
+
+    margin-bottom:10px;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-size:24px;
+}
+
+
+.alpha-performance-card p{
+
+    position:relative;
+
+    z-index:2;
+
+    color:
+        rgba(13,38,94,.64);
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+
+.alpha-performance-philosophy{
+
+    padding:32px;
+
+    border-radius:
+        var(--alphavmax-radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alphavmax-blue),
+            var(--alphavmax-blue-dark)
+        );
+
+    color:
+        var(--alphavmax-white);
+
+    box-shadow:
+        var(--alphavmax-shadow);
+}
+
+
+.alpha-performance-philosophy h3{
+
+    margin-bottom:10px;
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:24px;
+}
+
+
+.alpha-performance-philosophy p{
+
+    max-width:850px;
+
+    margin:0;
+
+    color:
+        rgba(238,242,248,.72);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   17. ALPHAVMAX — FAQ
+   ========================================================== */
+
+.alpha-faq{
+
+    background:
+        #FFFFFF;
+}
+
+
+.alpha-faq-list{
+
+    max-width:900px;
+
+    margin:0 auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+
+.alpha-faq-item{
+
+    border:
+        1px solid
+        rgba(13,38,94,.09);
+
+    border-radius:18px;
+
+    background:
+        #FFFFFF;
+
+    overflow:hidden;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.alpha-faq-item:hover{
+
+    border-color:
+        rgba(216,167,77,.30);
+}
+
+
+.alpha-faq-question{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:21px 24px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        var(--alphavmax-navy);
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+
+.alpha-faq-question::after{
+
+    content:"+";
+
+    flex:
+        0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    width:34px;
+    height:34px;
+
+    border-radius:50%;
+
+    background:
+        rgba(3,71,179,.06);
+
+    color:
+        var(--alphavmax-blue);
+
+    font-size:20px;
+
+    transition:
+        transform .3s ease,
+        background .3s ease;
+}
+
+
+.alpha-faq-question[aria-expanded="true"]::after{
+
+    content:"−";
+
+    background:
+        rgba(216,167,77,.10);
+
+    color:
+        var(--alphavmax-gold-dark);
+
+    transform:
+        rotate(180deg);
+}
+
+
+.alpha-faq-answer{
+
+    display:none;
+
+    padding:
+        0 24px 22px;
+
+    color:
+        rgba(13,38,94,.65);
+
+    font-size:14px;
+
+    line-height:1.8;
+}
+
+
+.alpha-faq-answer.is-open{
+
+    display:block;
+
+    animation:
+        alphaFaqIn .3s ease;
+}
+
+
+@keyframes alphaFaqIn{
+
+    from{
+        opacity:0;
+        transform:translateY(-5px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+/* ==========================================================
+   18. ALPHAVMAX — CTA
+   ========================================================== */
+
+.alpha-cta{
+
+    position:relative;
+
+    padding:
+        100px 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #011F5C,
+            #02389E 55%,
+            #0347B3
+        );
+
+    color:
+        var(--alphavmax-white);
+
+    overflow:hidden;
+}
+
+
+.alpha-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    top:-250px;
+    right:-180px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(216,167,77,.16),
+            transparent 68%
+        );
+}
+
+
+.alpha-cta::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    bottom:-180px;
+    left:-120px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(29,93,196,.30),
+            transparent 68%
+        );
+}
+
+
+.alpha-cta-content{
+
+    position:relative;
+
+    max-width:850px;
+
+    margin:0 auto;
+
+    text-align:center;
+
+    z-index:2;
+}
+
+
+.alpha-cta-content .eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:15px;
+
+    color:
+        var(--alphavmax-gold-light);
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+
+.alpha-cta-content h2{
+
+    margin-bottom:18px;
+
+    color:
+        var(--alphavmax-white);
+
+    font-size:
+        clamp(38px, 6vw, 68px);
+
+    line-height:1;
+
+    letter-spacing:-.045em;
+}
+
+
+.alpha-cta-content p{
+
+    max-width:650px;
+
+    margin:
+        0 auto 30px;
+
+    color:
+        rgba(238,242,248,.70);
+
+    font-size:16px;
+
+    line-height:1.8;
+}
+
+
+.alpha-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+}
+
+
+/* ==========================================================
+   19. ALPHAVMAX — WHATSAPP BUTTON
+   ========================================================== */
+
+.alpha-whatsapp{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    min-height:54px;
+
+    padding:
+        0 27px;
+
+    border:
+        1px solid
+        rgba(216,167,77,.45);
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alphavmax-gold),
+            var(--alphavmax-gold-light)
+        );
+
+    color:
+        #09245C;
+
+    font-size:14px;
+
+    font-weight:800;
+
+    text-decoration:none;
+
+    box-shadow:
+        0 15px 35px
+        rgba(216,167,77,.20);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+}
+
+
+.alpha-whatsapp:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 20px 45px
+        rgba(216,167,77,.30);
+}
+
+
+/* ==========================================================
+   20. ALPHAVMAX — BACK HOME
+   ========================================================== */
+
+.alpha-back-home{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    min-height:54px;
+
+    padding:
+        0 27px;
+
+    border:
+        1px solid
+        rgba(238,242,248,.18);
+
+    border-radius:999px;
+
+    background:
+        rgba(238,242,248,.055);
+
+    color:
+        var(--alphavmax-white);
+
+    font-size:14px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        transform .3s ease;
+}
+
+
+.alpha-back-home:hover{
+
+    background:
+        rgba(238,242,248,.10);
+
+    border-color:
+        rgba(216,167,77,.35);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* ==========================================================
+   21. ALPHAVMAX — GENERAL CARD INTERACTION
+   ========================================================== */
+
+.alpha-page .service-card,
+.alpha-page .alpha-detail-card,
+.alpha-page .alpha-composition-card,
+.alpha-page .alpha-performance-card,
+.alpha-page .alpha-ingredient-card{
+
+    will-change:
+        transform;
+}
+
+
+/* ==========================================================
+   22. ALPHAVMAX — REVEAL STATES
+   ========================================================== */
+
+.alpha-page .reveal,
+.alpha-page .reveal-right{
+
+    opacity:1;
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+
+.alpha-page .reveal-right{
+
+    transform:
+        translateX(0);
+}
+
+
+/* ==========================================================
+   23. ALPHAVMAX — SELECTION
+   ========================================================== */
+
+.alpha-page ::selection{
+
+    background:
+        var(--alphavmax-gold);
+
+    color:
+        var(--alphavmax-navy);
+}
+
+
+/* ==========================================================
+   24. ALPHAVMAX — SCROLLBAR
+   ========================================================== */
+
+.alpha-page::-webkit-scrollbar{
+
+    width:8px;
+}
+
+.alpha-page::-webkit-scrollbar-track{
+
+    background:
+        #EEF2F8;
+}
+
+.alpha-page::-webkit-scrollbar-thumb{
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--alphavmax-blue),
+            var(--alphavmax-gold)
+        );
+}
+
+
+/* ==========================================================
+   25. ALPHAVMAX — TABLET
+   ========================================================== */
+
+@media (max-width:1100px){
+
+    .alpha-hero .hero-grid{
+
+        grid-template-columns:
+            1fr .85fr;
+
+        gap:35px;
+    }
+
+
+    .alpha-hero .hero-visual{
+
+        min-height:480px;
+    }
+
+
+    .alpha-hero .hero-product img{
+
+        width:min(390px,100%);
+    }
+
+
+    .alpha-gold-ring{
+
+        width:340px;
+        height:340px;
+    }
+
+
+    .alpha-composition-grid,
+    .alpha-ingredients-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .alpha-details-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .alpha-benefits-grid{
+
+        gap:45px;
+    }
+}
+
+
+/* ==========================================================
+   26. ALPHAVMAX — MOBILE LARGE
+   ========================================================== */
+
+@media (max-width:800px){
+
+    .alpha-section{
+
+        padding:
+            80px 0;
+    }
+
+
+    .alpha-hero{
+
+        min-height:
+            auto;
+
+        padding:
+            90px 0 70px;
+    }
+
+
+    .alpha-hero .hero-grid{
+
+        grid-template-columns:
+            1fr;
+
+        text-align:center;
+    }
+
+
+    .alpha-hero .hero-content{
+
+        max-width:720px;
+
+        margin:0 auto;
+    }
+
+
+    .alpha-hero .hero-actions{
+
+        justify-content:center;
+    }
+
+
+    .alpha-highlights{
+
+        max-width:600px;
+
+        margin:
+            0 auto;
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        text-align:left;
+    }
+
+
+    .alpha-disclaimer{
+
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+
+    .alpha-hero .hero-visual{
+
+        min-height:430px;
+
+        margin-top:15px;
+    }
+
+
+    .alpha-hero .hero-product img{
+
+        width:
+            min(380px,82vw);
+    }
+
+
+    .alpha-gold-ring{
+
+        width:330px;
+        height:330px;
+    }
+
+
+    .alpha-benefits-grid{
+
+        grid-template-columns:
+            1fr;
+
+        gap:25px;
+    }
+
+
+    .alpha-benefits-visual{
+
+        min-height:400px;
+
+        order:2;
+    }
+
+
+    .alpha-benefits-content{
+
+        order:1;
+
+        max-width:none;
+    }
+
+
+    .alpha-benefit-list{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .alpha-performance-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .alpha-usage-timeline{
+
+        grid-template-columns:
+            1fr;
+
+        gap:40px;
+    }
+
+
+    .alpha-usage-timeline::before{
+
+        top:0;
+        bottom:0;
+
+        left:50%;
+
+        width:1px;
+        height:auto;
+
+        right:auto;
+    }
+
+
+    .alpha-usage-step{
+
+        background:
+            var(--alphavmax-white);
+
+        padding:
+            0 15px;
+
+        z-index:2;
+    }
+}
+
+
+/* ==========================================================
+   27. ALPHAVMAX — MOBILE
+   ========================================================== */
+
+@media (max-width:600px){
+
+    .alpha-section{
+
+        padding:
+            68px 0;
+    }
+
+
+    .alpha-container{
+
+        width:
+            min(92%, 500px);
+    }
+
+
+    .alpha-hero{
+
+        padding:
+            75px 0 55px;
+    }
+
+
+    .alpha-hero .hero-title{
+
+        font-size:
+            clamp(50px, 17vw, 78px);
+    }
+
+
+    .alpha-hero .hero-sub{
+
+        font-size:
+            15px;
+
+        line-height:
+            1.7;
+    }
+
+
+    .alpha-hero .hero-actions{
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .alpha-hero .hero-actions .btn{
+
+        width:100%;
+    }
+
+
+    .alpha-highlights{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap:8px;
+    }
+
+
+    .alpha-highlight{
+
+        padding:
+            12px;
+
+        border-radius:
+            14px;
+    }
+
+
+    .alpha-hero .hero-visual{
+
+        min-height:
+            360px;
+    }
+
+
+    .alpha-hero .hero-product img{
+
+        width:
+            85vw;
+
+        max-width:
+            340px;
+    }
+
+
+    .alpha-gold-ring{
+
+        width:
+            280px;
+
+        height:
+            280px;
+    }
+
+
+    .alpha-section-header{
+
+        margin-bottom:
+            38px;
+    }
+
+
+    .alpha-section-header h2{
+
+        font-size:
+            clamp(32px, 10vw, 46px);
+    }
+
+
+    .alpha-section-header p{
+
+        font-size:
+            14px;
+
+        line-height:
+            1.7;
+    }
+
+
+    .alpha-composition-grid,
+    .alpha-ingredients-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .alpha-composition-card{
+
+        min-height:
+            auto;
+
+        padding:
+            25px;
+    }
+
+
+    .alpha-details-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .alpha-details-toggle{
+
+        padding:
+            19px;
+    }
+
+
+    .alpha-details-content{
+
+        padding:
+            0 19px 20px;
+    }
+
+
+    .alpha-benefits-visual{
+
+        min-height:
+            320px;
+    }
+
+
+    .alpha-benefits-visual img{
+
+        width:
+            min(360px,90vw);
+    }
+
+
+    .alpha-benefits-content h2{
+
+        font-size:
+            clamp(32px, 10vw, 45px);
+    }
+
+
+    .alpha-benefit-list{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .alpha-benefit-item{
+
+        padding:
+            14px;
+    }
+
+
+    .alpha-ingredient-card{
+
+        min-height:
+            220px;
+    }
+
+
+    .alpha-usage-note{
+
+        margin-top:
+            40px;
+
+        padding:
+            18px;
+    }
+
+
+    .alpha-performance-card{
+
+        min-height:
+            auto;
+
+        padding:
+            25px;
+    }
+
+
+    .alpha-performance-philosophy{
+
+        padding:
+            25px;
+    }
+
+
+    .alpha-faq-question{
+
+        padding:
+            18px;
+    }
+
+
+    .alpha-faq-answer{
+
+        padding:
+            0 18px 20px;
+    }
+
+
+    .alpha-cta{
+
+        padding:
+            75px 0;
+    }
+
+
+    .alpha-cta-content h2{
+
+        font-size:
+            clamp(36px, 11vw, 52px);
+    }
+
+
+    .alpha-cta-content p{
+
+        font-size:
+            14px;
+    }
+
+
+    .alpha-cta-actions{
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+    }
+
+
+    .alpha-whatsapp,
+    .alpha-back-home{
+
+        width:100%;
+    }
+}
+
+
+/* ==========================================================
+   28. ALPHAVMAX — MOBILE SMALL
+   ========================================================== */
+
+@media (max-width:400px){
+
+    .alpha-highlights{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .alpha-hero .hero-visual{
+
+        min-height:
+            320px;
+    }
+
+
+    .alpha-gold-ring{
+
+        width:
+            245px;
+
+        height:
+            245px;
+    }
+
+
+    .alpha-hero .hero-product img{
+
+        max-width:
+            290px;
+    }
+
+
+    .alpha-card-number{
+
+        width:
+            38px;
+
+        height:
+            38px;
+    }
+
+
+    .alpha-composition-card h3{
+
+        font-size:
+            18px;
+    }
+}
+
+
+/* ==========================================================
+   29. ALPHAVMAX — REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .alpha-hero .blob,
+    .alpha-gold-ring{
+
+        animation:
+            none !important;
+    }
+
+
+    .alpha-page *,
+    .alpha-page *::before,
+    .alpha-page *::after{
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+    }
+}
+
+
+/* ==========================================================
+   30. ALPHAVMAX — ACCESSIBILITY
+   ========================================================== */
+
+.alpha-page button:focus-visible,
+.alpha-page a:focus-visible{
+
+    outline:
+        3px solid
+        rgba(216,167,77,.65);
+
+    outline-offset:
+        4px;
+}
+
+
+/* ==========================================================
+   31. ALPHAVMAX — PRINT
+   ========================================================== */
+
+@media print{
+
+    .alpha-hero,
+    .alpha-ingredients,
+    .alpha-cta{
+
+        background:
+            #FFFFFF !important;
+
+        color:
+            #000000 !important;
+    }
+
+
+    .alpha-hero .hero-title,
+    .alpha-hero .hero-sub,
+    .alpha-ingredients .alpha-section-header h2,
+    .alpha-cta-content h2,
+    .alpha-cta-content p{
+
+        color:
+            #000000 !important;
+    }
+
+
+    .alpha-hero .aurora,
+    .alpha-gold-ring{
+
+        display:none !important;
+    }
+}
