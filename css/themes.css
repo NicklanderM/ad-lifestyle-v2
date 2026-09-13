@@ -3294,69 +3294,59 @@ body[data-theme="alphaspin-ultra"]::-webkit-scrollbar-thumb{
 }
 
 /* ==========================================================
-   iSMARTS3
+   AD LIFESTYLE V2
+   iSMARTS3 THEME
    ========================================================== */
 
 body[data-theme="ismarts3"]{
 
-    background:#F5F9FF;
+    --primary: #263A4D;
+    --primary-dark: #20252B;
+    --primary-light: #7894B0;
+
+    --accent: #39D353;
+    --accent-light: #67C96B;
+
+    --secondary: #C9D9E9;
+
+    --background: #FFFFFF;
+    --surface: #F5F8FA;
+
+    --text: #263A4D;
+    --text-soft: #667585;
+
+    --border: rgba(120,148,176,.15);
+
+    --shadow:
+        0 20px 60px rgba(38,58,77,.10);
+
+}
+
+/* iSMARTS3 page defaults */
+
+body[data-theme="ismarts3"] #app{
+
+    background:#FFFFFF;
 
 }
 
 body[data-theme="ismarts3"] .hero{
 
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(96,165,250,.34),
-            transparent 35%
-        ),
-        radial-gradient(
-            circle at bottom left,
-            rgba(232,241,255,.82),
-            transparent 40%
-        ),
-        var(--hero-gradient);
+    color:#263A4D;
 
 }
 
-body[data-theme="ismarts3"] .product-glow{
+body[data-theme="ismarts3"] .card{
 
-    background:
-        radial-gradient(
-            circle,
-            #3B82F6,
-            transparent 72%
-        );
-
-    opacity:.30;
+    color:#263A4D;
 
 }
 
-body[data-theme="ismarts3"] .service-icon{
+body[data-theme="ismarts3"] .text{
 
-    background:rgba(59,130,246,.10);
-
-}
-
-body[data-theme="ismarts3"] .card::after{
-
-    background:#3B82F6;
+    color:#667585;
 
 }
-
-body[data-theme="ismarts3"] .orb{
-
-    background:#60A5FA;
-
-}
-
-body[data-theme="ismarts3"] .blob{
-
-    opacity:.22;
-
-}
-
 
 /* Ambiente tecnológico */
 
