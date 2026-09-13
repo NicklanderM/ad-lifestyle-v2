@@ -1831,71 +1831,315 @@ body[data-theme="evador"]::before{
 
 
 /* ==========================================================
+   AD LIFESTYLE V2
    ALPHASPIN ULTRA
+   THEME — PURPLE / VIOLET / IRIDESCENT
    ========================================================== */
 
 body[data-theme="alphaspin-ultra"]{
 
-    background:#F4FAF9;
+    --alphaspin-primary:
+        #40225C;
+
+    --alphaspin-secondary:
+        #573475;
+
+    --alphaspin-violet:
+        #6E4790;
+
+    --alphaspin-light:
+        #885CAF;
+
+    --alphaspin-lilac:
+        #A57BCF;
+
+    --alphaspin-silver-lilac:
+        #B6BADF;
+
+    --alphaspin-lavender:
+        #D2DFAF;
+
+    --alphaspin-lime:
+        #D6E08B;
+
+    --alphaspin-silver:
+        #EEEEF1;
+
+    --alphaspin-dark:
+        #1F0E2F;
+
+
+    background:
+        #EEEEF1 !important;
+
+    color:
+        #1F0E2F !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"]{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 5%,
+            rgba(165,123,207,.14),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 45%,
+            rgba(214,224,139,.12),
+            transparent 28%
+        ),
+
+        #EEEEF1 !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .navbar{
+
+    background:
+        rgba(31,14,47,.96) !important;
+
+    border-bottom:
+        1px solid
+        rgba(182,186,223,.20) !important;
+
+}
+
+
+body[data-theme="alphaspin-ultra"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="alphaspin-ultra"] .navbar a:hover{
+
+    color:
+        #D6E08B !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="alphaspin-ultra"] .hero{
 
     background:
+
         radial-gradient(
-            circle at top right,
-            rgba(114,181,174,.38),
-            transparent 35%
+            circle at 30% 30%,
+            rgba(214,224,139,.25),
+            transparent 28%
         ),
+
         radial-gradient(
-            circle at bottom left,
-            rgba(227,241,239,.80),
-            transparent 40%
+            circle at 70% 35%,
+            rgba(165,123,207,.34),
+            transparent 32%
         ),
-        var(--hero-gradient);
+
+        linear-gradient(
+            135deg,
+            #40225C 0%,
+            #573475 35%,
+            #885CAF 65%,
+            #B6BADF 100%
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .hero h1,
+body[data-theme="alphaspin-ultra"] .hero h2,
+body[data-theme="alphaspin-ultra"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="alphaspin-ultra"] .hero p{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+body[data-theme="alphaspin-ultra"] .hero-title span{
+
+    color:
+        #D6E08B !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #D6E08B !important;
+
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .badge{
+
+    color:
+        #D6E08B !important;
+
+    background:
+        rgba(214,224,139,.10) !important;
+
+    border:
+        1px solid
+        rgba(214,224,139,.34) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .hero .btn-primary,
+body[data-theme="alphaspin-ultra"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D6E08B,
+            #B6BADF
+        ) !important;
+
+    color:
+        #1F0E2F !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.28) !important;
+
+}
+
+
+body[data-theme="alphaspin-ultra"] .hero .btn-glass,
+body[data-theme="alphaspin-ultra"] .showcase .btn-glass{
+
+    background:
+        rgba(31,14,47,.16) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="alphaspin-ultra"] .product-glow{
 
     background:
+
         radial-gradient(
             circle,
-            #4F8F8A,
+            rgba(214,224,139,.48),
+            rgba(165,123,207,.42) 36%,
+            rgba(110,71,144,.22) 52%,
             transparent 72%
-        );
+        ) !important;
 
-    opacity:.34;
-
-}
-
-body[data-theme="alphaspin-ultra"] .service-icon{
-
-    background:rgba(79,143,138,.12);
+    opacity:
+        .95 !important;
 
 }
 
-body[data-theme="alphaspin-ultra"] .card::after{
 
-    background:#4F8F8A;
+/* ==========================================================
+   BLOBS
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .blob-1{
+
+    background:
+        #D6E08B !important;
 
 }
 
-body[data-theme="alphaspin-ultra"] .orb{
 
-    background:#72B5AE;
+body[data-theme="alphaspin-ultra"] .blob-2{
+
+    background:
+        #A57BCF !important;
 
 }
+
+
+body[data-theme="alphaspin-ultra"] .blob-3{
+
+    background:
+        #B6BADF !important;
+
+}
+
 
 body[data-theme="alphaspin-ultra"] .blob{
 
-    opacity:.25;
+    opacity:
+        .25 !important;
 
 }
 
 
-/* Padrão tecnológico suave */
+/* ==========================================================
+   ORB
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] .orb{
+
+    background:
+        #D6E08B !important;
+
+}
+
+
+/* ==========================================================
+   TEXTURE
+   ========================================================== */
 
 body[data-theme="alphaspin-ultra"]::before{
 
@@ -1908,22 +2152,54 @@ body[data-theme="alphaspin-ultra"]::before{
     pointer-events:none;
 
     background-image:
-        linear-gradient(
-            rgba(79,143,138,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(79,143,138,.025) 1px,
+
+        radial-gradient(
+            rgba(214,224,139,.10) 1px,
             transparent 1px
         );
 
-    background-size:40px 40px;
+    background-size:
+        40px 40px;
 
-    z-index:-1;
+    opacity:
+        .28;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"] ::selection{
+
+    background:
+        #D6E08B !important;
+
+    color:
+        #1F0E2F !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="alphaspin-ultra"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #40225C,
+            #885CAF,
+            #D6E08B
+        ) !important;
+
+}
 
 /* ==========================================================
    iSMARTS3
