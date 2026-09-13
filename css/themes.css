@@ -139,53 +139,304 @@ body[data-theme="angel"]::before{
 
 
 /* ==========================================================
+   AD LIFESTYLE V2
    EZENO
+   THEME — CREAM / GOLD / RED / GREEN
    ========================================================== */
 
 body[data-theme="ezeno"]{
 
-    background:#F0FDF4;
+    --ezeno-gold:
+        #D8A62A;
+
+    --ezeno-gold-light:
+        #F1C95B;
+
+    --ezeno-champagne:
+        #E9D39A;
+
+    --ezeno-cream:
+        #FFF3D5;
+
+    --ezeno-ivory:
+        #FAF7ED;
+
+    --ezeno-red:
+        #D71920;
+
+    --ezeno-red-dark:
+        #A91418;
+
+    --ezeno-green:
+        #4D812B;
+
+    --ezeno-green-light:
+        #6B9638;
+
+    --ezeno-brown:
+        #8A5A24;
+
+    --ezeno-dark:
+        #332516;
+
+
+    background:
+        #FFF3D5 !important;
+
+    color:
+        #332516 !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="ezeno"]{
+
+    background:
+
+        radial-gradient(
+            circle at 88% 5%,
+            rgba(216,166,42,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 8% 45%,
+            rgba(77,129,43,.08),
+            transparent 30%
+        ),
+
+        #FFF3D5 !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="ezeno"] .navbar{
+
+    background:
+        rgba(51,37,22,.96) !important;
+
+    border-bottom:
+        1px solid
+        rgba(241,201,91,.22) !important;
+
+}
+
+
+body[data-theme="ezeno"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="ezeno"] .navbar a:hover{
+
+    color:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="ezeno"] .hero{
 
     background:
-        radial-gradient(circle at top right,#BBF7D0,transparent 35%),
-        radial-gradient(circle at bottom left,#DCFCE7,transparent 35%),
-        var(--hero-gradient);
+
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(241,201,91,.24),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 82%,
+            rgba(77,129,43,.17),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #332516,
+            #8A5A24,
+            #D8A62A
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="ezeno"] .hero h1,
+body[data-theme="ezeno"] .hero h2,
+body[data-theme="ezeno"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="ezeno"] .hero p{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+body[data-theme="ezeno"] .hero-title span{
+
+    color:
+        #F1C95B !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+body[data-theme="ezeno"] .badge{
+
+    color:
+        #F1C95B !important;
+
+    background:
+        rgba(241,201,91,.12) !important;
+
+    border:
+        1px solid
+        rgba(241,201,91,.34) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="ezeno"] .hero .btn-primary,
+body[data-theme="ezeno"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D8A62A,
+            #F1C95B
+        ) !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+body[data-theme="ezeno"] .hero .btn-glass,
+body[data-theme="ezeno"] .showcase .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="ezeno"] .product-glow{
 
     background:
-        radial-gradient(circle,#16A34A,transparent 72%);
 
-    opacity:.42;
+        radial-gradient(
+            circle,
+            rgba(241,201,91,.46),
+            rgba(77,129,43,.16) 42%,
+            transparent 72%
+        ) !important;
+
+    opacity:
+        .95 !important;
+
+}
+
+
+/* ==========================================================
+   BLOBS
+   ========================================================== */
+
+body[data-theme="ezeno"] .blob-1{
+
+    background:
+        #D8A62A !important;
 
 }
 
-body[data-theme="ezeno"] .service-icon{
 
-    background:rgba(22,163,74,.12);
+body[data-theme="ezeno"] .blob-2{
+
+    background:
+        #4D812B !important;
+
+}
+
+
+body[data-theme="ezeno"] .blob-3{
+
+    background:
+        #F1C95B !important;
 
 }
 
-body[data-theme="ezeno"] .card::after{
 
-    background:#16A34A;
-
-}
+/* ==========================================================
+   ORB
+   ========================================================== */
 
 body[data-theme="ezeno"] .orb{
 
-    background:#4ADE80;
+    background:
+        #D8A62A !important;
 
 }
 
 
-/* Padrão orgânico */
+/* ==========================================================
+   TEXTURE
+   ========================================================== */
 
 body[data-theme="ezeno"]::before{
 
@@ -198,14 +449,54 @@ body[data-theme="ezeno"]::before{
     pointer-events:none;
 
     background-image:
-        radial-gradient(rgba(22,163,74,.04) 1px,transparent 1px);
 
-    background-size:26px 26px;
+        radial-gradient(
+            rgba(216,166,42,.08) 1px,
+            transparent 1px
+        );
 
-    z-index:-1;
+    background-size:
+        36px 36px;
+
+    opacity:
+        .28;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="ezeno"] ::selection{
+
+    background:
+        #D8A62A !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="ezeno"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #4D812B,
+            #D8A62A,
+            #D71920
+        ) !important;
+
+}
 
 /* ==========================================================
    ZENBRU
