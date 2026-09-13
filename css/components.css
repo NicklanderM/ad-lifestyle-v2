@@ -8170,3 +8170,1000 @@ body[data-theme="ismarts3"] .input:focus{
         display:none !important;
     }
 }
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   ALPHA VMAX
+   FINAL PAGE OVERRIDE
+   BLUE / GOLD ONLY
+   ========================================================== */
+
+
+/* ==========================================================
+   IDENTIDADE
+   ========================================================== */
+
+.page-alpha{
+
+    --alpha-blue: #0347B3;
+    --alpha-blue-dark: #02389E;
+    --alpha-blue-light: #1D5DC4;
+
+    --alpha-gold: #D8A74D;
+    --alpha-gold-light: #F4D681;
+    --alpha-gold-dark: #B98732;
+
+    --alpha-white: #EEF2F8;
+    --alpha-navy: #0D265E;
+
+    --alpha-text: #10285F;
+    --alpha-text-soft: #4C5F7D;
+
+    --alpha-surface: #FFFFFF;
+    --alpha-surface-soft: #F2F6FC;
+
+}
+
+
+/* ==========================================================
+   PÁGINA
+   ========================================================== */
+
+.page-alpha{
+
+    background:
+        #EEF2F8 !important;
+
+    color:
+        #10285F !important;
+
+}
+
+
+/* ==========================================================
+   TODOS OS ELEMENTOS DE TEXTO
+   ========================================================== */
+
+.page-alpha p,
+.page-alpha .text,
+.page-alpha .lead{
+
+    color:
+        #10285F !important;
+
+}
+
+
+.page-alpha h1,
+.page-alpha h2,
+.page-alpha h3,
+.page-alpha h4,
+.page-alpha h5,
+.page-alpha h6{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .label{
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   HERO — EXCEPÇÃO: FUNDO ESCURO
+   ========================================================== */
+
+.page-alpha .alpha-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 18%,
+            rgba(216,167,77,.18),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 12% 85%,
+            rgba(29,93,196,.25),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071B4B,
+            #02389E,
+            #0347B3
+        ) !important;
+
+}
+
+
+/* HERO TEXT */
+
+.page-alpha .alpha-hero h1,
+.page-alpha .alpha-hero h2,
+.page-alpha .alpha-hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-hero p,
+.page-alpha .alpha-hero .hero-sub{
+
+    color:
+        rgba(255,255,255,.82) !important;
+
+}
+
+
+.page-alpha .alpha-hero .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-hero .label{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+/* ==========================================================
+   HERO TITLE GOLD
+   ========================================================== */
+
+.page-alpha .alpha-hero .hero-title span{
+
+    color:
+        #F4D681 !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F4D681 !important;
+
+}
+
+
+/* ==========================================================
+   HERO HIGHLIGHTS
+   ========================================================== */
+
+.page-alpha .alpha-hero-highlights span{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+/* ==========================================================
+   HERO DISCLAIMER
+   ========================================================== */
+
+.page-alpha .alpha-disclaimer{
+
+    color:
+        rgba(255,255,255,.56) !important;
+
+}
+
+
+/* ==========================================================
+   HERO BADGE
+   ========================================================== */
+
+.page-alpha .alpha-hero .badge{
+
+    color:
+        #F4D681 !important;
+
+    background:
+        rgba(216,167,77,.12) !important;
+
+    border:
+        1px solid
+        rgba(244,214,129,.34) !important;
+
+}
+
+
+/* ==========================================================
+   HERO BOTÕES
+   ========================================================== */
+
+.page-alpha .alpha-hero .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #D8A74D,
+            #F4D681
+        ) !important;
+
+    color:
+        #071B4B !important;
+
+}
+
+
+.page-alpha .alpha-hero .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
+
+.page-alpha .product-glow{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(216,167,77,.42),
+            rgba(3,71,179,.20) 42%,
+            transparent 72%
+        ) !important;
+
+}
+
+
+/* ==========================================================
+   CARDS CLAROS
+   ========================================================== */
+
+.page-alpha .card,
+.page-alpha .service-card,
+.page-alpha .alpha-ingredient-card,
+.page-alpha .alpha-detail-card,
+.page-alpha .bento-card,
+.page-alpha .faq-item{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #10285F !important;
+
+    border-color:
+        rgba(3,71,179,.15) !important;
+
+}
+
+
+/* CARD TITLES */
+
+.page-alpha .card h3,
+.page-alpha .service-card h3,
+.page-alpha .alpha-ingredient-card h3,
+.page-alpha .alpha-detail-card h3,
+.page-alpha .bento-card h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+/* CARD TEXT */
+
+.page-alpha .card p,
+.page-alpha .service-card p,
+.page-alpha .alpha-ingredient-card p,
+.page-alpha .alpha-detail-card p,
+.page-alpha .bento-card p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+/* ==========================================================
+   ICONES
+   ========================================================== */
+
+.page-alpha .service-icon{
+
+    background:
+        rgba(3,71,179,.08) !important;
+
+    color:
+        #0347B3 !important;
+
+    border:
+        1px solid
+        rgba(216,167,77,.28) !important;
+
+}
+
+
+/* ==========================================================
+   INFORMATION BOX
+   ========================================================== */
+
+.page-alpha .alpha-information{
+
+    background:
+        #FFFFFF !important;
+
+    border-color:
+        rgba(3,71,179,.15) !important;
+
+}
+
+
+.page-alpha .alpha-details-toggle{
+
+    color:
+        #0D265E !important;
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-details-toggle span:first-child{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-details-icon{
+
+    background:
+        #0347B3 !important;
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha
+.alpha-information.active
+.alpha-details-icon{
+
+    background:
+        #D8A74D !important;
+
+    color:
+        #0D265E !important;
+
+}
+
+
+/* ==========================================================
+   DETAIL CARD
+   ========================================================== */
+
+.page-alpha .alpha-detail-card{
+
+    background:
+        #F2F6FC !important;
+
+}
+
+
+.page-alpha .alpha-detail-card h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-detail-card p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-detail-card .label{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+/* ==========================================================
+   DETAIL LIST
+   ========================================================== */
+
+.page-alpha .alpha-detail-item{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-detail-item .icon-circle{
+
+    background:
+        rgba(3,71,179,.09) !important;
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-alpha .alpha-benefits{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-benefits .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-benefits .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-benefits .icon-item{
+
+    color:
+        #10285F !important;
+
+}
+
+
+.page-alpha .alpha-benefits .icon-circle{
+
+    background:
+        rgba(3,71,179,.09) !important;
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+/* ==========================================================
+   BENTO CLARO
+   ========================================================== */
+
+.page-alpha .alpha-ingredients{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-ingredients .bento-card .label{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-bento-symbol{
+
+    color:
+        rgba(3,71,179,.055) !important;
+
+}
+
+
+/* ==========================================================
+   USAGE
+   ========================================================== */
+
+.page-alpha .alpha-usage{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-usage .section-title{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-usage .lead{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content{
+
+    background:
+        #F2F6FC !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content h3{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-content p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-usage .timeline-dot{
+
+    background:
+        #0347B3 !important;
+
+    color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(216,167,77,.40) !important;
+
+}
+
+
+.page-alpha .alpha-usage-note{
+
+    background:
+        rgba(3,71,179,.045) !important;
+
+}
+
+
+.page-alpha .alpha-usage-note .label{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-usage-note .text{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE
+   ESTA SECÇÃO É ESCURA
+   ========================================================== */
+
+.page-alpha .alpha-performance{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(216,167,77,.16),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071B4B,
+            #02389E
+        ) !important;
+
+}
+
+
+/* PERFORMANCE TEXT */
+
+.page-alpha .alpha-performance h1,
+.page-alpha .alpha-performance h2,
+.page-alpha .alpha-performance h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-performance p,
+.page-alpha .alpha-performance .text,
+.page-alpha .alpha-performance .lead{
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.page-alpha .alpha-performance .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-performance .label{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+/* PERFORMANCE CARDS */
+
+.page-alpha .alpha-performance .bento-card{
+
+    background:
+        rgba(255,255,255,.06) !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12) !important;
+
+}
+
+
+/* MÉTRICAS */
+
+.page-alpha .alpha-performance .metric-number{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+.page-alpha .alpha-performance .metric-label{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-alpha .alpha-faq{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-item{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question{
+
+    color:
+        #0D265E !important;
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question span:first-child{
+
+    color:
+        #0D265E !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-question span:last-child{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-answer{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+.page-alpha .alpha-faq .faq-answer p{
+
+    color:
+        #4C5F7D !important;
+
+}
+
+
+/* ==========================================================
+   CTA — ESCURO
+   ========================================================== */
+
+.page-alpha .alpha-cta{
+
+    background:
+        #EEF2F8 !important;
+
+}
+
+
+.page-alpha .alpha-cta .showcase{
+
+    background:
+
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(216,167,77,.18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #071B4B,
+            #02389E
+        ) !important;
+
+}
+
+
+/* CTA TEXT */
+
+.page-alpha .alpha-cta h1,
+.page-alpha .alpha-cta h2,
+.page-alpha .alpha-cta h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-cta .section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-alpha .alpha-cta .lead{
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.page-alpha .alpha-cta .badge{
+
+    color:
+        #F4D681 !important;
+
+}
+
+
+.page-alpha .alpha-cta-disclaimer{
+
+    color:
+        rgba(255,255,255,.52) !important;
+
+}
+
+
+/* CTA BOTÃO */
+
+.page-alpha .alpha-cta .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #D8A74D,
+            #F4D681
+        ) !important;
+
+    color:
+        #071B4B !important;
+
+}
+
+
+.page-alpha .alpha-cta .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   LINK / HOVER
+   ========================================================== */
+
+.page-alpha a{
+
+    color:
+        #0347B3 !important;
+
+}
+
+
+.page-alpha a:hover{
+
+    color:
+        #B98732 !important;
+
+}
+
+
+/* ==========================================================
+   ELIMINA QUALQUER VESTÍGIO DE CASTANHO ANTIGO
+   ========================================================== */
+
+.page-alpha,
+.page-alpha *,
+.page-alpha *::before,
+.page-alpha *::after{
+
+    --brown:
+        transparent;
+
+}
+
+
+/* ==========================================================
+   PROTECÇÃO CONTRA CORES ANTIGAS
+   ========================================================== */
+
+.page-alpha .card::after,
+.page-alpha .service-card::after{
+
+    background:
+        linear-gradient(
+            90deg,
+            #0347B3,
+            #D8A74D
+        ) !important;
+
+}
+
+
+.page-alpha .orb{
+
+    background:
+        #D8A74D !important;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width:700px){
+
+    .page-alpha .alpha-hero{
+
+        background:
+            linear-gradient(
+                180deg,
+                #071B4B,
+                #02389E
+            ) !important;
+
+    }
+
+}
