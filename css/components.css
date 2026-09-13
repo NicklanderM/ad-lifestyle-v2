@@ -12334,3 +12334,1379 @@ span:first-child{
     }
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   MINOSEED
+   PAGE-SCOPED COMPONENT SYSTEM
+   ========================================================== */
+
+
+/* ==========================================================
+   01. VARIABLES
+   ========================================================== */
+
+.page-minoseed{
+
+    --minoseed-gold:#D8A62A;
+    --minoseed-gold-light:#F1C95B;
+    --minoseed-champagne:#E9D39A;
+
+    --minoseed-cream:#FFF3D5;
+    --minoseed-ivory:#FAF7ED;
+
+    --minoseed-red:#D71920;
+    --minoseed-red-dark:#A91418;
+
+    --minoseed-green:#4D812B;
+    --minoseed-green-light:#6B9638;
+
+    --minoseed-brown:#8A5A24;
+    --minoseed-dark:#332516;
+
+    --minoseed-text:#332516;
+    --minoseed-muted:#725B47;
+
+    --minoseed-surface:#FFFFFF;
+    --minoseed-surface-soft:#FFF9EE;
+
+}
+
+
+/* ==========================================================
+   02. ROOT
+   ========================================================== */
+
+.page-minoseed{
+
+    position:relative;
+
+    isolation:isolate;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+        #FFF3D5 !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   03. TEXT
+   ========================================================== */
+
+.page-minoseed h1,
+.page-minoseed h2,
+.page-minoseed h3,
+.page-minoseed h4,
+.page-minoseed h5,
+.page-minoseed h6{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed p{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed .text,
+.page-minoseed .lead{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+.page-minoseed .label{
+
+    color:
+        #D71920 !important;
+
+}
+
+
+.page-minoseed .section-title{
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   04. HERO
+   ========================================================== */
+
+.page-minoseed .minoseed-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 82% 15%,
+            rgba(241,201,91,.24),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 10% 82%,
+            rgba(77,129,43,.18),
+            transparent 34%
+        ),
+
+        linear-gradient(
+            135deg,
+            #332516,
+            #8A5A24,
+            #D8A62A
+        ) !important;
+
+}
+
+
+.page-minoseed .minoseed-hero h1,
+.page-minoseed .minoseed-hero h2,
+.page-minoseed .minoseed-hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed .minoseed-hero .hero-sub{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+.page-minoseed .minoseed-hero
+.hero-title span{
+
+    color:
+        #F1C95B !important;
+
+    background:none !important;
+
+    -webkit-text-fill-color:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   05. HERO BADGE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-hero
+.badge{
+
+    color:
+        #F1C95B !important;
+
+    background:
+        rgba(241,201,91,.12) !important;
+
+    border:
+        1px solid
+        rgba(241,201,91,.34) !important;
+
+}
+
+
+/* ==========================================================
+   06. HERO HIGHLIGHTS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-hero-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px 18px;
+
+    margin-top:24px;
+
+}
+
+
+.page-minoseed
+.minoseed-hero-highlights span{
+
+    color:
+        #FFFFFF !important;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ==========================================================
+   07. DISCLAIMER
+   ========================================================== */
+
+.page-minoseed
+.minoseed-disclaimer{
+
+    max-width:650px;
+
+    margin-top:20px;
+
+    color:
+        rgba(255,255,255,.55) !important;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ==========================================================
+   08. PRODUCT
+   ========================================================== */
+
+.page-minoseed
+.product-glow{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(241,201,91,.46),
+            rgba(77,129,43,.16) 42%,
+            transparent 72%
+        ) !important;
+
+}
+
+
+.page-minoseed
+.hero-product img{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:
+        min(100%,520px);
+
+    width:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 55px
+            rgba(51,37,22,.30)
+        );
+
+}
+
+
+/* ==========================================================
+   09. GOLD RING
+   ========================================================== */
+
+.page-minoseed
+.minoseed-gold-ring{
+
+    position:absolute;
+
+    width:390px;
+
+    height:390px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(241,201,91,.52);
+
+    box-shadow:
+
+        0 0 45px
+        rgba(216,166,42,.18),
+
+        inset 0 0 35px
+        rgba(241,201,91,.08);
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   10. CARDS
+   ========================================================== */
+
+.page-minoseed
+.card,
+.page-minoseed
+.service-card,
+.page-minoseed
+.minoseed-care-card,
+.page-minoseed
+.minoseed-feature-card,
+.page-minoseed
+.minoseed-detail-card,
+.page-minoseed
+.faq-item{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #332516 !important;
+
+    border:
+        1px solid
+        rgba(216,166,42,.18) !important;
+
+    box-shadow:
+        0 20px 55px
+        rgba(51,37,22,.08);
+
+}
+
+
+/* ==========================================================
+   11. CARD TITLES
+   ========================================================== */
+
+.page-minoseed
+.card h3,
+.page-minoseed
+.service-card h3,
+.page-minoseed
+.minoseed-detail-card h3{
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   12. CARD TEXT
+   ========================================================== */
+
+.page-minoseed
+.card p,
+.page-minoseed
+.service-card p,
+.page-minoseed
+.minoseed-detail-card p{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+/* ==========================================================
+   13. ICONS
+   ========================================================== */
+
+.page-minoseed
+.service-icon{
+
+    background:
+        rgba(77,129,43,.09) !important;
+
+    color:
+        #4D812B !important;
+
+    border:
+        1px solid
+        rgba(216,166,42,.25) !important;
+
+}
+
+
+/* ==========================================================
+   14. CARE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-care{
+
+    background:
+        #FFF3D5 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-care-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #4D812B,
+            #D8A62A,
+            #D71920
+        ) !important;
+
+}
+
+
+/* ==========================================================
+   15. INFORMATION
+   ========================================================== */
+
+.page-minoseed
+.minoseed-information{
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(216,166,42,.18) !important;
+
+    border-radius:
+        20px;
+
+    overflow:hidden;
+
+}
+
+
+.page-minoseed
+.minoseed-details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 24px;
+
+    border:0;
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #332516 !important;
+
+    font:inherit;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.page-minoseed
+.minoseed-details-toggle
+span:first-child{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-details-icon{
+
+    width:32px;
+
+    height:32px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:
+        #4D812B !important;
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-information.active
+.minoseed-details-icon{
+
+    background:
+        #D8A62A !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   16. ACCORDION
+   ========================================================== */
+
+.page-minoseed
+.minoseed-details-content{
+
+    display:grid;
+
+    grid-template-rows:
+        0fr;
+
+    transition:
+        grid-template-rows .45s ease;
+
+}
+
+
+.page-minoseed
+.minoseed-information.active
+.minoseed-details-content{
+
+    grid-template-rows:
+        1fr;
+
+}
+
+
+.page-minoseed
+.minoseed-details-content
+> div{
+
+    min-height:0;
+
+    overflow:hidden;
+
+}
+
+
+.page-minoseed
+.minoseed-details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+    padding:
+        0 24px 24px;
+
+}
+
+
+.page-minoseed
+.minoseed-detail-card{
+
+    padding:25px;
+
+    background:
+        #FFF9EE !important;
+
+}
+
+
+.page-minoseed
+.minoseed-detail-card
+.label{
+
+    color:
+        #D71920 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-detail-card-wide{
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* ==========================================================
+   17. DETAIL ITEMS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-detail-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    color:
+        #725B47 !important;
+
+    font-size:
+        14px;
+
+}
+
+
+.page-minoseed
+.minoseed-detail-item
+.icon-circle{
+
+    width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(77,129,43,.10) !important;
+
+    color:
+        #4D812B !important;
+
+}
+
+
+/* ==========================================================
+   18. BENEFITS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-benefits{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-benefits
+.section-title{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-benefits
+.text{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-benefits
+.icon-item{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-benefits
+.icon-circle{
+
+    background:
+        rgba(77,129,43,.10) !important;
+
+    color:
+        #4D812B !important;
+
+}
+
+
+/* ==========================================================
+   19. BENEFIT IMAGE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-benefit-image{
+
+    position:relative;
+
+    min-height:480px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.page-minoseed
+.minoseed-benefit-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:460px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 30px 45px
+            rgba(51,37,22,.20)
+        );
+
+}
+
+
+.page-minoseed
+.minoseed-image-glow{
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(241,201,91,.28),
+            rgba(77,129,43,.16),
+            transparent 70%
+        );
+
+    filter:
+        blur(25px);
+
+}
+
+
+/* ==========================================================
+   20. INGREDIENTS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-ingredients{
+
+    background:
+        #FAF7ED !important;
+
+}
+
+
+.page-minoseed
+.minoseed-ingredients
+.bento-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-ingredients
+.bento-card h3{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-ingredients
+.bento-card .text{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-ingredients
+.bento-card .label{
+
+    color:
+        #D71920 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-bento-symbol{
+
+    position:absolute;
+
+    right:25px;
+
+    bottom:5px;
+
+    font-size:110px;
+
+    font-weight:900;
+
+    color:
+        rgba(77,129,43,.07) !important;
+
+    pointer-events:none;
+
+}
+
+
+/* ==========================================================
+   21. ROUTINE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-routine{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.section-title{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.lead{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.timeline-dot{
+
+    background:
+        #4D812B !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        3px solid
+        #FFFFFF !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(216,166,42,.45) !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.timeline-content{
+
+    background:
+        #FFF9EE !important;
+
+    border:
+        1px solid
+        rgba(216,166,42,.15) !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.timeline-content h3{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine
+.timeline-content .text{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-routine-note{
+
+    padding:24px;
+
+    border-radius:18px;
+
+    background:
+        rgba(77,129,43,.05) !important;
+
+    border:
+        1px solid
+        rgba(77,129,43,.14);
+
+}
+
+
+.page-minoseed
+.minoseed-routine-note
+.label{
+
+    color:
+        #4D812B !important;
+
+}
+
+
+/* ==========================================================
+   22. EXPERIENCE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-experience{
+
+    background:
+        #FFF3D5 !important;
+
+}
+
+
+/* ==========================================================
+   23. FAQ
+   ========================================================== */
+
+.page-minoseed
+.minoseed-faq{
+
+    background:
+        #FAF7ED !important;
+
+}
+
+
+.page-minoseed
+.minoseed-faq
+.faq-item{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-faq
+.faq-question{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-faq
+.faq-question span:first-child{
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-faq
+.faq-question span:last-child{
+
+    color:
+        #D71920 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-faq
+.faq-answer p{
+
+    color:
+        #725B47 !important;
+
+}
+
+
+/* ==========================================================
+   24. CTA
+   ========================================================== */
+
+.page-minoseed
+.minoseed-cta{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.showcase{
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(77,129,43,.14),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 10%,
+            rgba(241,201,91,.20),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #332516,
+            #8A5A24,
+            #D8A62A
+        ) !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.lead{
+
+    color:
+        rgba(255,255,255,.76) !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.badge{
+
+    color:
+        #F1C95B !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D8A62A,
+            #F1C95B
+        ) !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta
+.btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+.page-minoseed
+.minoseed-cta-disclaimer{
+
+    color:
+        rgba(255,255,255,.50) !important;
+
+}
+
+
+/* ==========================================================
+   25. LINKS
+   ========================================================== */
+
+.page-minoseed a{
+
+    color:
+        #D71920 !important;
+
+}
+
+
+.page-minoseed a:hover{
+
+    color:
+        #4D812B !important;
+
+}
+
+
+/* ==========================================================
+   26. RESPONSIVE
+   ========================================================== */
+
+@media (max-width:900px){
+
+    .page-minoseed
+    .minoseed-details-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-card-wide{
+
+        grid-column:
+            auto;
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .page-minoseed
+    .minoseed-hero{
+
+        min-height:auto;
+
+        padding-top:100px;
+
+        padding-bottom:80px;
+
+    }
+
+
+    .page-minoseed
+    .hero-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-minoseed
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-highlights{
+
+        justify-content:center;
+
+    }
+
+
+    .page-minoseed
+    .hero-visual{
+
+        margin-top:35px;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-gold-ring{
+
+        width:300px;
+
+        height:300px;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-benefit-image{
+
+        min-height:360px;
+
+    }
+
+}
+
+
+@media (max-width:520px){
+
+    .page-minoseed
+    .minoseed-hero-highlights{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align:left;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-details-toggle{
+
+        padding:18px;
+
+        font-size:14px;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-details-grid{
+
+        padding:
+            0 16px 16px;
+
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-card{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   27. REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .page-minoseed *,
+    .page-minoseed *::before,
+    .page-minoseed *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
