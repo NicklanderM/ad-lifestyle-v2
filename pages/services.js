@@ -1,23 +1,55 @@
 /* ==========================================================
-   AD LIFESTYLE — SERVICES.JS
-   Luxury Services Page
+   AD LIFESTYLE V2
+   SERVICES.JS
+   Premium Services & Ecosystem Page
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
+import { navigate } from "../js/router.js";
+import { ripple, stagger } from "../js/animations.js";
+
+/* ==========================================================
+   LOAD
+   ========================================================== */
 
 export function loadServices(){
 
-     applyTheme("default");
+    applyTheme("default");
 
     const app = document.getElementById("app");
 
+    if(!app) return;
+
     app.innerHTML = `
-        ${hero()}
-        ${philosophy()}
-        ${services()}
-        ${process()}
-        ${academy()}
-        ${cta()}
+
+        <div class="page-services">
+
+            ${hero()}
+
+            ${intro()}
+
+            ${focuses()}
+
+            ${wellness()}
+
+            ${academy()}
+
+            ${bridge()}
+
+            ${campaigns()}
+
+            ${international()}
+
+            ${opportunity()}
+
+            ${process()}
+
+            ${faq()}
+
+            ${cta()}
+
+        </div>
+
     `;
 
     initialiseServices();
@@ -32,7 +64,7 @@ function hero(){
 
 return `
 
-<section class="hero page">
+<section class="hero services-hero">
 
     <div class="aurora">
 
@@ -44,26 +76,29 @@ return `
 
     <div class="container hero-grid">
 
-        <div class="hero-content">
+        <div class="hero-content reveal">
 
-            <span class="badge">
+            <span class="label">
+                AD Lifestyle · Services
+            </span>
 
-                AD Lifestyle Services
-
+            <span class="services-eyebrow">
+                WELLNESS · EDUCATION · OPPORTUNITY
             </span>
 
             <h1 class="hero-title">
 
-                Cuidamos da sua saúde,
-                crescimento e futuro.
+                Criamos pontes
+                <span>para novas possibilidades.</span>
 
             </h1>
 
             <p class="hero-sub">
 
-                Muito mais do que produtos: oferecemos
-                consultoria, educação, desenvolvimento pessoal
-                e oportunidades de negócios internacionais.
+                A AD Lifestyle conecta pessoas a soluções de bem-estar,
+                produtos BZZWORLD, conhecimento, desenvolvimento pessoal
+                e oportunidades através de uma visão integrada com a
+                Academy Twenty One.
 
             </p>
 
@@ -71,33 +106,86 @@ return `
 
                 <button
                     class="btn btn-primary"
-                    data-action="contact">
+                    id="exploreServices">
 
-                    Falar Connosco
+                    Explorar o Ecossistema
 
                 </button>
 
                 <button
                     class="btn btn-glass"
-                    data-action="services">
+                    id="contactServices">
 
-                    Explorar
+                    Falar Connosco
 
                 </button>
 
             </div>
 
+            <div class="services-hero-stats">
+
+                <div>
+
+                    <strong>
+                        BZZWORLD
+                    </strong>
+
+                    <span>
+                        Soluções de bem-estar
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Academy 21
+                    </strong>
+
+                    <span>
+                        Educação e evolução
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Global
+                    </strong>
+
+                    <span>
+                        Distribuição e conexão
+                    </span>
+
+                </div>
+
+            </div>
+
         </div>
 
-        <div class="hero-visual">
+        <div class="hero-visual reveal-right">
 
-            <div class="hero-product">
+            <div class="services-hero-visual">
 
-                <div class="product-glow"></div>
+                <div class="services-logo-orbit orbit-one"></div>
+                <div class="services-logo-orbit orbit-two"></div>
 
-                <img
-                    src="assets/images/services-hero.png"
-                    alt="Serviços AD Lifestyle">
+                <div class="services-logo-core">
+
+                    <div class="services-logo-mark">
+                        AD
+                    </div>
+
+                    <span>
+                        LIFESTYLE
+                    </span>
+
+                    <small>
+                        Creating Bridges
+                    </small>
+
+                </div>
 
             </div>
 
@@ -112,68 +200,115 @@ return `
 }
 
 /* ==========================================================
-   FILOSOFIA
+   INTRO
    ========================================================== */
 
-function philosophy(){
+function intro(){
 
 return `
 
-<section class="section">
+<section
+    id="services-intro"
+    class="section services-intro">
 
-<div class="container">
+    <div class="container">
 
-<div class="split">
+        <div class="section-center reveal">
 
-<div class="split-content reveal-left">
+            <span class="label">
+                O que fazemos
+            </span>
 
-<span class="label">
+            <h2 class="section-title">
 
-A Nossa Filosofia
+                Uma organização criada
+                <span>para criar pontes.</span>
 
-</span>
+            </h2>
 
-<h2 class="section-title">
+            <p class="lead">
 
-Uma abordagem integrada
-ao bem-estar.
+                A AD Lifestyle nasceu para aproximar pessoas,
+                soluções e oportunidades. De um lado, disponibilizamos
+                produtos e experiências ligados ao bem-estar.
+                Do outro, criamos acesso a conhecimento, desenvolvimento
+                pessoal e evolução empreendedora.
 
-</h2>
+            </p>
 
-<p class="text mt-3">
+        </div>
 
-Acreditamos que saúde, educação, equilíbrio emocional
-e prosperidade caminham lado a lado. Por isso,
-desenvolvemos um ecossistema onde cada pessoa pode
-crescer física, mental e financeiramente.
+        <div class="services-intro-grid mt-6">
 
-</p>
+            <div class="services-intro-card reveal">
 
-<div class="icon-list mt-4">
+                <span class="services-card-number">
+                    01
+                </span>
 
-${value("Saúde Preventiva")}
+                <div class="services-card-icon">
+                    ◇
+                </div>
 
-${value("Medicina Holística")}
+                <h3>
+                    Pessoas
+                </h3>
 
-${value("Educação Contínua")}
+                <p>
+                    Criamos relações e aproximamos pessoas de
+                    produtos, conhecimento, comunidades e novas
+                    possibilidades.
+                </p>
 
-${value("Liderança e Negócios")}
+            </div>
 
-</div>
+            <div class="services-intro-card reveal delay-1">
 
-</div>
+                <span class="services-card-number">
+                    02
+                </span>
 
-<div class="split-image reveal-right">
+                <div class="services-card-icon">
+                    ◌
+                </div>
 
-<img
-src="assets/images/philosophy.png"
-alt="Filosofia AD Lifestyle">
+                <h3>
+                    Soluções
+                </h3>
 
-</div>
+                <p>
+                    Apresentamos soluções de bem-estar e produtos
+                    da BZZWORLD através de uma experiência de
+                    acompanhamento e descoberta.
+                </p>
 
-</div>
+            </div>
 
-</div>
+            <div class="services-intro-card reveal delay-2">
+
+                <span class="services-card-number">
+                    03
+                </span>
+
+                <div class="services-card-icon">
+                    21
+                </div>
+
+                <h3>
+                    Evolução
+                </h3>
+
+                <p>
+                    Através da Academy Twenty One, aproximamos
+                    educação, liderança, comunicação e desenvolvimento
+                    empreendedor das pessoas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -182,62 +317,154 @@ alt="Filosofia AD Lifestyle">
 }
 
 /* ==========================================================
-   SERVIÇOS
+   TWO FOCUSES
    ========================================================== */
 
-function services(){
+function focuses(){
 
 return `
 
-<section class="section" id="services">
+<section
+    id="services"
+    class="section services-focus">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-center reveal">
+        <div class="section-center reveal">
 
-<span class="label">
+            <span class="label">
+                Os nossos dois grandes focos
+            </span>
 
-Áreas de Actuação
+            <h2 class="section-title">
 
-</span>
+                Duas áreas.
+                <span>Uma visão.</span>
 
-<h2 class="section-title">
+            </h2>
 
-Como podemos ajudá-lo?
+            <p class="lead">
 
-</h2>
+                A AD Lifestyle trabalha sobre dois grandes eixos
+                que se complementam: bem-estar e evolução.
 
-</div>
+            </p>
 
-<div class="grid grid-2 mt-5">
+        </div>
 
-${service(
-"🩺",
-"Consultoria em Bem-estar",
-"Orientação personalizada para um estilo de vida mais saudável."
-)}
+        <div class="services-focus-grid mt-6">
 
-${service(
-"🌿",
-"Medicina Holística",
-"Produtos naturais seleccionados para promover equilíbrio e qualidade de vida."
-)}
+            <article
+                class="services-focus-card wellness reveal">
 
-${service(
-"🎓",
-"Academy 21",
-"Formação em liderança, comunicação, empreendedorismo e desenvolvimento pessoal."
-)}
+                <div class="services-focus-top">
 
-${service(
-"🌍",
-"Negócios Internacionais",
-"Oportunidades de crescimento através da comunidade BZZWorld e Academy 21."
-)}
+                    <span>
+                        FOCO 01
+                    </span>
 
-</div>
+                    <div>
+                        WELLNESS
+                    </div>
 
-</div>
+                </div>
+
+                <div class="services-focus-body">
+
+                    <span class="services-focus-icon">
+                        ◌
+                    </span>
+
+                    <h3>
+                        Soluções de Saúde
+                        e Bem-estar
+                    </h3>
+
+                    <p>
+                        Produtos BZZWORLD, experiências de Lifestyle,
+                        campanhas de apresentação e acompanhamento
+                        para quem procura conhecer novas soluções
+                        relacionadas com o bem-estar.
+                    </p>
+
+                    <div class="services-chip-row">
+
+                        <span>BZZWORLD</span>
+                        <span>Wellness</span>
+                        <span>Lifestyle</span>
+                        <span>Produtos</span>
+
+                    </div>
+
+                    <button
+                        class="services-text-button"
+                        data-action="products">
+
+                        Explorar Produtos →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+            <article
+                class="services-focus-card evolution reveal delay-1">
+
+                <div class="services-focus-top">
+
+                    <span>
+                        FOCO 02
+                    </span>
+
+                    <div>
+                        EVOLUTION
+                    </div>
+
+                </div>
+
+                <div class="services-focus-body">
+
+                    <span class="services-focus-icon">
+                        21
+                    </span>
+
+                    <h3>
+                        Educação, Desenvolvimento
+                        e Oportunidade
+                    </h3>
+
+                    <p>
+                        Uma dimensão construída em conjunto com a
+                        Academy Twenty One para aproximar formação,
+                        liderança, comunicação, networking,
+                        empreendedorismo e oportunidades.
+                    </p>
+
+                    <div class="services-chip-row">
+
+                        <span>Academy 21</span>
+                        <span>Liderança</span>
+                        <span>Educação</span>
+                        <span>Networking</span>
+
+                    </div>
+
+                    <button
+                        class="services-text-button"
+                        data-action="academy">
+
+                        Conhecer Academy 21 →
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -246,62 +473,96 @@ ${service(
 }
 
 /* ==========================================================
-   PROCESSO
+   WELLNESS
    ========================================================== */
 
-function process(){
+function wellness(){
 
 return `
 
-<section class="section-sm">
+<section class="section services-wellness">
 
-<div class="container">
+    <div class="container">
 
-<div class="section-center reveal">
+        <div class="split">
 
-<span class="label">
+            <div class="split-content reveal-left">
 
-O Nosso Método
+                <span class="label">
+                    Wellness Experience
+                </span>
 
-</span>
+                <h2 class="section-title">
 
-<h2 class="section-title">
+                    Mais do que distribuir.
+                    <span>Apresentamos experiências.</span>
 
-Um processo simples e eficaz
+                </h2>
 
-</h2>
+                <p class="lead">
 
-</div>
+                    A nossa actividade não termina na disponibilização
+                    do produto. Criamos momentos para apresentar,
+                    explicar e contextualizar as soluções BZZWORLD,
+                    permitindo que cada pessoa conheça melhor o
+                    universo de produtos disponível.
 
-<div class="timeline mt-5">
+                </p>
 
-${step(
-"1",
-"Diagnóstico",
-"Compreendemos os seus objectivos e necessidades."
-)}
+                <div class="services-feature-list">
 
-${step(
-"2",
-"Orientação",
-"Indicamos os produtos e serviços mais adequados."
-)}
+                    ${feature(
+                        "01",
+                        "Apresentação de produtos",
+                        "Sessões e conteúdos dedicados à descoberta de produtos e das suas características."
+                    )}
 
-${step(
-"3",
-"Acompanhamento",
-"Prestamos suporte contínuo ao longo da sua jornada."
-)}
+                    ${feature(
+                        "02",
+                        "Orientação",
+                        "Ajudamos a compreender as opções disponíveis e a escolher de forma informada."
+                    )}
 
-${step(
-"4",
-"Resultados",
-"Crescimento sustentável em saúde e desenvolvimento."
-)}
+                    ${feature(
+                        "03",
+                        "Lifestyle",
+                        "Integramos os produtos numa visão mais ampla de bem-estar e qualidade de vida."
+                    )}
 
-</div>
+                    ${feature(
+                        "04",
+                        "Acompanhamento",
+                        "Mantemos uma relação próxima após a descoberta e aquisição."
+                    )}
 
-</div>
+                </div>
+
+            </div>
+
+            <div class="split-image reveal-right">
+
+                <div class="services-image-placeholder">
+
+                    <span>
+                        WELLNESS
+                    </span>
+
+                    <strong>
+                        Espaço para imagem
+                    </strong>
+
+                    <small>
+                        Área reservada para fotografia
+                        institucional ou campanha de produtos.
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
@@ -310,79 +571,749 @@ ${step(
 }
 
 /* ==========================================================
-   ACADEMY 21
+   ACADEMY
    ========================================================== */
 
 function academy(){
 
 return `
 
-<section class="section">
+<section class="section services-academy">
 
-<div class="container">
+    <div class="container">
 
-<div class="showcase">
+        <div class="services-academy-panel">
 
-<div class="showcase-bg"></div>
+            <div class="services-academy-content reveal-left">
 
-<div class="showcase-content">
+                <span class="label">
+                    Academy Twenty One
+                </span>
 
-<div class="split">
+                <h2 class="section-title">
 
-<div class="split-content">
+                    Crescimento começa
+                    <span>com conhecimento.</span>
 
-<span class="badge">
+                </h2>
 
-                Academy 21
+                <p class="text-lg">
 
-</span>
+                    A dimensão Academy da AD Lifestyle aproxima
+                    pessoas de conteúdos e experiências de desenvolvimento
+                    pessoal e empreendedor, criando espaço para aprender,
+                    comunicar, liderar e evoluir.
 
-<h2 class="section-title mt-2">
+                </p>
 
-Liderança, Oratória e
-Empreendedorismo
+                <div class="services-academy-list">
 
-</h2>
+                    ${academyFeature(
+                        "01",
+                        "Comunicação & Oratória",
+                        "Desenvolvimento da capacidade de comunicar e apresentar ideias."
+                    )}
 
-<p class="text mt-3">
+                    ${academyFeature(
+                        "02",
+                        "Liderança",
+                        "Competências para crescer pessoalmente e assumir novas responsabilidades."
+                    )}
 
-A Academy 21 desenvolve competências de comunicação,
-liderança e inteligência empresarial para pessoas que
-pretendem crescer profissionalmente.
+                    ${academyFeature(
+                        "03",
+                        "Empreendedorismo",
+                        "Conhecimento e visão para compreender novas possibilidades."
+                    )}
 
-</p>
+                    ${academyFeature(
+                        "04",
+                        "Networking",
+                        "Construção de relações e conexão entre pessoas."
+                    )}
 
-<div class="icon-list mt-4">
+                </div>
 
-${value("Cursos de Oratória")}
+                <button
+                    class="btn btn-primary mt-4"
+                    id="academyButton">
 
-${value("Liderança")}
+                    Explorar Academy 21
 
-${value("Desenvolvimento Pessoal")}
+                </button>
 
-${value("Empreendedorismo")}
+            </div>
 
-</div>
+            <div class="services-academy-visual reveal-right">
 
-</div>
+                <div class="academy21-symbol">
 
-<div class="split-image">
+                    <strong>
+                        21
+                    </strong>
 
-<img
-src="assets/images/academy21.png"
-alt="Academy 21">
+                    <span>
+                        ACADEMY
+                    </span>
 
-</div>
+                    <small>
+                        Learn · Lead · Evolve
+                    </small>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
+
+`;
+
+}
+
+/* ==========================================================
+   BRIDGE
+   ========================================================== */
+
+function bridge(){
+
+return `
+
+<section class="section-sm services-bridge">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                The AD Lifestyle Bridge
+            </span>
+
+            <h2 class="section-title">
+
+                Onde os dois mundos
+                <span>se encontram.</span>
+
+            </h2>
+
+            <p class="lead">
+
+                Bem-estar e evolução não precisam de viver separados.
+                A nossa proposta é criar uma ponte entre cuidar de si,
+                aprender, desenvolver competências e descobrir novas
+                possibilidades.
+
+            </p>
+
+        </div>
+
+        <div class="services-bridge-flow mt-6">
+
+            <div class="bridge-node reveal">
+
+                <span>
+                    01
+                </span>
+
+                <strong>
+                    Descobrir
+                </strong>
+
+                <p>
+                    Conheça soluções e novas ideias.
+                </p>
+
+            </div>
+
+            <div class="bridge-line"></div>
+
+            <div class="bridge-node reveal delay-1">
+
+                <span>
+                    02
+                </span>
+
+                <strong>
+                    Aprender
+                </strong>
+
+                <p>
+                    Adquira conhecimento e compreensão.
+                </p>
+
+            </div>
+
+            <div class="bridge-line"></div>
+
+            <div class="bridge-node reveal delay-2">
+
+                <span>
+                    03
+                </span>
+
+                <strong>
+                    Evoluir
+                </strong>
+
+                <p>
+                    Desenvolva novas competências e perspectivas.
+                </p>
+
+            </div>
+
+            <div class="bridge-line"></div>
+
+            <div class="bridge-node reveal delay-3">
+
+                <span>
+                    04
+                </span>
+
+                <strong>
+                    Conectar
+                </strong>
+
+                <p>
+                    Faça parte de uma rede e novas possibilidades.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+/* ==========================================================
+   CAMPAIGNS
+   ========================================================== */
+
+function campaigns(){
+
+return `
+
+<section class="section services-campaigns">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Experiências AD Lifestyle
+            </span>
+
+            <h2 class="section-title">
+
+                Apresentações,
+                campanhas e <span>experiências.</span>
+
+            </h2>
+
+            <p class="lead">
+
+                Criamos diferentes formatos para levar informação
+                e conhecimento directamente às pessoas.
+
+            </p>
+
+        </div>
+
+        <div class="grid grid-3 mt-6">
+
+            ${campaignCard(
+                "01",
+                "Campanhas de Produtos",
+                "Momentos dedicados à apresentação e demonstração de soluções BZZWORLD."
+            )}
+
+            ${campaignCard(
+                "02",
+                "Apresentações",
+                "Sessões presenciais e digitais para explicar produtos, conceitos e experiências."
+            )}
+
+            ${campaignCard(
+                "03",
+                "Conteúdo Digital",
+                "Conteúdo educativo e informativo para redes sociais e canais digitais."
+            )}
+
+            ${campaignCard(
+                "04",
+                "Eventos",
+                "Encontros que reúnem bem-estar, desenvolvimento, conhecimento e networking."
+            )}
+
+            ${campaignCard(
+                "05",
+                "Dupla Oportunidade",
+                "Apresentações estruturadas sobre os ecossistemas BZZWORLD e Academy Twenty One."
+            )}
+
+            ${campaignCard(
+                "06",
+                "Comunidade",
+                "Construção de relações, partilha de experiências e aprendizagem contínua."
+            )}
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function campaignCard(number,title,text){
+
+return `
+
+<div class="card services-campaign-card reveal">
+
+    <span>
+        ${number}
+    </span>
+
+    <h3>
+        ${title}
+    </h3>
+
+    <p class="text mt-2">
+        ${text}
+    </p>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================================
+   INTERNATIONAL
+   ========================================================== */
+
+function international(){
+
+return `
+
+<section class="section services-international">
+
+    <div class="container">
+
+        <div class="services-global">
+
+            <div class="services-global-content reveal-left">
+
+                <span class="label">
+                    Beyond Borders
+                </span>
+
+                <h2 class="section-title">
+
+                    Uma organização
+                    <span>sem fronteiras.</span>
+
+                </h2>
+
+                <p class="text-lg">
+
+                    A AD Lifestyle trabalha numa lógica de conexão
+                    internacional, criando pontes entre pessoas,
+                    soluções e redes para além do mercado local.
+
+                </p>
+
+                <div class="services-global-points">
+
+                    ${globalPoint(
+                        "Distribuição",
+                        "Entregas e acesso a produtos para diferentes destinos, de acordo com disponibilidade e logística."
+                    )}
+
+                    ${globalPoint(
+                        "Conexão",
+                        "Ligação entre pessoas, comunidades e redes de diferentes mercados."
+                    )}
+
+                    ${globalPoint(
+                        "Expansão",
+                        "Uma visão orientada para crescimento, aprendizagem e novas possibilidades."
+                    )}
+
+                </div>
+
+            </div>
+
+            <div class="services-global-visual reveal-right">
+
+                <div class="global-orbit">
+
+                    <span class="global-point p1">
+                        AO
+                    </span>
+
+                    <span class="global-point p2">
+                        EU
+                    </span>
+
+                    <span class="global-point p3">
+                        INT
+                    </span>
+
+                    <div class="global-core">
+                        AD
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function globalPoint(title,text){
+
+return `
+
+<div class="services-global-point">
+
+    <span>
+        ✓
+    </span>
+
+    <div>
+
+        <strong>
+            ${title}
+        </strong>
+
+        <p>
+            ${text}
+        </p>
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================================
+   OPPORTUNITY
+   ========================================================== */
+
+function opportunity(){
+
+return `
+
+<section class="section services-opportunity">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Dupla Oportunidade
+            </span>
+
+            <h2 class="section-title">
+
+                Conhecimento para
+                <span>compreender as possibilidades.</span>
+
+            </h2>
+
+            <p class="lead">
+
+                As apresentações de dupla oportunidade permitem
+                explicar de forma organizada os dois universos que
+                fazem parte da nossa actividade: produtos e soluções
+                BZZWORLD, juntamente com a dimensão de desenvolvimento
+                e oportunidades associada à Academy Twenty One.
+
+            </p>
+
+        </div>
+
+        <div class="services-opportunity-grid mt-6">
+
+            ${opportunityCard(
+                "BZZWORLD",
+                "Wellness",
+                "Conheça o universo de produtos, a proposta de bem-estar e o modelo de distribuição."
+            )}
+
+            ${opportunityCard(
+                "ACADEMY 21",
+                "Evolution",
+                "Conheça a dimensão de aprendizagem, liderança, desenvolvimento e empreendedorismo."
+            )}
+
+        </div>
+
+        <div class="services-opportunity-note reveal">
+
+            <span>
+                IMPORTANTE
+            </span>
+
+            <p>
+                Participar numa apresentação permite obter informação
+                e compreender melhor o modelo. Qualquer decisão de
+                participação, compra ou investimento deve ser tomada
+                de forma consciente, depois de conhecer as condições oficiais.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function opportunityCard(brand,title,text){
+
+return `
+
+<div class="services-opportunity-card reveal">
+
+    <span>
+        ${brand}
+    </span>
+
+    <h3>
+        ${title}
+    </h3>
+
+    <p>
+        ${text}
+    </p>
+
+    <div class="services-opportunity-arrow">
+        →
+    </div>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================================
+   PROCESS
+   ========================================================== */
+
+function process(){
+
+return `
+
+<section class="section-sm services-process">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Como funciona
+            </span>
+
+            <h2 class="section-title">
+
+                Da descoberta
+                <span>à evolução.</span>
+
+            </h2>
+
+        </div>
+
+        <div class="timeline mt-6">
+
+            ${step(
+                "1",
+                "Descoberta",
+                "Conhecemos o seu interesse e apresentamos as soluções disponíveis."
+            )}
+
+            ${step(
+                "2",
+                "Apresentação",
+                "Explicamos produtos, conceitos, experiências ou possibilidades de aprendizagem."
+            )}
+
+            ${step(
+                "3",
+                "Escolha",
+                "Cada pessoa decide de acordo com os seus objectivos e condições."
+            )}
+
+            ${step(
+                "4",
+                "Acompanhamento",
+                "Mantemos a ligação para apoiar a utilização, aprendizagem e evolução."
+            )}
+
+            ${step(
+                "5",
+                "Comunidade",
+                "A experiência pode continuar através de conteúdos, eventos e networking."
+            )}
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function step(number,title,text){
+
+return `
+
+<div class="timeline-item reveal">
+
+    <div class="timeline-dot">
+        ${number}
+    </div>
+
+    <div class="timeline-content">
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p class="text">
+            ${text}
+        </p>
+
+    </div>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+function faq(){
+
+return `
+
+<section class="section-sm services-faq">
+
+    <div class="container-sm">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Perguntas Frequentes
+            </span>
+
+            <h2 class="section-title">
+                Sobre os nossos
+                <span>serviços.</span>
+            </h2>
+
+        </div>
+
+        <div class="faq mt-5">
+
+            ${question(
+                "O que é exactamente a AD Lifestyle?",
+                "A AD Lifestyle é uma organização criada para criar pontes entre pessoas, soluções de bem-estar, produtos BZZWORLD, conhecimento, desenvolvimento pessoal e oportunidades."
+            )}
+
+            ${question(
+                "Quais são os principais focos da AD Lifestyle?",
+                "Os dois grandes focos são o universo Wellness, com produtos e soluções BZZWORLD, e o universo de Evolution, ligado à Academy Twenty One, educação, desenvolvimento pessoal e empreendedorismo."
+            )}
+
+            ${question(
+                "A AD Lifestyle vende apenas produtos?",
+                "Não. A actividade inclui apresentação de produtos, campanhas, conteúdos, eventos, distribuição, experiências de Lifestyle e uma dimensão educacional e empreendedora."
+            )}
+
+            ${question(
+                "A AD Lifestyle faz entregas internacionais?",
+                "A organização trabalha com uma visão internacional e pode disponibilizar entregas para diferentes destinos de acordo com o produto, disponibilidade e condições logísticas aplicáveis."
+            )}
+
+            ${question(
+                "O que são as apresentações de dupla oportunidade?",
+                "São apresentações estruturadas destinadas a explicar os dois universos da actividade: BZZWORLD e Academy Twenty One, permitindo compreender melhor produtos, educação, comunidade e possibilidades."
+            )}
+
+            ${question(
+                "A participação numa apresentação garante resultados financeiros?",
+                "Não. Uma apresentação fornece informação sobre o modelo e as possibilidades existentes, mas não constitui garantia de rendimento ou sucesso financeiro."
+            )}
+
+            ${question(
+                "Preciso de comprar um produto para conhecer a Academy 21?",
+                "Não necessariamente. Os dois universos podem ser conhecidos de forma independente. O melhor caminho depende do interesse e dos objectivos de cada pessoa."
+            )}
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function question(q,a){
+
+return `
+
+<div class="faq-item">
+
+    <button class="faq-question">
+
+        ${q}
+
+        <span>
+            +
+        </span>
+
+    </button>
+
+    <div class="faq-answer">
+
+        <p>
+            ${a}
+        </p>
+
+    </div>
+
+</div>
 
 `;
 
@@ -396,55 +1327,60 @@ function cta(){
 
 return `
 
-<section class="section">
+<section class="section services-cta">
 
-<div class="container">
+    <div class="container">
 
-<div class="glass-panel section-center">
+        <div class="showcase services-final-showcase">
 
-<span class="badge badge-gold">
+            <div class="services-cta-glow"></div>
 
-Pronto para começar?
+            <div class="showcase-content section-center">
 
-</span>
+                <span class="badge">
+                    AD Lifestyle
+                </span>
 
-<h2 class="section-title mt-2">
+                <h2 class="section-title mt-3">
 
-Vamos construir o seu
-próximo nível.
+                    Descubra onde
+                    <span>podemos criar uma ponte.</span>
 
-</h2>
+                </h2>
 
-<p class="text-lg">
+                <p class="lead">
 
-Entre em contacto connosco e descubra como a AD Lifestyle
-pode transformar a sua vida através da saúde e do conhecimento.
+                    Quer conhecer os produtos, participar numa apresentação,
+                    saber mais sobre a Academy Twenty One ou simplesmente
+                    conversar connosco?
 
-</p>
+                </p>
 
-<div class="hero-actions center mt-4">
+                <div class="hero-actions center mt-4">
 
-<button
-class="btn btn-primary"
-data-action="whatsapp">
+                    <button
+                        class="btn btn-primary"
+                        id="servicesWhatsApp">
 
-WhatsApp
+                        Falar no WhatsApp
 
-</button>
+                    </button>
 
-<button
-class="btn btn-outline"
-data-action="contact">
+                    <button
+                        class="btn btn-glass"
+                        id="servicesContact">
 
-Contacto
+                        Página de Contacto
 
-</button>
+                    </button>
 
-</div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
+
+    </div>
 
 </section>
 
@@ -453,28 +1389,30 @@ Contacto
 }
 
 /* ==========================================================
-   COMPONENTES
+   COMPONENTS
    ========================================================== */
 
-function service(icon,title,description){
+function feature(number,title,text){
 
 return `
 
-<div class="card reveal lift service-card">
+<div class="services-feature">
 
-<div class="service-icon">
+    <div class="services-feature-number">
+        ${number}
+    </div>
 
-${icon}
+    <div>
 
-</div>
+        <strong>
+            ${title}
+        </strong>
 
-<h3>${title}</h3>
+        <p>
+            ${text}
+        </p>
 
-<p class="text mt-2">
-
-${description}
-
-</p>
+    </div>
 
 </div>
 
@@ -482,53 +1420,27 @@ ${description}
 
 }
 
-function value(text){
+function academyFeature(number,title,text){
 
 return `
 
-<div class="icon-item">
+<div class="services-academy-feature">
 
-<div class="icon-circle">
+    <span>
+        ${number}
+    </span>
 
-✓
+    <div>
 
-</div>
+        <strong>
+            ${title}
+        </strong>
 
-<div>
+        <p>
+            ${text}
+        </p>
 
-<strong>${text}</strong>
-
-</div>
-
-</div>
-
-`;
-
-}
-
-function step(number,title,description){
-
-return `
-
-<div class="timeline-item reveal">
-
-<div class="timeline-dot">
-
-${number}
-
-</div>
-
-<div class="timeline-content">
-
-<h3>${title}</h3>
-
-<p class="text">
-
-${description}
-
-</p>
-
-</div>
+    </div>
 
 </div>
 
@@ -537,49 +1449,153 @@ ${description}
 }
 
 /* ==========================================================
-   INTERACTIVIDADE
+   INITIALISE
    ========================================================== */
 
 function initialiseServices(){
 
-    initialiseNavigation();
+    const root =
+        document.querySelector(".page-services");
 
-    initialiseWhatsApp();
+    if(!root) return;
 
-}
+    /* ------------------------------------------------------
+       ANIMATIONS
+       ------------------------------------------------------ */
 
-function initialiseNavigation(){
+    stagger(".page-services .card");
 
-    document
-        .querySelector('[data-action="services"]')
+    root
+        .querySelectorAll(".btn")
+        .forEach(button=>{
+
+            ripple(button);
+
+        });
+
+    /* ------------------------------------------------------
+       HERO — EXPLORE
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#exploreServices")
         ?.addEventListener("click",()=>{
 
-            document
-                .getElementById("services")
+            root
+                .querySelector("#services")
                 ?.scrollIntoView({
-                    behavior:"smooth"
+                    behavior:"smooth",
+                    block:"start"
                 });
 
         });
 
-}
+    /* ------------------------------------------------------
+       WELLNESS / ACADEMY BUTTONS
+       ------------------------------------------------------ */
 
-function initialiseWhatsApp(){
-
-    document
-        .querySelectorAll('[data-action="whatsapp"]')
+    root
+        .querySelectorAll('[data-action="products"]')
         .forEach(button=>{
 
             button.addEventListener("click",()=>{
 
-                const message = encodeURIComponent(
-                    "Olá AD Lifestyle! Gostaria de obter mais informações sobre os vossos serviços."
-                );
+                navigate("/products");
 
-                window.open(
-                    `https://wa.me/244924964666?text=${message}`,
-                    "_blank"
-                );
+            });
+
+        });
+
+    root
+        .querySelectorAll('[data-action="academy"]')
+        .forEach(button=>{
+
+            button.addEventListener("click",()=>{
+
+                navigate("/events");
+
+            });
+
+        });
+
+    /* ------------------------------------------------------
+       ACADEMY BUTTON
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#academyButton")
+        ?.addEventListener("click",()=>{
+
+            navigate("/events");
+
+        });
+
+    /* ------------------------------------------------------
+       CONTACT
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#contactServices")
+        ?.addEventListener("click",()=>{
+
+            navigate("/contact");
+
+        });
+
+    root
+        .querySelector("#servicesContact")
+        ?.addEventListener("click",()=>{
+
+            navigate("/contact");
+
+        });
+
+    /* ------------------------------------------------------
+       WHATSAPP
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#servicesWhatsApp")
+        ?.addEventListener("click",()=>{
+
+            const message =
+                "Olá AD Lifestyle! Gostaria de conhecer melhor os serviços, produtos e oportunidades disponíveis.";
+
+            window.open(
+                `https://wa.me/244924964666?text=${encodeURIComponent(message)}`,
+                "_blank"
+            );
+
+        });
+
+    /* ------------------------------------------------------
+       FAQ
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(".faq-question")
+        .forEach(button=>{
+
+            button.addEventListener("click",()=>{
+
+                const item =
+                    button.closest(".faq-item");
+
+                if(!item) return;
+
+                root
+                    .querySelectorAll(".faq-item")
+                    .forEach(other=>{
+
+                        if(other !== item){
+
+                            other.classList.remove("active");
+
+                        }
+
+                    });
+
+                item.classList.toggle("active");
 
             });
 
