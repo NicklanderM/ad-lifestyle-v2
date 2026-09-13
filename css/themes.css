@@ -1278,71 +1278,309 @@ body[data-theme="zenbru"]::before{
 
 }
 /* ==========================================================
+   AD LIFESTYLE V2
    ALPHAMETA
+   THEME — ORANGE / GOLD / RED / SILVER
    ========================================================== */
 
 body[data-theme="alphameta"]{
 
-    background:#FBF8F2;
+    --alphameta-orange:
+        #F1940A;
+
+    --alphameta-orange-dark:
+        #ED6407;
+
+    --alphameta-gold:
+        #FCC20C;
+
+    --alphameta-gold-light:
+        #F9D14A;
+
+    --alphameta-red:
+        #DF2107;
+
+    --alphameta-red-dark:
+        #A23404;
+
+    --alphameta-silver:
+        #B9B0B2;
+
+    --alphameta-silver-light:
+        #F0E9DF;
+
+    --alphameta-brown:
+        #471D0A;
+
+    --alphameta-white:
+        #FFFFFF;
+
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #471D0A !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="alphameta"]{
+
+    background:
+
+        radial-gradient(
+            circle at 90% 5%,
+            rgba(252,194,12,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 5% 45%,
+            rgba(241,148,10,.07),
+            transparent 30%
+        ),
+
+        #FFFFFF !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="alphameta"] .navbar{
+
+    background:
+        rgba(71,29,10,.96) !important;
+
+    border-bottom:
+        1px solid
+        rgba(252,194,12,.22) !important;
+
+}
+
+
+body[data-theme="alphameta"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="alphameta"] .navbar a:hover{
+
+    color:
+        #F9D14A !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="alphameta"] .hero{
 
     background:
+
         radial-gradient(
-            circle at top right,
-            rgba(224,196,122,.35),
-            transparent 35%
+            circle at 82% 15%,
+            rgba(252,194,12,.25),
+            transparent 30%
         ),
+
         radial-gradient(
-            circle at bottom left,
-            rgba(244,235,221,.75),
-            transparent 40%
+            circle at 10% 82%,
+            rgba(241,148,10,.26),
+            transparent 34%
         ),
-        var(--hero-gradient);
+
+        linear-gradient(
+            135deg,
+            #471D0A 0%,
+            #A23404 48%,
+            #ED6407 100%
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="alphameta"] .hero h1,
+body[data-theme="alphameta"] .hero h2,
+body[data-theme="alphameta"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="alphameta"] .hero p{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+body[data-theme="alphameta"] .hero-title span{
+
+    color:
+        #F9D14A !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F9D14A !important;
+
+}
+
+
+/* ==========================================================
+   HERO BADGE
+   ========================================================== */
+
+body[data-theme="alphameta"] .badge{
+
+    color:
+        #F9D14A !important;
+
+    background:
+        rgba(252,194,12,.12) !important;
+
+    border:
+        1px solid
+        rgba(249,209,74,.36) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="alphameta"] .hero .btn-primary,
+body[data-theme="alphameta"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #FCC20C,
+            #F9D14A
+        ) !important;
+
+    color:
+        #471D0A !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.28) !important;
+
+}
+
+
+body[data-theme="alphameta"] .hero .btn-glass,
+body[data-theme="alphameta"] .showcase .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="alphameta"] .product-glow{
 
     background:
+
         radial-gradient(
             circle,
-            #C6A35A,
+            rgba(252,194,12,.48),
+            rgba(241,148,10,.22) 42%,
             transparent 72%
-        );
+        ) !important;
 
-    opacity:.32;
-
-}
-
-body[data-theme="alphameta"] .service-icon{
-
-    background:rgba(198,163,90,.12);
+    opacity:
+        .9 !important;
 
 }
 
-body[data-theme="alphameta"] .card::after{
 
-    background:#C6A35A;
-
-}
+/* ==========================================================
+   ORB / BLOB
+   ========================================================== */
 
 body[data-theme="alphameta"] .orb{
 
-    background:#E0C47A;
+    background:
+        #FCC20C !important;
 
 }
+
 
 body[data-theme="alphameta"] .blob{
 
-    opacity:.20;
+    opacity:
+        .22 !important;
 
 }
 
 
-/* Textura nutricional subtil */
+body[data-theme="alphameta"] .blob-1{
+
+    background:
+        #FCC20C !important;
+
+}
+
+
+body[data-theme="alphameta"] .blob-2{
+
+    background:
+        #DF2107 !important;
+
+}
+
+
+body[data-theme="alphameta"] .blob-3{
+
+    background:
+        #F9D14A !important;
+
+}
+
+
+/* ==========================================================
+   OLD TEXTURE
+   ========================================================== */
 
 body[data-theme="alphameta"]::before{
 
@@ -1355,17 +1593,54 @@ body[data-theme="alphameta"]::before{
     pointer-events:none;
 
     background-image:
+
         radial-gradient(
-            rgba(198,163,90,.045) 1px,
+            rgba(252,194,12,.07) 1px,
             transparent 1px
         );
 
-    background-size:32px 32px;
+    background-size:
+        36px 36px;
 
-    z-index:-1;
+    opacity:
+        .35;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="alphameta"] ::selection{
+
+    background:
+        #FCC20C !important;
+
+    color:
+        #471D0A !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="alphameta"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #DF2107,
+            #FCC20C,
+            #F1940A
+        ) !important;
+
+}
 
 /* ==========================================================
    MINOSEED
