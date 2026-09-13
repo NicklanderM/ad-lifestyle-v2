@@ -1,7 +1,7 @@
 /* ==========================================================
    AD LIFESTYLE V2
    ABOUT PAGE
-   Editorial / Premium / Institutional
+   Premium / Editorial / Institutional
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -16,14 +16,14 @@ const CONTACT = {
     whatsapp: "https://wa.me/244924964666"
 };
 
-const EXTERNAL = {
+const LINKS = {
     bzzworld: "https://www.bzzworld.com/",
     academy21: "https://www.academytwentyone.com/"
 };
 
 const ASSETS = {
     logo: "./assets/logo/logo.png",
-    founder: "./assets/images/abdoulahi.png",
+    abdoulahi: "./assets/images/abdoulahi.png",
     bzzworld: "./assets/images/bzzworld.png",
     academy21: "./assets/images/a21.png"
 };
@@ -32,7 +32,7 @@ const ASSETS = {
    ICONS
    ========================================================== */
 
-const icon = {
+const icons = {
 
     arrow: `
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -45,20 +45,13 @@ const icon = {
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M14 5h5v5"></path>
             <path d="M10 14L19 5"></path>
-            <path d="M19 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h4"></path>
+            <path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"></path>
         </svg>
     `,
 
     check: `
         <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="m5 12 4 4L19 6"></path>
-        </svg>
-    `,
-
-    plus: `
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 5v14"></path>
-            <path d="M5 12h14"></path>
         </svg>
     `
 
@@ -80,31 +73,31 @@ export function loadAbout(){
     }
 
     app.innerHTML = `
-        <main class="about-page">
+        <div class="about-page">
 
-            ${hero()}
+            ${renderHero()}
 
-            ${statement()}
+            ${renderManifesto()}
 
-            ${whoWeAre()}
+            ${renderWhoWeAre()}
 
-            ${ecosystemIntro()}
+            ${renderEcosystemIntro()}
 
-            ${bzzworldSection()}
+            ${renderBzzworld()}
 
-            ${academySection()}
+            ${renderAcademy21()}
 
-            ${leadership()}
+            ${renderLeadership()}
 
-            ${visionMission()}
+            ${renderDirection()}
 
-            ${journey()}
+            ${renderJourney()}
 
-            ${future()}
+            ${renderFuture()}
 
-            ${cta()}
+            ${renderCTA()}
 
-        </main>
+        </div>
     `;
 
     initialiseAbout();
@@ -114,134 +107,149 @@ export function loadAbout(){
    HERO
    ========================================================== */
 
-function hero(){
+function renderHero(){
 
     return `
         <section class="about-hero">
 
-            <div class="about-hero-background"></div>
+            <div class="about-hero-bg"></div>
 
-            <div class="about-hero-top">
+            <div class="about-container about-hero-container">
 
-                <span class="about-overline">
-                    AD LIFESTYLE
-                </span>
+                <div class="about-hero-top">
 
-                <span class="about-overline about-overline-right">
-                    ABOUT / 01
-                </span>
-
-            </div>
-
-            <div class="about-hero-layout">
-
-                <div class="about-hero-copy">
-
-                    <span class="about-eyebrow">
-                        UMA ORGANIZAÇÃO · UMA VISÃO
+                    <span>
+                        AD LIFESTYLE
                     </span>
 
-                    <h1>
-                        Criamos
-                        <span>pontes</span>
-                        para novas
-                        possibilidades.
-                    </h1>
-
-                    <p>
-                        Wellness, aprendizagem, desenvolvimento
-                        e conexão humana reunidos numa experiência
-                        criada para acompanhar pessoas em evolução.
-                    </p>
-
-                    <div class="about-hero-actions">
-
-                        <a
-                            href="#about-ecosystem"
-                            class="about-button about-button-gold"
-                            data-scroll="#about-ecosystem"
-                        >
-                            <span>Descobrir o ecossistema</span>
-                            ${icon.arrow}
-                        </a>
-
-                        <a
-                            href="#about-story"
-                            class="about-button about-button-light"
-                            data-scroll="#about-story"
-                        >
-                            <span>Conhecer a nossa história</span>
-                        </a>
-
-                    </div>
+                    <span>
+                        ABOUT / 01
+                    </span>
 
                 </div>
 
-                <div class="about-hero-visual">
+                <div class="about-hero-main">
 
-                    <div class="about-hero-image">
+                    <div class="about-hero-copy">
 
-                        <img
-                            src="${ASSETS.founder}"
-                            alt="Abdoulahi Doucoure"
-                        >
+                        <div class="about-eyebrow">
+                            UMA VISÃO · UM MOVIMENTO
+                        </div>
 
-                    </div>
+                        <h1>
+                            Criamos
+                            <span>pontes</span>
+                            para novas
+                            possibilidades.
+                        </h1>
 
-                    <div class="about-hero-panel">
+                        <p>
+                            Wellness, aprendizagem, desenvolvimento
+                            e conexão humana reunidos numa organização
+                            criada para aproximar pessoas de novas
+                            possibilidades.
+                        </p>
 
-                        <div class="about-hero-logo">
+                        <div class="about-hero-actions">
 
-                            <img
-                                src="${ASSETS.logo}"
-                                alt="AD Lifestyle"
+                            <a
+                                href="#about-ecosystem"
+                                class="about-button about-button-gold"
+                                data-scroll-target="#about-ecosystem"
                             >
+                                <span>Descobrir o nosso universo</span>
+                                ${icons.arrow}
+                            </a>
+
+                            <a
+                                href="#about-story"
+                                class="about-button about-button-outline"
+                                data-scroll-target="#about-story"
+                            >
+                                <span>Conhecer a nossa história</span>
+                            </a>
 
                         </div>
 
-                        <div class="about-hero-panel-copy">
+                    </div>
 
-                            <span>
-                                AD LIFESTYLE
-                            </span>
+                    <div class="about-hero-visual">
+
+                        <div class="about-hero-image-wrap">
+
+                            <div class="about-hero-image">
+
+                                <img
+                                    src="${ASSETS.abdoulahi}"
+                                    alt="Abdoulahi Doucoure"
+                                >
+
+                            </div>
+
+                            <div class="about-hero-image-accent"></div>
+
+                        </div>
+
+                        <div class="about-hero-brand-card">
+
+                            <div class="about-hero-logo">
+
+                                <img
+                                    src="${ASSETS.logo}"
+                                    alt="AD Lifestyle"
+                                >
+
+                            </div>
+
+                            <div class="about-hero-brand-copy">
+
+                                <span>
+                                    AD LIFESTYLE
+                                </span>
+
+                                <small>
+                                    Wellness · Evolution
+                                </small>
+
+                            </div>
 
                             <strong>
-                                Wellness · Evolution
+                                2026
                             </strong>
 
                         </div>
 
-                        <span class="about-hero-panel-number">
-                            2026
-                        </span>
+                        <div class="about-hero-caption">
 
-                    </div>
+                            <span></span>
 
-                    <div class="about-hero-caption">
+                            <p>
+                                Uma visão transformada
+                                em movimento.
+                            </p>
 
-                        <span class="about-caption-line"></span>
-
-                        <span>
-                            Uma visão transformada
-                            em movimento.
-                        </span>
+                        </div>
 
                     </div>
 
                 </div>
 
-            </div>
+                <div class="about-hero-bottom">
 
-            <div class="about-hero-bottom">
+                    <span>
+                        LUANDA · ANGOLA
+                    </span>
 
-                <span>LUANDA · ANGOLA</span>
+                    <span class="about-hero-scroll">
+                        SCROLL
+                        <i></i>
+                    </span>
 
-                <span class="about-hero-scroll">
-                    SCROLL
-                    <i></i>
-                </span>
+                    <span>
+                        WELLNESS / EVOLUTION
+                    </span>
 
-                <span>WELLNESS / EVOLUTION</span>
+                </div>
 
             </div>
 
@@ -250,37 +258,42 @@ function hero(){
 }
 
 /* ==========================================================
-   STATEMENT
+   MANIFESTO
    ========================================================== */
 
-function statement(){
+function renderManifesto(){
 
     return `
-        <section class="about-statement">
+        <section class="about-manifesto">
 
-            <div class="about-section-marker">
-                <span>02</span>
-                <small>MANIFESTO</small>
-            </div>
+            <div class="about-container about-manifesto-grid">
 
-            <div class="about-statement-content">
+                <div class="about-section-label">
+                    <strong>02</strong>
+                    <span>MANIFESTO</span>
+                </div>
 
-                <p class="about-eyebrow">
-                    MAIS DO QUE UMA MARCA
-                </p>
+                <div class="about-manifesto-content">
 
-                <h2>
-                    Não queremos apenas
-                    <em>vender.</em>
-                    Queremos
-                    <strong>conectar.</strong>
-                </h2>
+                    <div class="about-eyebrow">
+                        MAIS DO QUE UMA MARCA
+                    </div>
 
-                <p class="about-statement-support">
-                    Acreditamos que as melhores oportunidades
-                    surgem quando pessoas, conhecimento,
-                    soluções e relações certas se encontram.
-                </p>
+                    <h2>
+                        Não queremos apenas
+                        <em>vender.</em>
+                        Queremos
+                        <strong>conectar.</strong>
+                    </h2>
+
+                    <p>
+                        Acreditamos que novas possibilidades surgem
+                        quando as pessoas certas encontram produtos,
+                        conhecimento, experiências e relações que
+                        podem acrescentar valor à sua jornada.
+                    </p>
+
+                </div>
 
             </div>
 
@@ -292,20 +305,23 @@ function statement(){
    WHO WE ARE
    ========================================================== */
 
-function whoWeAre(){
+function renderWhoWeAre(){
 
     return `
-        <section class="about-who" id="about-story">
+        <section
+            class="about-who"
+            id="about-story"
+        >
 
             <div class="about-container">
 
-                <div class="about-who-header">
+                <div class="about-section-heading">
 
                     <div>
 
-                        <p class="about-eyebrow">
+                        <div class="about-eyebrow">
                             QUEM SOMOS
-                        </p>
+                        </div>
 
                         <h2>
                             Uma organização construída
@@ -315,31 +331,33 @@ function whoWeAre(){
                     </div>
 
                     <p>
-                        A AD Lifestyle nasce com uma missão clara:
+                        A AD Lifestyle nasce com uma missão simples:
                         criar pontes entre pessoas e novas
-                        possibilidades de bem-estar, aprendizagem,
-                        desenvolvimento e crescimento.
+                        possibilidades de wellness, aprendizagem,
+                        desenvolvimento e evolução.
                     </p>
 
                 </div>
 
-                <div class="about-who-feature">
+                <div class="about-who-card">
 
-                    <div class="about-who-number">
+                    <div class="about-who-card-number">
                         01
                     </div>
 
-                    <div class="about-who-title">
-                        <span>IDEIA CENTRAL</span>
+                    <div class="about-who-card-title">
+
+                        <small>
+                            A NOSSA IDEIA CENTRAL
+                        </small>
 
                         <h3>
-                            Conectar
-                            <br>
-                            pessoas.
+                            Conectar.
                         </h3>
+
                     </div>
 
-                    <div class="about-who-description">
+                    <div class="about-who-card-text">
 
                         <p>
                             Não funcionamos como um ponto isolado.
@@ -348,10 +366,9 @@ function whoWeAre(){
                         </p>
 
                         <p>
-                            De um lado, soluções e experiências
-                            ligadas ao wellness. Do outro,
-                            aprendizagem, desenvolvimento e
-                            evolução pessoal.
+                            Wellness de um lado. Desenvolvimento
+                            e aprendizagem do outro. Pessoas no
+                            centro de ambos.
                         </p>
 
                     </div>
@@ -368,7 +385,7 @@ function whoWeAre(){
    ECOSYSTEM INTRO
    ========================================================== */
 
-function ecosystemIntro(){
+function renderEcosystemIntro(){
 
     return `
         <section
@@ -378,13 +395,13 @@ function ecosystemIntro(){
 
             <div class="about-container">
 
-                <div class="about-ecosystem-heading">
+                <div class="about-section-heading about-section-heading-ecosystem">
 
                     <div>
 
-                        <p class="about-eyebrow">
+                        <div class="about-eyebrow">
                             O NOSSO ECOSSISTEMA
-                        </p>
+                        </div>
 
                         <h2>
                             Dois universos.
@@ -395,20 +412,22 @@ function ecosystemIntro(){
 
                     <p>
                         A AD Lifestyle aproxima duas dimensões
-                        complementares que acreditamos serem
-                        importantes para uma vida mais completa.
+                        complementares: o universo do wellness
+                        e o universo da evolução.
                     </p>
 
                 </div>
 
-                <div class="about-ecosystem-line">
+                <div class="about-ecosystem-map">
 
-                    <div class="about-ecosystem-node">
-                        <span>01</span>
+                    <div class="about-ecosystem-side">
+
+                        <small>01</small>
                         <strong>WELLNESS</strong>
+
                     </div>
 
-                    <div class="about-ecosystem-connector"></div>
+                    <div class="about-ecosystem-line"></div>
 
                     <div class="about-ecosystem-core">
 
@@ -419,11 +438,13 @@ function ecosystemIntro(){
 
                     </div>
 
-                    <div class="about-ecosystem-connector"></div>
+                    <div class="about-ecosystem-line"></div>
 
-                    <div class="about-ecosystem-node">
-                        <span>02</span>
+                    <div class="about-ecosystem-side about-ecosystem-side-right">
+
+                        <small>02</small>
                         <strong>EVOLUTION</strong>
+
                     </div>
 
                 </div>
@@ -438,82 +459,89 @@ function ecosystemIntro(){
    BZZWORLD
    ========================================================== */
 
-function bzzworldSection(){
+function renderBzzworld(){
 
     return `
-        <section class="about-brand-section about-brand-section-bzz">
+        <section class="about-brand about-brand-bzzworld">
 
-            <div class="about-brand-image-wrap">
+            <div class="about-container about-brand-grid">
 
-                <div class="about-brand-index">
-                    01
+                <div class="about-brand-visual">
+
+                    <span class="about-brand-number">
+                        01
+                    </span>
+
+                    <div class="about-brand-image">
+
+                        <img
+                            src="${ASSETS.bzzworld}"
+                            alt="BZZWORLD"
+                        >
+
+                    </div>
+
+                    <span class="about-brand-category">
+                        WELLNESS
+                    </span>
+
                 </div>
 
-                <div class="about-brand-image">
+                <div class="about-brand-content">
 
-                    <img
-                        src="${ASSETS.bzzworld}"
-                        alt="BZZWORLD"
+                    <div class="about-eyebrow">
+                        PRIMEIRO UNIVERSO
+                    </div>
+
+                    <div class="about-brand-title">
+                        BZZWORLD
+                    </div>
+
+                    <h2>
+                        Bem-estar que
+                        encontra o lifestyle.
+                    </h2>
+
+                    <p>
+                        Através da BZZWORLD, a AD Lifestyle aproxima
+                        pessoas de um universo de produtos,
+                        experiências e possibilidades relacionadas
+                        com wellness e estilo de vida.
+                    </p>
+
+                    <div class="about-brand-list">
+
+                        <span>
+                            ${icons.check}
+                            Wellness
+                        </span>
+
+                        <span>
+                            ${icons.check}
+                            Lifestyle
+                        </span>
+
+                        <span>
+                            ${icons.check}
+                            Produtos
+                        </span>
+
+                    </div>
+
+                    <a
+                        href="${LINKS.bzzworld}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="about-brand-link"
                     >
+                        <span>
+                            Saber mais sobre a BZZWORLD
+                        </span>
+
+                        ${icons.external}
+                    </a>
 
                 </div>
-
-                <div class="about-brand-image-note">
-                    WELLNESS
-                </div>
-
-            </div>
-
-            <div class="about-brand-content">
-
-                <p class="about-eyebrow">
-                    PRIMEIRO UNIVERSO
-                </p>
-
-                <div class="about-brand-name">
-                    BZZWORLD
-                </div>
-
-                <h2>
-                    Bem-estar que
-                    encontra o lifestyle.
-                </h2>
-
-                <p class="about-brand-description">
-                    Através da BZZWORLD, a AD Lifestyle aproxima
-                    pessoas de um universo de produtos,
-                    experiências e possibilidades ligadas ao
-                    wellness e ao estilo de vida.
-                </p>
-
-                <div class="about-brand-points">
-
-                    <div>
-                        ${icon.check}
-                        <span>Wellness</span>
-                    </div>
-
-                    <div>
-                        ${icon.check}
-                        <span>Lifestyle</span>
-                    </div>
-
-                    <div>
-                        ${icon.check}
-                        <span>Produtos</span>
-                    </div>
-
-                </div>
-
-                <a
-                    href="${EXTERNAL.bzzworld}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="about-brand-link"
-                >
-                    <span>Saber mais sobre a BZZWORLD</span>
-                    ${icon.external}
-                </a>
 
             </div>
 
@@ -525,81 +553,88 @@ function bzzworldSection(){
    ACADEMY 21
    ========================================================== */
 
-function academySection(){
+function renderAcademy21(){
 
     return `
-        <section class="about-brand-section about-brand-section-a21">
+        <section class="about-brand about-brand-academy">
 
-            <div class="about-brand-content">
+            <div class="about-container about-brand-grid about-brand-grid-reverse">
 
-                <p class="about-eyebrow">
-                    SEGUNDO UNIVERSO
-                </p>
+                <div class="about-brand-content">
 
-                <div class="about-brand-name">
-                    ACADEMY 21
-                </div>
-
-                <h2>
-                    Conhecimento que
-                    transforma potencial.
-                </h2>
-
-                <p class="about-brand-description">
-                    Através da Academy Twenty One, aproximamo-nos
-                    de experiências de desenvolvimento pessoal,
-                    liderança, aprendizagem, networking e
-                    empreendedorismo.
-                </p>
-
-                <div class="about-brand-points">
-
-                    <div>
-                        ${icon.check}
-                        <span>Desenvolvimento</span>
+                    <div class="about-eyebrow">
+                        SEGUNDO UNIVERSO
                     </div>
 
-                    <div>
-                        ${icon.check}
-                        <span>Liderança</span>
+                    <div class="about-brand-title">
+                        ACADEMY 21
                     </div>
 
-                    <div>
-                        ${icon.check}
-                        <span>Empreendedorismo</span>
+                    <h2>
+                        Conhecimento que
+                        transforma potencial.
+                    </h2>
+
+                    <p>
+                        Através da Academy Twenty One, aproximamo-nos
+                        de experiências ligadas a desenvolvimento
+                        pessoal, liderança, aprendizagem, networking
+                        e empreendedorismo.
+                    </p>
+
+                    <div class="about-brand-list">
+
+                        <span>
+                            ${icons.check}
+                            Desenvolvimento
+                        </span>
+
+                        <span>
+                            ${icons.check}
+                            Liderança
+                        </span>
+
+                        <span>
+                            ${icons.check}
+                            Empreendedorismo
+                        </span>
+
                     </div>
 
-                </div>
-
-                <a
-                    href="${EXTERNAL.academy21}"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="about-brand-link"
-                >
-                    <span>Saber mais sobre a Academy 21</span>
-                    ${icon.external}
-                </a>
-
-            </div>
-
-            <div class="about-brand-image-wrap">
-
-                <div class="about-brand-index">
-                    02
-                </div>
-
-                <div class="about-brand-image">
-
-                    <img
-                        src="${ASSETS.academy21}"
-                        alt="Academy Twenty One"
+                    <a
+                        href="${LINKS.academy21}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="about-brand-link"
                     >
+                        <span>
+                            Saber mais sobre a Academy 21
+                        </span>
+
+                        ${icons.external}
+                    </a>
 
                 </div>
 
-                <div class="about-brand-image-note">
-                    EVOLUTION
+                <div class="about-brand-visual">
+
+                    <span class="about-brand-number">
+                        02
+                    </span>
+
+                    <div class="about-brand-image">
+
+                        <img
+                            src="${ASSETS.academy21}"
+                            alt="Academy Twenty One"
+                        >
+
+                    </div>
+
+                    <span class="about-brand-category">
+                        EVOLUTION
+                    </span>
+
                 </div>
 
             </div>
@@ -612,68 +647,64 @@ function academySection(){
    LEADERSHIP
    ========================================================== */
 
-function leadership(){
+function renderLeadership(){
 
     return `
         <section class="about-leadership">
 
-            <div class="about-container">
+            <div class="about-container about-leadership-grid">
 
-                <div class="about-leadership-grid">
+                <div class="about-leadership-image">
 
-                    <div class="about-leadership-image">
+                    <img
+                        src="${ASSETS.abdoulahi}"
+                        alt="Abdoulahi Doucoure"
+                    >
 
-                        <img
-                            src="${ASSETS.founder}"
-                            alt="Abdoulahi Doucoure"
-                        >
+                    <div class="about-leadership-image-info">
 
-                        <div class="about-leadership-image-label">
+                        <span>VISION</span>
 
-                            <span>VISION</span>
-
-                            <strong>
-                                AD LIFESTYLE
-                            </strong>
-
-                        </div>
+                        <strong>
+                            AD LIFESTYLE
+                        </strong>
 
                     </div>
 
-                    <div class="about-leadership-copy">
+                </div>
 
-                        <p class="about-eyebrow">
-                            LIDERANÇA
-                        </p>
+                <div class="about-leadership-content">
 
-                        <span class="about-leadership-small">
-                            UMA VISÃO TRANSFORMADA EM ORGANIZAÇÃO.
-                        </span>
+                    <div class="about-eyebrow">
+                        LIDERANÇA
+                    </div>
 
-                        <h2>
-                            Abdoulahi
-                            <span>Doucoure</span>
-                        </h2>
+                    <small>
+                        UMA VISÃO TRANSFORMADA EM ORGANIZAÇÃO.
+                    </small>
 
-                        <div class="about-leadership-rule"></div>
+                    <h2>
+                        Abdoulahi
+                        <span>Doucoure</span>
+                    </h2>
 
-                        <p>
-                            Uma organização começa quando uma ideia
-                            encontra visão, consistência e vontade
-                            de construir.
-                        </p>
+                    <div class="about-leadership-line"></div>
 
-                        <p>
-                            É essa perspectiva que orienta o
-                            desenvolvimento da AD Lifestyle:
-                            construir uma estrutura capaz de criar
-                            valor, conexões e novas possibilidades.
-                        </p>
+                    <p>
+                        Uma organização começa com uma visão,
+                        mas cresce quando essa visão encontra
+                        consistência, pessoas e vontade de construir.
+                    </p>
 
-                        <div class="about-leadership-signature">
-                            <span>VISION · PEOPLE · FUTURE</span>
-                        </div>
+                    <p>
+                        É essa perspectiva que orienta o
+                        desenvolvimento da AD Lifestyle:
+                        criar uma estrutura capaz de gerar
+                        conexões, experiências e novas possibilidades.
+                    </p>
 
+                    <div class="about-leadership-signature">
+                        VISION · PEOPLE · FUTURE
                     </div>
 
                 </div>
@@ -685,10 +716,10 @@ function leadership(){
 }
 
 /* ==========================================================
-   VISION MISSION
+   DIRECTION
    ========================================================== */
 
-function visionMission(){
+function renderDirection(){
 
     return `
         <section class="about-direction">
@@ -697,9 +728,9 @@ function visionMission(){
 
                 <div class="about-direction-heading">
 
-                    <p class="about-eyebrow">
+                    <div class="about-eyebrow">
                         A NOSSA DIRECÇÃO
-                    </p>
+                    </div>
 
                     <h2>
                         O que nos orienta
@@ -719,14 +750,14 @@ function visionMission(){
                         </h3>
 
                         <p>
-                            Tornar a AD Lifestyle uma referência
-                            na criação de pontes entre wellness,
+                            Tornar a AD Lifestyle uma referência na
+                            criação de pontes entre wellness,
                             conhecimento, pessoas e oportunidades.
                         </p>
 
                     </article>
 
-                    <article class="about-direction-featured">
+                    <article class="about-direction-main">
 
                         <span>02</span>
 
@@ -737,8 +768,8 @@ function visionMission(){
                         <p>
                             Criar experiências e conexões que
                             aproximem pessoas de produtos,
-                            conhecimento, desenvolvimento e novos
-                            caminhos.
+                            conhecimento, desenvolvimento e
+                            novos caminhos.
                         </p>
 
                     </article>
@@ -754,22 +785,22 @@ function visionMission(){
                         <ul>
 
                             <li>
-                                ${icon.check}
+                                ${icons.check}
                                 Integridade
                             </li>
 
                             <li>
-                                ${icon.check}
+                                ${icons.check}
                                 Aprendizagem
                             </li>
 
                             <li>
-                                ${icon.check}
+                                ${icons.check}
                                 Excelência
                             </li>
 
                             <li>
-                                ${icon.check}
+                                ${icons.check}
                                 Pessoas
                             </li>
 
@@ -789,7 +820,35 @@ function visionMission(){
    JOURNEY
    ========================================================== */
 
-function journey(){
+function renderJourney(){
+
+    const items = [
+        [
+            "01",
+            "Fundação",
+            "Uma visão nasce com a vontade de aproximar pessoas de novas possibilidades."
+        ],
+        [
+            "02",
+            "Estrutura",
+            "A ideia transforma-se numa organização com identidade, direcção e propósito."
+        ],
+        [
+            "03",
+            "Ecossistema",
+            "Wellness e Evolution passam a coexistir numa experiência integrada."
+        ],
+        [
+            "04",
+            "Experiência",
+            "Eventos, campanhas, apresentações, conteúdos e experiências digitais aproximam a organização das pessoas."
+        ],
+        [
+            "05",
+            "Expansão",
+            "O próximo capítulo é continuar a criar pontes dentro e além-fronteiras."
+        ]
+    ];
 
     return `
         <section class="about-journey">
@@ -798,9 +857,9 @@ function journey(){
 
                 <div class="about-journey-heading">
 
-                    <p class="about-eyebrow">
+                    <div class="about-eyebrow">
                         A NOSSA JORNADA
-                    </p>
+                    </div>
 
                     <h2>
                         Uma construção
@@ -811,35 +870,24 @@ function journey(){
 
                 <div class="about-journey-list">
 
-                    ${journeyItem(
-                        "01",
-                        "Fundação",
-                        "Uma visão nasce com a vontade de aproximar pessoas de novas possibilidades."
-                    )}
+                    ${items.map(item => `
+                        <article class="about-journey-item">
 
-                    ${journeyItem(
-                        "02",
-                        "Estrutura",
-                        "A ideia transforma-se numa organização com identidade, direcção e propósito."
-                    )}
+                            <div class="about-journey-number">
+                                ${item[0]}
+                            </div>
 
-                    ${journeyItem(
-                        "03",
-                        "Ecossistema",
-                        "Wellness e Evolution passam a coexistir dentro de uma experiência integrada."
-                    )}
+                            <div class="about-journey-title">
+                                <small>${item[0]}</small>
+                                <h3>${item[1]}</h3>
+                            </div>
 
-                    ${journeyItem(
-                        "04",
-                        "Experiência",
-                        "Eventos, campanhas, apresentações, conteúdos e experiências digitais aproximam a organização das pessoas."
-                    )}
+                            <div class="about-journey-text">
+                                <p>${item[2]}</p>
+                            </div>
 
-                    ${journeyItem(
-                        "05",
-                        "Expansão",
-                        "O próximo capítulo é continuar a criar pontes dentro e além-fronteiras."
-                    )}
+                        </article>
+                    `).join("")}
 
                 </div>
 
@@ -849,38 +897,16 @@ function journey(){
     `;
 }
 
-function journeyItem(number, title, text){
-
-    return `
-        <article class="about-journey-item">
-
-            <div class="about-journey-marker">
-                ${number}
-            </div>
-
-            <div class="about-journey-title">
-                <span>${number}</span>
-                <h3>${title}</h3>
-            </div>
-
-            <div class="about-journey-text">
-                <p>${text}</p>
-            </div>
-
-        </article>
-    `;
-}
-
 /* ==========================================================
    FUTURE
    ========================================================== */
 
-function future(){
+function renderFuture(){
 
     return `
         <section class="about-future">
 
-            <div class="about-future-watermark">
+            <div class="about-future-mark">
                 AD
             </div>
 
@@ -888,9 +914,9 @@ function future(){
 
                 <div class="about-future-content">
 
-                    <p class="about-eyebrow">
+                    <div class="about-eyebrow">
                         THE NEXT CHAPTER
-                    </p>
+                    </div>
 
                     <h2>
                         Hoje construímos
@@ -917,7 +943,7 @@ function future(){
    CTA
    ========================================================== */
 
-function cta(){
+function renderCTA(){
 
     return `
         <section class="about-cta">
@@ -935,21 +961,21 @@ function cta(){
 
                     </div>
 
-                    <div class="about-cta-copy">
+                    <div class="about-cta-content">
 
-                        <p class="about-eyebrow">
+                        <div class="about-eyebrow">
                             AD LIFESTYLE
-                        </p>
+                        </div>
 
                         <h2>
-                            Vamos criar a próxima
-                            <span>possibilidade.</span>
+                            O próximo passo
+                            <span>começa aqui.</span>
                         </h2>
 
                         <p>
-                            Explore o nosso universo,
-                            descubra os produtos ou entre
-                            directamente em contacto connosco.
+                            Explore o nosso universo, descubra os
+                            produtos ou entre directamente em
+                            contacto connosco.
                         </p>
 
                     </div>
@@ -961,8 +987,12 @@ function cta(){
                             class="about-button about-button-gold"
                             data-action="products"
                         >
-                            <span>Explorar produtos</span>
-                            ${icon.arrow}
+                            <span>
+                                Explorar produtos
+                            </span>
+
+                            ${icons.arrow}
+
                         </button>
 
                         <a
@@ -971,8 +1001,12 @@ function cta(){
                             rel="noopener noreferrer"
                             class="about-button about-button-dark"
                         >
-                            <span>Falar connosco</span>
-                            ${icon.arrow}
+                            <span>
+                                Falar connosco
+                            </span>
+
+                            ${icons.arrow}
+
                         </a>
 
                     </div>
@@ -986,34 +1020,39 @@ function cta(){
 }
 
 /* ==========================================================
-   INITIALISATION
+   INITIALISE
    ========================================================== */
 
 function initialiseAbout(){
 
     /* ------------------------------------------------------
-       Smooth anchors
+       Smooth scroll
        ------------------------------------------------------ */
 
     document
-        .querySelectorAll(".about-page [data-scroll]")
+        .querySelectorAll(
+            ".about-page [data-scroll-target]"
+        )
         .forEach(link => {
 
             link.addEventListener("click", event => {
 
                 event.preventDefault();
 
-                const selector = link.dataset.scroll;
-                const target = document.querySelector(selector);
+                const selector =
+                    link.dataset.scrollTarget;
 
-                if(target){
+                const target =
+                    document.querySelector(selector);
 
-                    target.scrollIntoView({
-                        behavior: "smooth",
-                        block: "start"
-                    });
-
+                if(!target){
+                    return;
                 }
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
 
             });
 
@@ -1024,7 +1063,9 @@ function initialiseAbout(){
        ------------------------------------------------------ */
 
     document
-        .querySelectorAll('.about-page [data-action="products"]')
+        .querySelectorAll(
+            '.about-page [data-action="products"]'
+        )
         .forEach(button => {
 
             button.addEventListener("click", () => {
@@ -1038,11 +1079,13 @@ function initialiseAbout(){
         });
 
     /* ------------------------------------------------------
-       Buttons ripple
+       Ripple
        ------------------------------------------------------ */
 
     document
-        .querySelectorAll(".about-page .about-button")
+        .querySelectorAll(
+            ".about-page .about-button"
+        )
         .forEach(button => {
 
             if(typeof ripple === "function"){
@@ -1052,100 +1095,123 @@ function initialiseAbout(){
         });
 
     /* ------------------------------------------------------
-       Reveal
+       Reveal observer
        ------------------------------------------------------ */
 
-    const revealItems =
+    const revealElements =
         document.querySelectorAll(`
-            .about-page .about-statement-content,
-            .about-page .about-who-header,
-            .about-page .about-who-feature,
-            .about-page .about-ecosystem-heading,
-            .about-page .about-ecosystem-line,
-            .about-page .about-brand-section,
-            .about-page .about-leadership-grid,
-            .about-page .about-direction-heading,
-            .about-page .about-direction-grid,
-            .about-page .about-journey-heading,
-            .about-page .about-journey-item,
-            .about-page .about-future-content,
-            .about-page .about-cta-box
+            .about-manifesto-content,
+            .about-section-heading,
+            .about-who-card,
+            .about-ecosystem-heading,
+            .about-ecosystem-map,
+            .about-brand,
+            .about-leadership-grid,
+            .about-direction-heading,
+            .about-direction-grid,
+            .about-journey-heading,
+            .about-journey-item,
+            .about-future-content,
+            .about-cta-box
         `);
 
     if("IntersectionObserver" in window){
 
-        const observer = new IntersectionObserver(
-            entries => {
+        const observer =
+            new IntersectionObserver(
+                entries => {
 
-                entries.forEach(entry => {
+                    entries.forEach(entry => {
 
-                    if(!entry.isIntersecting){
-                        return;
-                    }
+                        if(!entry.isIntersecting){
+                            return;
+                        }
 
-                    entry.target.classList.add("about-visible");
-                    observer.unobserve(entry.target);
+                        entry.target.classList.add(
+                            "about-is-visible"
+                        );
 
-                });
+                        observer.unobserve(
+                            entry.target
+                        );
 
-            },
-            {
-                threshold:.12,
-                rootMargin:"0px 0px -40px"
-            }
-        );
+                    });
 
-        revealItems.forEach(item => {
-            observer.observe(item);
+                },
+                {
+                    threshold:.12,
+                    rootMargin:"0px 0px -40px"
+                }
+            );
+
+        revealElements.forEach(element => {
+            observer.observe(element);
         });
 
     }else{
 
-        revealItems.forEach(item => {
-            item.classList.add("about-visible");
+        revealElements.forEach(element => {
+            element.classList.add(
+                "about-is-visible"
+            );
         });
 
     }
 
     /* ------------------------------------------------------
-       Hero movement
+       Hero image movement
        ------------------------------------------------------ */
 
     const hero =
-        document.querySelector(".about-hero");
+        document.querySelector(
+            ".about-hero"
+        );
 
     const heroImage =
-        document.querySelector(".about-hero-image");
+        document.querySelector(
+            ".about-hero-image"
+        );
 
-    if(hero && heroImage && window.matchMedia("(pointer:fine)").matches){
+    if(
+        hero &&
+        heroImage &&
+        window.matchMedia("(pointer:fine)").matches
+    ){
 
-        hero.addEventListener("mousemove", event => {
+        hero.addEventListener(
+            "mousemove",
+            event => {
 
-            const rect = hero.getBoundingClientRect();
+                const rect =
+                    hero.getBoundingClientRect();
 
-            const x =
-                ((event.clientX - rect.left) / rect.width) - .5;
+                const x =
+                    ((event.clientX - rect.left) /
+                        rect.width) - .5;
 
-            const y =
-                ((event.clientY - rect.top) / rect.height) - .5;
+                const y =
+                    ((event.clientY - rect.top) /
+                        rect.height) - .5;
 
-            heroImage.style.transform = `
-                translate3d(
-                    ${x * 8}px,
-                    ${y * 8}px,
-                    0
-                )
-                scale(1.02)
-            `;
+                heroImage.style.transform = `
+                    translate(
+                        ${x * 7}px,
+                        ${y * 7}px
+                    ) scale(1.02)
+                `;
 
-        });
+            }
+        );
 
-        hero.addEventListener("mouseleave", () => {
+        hero.addEventListener(
+            "mouseleave",
+            () => {
 
-            heroImage.style.transform =
-                "translate3d(0,0,0) scale(1)";
+                heroImage.style.transform =
+                    "translate(0,0) scale(1)";
 
-        });
+            }
+        );
 
     }
 
