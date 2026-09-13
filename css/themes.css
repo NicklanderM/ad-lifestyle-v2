@@ -283,68 +283,459 @@ body[data-theme="zenbru"]::before{
 
 /* ==========================================================
    ALPHA VMAX
+   THEME — BLUE / GOLD PREMIUM
    ========================================================== */
 
 body[data-theme="alpha"]{
 
-    background:#0F0B09;
+    --alpha-blue:#0347B3;
+    --alpha-blue-dark:#02389E;
+    --alpha-blue-light:#1D5DC4;
 
-    color:#F5F5F5;
+    --alpha-gold:#D8A74D;
+    --alpha-gold-light:#F4D681;
+    --alpha-gold-dark:#B98732;
+
+    --alpha-white:#EEF2F8;
+    --alpha-navy:#0D265E;
+
+    background:
+        #EEF2F8;
+
+    color:
+        #0D265E;
 
 }
+
+
+/* ==========================================================
+   FUNDO GLOBAL
+   ========================================================== */
+
+body[data-theme="alpha"]{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 10%,
+            rgba(29,93,196,.08),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 10% 85%,
+            rgba(216,167,77,.06),
+            transparent 30%
+        ),
+
+        #EEF2F8;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="alpha"] .hero{
 
     background:
-        radial-gradient(circle at top right,rgba(212,175,55,.08),transparent 35%),
-        radial-gradient(circle at bottom left,rgba(124,17,22,.10),transparent 40%),
-        var(--hero-gradient);
+
+        radial-gradient(
+            circle at 82% 18%,
+            rgba(29,93,196,.30),
+            transparent 34%
+        ),
+
+        radial-gradient(
+            circle at 18% 82%,
+            rgba(216,167,77,.10),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #011F5C 0%,
+            #02389E 52%,
+            #0347B3 100%
+        );
+
+    color:
+        #EEF2F8;
 
 }
+
+
+/* ==========================================================
+   HERO — TÍTULOS
+   ========================================================== */
+
+body[data-theme="alpha"] .hero-title{
+
+    color:
+        #EEF2F8;
+
+    text-shadow:
+        0 15px 45px
+        rgba(0,0,0,.25);
+
+}
+
+
+body[data-theme="alpha"] .hero-title span{
+
+    color:
+        #D8A74D;
+
+}
+
+
+body[data-theme="alpha"] .hero-sub{
+
+    color:
+        rgba(238,242,248,.78);
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 
 body[data-theme="alpha"] .navbar{
 
-    border-bottom:1px solid rgba(255,255,255,.06);
+    background:
+        rgba(1,31,92,.82);
+
+    border-bottom:
+        1px solid
+        rgba(216,167,77,.16);
+
+    backdrop-filter:
+        blur(18px);
 
 }
+
+
+body[data-theme="alpha"] .navbar a{
+
+    color:
+        rgba(238,242,248,.82);
+
+}
+
+
+body[data-theme="alpha"] .navbar a:hover{
+
+    color:
+        #F4D681;
+
+}
+
+
+/* ==========================================================
+   GLASS
+   ========================================================== */
 
 body[data-theme="alpha"] .glass{
 
-    background:rgba(28,22,18,.55);
+    background:
+        rgba(13,38,94,.55);
 
-    border:1px solid rgba(255,255,255,.06);
+    border:
+        1px solid
+        rgba(238,242,248,.12);
+
+    box-shadow:
+        0 20px 55px
+        rgba(1,31,92,.16);
+
+    backdrop-filter:
+        blur(16px);
 
 }
+
+
+/* ==========================================================
+   BOTÕES
+   ========================================================== */
+
+body[data-theme="alpha"] .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #D8A74D,
+            #F4D681
+        );
+
+    color:
+        #09245C;
+
+    border:
+        1px solid
+        rgba(216,167,77,.55);
+
+    box-shadow:
+        0 15px 35px
+        rgba(216,167,77,.20);
+
+}
+
+
+body[data-theme="alpha"] .btn-primary:hover{
+
+    background:
+        linear-gradient(
+            135deg,
+            #F4D681,
+            #D8A74D
+        );
+
+    box-shadow:
+        0 20px 45px
+        rgba(216,167,77,.32);
+
+}
+
+
+body[data-theme="alpha"] .btn-glass{
+
+    background:
+        rgba(238,242,248,.06);
+
+    border:
+        1px solid
+        rgba(238,242,248,.20);
+
+    color:
+        #EEF2F8;
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+
+body[data-theme="alpha"] .btn-glass:hover{
+
+    background:
+        rgba(238,242,248,.12);
+
+    border-color:
+        rgba(216,167,77,.40);
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="alpha"] .product-glow{
 
     background:
-        radial-gradient(circle,#D4AF37,transparent 72%);
 
-    opacity:.45;
+        radial-gradient(
+            circle,
+            rgba(216,167,77,.65) 0%,
+            rgba(29,93,196,.30) 38%,
+            transparent 72%
+        );
+
+    opacity:
+        .55;
 
 }
+
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
+
+body[data-theme="alpha"] .hero-product img{
+
+    filter:
+
+        drop-shadow(
+            0 35px 55px
+            rgba(0,0,0,.38)
+        );
+
+}
+
+
+body[data-theme="alpha"] .hero-product:hover img{
+
+    filter:
+
+        drop-shadow(
+            0 45px 70px
+            rgba(0,0,0,.45)
+        );
+
+}
+
+
+/* ==========================================================
+   SERVICE ICON
+   ========================================================== */
 
 body[data-theme="alpha"] .service-icon{
 
-    background:rgba(212,175,55,.08);
+    background:
+        rgba(3,71,179,.08);
+
+    border:
+        1px solid
+        rgba(216,167,77,.18);
+
+    color:
+        #0347B3;
 
 }
+
+
+/* ==========================================================
+   CARDS
+   ========================================================== */
+
+body[data-theme="alpha"] .card{
+
+    background:
+        rgba(255,255,255,.88);
+
+    border:
+        1px solid
+        rgba(13,38,94,.08);
+
+    box-shadow:
+        0 20px 55px
+        rgba(13,38,94,.07);
+
+}
+
+
+body[data-theme="alpha"] .card:hover{
+
+    border-color:
+        rgba(216,167,77,.30);
+
+    box-shadow:
+        0 25px 65px
+        rgba(13,38,94,.12);
+
+}
+
 
 body[data-theme="alpha"] .card::after{
 
-    background:#D4AF37;
+    background:
+        linear-gradient(
+            90deg,
+            #D8A74D,
+            #F4D681
+        );
 
 }
+
+
+/* ==========================================================
+   ORBS / ELEMENTOS DECORATIVOS
+   ========================================================== */
 
 body[data-theme="alpha"] .orb{
 
-    background:#D4AF37;
+    background:
+        #D8A74D;
+
+    box-shadow:
+        0 0 35px
+        rgba(216,167,77,.35);
 
 }
 
 
-/* Partículas douradas */
+/* ==========================================================
+   BADGES
+   ========================================================== */
+
+body[data-theme="alpha"] .badge{
+
+    background:
+        rgba(216,167,77,.08);
+
+    border:
+        1px solid
+        rgba(216,167,77,.35);
+
+    color:
+        #F4D681;
+
+}
+
+
+/* ==========================================================
+   TÍTULOS DE SECÇÃO
+   ========================================================== */
+
+body[data-theme="alpha"] .section-title{
+
+    color:
+        #0D265E;
+
+}
+
+
+body[data-theme="alpha"] .section-subtitle{
+
+    color:
+        rgba(13,38,94,.65);
+
+}
+
+
+/* ==========================================================
+   LINKS / ACCENT
+   ========================================================== */
+
+body[data-theme="alpha"] a{
+
+    --accent:
+        #D8A74D;
+
+}
+
+
+body[data-theme="alpha"] a:hover{
+
+    color:
+        #B98732;
+
+}
+
+
+/* ==========================================================
+   LINHAS DECORATIVAS
+   ========================================================== */
+
+body[data-theme="alpha"] .line,
+body[data-theme="alpha"] .divider{
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #D8A74D,
+            transparent
+        );
+
+}
+
+
+/* ==========================================================
+   PARTICULAS DOURADAS
+   ========================================================== */
 
 body[data-theme="alpha"]::before{
 
@@ -357,16 +748,107 @@ body[data-theme="alpha"]::before{
     pointer-events:none;
 
     background-image:
-        radial-gradient(rgba(212,175,55,.10) 1px,transparent 1px);
 
-    background-size:42px 42px;
+        radial-gradient(
+            rgba(216,167,77,.13) 1px,
+            transparent 1px
+        );
 
-    opacity:.35;
+    background-size:
+        42px 42px;
 
-    z-index:-1;
+    opacity:
+        .28;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   PARTICULAS AZUIS
+   ========================================================== */
+
+body[data-theme="alpha"]::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(29,93,196,.07),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 75%,
+            rgba(3,71,179,.06),
+            transparent 28%
+        );
+
+    z-index:
+        -2;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="alpha"]::-webkit-scrollbar{
+
+    width:
+        8px;
+
+}
+
+
+body[data-theme="alpha"]::-webkit-scrollbar-track{
+
+    background:
+        #EEF2F8;
+
+}
+
+
+body[data-theme="alpha"]::-webkit-scrollbar-thumb{
+
+    border-radius:
+        999px;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            #0347B3,
+            #D8A74D
+        );
+
+}
+
+
+/* ==========================================================
+   SELECÇÃO DE TEXTO
+   ========================================================== */
+
+body[data-theme="alpha"] ::selection{
+
+    background:
+        #D8A74D;
+
+    color:
+        #0D265E;
+
+}
 
 /* ==========================================================
    ALPHAMETA
