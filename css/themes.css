@@ -499,53 +499,285 @@ body[data-theme="ezeno"]::-webkit-scrollbar-thumb{
 }
 
 /* ==========================================================
+   AD LIFESTYLE V2
    ZENBRU
+   THEME — YELLOW / ORANGE / COFFEE / GREEN
    ========================================================== */
 
 body[data-theme="zenbru"]{
 
-    background:#FAF6F1;
+    --zenbru-yellow:#F7C51E;
+    --zenbru-gold:#F2A900;
+    --zenbru-orange:#E87516;
+    --zenbru-terracotta:#B9361C;
+
+    --zenbru-coffee:#572512;
+    --zenbru-dark:#32150B;
+    --zenbru-caramel:#A95720;
+
+    --zenbru-green:#557B28;
+
+    --zenbru-cream:#FFF1C9;
+    --zenbru-ivory:#FFF8E8;
+
+
+    background:
+        #FFF1C9 !important;
+
+    color:
+        #32150B !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="zenbru"]{
+
+    background:
+
+        radial-gradient(
+            circle at 88% 6%,
+            rgba(247,197,30,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 7% 48%,
+            rgba(85,123,40,.08),
+            transparent 28%
+        ),
+
+        #FFF1C9 !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="zenbru"] .navbar{
+
+    background:
+        rgba(50,21,11,.97) !important;
+
+    border-bottom:
+        1px solid
+        rgba(247,197,30,.20) !important;
+
+}
+
+
+body[data-theme="zenbru"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="zenbru"] .navbar a:hover{
+
+    color:
+        #F7C51E !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="zenbru"] .hero{
 
     background:
-        radial-gradient(circle at top right,#E7D3BF,transparent 35%),
-        radial-gradient(circle at bottom left,#F3E3D0,transparent 35%),
-        var(--hero-gradient);
+
+        radial-gradient(
+            circle at 30% 30%,
+            rgba(247,197,30,.24),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 75% 25%,
+            rgba(232,117,22,.28),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #32150B,
+            #572512,
+            #E87516
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="zenbru"] .hero h1,
+body[data-theme="zenbru"] .hero h2,
+body[data-theme="zenbru"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="zenbru"] .hero p{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+body[data-theme="zenbru"] .hero-title span{
+
+    color:
+        #F7C51E !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F7C51E !important;
+
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+body[data-theme="zenbru"] .badge{
+
+    color:
+        #F7C51E !important;
+
+    background:
+        rgba(247,197,30,.11) !important;
+
+    border:
+        1px solid
+        rgba(247,197,30,.34) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="zenbru"] .hero .btn-primary,
+body[data-theme="zenbru"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #F7C51E,
+            #F2A900
+        ) !important;
+
+    color:
+        #32150B !important;
+
+}
+
+
+body[data-theme="zenbru"] .hero .btn-glass,
+body[data-theme="zenbru"] .showcase .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="zenbru"] .product-glow{
 
     background:
-        radial-gradient(circle,#8B5A2B,transparent 72%);
 
-    opacity:.42;
+        radial-gradient(
+            circle,
+            rgba(247,197,30,.48),
+            rgba(232,117,22,.23) 42%,
+            transparent 72%
+        ) !important;
+
+    opacity:
+        .95 !important;
+
+}
+
+
+/* ==========================================================
+   BLOBS
+   ========================================================== */
+
+body[data-theme="zenbru"] .blob-1{
+
+    background:
+        #F7C51E !important;
 
 }
 
-body[data-theme="zenbru"] .service-icon{
 
-    background:rgba(139,90,43,.12);
+body[data-theme="zenbru"] .blob-2{
+
+    background:
+        #E87516 !important;
+
+}
+
+
+body[data-theme="zenbru"] .blob-3{
+
+    background:
+        #557B28 !important;
 
 }
 
-body[data-theme="zenbru"] .card::after{
 
-    background:#8B5A2B;
-
-}
+/* ==========================================================
+   ORB
+   ========================================================== */
 
 body[data-theme="zenbru"] .orb{
 
-    background:#B07B45;
+    background:
+        #F7C51E !important;
 
 }
 
 
-/* Textura subtil */
+/* ==========================================================
+   TEXTURE
+   ========================================================== */
 
 body[data-theme="zenbru"]::before{
 
@@ -557,20 +789,55 @@ body[data-theme="zenbru"]::before{
 
     pointer-events:none;
 
-    opacity:.35;
+    background-image:
 
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent,
-            transparent 18px,
-            rgba(139,90,43,.025) 19px
+        radial-gradient(
+            rgba(247,197,30,.08) 1px,
+            transparent 1px
         );
 
-    z-index:-1;
+    background-size:
+        36px 36px;
+
+    opacity:
+        .25;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="zenbru"] ::selection{
+
+    background:
+        #F7C51E !important;
+
+    color:
+        #32150B !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="zenbru"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #B9361C,
+            #E87516,
+            #F7C51E
+        ) !important;
+
+}
 
 /* ==========================================================
    AD LIFESTYLE V2
