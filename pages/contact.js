@@ -2,6 +2,7 @@
    AD LIFESTYLE V2
    CONTACT.JS
    Premium Contact & Concierge Experience
+   Final Structured Version
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -9,7 +10,7 @@ import { navigate } from "../js/router.js";
 import { ripple, stagger } from "../js/animations.js";
 
 /* ==========================================================
-   CONFIGURAÇÃO
+   CONFIGURATION
    ========================================================== */
 
 const WHATSAPP_NUMBER = "244924964666";
@@ -63,7 +64,7 @@ const SOCIALS = {
 
 
 /* ==========================================================
-   LOAD
+   LOAD CONTACT PAGE
    ========================================================== */
 
 export function loadContact(){
@@ -73,34 +74,39 @@ export function loadContact(){
     const app =
         document.getElementById("app");
 
+    if(!app){
 
-    if(!app) return;
+        console.error(
+            "AD LIFESTYLE: elemento #app não encontrado."
+        );
 
+        return;
+
+    }
 
     app.innerHTML = `
 
-        <div class="contact-page">
+        <main class="contact-page">
 
-            ${hero()}
+            ${renderHero()}
 
-            ${contactHub()}
+            ${renderContactHub()}
 
-            ${directChannels()}
+            ${renderDirectChannels()}
 
-            ${digitalPresence()}
+            ${renderDigitalPresence()}
 
-            ${locationSection()}
+            ${renderLocation()}
 
-            ${messageForm()}
+            ${renderMessageForm()}
 
-            ${faq()}
+            ${renderFAQ()}
 
-            ${cta()}
+            ${renderCTA()}
 
-        </div>
+        </main>
 
     `;
-
 
     initialiseContact();
 
@@ -111,193 +117,258 @@ export function loadContact(){
    HERO
    ========================================================== */
 
-function hero(){
+function renderHero(){
 
-return `
+    return `
 
-<section class="hero contact-hero">
+        <section class="contact-hero">
 
-    <div class="aurora">
+            <div class="contact-hero-background"></div>
 
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
+            <div class="contact-hero-glow"></div>
 
-    </div>
+            <div class="contact-container contact-hero-container">
 
+                <div class="contact-hero-top">
 
-    <div class="container hero-grid">
+                    <span>
+                        AD LIFESTYLE
+                    </span>
 
-        <div class="hero-content reveal">
+                    <span>
+                        CONTACT / 01
+                    </span>
 
-            <span class="label">
-                AD Lifestyle · Contact
-            </span>
-
-
-            <span class="contact-eyebrow">
-                DIRECT CONNECTION · LUANDA · ANGOLA
-            </span>
+                </div>
 
 
-            <h1 class="hero-title">
-
-                A próxima conversa
-                <span>começa aqui.</span>
-
-            </h1>
+                <div class="contact-hero-main">
 
 
-            <p class="hero-sub">
+                    <!-- CONTENT -->
 
-                Uma dúvida, um produto, um evento, uma apresentação
-                ou uma nova possibilidade. Estamos disponíveis para
-                ouvir, explicar e encaminhar cada pedido.
+                    <div class="contact-hero-content">
 
-            </p>
-
-
-            <div class="hero-actions">
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-action="whatsapp">
-
-                    ${icon("whatsapp")}
-
-                    Falar no WhatsApp
-
-                </button>
+                        <div class="contact-eyebrow">
+                            DIRECT CONNECTION · LUANDA · ANGOLA
+                        </div>
 
 
-                <button
-                    type="button"
-                    class="btn btn-glass"
-                    data-action="form">
+                        <h1>
 
-                    ${icon("message")}
+                            A próxima conversa
+                            <span>começa aqui.</span>
 
-                    Enviar mensagem
-
-                </button>
-
-            </div>
+                        </h1>
 
 
-            <div class="contact-hero-meta">
+                        <p>
 
-                <div>
+                            Uma dúvida, um produto, um evento,
+                            uma apresentação ou uma nova
+                            possibilidade. Estamos disponíveis para
+                            ouvir, explicar e encaminhar cada pedido.
 
-                    <span class="contact-status-dot"></span>
+                        </p>
 
-                    <div>
 
-                        <strong>
-                            Atendimento directo
-                        </strong>
+                        <div class="contact-hero-actions">
 
-                        <small>
-                            WhatsApp disponível
-                        </small>
+                            <button
+                                type="button"
+                                class="contact-button contact-button-gold"
+                                data-action="whatsapp"
+                            >
+
+                                ${icon("whatsapp")}
+
+                                <span>
+                                    Falar no WhatsApp
+                                </span>
+
+                            </button>
+
+
+                            <button
+                                type="button"
+                                class="contact-button contact-button-outline"
+                                data-action="form"
+                            >
+
+                                ${icon("message")}
+
+                                <span>
+                                    Enviar mensagem
+                                </span>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="contact-hero-meta">
+
+
+                            <div class="contact-meta-item">
+
+                                <span
+                                    class="contact-status-dot"
+                                ></span>
+
+
+                                <div>
+
+                                    <strong>
+                                        Atendimento directo
+                                    </strong>
+
+                                    <small>
+                                        WhatsApp disponível
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="contact-meta-item">
+
+                                ${icon("clock")}
+
+                                <div>
+
+                                    <strong>
+                                        ${CONTACT_DATA.hours}
+                                    </strong>
+
+                                    <small>
+                                        ${CONTACT_DATA.days}
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
 
-                </div>
+
+                    <!-- VISUAL -->
+
+                    <div class="contact-hero-visual-area">
+
+                        <div class="contact-hero-visual">
 
 
-                <div>
+                            <div
+                                class="contact-orbit contact-orbit-a"
+                            ></div>
 
-                    ${icon("clock")}
 
-                    <div>
+                            <div
+                                class="contact-orbit contact-orbit-b"
+                            ></div>
 
-                        <strong>
-                            ${CONTACT_DATA.hours}
-                        </strong>
 
-                        <small>
-                            ${CONTACT_DATA.days}
-                        </small>
+                            <div
+                                class="contact-orbit contact-orbit-c"
+                            ></div>
+
+
+                            <div class="contact-hero-core">
+
+                                <div class="contact-core-logo">
+
+                                    <img
+                                        src="./assets/logo/logo.png"
+                                        alt="AD Lifestyle"
+                                    >
+
+                                </div>
+
+
+                                <strong>
+                                    AD LIFESTYLE
+                                </strong>
+
+
+                                <small>
+                                    Creating Bridges
+                                </small>
+
+                            </div>
+
+
+                            <div class="contact-floating-card contact-floating-card-a">
+
+                                ${icon("whatsapp")}
+
+                                <span>
+                                    WhatsApp
+                                </span>
+
+                            </div>
+
+
+                            <div class="contact-floating-card contact-floating-card-b">
+
+                                ${icon("location")}
+
+                                <span>
+                                    Luanda
+                                </span>
+
+                            </div>
+
+
+                            <div class="contact-floating-card contact-floating-card-c">
+
+                                ${icon("message")}
+
+                                <span>
+                                    Fale connosco
+                                </span>
+
+                            </div>
+
+
+                        </div>
 
                     </div>
 
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-visual reveal-right">
-
-            <div class="contact-hero-visual">
-
-                <div class="contact-orbit orbit-a"></div>
-
-                <div class="contact-orbit orbit-b"></div>
-
-                <div class="contact-orbit orbit-c"></div>
-
-
-                <div class="contact-hero-core">
-
-                    <span class="contact-core-mark">
-                        AD
-                    </span>
-
-                    <span class="contact-core-name">
-                        LIFESTYLE
-                    </span>
-
-                    <small>
-                        Creating Bridges
-                    </small>
 
                 </div>
 
 
-                <div class="contact-floating-card card-a">
-
-                    ${icon("whatsapp")}
+                <div class="contact-hero-bottom">
 
                     <span>
-                        WhatsApp
+                        LUANDA · ANGOLA
                     </span>
 
-                </div>
 
+                    <span class="contact-hero-scroll">
 
-                <div class="contact-floating-card card-b">
+                        SCROLL
 
-                    ${icon("location")}
+                        <i></i>
 
-                    <span>
-                        Luanda
                     </span>
 
-                </div>
-
-
-                <div class="contact-floating-card card-c">
-
-                    ${icon("message")}
 
                     <span>
-                        Fale connosco
+                        WELLNESS / EVOLUTION
                     </span>
 
                 </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
@@ -306,144 +377,158 @@ return `
    CONTACT HUB
    ========================================================== */
 
-function contactHub(){
+function renderContactHub(){
 
-return `
+    return `
 
-<section class="section contact-hub">
+        <section class="contact-hub">
 
-    <div class="container">
-
-        <div class="section-center reveal">
-
-            <span class="label">
-                Contact Hub
-            </span>
+            <div class="contact-container">
 
 
-            <h2 class="section-title">
+                <div class="contact-section-heading contact-section-heading-center">
 
-                Escolha como
-                <span>quer falar connosco.</span>
+                    <div>
 
-            </h2>
+                        <div class="contact-eyebrow">
+                            CONTACT HUB
+                        </div>
 
+                        <h2>
+                            Escolha como
+                            <span>quer falar connosco.</span>
+                        </h2>
 
-            <p class="lead">
-
-                Cada canal foi pensado para tornar o contacto
-                simples, rápido e directo.
-
-            </p>
-
-        </div>
-
-
-        <div class="contact-hub-grid mt-6">
-
-
-            <article
-                class="contact-hub-main reveal">
-
-                <div class="contact-hub-main-top">
-
-                    <span>
-                        CANAL PRINCIPAL
-                    </span>
-
-                    <div class="contact-live">
-                        <span></span>
-                        ONLINE
                     </div>
-
-                </div>
-
-
-                <div class="contact-hub-main-body">
-
-                    <div class="contact-hub-icon">
-                        ${icon("whatsapp")}
-                    </div>
-
-
-                    <span class="contact-card-label">
-                        Atendimento directo
-                    </span>
-
-
-                    <h3>
-                        WhatsApp
-                    </h3>
-
-
-                    <strong class="contact-hub-number">
-                        ${CONTACT_DATA.whatsapp}
-                    </strong>
 
 
                     <p>
-                        Para produtos, encomendas, eventos,
-                        apresentações, informações e dúvidas.
+                        Cada canal foi pensado para tornar
+                        o contacto simples, rápido e directo.
                     </p>
-
-
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        data-action="whatsapp">
-
-                        Iniciar conversa
-                        ${icon("arrow-up-right")}
-
-                    </button>
 
                 </div>
 
-            </article>
+
+                <div class="contact-hub-grid">
 
 
-            <div class="contact-hub-side">
+                    <!-- MAIN -->
 
-                ${hubMini(
-                    "email",
-                    "E-mail",
-                    CONTACT_DATA.email,
-                    "Informações e pedidos",
-                    "email"
-                )}
+                    <article class="contact-hub-main">
 
+                        <div class="contact-hub-top">
 
-                ${hubMini(
-                    "location",
-                    "Localização",
-                    CONTACT_DATA.location,
-                    CONTACT_DATA.landmark,
-                    "maps"
-                )}
+                            <span>
+                                CANAL PRINCIPAL
+                            </span>
 
 
-                ${hubMini(
-                    "clock",
-                    "Horário",
-                    CONTACT_DATA.hours,
-                    CONTACT_DATA.days,
-                    "clock"
-                )}
+                            <span class="contact-online">
+
+                                <i></i>
+
+                                ONLINE
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-hub-body">
+
+                            <div class="contact-hub-icon">
+                                ${icon("whatsapp")}
+                            </div>
+
+
+                            <span class="contact-card-label">
+                                Atendimento directo
+                            </span>
+
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+
+                            <strong>
+                                ${CONTACT_DATA.whatsapp}
+                            </strong>
+
+
+                            <p>
+                                Para produtos, encomendas,
+                                eventos, apresentações,
+                                informações e dúvidas.
+                            </p>
+
+
+                            <button
+                                type="button"
+                                class="contact-button contact-button-gold"
+                                data-action="whatsapp"
+                            >
+
+                                <span>
+                                    Iniciar conversa
+                                </span>
+
+                                ${icon("arrow-up-right")}
+
+                            </button>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- SECONDARY -->
+
+                    <div class="contact-hub-side">
+
+
+                        ${renderHubMini(
+                            "email",
+                            "E-mail",
+                            CONTACT_DATA.email,
+                            "Informações e pedidos",
+                            "email"
+                        )}
+
+
+                        ${renderHubMini(
+                            "location",
+                            "Localização",
+                            CONTACT_DATA.location,
+                            CONTACT_DATA.landmark,
+                            "maps"
+                        )}
+
+
+                        ${renderHubMini(
+                            "clock",
+                            "Horário",
+                            CONTACT_DATA.hours,
+                            CONTACT_DATA.days,
+                            "clock"
+                        )}
+
+                    </div>
+
+
+                </div>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
 
-function hubMini(
+function renderHubMini(
     iconType,
     title,
     value,
@@ -451,59 +536,63 @@ function hubMini(
     action
 ){
 
-return `
+    const interactive =
+        action !== "clock";
 
-<article
-    class="contact-hub-mini reveal"
-    data-contact-action="${action}"
-    ${action !== "clock" ? 'tabindex="0"' : ""}>
+    return `
 
-    <div class="contact-hub-mini-icon">
+        <article
+            class="contact-hub-mini"
+            data-contact-action="${action}"
+            ${
+                interactive
+                    ? 'tabindex="0" role="button"'
+                    : ""
+            }
+        >
 
-        ${icon(iconType)}
-
-    </div>
-
-
-    <div>
-
-        <span>
-            ${description}
-        </span>
-
-
-        <h3>
-            ${title}
-        </h3>
+            <div class="contact-hub-mini-icon">
+                ${icon(iconType)}
+            </div>
 
 
-        <strong>
-            ${value}
-        </strong>
+            <div class="contact-hub-mini-content">
 
-    </div>
+                <span>
+                    ${description}
+                </span>
 
 
-    ${
-        action !== "clock"
+                <h3>
+                    ${title}
+                </h3>
 
-            ? `
 
-            <span class="contact-hub-arrow">
+                <strong>
+                    ${value}
+                </strong>
 
-                ${icon("arrow-up-right")}
+            </div>
 
-            </span>
 
-            `
+            ${
+                interactive
 
-            : ""
+                    ? `
 
-    }
+                        <span class="contact-hub-mini-arrow">
+                            ${icon("arrow-up-right")}
+                        </span>
 
-</article>
+                    `
 
-`;
+                    : ""
+
+            }
+
+        </article>
+
+    `;
 
 }
 
@@ -512,117 +601,129 @@ return `
    DIRECT CHANNELS
    ========================================================== */
 
-function directChannels(){
+function renderDirectChannels(){
 
-return `
+    return `
 
-<section class="section-sm contact-direct">
+        <section class="contact-direct">
 
-    <div class="container">
-
-        <div class="section-center reveal">
-
-            <span class="label">
-                Canais directos
-            </span>
+            <div class="contact-container">
 
 
-            <h2 class="section-title">
-                Estamos presentes
-                <span>onde a conversa acontece.</span>
-            </h2>
+                <div class="contact-section-heading contact-section-heading-center">
 
-        </div>
+                    <div>
 
+                        <div class="contact-eyebrow">
+                            CANAIS DIRECTOS
+                        </div>
 
-        <div class="grid grid-3 mt-6">
+                        <h2>
+                            Estamos presentes
+                            <span>onde a conversa acontece.</span>
+                        </h2>
 
-            ${channelCard(
-                "whatsapp",
-                "WhatsApp",
-                CONTACT_DATA.whatsapp,
-                "Resposta directa e acompanhamento."
-            )}
+                    </div>
 
-
-            ${channelCard(
-                "email",
-                "E-mail",
-                CONTACT_DATA.email,
-                "Pedidos, informações e assuntos institucionais."
-            )}
+                </div>
 
 
-            ${channelCard(
-                "location",
-                "Visite-nos",
-                CONTACT_DATA.location,
-                `${CONTACT_DATA.landmark} · ${CONTACT_DATA.city}`
-            )}
+                <div class="contact-channel-grid">
 
-        </div>
 
-    </div>
+                    ${renderChannel(
+                        "whatsapp",
+                        "WhatsApp",
+                        CONTACT_DATA.whatsapp,
+                        "Resposta directa e acompanhamento."
+                    )}
 
-</section>
 
-`;
+                    ${renderChannel(
+                        "email",
+                        "E-mail",
+                        CONTACT_DATA.email,
+                        "Pedidos, informações e assuntos institucionais."
+                    )}
+
+
+                    ${renderChannel(
+                        "location",
+                        "Visite-nos",
+                        CONTACT_DATA.location,
+                        `${CONTACT_DATA.landmark} · ${CONTACT_DATA.city}`
+                    )}
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    `;
 
 }
 
 
-function channelCard(
-    iconType,
+function renderChannel(
+    type,
     title,
     value,
     description
 ){
 
-return `
+    const interactive =
+        type !== "location";
 
-<article
-    class="contact-channel-card reveal"
-    data-channel="${iconType}"
-    ${iconType !== "location"
-        ? 'role="button" tabindex="0"'
-        : ""}>
+    return `
 
-    <div class="contact-channel-icon">
+        <article
+            class="contact-channel-card"
+            data-channel="${type}"
+            ${
+                interactive
+                    ? 'role="button" tabindex="0"'
+                    : ""
+            }
+        >
 
-        ${icon(iconType)}
+            <div class="contact-channel-icon">
 
-    </div>
+                ${icon(type)}
 
-
-    <span>
-        CONTACTO
-    </span>
-
-
-    <h3>
-        ${title}
-    </h3>
+            </div>
 
 
-    <strong>
-        ${value}
-    </strong>
+            <span class="contact-channel-label">
+                CONTACTO
+            </span>
 
 
-    <p>
-        ${description}
-    </p>
+            <h3>
+                ${title}
+            </h3>
 
 
-    <div class="contact-channel-arrow">
+            <strong>
+                ${value}
+            </strong>
 
-        ${icon("arrow-right")}
 
-    </div>
+            <p>
+                ${description}
+            </p>
 
-</article>
 
-`;
+            <span class="contact-channel-arrow">
+
+                ${icon("arrow-right")}
+
+            </span>
+
+        </article>
+
+    `;
 
 }
 
@@ -631,143 +732,148 @@ return `
    DIGITAL PRESENCE
    ========================================================== */
 
-function digitalPresence(){
+function renderDigitalPresence(){
 
-return `
+    return `
 
-<section class="section contact-digital">
+        <section class="contact-digital">
 
-    <div class="container">
-
-        <div class="contact-digital-panel">
-
-            <div class="contact-digital-copy reveal-left">
-
-                <span class="label">
-                    AD Lifestyle Digital
-                </span>
+            <div class="contact-container">
 
 
-                <h2 class="section-title">
-
-                    Continue a conversa
-                    <span>fora daqui.</span>
-
-                </h2>
+                <div class="contact-digital-panel">
 
 
-                <p class="text-lg">
+                    <div class="contact-digital-copy">
 
-                    Acompanhe produtos, eventos, conteúdos,
-                    apresentações e novidades nos nossos canais digitais.
+                        <div class="contact-eyebrow">
+                            AD LIFESTYLE DIGITAL
+                        </div>
 
-                </p>
+
+                        <h2>
+
+                            Continue a conversa
+                            <span>fora daqui.</span>
+
+                        </h2>
 
 
-                <div class="contact-digital-status">
+                        <p>
 
-                    <span></span>
+                            Acompanhe produtos, eventos,
+                            conteúdos, apresentações e
+                            novidades nos nossos canais digitais.
 
-                    <strong>
-                        Conteúdo em evolução
-                    </strong>
+                        </p>
+
+
+                        <div class="contact-digital-status">
+
+                            <i></i>
+
+                            <strong>
+                                Conteúdo em evolução
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-social-links">
+
+
+                        ${renderSocial(
+                            "instagram",
+                            "Instagram",
+                            "@ad.ambassadoracademy21",
+                            SOCIALS.instagram
+                        )}
+
+
+                        ${renderSocial(
+                            "facebook",
+                            "Facebook",
+                            "AD Lifestyle",
+                            SOCIALS.facebook
+                        )}
+
+
+                        ${renderSocial(
+                            "tiktok",
+                            "TikTok",
+                            "@adbdlifestyle",
+                            SOCIALS.tiktok
+                        )}
+
+
+                        ${renderSocial(
+                            "whatsapp",
+                            "WhatsApp",
+                            CONTACT_DATA.whatsapp,
+                            SOCIALS.whatsapp
+                        )}
+
+
+                    </div>
+
 
                 </div>
 
-            </div>
-
-
-            <div class="contact-social-links reveal-right">
-
-                ${socialLink(
-                    "instagram",
-                    "Instagram",
-                    "@ad.ambassadoracademy21",
-                    SOCIALS.instagram
-                )}
-
-
-                ${socialLink(
-                    "facebook",
-                    "Facebook",
-                    "AD Lifestyle",
-                    SOCIALS.facebook
-                )}
-
-
-                ${socialLink(
-                    "tiktok",
-                    "TikTok",
-                    "@adbdlifestyle",
-                    SOCIALS.tiktok
-                )}
-
-
-                ${socialLink(
-                    "whatsapp",
-                    "WhatsApp",
-                    CONTACT_DATA.whatsapp,
-                    SOCIALS.whatsapp
-                )}
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
 
-function socialLink(
+function renderSocial(
     iconType,
     title,
     handle,
     url
 ){
 
-return `
+    return `
 
-<a
-    class="contact-social-link"
-    href="${url}"
-    target="_blank"
-    rel="noopener noreferrer">
+        <a
+            class="contact-social-link"
+            href="${url}"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
 
-    <span class="contact-social-icon">
-
-        ${icon(iconType)}
-
-    </span>
-
-
-    <span class="contact-social-info">
-
-        <strong>
-            ${title}
-        </strong>
+            <span class="contact-social-icon">
+                ${icon(iconType)}
+            </span>
 
 
-        <small>
-            ${handle}
-        </small>
+            <span class="contact-social-info">
 
-    </span>
+                <strong>
+                    ${title}
+                </strong>
+
+                <small>
+                    ${handle}
+                </small>
+
+            </span>
 
 
-    <span class="contact-social-arrow">
+            <span class="contact-social-arrow">
 
-        ${icon("arrow-up-right")}
+                ${icon("arrow-up-right")}
 
-    </span>
+            </span>
 
-</a>
+        </a>
 
-`;
+    `;
 
 }
 
@@ -776,500 +882,528 @@ return `
    LOCATION
    ========================================================== */
 
-function locationSection(){
+function renderLocation(){
 
-return `
+    return `
 
-<section class="section contact-location">
+        <section class="contact-location">
 
-    <div class="container">
-
-        <div class="contact-location-header reveal">
-
-            <div>
-
-                <span class="label">
-                    Localização
-                </span>
+            <div class="contact-container">
 
 
-                <h2 class="section-title">
+                <div class="contact-location-header">
 
-                    Encontre a AD Lifestyle
-                    <span>em Luanda.</span>
+                    <div>
 
-                </h2>
-
-            </div>
-
-
-            <span class="contact-location-badge">
-
-                ${icon("location")}
-
-                ${CONTACT_DATA.city}
-
-            </span>
-
-        </div>
+                        <div class="contact-eyebrow">
+                            LOCALIZAÇÃO
+                        </div>
 
 
-        <div class="contact-location-grid mt-6">
+                        <h2>
+
+                            Encontre a AD Lifestyle
+                            <span>em Luanda.</span>
+
+                        </h2>
+
+                    </div>
 
 
-            <!-- INFORMATION -->
-
-            <div class="contact-location-info reveal-left">
-
-                <div class="contact-location-heading">
-
-                    <div class="contact-location-symbol">
+                    <span class="contact-location-badge">
 
                         ${icon("location")}
 
-                    </div>
-
-
-                    <div>
-
-                        <span>
-                            ESTAMOS AQUI
-                        </span>
-
-                        <h3>
-                            ${CONTACT_DATA.location}
-                        </h3>
-
-                    </div>
-
-                </div>
-
-
-                <div class="contact-location-divider"></div>
-
-
-                <div class="contact-location-items">
-
-                    ${locationItem(
-                        "location",
-                        "Morada",
-                        CONTACT_DATA.location,
-                        CONTACT_DATA.landmark
-                    )}
-
-
-                    ${locationItem(
-                        "navigation",
-                        "Coordenadas",
-                        "8°50'06.90\"S",
-                        "13°13'38.93\"E"
-                    )}
-
-
-                    ${locationItem(
-                        "clock",
-                        "Atendimento",
-                        CONTACT_DATA.days,
-                        CONTACT_DATA.hours
-                    )}
-
-                </div>
-
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-action="maps">
-
-                    ${icon("navigation")}
-
-                    Abrir no Google Maps
-
-                    ${icon("arrow-up-right")}
-
-                </button>
-
-            </div>
-
-
-            <!-- MAP -->
-
-            <div class="contact-map-card reveal-right">
-
-                <div class="contact-map-header">
-
-                    <div>
-
-                        <span>
-                            LOCATION SYSTEM
-                        </span>
-
-                        <strong>
-                            AD Lifestyle
-                        </strong>
-
-                    </div>
-
-
-                    <span class="contact-map-live">
-
-                        <span></span>
-
-                        LUANDA
+                        ${CONTACT_DATA.city}
 
                     </span>
 
                 </div>
 
 
-                <div class="contact-map-frame">
-
-                    <iframe
-                        title="Localização da AD Lifestyle em Luanda"
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925&layer=mapnik&marker=-8.83525%2C13.22748"
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
+                <div class="contact-location-grid">
 
 
-                    <div class="contact-map-marker">
+                    <!-- INFO -->
 
-                        <span></span>
+                    <div class="contact-location-info">
 
-                        ${icon("location")}
+
+                        <div class="contact-location-heading">
+
+                            <div class="contact-location-symbol">
+                                ${icon("location")}
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    ESTAMOS AQUI
+                                </span>
+
+                                <h3>
+                                    ${CONTACT_DATA.location}
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-location-divider"></div>
+
+
+                        <div class="contact-location-items">
+
+
+                            ${renderLocationItem(
+                                "location",
+                                "Morada",
+                                CONTACT_DATA.location,
+                                CONTACT_DATA.landmark
+                            )}
+
+
+                            ${renderLocationItem(
+                                "navigation",
+                                "Coordenadas",
+                                "8°50'06.90\"S",
+                                "13°13'38.93\"E"
+                            )}
+
+
+                            ${renderLocationItem(
+                                "clock",
+                                "Atendimento",
+                                CONTACT_DATA.days,
+                                CONTACT_DATA.hours
+                            )}
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="contact-button contact-button-gold"
+                            data-action="maps"
+                        >
+
+                            ${icon("navigation")}
+
+                            <span>
+                                Abrir no Google Maps
+                            </span>
+
+                            ${icon("arrow-up-right")}
+
+                        </button>
+
 
                     </div>
+
+
+                    <!-- MAP -->
+
+                    <div class="contact-map-card">
+
+
+                        <div class="contact-map-header">
+
+                            <div>
+
+                                <span>
+                                    LOCATION SYSTEM
+                                </span>
+
+                                <strong>
+                                    AD Lifestyle
+                                </strong>
+
+                            </div>
+
+
+                            <span class="contact-map-live">
+
+                                <i></i>
+
+                                LUANDA
+
+                            </span>
+
+                        </div>
+
+
+                        <div class="contact-map-frame">
+
+                            <iframe
+                                title="Localização da AD Lifestyle em Luanda"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=13.22148%2C-8.84125%2C13.23348%2C-8.82925&layer=mapnik&marker=-8.83525%2C13.22748"
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+
+
+                            <div class="contact-map-marker">
+
+                                ${icon("location")}
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-map-footer">
+
+
+                            <div>
+
+                                ${icon("location")}
+
+                                <span>
+                                    ${CONTACT_DATA.location}
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                ${icon("check")}
+
+                                <span>
+                                    ${CONTACT_DATA.landmark}
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
 
                 </div>
 
 
-                <div class="contact-map-footer">
+            </div>
 
-                    <div>
+        </section>
 
-                        ${icon("location")}
+    `;
 
-                        <span>
-                            ${CONTACT_DATA.location}
-                        </span>
-
-                    </div>
+}
 
 
-                    <div>
+function renderLocationItem(
+    iconType,
+    title,
+    primary,
+    secondary
+){
 
-                        ${icon("check")}
+    return `
 
-                        <span>
-                            ${CONTACT_DATA.landmark}
-                        </span>
+        <div class="contact-location-item">
 
-                    </div>
+            <div class="contact-location-item-icon">
 
-                </div>
+                ${icon(iconType)}
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    ${title}
+                </span>
+
+                <strong>
+                    ${primary}
+                </strong>
+
+                <p>
+                    ${secondary}
+                </p>
 
             </div>
 
         </div>
 
-    </div>
-
-</section>
-
-`;
-
-}
-
-
-function locationItem(
-    iconType,
-    title,
-    lineOne,
-    lineTwo
-){
-
-return `
-
-<div class="contact-location-item">
-
-    <div class="contact-location-item-icon">
-
-        ${icon(iconType)}
-
-    </div>
-
-
-    <div>
-
-        <span>
-            ${title}
-        </span>
-
-
-        <strong>
-            ${lineOne}
-        </strong>
-
-
-        <p>
-            ${lineTwo}
-        </p>
-
-    </div>
-
-</div>
-
-`;
+    `;
 
 }
 
 
 /* ==========================================================
-   FORM
+   MESSAGE FORM
    ========================================================== */
 
-function messageForm(){
+function renderMessageForm(){
 
-return `
+    return `
 
-<section
-    id="contact-form"
-    class="section contact-message">
+        <section
+            class="contact-message"
+            id="contact-form"
+        >
 
-    <div class="container">
-
-        <div class="contact-form-shell">
-
-            <div class="contact-form-intro reveal-left">
-
-                <span class="label">
-                    Fale connosco
-                </span>
+            <div class="contact-container">
 
 
-                <h2 class="section-title">
-
-                    Conte-nos
-                    <span>o que procura.</span>
-
-                </h2>
+                <div class="contact-form-shell">
 
 
-                <p class="text-lg">
-
-                    Quanto melhor compreendermos o seu pedido,
-                    melhor poderemos encaminhá-lo.
-
-                </p>
+                    <div class="contact-form-intro">
 
 
-                <div class="contact-form-process">
-
-                    ${formStep(
-                        "01",
-                        "Escreva",
-                        "Descreva brevemente o que procura."
-                    )}
+                        <div class="contact-eyebrow">
+                            FALE CONNOSCO
+                        </div>
 
 
-                    ${formStep(
-                        "02",
-                        "Enviamos",
-                        "A sua mensagem segue directamente para o WhatsApp."
-                    )}
+                        <h2>
+
+                            Conte-nos
+                            <span>o que procura.</span>
+
+                        </h2>
 
 
-                    ${formStep(
-                        "03",
-                        "Conversamos",
-                        "A nossa equipa dá continuidade ao contacto."
-                    )}
+                        <p>
 
-                </div>
+                            Quanto melhor compreendermos
+                            o seu pedido, melhor poderemos
+                            encaminhá-lo.
 
-            </div>
+                        </p>
 
 
-            <div class="contact-form-panel reveal-right">
-
-                <div class="contact-form-panel-top">
-
-                    <span>
-                        NOVA MENSAGEM
-                    </span>
-
-                    <span>
-                        AD LIFESTYLE
-                    </span>
-
-                </div>
+                        <div class="contact-form-process">
 
 
-                <form
-                    id="contactForm"
-                    class="contact-form"
-                    novalidate>
+                            ${formStep(
+                                "01",
+                                "Escreva",
+                                "Descreva brevemente o que procura."
+                            )}
 
 
-                    <div class="contact-form-grid">
+                            ${formStep(
+                                "02",
+                                "Enviamos",
+                                "A sua mensagem segue directamente para o WhatsApp."
+                            )}
 
-                        <div class="input-group">
 
-                            <label for="contactName">
-                                Nome
-                            </label>
-
-                            <input
-                                type="text"
-                                id="contactName"
-                                name="name"
-                                class="input"
-                                placeholder="O seu nome"
-                                autocomplete="name"
-                                required>
+                            ${formStep(
+                                "03",
+                                "Conversamos",
+                                "A nossa equipa dá continuidade ao contacto."
+                            )}
 
                         </div>
 
 
-                        <div class="input-group">
+                    </div>
 
-                            <label for="contactPhone">
-                                Telefone
-                            </label>
 
-                            <input
-                                type="tel"
-                                id="contactPhone"
-                                name="phone"
-                                class="input"
-                                placeholder="+244 9XX XXX XXX"
-                                autocomplete="tel">
+                    <div class="contact-form-panel">
+
+
+                        <div class="contact-form-panel-top">
+
+                            <span>
+                                NOVA MENSAGEM
+                            </span>
+
+                            <span>
+                                AD LIFESTYLE
+                            </span>
 
                         </div>
 
+
+                        <form
+                            id="contactForm"
+                            class="contact-form"
+                            novalidate
+                        >
+
+
+                            <div class="contact-form-row">
+
+
+                                <div class="contact-field">
+
+                                    <label for="contactName">
+                                        Nome
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="contactName"
+                                        name="name"
+                                        placeholder="O seu nome"
+                                        autocomplete="name"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="contact-field">
+
+                                    <label for="contactPhone">
+                                        Telefone
+                                    </label>
+
+                                    <input
+                                        type="tel"
+                                        id="contactPhone"
+                                        name="phone"
+                                        placeholder="+244 9XX XXX XXX"
+                                        autocomplete="tel"
+                                    >
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactEmail">
+                                    E-mail
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="contactEmail"
+                                    name="email"
+                                    placeholder="exemplo@email.com"
+                                    autocomplete="email"
+                                >
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactSubject">
+                                    Motivo do contacto
+                                </label>
+
+                                <select
+                                    id="contactSubject"
+                                    name="subject"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Seleccione uma opção
+                                    </option>
+
+                                    <option value="Produtos BZZWORLD">
+                                        Produtos BZZWORLD
+                                    </option>
+
+                                    <option value="Eventos">
+                                        Eventos e apresentações
+                                    </option>
+
+                                    <option value="Academy Twenty One">
+                                        Academy Twenty One
+                                    </option>
+
+                                    <option value="Oportunidade">
+                                        Oportunidade / parceria
+                                    </option>
+
+                                    <option value="Distribuição">
+                                        Distribuição / entregas
+                                    </option>
+
+                                    <option value="Outro">
+                                        Outro assunto
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="contact-field">
+
+                                <label for="contactMessage">
+                                    Mensagem
+                                </label>
+
+                                <textarea
+                                    id="contactMessage"
+                                    name="message"
+                                    rows="5"
+                                    placeholder="Escreva a sua mensagem..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+                            <div class="contact-form-bottom">
+
+
+                                <span>
+
+                                    ${icon("shield")}
+
+                                    Ligação directa através
+                                    do WhatsApp.
+
+                                </span>
+
+
+                                <button
+                                    type="submit"
+                                    class="contact-button contact-button-gold"
+                                >
+
+                                    ${icon("whatsapp")}
+
+                                    <span>
+                                        Enviar mensagem
+                                    </span>
+
+                                </button>
+
+
+                            </div>
+
+
+                            <div
+                                class="contact-form-feedback"
+                                id="contactFormFeedback"
+                                aria-live="polite"
+                            ></div>
+
+
+                        </form>
+
+
                     </div>
 
 
-                    <div class="input-group">
+                </div>
 
-                        <label for="contactEmail">
-                            E-mail
-                        </label>
-
-                        <input
-                            type="email"
-                            id="contactEmail"
-                            name="email"
-                            class="input"
-                            placeholder="exemplo@email.com"
-                            autocomplete="email">
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="contactSubject">
-                            Motivo do contacto
-                        </label>
-
-                        <select
-                            id="contactSubject"
-                            name="subject"
-                            class="input"
-                            required>
-
-                            <option value="">
-                                Seleccione uma opção
-                            </option>
-
-                            <option value="Produtos BZZWORLD">
-                                Produtos BZZWORLD
-                            </option>
-
-                            <option value="Eventos">
-                                Eventos e apresentações
-                            </option>
-
-                            <option value="Academy Twenty One">
-                                Academy Twenty One
-                            </option>
-
-                            <option value="Oportunidade">
-                                Oportunidade / parceria
-                            </option>
-
-                            <option value="Distribuição">
-                                Distribuição / entregas
-                            </option>
-
-                            <option value="Outro">
-                                Outro assunto
-                            </option>
-
-                        </select>
-
-                    </div>
-
-
-                    <div class="input-group">
-
-                        <label for="contactMessage">
-                            Mensagem
-                        </label>
-
-                        <textarea
-                            id="contactMessage"
-                            name="message"
-                            class="input textarea"
-                            rows="5"
-                            placeholder="Escreva a sua mensagem..."
-                            required></textarea>
-
-                    </div>
-
-
-                    <div class="contact-form-bottom">
-
-                        <span>
-
-                            ${icon("shield")}
-
-                            Ligação directa através do WhatsApp.
-
-                        </span>
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary">
-
-                            ${icon("whatsapp")}
-
-                            Enviar mensagem
-
-                        </button>
-
-                    </div>
-
-
-                    <div
-                        class="contact-form-feedback"
-                        id="contactFormFeedback"
-                        aria-live="polite">
-                    </div>
-
-                </form>
 
             </div>
 
-        </div>
+        </section>
 
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
@@ -1280,29 +1414,30 @@ function formStep(
     text
 ){
 
-return `
+    return `
 
-<div class="contact-form-step">
+        <div class="contact-form-step">
 
-    <span>
-        ${number}
-    </span>
+            <span>
+                ${number}
+            </span>
 
-    <div>
 
-        <strong>
-            ${title}
-        </strong>
+            <div>
 
-        <p>
-            ${text}
-        </p>
+                <strong>
+                    ${title}
+                </strong>
 
-    </div>
+                <p>
+                    ${text}
+                </p>
 
-</div>
+            </div>
 
-`;
+        </div>
+
+    `;
 
 }
 
@@ -1311,173 +1446,202 @@ return `
    FAQ
    ========================================================== */
 
-function faq(){
+function renderFAQ(){
 
-return `
+    const questions = [
 
-<section class="section-sm contact-faq">
+        [
+            "Como posso comprar um produto?",
+            "Entre em contacto através do WhatsApp para confirmar disponibilidade, condições de aquisição e entrega."
+        ],
 
-    <div class="container-sm">
+        [
+            "A AD Lifestyle faz entregas?",
+            "Trabalhamos com uma visão de distribuição e conexão internacional. As condições de entrega dependem do destino, produto, disponibilidade e logística aplicável."
+        ],
 
-        <div class="section-center reveal">
+        [
+            "Como posso participar num evento?",
+            "Pode acompanhar a página de Eventos ou falar directamente connosco para conhecer as próximas apresentações, datas, local e condições de participação."
+        ],
 
-            <span class="label">
-                Perguntas frequentes
-            </span>
+        [
+            "Como posso conhecer a Academy Twenty One?",
+            "Pode entrar em contacto connosco para conhecer melhor a dimensão de educação, desenvolvimento pessoal, liderança, comunicação e empreendedorismo."
+        ],
 
+        [
+            "Posso falar convosco sobre uma parceria?",
+            "Sim. Contacte-nos através do WhatsApp ou do formulário e descreva brevemente a sua proposta."
+        ]
 
-            <h2 class="section-title">
-
-                Talvez a resposta
-                <span>esteja aqui.</span>
-
-            </h2>
-
-        </div>
-
-
-        <div class="faq mt-5">
-
-            ${question(
-                "Como posso comprar um produto?",
-                "Entre em contacto através do WhatsApp para confirmar disponibilidade, condições de aquisição e entrega."
-            )}
-
-
-            ${question(
-                "A AD Lifestyle faz entregas?",
-                "Trabalhamos com uma visão de distribuição e conexão internacional. As condições de entrega dependem do destino, produto, disponibilidade e logística aplicável."
-            )}
+    ];
 
 
-            ${question(
-                "Como posso participar num evento?",
-                "Pode acompanhar a página de Eventos ou falar directamente connosco para conhecer as próximas apresentações, datas, local e condições de participação."
-            )}
+    return `
+
+        <section class="contact-faq">
+
+            <div class="contact-container contact-faq-container">
 
 
-            ${question(
-                "Como posso conhecer a Academy Twenty One?",
-                "Pode entrar em contacto connosco para conhecer melhor a dimensão de educação, desenvolvimento pessoal, liderança, comunicação e empreendedorismo."
-            )}
+                <div class="contact-section-heading contact-section-heading-center">
+
+                    <div>
+
+                        <div class="contact-eyebrow">
+                            PERGUNTAS FREQUENTES
+                        </div>
+
+                        <h2>
+
+                            Talvez a resposta
+                            <span>esteja aqui.</span>
+
+                        </h2>
+
+                    </div>
+
+                </div>
 
 
-            ${question(
-                "Posso falar convosco sobre uma parceria?",
-                "Sim. Contacte-nos através do WhatsApp ou do formulário e descreva brevemente a sua proposta."
-            )}
+                <div class="contact-faq-list">
 
-        </div>
+                    ${questions
+                        .map(
+                            ([question,answer]) =>
+                                renderQuestion(
+                                    question,
+                                    answer
+                                )
+                        )
+                        .join("")}
 
-    </div>
+                </div>
 
-</section>
 
-`;
+            </div>
+
+        </section>
+
+    `;
 
 }
 
 
-function question(
-    questionText,
-    answerText
+function renderQuestion(
+    question,
+    answer
 ){
 
-return `
+    return `
 
-<div class="faq-item">
+        <div class="contact-faq-item">
 
-    <button
-        type="button"
-        class="faq-question"
-        aria-expanded="false">
-
-        <span>
-            ${questionText}
-        </span>
-
-        <span class="faq-plus">
-            ${icon("plus")}
-        </span>
-
-    </button>
-
-
-    <div class="faq-answer">
-
-        <p>
-            ${answerText}
-        </p>
-
-    </div>
-
-</div>
-
-`;
-
-}
-
-
-/* ==========================================================
-   CTA
-   ========================================================== */
-
-function cta(){
-
-return `
-
-<section class="section contact-final">
-
-    <div class="container">
-
-        <div class="contact-final-panel">
-
-            <div class="contact-final-orbit"></div>
-
-
-            <div class="contact-final-content reveal">
+            <button
+                type="button"
+                class="contact-faq-question"
+                aria-expanded="false"
+            >
 
                 <span>
-                    AD LIFESTYLE
+                    ${question}
                 </span>
 
 
-                <h2>
+                <span class="contact-faq-plus">
 
-                    Uma pergunta pode
-                    <strong>abrir uma nova porta.</strong>
+                    ${icon("plus")}
 
-                </h2>
+                </span>
 
+            </button>
+
+
+            <div class="contact-faq-answer">
 
                 <p>
-
-                    Estamos prontos para ouvir,
-                    esclarecer e criar a próxima ponte consigo.
-
+                    ${answer}
                 </p>
-
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-action="whatsapp">
-
-                    ${icon("whatsapp")}
-
-                    Iniciar conversa
-
-                </button>
 
             </div>
 
         </div>
 
-    </div>
+    `;
 
-</section>
+}
 
-`;
+
+/* ==========================================================
+   FINAL CTA
+   ========================================================== */
+
+function renderCTA(){
+
+    return `
+
+        <section class="contact-final">
+
+            <div class="contact-container">
+
+                <div class="contact-final-panel">
+
+
+                    <div class="contact-final-orbit"></div>
+
+
+                    <div class="contact-final-content">
+
+                        <span>
+                            AD LIFESTYLE
+                        </span>
+
+
+                        <h2>
+
+                            Uma pergunta pode
+                            <strong>
+                                abrir uma nova porta.
+                            </strong>
+
+                        </h2>
+
+
+                        <p>
+
+                            Estamos prontos para ouvir,
+                            esclarecer e criar a próxima
+                            ponte consigo.
+
+                        </p>
+
+
+                        <button
+                            type="button"
+                            class="contact-button contact-button-gold"
+                            data-action="whatsapp"
+                        >
+
+                            ${icon("whatsapp")}
+
+                            <span>
+                                Iniciar conversa
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
 
 }
 
@@ -1548,17 +1712,17 @@ function icon(type){
             </svg>
         `,
 
-        check: `
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="m5 12 4 4L19 6"/>
-            </svg>
-        `,
-
         shield: `
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 3 20 6v5c0 5.2-3.4 8.6-8 10
                 -4.6-1.4-8-4.8-8-10V6l8-3Z"/>
                 <path d="m9 12 2 2 4-4"/>
+            </svg>
+        `,
+
+        check: `
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m5 12 4 4L19 6"/>
             </svg>
         `,
 
@@ -1604,14 +1768,13 @@ function icon(type){
 
     };
 
-
     return icons[type] || "";
 
 }
 
 
 /* ==========================================================
-   INITIALISE
+   INITIALISE CONTACT
    ========================================================== */
 
 function initialiseContact(){
@@ -1621,49 +1784,74 @@ function initialiseContact(){
             ".contact-page"
         );
 
-
-    if(!root) return;
+    if(!root){
+        return;
+    }
 
 
     /* ------------------------------------------------------
-       ANIMATIONS
+       Ripple
        ------------------------------------------------------ */
 
-    stagger(
-        ".contact-page .contact-channel-card"
-    );
-
-
-    stagger(
-        ".contact-page .contact-hub-mini"
-    );
-
-
     root
-        .querySelectorAll(".btn")
-        .forEach(button=>{
+        .querySelectorAll(
+            ".contact-button"
+        )
+        .forEach(button => {
 
-            ripple(button);
+            if(typeof ripple === "function"){
+                ripple(button);
+            }
 
         });
 
 
     /* ------------------------------------------------------
-       WHATSAPP
+       Stagger
+       ------------------------------------------------------ */
+
+    if(typeof stagger === "function"){
+
+        try{
+
+            stagger(
+                ".contact-page .contact-channel-card"
+            );
+
+            stagger(
+                ".contact-page .contact-hub-mini"
+            );
+
+        }catch(error){
+
+            console.warn(
+                "AD LIFESTYLE: stagger não inicializado.",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* ------------------------------------------------------
+       WhatsApp
        ------------------------------------------------------ */
 
     root
         .querySelectorAll(
             '[data-action="whatsapp"]'
         )
-        .forEach(button=>{
+        .forEach(button => {
 
             button.addEventListener(
                 "click",
-                ()=>{
+                () => {
+
                     openWhatsApp(
                         "Olá AD Lifestyle! Gostaria de entrar em contacto convosco."
                     );
+
                 }
             );
 
@@ -1671,7 +1859,7 @@ function initialiseContact(){
 
 
     /* ------------------------------------------------------
-       FORM SCROLL
+       Form scroll
        ------------------------------------------------------ */
 
     root
@@ -1680,26 +1868,24 @@ function initialiseContact(){
         )
         ?.addEventListener(
             "click",
-            ()=>{
+            () => {
 
-                root
-                    .querySelector(
-                        "#contact-form"
-                    )
-                    ?.scrollIntoView({
+                const form =
+                    document.getElementById(
+                        "contact-form"
+                    );
 
-                        behavior:"smooth",
-
-                        block:"start"
-
-                    });
+                form?.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
 
             }
         );
 
 
     /* ------------------------------------------------------
-       MAPS
+       Maps
        ------------------------------------------------------ */
 
     root
@@ -1713,23 +1899,24 @@ function initialiseContact(){
 
 
     /* ------------------------------------------------------
-       HUB EMAIL / LOCATION
+       Hub mini cards
        ------------------------------------------------------ */
 
     root
         .querySelectorAll(
             "[data-contact-action]"
         )
-        .forEach(card=>{
+        .forEach(card => {
 
             const action =
                 card.dataset.contactAction;
 
+            if(action === "clock"){
+                return;
+            }
 
-            if(action === "clock") return;
 
-
-            const execute = ()=>{
+            const execute = () => {
 
                 if(action === "email"){
 
@@ -1737,7 +1924,6 @@ function initialiseContact(){
                         `mailto:${CONTACT_DATA.email}`;
 
                     return;
-
                 }
 
 
@@ -1758,7 +1944,7 @@ function initialiseContact(){
 
             card.addEventListener(
                 "keydown",
-                event=>{
+                event => {
 
                     if(
                         event.key === "Enter" ||
@@ -1778,25 +1964,24 @@ function initialiseContact(){
 
 
     /* ------------------------------------------------------
-       CHANNEL CARDS
+       Channel cards
        ------------------------------------------------------ */
 
     root
         .querySelectorAll(
             ".contact-channel-card"
         )
-        .forEach(card=>{
+        .forEach(card => {
 
             const type =
                 card.dataset.channel;
 
+            if(type === "location"){
+                return;
+            }
 
-            if(
-                type === "location"
-            ) return;
 
-
-            const execute = ()=>{
+            const execute = () => {
 
                 if(type === "whatsapp"){
 
@@ -1825,7 +2010,7 @@ function initialiseContact(){
 
             card.addEventListener(
                 "keydown",
-                event=>{
+                event => {
 
                     if(
                         event.key === "Enter" ||
@@ -1845,7 +2030,7 @@ function initialiseContact(){
 
 
     /* ------------------------------------------------------
-       FORM
+       Form
        ------------------------------------------------------ */
 
     initialiseForm();
@@ -1859,7 +2044,7 @@ function initialiseContact(){
 
 
     /* ------------------------------------------------------
-       REVEAL
+       Reveal
        ------------------------------------------------------ */
 
     initialiseReveal();
@@ -1878,7 +2063,6 @@ function openWhatsApp(message){
         `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
 
         "_blank",
-
         "noopener,noreferrer"
 
     );
@@ -1897,7 +2081,6 @@ function openMaps(){
         `https://www.google.com/maps?q=${CONTACT_DATA.latitude},${CONTACT_DATA.longitude}`,
 
         "_blank",
-
         "noopener,noreferrer"
 
     );
@@ -1916,13 +2099,14 @@ function initialiseForm(){
             "contactForm"
         );
 
-
-    if(!form) return;
+    if(!form){
+        return;
+    }
 
 
     form.addEventListener(
         "submit",
-        event=>{
+        event => {
 
             event.preventDefault();
 
@@ -1978,9 +2162,9 @@ function initialiseForm(){
                 );
 
 
-            /* ---------------------------------------------
+            /* ------------------------------------------------
                VALIDATION
-               --------------------------------------------- */
+               ------------------------------------------------ */
 
             if(
                 !name ||
@@ -1989,7 +2173,7 @@ function initialiseForm(){
             ){
 
                 form.classList.add(
-                    "form-invalid"
+                    "contact-form-invalid"
                 );
 
 
@@ -1999,8 +2183,8 @@ function initialiseForm(){
                         "Preencha o nome, o motivo do contacto e a mensagem.";
 
                     feedback.classList.add(
-                        "is-visible",
-                        "is-error"
+                        "contact-feedback-visible",
+                        "contact-feedback-error"
                     );
 
                 }
@@ -2012,25 +2196,13 @@ function initialiseForm(){
 
 
             form.classList.remove(
-                "form-invalid"
+                "contact-form-invalid"
             );
 
 
-            if(feedback){
-
-                feedback.textContent =
-                    "A preparar a sua mensagem…";
-
-                feedback.classList.add(
-                    "is-visible"
-                );
-
-            }
-
-
-            /* ---------------------------------------------
-               WHATSAPP MESSAGE
-               --------------------------------------------- */
+            /* ------------------------------------------------
+               MESSAGE
+               ------------------------------------------------ */
 
             const whatsappMessage =
 
@@ -2047,9 +2219,21 @@ Mensagem:
 ${message}`;
 
 
-            /* ---------------------------------------------
-               OPEN WHATSAPP
-               --------------------------------------------- */
+            if(feedback){
+
+                feedback.textContent =
+                    "A preparar a sua mensagem…";
+
+                feedback.classList.add(
+                    "contact-feedback-visible"
+                );
+
+                feedback.classList.remove(
+                    "contact-feedback-error"
+                );
+
+            }
+
 
             openWhatsApp(
                 whatsappMessage
@@ -2060,10 +2244,6 @@ ${message}`;
 
                 feedback.textContent =
                     "Mensagem preparada. A conversa será aberta no WhatsApp.";
-
-                feedback.classList.remove(
-                    "is-error"
-                );
 
             }
 
@@ -2084,51 +2264,55 @@ function initialiseFAQ(){
 
     const items =
         document.querySelectorAll(
-            ".contact-page .faq-item"
+            ".contact-faq-item"
         );
 
 
-    items.forEach(item=>{
+    items.forEach(item => {
 
         const button =
             item.querySelector(
-                ".faq-question"
+                ".contact-faq-question"
             );
 
 
-        if(!button) return;
+        if(!button){
+            return;
+        }
 
 
         button.addEventListener(
             "click",
-            ()=>{
+            () => {
 
-                const isActive =
+                const currentlyOpen =
                     item.classList.contains(
                         "active"
                     );
 
 
-                items.forEach(other=>{
+                items.forEach(other => {
 
                     other.classList.remove(
                         "active"
                     );
 
 
-                    other
-                        .querySelector(
-                            ".faq-question"
-                        )
-                        ?.setAttribute(
-                            "aria-expanded",
-                            "false"
+                    const otherButton =
+                        other.querySelector(
+                            ".contact-faq-question"
                         );
+
+
+                    otherButton?.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
 
                 });
 
 
-                if(!isActive){
+                if(!currentlyOpen){
 
                     item.classList.add(
                         "active"
@@ -2158,7 +2342,43 @@ function initialiseReveal(){
 
     const elements =
         document.querySelectorAll(
-            ".contact-page .reveal"
+            `
+            .contact-page
+            .contact-hero-content,
+
+            .contact-page
+            .contact-hero-visual-area,
+
+            .contact-page
+            .contact-section-heading,
+
+            .contact-page
+            .contact-hub-main,
+
+            .contact-page
+            .contact-hub-side,
+
+            .contact-page
+            .contact-channel-grid,
+
+            .contact-page
+            .contact-digital-panel,
+
+            .contact-page
+            .contact-location-header,
+
+            .contact-page
+            .contact-location-grid,
+
+            .contact-page
+            .contact-form-shell,
+
+            .contact-page
+            .contact-faq-list,
+
+            .contact-page
+            .contact-final-content
+            `
         );
 
 
@@ -2168,10 +2388,13 @@ function initialiseReveal(){
     ){
 
         elements.forEach(
-            element =>
+            element => {
+
                 element.classList.add(
-                    "visible"
-                )
+                    "contact-visible"
+                );
+
+            }
         );
 
         return;
@@ -2181,36 +2404,36 @@ function initialiseReveal(){
 
     const observer =
         new IntersectionObserver(
-
-            entries=>{
+            entries => {
 
                 entries.forEach(
-                    entry=>{
+                    entry => {
 
                         if(
-                            entry.isIntersecting
+                            !entry.isIntersecting
                         ){
-
-                            entry.target.classList.add(
-                                "visible"
-                            );
-
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
+                            return;
                         }
+
+
+                        entry.target.classList.add(
+                            "contact-visible"
+                        );
+
+
+                        observer.unobserve(
+                            entry.target
+                        );
 
                     }
                 );
 
             },
-
             {
-                threshold:.10
+                threshold:.08,
+                rootMargin:
+                    "0px 0px -35px"
             }
-
         );
 
 
