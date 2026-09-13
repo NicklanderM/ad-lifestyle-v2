@@ -13710,3 +13710,1404 @@ span:first-child{
     }
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   EVADOR
+   PAGE-SCOPED COMPONENT SYSTEM
+   ========================================================== */
+
+
+/* ==========================================================
+   01. VARIABLES
+   ========================================================== */
+
+.page-evador{
+
+    --evador-black:#080808;
+    --evador-black-soft:#111111;
+    --evador-black-light:#181818;
+
+    --evador-gold:#D4AF37;
+    --evador-gold-light:#F1D57A;
+    --evador-gold-dark:#A67C16;
+    --evador-champagne:#E7D39B;
+
+    --evador-white:#FFFFFF;
+    --evador-silver:#D8D8D8;
+
+    --evador-text:#171717;
+    --evador-muted:#666666;
+
+    --evador-surface:#FFFFFF;
+    --evador-surface-soft:#F8F6F0;
+
+    --evador-border:
+        rgba(212,175,55,.18);
+
+    --evador-shadow:
+        0 25px 65px
+        rgba(0,0,0,.11);
+
+}
+
+
+/* ==========================================================
+   02. ROOT
+   ========================================================== */
+
+.page-evador{
+
+    position:relative;
+
+    isolation:isolate;
+
+    min-height:100vh;
+
+    overflow:hidden;
+
+    background:
+        #F7F6F2 !important;
+
+    color:
+        #171717 !important;
+
+}
+
+
+/* ==========================================================
+   03. GENERAL TEXT
+   ========================================================== */
+
+.page-evador h1,
+.page-evador h2,
+.page-evador h3,
+.page-evador h4,
+.page-evador h5,
+.page-evador h6{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador p{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador .text,
+.page-evador .lead{
+
+    color:
+        #666666 !important;
+
+}
+
+
+.page-evador .label{
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+.page-evador .section-title{
+
+    color:
+        #171717 !important;
+
+}
+
+
+/* ==========================================================
+   04. HERO
+   ========================================================== */
+
+.page-evador .evador-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 80% 18%,
+            rgba(212,175,55,.18),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 12% 82%,
+            rgba(255,255,255,.05),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #181818,
+            #080808
+        ) !important;
+
+}
+
+
+.page-evador .evador-hero h1,
+.page-evador .evador-hero h2,
+.page-evador .evador-hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-evador .evador-hero .hero-sub{
+
+    color:
+        rgba(255,255,255,.78) !important;
+
+}
+
+
+.page-evador .evador-hero
+.hero-title span{
+
+    color:
+        #F1D57A !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F1D57A !important;
+
+}
+
+
+/* ==========================================================
+   05. HERO BADGE
+   ========================================================== */
+
+.page-evador
+.evador-hero
+.badge{
+
+    color:
+        #F1D57A !important;
+
+    background:
+        rgba(212,175,55,.10) !important;
+
+    border:
+        1px solid
+        rgba(241,213,122,.34) !important;
+
+}
+
+
+/* ==========================================================
+   06. HERO HIGHLIGHTS
+   ========================================================== */
+
+.page-evador
+.evador-hero-highlights{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px 18px;
+
+    margin-top:24px;
+
+}
+
+
+.page-evador
+.evador-hero-highlights span{
+
+    color:
+        #FFFFFF !important;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ==========================================================
+   07. DISCLAIMER
+   ========================================================== */
+
+.page-evador
+.evador-disclaimer{
+
+    max-width:650px;
+
+    margin-top:20px;
+
+    color:
+        rgba(255,255,255,.50) !important;
+
+    font-size:
+        12px;
+
+    line-height:
+        1.7;
+
+}
+
+
+/* ==========================================================
+   08. PRODUCT
+   ========================================================== */
+
+.page-evador
+.product-glow{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.45),
+            rgba(212,175,55,.14) 42%,
+            transparent 72%
+        ) !important;
+
+}
+
+
+.page-evador
+.hero-product img{
+
+    position:relative;
+
+    z-index:3;
+
+    max-width:
+        min(100%,520px);
+
+    width:100%;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 55px
+            rgba(0,0,0,.45)
+        );
+
+}
+
+
+/* ==========================================================
+   09. GOLD RING
+   ========================================================== */
+
+.page-evador
+.evador-gold-ring{
+
+    position:absolute;
+
+    width:390px;
+
+    height:390px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(241,213,122,.48);
+
+    box-shadow:
+
+        0 0 50px
+        rgba(212,175,55,.16),
+
+        inset 0 0 35px
+        rgba(212,175,55,.07);
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   10. CARDS
+   ========================================================== */
+
+.page-evador
+.card,
+.page-evador
+.service-card,
+.page-evador
+.evador-fragrance-card,
+.page-evador
+.evador-feature-card,
+.page-evador
+.evador-experience-card,
+.page-evador
+.evador-detail-card,
+.page-evador
+.faq-item{
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #171717 !important;
+
+    border:
+        1px solid
+        rgba(212,175,55,.16) !important;
+
+    box-shadow:
+        var(--evador-shadow);
+
+}
+
+
+/* ==========================================================
+   11. CARD TITLES
+   ========================================================== */
+
+.page-evador
+.card h3,
+.page-evador
+.service-card h3,
+.page-evador
+.evador-detail-card h3{
+
+    color:
+        #171717 !important;
+
+}
+
+
+/* ==========================================================
+   12. CARD TEXT
+   ========================================================== */
+
+.page-evador
+.card p,
+.page-evador
+.service-card p,
+.page-evador
+.evador-detail-card p{
+
+    color:
+        #666666 !important;
+
+}
+
+
+/* ==========================================================
+   13. SERVICE ICON
+   ========================================================== */
+
+.page-evador
+.service-icon{
+
+    background:
+        rgba(212,175,55,.09) !important;
+
+    color:
+        #A67C16 !important;
+
+    border:
+        1px solid
+        rgba(212,175,55,.25) !important;
+
+}
+
+
+/* ==========================================================
+   14. FRAGRANCE
+   ========================================================== */
+
+.page-evador
+.evador-fragrance{
+
+    background:
+        #F7F6F2 !important;
+
+}
+
+
+.page-evador
+.evador-fragrance-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:0;
+
+    width:100%;
+
+    height:3px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #A67C16,
+            #D4AF37,
+            #F1D57A
+        ) !important;
+
+}
+
+
+/* ==========================================================
+   15. INFORMATION
+   ========================================================== */
+
+.page-evador
+.evador-information{
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(212,175,55,.16) !important;
+
+    border-radius:
+        20px;
+
+    overflow:hidden;
+
+}
+
+
+.page-evador
+.evador-details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px 24px;
+
+    border:0;
+
+    background:
+        #FFFFFF !important;
+
+    color:
+        #171717 !important;
+
+    font:inherit;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+}
+
+
+.page-evador
+.evador-details-toggle
+span:first-child{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-details-icon{
+
+    width:32px;
+
+    height:32px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        #111111 !important;
+
+    color:
+        #D4AF37 !important;
+
+}
+
+
+.page-evador
+.evador-information.active
+.evador-details-icon{
+
+    background:
+        #D4AF37 !important;
+
+    color:
+        #111111 !important;
+
+}
+
+
+/* ==========================================================
+   16. ACCORDION
+   ========================================================== */
+
+.page-evador
+.evador-details-content{
+
+    display:grid;
+
+    grid-template-rows:
+        0fr;
+
+    transition:
+        grid-template-rows .45s ease;
+
+}
+
+
+.page-evador
+.evador-information.active
+.evador-details-content{
+
+    grid-template-rows:
+        1fr;
+
+}
+
+
+.page-evador
+.evador-details-content
+> div{
+
+    min-height:0;
+
+    overflow:hidden;
+
+}
+
+
+.page-evador
+.evador-details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:20px;
+
+    padding:
+        0 24px 24px;
+
+}
+
+
+.page-evador
+.evador-detail-card{
+
+    padding:25px;
+
+    background:
+        #F8F6F0 !important;
+
+}
+
+
+.page-evador
+.evador-detail-card
+.label{
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+.page-evador
+.evador-detail-card-wide{
+
+    grid-column:
+        1 / -1;
+
+}
+
+
+/* ==========================================================
+   17. DETAIL ITEMS
+   ========================================================== */
+
+.page-evador
+.evador-detail-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    margin-top:10px;
+
+    color:
+        #666666 !important;
+
+    font-size:
+        14px;
+
+}
+
+
+.page-evador
+.evador-detail-item
+.icon-circle{
+
+    width:22px;
+
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(212,175,55,.10) !important;
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+/* ==========================================================
+   18. IDENTITY
+   ========================================================== */
+
+.page-evador
+.evador-identity{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-evador
+.evador-identity
+.section-title{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-identity
+.text{
+
+    color:
+        #666666 !important;
+
+}
+
+
+.page-evador
+.evador-identity
+.icon-item{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-identity
+.icon-circle{
+
+    background:
+        rgba(212,175,55,.10) !important;
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+/* ==========================================================
+   19. IMAGE
+   ========================================================== */
+
+.page-evador
+.evador-benefit-image{
+
+    position:relative;
+
+    min-height:480px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+
+.page-evador
+.evador-benefit-image img{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    max-width:460px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 50px
+            rgba(0,0,0,.20)
+        );
+
+}
+
+
+.page-evador
+.evador-image-glow{
+
+    position:absolute;
+
+    width:340px;
+
+    height:340px;
+
+    border-radius:50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.25),
+            rgba(212,175,55,.08),
+            transparent 70%
+        );
+
+    filter:
+        blur(25px);
+
+}
+
+
+/* ==========================================================
+   20. IDENTITY QUOTE
+   ========================================================== */
+
+.page-evador
+.evador-identity-quote{
+
+    padding:
+        24px;
+
+    border-left:
+        3px solid
+        #D4AF37;
+
+    background:
+        #F8F6F0;
+
+}
+
+
+.page-evador
+.evador-identity-quote blockquote{
+
+    margin:
+        8px 0 0;
+
+    color:
+        #171717;
+
+    font-size:
+        clamp(22px,3vw,34px);
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -.02em;
+
+}
+
+
+/* ==========================================================
+   21. BENEFITS
+   ========================================================== */
+
+.page-evador
+.evador-benefits{
+
+    background:
+        #F7F6F2 !important;
+
+}
+
+
+.page-evador
+.evador-benefits
+.section-title{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-benefits
+.lead{
+
+    color:
+        #666666 !important;
+
+}
+
+
+.page-evador
+.evador-benefits
+.bento-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+/* ==========================================================
+   22. COMPOSITION
+   ========================================================== */
+
+.page-evador
+.evador-composition{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-evador
+.evador-composition
+.section-title{
+
+    color:
+        #171717 !important;
+
+}
+
+
+/* ==========================================================
+   23. ROUTINE
+   ========================================================== */
+
+.page-evador
+.evador-routine{
+
+    background:
+        #F8F6F0 !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.section-title{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.lead{
+
+    color:
+        #666666 !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.timeline-dot{
+
+    background:
+        #111111 !important;
+
+    color:
+        #D4AF37 !important;
+
+    border:
+        3px solid
+        #FFFFFF !important;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(212,175,55,.42) !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.timeline-content{
+
+    background:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(212,175,55,.14) !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.timeline-content h3{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-routine
+.timeline-content .text{
+
+    color:
+        #666666 !important;
+
+}
+
+
+/* ==========================================================
+   24. EXPERIENCE
+   ========================================================== */
+
+.page-evador
+.evador-experience{
+
+    background:
+        #F7F6F2 !important;
+
+}
+
+
+.page-evador
+.evador-experience-card{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+/* ==========================================================
+   25. FAQ
+   ========================================================== */
+
+.page-evador
+.evador-faq{
+
+    background:
+        #FFFFFF !important;
+
+}
+
+
+.page-evador
+.evador-faq
+.faq-item{
+
+    background:
+        #F8F6F0 !important;
+
+}
+
+
+.page-evador
+.evador-faq
+.faq-question{
+
+    background:
+        #F8F6F0 !important;
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-faq
+.faq-question span:first-child{
+
+    color:
+        #171717 !important;
+
+}
+
+
+.page-evador
+.evador-faq
+.faq-question span:last-child{
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+.page-evador
+.evador-faq
+.faq-answer p{
+
+    color:
+        #666666 !important;
+
+}
+
+
+/* ==========================================================
+   26. CTA
+   ========================================================== */
+
+.page-evador
+.evador-cta{
+
+    background:
+        #F7F6F2 !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.showcase{
+
+    background:
+
+        radial-gradient(
+            circle at 25% 20%,
+            rgba(212,175,55,.12),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(255,255,255,.04),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #080808,
+            #181818,
+            #080808
+        ) !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.section-title{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.lead{
+
+    color:
+        rgba(255,255,255,.72) !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.badge{
+
+    color:
+        #F1D57A !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D4AF37,
+            #F1D57A
+        ) !important;
+
+    color:
+        #080808 !important;
+
+}
+
+
+.page-evador
+.evador-cta
+.btn-glass{
+
+    background:
+        rgba(255,255,255,.06) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20) !important;
+
+}
+
+
+.page-evador
+.evador-cta-disclaimer{
+
+    color:
+        rgba(255,255,255,.48) !important;
+
+}
+
+
+/* ==========================================================
+   27. LINKS
+   ========================================================== */
+
+.page-evador a{
+
+    color:
+        #A67C16 !important;
+
+}
+
+
+.page-evador a:hover{
+
+    color:
+        #D4AF37 !important;
+
+}
+
+
+/* ==========================================================
+   28. RESPONSIVE
+   ========================================================== */
+
+@media (max-width:900px){
+
+    .page-evador
+    .evador-details-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-evador
+    .evador-detail-card-wide{
+
+        grid-column:
+            auto;
+
+    }
+
+}
+
+
+@media (max-width:700px){
+
+    .page-evador
+    .evador-hero{
+
+        min-height:auto;
+
+        padding-top:100px;
+
+        padding-bottom:80px;
+
+    }
+
+
+    .page-evador
+    .hero-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .page-evador
+    .hero-content{
+
+        text-align:center;
+
+    }
+
+
+    .page-evador
+    .evador-hero-highlights{
+
+        justify-content:center;
+
+    }
+
+
+    .page-evador
+    .hero-visual{
+
+        margin-top:35px;
+
+    }
+
+
+    .page-evador
+    .evador-gold-ring{
+
+        width:300px;
+
+        height:300px;
+
+    }
+
+
+    .page-evador
+    .evador-benefit-image{
+
+        min-height:360px;
+
+    }
+
+}
+
+
+@media (max-width:520px){
+
+    .page-evador
+    .evador-hero-highlights{
+
+        display:grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align:left;
+
+    }
+
+
+    .page-evador
+    .evador-details-toggle{
+
+        padding:18px;
+
+        font-size:14px;
+
+    }
+
+
+    .page-evador
+    .evador-details-grid{
+
+        padding:
+            0 16px 16px;
+
+    }
+
+
+    .page-evador
+    .evador-detail-card{
+
+        padding:20px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   29. REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .page-evador *,
+    .page-evador *::before,
+    .page-evador *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+        scroll-behavior:
+            auto !important;
+
+    }
+
+}
