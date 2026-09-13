@@ -1,36 +1,46 @@
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.JS
-   Luxury Wellness Landing Page
+   Premium Institutional Landing Page
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
 import { navigate } from "../js/router.js";
 import { stagger, ripple } from "../js/animations.js";
 
+/* ==========================================================
+   LOAD HOME
+   ========================================================== */
+
 export function loadHome(){
 
     applyTheme("default");
 
-    const app=document.getElementById("app");
+    const app = document.getElementById("app");
 
-    app.innerHTML=`
+    if(!app) return;
 
-        ${hero()}
+    app.innerHTML = `
 
-        ${about()}
+        <div class="page-home">
 
-        ${products()}
+            ${hero()}
 
-        ${services()}
+            ${brandIntroduction()}
 
-        ${event()}
+            ${pillars()}
 
-        ${testimonials()}
+            ${featuredProducts()}
 
-        ${instagram()}
+            ${ecosystem()}
 
-        ${cta()}
+            ${event()}
+
+            ${socialPresence()}
+
+            ${finalCTA()}
+
+        </div>
 
     `;
 
@@ -44,9 +54,9 @@ export function loadHome(){
 
 function hero(){
 
-return`
+return `
 
-<section class="hero">
+<section class="hero home-hero">
 
     <div class="aurora">
 
@@ -61,18 +71,22 @@ return`
         <div class="hero-content reveal">
 
             <span class="label">
-                Luxury Wellness
+                AD Lifestyle
+            </span>
+
+            <span class="home-eyebrow">
+                WELLNESS · TECHNOLOGY · PERSONAL GROWTH
             </span>
 
             <h1 class="hero-title">
-                Eleve o seu
-                Bem-estar
+                Uma nova forma
+                <span>de viver melhor.</span>
             </h1>
 
             <p class="hero-sub">
-                Descubra uma experiência exclusiva de saúde,
-                bem-estar, longevidade, medicina holística
-                e negócios internacionais com a AD Lifestyle.
+                Descubra um ecossistema que aproxima bem-estar,
+                inovação, desenvolvimento pessoal e oportunidades
+                de uma experiência de Lifestyle mais consciente.
             </p>
 
             <div class="hero-actions">
@@ -89,9 +103,49 @@ return`
                     class="btn btn-glass"
                     id="aboutButton">
 
-                    Quem Somos
+                    Conhecer a AD Lifestyle
 
                 </button>
+
+            </div>
+
+            <div class="home-hero-highlights">
+
+                <div>
+
+                    <strong>
+                        Wellness
+                    </strong>
+
+                    <span>
+                        Bem-estar e autocuidado
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Smart Living
+                    </strong>
+
+                    <span>
+                        Tecnologia integrada no quotidiano
+                    </span>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Academy 21
+                    </strong>
+
+                    <span>
+                        Educação e desenvolvimento
+                    </span>
+
+                </div>
 
             </div>
 
@@ -103,12 +157,13 @@ return`
 
                 <div class="product-glow"></div>
 
+                <div class="home-hero-orbit"></div>
+
                 <img
                     class="parallax"
                     data-speed="35"
                     src="./assets/products/angel.png"
-                    alt="Angel Moon">
-
+                    alt="AD Lifestyle">
 
             </div>
 
@@ -123,14 +178,16 @@ return`
 }
 
 /* ==========================================================
-   ABOUT
+   BRAND INTRODUCTION
    ========================================================== */
 
-function about(){
+function brandIntroduction(){
 
-return`
+return `
 
-<section id="about" class="section">
+<section
+    id="about"
+    class="section home-about">
 
     <div class="container">
 
@@ -141,15 +198,15 @@ return`
             </span>
 
             <h2 class="section-title">
-                Mais do que produtos.
-                Um verdadeiro estilo de vida.
+                Mais do que uma marca.
+                <span>Um ecossistema.</span>
             </h2>
 
             <p class="lead">
-                A AD Lifestyle nasce com a missão de elevar
-                a qualidade de vida através da saúde preventiva,
-                medicina holística, bem-estar, longevidade
-                e desenvolvimento humano.
+                A AD Lifestyle reúne uma visão de bem-estar,
+                inovação, aprendizagem contínua e desenvolvimento
+                pessoal, aproximando pessoas de produtos,
+                experiências e oportunidades.
             </p>
 
         </div>
@@ -158,29 +215,39 @@ return`
 
             <div class="bento-card span-7 reveal">
 
-                <span class="label">Missão</span>
+                <span class="label">
+                    A nossa visão
+                </span>
 
                 <h3>
-                    Transformar vidas através do conhecimento
-                    e do bem-estar.
+                    Elevar pessoas através
+                    de conhecimento, experiência
+                    e inovação.
                 </h3>
 
                 <p class="text mt-2">
-                    Acreditamos que pessoas saudáveis,
-                    conscientes e financeiramente livres
-                    constroem famílias mais fortes e uma
-                    sociedade melhor.
+                    A AD Lifestyle foi pensada para criar uma ponte
+                    entre soluções de bem-estar, tecnologias de
+                    Lifestyle e uma cultura de aprendizagem e evolução.
                 </p>
 
             </div>
 
             <div class="bento-card span-5 reveal delay-1">
 
-                <span class="label">Academy 21</span>
+                <span class="label">
+                    Powered by
+                </span>
 
                 <h3>
-                    Liderança & Negócios Internacionais
+                    Academy Twenty One
                 </h3>
+
+                <p class="text mt-2">
+                    Desenvolvimento pessoal, liderança,
+                    educação empreendedora e aprendizagem contínua
+                    fazem parte da visão do nosso ecossistema.
+                </p>
 
             </div>
 
@@ -188,16 +255,12 @@ return`
 
                 <div class="metric">
 
-                    <div
-                        class="metric-number"
-                        data-counter="12000">
-
-                        0
-
+                    <div class="metric-number">
+                        01
                     </div>
 
                     <div class="metric-label">
-                        Pessoas impactadas
+                        Visão integrada
                     </div>
 
                 </div>
@@ -209,11 +272,11 @@ return`
                 <div class="metric">
 
                     <div class="metric-number">
-                        4
+                        02
                     </div>
 
                     <div class="metric-label">
-                        Linhas de produtos
+                        Bem-estar + tecnologia
                     </div>
 
                 </div>
@@ -225,11 +288,11 @@ return`
                 <div class="metric">
 
                     <div class="metric-number">
-                        21
+                        03
                     </div>
 
                     <div class="metric-label">
-                        Academy Twenty One
+                        Conhecimento + oportunidade
                     </div>
 
                 </div>
@@ -247,26 +310,119 @@ return`
 }
 
 /* ==========================================================
-   PRODUCTS
+   PILLARS
    ========================================================== */
 
-function products(){
+function pillars(){
 
-return`
+return `
 
-<section id="products" class="section-sm">
+<section class="section-sm home-pillars">
 
     <div class="container">
 
         <div class="section-center reveal">
 
             <span class="label">
-                Produtos Premium
+                O que nos move
             </span>
 
             <h2 class="section-title">
-                Escolha o seu universo de bem-estar
+                Quatro dimensões.
+                <span>Uma experiência.</span>
             </h2>
+
+        </div>
+
+        <div class="grid grid-4 mt-6">
+
+            ${pillar(
+                "01",
+                "Bem-estar",
+                "Soluções e experiências orientadas para uma rotina de maior conforto e equilíbrio."
+            )}
+
+            ${pillar(
+                "02",
+                "Inovação",
+                "Produtos e conceitos que aproximam tecnologia e Lifestyle."
+            )}
+
+            ${pillar(
+                "03",
+                "Desenvolvimento",
+                "Conhecimento, liderança, comunicação e crescimento pessoal."
+            )}
+
+            ${pillar(
+                "04",
+                "Oportunidade",
+                "Uma visão empreendedora ligada à aprendizagem e construção de novas possibilidades."
+            )}
+
+        </div>
+
+    </div>
+
+</section>
+
+`;
+
+}
+
+function pillar(number,title,text){
+
+return `
+
+<div class="card service-card reveal">
+
+    <div class="service-icon">
+        ${number}
+    </div>
+
+    <h3>
+        ${title}
+    </h3>
+
+    <p class="text mt-2">
+        ${text}
+    </p>
+
+</div>
+
+`;
+
+}
+
+/* ==========================================================
+   FEATURED PRODUCTS
+   ========================================================== */
+
+function featuredProducts(){
+
+return `
+
+<section
+    id="products"
+    class="section home-products">
+
+    <div class="container">
+
+        <div class="section-center reveal">
+
+            <span class="label">
+                Colecção em destaque
+            </span>
+
+            <h2 class="section-title">
+                Descubra os nossos
+                <span>universos de produto.</span>
+            </h2>
+
+            <p class="lead">
+                Uma selecção de soluções que representam diferentes
+                dimensões do universo AD Lifestyle.
+            </p>
 
         </div>
 
@@ -276,64 +432,50 @@ return`
                 "angel",
                 "Cuidado Feminino",
                 "Angel Moon",
-                "./assets/products/angel.png"
+                "./assets/products/angel.png",
+                "Conforto, cuidado e uma experiência pensada para o universo feminino."
             )}
 
             ${productCard(
                 "ezeno",
                 "Saúde Oral",
                 "EZENO",
-                "./assets/products/ezeno.png"
+                "./assets/products/ezeno.png",
+                "Uma proposta de cuidado oral integrada numa rotina de higiene e autocuidado."
             )}
 
             ${productCard(
                 "zenbru",
-                "Café Funcional",
+                "Café & Lifestyle",
                 "Zenbru",
-                "./assets/products/zenbru.png"
-            )}
-
-            ${productCard(
-                "alpha",
-                "Performance",
-                "Alpha Vmax",
-                "./assets/products/alpha.png"
-            )}
-
-            ${productCard(
-                "alphameta",
-                "Nutrição",
-                "AlphaMeta",
-                "./assets/products/alphameta.png"
-            )}
-
-            ${productCard(
-                "minoseed",
-                "Beleza & Bem-estar",
-                "Minoseed",
-                "./assets/products/minoseed.png"
-            )}
-
-            ${productCard(
-                "evador",
-                "Beleza",
-                "Evador",
-                "./assets/products/evador.png"
-            )}
-
-            ${productCard(
-                "alphaspin-ultra",
-                "Smart Living",
-                "AlphaSpin Ultra",
-                "./assets/products/alphaspin-ultra.png"
+                "./assets/products/zenbru.png",
+                "Café Robusta combinado com ginseng e gengibre numa experiência de sabor distinta."
             )}
 
             ${productCard(
                 "ismarts3",
                 "Smart Living",
-                "iSMARTS3",
-                "./assets/products/ismarts3.png"
+                "iSMART S3",
+                "./assets/products/ismarts3.png",
+                "Um sistema de sono apresentado através de um cobertor inteligente e uma almofada Gravidade Zero."
             )}
+
+        </div>
+
+        <div class="section-center mt-6 reveal">
+
+            <p class="text">
+                A colecção AD Lifestyle inclui outras soluções
+                e experiências para diferentes necessidades e interesses.
+            </p>
+
+            <button
+                class="btn btn-primary mt-3"
+                id="viewAllProducts">
+
+                Ver todos os produtos
+
+            </button>
 
         </div>
 
@@ -345,11 +487,17 @@ return`
 
 }
 
-function productCard(route,category,title,image){
+function productCard(
+    route,
+    category,
+    title,
+    image,
+    description
+){
 
-return`
+return `
 
-<div
+<article
     class="card product-card reveal"
     data-product="${route}">
 
@@ -359,7 +507,8 @@ return`
 
         <img
             src="${image}"
-            alt="${title}">
+            alt="${title}"
+            loading="lazy">
 
     </div>
 
@@ -369,64 +518,115 @@ return`
             ${category}
         </span>
 
-        <h3>${title}</h3>
+        <h3>
+            ${title}
+        </h3>
 
         <p class="text mt-1">
-            Descubra a composição,
-            benefícios e experiência completa.
+            ${description}
         </p>
+
+        <span class="product-link">
+            Explorar produto →
+        </span>
 
     </div>
 
-</div>
+</article>
 
 `;
 
 }
 
 /* ==========================================================
-   SERVICES
+   ECOSYSTEM
    ========================================================== */
 
-function services(){
+function ecosystem(){
 
-return`
+return `
 
-<section class="section">
+<section class="section home-ecosystem">
 
     <div class="container">
 
-        <div class="section-center reveal">
+        <div class="showcase">
 
-            <span class="label">
-                Serviços
-            </span>
+            <div class="showcase-content">
 
-            <h2 class="section-title">
-                Muito além da venda de produtos
-            </h2>
+                <div class="split">
 
-        </div>
+                    <div class="split-image reveal-left">
 
-        <div class="grid grid-3 mt-6">
+                        <div class="home-ecosystem-visual">
 
-            ${service(
-                "🩺",
-                "Consultoria em Bem-estar",
-                "Acompanhamento personalizado para escolhas mais saudáveis."
-            )}
+                            <div class="home-ecosystem-number">
+                                21
+                            </div>
 
-            ${service(
-                "🌿",
-                "Medicina Holística",
-                "Produtos seleccionados para promover equilíbrio e qualidade de vida."
-            )}
+                            <span>
+                                ACADEMY TWENTY ONE
+                            </span>
 
-            ${service(
-                "🎓",
-                "Academy 21",
-                "Formação em liderança, comunicação, empreendedorismo e negócios internacionais."
-            )}
+                            <small>
+                                Conhecimento · Liderança · Desenvolvimento
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                    <div class="split-content reveal-right">
+
+                        <span class="label">
+                            Academy Twenty One
+                        </span>
+
+                        <h2 class="section-title">
+                            O produto é apenas
+                            <span>uma parte da jornada.</span>
+                        </h2>
+
+                        <p class="text-lg">
+                            A AD Lifestyle também integra uma dimensão
+                            educacional e empreendedora, aproximando
+                            pessoas de conhecimento, liderança,
+                            comunicação, networking e desenvolvimento pessoal.
+                        </p>
+
+                        <div class="icon-list mt-4">
+
+                            ${iconItem(
+                                "01",
+                                "Desenvolvimento pessoal",
+                                "Aprendizagem contínua e evolução individual."
+                            )}
+
+                            ${iconItem(
+                                "02",
+                                "Educação empreendedora",
+                                "Conhecimento orientado para novas possibilidades."
+                            )}
+
+                            ${iconItem(
+                                "03",
+                                "Liderança & networking",
+                                "Construção de relações e desenvolvimento de competências."
+                            )}
+
+                            ${iconItem(
+                                "04",
+                                "Visão internacional",
+                                "Uma perspectiva ligada a oportunidades e conexão global."
+                            )}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
 
@@ -438,21 +638,27 @@ return`
 
 }
 
-function service(icon,title,desc){
+function iconItem(number,title,text){
 
-return`
+return `
 
-<div class="card service-card reveal">
+<div class="icon-item">
 
-    <div class="service-icon">
-        ${icon}
+    <div class="icon-circle">
+        ${number}
     </div>
 
-    <h3>${title}</h3>
+    <div>
 
-    <p class="text mt-2">
-        ${desc}
-    </p>
+        <strong>
+            ${title}
+        </strong>
+
+        <p class="text">
+            ${text}
+        </p>
+
+    </div>
 
 </div>
 
@@ -466,13 +672,31 @@ return`
 
 function event(){
 
-return`
+return `
 
-<section class="section">
+<section class="section home-event">
 
     <div class="container">
 
-        <div class="showcase">
+        <div class="section-center reveal">
+
+            <span class="label">
+                Próximo evento
+            </span>
+
+            <h2 class="section-title">
+                Conhecimento,
+                experiência e <span>oportunidade.</span>
+            </h2>
+
+            <p class="lead">
+                Fique por dentro das próximas experiências AD Lifestyle
+                e Academy Twenty One.
+            </p>
+
+        </div>
+
+        <div class="showcase mt-6">
 
             <div class="showcase-content">
 
@@ -482,14 +706,15 @@ return`
 
                         <img
                             src="./assets/hotel/fly.png"
-                            alt="Fly Hotel">
+                            alt="Fly Hotel"
+                            loading="lazy">
 
                     </div>
 
                     <div class="split-content reveal-right">
 
                         <span class="label">
-                            Grande Evento
+                            20 Setembro 2026
                         </span>
 
                         <h2 class="section-title">
@@ -498,55 +723,36 @@ return`
                         </h2>
 
                         <p class="text-lg">
-                            Saúde • Bem-estar • Longevidade •
-                            Negócios Internacionais
+                            Uma experiência que reúne saúde,
+                            bem-estar, longevidade, aprendizagem
+                            e negócios internacionais.
                         </p>
 
                         <div class="icon-list mt-4">
 
-                            <div class="icon-item">
+                            ${iconItem(
+                                "📅",
+                                "Domingo · 20 de Setembro de 2026",
+                                "Data do evento."
+                            )}
 
-                                <div class="icon-circle">📅</div>
+                            ${iconItem(
+                                "🕒",
+                                "15h00",
+                                "Início do encontro."
+                            )}
 
-                                <div>
-                                    <strong>20 de Setembro de 2026</strong><br>
-                                    Sábado
-                                </div>
+                            ${iconItem(
+                                "📍",
+                                "Fly Hotel · Luanda",
+                                "Zona do antigo Aeroporto Doméstico."
+                            )}
 
-                            </div>
-
-                            <div class="icon-item">
-
-                                <div class="icon-circle">📍</div>
-
-                                <div>
-                                    <strong>Fly Hotel</strong><br>
-                                    Antigo Aeroporto Doméstico · Luanda
-                                </div>
-
-                            </div>
-
-                            <div class="icon-item">
-
-                                <div class="icon-circle">🕒</div>
-
-                                <div>
-                                    <strong>15h00</strong><br>
-                                    Início pontualmente
-                                </div>
-
-                            </div>
-
-                            <div class="icon-item">
-
-                                <div class="icon-circle">🎟️</div>
-
-                                <div>
-                                    <strong>2.500 Kz</strong><br>
-                                    Ingresso individual
-                                </div>
-
-                            </div>
+                            ${iconItem(
+                                "🎟️",
+                                "2.500 Kz",
+                                "Ingresso individual."
+                            )}
 
                         </div>
 
@@ -554,9 +760,9 @@ return`
 
                             <button
                                 class="btn btn-primary"
-                                id="reserveEvent">
+                                id="openEvent">
 
-                                Reservar Lugar
+                                Ver evento completo
 
                             </button>
 
@@ -579,138 +785,57 @@ return`
 }
 
 /* ==========================================================
-   TESTIMONIALS
+   SOCIAL PRESENCE
    ========================================================== */
 
-function testimonials(){
+function socialPresence(){
 
-return`
+return `
 
-<section class="section-sm">
+<section class="section-sm home-social">
 
     <div class="container">
 
         <div class="section-center reveal">
 
             <span class="label">
-                Comunidade AD Lifestyle
+                AD Lifestyle Digital
             </span>
 
             <h2 class="section-title">
-                Histórias que inspiram confiança
+                Acompanhe a nossa
+                <span>evolução.</span>
             </h2>
 
-        </div>
-
-        <div class="testimonial-grid mt-6">
-
-            ${testimonial(
-                "Angel Moon proporcionou-me uma experiência completamente diferente. Conforto e qualidade que realmente se sentem.",
-                "Maria Fernandes"
-            )}
-
-            ${testimonial(
-                "A AD Lifestyle fez-me descobrir uma nova forma de cuidar da minha saúde através da medicina holística.",
-                "Ana Miguel"
-            )}
-
-            ${testimonial(
-                "O Zenbru tornou-se parte da minha rotina diária e hoje sinto muito mais energia durante o trabalho.",
-                "João Baptista"
-            )}
-
-            ${testimonial(
-                "Não encontrei apenas produtos. Encontrei uma comunidade preocupada com o desenvolvimento humano.",
-                "Helena Silva"
-            )}
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
-
-}
-
-function testimonial(text,name){
-
-return`
-
-<div class="card testimonial reveal">
-
-    <div class="quote-mark">“</div>
-
-    <p class="text">
-        ${text}
-    </p>
-
-    <div class="person">
-
-        <div class="avatar">
-
-            <img
-                src="./assets/images/avatar.png"
-                alt="${name}">
-
-        </div>
-
-        <div>
-
-            <strong>${name}</strong>
-
-            <div class="text-sm">
-                Cliente AD Lifestyle
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-`;
-
-}
-
-/* ==========================================================
-   INSTAGRAM
-   ========================================================== */
-
-function instagram(){
-
-return`
-
-<section class="section">
-
-    <div class="container">
-
-        <div class="section-center reveal">
-
-            <span class="label">
-                Redes Sociais
-            </span>
-
-            <h2 class="section-title">
-                @adlifestyle.ao
-            </h2>
-
-            <p class="text">
-                Acompanhe eventos, dicas de saúde e novidades.
+            <p class="lead">
+                Produtos, eventos, conhecimento, Lifestyle e novidades
+                directamente nos nossos canais digitais.
             </p>
 
         </div>
 
-        <div class="social-grid mt-5">
+        <div class="grid grid-3 mt-6">
 
-            ${social("./assets/images/insta1.jpg")}
+            ${socialChannel(
+                "Instagram",
+                "@adlifestyle.ao",
+                "Conteúdo visual, produtos, experiências e novidades.",
+                "Instagram"
+            )}
 
-            ${social("./assets/images/insta2.jpg")}
+            ${socialChannel(
+                "Facebook",
+                "AD Lifestyle",
+                "Actualizações, eventos e conteúdos da comunidade.",
+                "Facebook"
+            )}
 
-            ${social("./assets/images/insta3.jpg")}
-
-            ${social("./assets/images/insta4.jpg")}
+            ${socialChannel(
+                "TikTok",
+                "@adbdlifestyle",
+                "Conteúdo dinâmico, educação e Lifestyle.",
+                "TikTok"
+            )}
 
         </div>
 
@@ -722,19 +847,32 @@ return`
 
 }
 
-function social(image){
+function socialChannel(
+    platform,
+    handle,
+    description,
+    label
+){
 
-return`
+return `
 
-<div class="social-card reveal">
+<div class="card service-card reveal">
 
-    <img
-        src="${image}"
-        alt="Instagram">
-
-    <div class="social-overlay">
-        Ver publicação
+    <div class="service-icon">
+        ${label.charAt(0)}
     </div>
+
+    <span class="product-category">
+        ${platform}
+    </span>
+
+    <h3>
+        ${handle}
+    </h3>
+
+    <p class="text mt-2">
+        ${description}
+    </p>
 
 </div>
 
@@ -743,14 +881,14 @@ return`
 }
 
 /* ==========================================================
-   CTA
+   FINAL CTA
    ========================================================== */
 
-function cta(){
+function finalCTA(){
 
-return`
+return `
 
-<section class="section">
+<section class="section home-final-cta">
 
     <div class="container">
 
@@ -763,29 +901,30 @@ return`
                 </span>
 
                 <h2 class="section-title mt-3">
-                    A sua transformação começa hoje.
+                    O próximo passo
+                    começa com uma descoberta.
                 </h2>
 
                 <p class="lead">
-                    Junte-se à comunidade que está a transformar vidas através da saúde,
-                    bem-estar, longevidade e oportunidades internacionais.
+                    Explore os produtos, descubra as nossas experiências
+                    e entre em contacto com a AD Lifestyle.
                 </p>
 
                 <div class="hero-actions center mt-4">
 
                     <button
                         class="btn btn-primary"
-                        id="whatsappCTA">
+                        id="finalProducts">
 
-                        Falar no WhatsApp
+                        Explorar Produtos
 
                     </button>
 
                     <button
                         class="btn btn-glass"
-                        id="productsCTA">
+                        id="whatsappCTA">
 
-                        Ver Produtos
+                        Falar no WhatsApp
 
                     </button>
 
@@ -804,81 +943,141 @@ return`
 }
 
 /* ==========================================================
-   EVENTOS DA HOME
+   INITIALISE
    ========================================================== */
 
 function initialiseHome(){
 
-    stagger(".product-card");
+    const root = document.querySelector(".page-home");
 
-    document
+    if(!root) return;
+
+    /* ------------------------------------------------------
+       ANIMATIONS
+       ------------------------------------------------------ */
+
+    stagger(".page-home .product-card");
+    stagger(".page-home .service-card");
+
+    root
         .querySelectorAll(".btn")
-        .forEach(ripple);
+        .forEach(button=>{
 
-    document
-        .getElementById("exploreProducts")
+            ripple(button);
+
+        });
+
+    /* ------------------------------------------------------
+       HERO — PRODUCTS
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#exploreProducts")
         ?.addEventListener("click",()=>{
 
-            document
-                .getElementById("products")
+            root
+                .querySelector("#products")
                 ?.scrollIntoView({
-                    behavior:"smooth"
+                    behavior:"smooth",
+                    block:"start"
                 });
 
         });
 
-    document
-        .getElementById("aboutButton")
+    /* ------------------------------------------------------
+       HERO — ABOUT
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#aboutButton")
         ?.addEventListener("click",()=>{
 
-            document
-                .getElementById("about")
+            root
+                .querySelector("#about")
                 ?.scrollIntoView({
-                    behavior:"smooth"
+                    behavior:"smooth",
+                    block:"start"
                 });
 
         });
 
-    document
+    /* ------------------------------------------------------
+       PRODUCT CARDS
+       ------------------------------------------------------ */
+
+    root
         .querySelectorAll("[data-product]")
         .forEach(card=>{
 
             card.addEventListener("click",()=>{
 
-                navigate("/"+card.dataset.product);
+                const route =
+                    card.dataset.product;
+
+                if(!route) return;
+
+                navigate("/" + route);
 
             });
 
         });
 
-    document
-        .getElementById("productsCTA")
+    /* ------------------------------------------------------
+       VIEW ALL PRODUCTS
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#viewAllProducts")
         ?.addEventListener("click",()=>{
 
-            document
-                .getElementById("products")
+            navigate("/products");
+
+        });
+
+    /* ------------------------------------------------------
+       EVENT
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#openEvent")
+        ?.addEventListener("click",()=>{
+
+            navigate("/events");
+
+        });
+
+    /* ------------------------------------------------------
+       FINAL PRODUCTS CTA
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#finalProducts")
+        ?.addEventListener("click",()=>{
+
+            root
+                .querySelector("#products")
                 ?.scrollIntoView({
-                    behavior:"smooth"
+                    behavior:"smooth",
+                    block:"start"
                 });
 
         });
 
-    document
-        .getElementById("whatsappCTA")
+    /* ------------------------------------------------------
+       WHATSAPP
+       ------------------------------------------------------ */
+
+    root
+        .querySelector("#whatsappCTA")
         ?.addEventListener("click",()=>{
+
+            const message =
+                "Olá AD Lifestyle! Gostaria de conhecer melhor os produtos e soluções disponíveis.";
 
             window.open(
-                "https://wa.me/244924964666?text=Olá%20AD%20Lifestyle",
+                `https://wa.me/244924964666?text=${encodeURIComponent(message)}`,
                 "_blank"
             );
-
-        });
-
-    document
-        .getElementById("reserveEvent")
-        ?.addEventListener("click",()=>{
-
-            navigate("/events");
 
         });
 
