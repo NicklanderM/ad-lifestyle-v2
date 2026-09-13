@@ -1643,71 +1643,304 @@ body[data-theme="alphameta"]::-webkit-scrollbar-thumb{
 }
 
 /* ==========================================================
+   AD LIFESTYLE V2
    MINOSEED
+   THEME — CREAM / GOLD / RED / GREEN
    ========================================================== */
 
 body[data-theme="minoseed"]{
 
-    background:#FCF8F3;
+    --minoseed-gold:
+        #D8A62A;
+
+    --minoseed-gold-light:
+        #F1C95B;
+
+    --minoseed-champagne:
+        #E9D39A;
+
+    --minoseed-cream:
+        #FFF3D5;
+
+    --minoseed-ivory:
+        #FAF7ED;
+
+    --minoseed-red:
+        #D71920;
+
+    --minoseed-red-dark:
+        #A91418;
+
+    --minoseed-green:
+        #4D812B;
+
+    --minoseed-green-light:
+        #6B9638;
+
+    --minoseed-brown:
+        #8A5A24;
+
+    --minoseed-dark:
+        #332516;
+
+
+    background:
+        #FFF3D5 !important;
+
+    color:
+        #332516 !important;
 
 }
+
+
+/* ==========================================================
+   BODY
+   ========================================================== */
+
+body[data-theme="minoseed"]{
+
+    background:
+
+        radial-gradient(
+            circle at 88% 5%,
+            rgba(216,166,42,.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 8% 45%,
+            rgba(77,129,43,.08),
+            transparent 30%
+        ),
+
+        #FFF3D5 !important;
+
+}
+
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+body[data-theme="minoseed"] .navbar{
+
+    background:
+        rgba(51,37,22,.96) !important;
+
+    border-bottom:
+        1px solid
+        rgba(241,201,91,.22) !important;
+
+}
+
+
+body[data-theme="minoseed"] .navbar a{
+
+    color:
+        rgba(255,255,255,.90) !important;
+
+}
+
+
+body[data-theme="minoseed"] .navbar a:hover{
+
+    color:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
 
 body[data-theme="minoseed"] .hero{
 
     background:
+
         radial-gradient(
-            circle at top right,
-            rgba(197,162,122,.38),
-            transparent 35%
+            circle at 82% 15%,
+            rgba(241,201,91,.24),
+            transparent 30%
         ),
+
         radial-gradient(
-            circle at bottom left,
-            rgba(243,233,220,.75),
-            transparent 40%
+            circle at 10% 82%,
+            rgba(77,129,43,.17),
+            transparent 34%
         ),
-        var(--hero-gradient);
+
+        linear-gradient(
+            135deg,
+            #332516 0%,
+            #8A5A24 42%,
+            #D8A62A 100%
+        ) !important;
 
 }
+
+
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
+
+body[data-theme="minoseed"] .hero h1,
+body[data-theme="minoseed"] .hero h2,
+body[data-theme="minoseed"] .hero h3{
+
+    color:
+        #FFFFFF !important;
+
+}
+
+
+body[data-theme="minoseed"] .hero p{
+
+    color:
+        rgba(255,255,255,.84) !important;
+
+}
+
+
+body[data-theme="minoseed"] .hero-title span{
+
+    color:
+        #F1C95B !important;
+
+    background:none !important;
+
+    -webkit-background-clip:
+        initial !important;
+
+    background-clip:
+        initial !important;
+
+    -webkit-text-fill-color:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   BADGE
+   ========================================================== */
+
+body[data-theme="minoseed"] .badge{
+
+    color:
+        #F1C95B !important;
+
+    background:
+        rgba(241,201,91,.12) !important;
+
+    border:
+        1px solid
+        rgba(241,201,91,.34) !important;
+
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+body[data-theme="minoseed"] .hero .btn-primary,
+body[data-theme="minoseed"] .showcase .btn-primary{
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #D8A62A,
+            #F1C95B
+        ) !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+body[data-theme="minoseed"] .hero .btn-glass,
+body[data-theme="minoseed"] .showcase .btn-glass{
+
+    background:
+        rgba(255,255,255,.08) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.22) !important;
+
+}
+
+
+/* ==========================================================
+   PRODUCT GLOW
+   ========================================================== */
 
 body[data-theme="minoseed"] .product-glow{
 
     background:
+
         radial-gradient(
             circle,
-            #A67C52,
+            rgba(241,201,91,.46),
+            rgba(77,129,43,.16) 42%,
             transparent 72%
-        );
+        ) !important;
 
-    opacity:.32;
-
-}
-
-body[data-theme="minoseed"] .service-icon{
-
-    background:rgba(166,124,82,.12);
+    opacity:
+        .9 !important;
 
 }
 
-body[data-theme="minoseed"] .card::after{
 
-    background:#A67C52;
+/* ==========================================================
+   BLOBS
+   ========================================================== */
+
+body[data-theme="minoseed"] .blob-1{
+
+    background:
+        #D8A62A !important;
 
 }
+
+
+body[data-theme="minoseed"] .blob-2{
+
+    background:
+        #4D812B !important;
+
+}
+
+
+body[data-theme="minoseed"] .blob-3{
+
+    background:
+        #F1C95B !important;
+
+}
+
+
+/* ==========================================================
+   ORB
+   ========================================================== */
 
 body[data-theme="minoseed"] .orb{
 
-    background:#C5A27A;
-
-}
-
-body[data-theme="minoseed"] .blob{
-
-    opacity:.22;
+    background:
+        #D8A62A !important;
 
 }
 
 
-/* Fundo orgânico subtil */
+/* ==========================================================
+   TEXTURE
+   ========================================================== */
 
 body[data-theme="minoseed"]::before{
 
@@ -1719,22 +1952,55 @@ body[data-theme="minoseed"]::before{
 
     pointer-events:none;
 
-    background:
+    background-image:
+
         radial-gradient(
-            circle at 18% 25%,
-            rgba(166,124,82,.055),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 82% 72%,
-            rgba(197,162,122,.055),
-            transparent 30%
+            rgba(216,166,42,.08) 1px,
+            transparent 1px
         );
 
-    z-index:-1;
+    background-size:
+        36px 36px;
+
+    opacity:
+        .28;
+
+    z-index:
+        -1;
 
 }
 
+
+/* ==========================================================
+   SELECTION
+   ========================================================== */
+
+body[data-theme="minoseed"] ::selection{
+
+    background:
+        #D8A62A !important;
+
+    color:
+        #332516 !important;
+
+}
+
+
+/* ==========================================================
+   SCROLLBAR
+   ========================================================== */
+
+body[data-theme="minoseed"]::-webkit-scrollbar-thumb{
+
+    background:
+
+        linear-gradient(
+            #4D812B,
+            #D8A62A,
+            #D71920
+        ) !important;
+
+}
 
 /* ==========================================================
    EVADOR
