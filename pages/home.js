@@ -122,6 +122,7 @@ const PRODUCTS = [
 
 ];
 
+
 /* ==========================================================
    HERO — IDENTIDADE VISUAL LOCAL
    Não altera o sistema global de temas.
@@ -326,6 +327,7 @@ const MEMORIES = [
 
 ];
 
+
 /* ==========================================================
    APLICAR IDENTIDADE DO HERO
    ========================================================== */
@@ -339,8 +341,14 @@ function applyHomeHeroTheme(name){
         return;
     }
 
+
     const theme =
         HERO_THEMES[name];
+
+
+    /* ======================================================
+       RESET / DEFAULT
+       ====================================================== */
 
     if(!theme){
 
@@ -364,9 +372,28 @@ function applyHomeHeroTheme(name){
             "#FFFFFF"
         );
 
+        root.style.setProperty(
+            "--hero-tone",
+            "#C6A35A"
+        );
+
+        root.style.setProperty(
+            "--hero-atmosphere",
+            "#EFE5D3"
+        );
+
+        root.style.setProperty(
+            "--hero-deep",
+            "#574423"
+        );
+
         return;
     }
 
+
+    /* ======================================================
+       VARIÁVEIS PRINCIPAIS
+       ====================================================== */
 
     root.style.setProperty(
         "--home-hero-tone",
@@ -392,10 +419,9 @@ function applyHomeHeroTheme(name){
     );
 
 
-    /*
-       Variáveis adicionais para futuras animações
-       ou elementos do Hero.
-    */
+    /* ======================================================
+       VARIÁVEIS COMPLEMENTARES
+       ====================================================== */
 
     root.style.setProperty(
         "--hero-tone",
@@ -416,6 +442,7 @@ function applyHomeHeroTheme(name){
 
 }
 
+
 /* ==========================================================
    LOAD
    ========================================================== */
@@ -426,12 +453,15 @@ export function loadHome(){
 
     applyTheme("default");
 
+
     const app =
         document.getElementById("app");
+
 
     if(!app){
         return;
     }
+
 
     app.innerHTML = `
 
@@ -461,6 +491,7 @@ export function loadHome(){
 
     `;
 
+
     initialiseHome();
 
 }
@@ -478,17 +509,21 @@ function hero(){
             class="home-hero"
             id="homeHero">
 
+
             <div
                 class="home-hero-backdrop"
                 id="heroBackdrop">
             </div>
+
 
             <div
                 class="home-hero-atmosphere"
                 id="heroAtmosphere">
             </div>
 
+
             <div class="home-hero-grid"></div>
+
 
             <div class="home-hero-container">
 
@@ -504,6 +539,7 @@ function hero(){
                                 const product =
                                     PRODUCTS[item.product];
 
+
                                 return `
 
                                     <article
@@ -516,6 +552,7 @@ function hero(){
                                             }
                                         "
                                         data-hero-slide="${index}">
+
 
                                         <span
                                             class="home-hero-eyebrow">
@@ -558,11 +595,13 @@ function hero(){
                                                 ${product.category}
                                             </span>
 
+
                                             <strong>
                                                 ${product.name}
                                             </strong>
 
                                         </div>
+
 
                                     </article>
 
@@ -576,6 +615,7 @@ function hero(){
 
                     <div class="home-hero-actions">
 
+
                         <button
                             type="button"
                             class="
@@ -586,7 +626,9 @@ function hero(){
 
                             Explorar produtos
 
-                            <span>→</span>
+                            <span>
+                                →
+                            </span>
 
                         </button>
 
@@ -601,14 +643,18 @@ function hero(){
 
                             Conhecer a nossa visão
 
-                            <span>↗</span>
+                            <span>
+                                ↗
+                            </span>
 
                         </button>
+
 
                     </div>
 
 
                     <div class="home-hero-controls">
+
 
                         <button
                             type="button"
@@ -655,6 +701,7 @@ function hero(){
 
                         </div>
 
+
                     </div>
 
 
@@ -663,24 +710,32 @@ function hero(){
 
                 <div class="home-hero-visual">
 
+
                     <div
                         class="home-hero-aura"
                         id="heroAura">
                     </div>
 
 
-                    <div class="home-hero-orbit orbit-one"></div>
+                    <div
+                        class="home-hero-orbit orbit-one">
+                    </div>
 
-                    <div class="home-hero-orbit orbit-two"></div>
+
+                    <div
+                        class="home-hero-orbit orbit-two">
+                    </div>
 
 
                     <div class="home-hero-product-stage">
+
 
                         ${HERO.map(
                             (item,index)=>{
 
                                 const product =
                                     PRODUCTS[item.product];
+
 
                                 return `
 
@@ -695,7 +750,13 @@ function hero(){
                                         "
                                         data-hero-product="${index}">
 
-                                        <div class="home-hero-product-halo"></div>
+
+                                        <div
+                                            class="
+                                                home-hero-product-halo
+                                            ">
+                                        </div>
+
 
                                         <img
                                             src="${product.image}"
@@ -706,6 +767,7 @@ function hero(){
                                                     : "lazy"
                                             }">
 
+
                                     </div>
 
                                 `;
@@ -713,19 +775,23 @@ function hero(){
                             }
                         ).join("")}
 
+
                     </div>
 
 
                     <div
                         class="home-hero-product-index">
 
+
                         <span>
                             CURRENT OBJECT
                         </span>
 
+
                         <strong id="heroObject">
                             ANGEL MOON
                         </strong>
+
 
                     </div>
 
@@ -738,6 +804,7 @@ function hero(){
 
                     </div>
 
+
                 </div>
 
 
@@ -746,17 +813,22 @@ function hero(){
 
             <div class="home-hero-bottom">
 
+
                 <span>
                     AD LIFESTYLE
                 </span>
 
+
                 <div></div>
+
 
                 <span>
                     DISCOVER · EXPERIENCE · EVOLVE
                 </span>
 
+
             </div>
+
 
         </section>
 
@@ -775,43 +847,67 @@ function identityStrip(){
 
         <section class="home-identity">
 
+
             <div class="home-identity-word">
+
 
                 <span>
                     WELLNESS
                 </span>
 
-                <i>✦</i>
+
+                <i>
+                    ✦
+                </i>
+
 
                 <span>
                     LIFESTYLE
                 </span>
 
-                <i>✦</i>
+
+                <i>
+                    ✦
+                </i>
+
 
                 <span>
                     SMART LIVING
                 </span>
 
-                <i>✦</i>
+
+                <i>
+                    ✦
+                </i>
+
 
                 <span>
                     EVOLUTION
                 </span>
 
-                <i>✦</i>
+
+                <i>
+                    ✦
+                </i>
+
 
                 <span>
                     WELLNESS
                 </span>
 
-                <i>✦</i>
+
+                <i>
+                    ✦
+                </i>
+
 
                 <span>
                     LIFESTYLE
                 </span>
 
+
             </div>
+
 
         </section>
 
@@ -830,28 +926,36 @@ function manifesto(){
 
         <section class="home-manifesto">
 
+
             <div class="home-container">
 
+
                 <div class="home-manifesto-meta reveal">
+
 
                     <span>
                         01
                     </span>
 
+
                     <div></div>
+
 
                     <span>
                         MANIFESTO
                     </span>
+
 
                 </div>
 
 
                 <div class="home-manifesto-copy reveal">
 
+
                     <p>
                         Na AD Lifestyle
                     </p>
+
 
                     <h2>
 
@@ -863,30 +967,38 @@ function manifesto(){
 
                     </h2>
 
+
                 </div>
 
 
                 <div class="home-manifesto-footer reveal">
 
+
                     <span>
                         Produtos
                     </span>
+
 
                     <span>
                         Experiências
                     </span>
 
+
                     <span>
                         Conhecimento
                     </span>
+
 
                     <span>
                         Possibilidades
                     </span>
 
+
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -905,15 +1017,20 @@ function worlds(){
 
         <section class="home-worlds">
 
+
             <div class="home-container">
+
 
                 <div class="home-worlds-header reveal">
 
+
                     <div>
+
 
                         <span class="home-overline">
                             ECOSSISTEMA
                         </span>
+
 
                         <h2>
 
@@ -925,11 +1042,14 @@ function worlds(){
 
                         </h2>
 
+
                     </div>
+
 
                     <p>
                         Dois pilares. Uma experiência.
                     </p>
+
 
                 </div>
 
@@ -944,6 +1064,7 @@ function worlds(){
                             reveal
                         ">
 
+
                         <div class="home-world-number">
                             01
                         </div>
@@ -951,30 +1072,40 @@ function worlds(){
 
                         <div class="home-world-image">
 
-                            <div class="home-world-glow"></div>
+
+                            <div class="home-world-glow">
+                            </div>
+
 
                             <img
                                 src="./assets/images/bzzworld.png"
                                 alt="BZZWorld">
+
 
                         </div>
 
 
                         <div class="home-world-content">
 
+
                             <span>
                                 WELLNESS · PRODUCTS
                             </span>
+
 
                             <h3>
                                 BZZWorld
                             </h3>
 
+
                             <p>
+
                                 Produtos e soluções que dão
                                 forma à nossa dimensão de
                                 bem-estar e Lifestyle.
+
                             </p>
+
 
                             <a
                                 href="https://www.bzzworld.com/"
@@ -983,11 +1114,15 @@ function worlds(){
 
                                 Explorar
 
-                                <span>↗</span>
+                                <span>
+                                    ↗
+                                </span>
 
                             </a>
 
+
                         </div>
+
 
                     </article>
 
@@ -999,6 +1134,7 @@ function worlds(){
                             reveal
                         ">
 
+
                         <div class="home-world-number">
                             02
                         </div>
@@ -1006,33 +1142,42 @@ function worlds(){
 
                         <div class="home-world-image">
 
+
                             <div class="home-world-a21-number">
                                 21
                             </div>
 
+
                             <img
                                 src="./assets/images/a21.png"
                                 alt="Academy Twenty One">
+
 
                         </div>
 
 
                         <div class="home-world-content">
 
+
                             <span>
                                 LEARNING · LEADERSHIP
                             </span>
+
 
                             <h3>
                                 Academy Twenty One
                             </h3>
 
+
                             <p>
+
                                 Conhecimento, liderança,
                                 desenvolvimento pessoal,
                                 networking e educação
                                 empreendedora.
+
                             </p>
+
 
                             <a
                                 href="https://www.academytwentyone.com/"
@@ -1041,18 +1186,24 @@ function worlds(){
 
                                 Explorar
 
-                                <span>↗</span>
+                                <span>
+                                    ↗
+                                </span>
 
                             </a>
 
+
                         </div>
+
 
                     </article>
 
 
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -1071,13 +1222,17 @@ function productUniverses(){
 
         <section class="home-universes">
 
+
             <div class="home-container">
 
+
                 <div class="home-universes-head reveal">
+
 
                     <span class="home-overline">
                         OS NOSSOS UNIVERSOS
                     </span>
+
 
                     <h2>
 
@@ -1089,6 +1244,7 @@ function productUniverses(){
 
                     </h2>
 
+
                 </div>
 
 
@@ -1097,84 +1253,114 @@ function productUniverses(){
 
                     <article class="home-universe reveal">
 
+
                         <span>
                             01
                         </span>
 
+
                         <div>
+
 
                             <small>
                                 WELLNESS
                             </small>
 
+
                             <h3>
                                 Bem-estar
                             </h3>
 
+
                         </div>
 
+
                         <p>
+
                             Cuidado, autocuidado,
                             nutrição e Lifestyle.
+
                         </p>
+
 
                     </article>
 
 
                     <article class="home-universe reveal">
+
 
                         <span>
                             02
                         </span>
 
+
                         <div>
+
 
                             <small>
                                 LIFESTYLE
                             </small>
 
+
                             <h3>
                                 Experiência
                             </h3>
 
+
                         </div>
 
+
                         <p>
+
                             Sabor, conforto,
                             beleza e experiências premium.
+
                         </p>
+
 
                     </article>
 
 
                     <article class="home-universe reveal">
 
+
                         <span>
                             03
                         </span>
 
+
                         <div>
+
 
                             <small>
                                 SMART LIVING
                             </small>
 
+
                             <h3>
                                 Inteligência
                             </h3>
 
+
                         </div>
 
+
                         <p>
+
                             Tecnologia, inovação
                             e soluções para o quotidiano.
+
                         </p>
+
 
                     </article>
 
+
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -1203,16 +1389,20 @@ function featuredProducts(){
 
         <section class="home-products">
 
+
             <div class="home-container">
 
 
                 <div class="home-products-head reveal">
 
+
                     <div>
+
 
                         <span class="home-overline">
                             SELECTED PRODUCTS
                         </span>
+
 
                         <h2>
 
@@ -1223,6 +1413,7 @@ function featuredProducts(){
                             </span>
 
                         </h2>
+
 
                     </div>
 
@@ -1240,13 +1431,16 @@ function featuredProducts(){
 
                     </button>
 
+
                 </div>
 
 
                 <div class="home-product-gallery">
 
+
                     ${featured.map(
                         (product,index)=>`
+
 
                             <article
                                 class="
@@ -1267,59 +1461,74 @@ function featuredProducts(){
 
                                 <div class="home-feature-top">
 
+
                                     <span>
                                         0${index + 1}
                                     </span>
 
+
                                     <span>
                                         ${product.universe}
                                     </span>
+
 
                                 </div>
 
 
                                 <div class="home-feature-image">
 
+
                                     <div
                                         class="home-feature-aura">
                                     </div>
+
 
                                     <img
                                         src="${product.image}"
                                         alt="${product.name}"
                                         loading="lazy">
 
+
                                 </div>
 
 
                                 <div class="home-feature-info">
 
+
                                     <small>
                                         ${product.category}
                                     </small>
+
 
                                     <h3>
                                         ${product.name}
                                     </h3>
 
+
                                     <p>
                                         ${product.label}
                                     </p>
 
+
                                     <span>
                                         Explorar ↗
                                     </span>
+
 
                                 </div>
 
 
                             </article>
 
+
                     `).join("")}
+
 
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -1338,14 +1547,17 @@ function event(){
 
         <section class="home-event">
 
+
             <div class="home-container">
 
 
                 <div class="home-event-intro reveal">
 
+
                     <span class="home-overline">
                         NEXT EXPERIENCE
                     </span>
+
 
                     <h2>
 
@@ -1356,6 +1568,7 @@ function event(){
                         </span>
 
                     </h2>
+
 
                 </div>
 
@@ -1369,14 +1582,17 @@ function event(){
 
                     <div class="home-event-poster">
 
+
                         <img
                             src="./assets/images/independente.png"
                             alt="Grande Apresentação de Dupla Oportunidade"
                             loading="lazy">
 
+
                         <div class="home-event-poster-label">
                             AD LIFESTYLE
                         </div>
+
 
                     </div>
 
@@ -1422,40 +1638,51 @@ function event(){
 
                             <div>
 
+
                                 <span>
                                     LOCAL
                                 </span>
 
+
                                 <strong>
+
                                     Anfiteatro da
                                     Universidade Independente
+
                                 </strong>
+
 
                             </div>
 
 
                             <div>
+
 
                                 <span>
                                     DATA
                                 </span>
 
+
                                 <strong>
                                     4 e 5 de Outubro
                                 </strong>
+
 
                             </div>
 
 
                             <div>
 
+
                                 <span>
                                     CATEGORIAS
                                 </span>
 
+
                                 <strong>
                                     Wellness · Negócios · Educação
                                 </strong>
+
 
                             </div>
 
@@ -1471,11 +1698,14 @@ function event(){
                             "
                             id="eventButton">
 
+
                             Mais informações
+
 
                             <span>
                                 →
                             </span>
+
 
                         </button>
 
@@ -1485,7 +1715,9 @@ function event(){
 
                 </article>
 
+
             </div>
+
 
         </section>
 
@@ -1504,16 +1736,20 @@ function memoryReel(){
 
         <section class="home-memories">
 
+
             <div class="home-container">
 
 
                 <div class="home-memory-head reveal">
 
+
                     <div>
+
 
                         <span class="home-overline">
                             MEMORY REEL
                         </span>
+
 
                         <h2>
 
@@ -1525,20 +1761,25 @@ function memoryReel(){
 
                         </h2>
 
+
                     </div>
 
 
                     <div class="home-memory-count">
 
+
                         <strong id="memoryCurrent">
                             01
                         </strong>
+
 
                         <span>
                             / 04
                         </span>
 
+
                     </div>
+
 
                 </div>
 
@@ -1552,8 +1793,10 @@ function memoryReel(){
 
                     <div class="home-memory-stage">
 
+
                         ${MEMORIES.map(
                             (item,index)=>`
+
 
                                 <article
                                     class="
@@ -1566,24 +1809,31 @@ function memoryReel(){
                                     "
                                     data-memory-slide="${index}">
 
+
                                     <img
                                         src="${item.image}"
                                         alt="${item.title}"
                                         loading="lazy">
 
+
                                     <div class="home-memory-caption">
+
 
                                         <span>
                                             ${item.label}
                                         </span>
 
+
                                         <strong>
                                             ${item.title}
                                         </strong>
 
+
                                     </div>
 
+
                                 </article>
+
 
                         `).join("")}
 
@@ -1619,28 +1869,38 @@ function memoryReel(){
 
                     <aside class="home-memory-side">
 
+
                         <span>
                             FROM THE ARCHIVE
                         </span>
 
+
                         <strong>
+
                             Registos, encontros,
                             pessoas e momentos.
+
                         </strong>
 
+
                         <p>
+
                             Esta área está preparada para
                             crescer com fotografias, vídeos,
                             entrevistas e bastidores da
                             AD Lifestyle.
+
                         </p>
+
 
                     </aside>
 
 
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -1659,6 +1919,7 @@ function testimonial(){
 
         <section class="home-testimonial">
 
+
             <div class="home-container">
 
 
@@ -1668,6 +1929,7 @@ function testimonial(){
 
 
                 <div class="home-testimonial-main reveal">
+
 
                     <span class="home-overline">
                         COMMUNITY VOICE
@@ -1679,6 +1941,7 @@ function testimonial(){
                         Descobri que por trás dos
                         produtos existe uma visão
                         muito maior sobre
+
                         <em>
                             desenvolvimento e evolução.
                         </em>
@@ -1691,6 +1954,7 @@ function testimonial(){
 
                         <div class="home-testimonial-photo">
 
+
                             <img
                                 src="./assets/images/maria.png"
                                 alt="Maria"
@@ -1699,18 +1963,22 @@ function testimonial(){
                                     this.src='./assets/images/avatar.png';
                                 ">
 
+
                         </div>
 
 
                         <div>
 
+
                             <strong>
                                 Maria
                             </strong>
 
+
                             <span>
                                 Comunidade AD Lifestyle
                             </span>
+
 
                         </div>
 
@@ -1720,7 +1988,9 @@ function testimonial(){
 
                 </div>
 
+
             </div>
+
 
         </section>
 
@@ -1739,16 +2009,21 @@ function finalCTA(){
 
         <section class="home-final">
 
-            <div class="home-final-light"></div>
+
+            <div class="home-final-light">
+            </div>
+
 
             <div class="home-container">
 
 
                 <div class="home-final-content reveal">
 
+
                     <span class="home-overline">
                         AD LIFESTYLE
                     </span>
+
 
                     <h2>
 
@@ -1762,8 +2037,10 @@ function finalCTA(){
 
 
                     <p>
+
                         Produtos, experiências,
                         conhecimento e novas possibilidades.
+
                     </p>
 
 
@@ -1806,39 +2083,48 @@ function finalCTA(){
 
                     </div>
 
+
                 </div>
 
 
                 <footer class="home-final-footer">
 
+
                     <span>
                         LUANDA · ANGOLA
                     </span>
+
 
                     <span>
                         WELLNESS
                     </span>
 
+
                     <span>
                         LIFESTYLE
                     </span>
+
 
                     <span>
                         SMART LIVING
                     </span>
 
+
                     <span>
                         EVOLUTION
                     </span>
+
 
                     <span>
                         © AD LIFESTYLE
                     </span>
 
+
                 </footer>
 
 
             </div>
+
 
         </section>
 
@@ -1867,6 +2153,7 @@ function getCardTone(id){
 
     };
 
+
     return themes[id] || "#b8924a";
 
 }
@@ -1888,6 +2175,7 @@ function getCardAtmosphere(id){
 
     };
 
+
     return themes[id] || "#efe5d3";
 
 }
@@ -1901,6 +2189,7 @@ function initialiseHome(){
 
     const root =
         document.querySelector(".home-page");
+
 
     if(!root){
         return;
@@ -1978,7 +2267,8 @@ function initialiseHero(root){
 
     function render(index){
 
-        heroIndex = index;
+        heroIndex =
+            index;
 
 
         const heroItem =
@@ -2041,6 +2331,11 @@ function initialiseHero(root){
         }
 
 
+        /* ==================================================
+           AQUI A HOME TROCA APENAS O TEMA DO HERO.
+           O theme.js GLOBAL NÃO É ALTERADO.
+           ================================================== */
+
         applyHomeHeroTheme(
             product.theme
         );
@@ -2051,7 +2346,9 @@ function initialiseHero(root){
             progress.style.animation =
                 "none";
 
+
             void progress.offsetWidth;
+
 
             progress.style.animation =
                 "homeHeroProgress 6s linear forwards";
@@ -2059,21 +2356,28 @@ function initialiseHero(root){
         }
 
 
-        root
-            .querySelector("#homeHero")
-            ?.classList.remove(
+        const hero =
+            root.querySelector(
+                "#homeHero"
+            );
+
+
+        if(hero){
+
+            hero.classList.remove(
                 "is-changing"
             );
 
-        requestAnimationFrame(()=>{
 
-            root
-                .querySelector("#homeHero")
-                ?.classList.add(
+            requestAnimationFrame(()=>{
+
+                hero.classList.add(
                     "is-changing"
                 );
 
-        });
+            });
+
+        }
 
     }
 
@@ -2085,6 +2389,7 @@ function initialiseHero(root){
                 heroIndex + 1
             ) % HERO.length
         );
+
 
         restart();
 
@@ -2101,6 +2406,7 @@ function initialiseHero(root){
             ) % HERO.length
         );
 
+
         restart();
 
     }
@@ -2111,6 +2417,7 @@ function initialiseHero(root){
         clearInterval(
             heroTimer
         );
+
 
         heroTimer =
             window.setInterval(
@@ -2146,6 +2453,7 @@ function initialiseHero(root){
     if(stage){
 
         let startX = 0;
+
 
         stage.addEventListener(
             "pointerdown",
@@ -2360,6 +2668,7 @@ function initialiseMemory(root){
             ) % slides.length
         );
 
+
         restart();
 
     }
@@ -2374,6 +2683,7 @@ function initialiseMemory(root){
                 slides.length
             ) % slides.length
         );
+
 
         restart();
 
@@ -2696,7 +3006,9 @@ function destroyHome(){
             heroTimer
         );
 
-        heroTimer = null;
+
+        heroTimer =
+            null;
 
     }
 
@@ -2707,7 +3019,9 @@ function destroyHome(){
             mediaTimer
         );
 
-        mediaTimer = null;
+
+        mediaTimer =
+            null;
 
     }
 
@@ -2718,7 +3032,9 @@ function destroyHome(){
             pointerFrame
         );
 
-        pointerFrame = null;
+
+        pointerFrame =
+            null;
 
     }
 
@@ -2730,12 +3046,21 @@ function destroyHome(){
             homeKeyHandler
         );
 
-        homeKeyHandler = null;
+
+        homeKeyHandler =
+            null;
 
     }
 
 
-    applyHomeHeroTheme((
+    /*
+       IMPORTANTE:
+       não tocamos no theme.js.
+       Apenas devolvemos as variáveis
+       locais da Home ao estado neutro.
+    */
+
+    applyHomeHeroTheme(
         null
     );
 
