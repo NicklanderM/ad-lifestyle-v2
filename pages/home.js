@@ -1,7 +1,7 @@
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.JS
-   Immersive Editorial Experience
+   Immersive Brand Experience
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -9,217 +9,216 @@ import { navigate } from "../js/router.js";
 import { ripple } from "../js/animations.js";
 
 /* ==========================================================
-   CONFIGURAÇÃO
-   ========================================================== */
-
-const WHATSAPP_NUMBER = "244924964666";
-
-const HOME_PRODUCTS = [
-
-    {
-        id: "angel",
-        title: "Angel Moon",
-        category: "WELLNESS",
-        micro: "CUIDADO FEMININO",
-        image: "./assets/products/angel.png",
-        tone: "#d2b16a",
-        line: "Conforto. Cuidado. Confiança."
-    },
-
-    {
-        id: "ezeno",
-        title: "EZENO",
-        category: "ORAL CARE",
-        micro: "SAÚDE ORAL",
-        image: "./assets/products/ezeno.png",
-        tone: "#9c8b67",
-        line: "O cuidado começa no detalhe."
-    },
-
-    {
-        id: "zenbru",
-        title: "Zenbru",
-        category: "LIFESTYLE",
-        micro: "CAFÉ FUNCIONAL",
-        image: "./assets/products/zenbru.png",
-        tone: "#9a6d3a",
-        line: "Sabor com identidade."
-    },
-
-    {
-        id: "alpha",
-        title: "Alpha Vmax",
-        category: "PERFORMANCE",
-        micro: "PERFORMANCE",
-        image: "./assets/products/alpha.png",
-        tone: "#8c6e3b",
-        line: "Eleve a experiência."
-    },
-
-    {
-        id: "alphameta",
-        title: "AlphaMeta",
-        category: "NUTRIÇÃO",
-        micro: "NUTRIÇÃO",
-        image: "./assets/products/alphameta.png",
-        tone: "#c5a56a",
-        line: "Uma nova dimensão."
-    },
-
-    {
-        id: "minoseed",
-        title: "Minoseed",
-        category: "BEAUTY",
-        micro: "BELEZA & BEM-ESTAR",
-        image: "./assets/products/minoseed.png",
-        tone: "#ae8f72",
-        line: "Cuidado que acompanha."
-    },
-
-    {
-        id: "evador",
-        title: "Evador",
-        category: "PREMIUM CARE",
-        micro: "CUIDADOS PREMIUM",
-        image: "./assets/products/evador.png",
-        tone: "#b19467",
-        line: "Elegância também é cuidado."
-    },
-
-    {
-        id: "alphaspin-ultra",
-        title: "AlphaSpin Ultra",
-        category: "SMART LIVING",
-        micro: "SMART LIVING",
-        image: "./assets/products/alphaspin-ultra.png",
-        tone: "#978a6e",
-        line: "Tecnologia com propósito."
-    },
-
-    {
-        id: "ismarts3",
-        title: "iSMART S3",
-        category: "SMART LIVING",
-        micro: "SMART LIVING",
-        image: "./assets/products/ismarts3.png",
-        tone: "#b29b6b",
-        line: "O futuro entra em casa."
-    }
-
-];
-
-const HERO_SLIDES = [
-
-    {
-        eyebrow: "AD LIFESTYLE",
-        kicker: "WELLNESS · LIFESTYLE · EVOLUTION",
-        title: "Não é apenas",
-        accent: "Lifestyle.",
-        copy:
-            "É uma nova forma de descobrir, escolher e evoluir.",
-        product: 0
-    },
-
-    {
-        eyebrow: "WELLNESS",
-        kicker: "CUIDADO · CONFORTO · EXPERIÊNCIA",
-        title: "Viva melhor.",
-        accent: "Comece por si.",
-        copy:
-            "Soluções pensadas para acompanhar o quotidiano.",
-        product: 1
-    },
-
-    {
-        eyebrow: "LIFESTYLE",
-        kicker: "SABOR · RITUAL · IDENTIDADE",
-        title: "Transforme",
-        accent: "o seu ritmo.",
-        copy:
-            "Porque os pequenos rituais também definem a experiência.",
-        product: 2
-    },
-
-    {
-        eyebrow: "SMART LIVING",
-        kicker: "TECNOLOGIA · CONFORTO · INOVAÇÃO",
-        title: "O futuro",
-        accent: "já começou.",
-        copy:
-            "Descubra uma relação diferente entre tecnologia e quotidiano.",
-        product: 8
-    },
-
-    {
-        eyebrow: "EVOLUTION",
-        kicker: "CONHECIMENTO · LIDERANÇA · OPORTUNIDADE",
-        title: "O produto é",
-        accent: "só o começo.",
-        copy:
-            "Existe uma dimensão maior: aprender, crescer e construir.",
-        product: 5
-    },
-
-    {
-        eyebrow: "AD LIFESTYLE",
-        kicker: "DISCOVER · CONNECT · EVOLVE",
-        title: "Descubra",
-        accent: "o próximo capítulo.",
-        copy:
-            "A jornada ainda está a começar.",
-        product: 7
-    }
-
-];
-
-const MEMORY_ITEMS = [
-
-    {
-        image: "./assets/images/insta1.jpg",
-        label: "AD LIFESTYLE",
-        title: "Uma comunidade em movimento."
-    },
-
-    {
-        image: "./assets/images/insta2.jpg",
-        label: "EXPERIÊNCIA",
-        title: "Momentos que ficam."
-    },
-
-    {
-        image: "./assets/images/insta3.jpg",
-        label: "EVENTOS",
-        title: "Conhecimento que ganha vida."
-    },
-
-    {
-        image: "./assets/images/insta4.jpg",
-        label: "JORNADA",
-        title: "Estamos apenas a começar."
-    }
-
-];
-
-/* ==========================================================
    ESTADO
    ========================================================== */
 
 let heroIndex = 0;
-let memoryIndex = 0;
+let mediaIndex = 0;
 
-let heroInterval = null;
-let memoryInterval = null;
+let heroTimer = null;
+let mediaTimer = null;
 
-let rafId = null;
-
-let pointerX = 0;
-let pointerY = 0;
-
-let targetX = 0;
-let targetY = 0;
+let pointerFrame = null;
 
 /* ==========================================================
-   LOAD HOME
+   PRODUTOS
+   ========================================================== */
+
+const PRODUCTS = [
+
+    {
+        id: "angel",
+        name: "Angel Moon",
+        category: "FEMININO",
+        universe: "WELLNESS",
+        label: "Cuidado feminino",
+        image: "./assets/products/angel.png",
+        tone: "#d5b676",
+        atmosphere: "#efe3c8"
+    },
+
+    {
+        id: "ezeno",
+        name: "EZENO",
+        category: "SAÚDE ORAL",
+        universe: "WELLNESS",
+        label: "Saúde oral",
+        image: "./assets/products/ezeno.png",
+        tone: "#9b8354",
+        atmosphere: "#ded7c7"
+    },
+
+    {
+        id: "zenbru",
+        name: "Zenbru",
+        category: "CAFÉ",
+        universe: "LIFESTYLE",
+        label: "Café & lifestyle",
+        image: "./assets/products/zenbru.png",
+        tone: "#9b6b36",
+        atmosphere: "#e3d1bb"
+    },
+
+    {
+        id: "alpha",
+        name: "Alpha Vmax",
+        category: "PERFORMANCE",
+        universe: "PERFORMANCE",
+        label: "Performance",
+        image: "./assets/products/alpha.png",
+        tone: "#897047",
+        atmosphere: "#ddd4c4"
+    },
+
+    {
+        id: "alphameta",
+        name: "AlphaMeta",
+        category: "NUTRIÇÃO",
+        universe: "WELLNESS",
+        label: "Nutrição",
+        image: "./assets/products/alphameta.png",
+        tone: "#bc9b60",
+        atmosphere: "#e9dfc9"
+    },
+
+    {
+        id: "minoseed",
+        name: "Minoseed",
+        category: "BELEZA",
+        universe: "WELLNESS",
+        label: "Beleza & bem-estar",
+        image: "./assets/products/minoseed.png",
+        tone: "#ab8970",
+        atmosphere: "#e8ddd4"
+    },
+
+    {
+        id: "evador",
+        name: "Evador",
+        category: "PREMIUM CARE",
+        universe: "LIFESTYLE",
+        label: "Cuidados premium",
+        image: "./assets/products/evador.png",
+        tone: "#b39a70",
+        atmosphere: "#e8dfce"
+    },
+
+    {
+        id: "alphaspin-ultra",
+        name: "AlphaSpin Ultra",
+        category: "SMART LIVING",
+        universe: "SMART LIVING",
+        label: "Tecnologia",
+        image: "./assets/products/alphaspin-ultra.png",
+        tone: "#938970",
+        atmosphere: "#dddcd4"
+    },
+
+    {
+        id: "ismarts3",
+        name: "iSMART S3",
+        category: "SMART LIVING",
+        universe: "SMART LIVING",
+        label: "Smart living",
+        image: "./assets/products/ismarts3.png",
+        tone: "#b09b6c",
+        atmosphere: "#e7dfcd"
+    }
+
+];
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+const HERO = [
+
+    {
+        product: 0,
+        eyebrow: "AD LIFESTYLE",
+        pretitle: "WELLNESS · LIFESTYLE · EVOLUTION",
+        title: "A sua vida.",
+        accent: "A sua experiência.",
+        copy:
+            "Uma nova visão sobre bem-estar, Lifestyle e evolução."
+    },
+
+    {
+        product: 1,
+        eyebrow: "WELLNESS",
+        pretitle: "CUIDADO · CONFORTO · ROTINA",
+        title: "Comece pelo",
+        accent: "cuidado.",
+        copy:
+            "Pequenos detalhes podem transformar a forma como vivemos o quotidiano."
+    },
+
+    {
+        product: 2,
+        eyebrow: "LIFESTYLE",
+        pretitle: "SABOR · ENERGIA · RITUAL",
+        title: "Crie o seu",
+        accent: "próprio ritmo.",
+        copy:
+            "Experiências que acompanham os seus momentos e os seus hábitos."
+    },
+
+    {
+        product: 8,
+        eyebrow: "SMART LIVING",
+        pretitle: "TECNOLOGIA · CONFORTO · INOVAÇÃO",
+        title: "O futuro",
+        accent: "já entrou em casa.",
+        copy:
+            "Tecnologia pensada para aproximar inovação, conforto e quotidiano."
+    },
+
+    {
+        product: 3,
+        eyebrow: "PERFORMANCE",
+        pretitle: "FOCO · PERFORMANCE · EVOLUTION",
+        title: "Não fique",
+        accent: "no mesmo lugar.",
+        copy:
+            "Uma experiência orientada para quem procura evolução."
+    }
+
+];
+
+/* ==========================================================
+   MEMÓRIAS
+   ========================================================== */
+
+const MEMORIES = [
+
+    {
+        image: "./assets/images/h1.png",
+        label: "MEMÓRIA 01",
+        title: "O início de uma experiência."
+    },
+
+    {
+        image: "./assets/images/h2.png",
+        label: "MEMÓRIA 02",
+        title: "Pessoas que fazem parte da jornada."
+    },
+
+    {
+        image: "./assets/images/h3.png",
+        label: "MEMÓRIA 03",
+        title: "Encontros que ganham significado."
+    },
+
+    {
+        image: "./assets/images/h4.png",
+        label: "MEMÓRIA 04",
+        title: "Uma visão que continua a crescer."
+    }
+
+];
+
+/* ==========================================================
+   LOAD
    ========================================================== */
 
 export function loadHome(){
@@ -241,17 +240,19 @@ export function loadHome(){
 
             ${hero()}
 
-            ${signalStrip()}
+            ${identityStrip()}
 
             ${manifesto()}
 
-            ${ecosystem()}
+            ${worlds()}
 
-            ${products()}
+            ${productUniverses()}
 
-            ${experience()}
+            ${featuredProducts()}
 
-            ${memories()}
+            ${event()}
+
+            ${memoryReel()}
 
             ${testimonial()}
 
@@ -275,22 +276,22 @@ function hero(){
 
         <section
             class="home-hero"
-            data-home-canvas>
+            id="homeHero">
 
-            <div class="home-hero-noise"></div>
+            <div class="home-hero-backdrop"></div>
 
             <div
-                class="home-hero-light"
-                id="heroLight">
+                class="home-hero-atmosphere"
+                id="heroAtmosphere">
             </div>
 
-            <div class="home-hero-grid-lines"></div>
+            <div class="home-hero-grid"></div>
 
             <div class="home-hero-container">
 
                 <div class="home-hero-copy">
 
-                    <div class="home-brand-lockup">
+                    <div class="home-hero-brand">
 
                         <img
                             src="./assets/logo/logo.png"
@@ -310,49 +311,71 @@ function hero(){
 
                     </div>
 
-                    <div class="home-hero-slides">
+                    <div class="home-hero-content">
 
-                        ${HERO_SLIDES.map(
-                            (slide,index)=>`
+                        ${HERO.map(
+                            (item,index)=>{
 
-                                <article
-                                    class="
-                                        home-hero-slide
-                                        ${
-                                            index === 0
-                                                ? "is-active"
-                                                : ""
-                                        }
-                                    "
-                                    data-hero-slide="${index}">
+                                const product =
+                                    PRODUCTS[item.product];
 
-                                    <div
-                                        class="home-hero-eyebrow">
-                                        ${slide.eyebrow}
-                                    </div>
+                                return `
 
-                                    <div
-                                        class="home-hero-kicker">
-                                        ${slide.kicker}
-                                    </div>
+                                    <article
+                                        class="
+                                            home-hero-slide
+                                            ${
+                                                index === 0
+                                                    ? "is-active"
+                                                    : ""
+                                            }
+                                        "
+                                        data-hero-slide="${index}">
 
-                                    <h1>
-
-                                        ${slide.title}
-
-                                        <span>
-                                            ${slide.accent}
+                                        <span
+                                            class="home-hero-eyebrow">
+                                            ${item.eyebrow}
                                         </span>
 
-                                    </h1>
+                                        <span
+                                            class="home-hero-pretitle">
+                                            ${item.pretitle}
+                                        </span>
 
-                                    <p>
-                                        ${slide.copy}
-                                    </p>
+                                        <h1>
 
-                                </article>
+                                            ${item.title}
 
-                            `
+                                            <span>
+                                                ${item.accent}
+                                            </span>
+
+                                        </h1>
+
+                                        <p>
+                                            ${item.copy}
+                                        </p>
+
+                                        <div
+                                            class="
+                                                home-hero-product-tag
+                                            ">
+
+                                            <span>
+                                                ${product.category}
+                                            </span>
+
+                                            <strong>
+                                                ${product.name}
+                                            </strong>
+
+                                        </div>
+
+                                    </article>
+
+                                `;
+
+                            }
                         ).join("")}
 
                     </div>
@@ -361,13 +384,10 @@ function hero(){
 
                         <button
                             type="button"
-                            class="
-                                home-action
-                                home-action-primary
-                            "
-                            id="heroExplore">
+                            class="home-action home-action-primary"
+                            id="heroProducts">
 
-                            Explorar universo
+                            Explorar produtos
 
                             <span>→</span>
 
@@ -375,13 +395,10 @@ function hero(){
 
                         <button
                             type="button"
-                            class="
-                                home-action
-                                home-action-secondary
-                            "
-                            id="heroStory">
+                            class="home-action home-action-secondary"
+                            id="heroAbout">
 
-                            Conhecer a nossa história
+                            Conhecer a nossa visão
 
                             <span>↗</span>
 
@@ -389,22 +406,20 @@ function hero(){
 
                     </div>
 
-                    <div class="home-hero-navigation">
+                    <div class="home-hero-controls">
 
                         <button
                             type="button"
-                            class="home-hero-arrow"
                             id="heroPrev"
-                            aria-label="Anterior">
+                            aria-label="Slide anterior">
 
                             ←
 
                         </button>
 
-                        <div class="home-hero-progress">
+                        <div class="home-hero-track">
 
                             <div
-                                class="home-hero-progress-fill"
                                 id="heroProgress">
                             </div>
 
@@ -412,17 +427,16 @@ function hero(){
 
                         <button
                             type="button"
-                            class="home-hero-arrow"
                             id="heroNext"
-                            aria-label="Seguinte">
+                            aria-label="Próximo slide">
 
                             →
 
                         </button>
 
-                        <div class="home-hero-count">
+                        <div class="home-hero-number">
 
-                            <strong id="heroCount">
+                            <strong id="heroCurrent">
                                 01
                             </strong>
 
@@ -431,7 +445,7 @@ function hero(){
                             </span>
 
                             <span>
-                                06
+                                05
                             </span>
 
                         </div>
@@ -440,109 +454,78 @@ function hero(){
 
                 </div>
 
-                <div class="home-hero-scene">
+                <div class="home-hero-visual">
 
                     <div
-                        class="home-hero-halo"
-                        id="heroHalo">
+                        class="home-hero-aura"
+                        id="heroAura">
                     </div>
 
-                    <div class="home-hero-orbit orbit-a"></div>
-                    <div class="home-hero-orbit orbit-b"></div>
+                    <div class="home-hero-orbit orbit-one"></div>
 
-                    <div class="home-hero-product-core">
+                    <div class="home-hero-orbit orbit-two"></div>
 
-                        ${HOME_PRODUCTS.map(
-                            (product,index)=>`
+                    <div class="home-hero-orbit orbit-three"></div>
 
-                                <div
-                                    class="
-                                        home-hero-product
-                                        ${
-                                            index === 0
-                                                ? "is-active"
-                                                : ""
-                                        }
-                                    "
-                                    data-hero-product="${index}">
+                    <div class="home-hero-product-stage">
 
-                                    <img
-                                        src="${product.image}"
-                                        alt="${product.title}"
-                                        loading="${
-                                            index === 0
-                                                ? "eager"
-                                                : "lazy"
-                                        }">
+                        ${HERO.map(
+                            (item,index)=>{
 
-                                </div>
+                                const product =
+                                    PRODUCTS[item.product];
 
-                            `
+                                return `
+
+                                    <div
+                                        class="
+                                            home-hero-product
+                                            ${
+                                                index === 0
+                                                    ? "is-active"
+                                                    : ""
+                                            }
+                                        "
+                                        data-hero-product="${index}">
+
+                                        <img
+                                            src="${product.image}"
+                                            alt="${product.name}"
+                                            loading="${
+                                                index === 0
+                                                    ? "eager"
+                                                    : "lazy"
+                                            }">
+
+                                    </div>
+
+                                `;
+
+                            }
                         ).join("")}
 
                     </div>
 
-                    <div
-                        class="
-                            home-hero-constellation
-                            constellation-one
-                        "
-                        data-parallax="1">
-
+                    <div class="home-hero-side-label label-left">
                         <span>
                             WELLNESS
                         </span>
-
                     </div>
 
-                    <div
-                        class="
-                            home-hero-constellation
-                            constellation-two
-                        "
-                        data-parallax="2">
+                    <div class="home-hero-side-label label-right">
+                        <span>
+                            EVOLUTION
+                        </span>
+                    </div>
+
+                    <div class="home-hero-product-index">
 
                         <span>
-                            SMART
+                            CURRENT OBJECT
                         </span>
 
-                    </div>
-
-                    <div
-                        class="
-                            home-hero-constellation
-                            constellation-three
-                        "
-                        data-parallax="3">
-
-                        <span>
-                            EVOLVE
-                        </span>
-
-                    </div>
-
-                    <div class="home-hero-orbit-brand">
-
-                        <img
-                            src="./assets/images/bzzworld.png"
-                            alt="BZZWorld">
-
-                        <span></span>
-
-                        <img
-                            src="./assets/images/a21.png"
-                            alt="Academy Twenty One">
-
-                    </div>
-
-                    <div class="home-hero-product-caption">
-
-                        <span id="heroProductCategory">
-                            WELLNESS
-                        </span>
-
-                        <strong id="heroProductTitle">
-                            Angel Moon
+                        <strong id="heroObject">
+                            ANGEL MOON
                         </strong>
 
                     </div>
@@ -551,10 +534,10 @@ function hero(){
 
             </div>
 
-            <div class="home-hero-footer">
+            <div class="home-hero-bottom">
 
                 <span>
-                    SCROLL TO DISCOVER
+                    DISCOVER
                 </span>
 
                 <div></div>
@@ -572,16 +555,16 @@ function hero(){
 }
 
 /* ==========================================================
-   SIGNAL STRIP
+   IDENTITY STRIP
    ========================================================== */
 
-function signalStrip(){
+function identityStrip(){
 
     return `
 
-        <section class="home-signal">
+        <section class="home-identity">
 
-            <div class="home-signal-track">
+            <div class="home-identity-word">
 
                 <span>
                     WELLNESS
@@ -591,12 +574,6 @@ function signalStrip(){
 
                 <span>
                     LIFESTYLE
-                </span>
-
-                <i>✦</i>
-
-                <span>
-                    EVOLUTION
                 </span>
 
                 <i>✦</i>
@@ -608,13 +585,7 @@ function signalStrip(){
                 <i>✦</i>
 
                 <span>
-                    WELLNESS
-                </span>
-
-                <i>✦</i>
-
-                <span>
-                    LIFESTYLE
+                    EVOLUTION
                 </span>
 
             </div>
@@ -637,41 +608,43 @@ function manifesto(){
 
             <div class="home-container">
 
-                <div class="home-manifesto-top reveal">
-
-                    <span class="home-overline">
-                        MANIFESTO
-                    </span>
+                <div class="home-manifesto-meta reveal">
 
                     <span>
-                        01 / 04
+                        01
+                    </span>
+
+                    <div></div>
+
+                    <span>
+                        MANIFESTO
                     </span>
 
                 </div>
 
-                <div class="home-manifesto-text reveal">
+                <div class="home-manifesto-copy reveal">
 
                     <p>
-                        Acreditamos que
+                        Na AD Lifestyle
                     </p>
 
                     <h2>
                         viver melhor
                         <span>
-                            começa por descobrir melhor.
+                            é também descobrir melhor.
                         </span>
                     </h2>
 
                 </div>
 
-                <div class="home-manifesto-bottom reveal">
+                <div class="home-manifesto-footer reveal">
 
                     <span>
-                        Produto
+                        Produtos
                     </span>
 
                     <span>
-                        Experiência
+                        Experiências
                     </span>
 
                     <span>
@@ -679,7 +652,7 @@ function manifesto(){
                     </span>
 
                     <span>
-                        Possibilidade
+                        Possibilidades
                     </span>
 
                 </div>
@@ -693,41 +666,48 @@ function manifesto(){
 }
 
 /* ==========================================================
-   ECOSYSTEM
+   WORLDS
    ========================================================== */
 
-function ecosystem(){
+function worlds(){
 
     return `
 
-        <section class="home-ecosystem">
+        <section class="home-worlds">
 
             <div class="home-container">
 
-                <div class="home-ecosystem-intro reveal">
+                <div class="home-worlds-header reveal">
 
-                    <span class="home-overline">
-                        ECOSSISTEMA
-                    </span>
+                    <div>
 
-                    <h2>
-                        Duas dimensões.
-                        <span>
-                            Uma direcção.
+                        <span class="home-overline">
+                            ECOSSISTEMA
                         </span>
-                    </h2>
+
+                        <h2>
+                            Um universo de
+                            <span>
+                                possibilidades.
+                            </span>
+                        </h2>
+
+                    </div>
+
+                    <p>
+                        Dois pilares. Uma experiência.
+                    </p>
 
                 </div>
 
-                <div class="home-worlds">
+                <div class="home-world-grid">
 
                     <article
-                        class="
-                            home-world
-                            home-world-products
-                            reveal
-                        "
-                        data-world="bzz">
+                        class="home-world home-world-bzz reveal">
+
+                        <div class="home-world-number">
+                            01
+                        </div>
 
                         <div class="home-world-image">
 
@@ -741,10 +721,6 @@ function ecosystem(){
 
                         <div class="home-world-content">
 
-                            <div class="home-world-index">
-                                01
-                            </div>
-
                             <span>
                                 WELLNESS · PRODUCTS
                             </span>
@@ -754,8 +730,9 @@ function ecosystem(){
                             </h3>
 
                             <p>
-                                O universo onde produtos,
-                                bem-estar e Lifestyle se encontram.
+                                Produtos e soluções que dão
+                                forma à nossa dimensão de
+                                bem-estar e Lifestyle.
                             </p>
 
                             <a
@@ -763,7 +740,7 @@ function ecosystem(){
                                 target="_blank"
                                 rel="noopener noreferrer">
 
-                                Explorar BZZWorld
+                                Explorar
                                 <span>↗</span>
 
                             </a>
@@ -773,16 +750,15 @@ function ecosystem(){
                     </article>
 
                     <article
-                        class="
-                            home-world
-                            home-world-academy
-                            reveal
-                        "
-                        data-world="academy">
+                        class="home-world home-world-a21 reveal">
+
+                        <div class="home-world-number">
+                            02
+                        </div>
 
                         <div class="home-world-image">
 
-                            <div class="home-world-number">
+                            <div class="home-world-a21-number">
                                 21
                             </div>
 
@@ -794,12 +770,8 @@ function ecosystem(){
 
                         <div class="home-world-content">
 
-                            <div class="home-world-index">
-                                02
-                            </div>
-
                             <span>
-                                LEARNING · EVOLUTION
+                                LEARNING · LEADERSHIP
                             </span>
 
                             <h3>
@@ -808,8 +780,9 @@ function ecosystem(){
 
                             <p>
                                 Conhecimento, liderança,
-                                desenvolvimento pessoal e
-                                educação empreendedora.
+                                desenvolvimento pessoal,
+                                networking e educação
+                                empreendedora.
                             </p>
 
                             <a
@@ -817,7 +790,7 @@ function ecosystem(){
                                 target="_blank"
                                 rel="noopener noreferrer">
 
-                                Explorar Academy 21
+                                Explorar
                                 <span>↗</span>
 
                             </a>
@@ -837,23 +810,135 @@ function ecosystem(){
 }
 
 /* ==========================================================
-   PRODUCTS
+   PRODUCT UNIVERSES
    ========================================================== */
 
-function products(){
+function productUniverses(){
+
+    return `
+
+        <section class="home-universes">
+
+            <div class="home-container">
+
+                <div class="home-universes-head reveal">
+
+                    <span class="home-overline">
+                        OS NOSSOS UNIVERSOS
+                    </span>
+
+                    <h2>
+                        Três formas de
+                        <span>
+                            viver a experiência.
+                        </span>
+                    </h2>
+
+                </div>
+
+                <div class="home-universe-list">
+
+                    <article class="home-universe reveal">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <small>
+                                WELLNESS
+                            </small>
+
+                            <h3>
+                                Bem-estar
+                            </h3>
+
+                        </div>
+
+                        <p>
+                            Cuidado, autocuidado,
+                            nutrição e Lifestyle.
+                        </p>
+
+                    </article>
+
+                    <article class="home-universe reveal">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <small>
+                                LIFESTYLE
+                            </small>
+
+                            <h3>
+                                Experiência
+                            </h3>
+
+                        </div>
+
+                        <p>
+                            Sabor, conforto,
+                            beleza e experiências premium.
+                        </p>
+
+                    </article>
+
+                    <article class="home-universe reveal">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <small>
+                                SMART LIVING
+                            </small>
+
+                            <h3>
+                                Inteligência
+                            </h3>
+
+                        </div>
+
+                        <p>
+                            Tecnologia, inovação
+                            e soluções para o quotidiano.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+
+/* ==========================================================
+   FEATURED PRODUCTS
+   ========================================================== */
+
+function featuredProducts(){
 
     const featured = [
-        HOME_PRODUCTS[0],
-        HOME_PRODUCTS[1],
-        HOME_PRODUCTS[2],
-        HOME_PRODUCTS[8]
+        PRODUCTS[0],
+        PRODUCTS[1],
+        PRODUCTS[2],
+        PRODUCTS[8]
     ];
 
     return `
 
-        <section
-            class="home-products"
-            id="homeProducts">
+        <section class="home-products">
 
             <div class="home-container">
 
@@ -862,13 +947,13 @@ function products(){
                     <div>
 
                         <span class="home-overline">
-                            SELECTED OBJECTS
+                            SELECTED PRODUCTS
                         </span>
 
                         <h2>
-                            Alguns universos.
+                            Comece por
                             <span>
-                                Uma só experiência.
+                                descobrir.
                             </span>
                         </h2>
 
@@ -877,35 +962,48 @@ function products(){
                     <button
                         type="button"
                         class="home-minimal-button"
-                        id="openProducts">
+                        id="allProducts">
 
-                        Ver todos
+                        Ver catálogo
                         <span>→</span>
 
                     </button>
 
                 </div>
 
-                <div class="home-products-rail">
+                <div class="home-product-gallery">
 
                     ${featured.map(
                         (product,index)=>`
 
                             <article
                                 class="
-                                    home-product-item
+                                    home-feature-product
+                                    ${
+                                        index === 0
+                                            ? "home-feature-large"
+                                            : ""
+                                    }
                                     reveal
                                 "
                                 data-product="${product.id}">
 
-                                <div class="home-product-number">
-                                    0${index + 1}
+                                <div class="home-feature-top">
+
+                                    <span>
+                                        0${index + 1}
+                                    </span>
+
+                                    <span>
+                                        ${product.universe}
+                                    </span>
+
                                 </div>
 
-                                <div class="home-product-item-image">
+                                <div class="home-feature-image">
 
                                     <div
-                                        class="home-product-item-glow"
+                                        class="home-feature-aura"
                                         style="
                                             --product-tone:
                                             ${product.tone};
@@ -914,32 +1012,28 @@ function products(){
 
                                     <img
                                         src="${product.image}"
-                                        alt="${product.title}"
+                                        alt="${product.name}"
                                         loading="lazy">
 
                                 </div>
 
-                                <div class="home-product-item-meta">
+                                <div class="home-feature-info">
 
-                                    <div>
+                                    <small>
+                                        ${product.category}
+                                    </small>
 
-                                        <span>
-                                            ${product.micro}
-                                        </span>
+                                    <h3>
+                                        ${product.name}
+                                    </h3>
 
-                                        <h3>
-                                            ${product.title}
-                                        </h3>
+                                    <p>
+                                        ${product.line || product.label}
+                                    </p>
 
-                                        <p>
-                                            ${product.line}
-                                        </p>
-
-                                    </div>
-
-                                    <strong>
-                                        ↗
-                                    </strong>
+                                    <span>
+                                        Explorar ↗
+                                    </span>
 
                                 </div>
 
@@ -959,81 +1053,123 @@ function products(){
 }
 
 /* ==========================================================
-   EXPERIENCE / EVENT
+   EVENT
    ========================================================== */
 
-function experience(){
+function event(){
 
     return `
 
-        <section class="home-experience">
+        <section class="home-event">
 
             <div class="home-container">
 
-                <div class="home-experience-grid reveal">
+                <div class="home-event-intro reveal">
 
-                    <div class="home-experience-side">
+                    <span class="home-overline">
+                        NEXT EXPERIENCE
+                    </span>
 
-                        <span class="home-overline">
-                            NEXT EXPERIENCE
+                    <h2>
+                        Um encontro.
+                        <span>
+                            Uma oportunidade.
                         </span>
+                    </h2>
 
-                        <div class="home-experience-number">
-                            20
+                </div>
+
+                <article class="home-event-card reveal">
+
+                    <div class="home-event-poster">
+
+                        <img
+                            src="./assets/images/independente.png"
+                            alt="Grande Apresentação de Dupla Oportunidade"
+                            loading="lazy">
+
+                        <div class="home-event-poster-label">
+                            AD LIFESTYLE
                         </div>
-
-                        <span class="home-experience-month">
-                            SETEMBRO · 2026
-                        </span>
 
                     </div>
 
-                    <div class="home-experience-main">
+                    <div class="home-event-details">
 
-                        <span>
-                            DOMINGO · 15H00
+                        <div class="home-event-number">
+                            04<span>—05</span>
+                        </div>
+
+                        <span class="home-event-month">
+                            OUTUBRO · 2026
                         </span>
 
-                        <h2>
+                        <h3>
                             Grande Apresentação
-                            de <em>Dupla Oportunidade.</em>
-                        </h2>
+                            de Dupla Oportunidade
+                        </h3>
 
                         <p>
-                            Saúde, bem-estar, longevidade,
-                            aprendizagem e negócios internacionais
-                            num único encontro.
+                            Dois dias dedicados a conhecimento,
+                            bem-estar, desenvolvimento e negócios
+                            internacionais.
                         </p>
 
-                        <div class="home-experience-footer">
+                        <div class="home-event-info">
 
                             <div>
 
-                                <strong>
-                                    FLY HOTEL
-                                </strong>
-
                                 <span>
-                                    Luanda · Antigo Aeroporto Doméstico
+                                    LOCAL
                                 </span>
+
+                                <strong>
+                                    Anfiteatro da
+                                    Universidade Independente
+                                </strong>
 
                             </div>
 
-                            <button
-                                type="button"
-                                class="home-minimal-button"
-                                id="openEvents">
+                            <div>
 
-                                Ver evento
-                                <span>→</span>
+                                <span>
+                                    DATA
+                                </span>
 
-                            </button>
+                                <strong>
+                                    4 e 5 de Outubro
+                                </strong>
+
+                            </div>
+
+                            <div>
+
+                                <span>
+                                    CATEGORIAS
+                                </span>
+
+                                <strong>
+                                    Wellness · Negócios · Educação
+                                </strong>
+
+                            </div>
 
                         </div>
 
+                        <button
+                            type="button"
+                            class="home-action home-action-dark"
+                            id="eventButton">
+
+                            Mais informações
+
+                            <span>→</span>
+
+                        </button>
+
                     </div>
 
-                </div>
+                </article>
 
             </div>
 
@@ -1044,10 +1180,10 @@ function experience(){
 }
 
 /* ==========================================================
-   MEMORIES
+   MEMORY REEL
    ========================================================== */
 
-function memories(){
+function memoryReel(){
 
     return `
 
@@ -1055,7 +1191,7 @@ function memories(){
 
             <div class="home-container">
 
-                <div class="home-memories-head reveal">
+                <div class="home-memory-head reveal">
 
                     <div>
 
@@ -1064,92 +1200,111 @@ function memories(){
                         </span>
 
                         <h2>
-                            A marca também
+                            A experiência
                             <span>
-                                acontece.
+                                também se recorda.
                             </span>
                         </h2>
 
                     </div>
 
-                    <div class="home-memory-counter">
+                    <div class="home-memory-count">
 
-                        <strong id="memoryCounter">
+                        <strong id="memoryCurrent">
                             01
                         </strong>
 
                         <span>
-                            /
-                        </span>
-
-                        <span>
-                            04
+                            / 04
                         </span>
 
                     </div>
 
                 </div>
 
-                <div class="home-memory-stage reveal">
+                <div class="home-memory-wrap reveal">
 
-                    ${MEMORY_ITEMS.map(
-                        (item,index)=>`
+                    <div class="home-memory-stage">
 
-                            <article
-                                class="
-                                    home-memory-slide
-                                    ${
-                                        index === 0
-                                            ? "is-active"
-                                            : ""
-                                    }
-                                "
-                                data-memory-slide="${index}">
+                        ${MEMORIES.map(
+                            (item,index)=>`
 
-                                <img
-                                    src="${item.image}"
-                                    alt="${item.title}"
-                                    loading="lazy">
+                                <article
+                                    class="
+                                        home-memory-slide
+                                        ${
+                                            index === 0
+                                                ? "is-active"
+                                                : ""
+                                        }
+                                    "
+                                    data-memory-slide="${index}">
 
-                                <div
-                                    class="home-memory-caption">
+                                    <img
+                                        src="${item.image}"
+                                        alt="${item.title}"
+                                        loading="lazy">
 
-                                    <span>
-                                        ${item.label}
-                                    </span>
+                                    <div class="home-memory-caption">
 
-                                    <strong>
-                                        ${item.title}
-                                    </strong>
+                                        <span>
+                                            ${item.label}
+                                        </span>
 
-                                </div>
+                                        <strong>
+                                            ${item.title}
+                                        </strong>
 
-                            </article>
+                                    </div>
 
-                        `
-                    ).join("")}
+                                </article>
 
-                    <div class="home-memory-controls">
+                            `
+                        ).join("")}
 
-                        <button
-                            type="button"
-                            id="memoryPrev"
-                            aria-label="Anterior">
+                        <div class="home-memory-nav">
 
-                            ←
+                            <button
+                                type="button"
+                                id="memoryPrev"
+                                aria-label="Memória anterior">
 
-                        </button>
+                                ←
 
-                        <button
-                            type="button"
-                            id="memoryNext"
-                            aria-label="Seguinte">
+                            </button>
 
-                            →
+                            <button
+                                type="button"
+                                id="memoryNext"
+                                aria-label="Próxima memória">
 
-                        </button>
+                                →
+
+                            </button>
+
+                        </div>
 
                     </div>
+
+                    <aside class="home-memory-side">
+
+                        <span>
+                            FROM THE ARCHIVE
+                        </span>
+
+                        <strong>
+                            Registos, encontros,
+                            pessoas e momentos.
+                        </strong>
+
+                        <p>
+                            Esta área está preparada para
+                            crescer com fotografias, vídeos,
+                            entrevistas e bastidores da
+                            AD Lifestyle.
+                        </p>
+
+                    </aside>
 
                 </div>
 
@@ -1177,27 +1332,44 @@ function testimonial(){
                     “
                 </div>
 
-                <div class="home-testimonial-content reveal">
+                <div class="home-testimonial-main reveal">
 
                     <span class="home-overline">
                         COMMUNITY VOICE
                     </span>
 
                     <blockquote>
-                        Descobri que por trás dos produtos
-                        existe uma visão muito maior sobre
+                        Descobri que por trás dos
+                        produtos existe uma visão
+                        muito maior sobre
                         <em>desenvolvimento e evolução.</em>
                     </blockquote>
 
-                    <div class="home-testimonial-author">
+                    <div class="home-testimonial-person">
 
-                        <span>
-                            MARIA
-                        </span>
+                        <div class="home-testimonial-photo">
 
-                        <small>
-                            Comunidade AD Lifestyle
-                        </small>
+                            <img
+                                src="./assets/images/maria.png"
+                                alt="Maria"
+                                onerror="
+                                    this.onerror=null;
+                                    this.src='./assets/images/avatar.png';
+                                ">
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Maria
+                            </strong>
+
+                            <span>
+                                Comunidade AD Lifestyle
+                            </span>
+
+                        </div>
 
                     </div>
 
@@ -1221,7 +1393,7 @@ function finalCTA(){
 
         <section class="home-final">
 
-            <div class="home-final-glow"></div>
+            <div class="home-final-light"></div>
 
             <div class="home-container">
 
@@ -1231,46 +1403,38 @@ function finalCTA(){
                         AD LIFESTYLE
                     </span>
 
-                    <div class="home-final-title-wrap">
-
-                        <span class="home-final-ghost">
-                            AD
+                    <h2>
+                        A próxima descoberta
+                        <span>
+                            pode começar aqui.
                         </span>
+                    </h2>
 
-                        <h2>
-                            A próxima descoberta
-                            <span>
-                                começa onde a curiosidade encontra
-                                uma nova possibilidade.
-                            </span>
-                        </h2>
-
-                    </div>
+                    <p>
+                        Produtos, experiências,
+                        conhecimento e novas possibilidades.
+                    </p>
 
                     <div class="home-final-actions">
 
                         <button
                             type="button"
-                            class="
-                                home-action
-                                home-action-primary
-                            "
+                            class="home-action home-action-primary"
                             id="finalProducts">
 
-                            Explorar produtos
+                            Explorar universo
+
                             <span>→</span>
 
                         </button>
 
                         <button
                             type="button"
-                            class="
-                                home-action
-                                home-action-dark
-                            "
+                            class="home-action home-action-dark"
                             id="finalContact">
 
                             Falar connosco
+
                             <span>↗</span>
 
                         </button>
@@ -1279,7 +1443,7 @@ function finalCTA(){
 
                 </div>
 
-                <div class="home-final-bottom">
+                <footer class="home-final-footer">
 
                     <span>
                         LUANDA · ANGOLA
@@ -1294,6 +1458,10 @@ function finalCTA(){
                     </span>
 
                     <span>
+                        SMART LIVING
+                    </span>
+
+                    <span>
                         EVOLUTION
                     </span>
 
@@ -1301,7 +1469,7 @@ function finalCTA(){
                         © AD LIFESTYLE
                     </span>
 
-                </div>
+                </footer>
 
             </div>
 
@@ -1333,10 +1501,9 @@ function initialiseHome(){
     initialiseHero(root);
     initialiseNavigation(root);
     initialiseProducts(root);
-    initialiseMemories(root);
+    initialiseMemory(root);
     initialiseReveal(root);
     initialisePointer(root);
-    initialiseWorldHover(root);
     initialiseKeyboard(root);
 
 }
@@ -1358,98 +1525,100 @@ function initialiseHero(root){
         )];
 
     const current =
-        root.querySelector(
-            "#heroCount"
-        );
+        root.querySelector("#heroCurrent");
 
     const progress =
-        root.querySelector(
-            "#heroProgress"
-        );
+        root.querySelector("#heroProgress");
 
-    const productTitle =
-        root.querySelector(
-            "#heroProductTitle"
-        );
+    const object =
+        root.querySelector("#heroObject");
 
-    const productCategory =
-        root.querySelector(
-            "#heroProductCategory"
-        );
+    const atmosphere =
+        root.querySelector("#heroAtmosphere");
 
-    const halo =
-        root.querySelector(
-            "#heroHalo"
-        );
+    const aura =
+        root.querySelector("#heroAura");
 
     if(!slides.length){
         return;
     }
 
-    heroIndex = 0;
-
     function render(index){
 
         heroIndex = index;
 
+        const heroItem =
+            HERO[index];
+
+        const product =
+            PRODUCTS[
+                heroItem.product
+            ];
+
         slides.forEach(
             (slide,i)=>{
+
                 slide.classList.toggle(
                     "is-active",
                     i === index
                 );
+
             }
         );
-
-        const productIndex =
-            HERO_SLIDES[index].product;
 
         products.forEach(
-            (product,i)=>{
-                product.classList.toggle(
+            (item,i)=>{
+
+                item.classList.toggle(
                     "is-active",
-                    i === productIndex
+                    i === heroItem.product
                 );
+
             }
         );
-
-        const activeProduct =
-            HOME_PRODUCTS[productIndex];
-
-        if(
-            productTitle &&
-            activeProduct
-        ){
-
-            productTitle.textContent =
-                activeProduct.title;
-
-        }
-
-        if(
-            productCategory &&
-            activeProduct
-        ){
-
-            productCategory.textContent =
-                activeProduct.category;
-
-        }
-
-        if(halo){
-
-            halo.style.setProperty(
-                "--hero-tone",
-                activeProduct?.tone || "#c8a052"
-            );
-
-        }
 
         if(current){
 
             current.textContent =
-                String(index + 1)
-                    .padStart(2,"0");
+                String(
+                    index + 1
+                ).padStart(2,"0");
+
+        }
+
+        if(object){
+
+            object.textContent =
+                product.name.toUpperCase();
+
+        }
+
+        if(
+            atmosphere &&
+            product
+        ){
+
+            atmosphere.style.setProperty(
+                "--hero-atmosphere",
+                product.atmosphere
+            );
+
+            atmosphere.style.setProperty(
+                "--hero-tone",
+                product.tone
+            );
+
+        }
+
+        if(
+            aura &&
+            product
+        ){
+
+            aura.style.setProperty(
+                "--hero-tone",
+                product.tone
+            );
 
         }
 
@@ -1470,8 +1639,9 @@ function initialiseHero(root){
     function next(){
 
         render(
-            (heroIndex + 1) %
-            HERO_SLIDES.length
+            (
+                heroIndex + 1
+            ) % HERO.length
         );
 
         restart();
@@ -1484,12 +1654,23 @@ function initialiseHero(root){
             (
                 heroIndex -
                 1 +
-                HERO_SLIDES.length
-            ) %
-            HERO_SLIDES.length
+                HERO.length
+            ) % HERO.length
         );
 
         restart();
+
+    }
+
+    function restart(){
+
+        clearInterval(heroTimer);
+
+        heroTimer =
+            window.setInterval(
+                next,
+                6000
+            );
 
     }
 
@@ -1507,50 +1688,38 @@ function initialiseHero(root){
             previous
         );
 
-    function restart(){
-
-        window.clearInterval(
-            heroInterval
-        );
-
-        heroInterval =
-            window.setInterval(
-                next,
-                6000
-            );
-
-    }
-
-    const scene =
+    const stage =
         root.querySelector(
-            ".home-hero-scene"
+            ".home-product-stage"
         );
 
-    if(scene){
+    if(stage){
 
         let startX = 0;
 
-        scene.addEventListener(
+        stage.addEventListener(
             "pointerdown",
             event=>{
-                startX = event.clientX;
+                startX =
+                    event.clientX;
             }
         );
 
-        scene.addEventListener(
+        stage.addEventListener(
             "pointerup",
             event=>{
 
-                const difference =
-                    event.clientX - startX;
+                const distance =
+                    event.clientX -
+                    startX;
 
                 if(
-                    Math.abs(difference) < 45
+                    Math.abs(distance) < 45
                 ){
                     return;
                 }
 
-                difference < 0
+                distance < 0
                     ? next()
                     : previous();
 
@@ -1571,7 +1740,7 @@ function initialiseHero(root){
 function initialiseNavigation(root){
 
     root
-        .querySelector("#heroExplore")
+        .querySelector("#heroProducts")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1580,7 +1749,7 @@ function initialiseNavigation(root){
         );
 
     root
-        .querySelector("#heroStory")
+        .querySelector("#heroAbout")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1589,7 +1758,7 @@ function initialiseNavigation(root){
         );
 
     root
-        .querySelector("#openProducts")
+        .querySelector("#allProducts")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1598,7 +1767,7 @@ function initialiseNavigation(root){
         );
 
     root
-        .querySelector("#openEvents")
+        .querySelector("#eventButton")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1627,13 +1796,15 @@ function initialiseNavigation(root){
 }
 
 /* ==========================================================
-   PRODUCTS
+   PRODUCT NAVIGATION
    ========================================================== */
 
 function initialiseProducts(root){
 
     root
-        .querySelectorAll("[data-product]")
+        .querySelectorAll(
+            "[data-product]"
+        )
         .forEach(
             card=>{
 
@@ -1664,40 +1835,43 @@ function initialiseProducts(root){
    MEMORY
    ========================================================== */
 
-function initialiseMemories(root){
+function initialiseMemory(root){
 
     const slides =
-        [...root.querySelectorAll(
-            "[data-memory-slide]"
-        )];
+        [
+            ...root.querySelectorAll(
+                "[data-memory-slide]"
+            )
+        ];
 
-    const counter =
+    const current =
         root.querySelector(
-            "#memoryCounter"
+            "#memoryCurrent"
         );
 
     if(!slides.length){
         return;
     }
 
-    memoryIndex = 0;
-
     function render(index){
 
-        memoryIndex = index;
+        mediaIndex =
+            index;
 
         slides.forEach(
             (slide,i)=>{
+
                 slide.classList.toggle(
                     "is-active",
                     i === index
                 );
+
             }
         );
 
-        if(counter){
+        if(current){
 
-            counter.textContent =
+            current.textContent =
                 String(index + 1)
                     .padStart(2,"0");
 
@@ -1708,7 +1882,7 @@ function initialiseMemories(root){
     function next(){
 
         render(
-            (memoryIndex + 1) %
+            (mediaIndex + 1) %
             slides.length
         );
 
@@ -1720,7 +1894,7 @@ function initialiseMemories(root){
 
         render(
             (
-                memoryIndex -
+                mediaIndex -
                 1 +
                 slides.length
             ) %
@@ -1747,11 +1921,11 @@ function initialiseMemories(root){
 
     function restart(){
 
-        window.clearInterval(
-            memoryInterval
+        clearInterval(
+            mediaTimer
         );
 
-        memoryInterval =
+        mediaTimer =
             window.setInterval(
                 next,
                 5000
@@ -1780,8 +1954,8 @@ function initialiseReveal(root){
     ){
 
         elements.forEach(
-            element=>{
-                element.classList.add(
+            item=>{
+                item.classList.add(
                     "is-visible"
                 );
             }
@@ -1817,219 +1991,145 @@ function initialiseReveal(root){
             },
             {
                 threshold:.12,
-                rootMargin:"0px 0px -8% 0px"
+                rootMargin:
+                    "0px 0px -7% 0px"
             }
         );
 
     elements.forEach(
-        element=>{
-            observer.observe(element);
+        item=>{
+            observer.observe(item);
         }
     );
 
 }
 
 /* ==========================================================
-   POINTER / SPOTLIGHT / PARALLAX
+   POINTER
    ========================================================== */
 
 function initialisePointer(root){
 
     const hero =
         root.querySelector(
-            "[data-home-canvas]"
+            "#homeHero"
         );
 
     if(!hero){
         return;
     }
 
-    const light =
+    const atmosphere =
         root.querySelector(
-            "#heroLight"
+            "#heroAtmosphere"
         );
 
-    const halo =
+    const aura =
         root.querySelector(
-            "#heroHalo"
+            "#heroAura"
         );
 
-    const objects =
-        [
-            ...root.querySelectorAll(
-                "[data-parallax]"
-            )
-        ];
-
-    function pointerMove(event){
-
-        const rect =
-            hero.getBoundingClientRect();
-
-        pointerX =
-            event.clientX -
-            rect.left -
-            rect.width / 2;
-
-        pointerY =
-            event.clientY -
-            rect.top -
-            rect.height / 2;
-
-        targetX =
-            pointerX /
-            rect.width;
-
-        targetY =
-            pointerY /
-            rect.height;
-
-        if(
-            light
-        ){
-
-            light.style.setProperty(
-                "--pointer-x",
-                `${event.clientX - rect.left}px`
-            );
-
-            light.style.setProperty(
-                "--pointer-y",
-                `${event.clientY - rect.top}px`
-            );
-
-        }
-
-        if(
-            !rafId
-        ){
-
-            rafId =
-                window.requestAnimationFrame(
-                    animatePointer
-                );
-
-        }
-
-    }
-
-    function animatePointer(){
-
-        rafId = null;
-
-        objects.forEach(
-            object=>{
-
-                const depth =
-                    Number(
-                        object.dataset.parallax
-                    ) || 1;
-
-                object.style.transform =
-                    `
-                        translate3d(
-                            ${targetX * depth * 18}px,
-                            ${targetY * depth * 12}px,
-                            0
-                        )
-                    `;
-
-            }
+    const orbits =
+        root.querySelectorAll(
+            ".home-hero-orbit"
         );
-
-        if(halo){
-
-            halo.style.transform =
-                `
-                    translate(
-                        ${targetX * 8}px,
-                        ${targetY * 8}px
-                    )
-                `;
-
-        }
-
-    }
 
     hero.addEventListener(
         "pointermove",
-        pointerMove
-    );
+        event=>{
 
-    hero.addEventListener(
-        "pointerleave",
-        ()=>{
+            const rect =
+                hero.getBoundingClientRect();
 
-            objects.forEach(
-                object=>{
-                    object.style.transform =
-                        "translate3d(0,0,0)";
-                }
-            );
+            const x =
+                event.clientX -
+                rect.left;
+
+            const y =
+                event.clientY -
+                rect.top;
+
+            const px =
+                (x / rect.width) -
+                .5;
+
+            const py =
+                (y / rect.height) -
+                .5;
+
+            if(
+                atmosphere
+            ){
+
+                atmosphere.style.setProperty(
+                    "--mouse-x",
+                    `${x}px`
+                );
+
+                atmosphere.style.setProperty(
+                    "--mouse-y",
+                    `${y}px`
+                );
+
+            }
+
+            if(
+                !pointerFrame
+            ){
+
+                pointerFrame =
+                    requestAnimationFrame(
+                        ()=>{
+
+                            pointerFrame =
+                                null;
+
+                            if(aura){
+
+                                aura.style.transform =
+                                    `
+                                        translate(
+                                            ${
+                                                px * 18
+                                            }px,
+                                            ${
+                                                py * 15
+                                            }px
+                                        )
+                                    `;
+
+                            }
+
+                            orbits.forEach(
+                                (orbit,index)=>{
+
+                                    const depth =
+                                        (
+                                            index + 1
+                                        ) * 7;
+
+                                    orbit.style.transform =
+                                        `
+                                            translate(
+                                                ${
+                                                    px * depth
+                                                }px,
+                                                ${
+                                                    py * depth
+                                                }px
+                                            )
+                                        `;
+
+                                }
+                            );
+
+                        }
+                    );
+
+            }
 
         }
     );
-
-}
-
-/* ==========================================================
-   WORLD HOVER
-   ========================================================== */
-
-function initialiseWorldHover(root){
-
-    root
-        .querySelectorAll(".home-world")
-        .forEach(world=>{
-
-            world.addEventListener(
-                "pointermove",
-                event=>{
-
-                    const rect =
-                        world.getBoundingClientRect();
-
-                    const x =
-                        (
-                            event.clientX -
-                            rect.left
-                        ) / rect.width;
-
-                    const y =
-                        (
-                            event.clientY -
-                            rect.top
-                        ) / rect.height;
-
-                    world.style.setProperty(
-                        "--world-x",
-                        `${(x - .5) * 10}deg`
-                    );
-
-                    world.style.setProperty(
-                        "--world-y",
-                        `${(y - .5) * -10}deg`
-                    );
-
-                }
-            );
-
-            world.addEventListener(
-                "pointerleave",
-                ()=>{
-                    world.style.setProperty(
-                        "--world-x",
-                        "0deg"
-                    );
-
-                    world.style.setProperty(
-                        "--world-y",
-                        "0deg"
-                    );
-                }
-            );
-
-        });
 
 }
 
@@ -2046,15 +2146,14 @@ function initialiseKeyboard(root){
             const active =
                 document.activeElement;
 
-            const isTyping =
+            if(
                 active &&
                 (
                     active.tagName === "INPUT" ||
                     active.tagName === "TEXTAREA" ||
                     active.isContentEditable
-                );
-
-            if(isTyping){
+                )
+            ){
                 return;
             }
 
@@ -2063,7 +2162,9 @@ function initialiseKeyboard(root){
             ){
 
                 root
-                    .querySelector("#heroNext")
+                    .querySelector(
+                        "#heroNext"
+                    )
                     ?.click();
 
             }
@@ -2073,7 +2174,9 @@ function initialiseKeyboard(root){
             ){
 
                 root
-                    .querySelector("#heroPrev")
+                    .querySelector(
+                        "#heroPrev"
+                    )
                     ?.click();
 
             }
@@ -2089,33 +2192,33 @@ function initialiseKeyboard(root){
 
 function destroyHome(){
 
-    if(heroInterval){
+    if(heroTimer){
 
-        window.clearInterval(
-            heroInterval
+        clearInterval(
+            heroTimer
         );
 
-        heroInterval = null;
+        heroTimer = null;
 
     }
 
-    if(memoryInterval){
+    if(mediaTimer){
 
-        window.clearInterval(
-            memoryInterval
+        clearInterval(
+            mediaTimer
         );
 
-        memoryInterval = null;
+        mediaTimer = null;
 
     }
 
-    if(rafId){
+    if(pointerFrame){
 
-        window.cancelAnimationFrame(
-            rafId
+        cancelAnimationFrame(
+            pointerFrame
         );
 
-        rafId = null;
+        pointerFrame = null;
 
     }
 
