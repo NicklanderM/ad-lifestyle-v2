@@ -38069,3 +38069,293 @@ body.events-modal-open{
     }
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE — CONTACT TYPOGRAPHY & LIGHT SYSTEM
+   ========================================================== */
+
+.contact-page{
+    --contact-white:#ffffff;
+    --contact-soft:#f8f7f3;
+    --contact-ivory:#f2f0e9;
+    --contact-graphite:#1b1a18;
+    --contact-text:#34322e;
+    --contact-muted:#706d66;
+    --contact-line:#e6e1d7;
+    --contact-gold:#c9a24b;
+    --contact-gold-dark:#a9822f;
+
+    font-family:inherit !important;
+    color:var(--contact-text);
+    background:
+        linear-gradient(
+            180deg,
+            #ffffff 0%,
+            #ffffff 35%,
+            #faf9f6 68%,
+            #f5f3ee 100%
+        );
+}
+
+/* TIPOGRAFIA GLOBAL DA PÁGINA */
+
+.contact-page h1,
+.contact-page h2,
+.contact-page h3,
+.contact-page h4,
+.contact-page h5,
+.contact-page h6,
+.contact-page p,
+.contact-page span,
+.contact-page strong,
+.contact-page small,
+.contact-page button,
+.contact-page input,
+.contact-page textarea{
+    font-family:inherit !important;
+}
+
+/* Hero */
+
+.contact-page .contact-hero{
+    background:
+        radial-gradient(
+            circle at 74% 38%,
+            rgba(201,162,75,.12),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #fcfbf8 52%,
+            #f7f5ef 100%
+        );
+}
+
+.contact-page .contact-hero h1{
+    font-size:clamp(
+        3rem,
+        6vw,
+        5.5rem
+    ) !important;
+
+    line-height:.98 !important;
+    letter-spacing:-.045em !important;
+    font-weight:800 !important;
+    color:var(--contact-graphite) !important;
+}
+
+.contact-page .contact-hero h1 span{
+    display:block;
+    color:var(--contact-gold-dark) !important;
+}
+
+.contact-page .contact-hero p{
+    max-width:680px;
+    font-size:1.15rem !important;
+    line-height:1.75 !important;
+    color:var(--contact-muted) !important;
+}
+
+/* Títulos das restantes secções */
+
+.contact-page .contact-section-heading h2,
+.contact-page .contact-section-heading-center h2,
+.contact-page .contact-location-heading,
+.contact-page .contact-digital-copy h2,
+.contact-page .contact-form-intro h2{
+    font-size:clamp(
+        2.2rem,
+        4vw,
+        3.5rem
+    ) !important;
+
+    line-height:1.05 !important;
+    letter-spacing:-.035em !important;
+    font-weight:800 !important;
+    color:var(--contact-graphite) !important;
+}
+
+.contact-page .contact-section-heading p,
+.contact-page .contact-section-heading-center p,
+.contact-page .contact-digital-copy p,
+.contact-page .contact-form-intro p{
+    font-size:1.08rem !important;
+    line-height:1.75 !important;
+    color:var(--contact-muted) !important;
+}
+
+/* Corpo */
+
+.contact-page .contact-hub-body,
+.contact-page .contact-channel-card,
+.contact-page .contact-social-info,
+.contact-page .contact-location-items,
+.contact-page .contact-form-panel,
+.contact-page .contact-faq-answer{
+    font-size:1rem;
+    line-height:1.7;
+}
+
+/* ==========================================================
+   HERO IMAGE
+   ========================================================== */
+
+.contact-page .contact-hero-visual-area{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:600px;
+}
+
+.contact-page .contact-hero-visual{
+    position:relative;
+    width:min(100%,760px);
+    border-radius:34px;
+    overflow:hidden;
+
+    background:#ffffff;
+
+    box-shadow:
+        0 32px 90px rgba(30,27,21,.10),
+        0 8px 28px rgba(30,27,21,.06);
+}
+
+.contact-page .contact-hero-visual::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.08),
+            transparent 55%
+        );
+}
+
+.contact-page .contact-hero-visual img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1);
+}
+
+.contact-page .contact-hero-visual:hover img{
+    transform:scale(1.02);
+}
+
+/* ==========================================================
+   CARDS — MAIS CLAROS
+   ========================================================== */
+
+.contact-page .contact-hub,
+.contact-page .contact-direct,
+.contact-page .contact-digital,
+.contact-page .contact-location,
+.contact-page .contact-message,
+.contact-page .contact-faq{
+    background:#ffffff !important;
+}
+
+.contact-page .contact-channel-card,
+.contact-page .contact-hub-mini,
+.contact-page .contact-social-link,
+.contact-page .contact-form-panel,
+.contact-page .contact-location-info,
+.contact-page .contact-map-card,
+.contact-page .contact-faq-item{
+    background:#ffffff !important;
+    border:1px solid var(--contact-line) !important;
+
+    box-shadow:
+        0 12px 35px rgba(30,27,21,.045);
+}
+
+/* Pequenas áreas em tom marfim */
+
+.contact-page .contact-digital-panel,
+.contact-page .contact-final-panel{
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8f6f0
+        ) !important;
+}
+
+/* ==========================================================
+   BOTÕES
+   ========================================================== */
+
+.contact-page .contact-button{
+    font-family:inherit !important;
+    font-size:.95rem !important;
+    font-weight:700 !important;
+    letter-spacing:.01em;
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width:800px){
+
+    .contact-page .contact-hero h1{
+        font-size:clamp(
+            2.55rem,
+            11vw,
+            4.2rem
+        ) !important;
+    }
+
+    .contact-page .contact-hero p{
+        font-size:1.03rem !important;
+    }
+
+    .contact-page .contact-section-heading h2,
+    .contact-page .contact-section-heading-center h2,
+    .contact-page .contact-location-heading,
+    .contact-page .contact-digital-copy h2,
+    .contact-page .contact-form-intro h2{
+        font-size:clamp(
+            2rem,
+            9vw,
+            3rem
+        ) !important;
+    }
+
+    .contact-page .contact-hero-visual-area{
+        min-height:auto;
+        margin-top:36px;
+    }
+
+    .contact-page .contact-hero-visual{
+        width:100%;
+        border-radius:24px;
+    }
+}
+
+@media (max-width:500px){
+
+    .contact-page .contact-hero h1{
+        font-size:2.45rem !important;
+    }
+
+    .contact-page .contact-hero p{
+        font-size:1rem !important;
+        line-height:1.65 !important;
+    }
+
+    .contact-page .contact-hero-visual{
+        border-radius:20px;
+    }
+}
