@@ -42887,6 +42887,29 @@ body.events-modal-open{
     }
 
 }
+/* ==========================================================
+   AD LIFESTYLE — TIPOGRAFIA
+   Mantém exactamente a tipografia global do projecto
+   ========================================================== */
+
+.home-page {
+    font-family: inherit;
+}
+
+.home-page h1,
+.home-page h2,
+.home-page h3,
+.home-page h4,
+.home-page h5,
+.home-page h6,
+.home-page p,
+.home-page span,
+.home-page a,
+.home-page button,
+.home-page strong,
+.home-page small {
+    font-family: inherit;
+}
 
 
 /* ==========================================================
