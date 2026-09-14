@@ -120,258 +120,98 @@ export function loadContact(){
 function renderHero(){
 
     return `
-
         <section class="contact-hero">
 
             <div class="contact-hero-background"></div>
 
             <div class="contact-hero-glow"></div>
 
-            <div class="contact-container contact-hero-container">
-
-                <div class="contact-hero-top">
-
-                    <span>
-                        AD LIFESTYLE
-                    </span>
-
-                    <span>
-                        CONTACT / 01
-                    </span>
-
-                </div>
-
+            <div class="contact-hero-container">
 
                 <div class="contact-hero-main">
 
-
-                    <!-- CONTENT -->
-
                     <div class="contact-hero-content">
 
-                        <div class="contact-eyebrow">
-                            DIRECT CONNECTION · LUANDA · ANGOLA
-                        </div>
-
+                        <span class="contact-eyebrow">
+                            Contacto · AD Lifestyle
+                        </span>
 
                         <h1>
-
-                            A próxima conversa
-                            <span>começa aqui.</span>
-
+                            Estamos prontos
+                            <span>para falar consigo.</span>
                         </h1>
 
-
                         <p>
-
-                            Uma dúvida, um produto, um evento,
-                            uma apresentação ou uma nova
-                            possibilidade. Estamos disponíveis para
-                            ouvir, explicar e encaminhar cada pedido.
-
+                            Esclareça dúvidas, solicite informações
+                            sobre produtos e serviços ou fale connosco
+                            directamente através dos nossos canais.
                         </p>
-
 
                         <div class="contact-hero-actions">
 
                             <button
                                 type="button"
                                 class="contact-button contact-button-gold"
-                                data-action="whatsapp"
-                            >
-
-                                ${icon("whatsapp")}
-
-                                <span>
-                                    Falar no WhatsApp
-                                </span>
-
+                                data-contact-action="whatsapp">
+                                WhatsApp
+                                <span>→</span>
                             </button>
-
 
                             <button
                                 type="button"
                                 class="contact-button contact-button-outline"
-                                data-action="form"
-                            >
-
-                                ${icon("message")}
-
-                                <span>
-                                    Enviar mensagem
-                                </span>
-
+                                data-contact-action="form">
+                                Enviar mensagem
+                                <span>→</span>
                             </button>
 
                         </div>
 
-
                         <div class="contact-hero-meta">
 
-
                             <div class="contact-meta-item">
-
-                                <span
-                                    class="contact-status-dot"
-                                ></span>
-
-
-                                <div>
-
-                                    <strong>
-                                        Atendimento directo
-                                    </strong>
-
-                                    <small>
-                                        WhatsApp disponível
-                                    </small>
-
-                                </div>
-
+                                <span class="contact-status-dot"></span>
+                                <strong>Atendimento personalizado</strong>
                             </div>
 
-
                             <div class="contact-meta-item">
-
-                                ${icon("clock")}
-
-                                <div>
-
-                                    <strong>
-                                        ${CONTACT_DATA.hours}
-                                    </strong>
-
-                                    <small>
-                                        ${CONTACT_DATA.days}
-                                    </small>
-
-                                </div>
-
+                                <strong>08h00 — 18h00</strong>
+                                <small>Segunda a Sábado</small>
                             </div>
-
 
                         </div>
 
                     </div>
-
-
-                    <!-- VISUAL -->
 
                     <div class="contact-hero-visual-area">
 
                         <div class="contact-hero-visual">
 
-
-                            <div
-                                class="contact-orbit contact-orbit-a"
-                            ></div>
-
-
-                            <div
-                                class="contact-orbit contact-orbit-b"
-                            ></div>
-
-
-                            <div
-                                class="contact-orbit contact-orbit-c"
-                            ></div>
-
-
-                            <div class="contact-hero-core">
-
-                                <div class="contact-core-logo">
-
-                                    <img
-                                        src="./assets/logo/logo.png"
-                                        alt="AD Lifestyle"
-                                    >
-
-                                </div>
-
-
-                                <strong>
-                                    AD LIFESTYLE
-                                </strong>
-
-
-                                <small>
-                                    Creating Bridges
-                                </small>
-
-                            </div>
-
-
-                            <div class="contact-floating-card contact-floating-card-a">
-
-                                ${icon("whatsapp")}
-
-                                <span>
-                                    WhatsApp
-                                </span>
-
-                            </div>
-
-
-                            <div class="contact-floating-card contact-floating-card-b">
-
-                                ${icon("location")}
-
-                                <span>
-                                    Luanda
-                                </span>
-
-                            </div>
-
-
-                            <div class="contact-floating-card contact-floating-card-c">
-
-                                ${icon("message")}
-
-                                <span>
-                                    Fale connosco
-                                </span>
-
-                            </div>
-
+                            <img
+                                src="./assets/images/Contacto AD Lifestyle com Elegância.png"
+                                alt="AD Lifestyle — Contacto"
+                                loading="eager">
 
                         </div>
 
                     </div>
 
-
                 </div>
 
+            </div>
 
-                <div class="contact-hero-bottom">
+            <div class="contact-hero-bottom">
 
-                    <span>
-                        LUANDA · ANGOLA
-                    </span>
-
-
-                    <span class="contact-hero-scroll">
-
-                        SCROLL
-
-                        <i></i>
-
-                    </span>
-
-
-                    <span>
-                        WELLNESS / EVOLUTION
-                    </span>
-
+                <div class="contact-hero-scroll">
+                    <span></span>
+                    Explorar contactos
                 </div>
 
             </div>
 
         </section>
-
     `;
-
 }
-
 
 /* ==========================================================
    CONTACT HUB
