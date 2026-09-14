@@ -3634,3 +3634,811 @@ body[data-theme="ismarts3"]::selection{
     color:#172554;
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE
+   THEME.JS
+   Dynamic Theme Engine
+   ========================================================== */
+
+const STORAGE_KEY = "ad-theme";
+
+
+/* ==========================================================
+   TEMAS GLOBAIS
+   ========================================================== */
+
+const themes = {
+
+    default: {
+
+        name:"default",
+
+        primary:"#C6A35A",
+
+        secondary:"#F6F1E8",
+
+        accent:"#8A6A2F",
+
+        surface:"#FFFFFF",
+
+        background:"#F8F5F1",
+
+        text:"#1F1A17",
+
+        gradient:
+            "linear-gradient(135deg,#F8F5F1,#EEE6D7)"
+
+    },
+
+
+    angel: {
+
+        name:"angel",
+
+        primary:"#D5B676",
+
+        secondary:"#EFE3C8",
+
+        accent:"#6E5930",
+
+        surface:"#FFFFFF",
+
+        background:"#FAF7EF",
+
+        text:"#3E3322",
+
+        gradient:
+            "linear-gradient(135deg,#FFFDF8,#EFE3C8)"
+
+    },
+
+
+    ezeno: {
+
+        name:"ezeno",
+
+        primary:"#9B8354",
+
+        secondary:"#DED7C7",
+
+        accent:"#62563B",
+
+        surface:"#FFFFFF",
+
+        background:"#F8F6F0",
+
+        text:"#3D372C",
+
+        gradient:
+            "linear-gradient(135deg,#FFFFFF,#DED7C7)"
+
+    },
+
+
+    zenbru: {
+
+        name:"zenbru",
+
+        primary:"#9B6B36",
+
+        secondary:"#E3D1BB",
+
+        accent:"#63411F",
+
+        surface:"#FFFDF9",
+
+        background:"#FAF6F1",
+
+        text:"#3D2A1C",
+
+        gradient:
+            "linear-gradient(135deg,#FFF9F0,#E3D1BB)"
+
+    },
+
+
+    alpha: {
+
+        name:"alpha",
+
+        primary:"#897047",
+
+        secondary:"#DDD4C4",
+
+        accent:"#493923",
+
+        surface:"#1B1814",
+
+        background:"#100D0B",
+
+        text:"#F5F2EA",
+
+        gradient:
+            "linear-gradient(135deg,#14110E,#29231C)"
+
+    },
+
+
+    alphameta: {
+
+        name:"alphameta",
+
+        primary:"#BC9B60",
+
+        secondary:"#E9DFC9",
+
+        accent:"#725A32",
+
+        surface:"#FFFFFF",
+
+        background:"#F9F6EF",
+
+        text:"#403523",
+
+        gradient:
+            "linear-gradient(135deg,#FFFDF8,#E9DFC9)"
+
+    },
+
+
+    minoseed: {
+
+        name:"minoseed",
+
+        primary:"#AB8970",
+
+        secondary:"#E8DDD4",
+
+        accent:"#684E40",
+
+        surface:"#FFFFFF",
+
+        background:"#FAF7F4",
+
+        text:"#40322B",
+
+        gradient:
+            "linear-gradient(135deg,#FFFFFF,#E8DDD4)"
+
+    },
+
+
+    evador: {
+
+        name:"evador",
+
+        primary:"#B39A70",
+
+        secondary:"#E8DFCE",
+
+        accent:"#68563A",
+
+        surface:"#FFFFFF",
+
+        background:"#FAF8F2",
+
+        text:"#40372B",
+
+        gradient:
+            "linear-gradient(135deg,#FFFFFF,#E8DFCE)"
+
+    },
+
+
+    "alphaspin-ultra": {
+
+        name:"alphaspin-ultra",
+
+        primary:"#938970",
+
+        secondary:"#DDDCD4",
+
+        accent:"#555044",
+
+        surface:"#FFFFFF",
+
+        background:"#F5F4F0",
+
+        text:"#38352F",
+
+        gradient:
+            "linear-gradient(135deg,#FFFFFF,#DDDCD4)"
+
+    },
+
+
+    ismarts3: {
+
+        name:"ismarts3",
+
+        primary:"#B09B6C",
+
+        secondary:"#E7DFCD",
+
+        accent:"#6C5A36",
+
+        surface:"#FFFFFF",
+
+        background:"#FAF7EF",
+
+        text:"#403927",
+
+        gradient:
+            "linear-gradient(135deg,#FFFFFF,#E7DFCD)"
+
+    }
+
+};
+
+
+/* ==========================================================
+   TEMAS ESPECÍFICOS DO HERO
+   ========================================================== */
+
+const heroProductThemes = {
+
+    angel: {
+
+        tone:"#D5B676",
+
+        atmosphere:"#EFE3C8",
+
+        deep:"#65502A",
+
+        surface:"#FFFDF8"
+
+    },
+
+
+    ezeno: {
+
+        tone:"#9B8354",
+
+        atmosphere:"#DED7C7",
+
+        deep:"#5A4E35",
+
+        surface:"#FDFCF8"
+
+    },
+
+
+    zenbru: {
+
+        tone:"#9B6B36",
+
+        atmosphere:"#E3D1BB",
+
+        deep:"#64401F",
+
+        surface:"#FFF9F2"
+
+    },
+
+
+    alpha: {
+
+        tone:"#897047",
+
+        atmosphere:"#DDD4C4",
+
+        deep:"#55452F",
+
+        surface:"#F7F4EC"
+
+    },
+
+
+    alphameta: {
+
+        tone:"#BC9B60",
+
+        atmosphere:"#E9DFC9",
+
+        deep:"#6E572D",
+
+        surface:"#FFFDF8"
+
+    },
+
+
+    minoseed: {
+
+        tone:"#AB8970",
+
+        atmosphere:"#E8DDD4",
+
+        deep:"#654C3F",
+
+        surface:"#FFFDFC"
+
+    },
+
+
+    evador: {
+
+        tone:"#B39A70",
+
+        atmosphere:"#E8DFCE",
+
+        deep:"#675638",
+
+        surface:"#FFFDF9"
+
+    },
+
+
+    "alphaspin-ultra": {
+
+        tone:"#938970",
+
+        atmosphere:"#DDDCD4",
+
+        deep:"#555047",
+
+        surface:"#FAFAF7"
+
+    },
+
+
+    ismarts3: {
+
+        tone:"#B09B6C",
+
+        atmosphere:"#E7DFCD",
+
+        deep:"#675735",
+
+        surface:"#FFFDF7"
+
+    }
+
+};
+
+
+/* ==========================================================
+   TEMA ACTUAL
+   ========================================================== */
+
+let currentTheme =
+    "default";
+
+
+/* ==========================================================
+   APLICAR TEMA GLOBAL
+   ========================================================== */
+
+export function applyTheme(
+    name="default"
+){
+
+    if(!themes[name]){
+
+        name="default";
+
+    }
+
+
+    currentTheme =
+        name;
+
+
+    const theme =
+        themes[name];
+
+
+    const root =
+        document.documentElement;
+
+
+    root.style.setProperty(
+        "--primary",
+        theme.primary
+    );
+
+
+    root.style.setProperty(
+        "--secondary",
+        theme.secondary
+    );
+
+
+    root.style.setProperty(
+        "--accent",
+        theme.accent
+    );
+
+
+    root.style.setProperty(
+        "--surface",
+        theme.surface
+    );
+
+
+    root.style.setProperty(
+        "--background",
+        theme.background
+    );
+
+
+    root.style.setProperty(
+        "--text",
+        theme.text
+    );
+
+
+    root.style.setProperty(
+        "--hero-gradient",
+        theme.gradient
+    );
+
+
+    document.body.dataset.theme =
+        name;
+
+
+    saveTheme(
+        name
+    );
+
+
+    animateTransition();
+
+}
+
+
+/* ==========================================================
+   APLICAR TEMA DO HERO
+   ========================================================== */
+
+export function applyHeroProductTheme(
+    name
+){
+
+    const page =
+        document.querySelector(
+            ".home-page"
+        );
+
+
+    if(!page){
+        return;
+    }
+
+
+    if(
+        !name ||
+        !heroProductThemes[name]
+    ){
+
+        page.style.setProperty(
+            "--home-hero-tone",
+            "#B8924A"
+        );
+
+
+        page.style.setProperty(
+            "--home-hero-atmosphere",
+            "#EFE5D3"
+        );
+
+
+        page.style.setProperty(
+            "--home-hero-deep",
+            "#574423"
+        );
+
+
+        page.style.setProperty(
+            "--home-hero-surface",
+            "#FFFFFF"
+        );
+
+
+        return;
+    }
+
+
+    const theme =
+        heroProductThemes[name];
+
+
+    page.style.setProperty(
+        "--home-hero-tone",
+        theme.tone
+    );
+
+
+    page.style.setProperty(
+        "--home-hero-atmosphere",
+        theme.atmosphere
+    );
+
+
+    page.style.setProperty(
+        "--home-hero-deep",
+        theme.deep
+    );
+
+
+    page.style.setProperty(
+        "--home-hero-surface",
+        theme.surface
+    );
+
+}
+
+
+/* ==========================================================
+   OBTÉM TEMA
+   ========================================================== */
+
+export function getTheme(){
+
+    return currentTheme;
+
+}
+
+
+/* ==========================================================
+   TOGGLE / ALTERAÇÃO
+   ========================================================== */
+
+export function toggleTheme(
+    name
+){
+
+    applyTheme(
+        name
+    );
+
+}
+
+
+/* ==========================================================
+   GUARDAR
+   ========================================================== */
+
+function saveTheme(
+    name
+){
+
+    try{
+
+        localStorage.setItem(
+            STORAGE_KEY,
+            name
+        );
+
+    }catch(error){
+
+        console.warn(
+            "AD Lifestyle: não foi possível guardar o tema.",
+            error
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   CARREGAR
+   ========================================================== */
+
+export function loadSavedTheme(){
+
+    let saved =
+        null;
+
+
+    try{
+
+        saved =
+            localStorage.getItem(
+                STORAGE_KEY
+            );
+
+    }catch(error){
+
+        saved =
+            null;
+
+    }
+
+
+    if(
+        saved &&
+        themes[saved]
+    ){
+
+        applyTheme(
+            saved
+        );
+
+    }else{
+
+        applyTheme(
+            "default"
+        );
+
+    }
+
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+export function resetTheme(){
+
+    applyTheme(
+        "default"
+    );
+
+}
+
+
+/* ==========================================================
+   ANIMAÇÃO
+   ========================================================== */
+
+function animateTransition(){
+
+    document.body.classList.add(
+        "theme-transition"
+    );
+
+
+    clearTimeout(
+        window.__themeTimeout
+    );
+
+
+    window.__themeTimeout =
+        setTimeout(
+            ()=>{
+
+                document.body.classList.remove(
+                    "theme-transition"
+                );
+
+            },
+            700
+        );
+
+}
+
+
+/* ==========================================================
+   PREVIEW DOS CARDS
+   ========================================================== */
+
+export function bindThemePreview(){
+
+    const cards =
+        document.querySelectorAll(
+            "[data-theme-card]"
+        );
+
+
+    cards.forEach(
+        card=>{
+
+            const theme =
+                card.dataset.themeCard;
+
+
+            card.addEventListener(
+                "mouseenter",
+                ()=>{
+
+                    previewTheme(
+                        theme
+                    );
+
+                }
+            );
+
+
+            card.addEventListener(
+                "mouseleave",
+                ()=>{
+
+                    applyTheme(
+                        currentTheme
+                    );
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   PREVIEW
+   ========================================================== */
+
+function previewTheme(
+    name
+){
+
+    if(
+        !themes[name]
+    ){
+
+        return;
+    }
+
+
+    const theme =
+        themes[name];
+
+
+    const root =
+        document.documentElement;
+
+
+    root.style.setProperty(
+        "--primary",
+        theme.primary
+    );
+
+
+    root.style.setProperty(
+        "--secondary",
+        theme.secondary
+    );
+
+
+    root.style.setProperty(
+        "--accent",
+        theme.accent
+    );
+
+
+    root.style.setProperty(
+        "--hero-gradient",
+        theme.gradient
+    );
+
+}
+
+
+/* ==========================================================
+   UTILITÁRIOS
+   ========================================================== */
+
+export function isDarkTheme(){
+
+    return currentTheme === "alpha";
+
+}
+
+
+export function themeColor(){
+
+    return themes[
+        currentTheme
+    ].primary;
+
+}
+
+
+export function allThemes(){
+
+    return themes;
+
+}
+
+
+export function allHeroProductThemes(){
+
+    return heroProductThemes;
+
+}
