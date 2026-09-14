@@ -291,22 +291,6 @@ function hero(){
 
                 <div class="home-hero-copy">
 
-                    <div class="home-hero-brand">
-
-                        <img
-                            src="./assets/logo/logo.png"
-                            alt="AD Lifestyle">
-
-                        <div>
-
-                            <strong>
-                                AD LIFESTYLE
-                            </strong>
-
-                            <span>
-                                LUANDA · ANGOLA
-                            </span>
-
                         </div>
 
                     </div>
