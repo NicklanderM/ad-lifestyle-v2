@@ -4,11 +4,7 @@
    Immersive Brand Experience
    ========================================================== */
 
-import {
-    applyTheme,
-    applyHeroProductTheme
-} from "../js/theme.js";
-
+import { applyTheme } from "../js/theme.js";
 import { navigate } from "../js/router.js";
 import { ripple } from "../js/animations.js";
 
@@ -125,6 +121,78 @@ const PRODUCTS = [
     }
 
 ];
+
+/* ==========================================================
+   HERO — IDENTIDADE VISUAL LOCAL
+   Não altera o sistema global de temas.
+   ========================================================== */
+
+const HERO_THEMES = {
+
+    angel: {
+        tone: "#8B5CF6",
+        atmosphere: "#E9D5FF",
+        deep: "#5B21B6",
+        surface: "#FCF8FF"
+    },
+
+    ezeno: {
+        tone: "#D8A62A",
+        atmosphere: "#FFF3D5",
+        deep: "#8A5A24",
+        surface: "#FFFDF5"
+    },
+
+    zenbru: {
+        tone: "#F7C51E",
+        atmosphere: "#FFE7B2",
+        deep: "#572512",
+        surface: "#FFF8E8"
+    },
+
+    alpha: {
+        tone: "#D8A74D",
+        atmosphere: "#D8E6FF",
+        deep: "#0347B3",
+        surface: "#EEF2F8"
+    },
+
+    alphameta: {
+        tone: "#FCC20C",
+        atmosphere: "#FFE0C2",
+        deep: "#DF2107",
+        surface: "#FFFDF8"
+    },
+
+    minoseed: {
+        tone: "#D8A62A",
+        atmosphere: "#FFF3D5",
+        deep: "#8A5A24",
+        surface: "#FFFDF5"
+    },
+
+    evador: {
+        tone: "#D4AF37",
+        atmosphere: "#2A2417",
+        deep: "#A67C16",
+        surface: "#101010"
+    },
+
+    "alphaspin-ultra": {
+        tone: "#D6E08B",
+        atmosphere: "#A57BCF",
+        deep: "#40225C",
+        surface: "#EEEEF1"
+    },
+
+    ismarts3: {
+        tone: "#39D353",
+        atmosphere: "#DCEBFA",
+        deep: "#263A4D",
+        surface: "#F5F8FA"
+    }
+
+};
 
 
 /* ==========================================================
@@ -258,6 +326,95 @@ const MEMORIES = [
 
 ];
 
+/* ==========================================================
+   APLICAR IDENTIDADE DO HERO
+   ========================================================== */
+
+function applyHomeHeroTheme(name){
+
+    const root =
+        document.querySelector(".home-page");
+
+    if(!root){
+        return;
+    }
+
+    const theme =
+        HERO_THEMES[name];
+
+    if(!theme){
+
+        root.style.setProperty(
+            "--home-hero-tone",
+            "#C6A35A"
+        );
+
+        root.style.setProperty(
+            "--home-hero-atmosphere",
+            "#EFE5D3"
+        );
+
+        root.style.setProperty(
+            "--home-hero-deep",
+            "#574423"
+        );
+
+        root.style.setProperty(
+            "--home-hero-surface",
+            "#FFFFFF"
+        );
+
+        return;
+    }
+
+
+    root.style.setProperty(
+        "--home-hero-tone",
+        theme.tone
+    );
+
+
+    root.style.setProperty(
+        "--home-hero-atmosphere",
+        theme.atmosphere
+    );
+
+
+    root.style.setProperty(
+        "--home-hero-deep",
+        theme.deep
+    );
+
+
+    root.style.setProperty(
+        "--home-hero-surface",
+        theme.surface
+    );
+
+
+    /*
+       Variáveis adicionais para futuras animações
+       ou elementos do Hero.
+    */
+
+    root.style.setProperty(
+        "--hero-tone",
+        theme.tone
+    );
+
+
+    root.style.setProperty(
+        "--hero-atmosphere",
+        theme.atmosphere
+    );
+
+
+    root.style.setProperty(
+        "--hero-deep",
+        theme.deep
+    );
+
+}
 
 /* ==========================================================
    LOAD
@@ -1884,7 +2041,7 @@ function initialiseHero(root){
         }
 
 
-        applyHeroProductTheme(
+        applyHomeHeroTheme(
             product.theme
         );
 
@@ -2578,7 +2735,7 @@ function destroyHome(){
     }
 
 
-    applyHeroProductTheme(
+    applyHomeHeroTheme((
         null
     );
 
