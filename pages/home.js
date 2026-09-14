@@ -1,7 +1,7 @@
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.JS
-   Premium Editorial Landing Experience
+   Immersive Editorial Experience
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -9,107 +9,222 @@ import { navigate } from "../js/router.js";
 import { ripple } from "../js/animations.js";
 
 /* ==========================================================
+   CONFIGURAÇÃO
+   ========================================================== */
+
+const WHATSAPP_NUMBER = "244924964666";
+
+const HOME_PRODUCTS = [
+
+    {
+        id: "angel",
+        title: "Angel Moon",
+        category: "WELLNESS",
+        micro: "CUIDADO FEMININO",
+        image: "./assets/products/angel.png",
+        tone: "#d2b16a",
+        line: "Conforto. Cuidado. Confiança."
+    },
+
+    {
+        id: "ezeno",
+        title: "EZENO",
+        category: "ORAL CARE",
+        micro: "SAÚDE ORAL",
+        image: "./assets/products/ezeno.png",
+        tone: "#9c8b67",
+        line: "O cuidado começa no detalhe."
+    },
+
+    {
+        id: "zenbru",
+        title: "Zenbru",
+        category: "LIFESTYLE",
+        micro: "CAFÉ FUNCIONAL",
+        image: "./assets/products/zenbru.png",
+        tone: "#9a6d3a",
+        line: "Sabor com identidade."
+    },
+
+    {
+        id: "alpha",
+        title: "Alpha Vmax",
+        category: "PERFORMANCE",
+        micro: "PERFORMANCE",
+        image: "./assets/products/alpha.png",
+        tone: "#8c6e3b",
+        line: "Eleve a experiência."
+    },
+
+    {
+        id: "alphameta",
+        title: "AlphaMeta",
+        category: "NUTRIÇÃO",
+        micro: "NUTRIÇÃO",
+        image: "./assets/products/alphameta.png",
+        tone: "#c5a56a",
+        line: "Uma nova dimensão."
+    },
+
+    {
+        id: "minoseed",
+        title: "Minoseed",
+        category: "BEAUTY",
+        micro: "BELEZA & BEM-ESTAR",
+        image: "./assets/products/minoseed.png",
+        tone: "#ae8f72",
+        line: "Cuidado que acompanha."
+    },
+
+    {
+        id: "evador",
+        title: "Evador",
+        category: "PREMIUM CARE",
+        micro: "CUIDADOS PREMIUM",
+        image: "./assets/products/evador.png",
+        tone: "#b19467",
+        line: "Elegância também é cuidado."
+    },
+
+    {
+        id: "alphaspin-ultra",
+        title: "AlphaSpin Ultra",
+        category: "SMART LIVING",
+        micro: "SMART LIVING",
+        image: "./assets/products/alphaspin-ultra.png",
+        tone: "#978a6e",
+        line: "Tecnologia com propósito."
+    },
+
+    {
+        id: "ismarts3",
+        title: "iSMART S3",
+        category: "SMART LIVING",
+        micro: "SMART LIVING",
+        image: "./assets/products/ismarts3.png",
+        tone: "#b29b6b",
+        line: "O futuro entra em casa."
+    }
+
+];
+
+const HERO_SLIDES = [
+
+    {
+        eyebrow: "AD LIFESTYLE",
+        kicker: "WELLNESS · LIFESTYLE · EVOLUTION",
+        title: "Não é apenas",
+        accent: "Lifestyle.",
+        copy:
+            "É uma nova forma de descobrir, escolher e evoluir.",
+        product: 0
+    },
+
+    {
+        eyebrow: "WELLNESS",
+        kicker: "CUIDADO · CONFORTO · EXPERIÊNCIA",
+        title: "Viva melhor.",
+        accent: "Comece por si.",
+        copy:
+            "Soluções pensadas para acompanhar o quotidiano.",
+        product: 1
+    },
+
+    {
+        eyebrow: "LIFESTYLE",
+        kicker: "SABOR · RITUAL · IDENTIDADE",
+        title: "Transforme",
+        accent: "o seu ritmo.",
+        copy:
+            "Porque os pequenos rituais também definem a experiência.",
+        product: 2
+    },
+
+    {
+        eyebrow: "SMART LIVING",
+        kicker: "TECNOLOGIA · CONFORTO · INOVAÇÃO",
+        title: "O futuro",
+        accent: "já começou.",
+        copy:
+            "Descubra uma relação diferente entre tecnologia e quotidiano.",
+        product: 8
+    },
+
+    {
+        eyebrow: "EVOLUTION",
+        kicker: "CONHECIMENTO · LIDERANÇA · OPORTUNIDADE",
+        title: "O produto é",
+        accent: "só o começo.",
+        copy:
+            "Existe uma dimensão maior: aprender, crescer e construir.",
+        product: 5
+    },
+
+    {
+        eyebrow: "AD LIFESTYLE",
+        kicker: "DISCOVER · CONNECT · EVOLVE",
+        title: "Descubra",
+        accent: "o próximo capítulo.",
+        copy:
+            "A jornada ainda está a começar.",
+        product: 7
+    }
+
+];
+
+const MEMORY_ITEMS = [
+
+    {
+        image: "./assets/images/insta1.jpg",
+        label: "AD LIFESTYLE",
+        title: "Uma comunidade em movimento."
+    },
+
+    {
+        image: "./assets/images/insta2.jpg",
+        label: "EXPERIÊNCIA",
+        title: "Momentos que ficam."
+    },
+
+    {
+        image: "./assets/images/insta3.jpg",
+        label: "EVENTOS",
+        title: "Conhecimento que ganha vida."
+    },
+
+    {
+        image: "./assets/images/insta4.jpg",
+        label: "JORNADA",
+        title: "Estamos apenas a começar."
+    }
+
+];
+
+/* ==========================================================
    ESTADO
    ========================================================== */
 
-let heroTimer = null;
-let mediaTimer = null;
-
 let heroIndex = 0;
-let mediaIndex = 0;
+let memoryIndex = 0;
+
+let heroInterval = null;
+let memoryInterval = null;
+
+let rafId = null;
+
+let pointerX = 0;
+let pointerY = 0;
+
+let targetX = 0;
+let targetY = 0;
 
 /* ==========================================================
-   DADOS DO HERO
-   ========================================================== */
-
-const heroSlides = [
-
-    {
-        category:"WELLNESS",
-        title:"Viva melhor.",
-        accent:"Escolha melhor.",
-        description:
-            "Uma nova visão de bem-estar, Lifestyle e evolução.",
-        image:"./assets/products/angel.png"
-    },
-
-    {
-        category:"ORAL CARE",
-        title:"O cuidado",
-        accent:"começa aqui.",
-        description:
-            "Soluções pensadas para fazer parte da sua rotina.",
-        image:"./assets/products/ezeno.png"
-    },
-
-    {
-        category:"LIFESTYLE",
-        title:"Descubra",
-        accent:"o seu ritmo.",
-        description:
-            "Experiências que aproximam sabor, conforto e Lifestyle.",
-        image:"./assets/products/zenbru.png"
-    },
-
-    {
-        category:"SMART LIVING",
-        title:"O futuro",
-        accent:"já faz parte.",
-        description:
-            "Tecnologia e inovação integradas na vida quotidiana.",
-        image:"./assets/products/ismarts3.png"
-    },
-
-    {
-        category:"PERFORMANCE",
-        title:"Eleve",
-        accent:"a sua experiência.",
-        description:
-            "Uma nova perspectiva sobre performance e Lifestyle.",
-        image:"./assets/products/alpha.png"
-    }
-
-];
-
-/* ==========================================================
-   MEDIA
-   ========================================================== */
-
-const mediaSlides = [
-
-    {
-        image:"./assets/images/insta1.jpg",
-        label:"AD LIFESTYLE",
-        title:"Uma comunidade em movimento."
-    },
-
-    {
-        image:"./assets/images/insta2.jpg",
-        label:"EXPERIÊNCIA",
-        title:"Momentos que ficam."
-    },
-
-    {
-        image:"./assets/images/insta3.jpg",
-        label:"EVENTOS",
-        title:"Conhecimento que ganha vida."
-    },
-
-    {
-        image:"./assets/images/insta4.jpg",
-        label:"JORNADA",
-        title:"Estamos apenas a começar."
-    }
-
-];
-
-/* ==========================================================
-   LOAD
+   LOAD HOME
    ========================================================== */
 
 export function loadHome(){
 
-    clearTimers();
+    destroyHome();
 
     applyTheme("default");
 
@@ -126,15 +241,19 @@ export function loadHome(){
 
             ${hero()}
 
+            ${signalStrip()}
+
             ${manifesto()}
 
             ${ecosystem()}
 
-            ${featuredProducts()}
+            ${products()}
 
-            ${mediaSection()}
+            ${experience()}
 
-            ${testimonials()}
+            ${memories()}
+
+            ${testimonial()}
 
             ${finalCTA()}
 
@@ -156,16 +275,22 @@ function hero(){
 
         <section
             class="home-hero"
-            id="homeHero">
+            data-home-canvas>
 
-            <div class="home-hero-light home-hero-light-a"></div>
-            <div class="home-hero-light home-hero-light-b"></div>
+            <div class="home-hero-noise"></div>
+
+            <div
+                class="home-hero-light"
+                id="heroLight">
+            </div>
+
+            <div class="home-hero-grid-lines"></div>
 
             <div class="home-hero-container">
 
-                <div class="home-hero-left">
+                <div class="home-hero-copy">
 
-                    <div class="home-hero-brand">
+                    <div class="home-brand-lockup">
 
                         <img
                             src="./assets/logo/logo.png"
@@ -178,7 +303,7 @@ function hero(){
                             </strong>
 
                             <span>
-                                WELLNESS · LIFESTYLE · EVOLUTION
+                                LUANDA · ANGOLA
                             </span>
 
                         </div>
@@ -187,20 +312,29 @@ function hero(){
 
                     <div class="home-hero-slides">
 
-                        ${heroSlides.map(
+                        ${HERO_SLIDES.map(
                             (slide,index)=>`
 
                                 <article
-                                    class="home-hero-slide ${
-                                        index === 0
-                                            ? "is-active"
-                                            : ""
-                                    }"
+                                    class="
+                                        home-hero-slide
+                                        ${
+                                            index === 0
+                                                ? "is-active"
+                                                : ""
+                                        }
+                                    "
                                     data-hero-slide="${index}">
 
-                                    <span class="home-hero-category">
-                                        ${slide.category}
-                                    </span>
+                                    <div
+                                        class="home-hero-eyebrow">
+                                        ${slide.eyebrow}
+                                    </div>
+
+                                    <div
+                                        class="home-hero-kicker">
+                                        ${slide.kicker}
+                                    </div>
 
                                     <h1>
 
@@ -213,7 +347,7 @@ function hero(){
                                     </h1>
 
                                     <p>
-                                        ${slide.description}
+                                        ${slide.copy}
                                     </p>
 
                                 </article>
@@ -226,22 +360,28 @@ function hero(){
                     <div class="home-hero-actions">
 
                         <button
-                            class="home-button home-button-gold"
-                            id="heroProducts"
-                            type="button">
+                            type="button"
+                            class="
+                                home-action
+                                home-action-primary
+                            "
+                            id="heroExplore">
 
-                            Descobrir produtos
+                            Explorar universo
 
                             <span>→</span>
 
                         </button>
 
                         <button
-                            class="home-button home-button-outline"
-                            id="heroAbout"
-                            type="button">
+                            type="button"
+                            class="
+                                home-action
+                                home-action-secondary
+                            "
+                            id="heroStory">
 
-                            A nossa história
+                            Conhecer a nossa história
 
                             <span>↗</span>
 
@@ -249,19 +389,40 @@ function hero(){
 
                     </div>
 
-                    <div class="home-hero-progress">
+                    <div class="home-hero-navigation">
 
-                        <div class="home-hero-progress-line">
+                        <button
+                            type="button"
+                            class="home-hero-arrow"
+                            id="heroPrev"
+                            aria-label="Anterior">
+
+                            ←
+
+                        </button>
+
+                        <div class="home-hero-progress">
 
                             <div
+                                class="home-hero-progress-fill"
                                 id="heroProgress">
                             </div>
 
                         </div>
 
-                        <div class="home-hero-counter">
+                        <button
+                            type="button"
+                            class="home-hero-arrow"
+                            id="heroNext"
+                            aria-label="Seguinte">
 
-                            <strong id="heroCurrent">
+                            →
+
+                        </button>
+
+                        <div class="home-hero-count">
+
+                            <strong id="heroCount">
                                 01
                             </strong>
 
@@ -270,9 +431,7 @@ function hero(){
                             </span>
 
                             <span>
-                                ${String(
-                                    heroSlides.length
-                                ).padStart(2,"0")}
+                                06
                             </span>
 
                         </div>
@@ -281,28 +440,35 @@ function hero(){
 
                 </div>
 
-                <div class="home-hero-right">
+                <div class="home-hero-scene">
 
-                    <div class="home-product-stage">
+                    <div
+                        class="home-hero-halo"
+                        id="heroHalo">
+                    </div>
 
-                        <div class="home-product-glow"></div>
+                    <div class="home-hero-orbit orbit-a"></div>
+                    <div class="home-hero-orbit orbit-b"></div>
 
-                        <div class="home-product-ring"></div>
+                    <div class="home-hero-product-core">
 
-                        ${heroSlides.map(
-                            (slide,index)=>`
+                        ${HOME_PRODUCTS.map(
+                            (product,index)=>`
 
                                 <div
-                                    class="home-hero-product ${
-                                        index === 0
-                                            ? "is-active"
-                                            : ""
-                                    }"
+                                    class="
+                                        home-hero-product
+                                        ${
+                                            index === 0
+                                                ? "is-active"
+                                                : ""
+                                        }
+                                    "
                                     data-hero-product="${index}">
 
                                     <img
-                                        src="${slide.image}"
-                                        alt="${slide.category}"
+                                        src="${product.image}"
+                                        alt="${product.title}"
                                         loading="${
                                             index === 0
                                                 ? "eager"
@@ -314,42 +480,70 @@ function hero(){
                             `
                         ).join("")}
 
-                        <div class="home-hero-brand-orbit">
+                    </div>
 
-                            <img
-                                src="./assets/images/bzzworld.png"
-                                alt="BZZWorld">
+                    <div
+                        class="
+                            home-hero-constellation
+                            constellation-one
+                        "
+                        data-parallax="1">
 
-                            <img
-                                src="./assets/images/a21.png"
-                                alt="Academy Twenty One">
-
-                        </div>
+                        <span>
+                            WELLNESS
+                        </span>
 
                     </div>
 
-                    <div class="home-hero-thumbs">
+                    <div
+                        class="
+                            home-hero-constellation
+                            constellation-two
+                        "
+                        data-parallax="2">
 
-                        ${heroSlides.map(
-                            (slide,index)=>`
+                        <span>
+                            SMART
+                        </span>
 
-                                <button
-                                    type="button"
-                                    class="${
-                                        index === 0
-                                            ? "is-active"
-                                            : ""
-                                    }"
-                                    data-hero-thumb="${index}">
+                    </div>
 
-                                    <img
-                                        src="${slide.image}"
-                                        alt="${slide.category}">
+                    <div
+                        class="
+                            home-hero-constellation
+                            constellation-three
+                        "
+                        data-parallax="3">
 
-                                </button>
+                        <span>
+                            EVOLVE
+                        </span>
 
-                            `
-                        ).join("")}
+                    </div>
+
+                    <div class="home-hero-orbit-brand">
+
+                        <img
+                            src="./assets/images/bzzworld.png"
+                            alt="BZZWorld">
+
+                        <span></span>
+
+                        <img
+                            src="./assets/images/a21.png"
+                            alt="Academy Twenty One">
+
+                    </div>
+
+                    <div class="home-hero-product-caption">
+
+                        <span id="heroProductCategory">
+                            WELLNESS
+                        </span>
+
+                        <strong id="heroProductTitle">
+                            Angel Moon
+                        </strong>
 
                     </div>
 
@@ -357,16 +551,70 @@ function hero(){
 
             </div>
 
-            <div class="home-hero-bottom">
+            <div class="home-hero-footer">
 
                 <span>
                     SCROLL TO DISCOVER
                 </span>
 
-                <span class="home-hero-bottom-line"></span>
+                <div></div>
 
                 <span>
-                    01 — AD LIFESTYLE
+                    AD / 01
+                </span>
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+
+/* ==========================================================
+   SIGNAL STRIP
+   ========================================================== */
+
+function signalStrip(){
+
+    return `
+
+        <section class="home-signal">
+
+            <div class="home-signal-track">
+
+                <span>
+                    WELLNESS
+                </span>
+
+                <i>✦</i>
+
+                <span>
+                    LIFESTYLE
+                </span>
+
+                <i>✦</i>
+
+                <span>
+                    EVOLUTION
+                </span>
+
+                <i>✦</i>
+
+                <span>
+                    SMART LIVING
+                </span>
+
+                <i>✦</i>
+
+                <span>
+                    WELLNESS
+                </span>
+
+                <i>✦</i>
+
+                <span>
+                    LIFESTYLE
                 </span>
 
             </div>
@@ -389,33 +637,50 @@ function manifesto(){
 
             <div class="home-container">
 
-                <div class="home-manifesto-inner reveal">
+                <div class="home-manifesto-top reveal">
 
                     <span class="home-overline">
-                        A NOSSA VISÃO
+                        MANIFESTO
                     </span>
 
+                    <span>
+                        01 / 04
+                    </span>
+
+                </div>
+
+                <div class="home-manifesto-text reveal">
+
+                    <p>
+                        Acreditamos que
+                    </p>
+
                     <h2>
-                        Não queremos apenas
-                        estar no mercado.
+                        viver melhor
                         <span>
-                            Queremos criar uma nova forma
-                            de viver a experiência de Lifestyle.
+                            começa por descobrir melhor.
                         </span>
                     </h2>
 
-                    <div class="home-manifesto-footer">
+                </div>
 
-                        <p>
-                            Bem-estar. Conhecimento.
-                            Relações. Experiência.
-                        </p>
+                <div class="home-manifesto-bottom reveal">
 
-                        <span>
-                            AD LIFESTYLE
-                        </span>
+                    <span>
+                        Produto
+                    </span>
 
-                    </div>
+                    <span>
+                        Experiência
+                    </span>
+
+                    <span>
+                        Conhecimento
+                    </span>
+
+                    <span>
+                        Possibilidade
+                    </span>
 
                 </div>
 
@@ -428,7 +693,7 @@ function manifesto(){
 }
 
 /* ==========================================================
-   ECOSSISTEMA
+   ECOSYSTEM
    ========================================================== */
 
 function ecosystem(){
@@ -439,60 +704,58 @@ function ecosystem(){
 
             <div class="home-container">
 
-                <div class="home-ecosystem-header reveal">
+                <div class="home-ecosystem-intro reveal">
 
-                    <div>
+                    <span class="home-overline">
+                        ECOSSISTEMA
+                    </span>
 
-                        <span class="home-overline">
-                            O ECOSSISTEMA
+                    <h2>
+                        Duas dimensões.
+                        <span>
+                            Uma direcção.
                         </span>
-
-                        <h2>
-                            Duas forças.
-                            <span>
-                                Uma visão.
-                            </span>
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Produtos, bem-estar e uma cultura
-                        de aprendizagem contínua.
-                    </p>
+                    </h2>
 
                 </div>
 
-                <div class="home-ecosystem-grid">
+                <div class="home-worlds">
 
-                    <article class="home-ecosystem-card home-ecosystem-bzz reveal">
+                    <article
+                        class="
+                            home-world
+                            home-world-products
+                            reveal
+                        "
+                        data-world="bzz">
 
-                        <div class="home-ecosystem-card-top">
+                        <div class="home-world-image">
 
-                            <span>
-                                WELLNESS
-                            </span>
+                            <div class="home-world-glow"></div>
 
-                            <span>
-                                01
-                            </span>
+                            <img
+                                src="./assets/images/bzzworld.png"
+                                alt="BZZWorld">
 
                         </div>
 
-                        <img
-                            src="./assets/images/bzzworld.png"
-                            alt="BZZWorld">
+                        <div class="home-world-content">
 
-                        <div>
+                            <div class="home-world-index">
+                                01
+                            </div>
+
+                            <span>
+                                WELLNESS · PRODUCTS
+                            </span>
 
                             <h3>
                                 BZZWorld
                             </h3>
 
                             <p>
-                                O universo de produtos,
-                                bem-estar e Lifestyle que
-                                alimenta a experiência AD Lifestyle.
+                                O universo onde produtos,
+                                bem-estar e Lifestyle se encontram.
                             </p>
 
                             <a
@@ -500,7 +763,7 @@ function ecosystem(){
                                 target="_blank"
                                 rel="noopener noreferrer">
 
-                                Conhecer BZZWorld
+                                Explorar BZZWorld
                                 <span>↗</span>
 
                             </a>
@@ -509,25 +772,35 @@ function ecosystem(){
 
                     </article>
 
-                    <article class="home-ecosystem-card home-ecosystem-a21 reveal">
+                    <article
+                        class="
+                            home-world
+                            home-world-academy
+                            reveal
+                        "
+                        data-world="academy">
 
-                        <div class="home-ecosystem-card-top">
+                        <div class="home-world-image">
 
-                            <span>
-                                DEVELOPMENT
-                            </span>
+                            <div class="home-world-number">
+                                21
+                            </div>
 
-                            <span>
-                                02
-                            </span>
+                            <img
+                                src="./assets/images/a21.png"
+                                alt="Academy Twenty One">
 
                         </div>
 
-                        <img
-                            src="./assets/images/a21.png"
-                            alt="Academy Twenty One">
+                        <div class="home-world-content">
 
-                        <div>
+                            <div class="home-world-index">
+                                02
+                            </div>
+
+                            <span>
+                                LEARNING · EVOLUTION
+                            </span>
 
                             <h3>
                                 Academy Twenty One
@@ -544,7 +817,7 @@ function ecosystem(){
                                 target="_blank"
                                 rel="noopener noreferrer">
 
-                                Conhecer Academy 21
+                                Explorar Academy 21
                                 <span>↗</span>
 
                             </a>
@@ -567,28 +840,35 @@ function ecosystem(){
    PRODUCTS
    ========================================================== */
 
-function featuredProducts(){
+function products(){
+
+    const featured = [
+        HOME_PRODUCTS[0],
+        HOME_PRODUCTS[1],
+        HOME_PRODUCTS[2],
+        HOME_PRODUCTS[8]
+    ];
 
     return `
 
         <section
             class="home-products"
-            id="products">
+            id="homeProducts">
 
             <div class="home-container">
 
-                <div class="home-products-header reveal">
+                <div class="home-products-head reveal">
 
                     <div>
 
                         <span class="home-overline">
-                            PRODUTOS
+                            SELECTED OBJECTS
                         </span>
 
                         <h2>
-                            Escolhas que
+                            Alguns universos.
                             <span>
-                                despertam curiosidade.
+                                Uma só experiência.
                             </span>
                         </h2>
 
@@ -596,241 +876,158 @@ function featuredProducts(){
 
                     <button
                         type="button"
-                        class="home-text-button"
-                        id="viewProducts">
+                        class="home-minimal-button"
+                        id="openProducts">
 
-                        Ver catálogo completo
+                        Ver todos
                         <span>→</span>
 
                     </button>
 
                 </div>
 
-                <div class="home-product-grid">
+                <div class="home-products-rail">
 
-                    ${featuredProduct(
-                        "angel",
-                        "CUIDADO FEMININO",
-                        "Angel Moon",
-                        "./assets/products/angel.png",
-                        "Conforto e cuidado."
-                    )}
+                    ${featured.map(
+                        (product,index)=>`
 
-                    ${featuredProduct(
-                        "ezeno",
-                        "SAÚDE ORAL",
-                        "EZENO",
-                        "./assets/products/ezeno.png",
-                        "Cuidado diário."
-                    )}
+                            <article
+                                class="
+                                    home-product-item
+                                    reveal
+                                "
+                                data-product="${product.id}">
 
-                    ${featuredProduct(
-                        "zenbru",
-                        "CAFÉ & LIFESTYLE",
-                        "Zenbru",
-                        "./assets/products/zenbru.png",
-                        "Sabor com personalidade."
-                    )}
+                                <div class="home-product-number">
+                                    0${index + 1}
+                                </div>
 
-                    ${featuredProduct(
-                        "ismarts3",
-                        "SMART LIVING",
-                        "iSMART S3",
-                        "./assets/products/ismarts3.png",
-                        "Tecnologia no quotidiano."
-                    )}
+                                <div class="home-product-item-image">
 
-                </div>
-
-            </div>
-
-        </section>
-
-    `;
-
-}
-
-function featuredProduct(
-    route,
-    category,
-    title,
-    image,
-    caption
-){
-
-    return `
-
-        <article
-            class="home-product-tile reveal"
-            data-product="${route}">
-
-            <div class="home-product-tile-image">
-
-                <div class="home-product-tile-glow"></div>
-
-                <img
-                    src="${image}"
-                    alt="${title}"
-                    loading="lazy">
-
-                <span>
-                    ↗
-                </span>
-
-            </div>
-
-            <div class="home-product-tile-info">
-
-                <div>
-
-                    <small>
-                        ${category}
-                    </small>
-
-                    <h3>
-                        ${title}
-                    </h3>
-
-                    <p>
-                        ${caption}
-                    </p>
-
-                </div>
-
-                <strong>
-                    Descobrir
-                </strong>
-
-            </div>
-
-        </article>
-
-    `;
-
-}
-
-/* ==========================================================
-   MEDIA
-   ========================================================== */
-
-function mediaSection(){
-
-    return `
-
-        <section class="home-media">
-
-            <div class="home-container">
-
-                <div class="home-media-header reveal">
-
-                    <span class="home-overline">
-                        REGISTOS
-                    </span>
-
-                    <h2>
-                        Algumas histórias
-                        <span>
-                            já começaram.
-                        </span>
-                    </h2>
-
-                    <p>
-                        Um espaço para reunir fotografias,
-                        vídeos, eventos e momentos reais
-                        da evolução da AD Lifestyle.
-                    </p>
-
-                </div>
-
-                <div class="home-media-layout">
-
-                    <div class="home-media-main reveal">
-
-                        ${mediaSlides.map(
-                            (slide,index)=>`
-
-                                <div
-                                    class="home-media-slide ${
-                                        index === 0
-                                            ? "is-active"
-                                            : ""
-                                    }"
-                                    data-media-slide="${index}">
+                                    <div
+                                        class="home-product-item-glow"
+                                        style="
+                                            --product-tone:
+                                            ${product.tone};
+                                        ">
+                                    </div>
 
                                     <img
-                                        src="${slide.image}"
-                                        alt="${slide.title}"
+                                        src="${product.image}"
+                                        alt="${product.title}"
                                         loading="lazy">
-
-                                    <div class="home-media-caption">
-
-                                        <span>
-                                            ${slide.label}
-                                        </span>
-
-                                        <strong>
-                                            ${slide.title}
-                                        </strong>
-
-                                    </div>
 
                                 </div>
 
-                            `
-                        ).join("")}
+                                <div class="home-product-item-meta">
+
+                                    <div>
+
+                                        <span>
+                                            ${product.micro}
+                                        </span>
+
+                                        <h3>
+                                            ${product.title}
+                                        </h3>
+
+                                        <p>
+                                            ${product.line}
+                                        </p>
+
+                                    </div>
+
+                                    <strong>
+                                        ↗
+                                    </strong>
+
+                                </div>
+
+                            </article>
+
+                        `
+                    ).join("")}
+
+                </div>
+
+            </div>
+
+        </section>
+
+    `;
+
+}
+
+/* ==========================================================
+   EXPERIENCE / EVENT
+   ========================================================== */
+
+function experience(){
+
+    return `
+
+        <section class="home-experience">
+
+            <div class="home-container">
+
+                <div class="home-experience-grid reveal">
+
+                    <div class="home-experience-side">
+
+                        <span class="home-overline">
+                            NEXT EXPERIENCE
+                        </span>
+
+                        <div class="home-experience-number">
+                            20
+                        </div>
+
+                        <span class="home-experience-month">
+                            SETEMBRO · 2026
+                        </span>
 
                     </div>
 
-                    <div class="home-media-side reveal">
+                    <div class="home-experience-main">
 
-                        <div class="home-media-side-top">
+                        <span>
+                            DOMINGO · 15H00
+                        </span>
 
-                            <strong>
-                                REGISTO
-                            </strong>
+                        <h2>
+                            Grande Apresentação
+                            de <em>Dupla Oportunidade.</em>
+                        </h2>
 
-                            <span id="mediaCurrent">
-                                01
-                            </span>
+                        <p>
+                            Saúde, bem-estar, longevidade,
+                            aprendizagem e negócios internacionais
+                            num único encontro.
+                        </p>
 
-                        </div>
+                        <div class="home-experience-footer">
 
-                        <div class="home-media-thumbs">
+                            <div>
 
-                            ${mediaSlides.map(
-                                (slide,index)=>`
+                                <strong>
+                                    FLY HOTEL
+                                </strong>
 
-                                    <button
-                                        type="button"
-                                        class="${
-                                            index === 0
-                                                ? "is-active"
-                                                : ""
-                                        }"
-                                        data-media-thumb="${index}">
+                                <span>
+                                    Luanda · Antigo Aeroporto Doméstico
+                                </span>
 
-                                        <img
-                                            src="${slide.image}"
-                                            alt="${slide.label}">
+                            </div>
 
-                                    </button>
+                            <button
+                                type="button"
+                                class="home-minimal-button"
+                                id="openEvents">
 
-                                `
-                            ).join("")}
+                                Ver evento
+                                <span>→</span>
 
-                        </div>
-
-                        <div class="home-media-note">
-
-                            <span>
-                                EM BREVE
-                            </span>
-
-                            <p>
-                                Vídeos, entrevistas,
-                                apresentações e momentos
-                                exclusivos da nossa jornada.
-                            </p>
+                            </button>
 
                         </div>
 
@@ -847,110 +1044,162 @@ function mediaSection(){
 }
 
 /* ==========================================================
-   TESTIMONIALS
+   MEMORIES
    ========================================================== */
 
-function testimonials(){
+function memories(){
 
     return `
 
-        <section class="home-testimonials">
+        <section class="home-memories">
 
             <div class="home-container">
 
-                <div class="home-testimonial-heading reveal">
+                <div class="home-memories-head reveal">
 
-                    <span class="home-overline">
-                        COMUNIDADE
-                    </span>
+                    <div>
 
-                    <h2>
-                        Uma marca cresce.
-                        <span>
-                            Uma comunidade confirma.
+                        <span class="home-overline">
+                            MEMORY REEL
                         </span>
-                    </h2>
+
+                        <h2>
+                            A marca também
+                            <span>
+                                acontece.
+                            </span>
+                        </h2>
+
+                    </div>
+
+                    <div class="home-memory-counter">
+
+                        <strong id="memoryCounter">
+                            01
+                        </strong>
+
+                        <span>
+                            /
+                        </span>
+
+                        <span>
+                            04
+                        </span>
+
+                    </div>
 
                 </div>
 
-                <div class="home-testimonial-track">
+                <div class="home-memory-stage reveal">
 
-                    <article class="home-testimonial reveal">
+                    ${MEMORY_ITEMS.map(
+                        (item,index)=>`
 
-                        <div class="home-testimonial-mark">
-                            “
-                        </div>
+                            <article
+                                class="
+                                    home-memory-slide
+                                    ${
+                                        index === 0
+                                            ? "is-active"
+                                            : ""
+                                    }
+                                "
+                                data-memory-slide="${index}">
 
-                        <p>
-                            Gosto da forma como a AD Lifestyle
-                            junta produtos, aprendizagem e uma
-                            visão diferente de futuro.
-                        </p>
+                                <img
+                                    src="${item.image}"
+                                    alt="${item.title}"
+                                    loading="lazy">
 
-                        <div>
+                                <div
+                                    class="home-memory-caption">
 
-                            <strong>
-                                Maria
-                            </strong>
+                                    <span>
+                                        ${item.label}
+                                    </span>
 
-                            <span>
-                                Comunidade AD Lifestyle
-                            </span>
+                                    <strong>
+                                        ${item.title}
+                                    </strong>
 
-                        </div>
+                                </div>
 
-                    </article>
+                            </article>
 
-                    <article class="home-testimonial reveal">
+                        `
+                    ).join("")}
 
-                        <div class="home-testimonial-mark">
-                            “
-                        </div>
+                    <div class="home-memory-controls">
 
-                        <p>
-                            Descobri que por trás dos produtos
-                            existe uma ideia muito maior sobre
-                            desenvolvimento e evolução.
-                        </p>
+                        <button
+                            type="button"
+                            id="memoryPrev"
+                            aria-label="Anterior">
 
-                        <div>
+                            ←
 
-                            <strong>
-                                Ana
-                            </strong>
+                        </button>
 
-                            <span>
-                                Comunidade AD Lifestyle
-                            </span>
+                        <button
+                            type="button"
+                            id="memoryNext"
+                            aria-label="Seguinte">
 
-                        </div>
+                            →
 
-                    </article>
+                        </button>
 
-                    <article class="home-testimonial reveal">
+                    </div>
 
-                        <div class="home-testimonial-mark">
-                            “
-                        </div>
+                </div>
 
-                        <p>
-                            É uma proposta que transmite vontade
-                            de crescer e construir algo com identidade.
-                        </p>
+            </div>
 
-                        <div>
+        </section>
 
-                            <strong>
-                                João
-                            </strong>
+    `;
 
-                            <span>
-                                Comunidade AD Lifestyle
-                            </span>
+}
 
-                        </div>
+/* ==========================================================
+   TESTIMONIAL
+   ========================================================== */
 
-                    </article>
+function testimonial(){
+
+    return `
+
+        <section class="home-testimonial">
+
+            <div class="home-container">
+
+                <div class="home-testimonial-mark reveal">
+                    “
+                </div>
+
+                <div class="home-testimonial-content reveal">
+
+                    <span class="home-overline">
+                        COMMUNITY VOICE
+                    </span>
+
+                    <blockquote>
+                        Descobri que por trás dos produtos
+                        existe uma visão muito maior sobre
+                        <em>desenvolvimento e evolução.</em>
+                    </blockquote>
+
+                    <div class="home-testimonial-author">
+
+                        <span>
+                            MARIA
+                        </span>
+
+                        <small>
+                            Comunidade AD Lifestyle
+                        </small>
+
+                    </div>
 
                 </div>
 
@@ -972,38 +1221,40 @@ function finalCTA(){
 
         <section class="home-final">
 
-            <div class="home-final-background"></div>
+            <div class="home-final-glow"></div>
 
             <div class="home-container">
 
-                <div class="home-final-inner reveal">
-
-                    <div class="home-final-symbol">
-                        AD
-                    </div>
+                <div class="home-final-content reveal">
 
                     <span class="home-overline">
                         AD LIFESTYLE
                     </span>
 
-                    <h2>
-                        A próxima descoberta
-                        <span>
-                            pode começar aqui.
-                        </span>
-                    </h2>
+                    <div class="home-final-title-wrap">
 
-                    <p>
-                        Explore o universo AD Lifestyle.
-                        Descubra produtos, experiências,
-                        conhecimento e novas possibilidades.
-                    </p>
+                        <span class="home-final-ghost">
+                            AD
+                        </span>
+
+                        <h2>
+                            A próxima descoberta
+                            <span>
+                                começa onde a curiosidade encontra
+                                uma nova possibilidade.
+                            </span>
+                        </h2>
+
+                    </div>
 
                     <div class="home-final-actions">
 
                         <button
                             type="button"
-                            class="home-button home-button-gold"
+                            class="
+                                home-action
+                                home-action-primary
+                            "
                             id="finalProducts">
 
                             Explorar produtos
@@ -1013,15 +1264,42 @@ function finalCTA(){
 
                         <button
                             type="button"
-                            class="home-button home-button-dark"
+                            class="
+                                home-action
+                                home-action-dark
+                            "
                             id="finalContact">
 
                             Falar connosco
-                            <span>→</span>
+                            <span>↗</span>
 
                         </button>
 
                     </div>
+
+                </div>
+
+                <div class="home-final-bottom">
+
+                    <span>
+                        LUANDA · ANGOLA
+                    </span>
+
+                    <span>
+                        WELLNESS
+                    </span>
+
+                    <span>
+                        LIFESTYLE
+                    </span>
+
+                    <span>
+                        EVOLUTION
+                    </span>
+
+                    <span>
+                        © AD LIFESTYLE
+                    </span>
 
                 </div>
 
@@ -1047,20 +1325,24 @@ function initialiseHome(){
     }
 
     root
-        .querySelectorAll(".home-button")
+        .querySelectorAll(".home-action")
         .forEach(button=>{
             ripple(button);
         });
 
     initialiseHero(root);
-    initialiseProducts(root);
     initialiseNavigation(root);
-    initialiseMedia(root);
+    initialiseProducts(root);
+    initialiseMemories(root);
+    initialiseReveal(root);
+    initialisePointer(root);
+    initialiseWorldHover(root);
+    initialiseKeyboard(root);
 
 }
 
 /* ==========================================================
-   HERO SLIDER
+   HERO
    ========================================================== */
 
 function initialiseHero(root){
@@ -1075,16 +1357,30 @@ function initialiseHero(root){
             "[data-hero-product]"
         )];
 
-    const thumbs =
-        [...root.querySelectorAll(
-            "[data-hero-thumb]"
-        )];
-
     const current =
-        root.querySelector("#heroCurrent");
+        root.querySelector(
+            "#heroCount"
+        );
 
     const progress =
-        root.querySelector("#heroProgress");
+        root.querySelector(
+            "#heroProgress"
+        );
+
+    const productTitle =
+        root.querySelector(
+            "#heroProductTitle"
+        );
+
+    const productCategory =
+        root.querySelector(
+            "#heroProductCategory"
+        );
+
+    const halo =
+        root.querySelector(
+            "#heroHalo"
+        );
 
     if(!slides.length){
         return;
@@ -1097,36 +1393,63 @@ function initialiseHero(root){
         heroIndex = index;
 
         slides.forEach(
-            (item,i)=>{
-                item.classList.toggle(
+            (slide,i)=>{
+                slide.classList.toggle(
                     "is-active",
                     i === index
                 );
             }
         );
+
+        const productIndex =
+            HERO_SLIDES[index].product;
 
         products.forEach(
-            (item,i)=>{
-                item.classList.toggle(
+            (product,i)=>{
+                product.classList.toggle(
                     "is-active",
-                    i === index
+                    i === productIndex
                 );
             }
         );
 
-        thumbs.forEach(
-            (item,i)=>{
-                item.classList.toggle(
-                    "is-active",
-                    i === index
-                );
-            }
-        );
+        const activeProduct =
+            HOME_PRODUCTS[productIndex];
+
+        if(
+            productTitle &&
+            activeProduct
+        ){
+
+            productTitle.textContent =
+                activeProduct.title;
+
+        }
+
+        if(
+            productCategory &&
+            activeProduct
+        ){
+
+            productCategory.textContent =
+                activeProduct.category;
+
+        }
+
+        if(halo){
+
+            halo.style.setProperty(
+                "--hero-tone",
+                activeProduct?.tone || "#c8a052"
+            );
+
+        }
 
         if(current){
 
             current.textContent =
-                String(index + 1).padStart(2,"0");
+                String(index + 1)
+                    .padStart(2,"0");
 
         }
 
@@ -1144,139 +1467,100 @@ function initialiseHero(root){
 
     }
 
-    thumbs.forEach(
-        thumb=>{
+    function next(){
 
-            thumb.addEventListener(
-                "click",
-                ()=>{
-
-                    render(
-                        Number(
-                            thumb.dataset.heroThumb
-                        )
-                    );
-
-                    restart();
-
-                }
-            );
-
-        }
-    );
-
-    const stage =
-        root.querySelector(
-            ".home-product-stage"
+        render(
+            (heroIndex + 1) %
+            HERO_SLIDES.length
         );
 
-    if(stage){
-
-        let startX = 0;
-
-        stage.addEventListener(
-            "pointerdown",
-            event=>{
-                startX =
-                    event.clientX;
-            }
-        );
-
-        stage.addEventListener(
-            "pointerup",
-            event=>{
-
-                const distance =
-                    event.clientX - startX;
-
-                if(
-                    Math.abs(distance) < 45
-                ){
-                    return;
-                }
-
-                if(distance < 0){
-
-                    render(
-                        (
-                            heroIndex + 1
-                        ) %
-                        heroSlides.length
-                    );
-
-                }else{
-
-                    render(
-                        (
-                            heroIndex -
-                            1 +
-                            heroSlides.length
-                        ) %
-                        heroSlides.length
-                    );
-
-                }
-
-                restart();
-
-            }
-        );
+        restart();
 
     }
 
+    function previous(){
+
+        render(
+            (
+                heroIndex -
+                1 +
+                HERO_SLIDES.length
+            ) %
+            HERO_SLIDES.length
+        );
+
+        restart();
+
+    }
+
+    root
+        .querySelector("#heroNext")
+        ?.addEventListener(
+            "click",
+            next
+        );
+
+    root
+        .querySelector("#heroPrev")
+        ?.addEventListener(
+            "click",
+            previous
+        );
+
     function restart(){
 
-        clearInterval(heroTimer);
+        window.clearInterval(
+            heroInterval
+        );
 
-        heroTimer =
+        heroInterval =
             window.setInterval(
-                ()=>{
-                    render(
-                        (
-                            heroIndex + 1
-                        ) %
-                        heroSlides.length
-                    );
-                },
+                next,
                 6000
             );
 
     }
 
+    const scene =
+        root.querySelector(
+            ".home-hero-scene"
+        );
+
+    if(scene){
+
+        let startX = 0;
+
+        scene.addEventListener(
+            "pointerdown",
+            event=>{
+                startX = event.clientX;
+            }
+        );
+
+        scene.addEventListener(
+            "pointerup",
+            event=>{
+
+                const difference =
+                    event.clientX - startX;
+
+                if(
+                    Math.abs(difference) < 45
+                ){
+                    return;
+                }
+
+                difference < 0
+                    ? next()
+                    : previous();
+
+            }
+        );
+
+    }
+
     render(0);
     restart();
-
-}
-
-/* ==========================================================
-   PRODUCTS
-   ========================================================== */
-
-function initialiseProducts(root){
-
-    root
-        .querySelectorAll("[data-product]")
-        .forEach(card=>{
-
-            card.addEventListener(
-                "click",
-                ()=>{
-
-                    const product =
-                        card.dataset.product;
-
-                    if(!product){
-                        return;
-                    }
-
-                    navigate(
-                        "/" + product
-                    );
-
-                }
-            );
-
-        });
 
 }
 
@@ -1287,7 +1571,7 @@ function initialiseProducts(root){
 function initialiseNavigation(root){
 
     root
-        .querySelector("#heroProducts")
+        .querySelector("#heroExplore")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1296,7 +1580,7 @@ function initialiseNavigation(root){
         );
 
     root
-        .querySelector("#heroAbout")
+        .querySelector("#heroStory")
         ?.addEventListener(
             "click",
             ()=>{
@@ -1305,11 +1589,20 @@ function initialiseNavigation(root){
         );
 
     root
-        .querySelector("#viewProducts")
+        .querySelector("#openProducts")
         ?.addEventListener(
             "click",
             ()=>{
                 navigate("/products");
+            }
+        );
+
+    root
+        .querySelector("#openEvents")
+        ?.addEventListener(
+            "click",
+            ()=>{
+                navigate("/events");
             }
         );
 
@@ -1334,35 +1627,64 @@ function initialiseNavigation(root){
 }
 
 /* ==========================================================
-   MEDIA
+   PRODUCTS
    ========================================================== */
 
-function initialiseMedia(root){
+function initialiseProducts(root){
+
+    root
+        .querySelectorAll("[data-product]")
+        .forEach(
+            card=>{
+
+                card.addEventListener(
+                    "click",
+                    ()=>{
+
+                        const product =
+                            card.dataset.product;
+
+                        if(!product){
+                            return;
+                        }
+
+                        navigate(
+                            "/" + product
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+}
+
+/* ==========================================================
+   MEMORY
+   ========================================================== */
+
+function initialiseMemories(root){
 
     const slides =
         [...root.querySelectorAll(
-            "[data-media-slide]"
+            "[data-memory-slide]"
         )];
 
-    const thumbs =
-        [...root.querySelectorAll(
-            "[data-media-thumb]"
-        )];
-
-    const current =
+    const counter =
         root.querySelector(
-            "#mediaCurrent"
+            "#memoryCounter"
         );
 
     if(!slides.length){
         return;
     }
 
-    mediaIndex = 0;
+    memoryIndex = 0;
 
     function render(index){
 
-        mediaIndex = index;
+        memoryIndex = index;
 
         slides.forEach(
             (slide,i)=>{
@@ -1373,18 +1695,9 @@ function initialiseMedia(root){
             }
         );
 
-        thumbs.forEach(
-            (thumb,i)=>{
-                thumb.classList.toggle(
-                    "is-active",
-                    i === index
-                );
-            }
-        );
+        if(counter){
 
-        if(current){
-
-            current.textContent =
+            counter.textContent =
                 String(index + 1)
                     .padStart(2,"0");
 
@@ -1392,41 +1705,55 @@ function initialiseMedia(root){
 
     }
 
-    thumbs.forEach(
-        thumb=>{
+    function next(){
 
-            thumb.addEventListener(
-                "click",
-                ()=>{
+        render(
+            (memoryIndex + 1) %
+            slides.length
+        );
 
-                    render(
-                        Number(
-                            thumb.dataset.mediaThumb
-                        )
-                    );
+        restart();
 
-                    restart();
+    }
 
-                }
-            );
+    function previous(){
 
-        }
-    );
+        render(
+            (
+                memoryIndex -
+                1 +
+                slides.length
+            ) %
+            slides.length
+        );
+
+        restart();
+
+    }
+
+    root
+        .querySelector("#memoryNext")
+        ?.addEventListener(
+            "click",
+            next
+        );
+
+    root
+        .querySelector("#memoryPrev")
+        ?.addEventListener(
+            "click",
+            previous
+        );
 
     function restart(){
 
-        clearInterval(mediaTimer);
+        window.clearInterval(
+            memoryInterval
+        );
 
-        mediaTimer =
+        memoryInterval =
             window.setInterval(
-                ()=>{
-                    render(
-                        (
-                            mediaIndex + 1
-                        ) %
-                        mediaSlides.length
-                    );
-                },
+                next,
                 5000
             );
 
@@ -1438,22 +1765,357 @@ function initialiseMedia(root){
 }
 
 /* ==========================================================
-   CLEANUP
+   REVEAL
    ========================================================== */
 
-function clearTimers(){
+function initialiseReveal(root){
 
-    if(heroTimer){
+    const elements =
+        root.querySelectorAll(
+            ".reveal"
+        );
 
-        clearInterval(heroTimer);
-        heroTimer = null;
+    if(
+        !("IntersectionObserver" in window)
+    ){
+
+        elements.forEach(
+            element=>{
+                element.classList.add(
+                    "is-visible"
+                );
+            }
+        );
+
+        return;
+    }
+
+    const observer =
+        new IntersectionObserver(
+            entries=>{
+
+                entries.forEach(
+                    entry=>{
+
+                        if(
+                            entry.isIntersecting
+                        ){
+
+                            entry.target.classList.add(
+                                "is-visible"
+                            );
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+
+                    }
+                );
+
+            },
+            {
+                threshold:.12,
+                rootMargin:"0px 0px -8% 0px"
+            }
+        );
+
+    elements.forEach(
+        element=>{
+            observer.observe(element);
+        }
+    );
+
+}
+
+/* ==========================================================
+   POINTER / SPOTLIGHT / PARALLAX
+   ========================================================== */
+
+function initialisePointer(root){
+
+    const hero =
+        root.querySelector(
+            "[data-home-canvas]"
+        );
+
+    if(!hero){
+        return;
+    }
+
+    const light =
+        root.querySelector(
+            "#heroLight"
+        );
+
+    const halo =
+        root.querySelector(
+            "#heroHalo"
+        );
+
+    const objects =
+        [
+            ...root.querySelectorAll(
+                "[data-parallax]"
+            )
+        ];
+
+    function pointerMove(event){
+
+        const rect =
+            hero.getBoundingClientRect();
+
+        pointerX =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
+
+        pointerY =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
+
+        targetX =
+            pointerX /
+            rect.width;
+
+        targetY =
+            pointerY /
+            rect.height;
+
+        if(
+            light
+        ){
+
+            light.style.setProperty(
+                "--pointer-x",
+                `${event.clientX - rect.left}px`
+            );
+
+            light.style.setProperty(
+                "--pointer-y",
+                `${event.clientY - rect.top}px`
+            );
+
+        }
+
+        if(
+            !rafId
+        ){
+
+            rafId =
+                window.requestAnimationFrame(
+                    animatePointer
+                );
+
+        }
 
     }
 
-    if(mediaTimer){
+    function animatePointer(){
 
-        clearInterval(mediaTimer);
-        mediaTimer = null;
+        rafId = null;
+
+        objects.forEach(
+            object=>{
+
+                const depth =
+                    Number(
+                        object.dataset.parallax
+                    ) || 1;
+
+                object.style.transform =
+                    `
+                        translate3d(
+                            ${targetX * depth * 18}px,
+                            ${targetY * depth * 12}px,
+                            0
+                        )
+                    `;
+
+            }
+        );
+
+        if(halo){
+
+            halo.style.transform =
+                `
+                    translate(
+                        ${targetX * 8}px,
+                        ${targetY * 8}px
+                    )
+                `;
+
+        }
+
+    }
+
+    hero.addEventListener(
+        "pointermove",
+        pointerMove
+    );
+
+    hero.addEventListener(
+        "pointerleave",
+        ()=>{
+
+            objects.forEach(
+                object=>{
+                    object.style.transform =
+                        "translate3d(0,0,0)";
+                }
+            );
+
+        }
+    );
+
+}
+
+/* ==========================================================
+   WORLD HOVER
+   ========================================================== */
+
+function initialiseWorldHover(root){
+
+    root
+        .querySelectorAll(".home-world")
+        .forEach(world=>{
+
+            world.addEventListener(
+                "pointermove",
+                event=>{
+
+                    const rect =
+                        world.getBoundingClientRect();
+
+                    const x =
+                        (
+                            event.clientX -
+                            rect.left
+                        ) / rect.width;
+
+                    const y =
+                        (
+                            event.clientY -
+                            rect.top
+                        ) / rect.height;
+
+                    world.style.setProperty(
+                        "--world-x",
+                        `${(x - .5) * 10}deg`
+                    );
+
+                    world.style.setProperty(
+                        "--world-y",
+                        `${(y - .5) * -10}deg`
+                    );
+
+                }
+            );
+
+            world.addEventListener(
+                "pointerleave",
+                ()=>{
+                    world.style.setProperty(
+                        "--world-x",
+                        "0deg"
+                    );
+
+                    world.style.setProperty(
+                        "--world-y",
+                        "0deg"
+                    );
+                }
+            );
+
+        });
+
+}
+
+/* ==========================================================
+   KEYBOARD
+   ========================================================== */
+
+function initialiseKeyboard(root){
+
+    document.addEventListener(
+        "keydown",
+        event=>{
+
+            const active =
+                document.activeElement;
+
+            const isTyping =
+                active &&
+                (
+                    active.tagName === "INPUT" ||
+                    active.tagName === "TEXTAREA" ||
+                    active.isContentEditable
+                );
+
+            if(isTyping){
+                return;
+            }
+
+            if(
+                event.key === "ArrowRight"
+            ){
+
+                root
+                    .querySelector("#heroNext")
+                    ?.click();
+
+            }
+
+            if(
+                event.key === "ArrowLeft"
+            ){
+
+                root
+                    .querySelector("#heroPrev")
+                    ?.click();
+
+            }
+
+        }
+    );
+
+}
+
+/* ==========================================================
+   CLEANUP
+   ========================================================== */
+
+function destroyHome(){
+
+    if(heroInterval){
+
+        window.clearInterval(
+            heroInterval
+        );
+
+        heroInterval = null;
+
+    }
+
+    if(memoryInterval){
+
+        window.clearInterval(
+            memoryInterval
+        );
+
+        memoryInterval = null;
+
+    }
+
+    if(rafId){
+
+        window.cancelAnimationFrame(
+            rafId
+        );
+
+        rafId = null;
 
     }
 
