@@ -16252,639 +16252,1229 @@ body.dark .page-alpha .alpha-disclaimer-box p{
 
 /* ==========================================================
    AD LIFESTYLE V2
-   ALPHAMETA
-   PAGE-SCOPED COMPONENT SYSTEM
+   ALPHAMETA.CSS
+   Premium AlphaMeta Product Page
+   Zenbru / Straw Visual System
+   Light + Dark Mode
    ========================================================== */
-
-.page-alphameta{
-
-    --alphameta-orange:#F1940A;
-    --alphameta-orange-dark:#ED6407;
-
-    --alphameta-gold:#FCC20C;
-    --alphameta-gold-light:#F9D14A;
-
-    --alphameta-red:#DF2107;
-    --alphameta-red-dark:#A23404;
-
-    --alphameta-silver:#B9B0B2;
-    --alphameta-silver-light:#F0E9DF;
-
-    --alphameta-brown:#471D0A;
-
-    --alphameta-white:#FFFFFF;
-
-    --alphameta-text:#471D0A;
-    --alphameta-muted:#725442;
-
-    --alphameta-surface:#FFFFFF;
-    --alphameta-surface-soft:#FFF9F1;
-
-}
 
 
 /* ==========================================================
-   ROOT
+   01 — ROOT
    ========================================================== */
 
 .page-alphameta{
 
-    position:relative;
+    --meta-brown:#8A3F18;
+    --meta-brown-mid:#B85D25;
+    --meta-brown-deep:#682A0C;
 
-    isolation:isolate;
+    --meta-gold:#C9A14A;
+    --meta-gold-deep:#9D7426;
 
-    min-height:100vh;
+    --meta-bg:#FFFFFF;
+    --meta-bg-soft:#FBF8F3;
+    --meta-bg-alt:#F5F0E8;
+
+    --meta-card:#FFFFFF;
+    --meta-card-soft:#FAF7F2;
+
+    --meta-heading:#39271D;
+    --meta-text:#4F514F;
+    --meta-text-soft:#6C706F;
+
+    --meta-line:rgba(104,42,12,.11);
+    --meta-line-strong:rgba(104,42,12,.19);
+
+    --meta-shadow:
+        0 14px 40px rgba(68,39,20,.06);
+
+    --meta-shadow-lg:
+        0 28px 70px rgba(68,39,20,.12);
+
+    color:var(--meta-text);
+    background:var(--meta-bg);
 
     overflow:hidden;
-
-    background:
-        #FFFFFF !important;
-
-    color:
-        var(--alphameta-text) !important;
-
 }
 
 
 /* ==========================================================
-   TEXTO GLOBAL
+   02 — RESET / BASE
    ========================================================== */
+
+.page-alphameta *,
+.page-alphameta *::before,
+.page-alphameta *::after{
+    box-sizing:border-box;
+}
+
+.page-alphameta section{
+    position:relative;
+}
+
+.page-alphameta img{
+    display:block;
+    max-width:100%;
+}
 
 .page-alphameta h1,
 .page-alphameta h2,
 .page-alphameta h3,
 .page-alphameta h4,
-.page-alphameta h5,
-.page-alphameta h6{
-
-    color:
-        var(--alphameta-brown) !important;
-
-}
-
-
 .page-alphameta p{
-
-    color:
-        var(--alphameta-text) !important;
-
+    margin-top:0;
 }
 
-
-.page-alphameta .text{
-
-    color:
-        var(--alphameta-muted) !important;
-
+.page-alphameta button{
+    font:inherit;
 }
 
-
-.page-alphameta .lead{
-
-    color:
-        var(--alphameta-muted) !important;
-
+.page-alphameta .container{
+    width:min(1180px,calc(100% - 40px));
+    margin-inline:auto;
 }
 
-
-.page-alphameta .label{
-
-    color:
-        var(--alphameta-orange-dark) !important;
-
-}
-
-
-.page-alphameta .section-title{
-
-    color:
-        var(--alphameta-brown) !important;
-
+.page-alphameta .container-sm{
+    width:min(940px,calc(100% - 40px));
+    margin-inline:auto;
 }
 
 
 /* ==========================================================
-   HERO
+   03 — TYPOGRAPHY
+   ========================================================== */
+
+.page-alphameta .section-title{
+    color:var(--meta-heading) !important;
+
+    font-size:
+        clamp(2rem,4vw,3.5rem);
+
+    line-height:1.06;
+
+    letter-spacing:-.045em;
+
+    font-weight:850;
+}
+
+.page-alphameta .section-title span{
+    color:var(--meta-gold) !important;
+}
+
+.page-alphameta .lead{
+    color:var(--meta-text-soft) !important;
+
+    font-size:.94rem;
+
+    line-height:1.8;
+}
+
+.page-alphameta .label{
+    color:var(--meta-brown-mid) !important;
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   04 — HERO
    ========================================================== */
 
 .page-alphameta .alphameta-hero{
 
+    min-height:720px;
+
+    padding:
+        105px 0
+        82px;
+
+    overflow:hidden;
+
     background:
-
         radial-gradient(
-            circle at 85% 15%,
-            rgba(252,194,12,.24),
-            transparent 30%
+            circle at 78% 25%,
+            rgba(201,161,74,.14),
+            transparent 26%
         ),
-
         radial-gradient(
-            circle at 10% 85%,
-            rgba(241,148,10,.24),
-            transparent 34%
+            circle at 14% 76%,
+            rgba(138,63,24,.07),
+            transparent 26%
         ),
-
         linear-gradient(
-            135deg,
-            #471D0A,
-            #A23404,
-            #ED6407
-        ) !important;
-
-}
-
-
-.page-alphameta .alphameta-hero h1,
-.page-alphameta .alphameta-hero h2,
-.page-alphameta .alphameta-hero h3{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alphameta .alphameta-hero .hero-sub{
-
-    color:
-        rgba(255,255,255,.84) !important;
-
-}
-
-
-.page-alphameta
-.alphameta-hero
-.hero-title
-span{
-
-    color:
-        #F9D14A !important;
-
-    background:none !important;
-
-    -webkit-background-clip:
-        initial !important;
-
-    background-clip:
-        initial !important;
-
-    -webkit-text-fill-color:
-        #F9D14A !important;
-
+            180deg,
+            #FFFFFF 0%,
+            #FBF9F5 100%
+        );
 }
 
 
 /* ==========================================================
-   HERO BADGE
+   05 — HERO ATMOSPHERE
    ========================================================== */
 
-.page-alphameta .alphameta-hero .badge{
+.page-alphameta .alphameta-hero-atmosphere{
+    position:absolute;
 
-    color:
-        #F9D14A !important;
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+}
+
+.page-alphameta .alphameta-orb{
+    position:absolute;
+
+    border-radius:50%;
+}
+
+.page-alphameta .alphameta-orb-1{
+    width:460px;
+    height:460px;
+
+    top:-220px;
+    right:-120px;
 
     background:
-        rgba(252,194,12,.13) !important;
+        radial-gradient(
+            circle,
+            rgba(138,63,24,.105),
+            transparent 70%
+        );
+}
+
+.page-alphameta .alphameta-orb-2{
+    width:380px;
+    height:380px;
+
+    bottom:-210px;
+    left:-150px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,161,74,.12),
+            transparent 70%
+        );
+}
+
+.page-alphameta .alphameta-orbit{
+    position:absolute;
+
+    border-radius:50%;
 
     border:
-        1px solid
-        rgba(249,209,74,.34) !important;
+        1px solid rgba(138,63,24,.075);
+}
 
+.page-alphameta .alphameta-orbit-1{
+    width:560px;
+    height:560px;
+
+    top:45px;
+    right:-205px;
+}
+
+.page-alphameta .alphameta-orbit-2{
+    width:720px;
+    height:720px;
+
+    top:-40px;
+    right:-290px;
+
+    border-color:
+        rgba(201,161,74,.08);
 }
 
 
 /* ==========================================================
-   HERO HIGHLIGHTS
+   06 — HERO GRID
    ========================================================== */
 
-.page-alphameta .alphameta-hero-highlights{
+.page-alphameta .alphameta-hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(390px,.90fr);
+
+    align-items:center;
+
+    gap:55px;
+}
+
+.page-alphameta .alphameta-hero-copy{
+    max-width:650px;
+}
+
+
+/* ==========================================================
+   07 — EYEBROW
+   ========================================================== */
+
+.page-alphameta .alphameta-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:20px;
+
+    padding:
+        8px
+        14px;
+
+    border:
+        1px solid rgba(138,63,24,.13);
+
+    border-radius:999px;
+
+    background:
+        rgba(138,63,24,.04);
+
+    color:var(--meta-brown-mid);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.page-alphameta .alphameta-eyebrow::before{
+
+    content:"";
+
+    width:7px;
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--meta-gold);
+
+    box-shadow:
+        0 0 0 4px rgba(201,161,74,.10);
+}
+
+
+/* ==========================================================
+   08 — HERO TITLE
+   ========================================================== */
+
+.page-alphameta .alphameta-hero h1{
+
+    margin-bottom:21px;
+
+    color:var(--meta-heading);
+
+    font-size:
+        clamp(
+            3.6rem,
+            7.6vw,
+            6.8rem
+        );
+
+    line-height:.91;
+
+    letter-spacing:-.065em;
+
+    font-weight:900;
+}
+
+.page-alphameta .alphameta-hero h1 span{
+    color:var(--meta-gold);
+}
+
+
+/* ==========================================================
+   09 — HERO DESCRIPTION
+   ========================================================== */
+
+.page-alphameta .alphameta-hero-description{
+
+    max-width:590px;
+
+    margin-bottom:27px;
+
+    color:var(--meta-text-soft);
+
+    font-size:.96rem;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   10 — HERO PILLS
+   ========================================================== */
+
+.page-alphameta .alphameta-hero-pills{
 
     display:flex;
 
     flex-wrap:wrap;
 
-    gap:10px 18px;
+    gap:8px;
 
-    margin-top:24px;
-
+    margin-bottom:28px;
 }
 
+.page-alphameta .alphameta-hero-pill{
 
-.page-alphameta
-.alphameta-hero-highlights span{
+    display:inline-flex;
 
-    color:
-        #FFFFFF !important;
+    align-items:center;
 
-    font-size:
-        14px;
+    min-height:34px;
 
-}
+    padding:
+        7px
+        13px;
 
+    border:
+        1px solid rgba(138,63,24,.10);
 
-/* ==========================================================
-   HERO DISCLAIMER
-   ========================================================== */
-
-.page-alphameta .alphameta-disclaimer{
-
-    max-width:650px;
-
-    margin-top:20px;
-
-    color:
-        rgba(255,255,255,.56) !important;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-
-}
-
-
-/* ==========================================================
-   HERO PRODUCT
-   ========================================================== */
-
-.page-alphameta .product-glow{
+    border-radius:999px;
 
     background:
+        rgba(255,255,255,.82);
 
-        radial-gradient(
-            circle,
-            rgba(252,194,12,.46),
-            rgba(241,148,10,.20) 42%,
-            transparent 72%
-        ) !important;
+    color:var(--meta-brown-deep);
 
+    font-size:.71rem;
+
+    font-weight:800;
+
+    box-shadow:
+        0 8px 24px rgba(68,39,20,.04);
 }
 
 
-.page-alphameta .hero-product img{
+/* ==========================================================
+   11 — HERO ACTIONS
+   ========================================================== */
+
+.page-alphameta .alphameta-hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:11px;
+
+    margin:0;
+}
+
+
+/* ==========================================================
+   12 — HERO PRODUCT
+   ========================================================== */
+
+.page-alphameta .alphameta-hero-product{
 
     position:relative;
 
-    z-index:3;
+    min-height:540px;
 
-    max-width:
-        min(100%,520px);
+    display:flex;
 
-    width:100%;
+    align-items:center;
 
-    object-fit:contain;
+    justify-content:center;
 
-    filter:
-        drop-shadow(
-            0 35px 55px
-            rgba(71,29,10,.30)
-        );
-
+    isolation:isolate;
 }
 
-
-/* ==========================================================
-   GOLD RING
-   ========================================================== */
-
-.page-alphameta .alphameta-gold-ring{
+.page-alphameta .alphameta-product-aura{
 
     position:absolute;
 
     width:390px;
-
     height:390px;
 
     border-radius:50%;
 
-    border:
-        1px solid
-        rgba(249,209,74,.55);
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,161,74,.18),
+            rgba(138,63,24,.05) 48%,
+            transparent 72%
+        );
 
-    box-shadow:
-
-        0 0 45px
-        rgba(252,194,12,.18),
-
-        inset 0 0 35px
-        rgba(252,194,12,.08);
-
-    z-index:2;
-
+    filter:blur(5px);
 }
 
+.page-alphameta .alphameta-product-ring{
 
-/* ==========================================================
-   BLOB
-   ========================================================== */
+    position:absolute;
 
-.page-alphameta .blob-1{
+    width:450px;
+    height:450px;
 
-    background:
-        #FCC20C !important;
-
-}
-
-
-.page-alphameta .blob-2{
-
-    background:
-        #DF2107 !important;
-
-}
-
-
-.page-alphameta .blob-3{
-
-    background:
-        #F9D14A !important;
-
-}
-
-
-/* ==========================================================
-   CARDS
-   ========================================================== */
-
-.page-alphameta .card,
-.page-alphameta .service-card,
-.page-alphameta .alphameta-ingredient-card,
-.page-alphameta .alphameta-detail-card,
-.page-alphameta .bento-card,
-.page-alphameta .faq-item{
-
-    background:
-        #FFFFFF !important;
-
-    color:
-        #471D0A !important;
+    border-radius:50%;
 
     border:
-        1px solid
-        rgba(241,148,10,.16) !important;
+        1px solid rgba(138,63,24,.12);
 
     box-shadow:
-        0 20px 60px
-        rgba(71,29,10,.08);
-
+        inset 0 0 70px rgba(201,161,74,.055);
 }
 
-
-/* ==========================================================
-   CARD TITLES
-   ========================================================== */
-
-.page-alphameta .card h3,
-.page-alphameta .service-card h3,
-.page-alphameta .alphameta-detail-card h3,
-.page-alphameta .bento-card h3{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-/* ==========================================================
-   CARD TEXT
-   ========================================================== */
-
-.page-alphameta .card p,
-.page-alphameta .service-card p,
-.page-alphameta .alphameta-detail-card p,
-.page-alphameta .bento-card p{
-
-    color:
-        #725442 !important;
-
-}
-
-
-/* ==========================================================
-   CARD ACCENT
-   ========================================================== */
-
-.page-alphameta
-.alphameta-ingredient-card::after{
+.page-alphameta .alphameta-product-ring::before{
 
     content:"";
 
     position:absolute;
 
-    left:0;
-    bottom:0;
+    inset:24px;
 
-    width:100%;
-    height:3px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            #F1940A,
-            #FCC20C,
-            #DF2107
-        ) !important;
-
-}
-
-
-/* ==========================================================
-   ICON
-   ========================================================== */
-
-.page-alphameta .service-icon{
-
-    background:
-        rgba(241,148,10,.09) !important;
-
-    color:
-        #ED6407 !important;
+    border-radius:50%;
 
     border:
-        1px solid
-        rgba(252,194,12,.28) !important;
-
+        1px solid rgba(201,161,74,.12);
 }
 
+.page-alphameta .alphameta-product-grid{
 
-/* ==========================================================
-   INFORMATION
-   ========================================================== */
+    position:relative;
 
-.page-alphameta .alphameta-information{
+    z-index:4;
 
-    background:
-        #FFFFFF !important;
-
-    border:
-        1px solid
-        rgba(241,148,10,.16) !important;
-
-    border-radius:
-        20px;
-
-    overflow:hidden;
-
-}
-
-
-.page-alphameta .alphameta-details-toggle{
-
-    width:100%;
+    width:430px;
+    height:430px;
 
     display:flex;
-
-    justify-content:space-between;
 
     align-items:center;
-
-    padding:20px 24px;
-
-    border:0;
-
-    background:
-        #FFFFFF !important;
-
-    color:
-        #471D0A !important;
-
-    font:inherit;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-}
-
-
-.page-alphameta
-.alphameta-details-toggle
-span:first-child{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-.page-alphameta .alphameta-details-icon{
-
-    width:32px;
-
-    height:32px;
-
-    display:flex;
-
     justify-content:center;
-
-    align-items:center;
 
     border-radius:50%;
 
     background:
-        #ED6407 !important;
+        linear-gradient(
+            transparent 49.7%,
+            rgba(138,63,24,.035) 50%,
+            transparent 50.3%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49.7%,
+            rgba(201,161,74,.055) 50%,
+            transparent 50.3%
+        );
 
-    color:
-        #FFFFFF !important;
+    background-size:
+        54px
+        54px;
 
+    opacity:.42;
+
+    transform:rotate(18deg);
 }
 
+.page-alphameta .alphameta-product-grid img{
 
-.page-alphameta
-.alphameta-information.active
-.alphameta-details-icon{
+    width:min(430px,88%);
+
+    max-height:550px;
+
+    object-fit:contain;
+
+    transform:rotate(-18deg);
+
+    filter:
+        drop-shadow(
+            0 36px 46px rgba(68,39,20,.18)
+        );
+}
+
+.page-alphameta .alphameta-product-caption{
+
+    position:absolute;
+
+    z-index:6;
+
+    left:50%;
+    bottom:23px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    padding:
+        10px
+        15px;
+
+    border:
+        1px solid rgba(138,63,24,.11);
+
+    border-radius:999px;
 
     background:
-        #FCC20C !important;
+        rgba(255,255,255,.76);
 
-    color:
-        #471D0A !important;
+    backdrop-filter:blur(14px);
 
+    -webkit-backdrop-filter:blur(14px);
+
+    white-space:nowrap;
+}
+
+.page-alphameta .alphameta-product-caption strong{
+
+    color:var(--meta-gold-deep);
+
+    font-size:.70rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+.page-alphameta .alphameta-product-caption span{
+
+    color:var(--meta-brown-mid);
+
+    font-size:.67rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
 }
 
 
 /* ==========================================================
-   DETAILS
+   13 — SECTION HEADING
    ========================================================== */
 
-.page-alphameta .alphameta-details-content{
+.page-alphameta .alphameta-section-heading{
 
-    display:grid;
+    max-width:720px;
 
-    grid-template-rows:0fr;
+    margin:
+        0
+        auto
+        42px;
 
-    transition:
-        grid-template-rows .45s ease;
+    text-align:center;
+}
 
+.page-alphameta .alphameta-section-heading .eyebrow{
+
+    display:inline-block;
+
+    margin-bottom:11px;
+
+    color:var(--meta-gold);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+}
+
+.page-alphameta .alphameta-section-heading h2{
+
+    margin-bottom:13px;
+
+    color:var(--meta-heading);
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.45rem
+        );
+
+    line-height:1.05;
+
+    letter-spacing:-.045em;
+}
+
+.page-alphameta .alphameta-section-heading h2 span{
+    color:var(--meta-gold);
+}
+
+.page-alphameta .alphameta-section-heading p{
+
+    margin:0 auto;
+
+    color:var(--meta-text-soft);
+
+    font-size:.92rem;
+
+    line-height:1.75;
 }
 
 
-.page-alphameta
-.alphameta-information.active
-.alphameta-details-content{
+/* ==========================================================
+   14 — GENERAL SECTION SPACING
+   ========================================================== */
 
-    grid-template-rows:1fr;
+.page-alphameta .alphameta-overview-section,
+.page-alphameta .alphameta-composition,
+.page-alphameta .alphameta-benefits,
+.page-alphameta .alphameta-product-section,
+.page-alphameta .alphameta-ingredients,
+.page-alphameta .alphameta-routine,
+.page-alphameta .alphameta-certifications,
+.page-alphameta .alphameta-performance,
+.page-alphameta .alphameta-faq,
+.page-alphameta .alphameta-information-section{
 
+    padding:
+        95px
+        0;
 }
 
 
-.page-alphameta
-.alphameta-details-content
-> div{
+/* ==========================================================
+   15 — OVERVIEW
+   ========================================================== */
 
-    min-height:0;
+.page-alphameta .alphameta-overview-section{
 
-    overflow:hidden;
-
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #FBF9F5 100%
+        );
 }
 
-
-.page-alphameta .alphameta-details-grid{
+.page-alphameta .alphameta-overview-grid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
 
-    gap:20px;
+    gap:16px;
 
-    padding:
-        0 24px 24px;
-
+    margin-top:40px;
 }
 
+.page-alphameta .alphameta-overview-card{
 
-.page-alphameta .alphameta-detail-card{
+    position:relative;
 
-    padding:25px;
+    min-height:245px;
+
+    padding:27px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:24px;
 
     background:
-        #FFF9F1 !important;
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF8F4
+        );
 
+    box-shadow:
+        var(--meta-shadow);
+
+    overflow:hidden;
+
+    transition:
+        transform .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease;
 }
 
+.page-alphameta .alphameta-overview-card:hover{
 
-.page-alphameta .alphameta-detail-card .label{
+    transform:translateY(-4px);
+
+    border-color:
+        var(--meta-line-strong);
+
+    box-shadow:
+        var(--meta-shadow-lg);
+}
+
+.page-alphameta .alphameta-card-number{
+
+    position:absolute;
+
+    top:18px;
+    right:20px;
 
     color:
-        #ED6407 !important;
+        rgba(138,63,24,.10);
 
+    font-size:2rem;
+
+    line-height:1;
+
+    font-weight:900;
 }
 
+.page-alphameta .alphameta-card-icon{
 
-.page-alphameta
-.alphameta-detail-card-wide{
+    width:44px;
+    height:44px;
 
-    grid-column:
-        1 / -1;
+    display:flex;
 
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:22px;
+
+    border-radius:14px;
+
+    background:
+        rgba(138,63,24,.065);
+
+    color:var(--meta-brown-mid);
+
+    font-size:1rem;
+}
+
+.page-alphameta .alphameta-overview-card h3{
+
+    margin-bottom:8px;
+
+    color:var(--meta-heading);
+
+    font-size:1rem;
+
+    line-height:1.3;
+}
+
+.page-alphameta .alphameta-overview-card p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.83rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-overview-note{
+
+    margin-top:23px;
+
+    padding:
+        17px
+        20px;
+
+    border-left:
+        3px solid var(--meta-gold);
+
+    border-radius:
+        0 15px 15px 0;
+
+    background:
+        rgba(201,161,74,.055);
+
+    color:var(--meta-text-soft);
+
+    font-size:.81rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-overview-note strong{
+
+    display:block;
+
+    margin-bottom:4px;
+
+    color:var(--meta-heading);
+}
+
+.page-alphameta .alphameta-overview-note p{
+
+    margin:0;
 }
 
 
 /* ==========================================================
-   DETAIL ITEMS
+   16 — COMPOSITION
    ========================================================== */
+
+.page-alphameta .alphameta-composition{
+
+    background:#F7F3ED;
+}
+
+.page-alphameta .alphameta-composition-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:16px;
+
+    margin-top:40px;
+}
+
+.page-alphameta .alphameta-ingredient-card{
+
+    position:relative;
+
+    min-height:265px;
+
+    padding:27px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:24px;
+
+    background:
+        #FFFFFF;
+
+    box-shadow:
+        var(--meta-shadow);
+
+    overflow:hidden;
+
+    transition:
+        transform .30s ease,
+        box-shadow .30s ease,
+        border-color .30s ease;
+}
+
+.page-alphameta .alphameta-ingredient-card:hover{
+
+    transform:translateY(-4px);
+
+    border-color:
+        var(--meta-line-strong);
+
+    box-shadow:
+        var(--meta-shadow-lg);
+}
+
+.page-alphameta .alphameta-ingredient-number{
+
+    position:absolute;
+
+    top:18px;
+    right:20px;
+
+    color:
+        rgba(138,63,24,.10);
+
+    font-size:2rem;
+
+    line-height:1;
+
+    font-weight:900;
+}
+
+.page-alphameta .alphameta-ingredient-symbol{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:21px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--meta-brown),
+            var(--meta-brown-mid)
+        );
+
+    color:#FFFFFF;
+
+    font-size:1rem;
+
+    box-shadow:
+        0 10px 22px rgba(138,63,24,.15);
+}
+
+.page-alphameta .alphameta-ingredient-card h3{
+
+    margin-bottom:8px;
+
+    color:var(--meta-heading);
+
+    font-size:1rem;
+
+    line-height:1.35;
+}
+
+.page-alphameta .alphameta-ingredient-card p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+}
+
+
+/* ==========================================================
+   17 — MORE / EXPANDABLE
+   ========================================================== */
+
+.page-alphameta .alphameta-more-wrap{
+
+    width:100%;
+
+    margin:
+        30px
+        auto
+        0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+}
+
+.page-alphameta .alphameta-more-toggle{
+
+    display:inline-flex;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    min-height:44px;
+
+    margin-inline:auto;
+
+    padding:
+        10px
+        18px;
+
+    border:
+        1px solid rgba(138,63,24,.13);
+
+    border-radius:999px;
+
+    background:#FFFFFF;
+
+    color:var(--meta-brown-deep);
+
+    font-size:.75rem;
+
+    font-weight:850;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 8px 24px rgba(68,39,20,.045);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        background .25s ease;
+}
+
+.page-alphameta .alphameta-more-toggle:hover{
+
+    transform:translateY(-2px);
+
+    border-color:
+        rgba(138,63,24,.23);
+
+    background:
+        #FCFBF9;
+}
+
+.page-alphameta .alphameta-more-toggle i{
+
+    width:22px;
+    height:22px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(201,161,74,.12);
+
+    color:
+        var(--meta-gold-deep);
+
+    font-size:1rem;
+
+    font-style:normal;
+
+    transition:
+        transform .35s ease;
+}
+
+.page-alphameta .alphameta-more-toggle[aria-expanded="true"] i{
+
+    transform:rotate(45deg);
+}
+
+
+/*
+   O JS controla max-height.
+
+   O !important aqui evita que componentes globais
+   do projecto escondam o painel com display:none.
+*/
+
+.page-alphameta .alphameta-more-panel{
+
+    width:100%;
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    margin-top:0;
+
+    transition:
+        max-height .45s ease,
+        opacity .30s ease,
+        margin-top .30s ease;
+}
+
+.page-alphameta .alphameta-more-panel.active{
+
+    opacity:1;
+
+    margin-top:22px;
+}
+
+
+/* ==========================================================
+   18 — DETAIL GRID
+   ========================================================== */
+
+.page-alphameta .alphameta-detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:14px;
+}
+
+.page-alphameta .alphameta-detail-card{
+
+    padding:21px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:19px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 8px 24px rgba(68,39,20,.035);
+}
+
+.page-alphameta .alphameta-detail-card-wide{
+
+    grid-column:
+        span 2;
+}
+
+.page-alphameta .alphameta-detail-card .label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-size:.64rem;
+}
+
+.page-alphameta .alphameta-detail-card h3{
+
+    margin-bottom:8px;
+
+    color:var(--meta-heading);
+
+    font-size:.92rem;
+}
+
+.page-alphameta .alphameta-detail-card p{
+
+    margin-bottom:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.79rem;
+
+    line-height:1.72;
+}
+
+.page-alphameta .alphameta-detail-card p + p{
+
+    margin-top:12px;
+}
+
+.page-alphameta .alphameta-detail-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:15px;
+}
 
 .page-alphameta .alphameta-detail-item{
 
@@ -16894,379 +17484,789 @@ span:first-child{
 
     gap:10px;
 
-    margin-top:10px;
+    color:var(--meta-text-soft);
 
-    color:
-        #725442 !important;
+    font-size:.77rem;
 
-    font-size:
-        14px;
-
+    line-height:1.6;
 }
 
+.page-alphameta .alphameta-check{
 
-.page-alphameta
-.alphameta-detail-item
-.icon-circle{
+    flex:0 0 auto;
 
-    width:22px;
-
-    height:22px;
+    width:20px;
+    height:20px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    flex-shrink:0;
+    margin-top:1px;
 
     border-radius:50%;
 
     background:
-        rgba(241,148,10,.10) !important;
+        rgba(138,63,24,.075);
 
     color:
-        #ED6407 !important;
+        var(--meta-brown-mid);
 
+    font-size:.64rem;
+
+    font-weight:900;
 }
 
 
 /* ==========================================================
-   BENEFITS
+   19 — BENEFITS
    ========================================================== */
 
 .page-alphameta .alphameta-benefits{
 
     background:
-        #FFFFFF !important;
-
+        #FFFFFF;
 }
 
+.page-alphameta .alphameta-benefits-grid{
 
-.page-alphameta
-.alphameta-benefits
-.section-title{
+    display:grid;
 
-    color:
-        #471D0A !important;
+    grid-template-columns:
+        minmax(0,.92fr)
+        minmax(0,1fr);
 
+    align-items:center;
+
+    gap:65px;
 }
 
+.page-alphameta .alphameta-benefits-visual{
 
-.page-alphameta
-.alphameta-benefits
-.text{
-
-    color:
-        #725442 !important;
-
+    min-width:0;
 }
 
-
-.page-alphameta .icon-item{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-.page-alphameta .icon-circle{
-
-    background:
-        rgba(241,148,10,.10) !important;
-
-    color:
-        #ED6407 !important;
-
-    border:
-        1px solid
-        rgba(252,194,12,.20);
-
-}
-
-
-/* ==========================================================
-   BENEFIT IMAGE
-   ========================================================== */
-
-.page-alphameta .alphameta-benefit-image{
+.page-alphameta .alphameta-benefits-frame{
 
     position:relative;
 
-    min-height:480px;
+    min-height:540px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F5EFE6
+        );
+
+    border:
+        1px solid rgba(138,63,24,.08);
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--meta-shadow-lg);
 }
 
+.page-alphameta .alphameta-benefits-aura{
 
-.page-alphameta .alphameta-benefit-image img{
+    position:absolute;
+
+    width:380px;
+    height:380px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,161,74,.18),
+            transparent 70%
+        );
+}
+
+.page-alphameta .alphameta-benefits-frame img{
 
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
-    max-width:460px;
+    width:min(82%,400px);
 
-    width:100%;
+    max-height:505px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 30px 45px
-            rgba(71,29,10,.20)
+            0 32px 42px rgba(68,39,20,.18)
         );
-
 }
 
+.page-alphameta .alphameta-benefits-copy{
 
-.page-alphameta .alphameta-image-glow{
+    max-width:600px;
+}
 
-    position:absolute;
+.page-alphameta .alphameta-benefits-copy
+.section-title{
 
-    width:340px;
+    margin-bottom:15px;
+}
 
-    height:340px;
+.page-alphameta .alphameta-benefits-copy
+.section-title span{
+
+    color:var(--meta-gold) !important;
+}
+
+.page-alphameta .alphameta-check-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+    margin-top:27px;
+}
+
+.page-alphameta .alphameta-benefit-check{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:11px;
+
+    color:var(--meta-text);
+
+    font-size:.82rem;
+
+    line-height:1.55;
+}
+
+.page-alphameta .alphameta-benefit-check > span{
+
+    flex:0 0 auto;
+
+    width:27px;
+    height:27px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:-1px;
 
     border-radius:50%;
 
     background:
+        rgba(138,63,24,.075);
 
-        radial-gradient(
-            circle,
-            rgba(252,194,12,.28),
-            rgba(241,148,10,.13),
-            transparent 70%
-        );
+    color:var(--meta-brown-mid);
 
-    filter:
-        blur(25px);
-
-}
-
-
-/* ==========================================================
-   INGREDIENTS
-   ========================================================== */
-
-.page-alphameta .alphameta-ingredients{
-
-    background:
-        #FFF9F1 !important;
-
-}
-
-
-.page-alphameta
-.alphameta-ingredients
-.bento-card{
-
-    background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alphameta
-.alphameta-ingredients
-.bento-card h3{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-.page-alphameta
-.alphameta-ingredients
-.bento-card .text{
-
-    color:
-        #725442 !important;
-
-}
-
-
-.page-alphameta
-.alphameta-ingredients
-.bento-card .label{
-
-    color:
-        #ED6407 !important;
-
-}
-
-
-.page-alphameta .alphameta-bento-symbol{
-
-    position:absolute;
-
-    right:25px;
-
-    bottom:5px;
-
-    font-size:110px;
+    font-size:.70rem;
 
     font-weight:900;
+}
 
-    color:
-        rgba(241,148,10,.07) !important;
+.page-alphameta .alphameta-benefit-check p{
 
-    pointer-events:none;
-
+    margin:0;
 }
 
 
 /* ==========================================================
-   ROUTINE
+   20 — PRODUCT DETAIL
    ========================================================== */
 
-.page-alphameta .alphameta-routine{
+.page-alphameta .alphameta-product-section{
 
     background:
-        #FFFFFF !important;
-
+        #F7F3ED;
 }
 
-
-.page-alphameta
-.alphameta-routine
-.section-title{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-.page-alphameta
-.alphameta-routine
-.lead{
-
-    color:
-        #725442 !important;
-
-}
-
-
-.page-alphameta
-.alphameta-routine
-.timeline-dot{
-
-    background:
-        #ED6407 !important;
-
-    color:
-        #FFFFFF !important;
-
-    border-color:
-        #FFFFFF !important;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(252,194,12,.45) !important;
-
-}
-
-
-.page-alphameta
-.alphameta-routine
-.timeline-content{
-
-    background:
-        #FFF9F1 !important;
-
-    border:
-        1px solid
-        rgba(241,148,10,.15) !important;
-
-}
-
-
-.page-alphameta
-.alphameta-routine
-.timeline-content h3{
-
-    color:
-        #471D0A !important;
-
-}
-
-
-.page-alphameta
-.alphameta-routine
-.timeline-content .text{
-
-    color:
-        #725442 !important;
-
-}
-
-
-.page-alphameta .alphameta-routine-note{
-
-    padding:24px;
-
-    border-radius:18px;
-
-    background:
-        rgba(241,148,10,.05) !important;
-
-    border:
-        1px solid
-        rgba(241,148,10,.14);
-
-}
-
-
-.page-alphameta
-.alphameta-routine-note
-.label{
-
-    color:
-        #ED6407 !important;
-
-}
-
-
-/* ==========================================================
-   CERTIFICATIONS
-   ========================================================== */
-
-.page-alphameta
-.alphameta-certifications{
-
-    background:
-        #FFF9F1 !important;
-
-}
-
-
-.page-alphameta
-.alphameta-certification-grid{
+.page-alphameta .alphameta-product-detail-grid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        minmax(0,1fr)
+        minmax(0,.92fr);
 
-    gap:22px;
+    align-items:center;
 
+    gap:60px;
+}
+
+.page-alphameta .alphameta-product-detail-frame{
+
+    position:relative;
+
+    min-height:590px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F1EBE1
+        );
+
+    border:
+        1px solid var(--meta-line);
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--meta-shadow-lg);
+}
+
+.page-alphameta .alphameta-detail-aura{
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,161,74,.18),
+            transparent 70%
+        );
+}
+
+.page-alphameta .alphameta-detail-ring{
+
+    position:absolute;
+
+    width:480px;
+    height:480px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(138,63,24,.12);
+}
+
+.page-alphameta .alphameta-detail-decoration{
+
+    position:absolute;
+
+    inset:23px;
+
+    border:
+        1px dashed rgba(138,63,24,.075);
+
+    border-radius:24px;
+}
+
+.page-alphameta .alphameta-product-detail-image{
+
+    position:relative;
+
+    z-index:4;
+
+    width:min(88%,420px);
+
+    max-height:545px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 34px 45px rgba(68,39,20,.18)
+        );
+}
+
+.page-alphameta .alphameta-detail-caption{
+
+    position:absolute;
+
+    z-index:5;
+
+    left:50%;
+    bottom:22px;
+
+    transform:translateX(-50%);
+
+    padding:
+        10px
+        15px;
+
+    border:
+        1px solid rgba(201,161,74,.18);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.78);
+
+    backdrop-filter:blur(14px);
+
+    color:var(--meta-gold-deep);
+
+    font-size:.68rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    white-space:nowrap;
+}
+
+.page-alphameta .alphameta-product-detail-copy{
+
+    max-width:600px;
+}
+
+.page-alphameta .alphameta-product-detail-copy
+.section-title{
+
+    margin-bottom:15px;
+}
+
+.page-alphameta .alphameta-product-detail-copy
+.section-title span{
+
+    color:var(--meta-gold) !important;
+}
+
+.page-alphameta .alphameta-product-detail-copy
+.lead{
+
+    margin-bottom:27px;
+}
+
+.page-alphameta .alphameta-spec-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0,1fr)
+        );
+
+    gap:11px;
+
+    margin-bottom:20px;
+}
+
+.page-alphameta .alphameta-product-spec{
+
+    padding:17px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:17px;
+
+    background:#FFFFFF;
+}
+
+.page-alphameta .alphameta-product-spec span{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    color:var(--meta-text-soft);
+
+    font-size:.65rem;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+}
+
+.page-alphameta .alphameta-product-spec strong{
+
+    color:var(--meta-heading);
+
+    font-size:.82rem;
+}
+
+.page-alphameta .alphameta-product-highlight{
+
+    padding:
+        18px
+        20px;
+
+    border-left:
+        3px solid var(--meta-gold);
+
+    border-radius:
+        0 15px 15px 0;
+
+    background:
+        rgba(201,161,74,.055);
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-product-highlight
+strong{
+
+    display:block;
+
+    margin-bottom:5px;
+
+    color:var(--meta-heading);
+}
+
+.page-alphameta .alphameta-product-highlight
+p{
+
+    margin:0;
 }
 
 
+/* ==========================================================
+   21 — CONCEPT / INGREDIENTS
+   ========================================================== */
+
+.page-alphameta .alphameta-ingredients{
+
+    background:#FFFFFF;
+}
+
+.page-alphameta .alphameta-concept-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            4,
+            minmax(0,1fr)
+        );
+
+    gap:16px;
+}
+
+.page-alphameta .alphameta-concept-card{
+
+    position:relative;
+
+    min-height:235px;
+
+    padding:27px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF8F4
+        );
+
+    box-shadow:
+        var(--meta-shadow);
+
+    overflow:hidden;
+}
+
+.page-alphameta .alphameta-concept-number{
+
+    position:absolute;
+
+    top:18px;
+    right:20px;
+
+    color:
+        rgba(138,63,24,.10);
+
+    font-size:2.4rem;
+
+    line-height:.9;
+
+    font-weight:900;
+}
+
+.page-alphameta .alphameta-concept-symbol{
+
+    margin-bottom:18px;
+
+    color:
+        var(--meta-gold);
+
+    font-size:2.4rem;
+
+    font-weight:900;
+
+    line-height:1;
+}
+
+.page-alphameta .alphameta-concept-card h3{
+
+    margin-bottom:8px;
+
+    color:var(--meta-heading);
+
+    font-size:1rem;
+}
+
+.page-alphameta .alphameta-concept-card p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-concept-wide{
+
+    margin-top:16px;
+
+    padding:
+        27px;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:23px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FBF8F2,
+            #FFFFFF
+        );
+
+    box-shadow:
+        var(--meta-shadow);
+}
+
+.page-alphameta .alphameta-concept-wide h3{
+
+    margin:
+        10px
+        0
+        8px;
+
+    color:var(--meta-heading);
+
+    font-size:1.18rem;
+}
+
+.page-alphameta .alphameta-concept-wide p{
+
+    max-width:760px;
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.84rem;
+
+    line-height:1.75;
+}
+
+
+/* ==========================================================
+   22 — ROUTINE
+   ========================================================== */
+
+.page-alphameta .alphameta-routine{
+
+    background:#F7F3ED;
+}
+
+.page-alphameta .alphameta-routine-list{
+
+    position:relative;
+
+    max-width:800px;
+
+    margin-inline:auto;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:0;
+}
+
+.page-alphameta .alphameta-routine-list::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:21px;
+
+    top:12px;
+    bottom:12px;
+
+    width:1px;
+
+    background:
+        rgba(138,63,24,.13);
+}
+
+.page-alphameta .alphameta-routine-step{
+
+    position:relative;
+
+    z-index:1;
+
+    display:grid;
+
+    grid-template-columns:
+        43px
+        minmax(0,1fr);
+
+    gap:20px;
+
+    padding-bottom:28px;
+}
+
+.page-alphameta .alphameta-routine-step:last-child{
+
+    padding-bottom:0;
+}
+
+.page-alphameta .alphameta-routine-number{
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--meta-brown),
+            var(--meta-brown-mid)
+        );
+
+    color:#FFFFFF;
+
+    font-size:.70rem;
+
+    font-weight:900;
+
+    box-shadow:
+        0 10px 24px rgba(138,63,24,.16);
+}
+
+.page-alphameta .alphameta-routine-step h3{
+
+    margin:
+        2px
+        0
+        6px;
+
+    color:var(--meta-heading);
+
+    font-size:1rem;
+}
+
+.page-alphameta .alphameta-routine-step p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-routine-note{
+
+    max-width:800px;
+
+    margin:
+        24px
+        auto
+        0;
+
+    padding:
+        20px
+        22px;
+
+    border:
+        1px solid rgba(201,161,74,.20);
+
+    border-radius:19px;
+
+    background:
+        rgba(201,161,74,.055);
+}
+
+.page-alphameta .alphameta-routine-note p{
+
+    margin:6px 0 0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.80rem;
+
+    line-height:1.75;
+}
+
+
+/* ==========================================================
+   23 — CERTIFICATIONS
+   ========================================================== */
+
+.page-alphameta .alphameta-certifications{
+
+    background:#FFFFFF;
+}
+
+.page-alphameta .alphameta-certification-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
+
+    gap:16px;
+}
+
 .page-alphameta .alphameta-certificate{
 
-    padding:30px;
-
-    min-height:230px;
+    min-height:185px;
 
     display:flex;
 
@@ -17274,552 +18274,1613 @@ span:first-child{
 
     justify-content:space-between;
 
-    background:
-        #FFFFFF !important;
+    padding:24px;
 
     border:
-        1px solid
-        rgba(241,148,10,.15);
+        1px solid var(--meta-line);
 
-    border-radius:
-        22px;
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF8F4
+        );
 
     box-shadow:
-        0 20px 55px
-        rgba(71,29,10,.07);
-
+        var(--meta-shadow);
 }
-
 
 .page-alphameta .alphameta-certificate-mark{
 
-    min-height:100px;
+    width:max-content;
 
-    display:flex;
+    padding:
+        8px
+        12px;
 
-    align-items:center;
-
-    justify-content:center;
-
-    border-radius:
-        15px;
+    border-radius:9px;
 
     background:
-
-        linear-gradient(
-            135deg,
-            #FFF9F1,
-            #F0E9DF
-        );
+        rgba(201,161,74,.10);
 
     color:
-        #ED6407;
+        var(--meta-gold-deep);
+
+    font-size:.65rem;
 
     font-weight:900;
 
-    letter-spacing:.08em;
-
+    letter-spacing:.11em;
 }
 
-
-.page-alphameta
-.alphameta-certificate
+.page-alphameta .alphameta-certificate
 .label{
 
-    color:
-        #ED6407 !important;
+    display:block;
 
+    margin-top:20px;
 }
 
+.page-alphameta .alphameta-certificate p{
 
-.page-alphameta
-.alphameta-certification-note{
+    margin:
+        7px
+        0
+        0;
 
-    padding:24px;
+    color:var(--meta-text-soft);
 
-    background:
-        #FFFFFF !important;
+    font-size:.79rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-certification-note{
+
+    padding:
+        18px
+        20px;
 
     border:
-        1px solid
-        rgba(241,148,10,.14);
+        1px solid rgba(138,63,24,.08);
 
-    border-radius:
-        18px;
+    border-radius:16px;
 
+    background:
+        rgba(138,63,24,.025);
 }
 
+.page-alphameta .alphameta-certification-note p{
 
-.page-alphameta
-.alphameta-certification-note
-.text{
+    margin:
+        7px
+        0
+        0;
 
-    color:
-        #725442 !important;
+    color:var(--meta-text-soft);
 
+    font-size:.79rem;
+
+    line-height:1.7;
 }
 
 
 /* ==========================================================
-   PERFORMANCE — ESCURA
+   24 — PERFORMANCE
    ========================================================== */
 
 .page-alphameta .alphameta-performance{
 
-    background:
-
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(252,194,12,.18),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #471D0A,
-            #A23404,
-            #ED6407
-        ) !important;
-
+    background:#F7F3ED;
 }
 
+.page-alphameta .alphameta-performance-grid{
 
-.page-alphameta
-.alphameta-performance
-.section-title{
+    display:grid;
 
-    color:
-        #FFFFFF !important;
+    grid-template-columns:
+        repeat(
+            3,
+            minmax(0,1fr)
+        );
 
+    gap:16px;
 }
 
+.page-alphameta .alphameta-performance-card{
 
-.page-alphameta
-.alphameta-performance
-.lead{
+    min-height:260px;
 
-    color:
-        rgba(255,255,255,.75) !important;
-
-}
-
-
-.page-alphameta
-.alphameta-performance
-.label{
-
-    color:
-        #F9D14A !important;
-
-}
-
-
-.page-alphameta
-.alphameta-performance
-.bento-card{
-
-    background:
-        rgba(255,255,255,.07) !important;
+    padding:28px;
 
     border:
-        1px solid
-        rgba(255,255,255,.12) !important;
+        1px solid var(--meta-line);
 
-    box-shadow:none;
+    border-radius:24px;
 
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF8F4
+        );
+
+    box-shadow:
+        var(--meta-shadow);
 }
 
+.page-alphameta .alphameta-performance-letter{
 
-.page-alphameta
-.alphameta-performance
-.bento-card h3{
+    margin-bottom:22px;
 
     color:
-        #FFFFFF !important;
+        rgba(138,63,24,.12);
 
+    font-size:3.7rem;
+
+    line-height:.8;
+
+    font-weight:900;
 }
 
+.page-alphameta .alphameta-performance-card h3{
 
-.page-alphameta
-.alphameta-performance
-.bento-card .text{
+    margin-bottom:8px;
 
-    color:
-        rgba(255,255,255,.70) !important;
+    color:var(--meta-heading);
 
+    font-size:1.03rem;
+}
+
+.page-alphameta .alphameta-performance-card p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
+}
+
+.page-alphameta .alphameta-performance-feature{
+
+    margin-top:18px;
+
+    padding:
+        20px
+        22px;
+
+    border:
+        1px solid rgba(138,63,24,.08);
+
+    border-radius:18px;
+
+    background:
+        rgba(138,63,24,.025);
+}
+
+.page-alphameta .alphameta-performance-feature h3{
+
+    margin:
+        8px
+        0;
+
+    color:var(--meta-heading);
+
+    font-size:1.10rem;
+}
+
+.page-alphameta .alphameta-performance-feature p{
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.82rem;
+
+    line-height:1.7;
 }
 
 
 /* ==========================================================
-   METRICS
-   ========================================================== */
-
-.page-alphameta
-.alphameta-performance
-.metric-number{
-
-    color:
-        #F9D14A !important;
-
-}
-
-
-.page-alphameta
-.alphameta-performance
-.metric-label{
-
-    color:
-        rgba(255,255,255,.86) !important;
-
-}
-
-
-/* ==========================================================
-   FAQ
+   25 — FAQ
    ========================================================== */
 
 .page-alphameta .alphameta-faq{
 
+    background:#FFFFFF;
+}
+
+.page-alphameta .alphameta-faq-list{
+
+    max-width:920px;
+
+    margin:
+        40px
+        auto
+        0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+}
+
+.page-alphameta .alphameta-faq-item{
+
+    overflow:hidden;
+
+    border:
+        1px solid var(--meta-line);
+
+    border-radius:21px;
+
     background:
-        #FFF9F1 !important;
+        #FAF8F4;
 
+    transition:
+        transform .30s ease,
+        border-color .30s ease,
+        box-shadow .30s ease;
 }
 
+.page-alphameta .alphameta-faq-item:hover{
 
-.page-alphameta
-.alphameta-faq
-.faq-item{
+    border-color:
+        var(--meta-line-strong);
+}
+
+.page-alphameta .alphameta-faq-item.active{
+
+    transform:translateY(-2px);
+
+    border-color:
+        rgba(201,161,74,.32);
+
+    box-shadow:
+        0 16px 40px rgba(68,39,20,.07);
+}
+
+.page-alphameta .alphameta-faq-question{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        44px
+        minmax(0,1fr)
+        34px;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:
+        18px
+        20px;
+
+    border:0;
+
+    background:transparent;
+
+    color:var(--meta-heading);
+
+    font-size:.87rem;
+
+    font-weight:850;
+
+    line-height:1.5;
+
+    text-align:left;
+
+    cursor:pointer;
+}
+
+.page-alphameta .alphameta-faq-number{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
 
     background:
-        #FFFFFF !important;
+        rgba(138,63,24,.075);
 
+    color:
+        var(--meta-brown-mid);
+
+    font-size:.64rem;
+
+    font-weight:900;
+
+    letter-spacing:.07em;
 }
 
+.page-alphameta .alphameta-faq-text{
 
-.page-alphameta
-.alphameta-faq
-.faq-question{
+    color:var(--meta-heading);
+
+    line-height:1.5;
+}
+
+.page-alphameta .alphameta-faq-plus{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
 
     background:
-        #FFFFFF !important;
+        rgba(201,161,74,.11);
 
     color:
-        #471D0A !important;
+        var(--meta-gold-deep);
 
+    font-size:1.05rem;
+
+    font-weight:500;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+}
+
+.page-alphameta .alphameta-faq-item.active
+.alphameta-faq-plus{
+
+    transform:rotate(45deg);
+
+    background:
+        rgba(138,63,24,.08);
 }
 
 
-.page-alphameta
-.alphameta-faq
-.faq-question span:first-child{
+/*
+   Estado fechado.
 
-    color:
-        #471D0A !important;
+   O JS define max-height através de scrollHeight.
+*/
 
+.page-alphameta .alphameta-faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .42s ease,
+        opacity .28s ease;
 }
 
+.page-alphameta .alphameta-faq-answer p{
 
-.page-alphameta
-.alphameta-faq
-.faq-question span:last-child{
+    margin:0;
 
-    color:
-        #ED6407 !important;
-
-}
-
-
-.page-alphameta
-.alphameta-faq
-.faq-answer p{
+    padding:
+        0
+        20px
+        21px
+        78px;
 
     color:
-        #725442 !important;
+        var(--meta-text-soft);
 
+    font-size:.83rem;
+
+    line-height:1.78;
 }
 
 
 /* ==========================================================
-   CTA
+   26 — INFORMATION / TRUST
+   ========================================================== */
+
+.page-alphameta .alphameta-information-section{
+
+    padding-top:28px;
+
+    background:
+        #F7F3ED;
+}
+
+.page-alphameta .alphameta-information-box{
+
+    display:grid;
+
+    grid-template-columns:
+        48px
+        minmax(0,1fr);
+
+    gap:18px;
+
+    align-items:start;
+
+    padding:
+        26px
+        28px;
+
+    border:
+        1px solid rgba(201,161,74,.22);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #FAF7F0
+        );
+
+    box-shadow:
+        var(--meta-shadow);
+}
+
+.page-alphameta .alphameta-information-icon{
+
+    width:43px;
+    height:43px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--meta-gold),
+            var(--meta-gold-deep)
+        );
+
+    color:#FFFFFF;
+
+    font-size:.85rem;
+
+    font-weight:900;
+}
+
+.page-alphameta .alphameta-information-box h2{
+
+    margin:
+        8px
+        0
+        10px;
+
+    color:var(--meta-heading);
+
+    font-size:
+        clamp(
+            1.55rem,
+            3vw,
+            2.35rem
+        );
+
+    line-height:1.15;
+
+    letter-spacing:-.035em;
+}
+
+.page-alphameta .alphameta-information-box p{
+
+    max-width:850px;
+
+    margin:0;
+
+    color:var(--meta-text-soft);
+
+    font-size:.81rem;
+
+    line-height:1.8;
+}
+
+
+/* ==========================================================
+   27 — CTA
    ========================================================== */
 
 .page-alphameta .alphameta-cta{
 
-    background:
-        #FFFFFF !important;
+    padding:
+        0
+        0
+        95px;
 
+    background:
+        #F7F3ED;
 }
 
+.page-alphameta .alphameta-cta-box{
 
-.page-alphameta
-.alphameta-cta
-.showcase{
+    position:relative;
+
+    padding:
+        62px
+        50px;
+
+    overflow:hidden;
+
+    border-radius:31px;
 
     background:
-
         radial-gradient(
-            circle at 90% 10%,
-            rgba(252,194,12,.18),
-            transparent 30%
+            circle at 86% 15%,
+            rgba(201,161,74,.22),
+            transparent 25%
         ),
-
         linear-gradient(
             135deg,
-            #471D0A,
-            #A23404,
-            #ED6407
-        ) !important;
+            #4B1B07,
+            #682A0C 62%,
+            #8A3F18
+        );
 
+    color:#FFFFFF;
+
+    box-shadow:
+        0 32px 80px rgba(68,39,20,.20);
 }
 
+.page-alphameta .alphameta-cta-box::after{
 
-.page-alphameta
-.alphameta-cta
-.section-title{
+    content:"";
+
+    position:absolute;
+
+    inset:17px;
+
+    border:
+        1px solid rgba(255,255,255,.09);
+
+    border-radius:24px;
+
+    pointer-events:none;
+}
+
+.page-alphameta .alphameta-label-light{
+
+    position:relative;
+
+    z-index:2;
+
+    display:inline-block;
+
+    margin-bottom:12px;
 
     color:
-        #FFFFFF !important;
+        rgba(255,255,255,.68);
 
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
 }
 
+.page-alphameta .alphameta-cta-box h2{
 
-.page-alphameta
-.alphameta-cta
-.lead{
+    position:relative;
+
+    z-index:2;
+
+    max-width:760px;
+
+    margin-bottom:15px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            2.15rem,
+            4.5vw,
+            4rem
+        );
+
+    line-height:1;
+
+    letter-spacing:-.045em;
+}
+
+.page-alphameta .alphameta-cta-box h2 span{
+
+    color:#E5C171;
+}
+
+.page-alphameta .alphameta-cta-box > p{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:650px;
+
+    margin-bottom:25px;
 
     color:
-        rgba(255,255,255,.75) !important;
+        rgba(255,255,255,.75);
 
+    font-size:.87rem;
+
+    line-height:1.75;
+}
+
+.page-alphameta .alphameta-cta-actions{
+
+    position:relative;
+
+    z-index:2;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:11px;
 }
 
 
-.page-alphameta
-.alphameta-cta
-.badge{
+/* ==========================================================
+   28 — CTA BUTTONS
+   ========================================================== */
 
-    color:
-        #F9D14A !important;
+.page-alphameta .alphameta-cta-actions .btn{
 
+    min-height:46px;
+
+    padding:
+        11px
+        19px;
+
+    border-radius:999px;
+
+    font-size:.76rem;
+
+    font-weight:850;
 }
 
 
-.page-alphameta
-.alphameta-cta
-.btn-primary{
+/* ==========================================================
+   29 — DARK MODE
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta,
+body.dark .page-alphameta{
+
+    --meta-brown:#DE8550;
+    --meta-brown-mid:#E79A67;
+    --meta-brown-deep:#F0B383;
+
+    --meta-gold:#E2BA69;
+    --meta-gold-deep:#E8C27A;
+
+    --meta-bg:#0D1117;
+    --meta-bg-soft:#121821;
+    --meta-bg-alt:#151D27;
+
+    --meta-card:#141E28;
+    --meta-card-soft:#16212C;
+
+    --meta-heading:#F1EAE3;
+    --meta-text:#D5D1CC;
+    --meta-text-soft:#ABB1B7;
+
+    --meta-line:rgba(222,169,124,.15);
+    --meta-line-strong:rgba(222,169,124,.24);
+
+    --meta-shadow:
+        0 18px 50px rgba(0,0,0,.25);
+
+    --meta-shadow-lg:
+        0 30px 75px rgba(0,0,0,.37);
+
+    background:#0D1117;
+
+    color:var(--meta-text);
+}
+
+
+/* ==========================================================
+   30 — DARK SECTIONS
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-hero,
+body.dark .page-alphameta
+.alphameta-hero{
 
     background:
-
+        radial-gradient(
+            circle at 78% 22%,
+            rgba(138,63,24,.19),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 14% 80%,
+            rgba(201,161,74,.065),
+            transparent 25%
+        ),
         linear-gradient(
-            135deg,
-            #FCC20C,
-            #F9D14A
-        ) !important;
+            180deg,
+            #0D1117,
+            #121923
+        );
+}
 
-    color:
-        #471D0A !important;
+html[data-theme="dark"] .page-alphameta
+.alphameta-overview-section,
+body.dark .page-alphameta
+.alphameta-overview-section,
 
+html[data-theme="dark"] .page-alphameta
+.alphameta-benefits,
+body.dark .page-alphameta
+.alphameta-benefits,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-ingredients,
+body.dark .page-alphameta
+.alphameta-ingredients,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-certifications,
+body.dark .page-alphameta
+.alphameta-certifications,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq,
+body.dark .page-alphameta
+.alphameta-faq{
+
+    background:
+        #0D1117;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-composition,
+body.dark .page-alphameta
+.alphameta-composition,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-section,
+body.dark .page-alphameta
+.alphameta-product-section,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-routine,
+body.dark .page-alphameta
+.alphameta-routine,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-performance,
+body.dark .page-alphameta
+.alphameta-performance,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-information-section,
+body.dark .page-alphameta
+.alphameta-information-section,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-cta,
+body.dark .page-alphameta
+.alphameta-cta{
+
+    background:
+        #121923;
 }
 
 
-.page-alphameta
-.alphameta-cta
-.btn-glass{
+/* ==========================================================
+   31 — DARK HERO
+   ========================================================== */
 
-    color:
-        #FFFFFF !important;
+html[data-theme="dark"] .page-alphameta
+.alphameta-eyebrow,
+body.dark .page-alphameta
+.alphameta-eyebrow{
 
     background:
-        rgba(255,255,255,.08) !important;
+        rgba(222,133,80,.065);
 
     border-color:
-        rgba(255,255,255,.22) !important;
+        rgba(222,133,80,.16);
+}
 
+html[data-theme="dark"] .page-alphameta
+.alphameta-hero-pill,
+body.dark .page-alphameta
+.alphameta-hero-pill{
+
+    background:
+        #141E29;
+
+    border-color:
+        rgba(222,169,124,.14);
+
+    color:
+        #EFE8E1;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-caption,
+body.dark .page-alphameta
+.alphameta-product-caption{
+
+    background:
+        rgba(13,20,30,.81);
+
+    border-color:
+        rgba(226,186,105,.17);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-ring,
+body.dark .page-alphameta
+.alphameta-product-ring{
+
+    border-color:
+        rgba(222,133,80,.13);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-ring::before,
+body.dark .page-alphameta
+.alphameta-product-ring::before{
+
+    border-color:
+        rgba(226,186,105,.12);
 }
 
 
-.page-alphameta .alphameta-cta-disclaimer{
+/* ==========================================================
+   32 — DARK CARDS
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-overview-card,
+body.dark .page-alphameta
+.alphameta-overview-card,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-ingredient-card,
+body.dark .page-alphameta
+.alphameta-ingredient-card,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-detail-card,
+body.dark .page-alphameta
+.alphameta-detail-card,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-concept-card,
+body.dark .page-alphameta
+.alphameta-concept-card,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-certificate,
+body.dark .page-alphameta
+.alphameta-certificate,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-performance-card,
+body.dark .page-alphameta
+.alphameta-performance-card{
+
+    background:
+        linear-gradient(
+            145deg,
+            #141E29,
+            #111923
+        );
+
+    border-color:
+        rgba(222,169,124,.13);
+
+    box-shadow:
+        0 18px 50px rgba(0,0,0,.22);
+}
+
+
+/* ==========================================================
+   33 — DARK MORE BUTTON
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-more-toggle,
+body.dark .page-alphameta
+.alphameta-more-toggle{
+
+    background:
+        #141E29;
+
+    border-color:
+        rgba(222,169,124,.16);
 
     color:
-        rgba(255,255,255,.52) !important;
+        #F0E9E2;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-more-toggle:hover,
+body.dark .page-alphameta
+.alphameta-more-toggle:hover{
+
+    background:
+        #182431;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-more-toggle i,
+body.dark .page-alphameta
+.alphameta-more-toggle i{
+
+    background:
+        rgba(226,186,105,.11);
+
+    color:
+        #E6C177;
+}
+
+
+/* ==========================================================
+   34 — DARK PRODUCT FRAME
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-detail-frame,
+body.dark .page-alphameta
+.alphameta-product-detail-frame{
+
+    background:
+        linear-gradient(
+            145deg,
+            #16212D,
+            #101721
+        );
+
+    border-color:
+        rgba(222,169,124,.14);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-detail-decoration,
+body.dark .page-alphameta
+.alphameta-detail-decoration{
+
+    border-color:
+        rgba(222,133,80,.075);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-detail-caption,
+body.dark .page-alphameta
+.alphameta-detail-caption{
+
+    background:
+        rgba(13,20,29,.82);
+
+    color:
+        #E5C077;
+}
+
+
+/* ==========================================================
+   35 — DARK BENEFITS IMAGE
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-benefits-frame,
+body.dark .page-alphameta
+.alphameta-benefits-frame{
+
+    background:
+        linear-gradient(
+            145deg,
+            #16212C,
+            #101720
+        );
+
+    border-color:
+        rgba(222,169,124,.13);
+}
+
+
+/* ==========================================================
+   36 — DARK FAQ
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-item,
+body.dark .page-alphameta
+.alphameta-faq-item{
+
+    background:
+        #141E29;
+
+    border-color:
+        rgba(222,169,124,.14);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-item.active,
+body.dark .page-alphameta
+.alphameta-faq-item.active{
+
+    border-color:
+        rgba(226,186,105,.28);
+
+    box-shadow:
+        0 16px 40px rgba(0,0,0,.20);
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-text,
+body.dark .page-alphameta
+.alphameta-faq-text{
+
+    color:
+        #F1EAE3;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-number,
+body.dark .page-alphameta
+.alphameta-faq-number{
+
+    background:
+        rgba(222,133,80,.08);
+
+    color:
+        #E79A67;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-plus,
+body.dark .page-alphameta
+.alphameta-faq-plus{
+
+    background:
+        rgba(226,186,105,.11);
+
+    color:
+        #E6C177;
+}
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-faq-answer p,
+body.dark .page-alphameta
+.alphameta-faq-answer p{
+
+    color:
+        #B0B6BC;
+}
+
+
+/* ==========================================================
+   37 — DARK INFORMATION BOX
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-information-box,
+body.dark .page-alphameta
+.alphameta-information-box{
+
+    background:
+        linear-gradient(
+            135deg,
+            #141E29,
+            #111923
+        );
+
+    border-color:
+        rgba(226,186,105,.17);
+}
+
+
+/* ==========================================================
+   38 — DARK NOTES
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-overview-note,
+body.dark .page-alphameta
+.alphameta-overview-note,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-product-highlight,
+body.dark .page-alphameta
+.alphameta-product-highlight,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-routine-note,
+body.dark .page-alphameta
+.alphameta-routine-note,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-performance-feature,
+body.dark .page-alphameta
+.alphameta-performance-feature,
+
+html[data-theme="dark"] .page-alphameta
+.alphameta-certification-note,
+body.dark .page-alphameta
+.alphameta-certification-note{
+
+    background:
+        rgba(226,186,105,.045);
+
+    border-color:
+        rgba(226,186,105,.13);
+}
+
+
+/* ==========================================================
+   39 — DARK BUTTONS
+   ========================================================== */
+
+html[data-theme="dark"] .page-alphameta
+.btn-glass,
+body.dark .page-alphameta
+.btn-glass{
+
+    background:
+        rgba(20,30,42,.80);
+
+    border-color:
+        rgba(222,169,124,.16);
+
+    color:
+        #F1EAE3;
+}
+
+html[data-theme="dark"] .page-alphameta
+.btn-glass:hover,
+body.dark .page-alphameta
+.btn-glass:hover{
+
+    background:
+        #182431;
+}
+
+
+/* ==========================================================
+   40 — RESPONSIVE TABLET
+   ========================================================== */
+
+@media (max-width:1080px){
+
+    .page-alphameta .alphameta-hero-grid{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(320px,.82fr);
+
+        gap:35px;
+    }
+
+    .page-alphameta .alphameta-overview-grid,
+    .page-alphameta .alphameta-composition-grid,
+    .page-alphameta .alphameta-concept-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+    .page-alphameta .alphameta-detail-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+    .page-alphameta .alphameta-detail-card-wide{
+
+        grid-column:
+            span 2;
+    }
+
+    .page-alphameta .alphameta-benefits-grid{
+
+        gap:35px;
+    }
+
+    .page-alphameta .alphameta-performance-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
+
+    .page-alphameta .alphameta-certification-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+    }
 
 }
 
 
 /* ==========================================================
-   LINKS
+   41 — RESPONSIVE MOBILE
    ========================================================== */
 
-.page-alphameta a{
+@media (max-width:760px){
 
-    color:
-        #ED6407 !important;
+    .page-alphameta .container,
+    .page-alphameta .container-sm{
 
-}
-
-
-.page-alphameta a:hover{
-
-    color:
-        #DF2107 !important;
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
-
-@media (max-width:900px){
-
-    .page-alphameta
-    .alphameta-details-grid{
-
-        grid-template-columns:
-            1fr;
-
+        width:
+            min(
+                calc(100% - 28px),
+                1180px
+            );
     }
 
 
-    .page-alphameta
-    .alphameta-detail-card-wide{
+    /* Hero */
 
-        grid-column:auto;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-certification-grid{
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-}
-
-
-@media (max-width:700px){
-
-    .page-alphameta
-    .alphameta-hero{
+    .page-alphameta .alphameta-hero{
 
         min-height:auto;
 
-        padding-top:100px;
+        padding:
+            82px 0
+            65px;
+    }
 
-        padding-bottom:80px;
+    .page-alphameta .alphameta-hero-grid{
 
+        grid-template-columns:1fr;
+
+        gap:25px;
+    }
+
+    .page-alphameta .alphameta-hero-copy{
+
+        margin-inline:auto;
+
+        text-align:center;
+    }
+
+    .page-alphameta .alphameta-eyebrow{
+
+        justify-content:center;
+    }
+
+    .page-alphameta .alphameta-hero-description{
+
+        margin-inline:auto;
+    }
+
+    .page-alphameta .alphameta-hero-pills{
+
+        justify-content:center;
+    }
+
+    .page-alphameta .alphameta-hero-actions{
+
+        justify-content:center;
+    }
+
+    .page-alphameta .alphameta-hero-product{
+
+        min-height:425px;
+    }
+
+    .page-alphameta .alphameta-product-ring{
+
+        width:375px;
+        height:375px;
+    }
+
+    .page-alphameta .alphameta-product-aura{
+
+        width:325px;
+        height:325px;
+    }
+
+    .page-alphameta .alphameta-product-grid{
+
+        width:360px;
+        height:360px;
+    }
+
+    .page-alphameta .alphameta-product-grid img{
+
+        width:82%;
     }
 
 
-    .page-alphameta
-    .hero-grid{
+    /* Sections */
+
+    .page-alphameta .alphameta-overview-section,
+    .page-alphameta .alphameta-composition,
+    .page-alphameta .alphameta-benefits,
+    .page-alphameta .alphameta-product-section,
+    .page-alphameta .alphameta-ingredients,
+    .page-alphameta .alphameta-routine,
+    .page-alphameta .alphameta-certifications,
+    .page-alphameta .alphameta-performance,
+    .page-alphameta .alphameta-faq,
+    .page-alphameta .alphameta-information-section{
+
+        padding:
+            78px 0;
+    }
+
+
+    /* Grids */
+
+    .page-alphameta .alphameta-overview-grid,
+    .page-alphameta .alphameta-composition-grid,
+    .page-alphameta .alphameta-concept-grid,
+    .page-alphameta .alphameta-detail-grid,
+    .page-alphameta .alphameta-performance-grid,
+    .page-alphameta .alphameta-certification-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .page-alphameta .alphameta-detail-card-wide{
+
+        grid-column:auto;
+    }
+
+
+    /* Benefits */
+
+    .page-alphameta .alphameta-benefits-grid{
+
+        grid-template-columns:1fr;
+
+        gap:32px;
+    }
+
+    .page-alphameta .alphameta-benefits-frame{
+
+        min-height:450px;
+    }
+
+    .page-alphameta .alphameta-benefits-frame img{
+
+        width:78%;
+
+        max-height:420px;
+    }
+
+
+    /* Product Detail */
+
+    .page-alphameta .alphameta-product-detail-grid{
+
+        grid-template-columns:1fr;
+
+        gap:30px;
+    }
+
+    .page-alphameta .alphameta-product-detail-frame{
+
+        min-height:470px;
+    }
+
+    .page-alphameta .alphameta-detail-ring{
+
+        width:375px;
+        height:375px;
+    }
+
+    .page-alphameta .alphameta-product-detail-image{
+
+        width:80%;
+
+        max-height:430px;
+    }
+
+    .page-alphameta .alphameta-spec-grid{
+
+        grid-template-columns:1fr;
+    }
+
+
+    /* FAQ */
+
+    .page-alphameta .alphameta-faq-question{
+
+        grid-template-columns:
+            38px
+            minmax(0,1fr)
+            30px;
+
+        gap:11px;
+
+        padding:
+            17px;
+    }
+
+    .page-alphameta .alphameta-faq-answer p{
+
+        padding:
+            0
+            18px
+            20px
+            66px;
+    }
+
+
+    /* Information */
+
+    .page-alphameta .alphameta-information-box{
 
         grid-template-columns:
             1fr;
 
+        padding:
+            23px;
     }
 
 
-    .page-alphameta
-    .hero-content{
+    /* CTA */
 
-        text-align:center;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-hero-highlights{
-
-        justify-content:center;
-
-    }
-
-
-    .page-alphameta
-    .hero-visual{
-
-        margin-top:35px;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-gold-ring{
-
-        width:300px;
-
-        height:300px;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-benefit-image{
-
-        min-height:360px;
-
-    }
-
-}
-
-
-@media (max-width:520px){
-
-    .page-alphameta
-    .alphameta-hero-highlights{
-
-        display:grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        text-align:left;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-details-toggle{
-
-        padding:18px;
-
-        font-size:14px;
-
-    }
-
-
-    .page-alphameta
-    .alphameta-details-grid{
+    .page-alphameta .alphameta-cta{
 
         padding:
-            0 16px 16px;
-
+            0
+            0
+            75px;
     }
 
+    .page-alphameta .alphameta-cta-box{
 
-    .page-alphameta
-    .alphameta-detail-card{
+        padding:
+            48px
+            27px;
 
-        padding:20px;
-
+        border-radius:25px;
     }
 
+    .page-alphameta .alphameta-cta-actions{
 
-    .page-alphameta
-    .alphameta-certification-grid{
+        flex-direction:column;
+    }
 
-        gap:15px;
+    .page-alphameta .alphameta-cta-actions > *{
 
+        width:100%;
     }
 
 }
 
 
 /* ==========================================================
-   REDUCED MOTION
+   42 — SMALL MOBILE
+   ========================================================== */
+
+@media (max-width:480px){
+
+    .page-alphameta .alphameta-hero h1{
+
+        font-size:
+            clamp(
+                3rem,
+                17vw,
+                4.4rem
+            );
+    }
+
+    .page-alphameta .alphameta-hero-actions{
+
+        flex-direction:column;
+
+        width:100%;
+    }
+
+    .page-alphameta .alphameta-hero-actions > *{
+
+        width:100%;
+    }
+
+    .page-alphameta .alphameta-hero-product{
+
+        min-height:390px;
+    }
+
+    .page-alphameta .alphameta-product-ring{
+
+        width:315px;
+        height:315px;
+    }
+
+    .page-alphameta .alphameta-product-aura{
+
+        width:285px;
+        height:285px;
+    }
+
+    .page-alphameta .alphameta-product-grid{
+
+        width:315px;
+        height:315px;
+    }
+
+    .page-alphameta .alphameta-product-grid img{
+
+        width:76%;
+    }
+
+    .page-alphameta .alphameta-benefits-frame{
+
+        min-height:405px;
+    }
+
+    .page-alphameta .alphameta-benefits-frame img{
+
+        width:76%;
+
+        max-height:370px;
+    }
+
+    .page-alphameta .alphameta-product-detail-frame{
+
+        min-height:405px;
+    }
+
+    .page-alphameta .alphameta-detail-ring{
+
+        width:320px;
+        height:320px;
+    }
+
+    .page-alphameta .alphameta-product-detail-image{
+
+        width:77%;
+
+        max-height:375px;
+    }
+
+    .page-alphameta .alphameta-faq-answer p{
+
+        padding-left:57px;
+    }
+
+    .page-alphameta .alphameta-cta-box h2{
+
+        font-size:2.25rem;
+    }
+
+}
+
+
+/* ==========================================================
+   43 — REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion:reduce){
@@ -17828,18 +19889,11 @@ span:first-child{
     .page-alphameta *::before,
     .page-alphameta *::after{
 
-        animation-duration:
-            .01ms !important;
+        animation-duration:.01ms !important;
 
-        animation-iteration-count:
-            1 !important;
+        transition-duration:.01ms !important;
 
-        transition-duration:
-            .01ms !important;
-
-        scroll-behavior:
-            auto !important;
-
+        scroll-behavior:auto !important;
     }
 
 }
