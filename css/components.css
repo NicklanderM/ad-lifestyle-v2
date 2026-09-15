@@ -43846,21 +43846,9 @@ body.dark .products-cta-button.secondary {
 
 }
 
-.page-alpha-spin-straw .straw-badge{
-
-    color:
-        var(--straw-green)
-        !important;
-
-    border-color:
-        rgba(7,84,63,.16)
-        !important;
-
-    background:
-        rgba(255,255,255,.78)
-        !important;
-
-}
+/* ==========================================================
+   HERO TEXT
+   ========================================================== */
 
 .page-alpha-spin-straw .straw-eyebrow{
 
@@ -43998,6 +43986,10 @@ body.dark .products-cta-button.secondary {
     font-size:.76rem;
 
 }
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
 
 .page-alpha-spin-straw .straw-hero-product{
 
@@ -44756,7 +44748,8 @@ body.dark .products-cta-button.secondary {
 
 }
 
-.page-alpha-spin-straw .straw-benefit-grid
+.page-alpha-spin-straw
+.straw-benefit-grid
 .straw-more-panel
 .straw-benefit-card{
 
@@ -44769,7 +44762,6 @@ body.dark .products-cta-button.secondary {
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:10px;
@@ -44865,12 +44857,28 @@ body.dark .products-cta-button.secondary {
 }
 
 /* ==========================================================
-   TECHNOLOGY
+   PRODUCT DETAIL
+   NOVA SECÇÃO
+   IMAGEM À ESQUERDA + INFORMAÇÃO À DIREITA
    ========================================================== */
 
 .page-alpha-spin-straw .straw-technology-section{
 
+    position:relative;
+
+    overflow:hidden;
+
     background:
+        radial-gradient(
+            circle at 8% 30%,
+            rgba(20,107,80,.08),
+            transparent 26%
+        ),
+        radial-gradient(
+            circle at 92% 70%,
+            rgba(198,160,77,.09),
+            transparent 25%
+        ),
         linear-gradient(
             180deg,
             #F6FAF7 0%,
@@ -44879,12 +44887,17 @@ body.dark .products-cta-button.secondary {
 
 }
 
-.page-alpha-spin-straw .straw-tech-grid{
+/* ==========================================================
+   PRODUCT DETAIL GRID
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-detail-grid{
 
     display:grid;
 
     grid-template-columns:
-        1fr 1fr;
+        minmax(0, .95fr)
+        minmax(0, 1.05fr);
 
     gap:70px;
 
@@ -44892,11 +44905,23 @@ body.dark .products-cta-button.secondary {
 
 }
 
-.page-alpha-spin-straw .straw-tech-panel{
+/* ==========================================================
+   PRODUCT DETAIL VISUAL
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-detail-visual{
 
     position:relative;
 
-    min-height:520px;
+    min-width:0;
+
+}
+
+.page-alpha-spin-straw .straw-product-detail-frame{
+
+    position:relative;
+
+    min-height:560px;
 
     display:flex;
 
@@ -44906,238 +44931,510 @@ body.dark .products-cta-button.secondary {
 
     overflow:hidden;
 
-    border-radius:34px;
+    isolation:isolate;
+
+    border:
+        1px solid
+        rgba(7,84,63,.10);
+
+    border-radius:36px;
 
     background:
         radial-gradient(
-            circle at center,
-            rgba(198,160,77,.18),
-            transparent 34%
+            circle at 50% 45%,
+            rgba(198,160,77,.17),
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 50% 52%,
+            rgba(20,107,80,.10),
+            transparent 52%
         ),
         linear-gradient(
-            135deg,
-            #0D3F32,
-            #07543F 54%,
-            #146B50
+            145deg,
+            #FFFFFF,
+            #EEF5F1
         );
 
     box-shadow:
-        var(--straw-shadow-heavy);
+        0 30px 75px
+        rgba(7,84,63,.10);
 
 }
 
-.page-alpha-spin-straw .straw-tech-panel::before{
+/* ==========================================================
+   DETAIL ORB
+   ========================================================== */
 
-    content:"";
+.page-alpha-spin-straw .straw-detail-orb{
 
     position:absolute;
 
-    inset:20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.11);
-
-    border-radius:28px;
-
-}
-
-.page-alpha-spin-straw .straw-tech-lines{
-
-    position:absolute;
-
-    inset:0;
-
-    opacity:.22;
-
-}
-
-.page-alpha-spin-straw .straw-tech-lines span{
-
-    position:absolute;
-
-    left:50%;
-
-    width:76%;
-
-    height:1px;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            rgba(198,160,77,.62),
-            transparent
-        );
-
-    transform:
-        translateX(-50%);
-
-}
-
-.page-alpha-spin-straw
-.straw-tech-lines span:nth-child(1){
-    top:25%;
-}
-
-.page-alpha-spin-straw
-.straw-tech-lines span:nth-child(2){
-    top:40%;
-}
-
-.page-alpha-spin-straw
-.straw-tech-lines span:nth-child(3){
-    top:58%;
-}
-
-.page-alpha-spin-straw
-.straw-tech-lines span:nth-child(4){
-    top:73%;
-}
-
-.page-alpha-spin-straw .straw-tech-core{
-
-    position:relative;
-
-    z-index:2;
-
-    width:220px;
-    height:220px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-    justify-content:center;
-
-    border:
-        1px solid
-        rgba(198,160,77,.34);
+    width:410px;
+    height:410px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.08),
-            rgba(255,255,255,.015)
+            rgba(198,160,77,.17),
+            rgba(7,84,63,.075) 46%,
+            transparent 72%
         );
 
-    box-shadow:
-        inset 0 0 55px
-        rgba(198,160,77,.08),
+    filter:blur(5px);
 
-        0 18px 55px
-        rgba(0,0,0,.15);
-
-    backdrop-filter:blur(8px);
-
-    text-align:center;
+    z-index:0;
 
 }
 
-.page-alpha-spin-straw .straw-tech-core span{
+/* ==========================================================
+   DETAIL RINGS
+   ========================================================== */
 
-    color:#DCC17A;
+.page-alpha-spin-straw .straw-detail-ring{
 
-    font-size:.66rem;
+    position:absolute;
+
+    border-radius:50%;
+
+    z-index:1;
+
+    pointer-events:none;
+
+}
+
+.page-alpha-spin-straw .straw-detail-ring-1{
+
+    width:420px;
+    height:420px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.13);
+
+    box-shadow:
+        inset 0 0 70px
+        rgba(198,160,77,.07),
+
+        0 0 55px
+        rgba(7,84,63,.05);
+
+}
+
+.page-alpha-spin-straw .straw-detail-ring-2{
+
+    width:530px;
+    height:530px;
+
+    border:
+        1px dashed
+        rgba(198,160,77,.15);
+
+    animation:
+        strawDetailRotation
+        28s
+        linear
+        infinite;
+
+}
+
+@keyframes strawDetailRotation{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+/* ==========================================================
+   DETAIL GRID DECORATION
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-detail-grid{
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            transparent 49.7%,
+            rgba(7,84,63,.045) 50%,
+            transparent 50.3%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49.7%,
+            rgba(198,160,77,.065) 50%,
+            transparent 50.3%
+        );
+
+    background-size:
+        52px 52px;
+
+    opacity:.28;
+
+    transform:rotate(17deg);
+
+    z-index:0;
+
+}
+
+/* ==========================================================
+   DETAIL IMAGE
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-detail-image{
+
+    position:relative;
+
+    z-index:4;
+
+    width:min(72%,430px);
+
+    max-height:500px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 35px 48px
+            rgba(7,84,63,.20)
+        )
+        drop-shadow(
+            0 8px 18px
+            rgba(0,0,0,.08)
+        );
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+
+}
+
+.page-alpha-spin-straw
+.straw-product-detail-frame:hover
+.straw-product-detail-image{
+
+    transform:
+        translateY(-8px)
+        scale(1.035);
+
+    filter:
+        drop-shadow(
+            0 44px 56px
+            rgba(7,84,63,.24)
+        )
+        drop-shadow(
+            0 10px 20px
+            rgba(0,0,0,.09)
+        );
+
+}
+
+/* ==========================================================
+   DETAIL CAPTION
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-detail-caption{
+
+    position:absolute;
+
+    z-index:6;
+
+    left:50%;
+    bottom:28px;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 16px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.12);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.76);
+
+    backdrop-filter:
+        blur(16px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(7,84,63,.08);
+
+    white-space:nowrap;
+
+}
+
+.page-alpha-spin-straw .straw-detail-caption span{
+
+    color:
+        var(--straw-green-mid);
+
+    font-size:.68rem;
 
     font-weight:900;
 
-    letter-spacing:.22em;
+    letter-spacing:.17em;
 
 }
 
-.page-alpha-spin-straw .straw-tech-core strong{
+.page-alpha-spin-straw .straw-detail-caption strong{
 
-    margin-top:8px;
+    color:
+        var(--straw-gold-deep);
 
-    color:#FFFFFF;
+    font-size:.74rem;
 
-    font-size:1.72rem;
-
-    letter-spacing:.14em;
-
-}
-
-.page-alpha-spin-straw .straw-tech-core small{
-
-    margin-top:8px;
-
-    color:#BBD0C8;
-
-    font-size:.66rem;
-
-    letter-spacing:.12em;
+    letter-spacing:.19em;
 
 }
 
-.page-alpha-spin-straw .straw-palette{
+/* ==========================================================
+   PRODUCT DETAIL COPY
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-detail-copy{
+
+    position:relative;
+
+    min-width:0;
+
+}
+
+.page-alpha-spin-straw .straw-product-detail-copy .section-title{
+
+    max-width:650px;
+
+}
+
+/* ==========================================================
+   PRODUCT SPECS
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-specs{
 
     display:grid;
 
     grid-template-columns:
         1fr 1fr;
 
-    gap:10px 16px;
+    gap:11px;
 
-    margin-top:25px;
+    margin-top:30px;
 
 }
 
-.page-alpha-spin-straw .straw-palette-row{
+.page-alpha-spin-straw .straw-product-spec{
 
     display:grid;
 
-    grid-template-columns:34px 1fr;
+    grid-template-columns:
+        38px 1fr;
 
-    gap:10px;
+    gap:11px;
 
     align-items:center;
 
-}
+    min-height:72px;
 
-.page-alpha-spin-straw .straw-swatch{
-
-    width:30px;
-    height:30px;
-
-    border-radius:9px;
-
-    background:
-        var(--swatch);
+    padding:13px 14px;
 
     border:
         1px solid
-        rgba(0,0,0,.08);
+        rgba(7,84,63,.09);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.80);
 
     box-shadow:
-        0 7px 18px
-        rgba(7,84,63,.08);
+        0 9px 24px
+        rgba(7,84,63,.045);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
 
 }
 
-.page-alpha-spin-straw .straw-palette-row strong{
+.page-alpha-spin-straw .straw-product-spec:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(198,160,77,.30);
+
+    box-shadow:
+        0 15px 30px
+        rgba(7,84,63,.07);
+
+}
+
+.page-alpha-spin-straw .straw-product-spec-number{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,84,63,.10),
+            rgba(198,160,77,.12)
+        );
+
+    color:
+        var(--straw-green);
+
+    font-size:.62rem;
+
+    font-weight:900;
+
+}
+
+.page-alpha-spin-straw .straw-product-spec div{
+
+    min-width:0;
+
+}
+
+.page-alpha-spin-straw .straw-product-spec strong{
 
     display:block;
 
     color:
         var(--straw-green-deep);
 
-    font-size:.8rem;
+    font-size:.76rem;
+
+    font-weight:900;
+
+    letter-spacing:.04em;
 
 }
 
-.page-alpha-spin-straw .straw-palette-row div span{
+.page-alpha-spin-straw .straw-product-spec div span{
 
     display:block;
 
-    margin-top:2px;
+    margin-top:3px;
 
-    color:#7A8983;
+    color:#718078;
 
-    font-size:.68rem;
+    font-size:.72rem;
+
+    line-height:1.45;
+
+}
+
+/* ==========================================================
+   PRODUCT HIGHLIGHT
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-product-highlight{
+
+    display:grid;
+
+    grid-template-columns:
+        45px 1fr;
+
+    gap:14px;
+
+    align-items:start;
+
+    margin-top:23px;
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.22);
+
+    border-radius:21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(198,160,77,.075),
+            rgba(7,84,63,.035)
+        );
+
+}
+
+.page-alpha-spin-straw .straw-product-highlight-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        var(--straw-green);
+
+    color:#FFFFFF;
+
+    font-size:.95rem;
+
+    box-shadow:
+        0 10px 22px
+        rgba(7,84,63,.12);
+
+}
+
+.page-alpha-spin-straw .straw-product-highlight strong{
+
+    display:block;
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:.9rem;
+
+}
+
+.page-alpha-spin-straw .straw-product-highlight p{
+
+    margin-top:5px;
+
+    color:#6C7C75;
+
+    line-height:1.65;
+
+    font-size:.82rem;
 
 }
 
@@ -45824,7 +46121,7 @@ body.dark .products-cta-button.secondary {
 }
 
 /* ==========================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
    ========================================================== */
 
 @media(max-width:1050px){
@@ -45871,11 +46168,18 @@ body.dark .products-cta-button.secondary {
     }
 
     .page-alpha-spin-straw
-    .straw-tech-grid{
+    .straw-product-detail-grid{
 
         grid-template-columns:1fr;
 
-        gap:40px;
+        gap:45px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-detail-frame{
+
+        min-height:500px;
 
     }
 
@@ -45903,6 +46207,10 @@ body.dark .products-cta-button.secondary {
     }
 
 }
+
+/* ==========================================================
+   RESPONSIVE — MOBILE LARGE
+   ========================================================== */
 
 @media(max-width:760px){
 
@@ -45957,18 +46265,79 @@ body.dark .products-cta-button.secondary {
     .straw-benefit-grid,
     .page-alpha-spin-straw
     .straw-benefit-grid
-    .straw-more-panel,
-    .page-alpha-spin-straw
-    .straw-palette{
+    .straw-more-panel{
 
         grid-template-columns:1fr;
 
     }
 
-    .page-alpha-spin-straw
-    .straw-tech-panel{
+    /* -----------------------------------------
+       PRODUCT DETAIL MOBILE
+       ----------------------------------------- */
 
-        min-height:380px;
+    .page-alpha-spin-straw
+    .straw-product-detail-grid{
+
+        grid-template-columns:1fr;
+
+        gap:35px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-detail-frame{
+
+        min-height:430px;
+
+        border-radius:28px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-detail-image{
+
+        width:min(74%,360px);
+
+        max-height:390px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-ring-1{
+
+        width:320px;
+        height:320px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-ring-2{
+
+        width:400px;
+        height:400px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-grid{
+
+        width:320px;
+        height:320px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-orb{
+
+        width:320px;
+        height:320px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-specs{
+
+        grid-template-columns:1fr;
 
     }
 
@@ -45987,6 +46356,10 @@ body.dark .products-cta-button.secondary {
     }
 
 }
+
+/* ==========================================================
+   RESPONSIVE — MOBILE
+   ========================================================== */
 
 @media(max-width:520px){
 
@@ -46025,31 +46398,85 @@ body.dark .products-cta-button.secondary {
     }
 
     .page-alpha-spin-straw
+    .straw-product-detail-frame{
+
+        min-height:370px;
+
+        border-radius:24px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-detail-image{
+
+        width:74%;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-ring-1{
+
+        width:275px;
+        height:275px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-ring-2{
+
+        width:340px;
+        height:340px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-grid{
+
+        width:275px;
+        height:275px;
+
+        background-size:
+            40px 40px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-orb{
+
+        width:270px;
+        height:270px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-detail-caption{
+
+        bottom:18px;
+
+        padding:8px 12px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-spec{
+
+        min-height:68px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-highlight{
+
+        grid-template-columns:40px 1fr;
+
+        padding:17px;
+
+    }
+
+    .page-alpha-spin-straw
     .straw-tech-panel{
 
         min-height:320px;
-
-    }
-
-    .page-alpha-spin-straw
-    .straw-tech-core{
-
-        width:175px;
-        height:175px;
-
-    }
-
-    .page-alpha-spin-straw
-    .straw-tech-core strong{
-
-        font-size:1.35rem;
-
-    }
-
-    .page-alpha-spin-straw
-    .straw-cta-box{
-
-        padding:30px;
 
     }
 
@@ -46073,7 +46500,18 @@ body.dark .products-cta-button.secondary {
 
     }
 
+    .page-alpha-spin-straw
+    .straw-cta-box{
+
+        padding:30px;
+
+    }
+
 }
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
