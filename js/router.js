@@ -53,6 +53,8 @@ import { loadAlphaSpinUltra } from "../pages/products/alphaspin-ultra.js";
 
 import { loadISmartS3 } from "../pages/products/ismarts3.js";
 
+import { loadAlphaSpinStraw } from "../pages/products/alpha-spin-straw.js";
+
 
 /* ==========================================================
    ROTAS
@@ -103,7 +105,10 @@ const routes = {
         loadAlphaSpinUltra,
 
     "/ismarts3":
-        loadISmartS3
+        loadISmartS3,
+   
+    "/alpha-spin-straw":
+        loadAlphaSpinStraw
 
 };
 
