@@ -44926,3 +44926,2415 @@ body.events-modal-open{
     }
 
 }
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   ALPHA SPIN STRAW
+   PAGE COMPONENTS
+   ========================================================== */
+
+.page-alpha-spin-straw{
+
+    --straw-green:#07543F;
+    --straw-green-deep:#0D3F32;
+    --straw-green-mid:#146B50;
+
+    --straw-gold:#C6A04D;
+    --straw-gold-deep:#92702F;
+
+    --straw-black:#151515;
+    --straw-silver:#BFC3C1;
+    --straw-white:#F7F7F5;
+
+    --straw-ink:#17382F;
+    --straw-muted:#64756F;
+
+    --straw-line:rgba(7,84,63,.14);
+
+    --straw-shadow:
+        0 24px 70px rgba(13,63,50,.12);
+
+    --straw-shadow-heavy:
+        0 34px 100px rgba(7,84,63,.23);
+
+    --straw-radius:30px;
+
+    color:var(--straw-ink);
+}
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-hero{
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 17% 22%,
+            rgba(198,160,77,.18),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(20,107,80,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #F8FAF8 0%,
+            #EEF4F0 48%,
+            #E2ECE7 100%
+        );
+
+}
+
+.page-alpha-spin-straw .straw-hero-atmosphere{
+
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+
+}
+
+.page-alpha-spin-straw .straw-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(70px);
+
+    opacity:.44;
+
+}
+
+.page-alpha-spin-straw .straw-orb-1{
+
+    width:360px;
+    height:360px;
+
+    left:-130px;
+    top:-110px;
+
+    background:
+        rgba(7,84,63,.12);
+
+}
+
+.page-alpha-spin-straw .straw-orb-2{
+
+    width:300px;
+    height:300px;
+
+    right:4%;
+    top:10%;
+
+    background:
+        rgba(198,160,77,.14);
+
+}
+
+.page-alpha-spin-straw .straw-orb-3{
+
+    width:420px;
+    height:420px;
+
+    left:42%;
+    bottom:-220px;
+
+    background:
+        rgba(20,107,80,.08);
+
+}
+
+.page-alpha-spin-straw .straw-orbit{
+
+    position:absolute;
+
+    border:
+        1px solid
+        rgba(7,84,63,.09);
+
+    border-radius:50%;
+
+}
+
+.page-alpha-spin-straw .straw-orbit-1{
+
+    width:560px;
+    height:560px;
+
+    right:-210px;
+    top:-170px;
+
+}
+
+.page-alpha-spin-straw .straw-orbit-2{
+
+    width:390px;
+    height:390px;
+
+    right:-115px;
+    top:-85px;
+
+    border-color:
+        rgba(198,160,77,.14);
+
+}
+
+.page-alpha-spin-straw .straw-hero .container{
+
+    position:relative;
+    z-index:2;
+
+}
+
+.page-alpha-spin-straw .straw-badge{
+
+    color:
+        var(--straw-green)
+        !important;
+
+    border-color:
+        rgba(7,84,63,.16)
+        !important;
+
+    background:
+        rgba(255,255,255,.78)
+        !important;
+
+}
+
+.page-alpha-spin-straw .straw-eyebrow{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:
+        var(--straw-green-mid);
+
+    font-size:.76rem;
+
+    font-weight:900;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+.page-alpha-spin-straw .hero-title{
+
+    max-width:770px;
+
+    color:
+        var(--straw-green-deep)
+        !important;
+
+}
+
+.page-alpha-spin-straw .hero-title span{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--straw-green),
+            var(--straw-green-mid),
+            var(--straw-gold)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:
+        transparent
+        !important;
+
+}
+
+.page-alpha-spin-straw .hero-sub{
+
+    max-width:690px;
+
+    color:
+        #586B64
+        !important;
+
+}
+
+.page-alpha-spin-straw .straw-hero-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0;
+
+}
+
+.page-alpha-spin-straw .straw-hero-pills span{
+
+    padding:9px 14px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.10);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.75);
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:.78rem;
+
+    font-weight:800;
+
+    box-shadow:
+        0 8px 24px
+        rgba(7,84,63,.06);
+
+}
+
+.page-alpha-spin-straw .straw-hero-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    margin-top:35px;
+
+}
+
+.page-alpha-spin-straw .straw-hero-meta div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.page-alpha-spin-straw .straw-hero-meta strong{
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:1.05rem;
+
+}
+
+.page-alpha-spin-straw .straw-hero-meta span{
+
+    color:#788781;
+
+    font-size:.76rem;
+
+}
+
+.page-alpha-spin-straw .straw-hero-product{
+
+    position:relative;
+
+    min-height:540px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    isolation:isolate;
+
+}
+
+.page-alpha-spin-straw .straw-hero-product img{
+
+    position:relative;
+
+    z-index:4;
+
+    width:min(430px,82%);
+
+    max-height:560px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 36px 48px
+            rgba(7,84,63,.23)
+        );
+
+}
+
+.page-alpha-spin-straw .straw-product-aura{
+
+    position:absolute;
+
+    width:390px;
+    height:390px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,160,77,.20),
+            rgba(7,84,63,.08) 48%,
+            transparent 72%
+        );
+
+    filter:blur(5px);
+
+}
+
+.page-alpha-spin-straw .straw-product-ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    z-index:1;
+
+}
+
+.page-alpha-spin-straw .straw-product-ring-1{
+
+    width:450px;
+    height:450px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.17);
+
+    box-shadow:
+        inset 0 0 70px
+        rgba(198,160,77,.10),
+
+        0 0 70px
+        rgba(7,84,63,.08);
+
+}
+
+.page-alpha-spin-straw .straw-product-ring-2{
+
+    width:560px;
+    height:560px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.11);
+
+}
+
+.page-alpha-spin-straw .straw-product-grid{
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            transparent 49.7%,
+            rgba(7,84,63,.06) 50%,
+            transparent 50.3%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49.7%,
+            rgba(198,160,77,.08) 50%,
+            transparent 50.3%
+        );
+
+    background-size:54px 54px;
+
+    opacity:.25;
+
+    z-index:0;
+
+    transform:rotate(22deg);
+
+}
+
+.page-alpha-spin-straw .straw-product-caption{
+
+    position:absolute;
+
+    z-index:5;
+
+    left:50%;
+    bottom:38px;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 15px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.12);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    backdrop-filter:blur(14px);
+
+    white-space:nowrap;
+
+}
+
+.page-alpha-spin-straw .straw-product-caption span{
+
+    color:
+        var(--straw-green-mid);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+
+}
+
+.page-alpha-spin-straw .straw-product-caption strong{
+
+    color:
+        var(--straw-gold-deep);
+
+    font-size:.74rem;
+
+    letter-spacing:.20em;
+
+}
+
+/* ==========================================================
+   GENERAL
+   ========================================================== */
+
+.page-alpha-spin-straw .section-title{
+
+    color:
+        var(--straw-green-deep)
+        !important;
+
+}
+
+.page-alpha-spin-straw .section-title span{
+
+    color:
+        var(--straw-green-mid)
+        !important;
+
+}
+
+.page-alpha-spin-straw .lead{
+
+    color:
+        #5C6E68
+        !important;
+
+}
+
+.page-alpha-spin-straw .label{
+
+    color:
+        var(--straw-green)
+        !important;
+
+}
+
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-overview-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF 0%,
+            #F8FBF9 100%
+        );
+
+}
+
+.page-alpha-spin-straw .straw-overview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.page-alpha-spin-straw .straw-overview-card{
+
+    position:relative;
+
+    min-height:245px;
+
+    padding:28px;
+
+    border:
+        1px solid
+        var(--straw-line);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F5F9F6
+        );
+
+    box-shadow:
+        0 14px 40px
+        rgba(7,84,63,.06);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.page-alpha-spin-straw .straw-overview-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 24px 58px
+        rgba(7,84,63,.11);
+
+    border-color:
+        rgba(198,160,77,.28);
+
+}
+
+.page-alpha-spin-straw .straw-card-number{
+
+    display:block;
+
+    color:
+        rgba(7,84,63,.16);
+
+    font-size:.72rem;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+
+}
+
+.page-alpha-spin-straw .straw-card-icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:25px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,84,63,.10),
+            rgba(198,160,77,.12)
+        );
+
+    color:
+        var(--straw-green);
+
+    font-size:1.35rem;
+
+}
+
+.page-alpha-spin-straw .straw-overview-card h3{
+
+    margin-top:20px;
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:1.2rem;
+
+}
+
+.page-alpha-spin-straw .straw-overview-card p{
+
+    margin-top:9px;
+
+    color:#65766F;
+
+    line-height:1.7;
+
+    font-size:.9rem;
+
+}
+
+.page-alpha-spin-straw .straw-note{
+
+    display:grid;
+
+    grid-template-columns:46px 1fr;
+
+    gap:15px;
+
+    margin-top:25px;
+
+    padding:22px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.10);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(7,84,63,.045),
+            rgba(198,160,77,.06)
+        );
+
+}
+
+.page-alpha-spin-straw .straw-note-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        var(--straw-green);
+
+    color:#FFFFFF;
+
+    font-weight:900;
+
+}
+
+.page-alpha-spin-straw .straw-note strong{
+
+    color:
+        var(--straw-green-deep);
+
+}
+
+.page-alpha-spin-straw .straw-note p{
+
+    margin-top:5px;
+
+    color:#687A73;
+
+    line-height:1.65;
+
+}
+
+/* ==========================================================
+   DARK EXPERIENCE
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-dark-section{
+
+    background:
+        radial-gradient(
+            circle at 18% 20%,
+            rgba(20,107,80,.30),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(198,160,77,.12),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #0D3F32 0%,
+            #07543F 52%,
+            #123F35 100%
+        );
+
+}
+
+.page-alpha-spin-straw .straw-dark-section .section-title{
+
+    color:#FFFFFF !important;
+
+}
+
+.page-alpha-spin-straw .straw-dark-section .section-title span{
+
+    color:#D7B66A !important;
+
+}
+
+.page-alpha-spin-straw .straw-dark-section .lead{
+
+    color:#D1DED9 !important;
+
+}
+
+.page-alpha-spin-straw .straw-label-light{
+
+    color:#E2C47A !important;
+
+}
+
+.page-alpha-spin-straw .straw-experience-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:18px;
+
+    margin-top:42px;
+
+}
+
+.page-alpha-spin-straw .straw-experience-card{
+
+    padding:30px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.075),
+            rgba(255,255,255,.035)
+        );
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 18px 44px
+        rgba(0,0,0,.13);
+
+}
+
+.page-alpha-spin-straw .straw-experience-top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.page-alpha-spin-straw .straw-experience-top span{
+
+    color:
+        rgba(255,255,255,.42);
+
+    font-size:.73rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
+}
+
+.page-alpha-spin-straw .straw-experience-top i{
+
+    width:35px;
+    height:35px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(198,160,77,.14);
+
+    color:
+        #E2C47A;
+
+    font-style:normal;
+
+}
+
+.page-alpha-spin-straw .straw-experience-card h3{
+
+    margin-top:22px;
+
+    color:#FFFFFF;
+
+    font-size:1.3rem;
+
+}
+
+.page-alpha-spin-straw .straw-experience-card p{
+
+    margin-top:9px;
+
+    color:#C8D7D1;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-benefits-section{
+
+    background:#FFFFFF;
+
+}
+
+.page-alpha-spin-straw .straw-section-heading{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr .9fr;
+
+    gap:50px;
+
+    align-items:end;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:40px;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-card{
+
+    padding:27px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.11);
+
+    border-radius:24px;
+
+    background:#F7FAF8;
+
+    box-shadow:
+        0 14px 35px
+        rgba(7,84,63,.055);
+
+}
+
+.page-alpha-spin-straw .straw-benefit-head{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-head span{
+
+    color:
+        rgba(7,84,63,.22);
+
+    font-size:.72rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-head i{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(7,84,63,.09);
+
+    color:
+        var(--straw-green);
+
+    font-style:normal;
+
+    font-weight:900;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-card h3{
+
+    margin-top:22px;
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:1.22rem;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-card p{
+
+    margin-top:9px;
+
+    color:#697972;
+
+    line-height:1.7;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   MORE CONTENT
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-more-panel{
+
+    max-height:0;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    overflow:hidden;
+
+    margin-top:0;
+
+    transform:translateY(-8px);
+
+    transition:
+        max-height .65s cubic-bezier(.2,.75,.2,1),
+        opacity .35s ease,
+        transform .45s ease,
+        margin-top .45s ease,
+        visibility .65s ease;
+
+}
+
+.page-alpha-spin-straw .straw-more-panel.is-open{
+
+    max-height:5000px;
+
+    opacity:1;
+
+    visibility:visible;
+
+    margin-top:16px;
+
+    transform:translateY(0);
+
+}
+
+.page-alpha-spin-straw .straw-benefit-grid .straw-more-panel{
+
+    grid-column:1 / -1;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+}
+
+.page-alpha-spin-straw .straw-benefit-grid
+.straw-more-panel
+.straw-benefit-card{
+
+    margin:0;
+
+}
+
+.page-alpha-spin-straw .straw-more-toggle{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    min-height:44px;
+
+    margin-top:22px;
+
+    padding:10px 15px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.18);
+
+    border-radius:999px;
+
+    background:#FFFFFF;
+
+    color:
+        var(--straw-green-deep);
+
+    font:inherit;
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.page-alpha-spin-straw .straw-more-toggle:hover{
+
+    transform:translateY(-2px);
+
+    border-color:
+        rgba(198,160,77,.45);
+
+    box-shadow:
+        0 12px 28px
+        rgba(7,84,63,.08);
+
+}
+
+.page-alpha-spin-straw .straw-more-toggle i{
+
+    width:25px;
+    height:25px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(7,84,63,.08);
+
+    color:
+        var(--straw-green);
+
+    font-style:normal;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+
+}
+
+.page-alpha-spin-straw .straw-more-toggle.is-open i{
+
+    transform:rotate(45deg);
+
+    background:
+        rgba(198,160,77,.15);
+
+    color:
+        var(--straw-gold-deep);
+
+}
+
+.page-alpha-spin-straw .straw-more-toggle-light{
+
+    background:#F7FAF8;
+
+}
+
+/* ==========================================================
+   TECHNOLOGY
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-technology-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #F6FAF7 0%,
+            #FFFFFF 100%
+        );
+
+}
+
+.page-alpha-spin-straw .straw-tech-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.page-alpha-spin-straw .straw-tech-panel{
+
+    position:relative;
+
+    min-height:520px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(198,160,77,.18),
+            transparent 34%
+        ),
+        linear-gradient(
+            135deg,
+            #0D3F32,
+            #07543F 54%,
+            #146B50
+        );
+
+    box-shadow:
+        var(--straw-shadow-heavy);
+
+}
+
+.page-alpha-spin-straw .straw-tech-panel::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    border-radius:28px;
+
+}
+
+.page-alpha-spin-straw .straw-tech-lines{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.22;
+
+}
+
+.page-alpha-spin-straw .straw-tech-lines span{
+
+    position:absolute;
+
+    left:50%;
+
+    width:76%;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(198,160,77,.62),
+            transparent
+        );
+
+    transform:
+        translateX(-50%);
+
+}
+
+.page-alpha-spin-straw
+.straw-tech-lines span:nth-child(1){
+    top:25%;
+}
+
+.page-alpha-spin-straw
+.straw-tech-lines span:nth-child(2){
+    top:40%;
+}
+
+.page-alpha-spin-straw
+.straw-tech-lines span:nth-child(3){
+    top:58%;
+}
+
+.page-alpha-spin-straw
+.straw-tech-lines span:nth-child(4){
+    top:73%;
+}
+
+.page-alpha-spin-straw .straw-tech-core{
+
+    position:relative;
+
+    z-index:2;
+
+    width:220px;
+    height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(198,160,77,.34);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08),
+            rgba(255,255,255,.015)
+        );
+
+    box-shadow:
+        inset 0 0 55px
+        rgba(198,160,77,.08),
+
+        0 18px 55px
+        rgba(0,0,0,.15);
+
+    backdrop-filter:blur(8px);
+
+    text-align:center;
+
+}
+
+.page-alpha-spin-straw .straw-tech-core span{
+
+    color:#DCC17A;
+
+    font-size:.66rem;
+
+    font-weight:900;
+
+    letter-spacing:.22em;
+
+}
+
+.page-alpha-spin-straw .straw-tech-core strong{
+
+    margin-top:8px;
+
+    color:#FFFFFF;
+
+    font-size:1.72rem;
+
+    letter-spacing:.14em;
+
+}
+
+.page-alpha-spin-straw .straw-tech-core small{
+
+    margin-top:8px;
+
+    color:#BBD0C8;
+
+    font-size:.66rem;
+
+    letter-spacing:.12em;
+
+}
+
+.page-alpha-spin-straw .straw-palette{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:10px 16px;
+
+    margin-top:25px;
+
+}
+
+.page-alpha-spin-straw .straw-palette-row{
+
+    display:grid;
+
+    grid-template-columns:34px 1fr;
+
+    gap:10px;
+
+    align-items:center;
+
+}
+
+.page-alpha-spin-straw .straw-swatch{
+
+    width:30px;
+    height:30px;
+
+    border-radius:9px;
+
+    background:
+        var(--swatch);
+
+    border:
+        1px solid
+        rgba(0,0,0,.08);
+
+    box-shadow:
+        0 7px 18px
+        rgba(7,84,63,.08);
+
+}
+
+.page-alpha-spin-straw .straw-palette-row strong{
+
+    display:block;
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:.8rem;
+
+}
+
+.page-alpha-spin-straw .straw-palette-row div span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:#7A8983;
+
+    font-size:.68rem;
+
+}
+
+/* ==========================================================
+   USE
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-use-section{
+
+    background:#FFFFFF;
+
+}
+
+.page-alpha-spin-straw .straw-use-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.page-alpha-spin-straw .straw-use-step{
+
+    display:grid;
+
+    grid-template-columns:68px 1fr;
+
+    gap:18px;
+
+    align-items:start;
+
+    padding:25px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.10);
+
+    border-radius:24px;
+
+    background:#F8FBF9;
+
+}
+
+.page-alpha-spin-straw .straw-use-number{
+
+    width:58px;
+    height:58px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--straw-green),
+            var(--straw-green-mid)
+        );
+
+    color:#FFFFFF;
+
+    font-size:.83rem;
+
+    font-weight:900;
+
+    box-shadow:
+        0 12px 24px
+        rgba(7,84,63,.15);
+
+}
+
+.page-alpha-spin-straw .straw-use-step h3{
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:1.08rem;
+
+}
+
+.page-alpha-spin-straw .straw-use-step p{
+
+    margin-top:6px;
+
+    color:#687A73;
+
+    line-height:1.65;
+
+    font-size:.88rem;
+
+}
+
+.page-alpha-spin-straw .straw-use-note{
+
+    padding:24px;
+
+    border-radius:22px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.24);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(198,160,77,.08),
+            rgba(7,84,63,.04)
+        );
+
+}
+
+.page-alpha-spin-straw .straw-use-note strong{
+
+    color:
+        var(--straw-green-deep);
+
+}
+
+.page-alpha-spin-straw .straw-use-note p{
+
+    margin-top:6px;
+
+    color:#697A73;
+
+    line-height:1.7;
+
+}
+
+/* ==========================================================
+   CLAIMS
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-claims-section{
+
+    background:#F4F8F5;
+
+}
+
+.page-alpha-spin-straw .straw-claims-box{
+
+    display:grid;
+
+    grid-template-columns:58px 1fr;
+
+    gap:20px;
+
+    padding:34px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.25);
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F8F7EF
+        );
+
+    box-shadow:
+        var(--straw-shadow);
+
+}
+
+.page-alpha-spin-straw .straw-claims-icon{
+
+    width:50px;
+    height:50px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--straw-gold),
+            var(--straw-gold-deep)
+        );
+
+    color:#FFFFFF;
+
+    font-size:1.1rem;
+
+    font-weight:900;
+
+}
+
+.page-alpha-spin-straw .straw-claims-box h2{
+
+    margin-top:8px;
+
+    color:
+        var(--straw-green-deep);
+
+    font-size:
+        clamp(
+            1.7rem,
+            3vw,
+            2.35rem
+        );
+
+    line-height:1.15;
+
+}
+
+.page-alpha-spin-straw .straw-claims-box h2 span{
+
+    color:
+        var(--straw-green-mid);
+
+}
+
+.page-alpha-spin-straw .straw-claims-box p{
+
+    margin-top:13px;
+
+    color:#65766F;
+
+    line-height:1.8;
+
+}
+
+.page-alpha-spin-straw .straw-claims-box p strong{
+
+    color:
+        var(--straw-green-deep);
+
+}
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-faq-section{
+
+    background:#FFFFFF;
+
+}
+
+.page-alpha-spin-straw .straw-faq-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:40px;
+
+}
+
+.page-alpha-spin-straw .straw-faq-item{
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(7,84,63,.11);
+
+    border-radius:21px;
+
+    background:#F8FBF9;
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.page-alpha-spin-straw .straw-faq-item:hover{
+
+    border-color:
+        rgba(7,84,63,.22);
+
+}
+
+.page-alpha-spin-straw .straw-faq-item.active{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(198,160,77,.35);
+
+    box-shadow:
+        0 16px 40px
+        rgba(7,84,63,.08);
+
+}
+
+.page-alpha-spin-straw .straw-faq-question{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        44px minmax(0,1fr) 34px;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 20px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        var(--straw-green-deep);
+
+    font:inherit;
+
+    font-weight:800;
+
+    text-align:left;
+
+    cursor:pointer;
+
+}
+
+.page-alpha-spin-straw .straw-faq-number{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(7,84,63,.08);
+
+    color:
+        var(--straw-green);
+
+    font-size:.66rem;
+
+    font-weight:900;
+
+    letter-spacing:.08em;
+
+}
+
+.page-alpha-spin-straw .straw-faq-text{
+
+    line-height:1.5;
+
+}
+
+.page-alpha-spin-straw .straw-faq-plus{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(198,160,77,.12);
+
+    color:
+        var(--straw-gold-deep);
+
+    font-size:1.1rem;
+
+    font-weight:600;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+
+}
+
+.page-alpha-spin-straw
+.straw-faq-item.active
+.straw-faq-plus{
+
+    transform:
+        rotate(45deg);
+
+    background:
+        rgba(7,84,63,.10);
+
+}
+
+.page-alpha-spin-straw .straw-faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .4s ease;
+
+}
+
+.page-alpha-spin-straw .straw-faq-answer p{
+
+    padding:
+        0 20px 20px 78px;
+
+    color:#667870;
+
+    line-height:1.75;
+
+    font-size:.9rem;
+
+}
+
+/* ==========================================================
+   DISCLAIMER
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-disclaimer{
+
+    padding:28px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #F2F6F3,
+            #EEF3F0
+        );
+
+}
+
+.page-alpha-spin-straw .straw-disclaimer-box{
+
+    display:grid;
+
+    grid-template-columns:42px 1fr;
+
+    gap:15px;
+
+    align-items:start;
+
+    padding:21px;
+
+    border:
+        1px solid
+        rgba(7,84,63,.09);
+
+    border-radius:20px;
+
+    background:
+        rgba(255,255,255,.76);
+
+}
+
+.page-alpha-spin-straw .straw-disclaimer-mark{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        var(--straw-green);
+
+    color:#FFFFFF;
+
+    font-size:.8rem;
+
+    font-weight:900;
+
+}
+
+.page-alpha-spin-straw .straw-disclaimer-box strong{
+
+    color:
+        var(--straw-green-deep);
+
+}
+
+.page-alpha-spin-straw .straw-disclaimer-box p{
+
+    margin-top:5px;
+
+    color:#687970;
+
+    line-height:1.7;
+
+    font-size:.85rem;
+
+}
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-cta-section{
+
+    background:
+        radial-gradient(
+            circle at 16% 18%,
+            rgba(198,160,77,.16),
+            transparent 24%
+        ),
+        linear-gradient(
+            135deg,
+            #0D3F32,
+            #07543F 52%,
+            #0D3F32
+        );
+
+}
+
+.page-alpha-spin-straw .straw-cta-box{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap:40px;
+
+    align-items:center;
+
+    padding:48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 24px 70px
+        rgba(0,0,0,.18);
+
+    backdrop-filter:blur(14px);
+
+}
+
+.page-alpha-spin-straw .straw-cta-box h2{
+
+    margin-top:10px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.4rem
+        );
+
+    line-height:1.05;
+
+}
+
+.page-alpha-spin-straw .straw-cta-box h2 span{
+
+    color:#D8B96D;
+
+}
+
+.page-alpha-spin-straw .straw-cta-box p{
+
+    max-width:650px;
+
+    margin-top:13px;
+
+    color:#C7D7D1;
+
+    line-height:1.7;
+
+}
+
+.page-alpha-spin-straw .straw-cta-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    min-width:220px;
+
+}
+
+.page-alpha-spin-straw .straw-btn-primary{
+
+    border:
+        1px solid
+        rgba(255,255,255,.08)
+        !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--straw-green),
+            var(--straw-green-mid)
+        )
+        !important;
+
+    color:#FFFFFF !important;
+
+    box-shadow:
+        0 14px 32px
+        rgba(0,0,0,.16)
+        !important;
+
+}
+
+.page-alpha-spin-straw .straw-btn-glass{
+
+    border-color:
+        rgba(7,84,63,.17)
+        !important;
+
+    color:
+        var(--straw-green-deep)
+        !important;
+
+    background:
+        rgba(255,255,255,.76)
+        !important;
+
+}
+
+.page-alpha-spin-straw .straw-btn-dark{
+
+    color:#FFFFFF !important;
+
+    border-color:
+        rgba(255,255,255,.18)
+        !important;
+
+    background:
+        rgba(255,255,255,.055)
+        !important;
+
+}
+
+/* ==========================================================
+   FOCUS
+   ========================================================== */
+
+.page-alpha-spin-straw button:focus-visible{
+
+    outline:
+        3px solid
+        rgba(198,160,77,.42);
+
+    outline-offset:3px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:1050px){
+
+    .page-alpha-spin-straw
+    .straw-overview-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-experience-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-benefit-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-benefit-grid
+    .straw-more-panel{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-section-heading{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-tech-grid{
+
+        grid-template-columns:1fr;
+
+        gap:40px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-use-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-cta-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-cta-actions{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+@media(max-width:760px){
+
+    .page-alpha-spin-straw
+    .straw-hero-product{
+
+        min-height:410px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-hero-product img{
+
+        width:min(350px,86%);
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-ring-1{
+
+        width:300px;
+        height:300px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-ring-2{
+
+        width:370px;
+        height:370px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-grid{
+
+        width:300px;
+        height:300px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-product-caption{
+
+        bottom:10px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-overview-grid,
+    .page-alpha-spin-straw
+    .straw-benefit-grid,
+    .page-alpha-spin-straw
+    .straw-benefit-grid
+    .straw-more-panel,
+    .page-alpha-spin-straw
+    .straw-palette{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-tech-panel{
+
+        min-height:380px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-claims-box{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-cta-actions{
+
+        flex-direction:column;
+
+    }
+
+}
+
+@media(max-width:520px){
+
+    .page-alpha-spin-straw
+    .straw-hero-pills{
+
+        gap:7px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-hero-pills span{
+
+        padding:7px 10px;
+
+        font-size:.68rem;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-hero-meta{
+
+        gap:18px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-overview-card,
+    .page-alpha-spin-straw
+    .straw-benefit-card,
+    .page-alpha-spin-straw
+    .straw-experience-card{
+
+        padding:23px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-tech-panel{
+
+        min-height:320px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-tech-core{
+
+        width:175px;
+        height:175px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-tech-core strong{
+
+        font-size:1.35rem;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-cta-box{
+
+        padding:30px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-faq-question{
+
+        grid-template-columns:
+            36px minmax(0,1fr) 30px;
+
+        gap:10px;
+
+        padding:16px;
+
+    }
+
+    .page-alpha-spin-straw
+    .straw-faq-answer p{
+
+        padding:
+            0 16px 18px 16px;
+
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .page-alpha-spin-straw *,
+    .page-alpha-spin-straw *::before,
+    .page-alpha-spin-straw *::after{
+
+        scroll-behavior:auto !important;
+
+        transition-duration:.01ms !important;
+
+        animation-duration:.01ms !important;
+
+        animation-iteration-count:1 !important;
+
+    }
+
+}
