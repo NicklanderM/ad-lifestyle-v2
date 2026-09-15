@@ -5079,6 +5079,12 @@ body[data-theme="ismarts3"] .input:focus{
    PAGE COMPONENTS
    Premium Functional Coffee
    Standardised Product Architecture
+   LIGHT + DARK COMPATIBILITY
+   ========================================================== */
+
+
+/* ==========================================================
+   01. PAGE VARIABLES
    ========================================================== */
 
 .page-zenbru{
@@ -5098,30 +5104,78 @@ body[data-theme="ismarts3"] .input:focus{
     --zenbru-green-deep:#344B24;
 
     --zenbru-cream:#FFF9E9;
-    --zenbru-cream-soft:#F8F1DD;
+    --zenbru-cream-soft:#F7F0DF;
 
     --zenbru-black:#17120F;
-    --zenbru-white:#FFFFFF;
 
-    --zenbru-ink:#39251A;
-    --zenbru-muted:#786960;
+    --zenbru-bg:#FFFFFF;
+    --zenbru-bg-soft:#FFF9EA;
+    --zenbru-surface:#FFFFFF;
+    --zenbru-surface-soft:#FFFDF7;
 
-    --zenbru-line:rgba(75,36,19,.12);
+    --zenbru-text:#39251A;
+    --zenbru-text-soft:#685A52;
+    --zenbru-text-muted:#83756D;
 
-    --zenbru-shadow:
-        0 24px 70px rgba(75,36,19,.10);
+    --zenbru-line:rgba(75,36,19,.11);
+    --zenbru-line-soft:rgba(75,36,19,.07);
 
-    --zenbru-shadow-heavy:
-        0 35px 100px rgba(46,22,12,.20);
+    --zenbru-card-shadow:
+        0 18px 45px rgba(75,36,19,.055);
+
+    --zenbru-heavy-shadow:
+        0 35px 90px rgba(46,22,12,.16);
 
     --zenbru-radius:30px;
 
-    color:var(--zenbru-ink);
+    color:var(--zenbru-text);
+
+    background:var(--zenbru-bg);
+
 }
 
 
 /* ==========================================================
-   HERO
+   02. GLOBAL PAGE BEHAVIOUR
+   ========================================================== */
+
+.page-zenbru *,
+.page-zenbru *::before,
+.page-zenbru *::after{
+
+    box-sizing:border-box;
+
+}
+
+
+.page-zenbru img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+
+.page-zenbru button{
+
+    font:inherit;
+
+}
+
+
+.page-zenbru button:focus-visible{
+
+    outline:
+        3px solid
+        rgba(199,154,43,.45);
+
+    outline-offset:3px;
+
+}
+
+
+/* ==========================================================
+   03. HERO
    ========================================================== */
 
 .page-zenbru .zenbru-hero{
@@ -5151,8 +5205,17 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
+.page-zenbru .zenbru-hero .container{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+
 /* ==========================================================
-   HERO ATMOSPHERE
+   04. HERO ATMOSPHERE
    ========================================================== */
 
 .page-zenbru .zenbru-hero-atmosphere{
@@ -5260,17 +5323,8 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   HERO CONTENT
+   05. HERO TYPOGRAPHY
    ========================================================== */
-
-.page-zenbru .zenbru-hero .container{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
 
 .page-zenbru .zenbru-eyebrow{
 
@@ -5316,7 +5370,6 @@ body[data-theme="ismarts3"] .input:focus{
         );
 
     -webkit-background-clip:text;
-
     background-clip:text;
 
     color:transparent !important;
@@ -5329,14 +5382,14 @@ body[data-theme="ismarts3"] .input:focus{
     max-width:690px;
 
     color:
-        #6B5A50
+        var(--zenbru-text-soft)
         !important;
 
 }
 
 
 /* ==========================================================
-   HERO PILLS
+   06. HERO PILLS
    ========================================================== */
 
 .page-zenbru .zenbru-hero-pills{
@@ -5380,7 +5433,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   HERO META
+   07. HERO META
    ========================================================== */
 
 .page-zenbru .zenbru-hero-meta{
@@ -5428,7 +5481,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   HERO PRODUCT
+   08. HERO PRODUCT
    ========================================================== */
 
 .page-zenbru .zenbru-hero-product{
@@ -5493,7 +5546,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   HERO AURA
+   09. HERO AURA / RINGS
    ========================================================== */
 
 .page-zenbru .zenbru-product-aura{
@@ -5517,10 +5570,6 @@ body[data-theme="ismarts3"] .input:focus{
 
 }
 
-
-/* ==========================================================
-   HERO RINGS
-   ========================================================== */
 
 .page-zenbru .zenbru-product-ring{
 
@@ -5583,10 +5632,6 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
-/* ==========================================================
-   HERO PRODUCT GRID
-   ========================================================== */
-
 .page-zenbru .zenbru-product-grid{
 
     position:absolute;
@@ -5622,7 +5667,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   HERO CAPTION
+   10. HERO CAPTION
    ========================================================== */
 
 .page-zenbru .zenbru-product-caption{
@@ -5657,10 +5702,6 @@ body[data-theme="ismarts3"] .input:focus{
     backdrop-filter:
         blur(16px);
 
-    box-shadow:
-        0 10px 25px
-        rgba(75,36,19,.07);
-
     white-space:nowrap;
 
 }
@@ -5693,7 +5734,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   GENERAL
+   11. GENERAL TYPOGRAPHY
    ========================================================== */
 
 .page-zenbru .section-title{
@@ -5717,7 +5758,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .lead{
 
     color:
-        #685A52
+        var(--zenbru-text-soft)
         !important;
 
 }
@@ -5733,7 +5774,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   OVERVIEW
+   12. OVERVIEW
    ========================================================== */
 
 .page-zenbru .zenbru-overview-section{
@@ -5741,8 +5782,8 @@ body[data-theme="ismarts3"] .input:focus{
     background:
         linear-gradient(
             180deg,
-            #FFFFFF 0%,
-            #FFFDF7 100%
+            #FFFFFF,
+            #FFFDF7
         );
 
 }
@@ -5784,8 +5825,7 @@ body[data-theme="ismarts3"] .input:focus{
         );
 
     box-shadow:
-        0 14px 40px
-        rgba(75,36,19,.055);
+        var(--zenbru-card-shadow);
 
     transition:
         transform .35s ease,
@@ -5952,13 +5992,12 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   COMPOSITION
+   13. COMPOSITION
    ========================================================== */
 
 .page-zenbru .zenbru-composition{
 
-    background:
-        #FFFFFF;
+    background:#FFFFFF;
 
 }
 
@@ -5992,7 +6031,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   INGREDIENT CARDS
+   14. INGREDIENT CARDS
    ========================================================== */
 
 .page-zenbru .zenbru-ingredient-card{
@@ -6005,7 +6044,7 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.10);
+        var(--zenbru-line);
 
     border-radius:26px;
 
@@ -6017,8 +6056,7 @@ body[data-theme="ismarts3"] .input:focus{
         );
 
     box-shadow:
-        0 16px 40px
-        rgba(75,36,19,.055);
+        var(--zenbru-card-shadow);
 
     transition:
         transform .35s ease,
@@ -6114,7 +6152,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   DETAILS / EXPANDABLE
+   15. DETAILS EXPANDER
    ========================================================== */
 
 .page-zenbru .zenbru-information{
@@ -6140,19 +6178,17 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.12);
+        var(--zenbru-line);
 
     border-radius:17px;
 
     background:
-        #FFFDF7;
+        var(--zenbru-surface-soft);
 
     color:
         var(--zenbru-brown-deep);
 
     cursor:pointer;
-
-    font:inherit;
 
     font-size:.78rem;
 
@@ -6164,7 +6200,8 @@ body[data-theme="ismarts3"] .input:focus{
         transform .25s ease,
         border-color .25s ease,
         box-shadow .25s ease,
-        background .25s ease;
+        background .25s ease,
+        color .25s ease;
 
 }
 
@@ -6189,12 +6226,12 @@ body[data-theme="ismarts3"] .input:focus{
     width:30px;
     height:30px;
 
-    flex:0 0 auto;
-
     display:flex;
 
     align-items:center;
     justify-content:center;
+
+    flex:0 0 auto;
 
     border-radius:50%;
 
@@ -6224,6 +6261,10 @@ body[data-theme="ismarts3"] .input:focus{
 
 }
 
+
+/* ==========================================================
+   16. EXPANDED CARDS
+   ========================================================== */
 
 .page-zenbru .zenbru-details-content{
 
@@ -6280,11 +6321,13 @@ body[data-theme="ismarts3"] .input:focus{
 
 .page-zenbru .zenbru-detail-card{
 
+    min-width:0;
+
     padding:25px;
 
     border:
         1px solid
-        rgba(75,36,19,.09);
+        var(--zenbru-line);
 
     border-radius:22px;
 
@@ -6292,8 +6335,17 @@ body[data-theme="ismarts3"] .input:focus{
         linear-gradient(
             145deg,
             #FFFDFC,
-            #FFF9ED
+            #FFF8E9
         );
+
+    box-shadow:
+        0 11px 28px
+        rgba(75,36,19,.045);
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
 
 }
 
@@ -6310,7 +6362,7 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
-.page-zenbru .zenbru-detail-card p{
+.page-zenbru .zenbru-detail-card .text{
 
     color:
         #70635B;
@@ -6359,10 +6411,10 @@ body[data-theme="ismarts3"] .input:focus{
 
 .page-zenbru .zenbru-detail-check{
 
-    flex:0 0 auto;
-
     width:22px;
     height:22px;
+
+    flex:0 0 auto;
 
     display:flex;
 
@@ -6385,7 +6437,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   EXPERIENCE
+   17. EXPERIENCE
    ========================================================== */
 
 .page-zenbru .zenbru-experience{
@@ -6414,8 +6466,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .zenbru-experience
 .section-title{
 
-    color:
-        #FFFFFF !important;
+    color:#FFFFFF !important;
 
 }
 
@@ -6423,8 +6474,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .zenbru-experience
 .section-title span{
 
-    color:
-        #F1C84A !important;
+    color:#F1C84A !important;
 
 }
 
@@ -6432,8 +6482,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .zenbru-experience
 .lead{
 
-    color:
-        #E3D5CC !important;
+    color:#E3D5CC !important;
 
 }
 
@@ -6441,8 +6490,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .zenbru-experience
 .label{
 
-    color:
-        #E5BF5A !important;
+    color:#E5BF5A !important;
 
 }
 
@@ -6487,7 +6535,8 @@ body[data-theme="ismarts3"] .input:focus{
 
     transition:
         transform .35s ease,
-        border-color .35s ease;
+        border-color .35s ease,
+        background .35s ease;
 
 }
 
@@ -6499,6 +6548,13 @@ body[data-theme="ismarts3"] .input:focus{
 
     border-color:
         rgba(229,191,90,.30);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.04)
+        );
 
 }
 
@@ -6548,8 +6604,6 @@ body[data-theme="ismarts3"] .input:focus{
 
     font-style:normal;
 
-    font-size:1rem;
-
 }
 
 
@@ -6579,9 +6633,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PRODUCT DETAIL
-   IMAGEM À ESQUERDA
-   INFORMAÇÃO À DIREITA
+   18. PRODUCT DETAIL
    ========================================================== */
 
 .page-zenbru .zenbru-product-section{
@@ -6626,14 +6678,12 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PRODUCT DETAIL VISUAL
+   19. PRODUCT DETAIL IMAGE
    ========================================================== */
 
 .page-zenbru .zenbru-product-detail-visual{
 
     position:relative;
-
-    min-width:0;
 
 }
 
@@ -6683,10 +6733,6 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
-/* ==========================================================
-   DETAIL AURA
-   ========================================================== */
-
 .page-zenbru .zenbru-detail-aura{
 
     position:absolute;
@@ -6710,10 +6756,6 @@ body[data-theme="ismarts3"] .input:focus{
 
 }
 
-
-/* ==========================================================
-   DETAIL RINGS
-   ========================================================== */
 
 .page-zenbru .zenbru-detail-ring{
 
@@ -6776,10 +6818,6 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
-/* ==========================================================
-   DETAIL GRID
-   ========================================================== */
-
 .page-zenbru .zenbru-detail-grid{
 
     position:absolute;
@@ -6814,10 +6852,6 @@ body[data-theme="ismarts3"] .input:focus{
 
 }
 
-
-/* ==========================================================
-   DETAIL IMAGE
-   ========================================================== */
 
 .page-zenbru .zenbru-product-detail-image{
 
@@ -6856,18 +6890,8 @@ body[data-theme="ismarts3"] .input:focus{
         translateY(-9px)
         scale(1.035);
 
-    filter:
-        drop-shadow(
-            0 45px 55px
-            rgba(75,36,19,.25)
-        );
-
 }
 
-
-/* ==========================================================
-   DETAIL CAPTION
-   ========================================================== */
 
 .page-zenbru .zenbru-detail-caption{
 
@@ -6933,7 +6957,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PRODUCT DETAIL COPY
+   20. PRODUCT DETAIL COPY
    ========================================================== */
 
 .page-zenbru .zenbru-product-detail-copy{
@@ -6952,7 +6976,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PRODUCT SPECS
+   21. PRODUCT SPECS
    ========================================================== */
 
 .page-zenbru .zenbru-product-specs{
@@ -6986,7 +7010,7 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.09);
+        var(--zenbru-line);
 
     border-radius:17px;
 
@@ -7000,7 +7024,8 @@ body[data-theme="ismarts3"] .input:focus{
     transition:
         transform .25s ease,
         border-color .25s ease,
-        box-shadow .25s ease;
+        box-shadow .25s ease,
+        background .3s ease;
 
 }
 
@@ -7049,13 +7074,6 @@ body[data-theme="ismarts3"] .input:focus{
 }
 
 
-.page-zenbru .zenbru-product-spec div{
-
-    min-width:0;
-
-}
-
-
 .page-zenbru .zenbru-product-spec strong{
 
     display:block;
@@ -7086,7 +7104,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PRODUCT HIGHLIGHT
+   22. PRODUCT HIGHLIGHT
    ========================================================== */
 
 .page-zenbru .zenbru-product-highlight{
@@ -7137,12 +7155,6 @@ body[data-theme="ismarts3"] .input:focus{
 
     color:#FFFFFF;
 
-    font-size:1rem;
-
-    box-shadow:
-        0 10px 22px
-        rgba(75,36,19,.12);
-
 }
 
 
@@ -7172,7 +7184,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   PREPARATION
+   23. PREPARATION
    ========================================================== */
 
 .page-zenbru .zenbru-preparation{
@@ -7207,20 +7219,20 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.10);
+        var(--zenbru-line);
 
     border-radius:24px;
 
     background:
-        #FFFFFF;
+        var(--zenbru-surface);
 
     box-shadow:
-        0 13px 35px
-        rgba(75,36,19,.05);
+        var(--zenbru-card-shadow);
 
     transition:
         transform .3s ease,
-        border-color .3s ease;
+        border-color .3s ease,
+        background .3s ease;
 
 }
 
@@ -7261,10 +7273,6 @@ body[data-theme="ismarts3"] .input:focus{
 
     font-weight:900;
 
-    box-shadow:
-        0 12px 24px
-        rgba(75,36,19,.13);
-
 }
 
 
@@ -7294,8 +7302,6 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 .page-zenbru .zenbru-preparation-note{
-
-    margin-top:25px;
 
     padding:23px;
 
@@ -7327,13 +7333,12 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   BENEFITS
+   24. BENEFITS
    ========================================================== */
 
 .page-zenbru .zenbru-benefits{
 
-    background:
-        #FFFFFF;
+    background:#FFFFFF;
 
 }
 
@@ -7367,6 +7372,10 @@ body[data-theme="ismarts3"] .input:focus{
 
     border-radius:34px;
 
+    border:
+        1px solid
+        rgba(75,36,19,.09);
+
     background:
         radial-gradient(
             circle at center,
@@ -7378,10 +7387,6 @@ body[data-theme="ismarts3"] .input:focus{
             #FFF9E8,
             #F5ECD5
         );
-
-    border:
-        1px solid
-        rgba(75,36,19,.09);
 
     box-shadow:
         var(--zenbru-shadow);
@@ -7405,8 +7410,7 @@ body[data-theme="ismarts3"] .input:focus{
             transparent 70%
         );
 
-    filter:
-        blur(4px);
+    filter:blur(4px);
 
 }
 
@@ -7440,13 +7444,6 @@ body[data-theme="ismarts3"] .input:focus{
     transform:
         translateY(-8px)
         scale(1.035);
-
-}
-
-
-.page-zenbru .zenbru-benefits-copy{
-
-    min-width:0;
 
 }
 
@@ -7506,7 +7503,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   ORIGINS
+   25. ORIGINS
    ========================================================== */
 
 .page-zenbru .zenbru-origins{
@@ -7547,7 +7544,7 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.10);
+        var(--zenbru-line);
 
     border-radius:27px;
 
@@ -7559,8 +7556,7 @@ body[data-theme="ismarts3"] .input:focus{
         );
 
     box-shadow:
-        0 16px 40px
-        rgba(75,36,19,.055);
+        var(--zenbru-card-shadow);
 
 }
 
@@ -7578,8 +7574,6 @@ body[data-theme="ismarts3"] .input:focus{
     font-size:3rem;
 
     font-weight:900;
-
-    letter-spacing:-.05em;
 
 }
 
@@ -7647,14 +7641,13 @@ body[data-theme="ismarts3"] .input:focus{
 
 .page-zenbru .zenbru-origin-card-wide p{
 
-    color:
-        #E2D4CA;
+    color:#E2D4CA;
 
 }
 
 
 /* ==========================================================
-   FAQ
+   26. FAQ
    ========================================================== */
 
 .page-zenbru .zenbru-faq{
@@ -7684,17 +7677,18 @@ body[data-theme="ismarts3"] .input:focus{
 
     border:
         1px solid
-        rgba(75,36,19,.10);
+        var(--zenbru-line);
 
     border-radius:21px;
 
     background:
-        #FFFDF8;
+        var(--zenbru-surface-soft);
 
     transition:
         transform .3s ease,
         border-color .3s ease,
-        box-shadow .3s ease;
+        box-shadow .3s ease,
+        background .3s ease;
 
 }
 
@@ -7743,8 +7737,6 @@ body[data-theme="ismarts3"] .input:focus{
 
     color:
         var(--zenbru-brown-deep);
-
-    font:inherit;
 
     font-weight:800;
 
@@ -7841,7 +7833,7 @@ body[data-theme="ismarts3"] .input:focus{
 .page-zenbru .zenbru-faq-item.active
 .zenbru-faq-answer{
 
-    max-height:300px;
+    max-height:320px;
 
 }
 
@@ -7862,18 +7854,48 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   DISCLAIMER
+   27. FINAL INFORMATION / TRUST SECTION
    ========================================================== */
 
 .page-zenbru .zenbru-disclaimer{
 
-    padding:28px 0;
+    position:relative;
+
+    padding:
+        52px 0;
 
     background:
         linear-gradient(
             180deg,
-            #F8F1E3,
-            #F3EADB
+            #F6F0E4,
+            #EEE5D5
+        );
+
+}
+
+
+.page-zenbru .zenbru-disclaimer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    width:min(760px,70%);
+
+    height:1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(199,154,43,.45),
+            transparent
         );
 
 }
@@ -7881,77 +7903,101 @@ body[data-theme="ismarts3"] .input:focus{
 
 .page-zenbru .zenbru-disclaimer-box{
 
+    position:relative;
+
     display:grid;
 
     grid-template-columns:
-        42px 1fr;
+        58px 1fr;
 
-    gap:15px;
+    gap:20px;
 
     align-items:start;
 
-    padding:21px;
+    padding:30px 34px;
 
     border:
         1px solid
-        rgba(75,36,19,.09);
+        rgba(75,36,19,.10);
 
-    border-radius:21px;
+    border-radius:28px;
 
     background:
-        rgba(255,255,255,.78);
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.94),
+            rgba(255,250,239,.88)
+        );
+
+    box-shadow:
+        0 22px 55px
+        rgba(75,36,19,.07);
 
 }
 
 
 .page-zenbru .zenbru-disclaimer-icon{
 
-    width:34px;
-    height:34px;
+    width:48px;
+    height:48px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    border-radius:50%;
+    border-radius:16px;
 
     background:
-        var(--zenbru-brown);
+        linear-gradient(
+            135deg,
+            var(--zenbru-brown),
+            var(--zenbru-orange)
+        );
 
     color:#FFFFFF;
 
-    font-size:.8rem;
+    font-size:.9rem;
 
     font-weight:900;
+
+    box-shadow:
+        0 12px 25px
+        rgba(75,36,19,.12);
 
 }
 
 
 .page-zenbru .zenbru-disclaimer-box strong{
 
+    display:block;
+
     color:
         var(--zenbru-brown-deep);
+
+    font-size:1rem;
 
 }
 
 
 .page-zenbru .zenbru-disclaimer-box p{
 
-    margin-top:6px;
+    max-width:920px;
+
+    margin-top:9px;
 
     color:
-        #71645C;
+        #70635A;
 
-    line-height:1.72;
+    line-height:1.78;
 
-    font-size:.84rem;
+    font-size:.86rem;
 
 }
 
 
 /* ==========================================================
-   CTA
+   28. CTA
    ========================================================== */
 
 .page-zenbru .zenbru-cta{
@@ -8074,7 +8120,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   BUTTONS
+   29. BUTTONS
    ========================================================== */
 
 .page-zenbru .zenbru-btn-primary{
@@ -8137,22 +8183,1152 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   FOCUS
+   30. DARK THEME
+   Compatível com theme.js
    ========================================================== */
 
-.page-zenbru button:focus-visible{
+html[data-theme="dark"] .page-zenbru,
+body.dark .page-zenbru{
 
-    outline:
-        3px solid
-        rgba(199,154,43,.42);
+    --zenbru-bg:#0F0D0B;
+    --zenbru-bg-soft:#17120E;
 
-    outline-offset:3px;
+    --zenbru-surface:#1A1612;
+    --zenbru-surface-soft:#191511;
+
+    --zenbru-text:#F1E9DF;
+    --zenbru-text-soft:#C7B9AD;
+    --zenbru-text-muted:#9E8E82;
+
+    --zenbru-line:
+        rgba(255,255,255,.085);
+
+    --zenbru-line-soft:
+        rgba(255,255,255,.055);
+
+    --zenbru-card-shadow:
+        0 20px 48px
+        rgba(0,0,0,.28);
+
+    background:
+        #0F0D0B;
+
+    color:
+        var(--zenbru-text);
 
 }
 
 
 /* ==========================================================
-   RESPONSIVE — 1100px
+   31. DARK — HERO
+   ========================================================== */
+
+html[data-theme="dark"] .page-zenbru .zenbru-hero,
+body.dark .page-zenbru .zenbru-hero{
+
+    background:
+        radial-gradient(
+            circle at 14% 20%,
+            rgba(244,197,27,.09),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(87,117,60,.10),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #17130F 0%,
+            #15110E 48%,
+            #0F0D0B 100%
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-orbit,
+body.dark
+.page-zenbru .zenbru-orbit{
+
+    border-color:
+        rgba(255,255,255,.07);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-orbit-2,
+body.dark
+.page-zenbru .zenbru-orbit-2{
+
+    border-color:
+        rgba(199,154,43,.16);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-eyebrow,
+body.dark
+.page-zenbru .zenbru-eyebrow{
+
+    color:
+        #D8B15A;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-hero .hero-title,
+body.dark
+.page-zenbru .zenbru-hero .hero-title{
+
+    color:
+        #F5EEE6 !important;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-hero .hero-sub,
+body.dark
+.page-zenbru .zenbru-hero .hero-sub{
+
+    color:
+        #BEB0A5 !important;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-hero-pills span,
+body.dark
+.page-zenbru .zenbru-hero-pills span{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        #E8DED3;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-hero-meta strong,
+body.dark
+.page-zenbru .zenbru-hero-meta strong{
+
+    color:
+        #F0E7DC;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-hero-meta span,
+body.dark
+.page-zenbru .zenbru-hero-meta span{
+
+    color:
+        #96877C;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-caption,
+body.dark
+.page-zenbru .zenbru-product-caption{
+
+    border-color:
+        rgba(255,255,255,.10);
+
+    background:
+        rgba(20,17,14,.72);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-caption span,
+body.dark
+.page-zenbru .zenbru-product-caption span{
+
+    color:
+        #CFAE61;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-caption strong,
+body.dark
+.page-zenbru .zenbru-product-caption strong{
+
+    color:
+        #E8C970;
+
+}
+
+
+/* ==========================================================
+   32. DARK — STANDARD SECTIONS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-section,
+body.dark
+.page-zenbru .zenbru-overview-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #11100E,
+            #15120F
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-composition,
+body.dark
+.page-zenbru .zenbru-composition{
+
+    background:
+        #11100E;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation,
+body.dark
+.page-zenbru .zenbru-preparation{
+
+    background:
+        linear-gradient(
+            180deg,
+            #11100E,
+            #18130F
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-benefits,
+body.dark
+.page-zenbru .zenbru-benefits{
+
+    background:
+        #11100E;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-origins,
+body.dark
+.page-zenbru .zenbru-origins{
+
+    background:
+        linear-gradient(
+            180deg,
+            #16120F,
+            #11100E
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq,
+body.dark
+.page-zenbru .zenbru-faq{
+
+    background:
+        #11100E;
+
+}
+
+
+/* ==========================================================
+   33. DARK — TITLES
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .section-title,
+body.dark
+.page-zenbru .section-title{
+
+    color:
+        #F2E9DE !important;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .section-title span,
+body.dark
+.page-zenbru .section-title span{
+
+    color:
+        #D9AA45 !important;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .lead,
+body.dark
+.page-zenbru .lead{
+
+    color:
+        #BDAFA4 !important;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .label,
+body.dark
+.page-zenbru .label{
+
+    color:
+        #D0A94E !important;
+
+}
+
+
+/* ==========================================================
+   34. DARK — OVERVIEW CARDS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-card,
+body.dark
+.page-zenbru .zenbru-overview-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A1612,
+            #17130F
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-card-number,
+body.dark
+.page-zenbru .zenbru-card-number{
+
+    color:
+        rgba(255,255,255,.17);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-card-icon,
+body.dark
+.page-zenbru .zenbru-card-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,197,27,.10),
+            rgba(87,117,60,.10)
+        );
+
+    color:
+        #E0B64F;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-card h3,
+body.dark
+.page-zenbru .zenbru-overview-card h3{
+
+    color:
+        #F0E5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-card p,
+body.dark
+.page-zenbru .zenbru-overview-card p{
+
+    color:
+        #A99A8E;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-note,
+body.dark
+.page-zenbru .zenbru-overview-note{
+
+    border-color:
+        rgba(199,154,43,.18);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,197,27,.055),
+            rgba(87,117,60,.04)
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-note strong,
+body.dark
+.page-zenbru .zenbru-overview-note strong{
+
+    color:
+        #EEE5DB;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-overview-note p,
+body.dark
+.page-zenbru .zenbru-overview-note p{
+
+    color:
+        #9F9084;
+
+}
+
+
+/* ==========================================================
+   35. DARK — INGREDIENT CARDS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-ingredient-card,
+body.dark
+.page-zenbru .zenbru-ingredient-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A1612,
+            #17130F
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-ingredient-icon,
+body.dark
+.page-zenbru .zenbru-ingredient-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,197,27,.10),
+            rgba(75,36,19,.18)
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-ingredient-number,
+body.dark
+.page-zenbru .zenbru-ingredient-number{
+
+    color:
+        rgba(255,255,255,.38);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-ingredient-card h3,
+body.dark
+.page-zenbru .zenbru-ingredient-card h3{
+
+    color:
+        #F0E5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-ingredient-card p,
+body.dark
+.page-zenbru .zenbru-ingredient-card p{
+
+    color:
+        #A79A8F;
+
+}
+
+
+/* ==========================================================
+   36. DARK — EXPANDED INFORMATION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-details-toggle,
+body.dark
+.page-zenbru .zenbru-details-toggle{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        #191511;
+
+    color:
+        #EEE5DB;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-details-toggle:hover,
+body.dark
+.page-zenbru .zenbru-details-toggle:hover{
+
+    border-color:
+        rgba(199,154,43,.30);
+
+    background:
+        #1C1712;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-details-icon,
+body.dark
+.page-zenbru .zenbru-details-icon{
+
+    background:
+        rgba(199,154,43,.10);
+
+    color:
+        #D7AE58;
+
+}
+
+
+/*
+   ESTES SÃO OS CARDS QUE APARECEM
+   APÓS CLICAR EM "VER DETALHES"
+*/
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-detail-card,
+body.dark
+.page-zenbru .zenbru-detail-card{
+
+    border-color:
+        rgba(255,255,255,.085);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1B1713,
+            #16120F
+        );
+
+    box-shadow:
+        0 14px 32px
+        rgba(0,0,0,.18);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-detail-card h3,
+body.dark
+.page-zenbru .zenbru-detail-card h3{
+
+    color:
+        #F0E5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-detail-card .text,
+body.dark
+.page-zenbru .zenbru-detail-card .text{
+
+    color:
+        #AAA095;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-detail-item,
+body.dark
+.page-zenbru .zenbru-detail-item{
+
+    color:
+        #B2A499;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-detail-check,
+body.dark
+.page-zenbru .zenbru-detail-check{
+
+    background:
+        rgba(87,117,60,.15);
+
+    color:
+        #AFC58C;
+
+}
+
+
+/* ==========================================================
+   37. DARK — PRODUCT DETAIL
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-section,
+body.dark
+.page-zenbru .zenbru-product-section{
+
+    background:
+        radial-gradient(
+            circle at 8% 30%,
+            rgba(87,117,60,.07),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 92% 70%,
+            rgba(244,197,27,.06),
+            transparent 25%
+        ),
+        #11100E;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-detail-frame,
+body.dark
+.page-zenbru .zenbru-product-detail-frame{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        radial-gradient(
+            circle at 50% 43%,
+            rgba(244,197,27,.09),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(87,117,60,.07),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #1A1612,
+            #15110E
+        );
+
+    box-shadow:
+        0 30px 75px
+        rgba(0,0,0,.25);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-spec,
+body.dark
+.page-zenbru .zenbru-product-spec{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(27,23,19,.88);
+
+    box-shadow:
+        0 10px 26px
+        rgba(0,0,0,.16);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-spec strong,
+body.dark
+.page-zenbru .zenbru-product-spec strong{
+
+    color:
+        #EFE6DC;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-spec div span,
+body.dark
+.page-zenbru .zenbru-product-spec div span{
+
+    color:
+        #96887D;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-highlight,
+body.dark
+.page-zenbru .zenbru-product-highlight{
+
+    border-color:
+        rgba(199,154,43,.17);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,197,27,.05),
+            rgba(87,117,60,.035)
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-highlight strong,
+body.dark
+.page-zenbru .zenbru-product-highlight strong{
+
+    color:
+        #EEE5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-product-highlight p,
+body.dark
+.page-zenbru .zenbru-product-highlight p{
+
+    color:
+        #9F9287;
+
+}
+
+
+/* ==========================================================
+   38. DARK — PREPARATION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation-step,
+body.dark
+.page-zenbru .zenbru-preparation-step{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #1A1612;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation-step h3,
+body.dark
+.page-zenbru .zenbru-preparation-step h3{
+
+    color:
+        #EFE5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation-step p,
+body.dark
+.page-zenbru .zenbru-preparation-step p{
+
+    color:
+        #A79A8F;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation-note,
+body.dark
+.page-zenbru .zenbru-preparation-note{
+
+    border-color:
+        rgba(199,154,43,.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(244,197,27,.05),
+            rgba(87,117,60,.035)
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-preparation-note p,
+body.dark
+.page-zenbru .zenbru-preparation-note p{
+
+    color:
+        #A3978B;
+
+}
+
+
+/* ==========================================================
+   39. DARK — BENEFITS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-benefits-frame,
+body.dark
+.page-zenbru .zenbru-benefits-frame{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(244,197,27,.10),
+            transparent 34%
+        ),
+        linear-gradient(
+            145deg,
+            #1A1612,
+            #15110E
+        );
+
+    box-shadow:
+        0 28px 70px
+        rgba(0,0,0,.25);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-check-item,
+body.dark
+.page-zenbru .zenbru-check-item{
+
+    color:
+        #C0B3A8;
+
+}
+
+
+/* ==========================================================
+   40. DARK — ORIGINS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-origin-card:not(.zenbru-origin-card-wide),
+body.dark
+.page-zenbru .zenbru-origin-card:not(.zenbru-origin-card-wide){
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A1612,
+            #16120F
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-origin-card h3,
+body.dark
+.page-zenbru .zenbru-origin-card h3{
+
+    color:
+        #F0E5DA;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-origin-card p,
+body.dark
+.page-zenbru .zenbru-origin-card p{
+
+    color:
+        #A99B90;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-origin-code,
+body.dark
+.page-zenbru .zenbru-origin-code{
+
+    color:
+        rgba(255,255,255,.055);
+
+}
+
+
+/* ==========================================================
+   41. DARK — FAQ
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-item,
+body.dark
+.page-zenbru .zenbru-faq-item{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #191511;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-item.active,
+body.dark
+.page-zenbru .zenbru-faq-item.active{
+
+    border-color:
+        rgba(199,154,43,.25);
+
+    box-shadow:
+        0 17px 42px
+        rgba(0,0,0,.22);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-question,
+body.dark
+.page-zenbru .zenbru-faq-question{
+
+    color:
+        #EFE6DC;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-number,
+body.dark
+.page-zenbru .zenbru-faq-number{
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:
+        #D2A84B;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-plus,
+body.dark
+.page-zenbru .zenbru-faq-plus{
+
+    background:
+        rgba(199,154,43,.10);
+
+    color:
+        #D5AC55;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-faq-answer p,
+body.dark
+.page-zenbru .zenbru-faq-answer p{
+
+    color:
+        #A99B90;
+
+}
+
+
+/* ==========================================================
+   42. DARK — FINAL INFORMATION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-disclaimer,
+body.dark
+.page-zenbru .zenbru-disclaimer{
+
+    background:
+        linear-gradient(
+            180deg,
+            #17130F,
+            #11100E
+        );
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-disclaimer-box,
+body.dark
+.page-zenbru .zenbru-disclaimer-box{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.22);
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-disclaimer-box strong,
+body.dark
+.page-zenbru .zenbru-disclaimer-box strong{
+
+    color:
+        #F0E6DB;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-disclaimer-box p,
+body.dark
+.page-zenbru .zenbru-disclaimer-box p{
+
+    color:
+        #A6998D;
+
+}
+
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-disclaimer::before,
+body.dark
+.page-zenbru .zenbru-disclaimer::before{
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(199,154,43,.32),
+            transparent
+        );
+
+}
+
+
+/* ==========================================================
+   43. DARK — CTA
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-cta,
+body.dark
+.page-zenbru .zenbru-cta{
+
+    background:
+        radial-gradient(
+            circle at 13% 18%,
+            rgba(244,197,27,.09),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #1B120D,
+            #24140D 52%,
+            #120D09
+        );
+
+}
+
+
+/* ==========================================================
+   44. DARK — GLASS BUTTON
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-zenbru .zenbru-btn-glass,
+body.dark
+.page-zenbru .zenbru-btn-glass{
+
+    border-color:
+        rgba(255,255,255,.10)
+        !important;
+
+    background:
+        rgba(255,255,255,.055)
+        !important;
+
+    color:
+        #EEE5DB
+        !important;
+
+}
+
+
+/* ==========================================================
+   45. RESPONSIVE — 1100px
    ========================================================== */
 
 @media(max-width:1100px){
@@ -8227,7 +9403,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   RESPONSIVE — 850px
+   46. RESPONSIVE — 850px
    ========================================================== */
 
 @media(max-width:850px){
@@ -8258,13 +9434,6 @@ body[data-theme="ismarts3"] .input:focus{
     }
 
 
-    .page-zenbru .zenbru-product-detail-frame{
-
-        min-height:470px;
-
-    }
-
-
     .page-zenbru .zenbru-details-grid{
 
         grid-template-columns:
@@ -8276,13 +9445,6 @@ body[data-theme="ismarts3"] .input:focus{
     .page-zenbru .zenbru-detail-card-wide{
 
         grid-column:auto;
-
-    }
-
-
-    .page-zenbru .zenbru-benefits-frame{
-
-        min-height:460px;
 
     }
 
@@ -8305,7 +9467,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   RESPONSIVE — 760px
+   47. RESPONSIVE — 760px
    ========================================================== */
 
 @media(max-width:760px){
@@ -8458,7 +9620,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   RESPONSIVE — 520px
+   48. RESPONSIVE — 520px
    ========================================================== */
 
 @media(max-width:520px){
@@ -8579,6 +9741,23 @@ body[data-theme="ismarts3"] .input:focus{
     }
 
 
+    .page-zenbru .zenbru-product-spec{
+
+        min-height:68px;
+
+    }
+
+
+    .page-zenbru .zenbru-product-highlight{
+
+        grid-template-columns:
+            40px 1fr;
+
+        padding:17px;
+
+    }
+
+
     .page-zenbru .zenbru-benefits-frame{
 
         min-height:360px;
@@ -8589,13 +9768,6 @@ body[data-theme="ismarts3"] .input:focus{
     .page-zenbru .zenbru-benefits-frame img{
 
         width:76%;
-
-    }
-
-
-    .page-zenbru .zenbru-benefit-list{
-
-        gap:9px;
 
     }
 
@@ -8636,10 +9808,20 @@ body[data-theme="ismarts3"] .input:focus{
     }
 
 
+    .page-zenbru .zenbru-disclaimer{
+
+        padding:
+            40px 0;
+
+    }
+
+
     .page-zenbru .zenbru-disclaimer-box{
 
         grid-template-columns:
             1fr;
+
+        padding:25px;
 
     }
 
@@ -8654,7 +9836,7 @@ body[data-theme="ismarts3"] .input:focus{
 
 
 /* ==========================================================
-   REDUCED MOTION
+   49. ACCESSIBILITY / REDUCED MOTION
    ========================================================== */
 
 @media(prefers-reduced-motion:reduce){
@@ -8665,11 +9847,11 @@ body[data-theme="ismarts3"] .input:focus{
 
         scroll-behavior:auto !important;
 
-        transition-duration:.01ms !important;
-
         animation-duration:.01ms !important;
 
         animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
 
     }
 
