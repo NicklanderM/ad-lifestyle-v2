@@ -4442,3 +4442,297 @@ export function allHeroProductThemes(){
     return heroProductThemes;
 
 }
+
+           /* ==========================================================
+   AD LIFESTYLE V2
+   ALPHA SPIN STRAW
+   PRODUCT THEME
+   ========================================================== */
+
+.page-alpha-spin-straw{
+
+    --product-primary:#07543F;
+    --product-primary-dark:#0D3F32;
+    --product-primary-mid:#146B50;
+
+    --product-accent:#C6A04D;
+    --product-accent-dark:#92702F;
+
+    --product-black:#151515;
+    --product-silver:#BFC3C1;
+    --product-white:#F7F7F5;
+
+    --product-bg:#F7FAF8;
+    --product-surface:#FFFFFF;
+    --product-surface-soft:#EEF4F0;
+
+    --product-text:#17382F;
+    --product-muted:#64756F;
+
+    --product-border:
+        rgba(7,84,63,.13);
+
+    background:
+        var(--product-bg);
+
+    color:
+        var(--product-text);
+
+}
+
+/* ==========================================================
+   BOTÃO PRINCIPAL
+   ========================================================== */
+
+.page-alpha-spin-straw .btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--product-primary),
+            var(--product-primary-mid)
+        )
+        !important;
+
+    color:#FFFFFF !important;
+
+    border-color:
+        rgba(255,255,255,.06)
+        !important;
+
+}
+
+.page-alpha-spin-straw .btn-primary:hover{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--product-primary-mid),
+            var(--product-primary)
+        )
+        !important;
+
+}
+
+/* ==========================================================
+   BOTÃO GLASS
+   ========================================================== */
+
+.page-alpha-spin-straw .btn-glass{
+
+    background:
+        rgba(255,255,255,.74)
+        !important;
+
+    color:
+        var(--product-primary-dark)
+        !important;
+
+    border-color:
+        rgba(7,84,63,.16)
+        !important;
+
+}
+
+.page-alpha-spin-straw .btn-glass:hover{
+
+    background:
+        #FFFFFF
+        !important;
+
+    border-color:
+        rgba(198,160,77,.38)
+        !important;
+
+}
+
+/* ==========================================================
+   SELEÇÃO DE TEXTO
+   ========================================================== */
+
+.page-alpha-spin-straw ::selection{
+
+    background:
+        rgba(198,160,77,.30);
+
+    color:
+        var(--product-primary-dark);
+
+}
+
+/* ==========================================================
+   LINKS
+   ========================================================== */
+
+.page-alpha-spin-straw a{
+
+    color:
+        var(--product-primary);
+
+}
+
+.page-alpha-spin-straw a:hover{
+
+    color:
+        var(--product-accent-dark);
+
+}
+
+/* ==========================================================
+   DARK SECTIONS
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-dark-section,
+.page-alpha-spin-straw .straw-cta-section{
+
+    color:#FFFFFF;
+
+}
+
+/* ==========================================================
+   BOTÕES DENTRO DAS ÁREAS ESCURAS
+   ========================================================== */
+
+.page-alpha-spin-straw
+.straw-dark-section
+.btn-primary,
+.page-alpha-spin-straw
+.straw-cta-section
+.btn-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #146B50,
+            #07543F
+        )
+        !important;
+
+    color:#FFFFFF !important;
+
+    box-shadow:
+        0 14px 34px
+        rgba(0,0,0,.18)
+        !important;
+
+}
+
+/* ==========================================================
+   DOURADO COMO ACENTO
+   ========================================================== */
+
+.page-alpha-spin-straw .straw-label-light{
+
+    text-shadow:
+        0 0 22px
+        rgba(198,160,77,.18);
+
+}
+
+/* ==========================================================
+   ELEMENTOS METÁLICOS
+   ========================================================== */
+
+.page-alpha-spin-straw
+.straw-product-caption strong,
+.page-alpha-spin-straw
+.straw-faq-plus{
+
+    color:
+        var(--product-accent-dark);
+
+}
+
+/* ==========================================================
+   CARDS CLAROS
+   ========================================================== */
+
+.page-alpha-spin-straw
+.straw-overview-card,
+.page-alpha-spin-straw
+.straw-benefit-card,
+.page-alpha-spin-straw
+.straw-use-step,
+.page-alpha-spin-straw
+.straw-faq-item{
+
+    color:
+        var(--product-text);
+
+}
+
+/* ==========================================================
+   TEXTO NAS ÁREAS ESCURAS
+   ========================================================== */
+
+.page-alpha-spin-straw
+.straw-experience-card h3,
+.page-alpha-spin-straw
+.straw-experience-card p{
+
+    text-shadow:none;
+
+}
+
+.page-alpha-spin-straw
+.straw-experience-card p{
+
+    color:
+        #C8D7D1
+        !important;
+
+}
+
+/* ==========================================================
+   TEXTOS SECUNDÁRIOS
+   ========================================================== */
+
+.page-alpha-spin-straw
+.straw-overview-card p,
+.page-alpha-spin-straw
+.straw-benefit-card p,
+.page-alpha-spin-straw
+.straw-use-step p,
+.page-alpha-spin-straw
+.straw-faq-answer p{
+
+    color:
+        #687972
+        !important;
+
+}
+
+/* ==========================================================
+   FOCUS
+   ========================================================== */
+
+.page-alpha-spin-straw :focus-visible{
+
+    outline-color:
+        rgba(198,160,77,.60);
+
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media(max-width:760px){
+
+    .page-alpha-spin-straw
+    .straw-cta-section
+    .straw-btn-dark{
+
+        color:#FFFFFF !important;
+
+        background:
+            rgba(255,255,255,.07)
+            !important;
+
+        border-color:
+            rgba(255,255,255,.20)
+            !important;
+
+    }
+
+}
