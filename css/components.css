@@ -4124,949 +4124,4767 @@ body[data-theme="ismarts3"] .input:focus{
 ```css
 /* ==========================================================
    AD LIFESTYLE V2
-   ANGEL MOON — COMPONENT EXTENSIONS
-   Complemento específico para pages/products/angel.js
+   ANGEL MOON
+   PAGE COMPONENTS
+   Premium Product Architecture
+   LIGHT + DARK THEME
    ========================================================== */
 
 
 /* ==========================================================
-   ANGEL — HERO
+   01. PAGE VARIABLES
    ========================================================== */
 
-.angel-hero{
+.page-angel{
+
+    --angel-purple:#7B4BC2;
+    --angel-purple-deep:#4B287B;
+    --angel-purple-mid:#A16DE0;
+
+    --angel-violet:#9A6ADB;
+    --angel-lilac:#C9B1EE;
+
+    --angel-gold:#C6A04D;
+    --angel-gold-light:#E3C77F;
+    --angel-gold-deep:#8E6A25;
+
+    --angel-pink:#E9D4EA;
+    --angel-rose:#DFAFD7;
+
+    --angel-bg:#FFFFFF;
+    --angel-bg-soft:#FBF8FE;
+
+    --angel-surface:#FFFFFF;
+    --angel-surface-soft:#FAF7FD;
+
+    --angel-text:#33243E;
+    --angel-text-soft:#685B70;
+    --angel-text-muted:#8B7C91;
+
+    --angel-line:rgba(123,75,194,.12);
+    --angel-line-soft:rgba(123,75,194,.07);
+
+    --angel-card-shadow:
+        0 18px 45px rgba(86,49,117,.07);
+
+    --angel-heavy-shadow:
+        0 35px 90px rgba(75,40,110,.15);
+
+    --angel-radius:30px;
+
+    color:var(--angel-text);
+
+    background:var(--angel-bg);
+
+}
+
+
+/* ==========================================================
+   02. BASE
+   ========================================================== */
+
+.page-angel *,
+.page-angel *::before,
+.page-angel *::after{
+
+    box-sizing:border-box;
+
+}
+
+.page-angel img{
+
+    display:block;
+
+    max-width:100%;
+
+}
+
+.page-angel button{
+
+    font:inherit;
+
+}
+
+.page-angel button:focus-visible{
+
+    outline:
+        3px solid
+        rgba(198,160,77,.45);
+
+    outline-offset:3px;
+
+}
+
+
+/* ==========================================================
+   03. HERO
+   ========================================================== */
+
+.page-angel .angel-hero{
+
     position:relative;
+
     overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 14% 20%,
+            rgba(201,177,238,.24),
+            transparent 29%
+        ),
+        radial-gradient(
+            circle at 88% 17%,
+            rgba(233,212,234,.22),
+            transparent 29%
+        ),
+        linear-gradient(
+            135deg,
+            #FEFCFF 0%,
+            #F8F1FC 48%,
+            #F0E7F8 100%
+        );
+
 }
 
-.angel-hero .hero-grid{
-    align-items:center;
-}
+.page-angel .angel-hero .container{
 
-.angel-hero .hero-content{
-    max-width:680px;
-}
-
-.angel-hero .hero-title{
-    max-width:760px;
-    line-height:1.05;
-}
-
-.angel-hero .hero-title span{
-    color:var(--color-gold,#b9975b);
-}
-
-.angel-hero .hero-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:14px;
-    margin-top:28px;
-}
-
-.angel-hero .hero-meta{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px 20px;
-    margin-top:22px;
-    color:var(--text-secondary,#766f68);
-    font-size:13px;
-}
-
-.angel-hero .hero-meta span{
-    display:inline-flex;
-    align-items:center;
-    gap:6px;
-}
-
-.angel-product-card{
     position:relative;
-    width:100%;
-    max-width:500px;
-    margin-inline:auto;
-    padding:18px;
-    border:1px solid rgba(185,151,91,.16);
-    border-radius:28px;
+
+    z-index:2;
+
+}
+
+
+/* ==========================================================
+   04. HERO ATMOSPHERE
+   ========================================================== */
+
+.page-angel .angel-hero-atmosphere{
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+}
+
+.page-angel .angel-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:blur(78px);
+
+    opacity:.44;
+
+}
+
+.page-angel .angel-orb-1{
+
+    width:390px;
+    height:390px;
+
+    left:-150px;
+    top:-125px;
+
+    background:
+        rgba(123,75,194,.14);
+
+}
+
+.page-angel .angel-orb-2{
+
+    width:320px;
+    height:320px;
+
+    right:4%;
+    top:7%;
+
+    background:
+        rgba(233,212,234,.20);
+
+}
+
+.page-angel .angel-orb-3{
+
+    width:440px;
+    height:440px;
+
+    left:43%;
+    bottom:-250px;
+
+    background:
+        rgba(201,177,238,.14);
+
+}
+
+.page-angel .angel-orbit{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(123,75,194,.08);
+
+}
+
+.page-angel .angel-orbit-1{
+
+    width:590px;
+    height:590px;
+
+    right:-220px;
+    top:-180px;
+
+}
+
+.page-angel .angel-orbit-2{
+
+    width:410px;
+    height:410px;
+
+    right:-125px;
+    top:-95px;
+
+    border-color:
+        rgba(198,160,77,.15);
+
+}
+
+
+/* ==========================================================
+   05. HERO TYPOGRAPHY
+   ========================================================== */
+
+.page-angel .angel-eyebrow{
+
+    display:block;
+
+    margin-top:18px;
+
+    color:
+        var(--angel-purple-mid);
+
+    font-size:.76rem;
+
+    font-weight:900;
+
+    letter-spacing:.18em;
+
+    text-transform:uppercase;
+
+}
+
+.page-angel .angel-hero .hero-title{
+
+    max-width:760px;
+
+    color:
+        var(--angel-purple-deep)
+        !important;
+
+}
+
+.page-angel .angel-hero .hero-title span{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--angel-purple-deep),
+            var(--angel-purple),
+            var(--angel-gold)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    color:transparent !important;
+
+}
+
+.page-angel .angel-hero .hero-sub{
+
+    max-width:690px;
+
+    color:
+        var(--angel-text-soft)
+        !important;
+
+}
+
+
+/* ==========================================================
+   06. HERO PILLS
+   ========================================================== */
+
+.page-angel .angel-hero-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin:25px 0;
+
+}
+
+.page-angel .angel-hero-pills span{
+
+    padding:9px 14px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.11);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.76);
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:.77rem;
+
+    font-weight:800;
+
+    box-shadow:
+        0 8px 24px
+        rgba(123,75,194,.05);
+
+}
+
+
+/* ==========================================================
+   07. HERO META
+   ========================================================== */
+
+.page-angel .angel-hero-meta{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:28px;
+
+    margin-top:35px;
+
+}
+
+.page-angel .angel-hero-meta div{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+}
+
+.page-angel .angel-hero-meta strong{
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.04rem;
+
+}
+
+.page-angel .angel-hero-meta span{
+
+    color:
+        #877A8C;
+
+    font-size:.75rem;
+
+}
+
+
+/* ==========================================================
+   08. HERO PRODUCT
+   ========================================================== */
+
+.page-angel .angel-hero-product{
+
+    position:relative;
+
+    min-height:550px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    isolation:isolate;
+
+}
+
+.page-angel .angel-hero-product img{
+
+    position:relative;
+
+    z-index:4;
+
+    width:min(450px,82%);
+
+    max-height:575px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 38px 54px
+            rgba(76,43,105,.19)
+        )
+        drop-shadow(
+            0 8px 20px
+            rgba(0,0,0,.05)
+        );
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+
+}
+
+.page-angel .angel-hero-product:hover img{
+
+    transform:
+        translateY(-8px)
+        scale(1.035);
+
+    filter:
+        drop-shadow(
+            0 46px 62px
+            rgba(76,43,105,.23)
+        );
+
+}
+
+
+/* ==========================================================
+   09. HERO AURA
+   ========================================================== */
+
+.page-angel .angel-product-aura{
+
+    position:absolute;
+
+    width:420px;
+    height:420px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,177,238,.24),
+            rgba(233,212,234,.13) 48%,
+            transparent 73%
+        );
+
+    filter:blur(5px);
+
+}
+
+
+/* ==========================================================
+   10. HERO RINGS
+   ========================================================== */
+
+.page-angel .angel-product-ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    z-index:1;
+
+}
+
+.page-angel .angel-product-ring-1{
+
+    width:480px;
+    height:480px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.13);
+
+    box-shadow:
+        inset 0 0 70px
+        rgba(201,177,238,.10),
+
+        0 0 70px
+        rgba(123,75,194,.05);
+
+}
+
+.page-angel .angel-product-ring-2{
+
+    width:580px;
+    height:580px;
+
+    border:
+        1px dashed
+        rgba(198,160,77,.14);
+
+    animation:
+        angelHeroRingRotate
+        30s
+        linear
+        infinite;
+
+}
+
+@keyframes angelHeroRingRotate{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+
+/* ==========================================================
+   11. HERO GRID
+   ========================================================== */
+
+.page-angel .angel-product-grid{
+
+    position:absolute;
+
+    width:440px;
+    height:440px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            transparent 49.7%,
+            rgba(123,75,194,.04) 50%,
+            transparent 50.3%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49.7%,
+            rgba(198,160,77,.055) 50%,
+            transparent 50.3%
+        );
+
+    background-size:
+        55px 55px;
+
+    opacity:.23;
+
+    z-index:0;
+
+    transform:rotate(18deg);
+
+}
+
+
+/* ==========================================================
+   12. HERO CAPTION
+   ========================================================== */
+
+.page-angel .angel-product-caption{
+
+    position:absolute;
+
+    z-index:6;
+
+    left:50%;
+    bottom:38px;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 16px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.12);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.76);
+
+    backdrop-filter:
+        blur(16px);
+
+    white-space:nowrap;
+
+}
+
+.page-angel .angel-product-caption span{
+
+    color:
+        var(--angel-purple-mid);
+
+    font-size:.68rem;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+
+}
+
+.page-angel .angel-product-caption strong{
+
+    color:
+        var(--angel-gold-deep);
+
+    font-size:.73rem;
+
+    letter-spacing:.18em;
+
+}
+
+
+/* ==========================================================
+   13. GENERAL TYPOGRAPHY
+   ========================================================== */
+
+.page-angel .section-title{
+
+    color:
+        var(--angel-purple-deep)
+        !important;
+
+}
+
+.page-angel .section-title span{
+
+    color:
+        var(--angel-purple)
+        !important;
+
+}
+
+.page-angel .lead{
+
+    color:
+        var(--angel-text-soft)
+        !important;
+
+}
+
+.page-angel .label{
+
+    color:
+        var(--angel-purple)
+        !important;
+
+}
+
+
+/* ==========================================================
+   14. OVERVIEW
+   ========================================================== */
+
+.page-angel .angel-overview-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #FBF8FD
+        );
+
+}
+
+.page-angel .angel-overview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.page-angel .angel-overview-card{
+
+    position:relative;
+
+    min-height:245px;
+
+    padding:28px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:25px;
+
     background:
         linear-gradient(
             145deg,
-            rgba(255,255,255,.98),
-            rgba(250,247,242,.96)
+            #FFFFFF,
+            #FBF7FD
         );
+
     box-shadow:
-        0 24px 70px rgba(43,32,21,.08);
+        var(--angel-card-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
 }
 
-.product-image-wrapper{
-    position:relative;
+.page-angel .angel-overview-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(198,160,77,.25);
+
+    box-shadow:
+        0 25px 58px
+        rgba(86,49,117,.10);
+
+}
+
+.page-angel .angel-card-number{
+
+    display:block;
+
+    color:
+        rgba(123,75,194,.17);
+
+    font-size:.71rem;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+
+}
+
+.page-angel .angel-card-icon{
+
+    width:48px;
+    height:48px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    min-height:430px;
-    overflow:hidden;
+
+    margin-top:25px;
+
+    border-radius:15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.10),
+            rgba(198,160,77,.10)
+        );
+
+    color:
+        var(--angel-purple);
+
+    font-size:1.25rem;
+
+}
+
+.page-angel .angel-overview-card h3{
+
+    margin-top:20px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.18rem;
+
+}
+
+.page-angel .angel-overview-card p{
+
+    margin-top:9px;
+
+    color:
+        #73677A;
+
+    line-height:1.7;
+
+    font-size:.89rem;
+
+}
+
+.page-angel .angel-overview-note{
+
+    display:grid;
+
+    grid-template-columns:46px 1fr;
+
+    gap:15px;
+
+    margin-top:25px;
+
+    padding:22px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.17);
+
     border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(201,177,238,.08),
+            rgba(233,212,234,.06)
+        );
+
+}
+
+.page-angel .angel-overview-note-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        var(--angel-purple-deep);
+
+    color:#FFFFFF;
+
+    font-weight:900;
+
+}
+
+.page-angel .angel-overview-note strong{
+
+    color:
+        var(--angel-purple-deep);
+
+}
+
+.page-angel .angel-overview-note p{
+
+    margin-top:5px;
+
+    color:
+        #776A7D;
+
+    line-height:1.65;
+
+}
+
+
+/* ==========================================================
+   15. TECHNOLOGY
+   ========================================================== */
+
+.page-angel .angel-technology{
+
     background:
         radial-gradient(
-            circle at center,
-            rgba(185,151,91,.08),
-            transparent 68%
+            circle at 14% 16%,
+            rgba(201,177,238,.15),
+            transparent 27%
+        ),
+        linear-gradient(
+            180deg,
+            #FBF8FE,
+            #FFFFFF
         );
+
 }
 
-.product-main-image{
-    display:block;
-    width:100%;
-    max-width:410px;
-    height:auto;
-    object-fit:contain;
-    filter:drop-shadow(
-        0 20px 30px rgba(35,25,16,.10)
-    );
+.page-angel .angel-technology-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:42px;
+
 }
 
-.product-image-caption{
+.page-angel .angel-technology-card{
+
+    min-height:215px;
+
+    padding:25px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF6FD
+        );
+
+    box-shadow:
+        0 14px 36px
+        rgba(86,49,117,.055);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.page-angel .angel-technology-card:hover{
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(198,160,77,.26);
+
+    box-shadow:
+        0 22px 50px
+        rgba(86,49,117,.09);
+
+}
+
+.page-angel .angel-technology-top{
+
     display:flex;
-    flex-direction:column;
-    gap:5px;
-    padding:18px 8px 4px;
+
+    align-items:center;
+
+    justify-content:space-between;
+
 }
 
-.product-image-caption strong{
-    font-size:16px;
+.page-angel .angel-technology-top span{
+
+    color:
+        rgba(123,75,194,.27);
+
+    font-size:.7rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
 }
 
+.page-angel .angel-technology-top i{
 
-/* ==========================================================
-   ANGEL — TECHNOLOGY
-   ========================================================== */
+    width:35px;
+    height:35px;
 
-.angel-technology{
-    position:relative;
-}
+    display:flex;
 
-.angel-technology-card{
-    position:relative;
-    min-height:190px;
-    padding:28px;
-    overflow:hidden;
-}
-
-.angel-card-number{
-    display:inline-flex;
     align-items:center;
     justify-content:center;
-    width:42px;
-    height:42px;
-    margin-bottom:22px;
-    border:1px solid rgba(185,151,91,.22);
+
     border-radius:50%;
-    color:var(--color-gold,#b9975b);
-    background:rgba(185,151,91,.06);
-    font-size:12px;
-    font-weight:700;
-    letter-spacing:.08em;
+
+    background:
+        rgba(123,75,194,.08);
+
+    color:
+        var(--angel-purple);
+
+    font-style:normal;
+
 }
 
-.angel-card-content h3{
-    margin:0;
+.page-angel .angel-technology-card h3{
+
+    margin-top:20px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.08rem;
+
+}
+
+.page-angel .angel-technology-card p{
+
+    margin-top:8px;
+
+    color:
+        #766A7D;
+
+    line-height:1.68;
+
+    font-size:.87rem;
+
 }
 
 
 /* ==========================================================
-   ANGEL — BENEFITS
+   16. EXPANDABLE INFORMATION
    ========================================================== */
 
-.angel-benefit-card{
-    min-height:210px;
-    padding:28px;
+.page-angel .angel-more-information{
+
+    margin-top:28px;
+
+}
+
+.page-angel .angel-details-toggle{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    padding:16px 18px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:17px;
+
+    background:
+        var(--angel-surface-soft);
+
+    color:
+        var(--angel-purple-deep);
+
+    cursor:pointer;
+
+    font-size:.78rem;
+
+    font-weight:900;
+
+    text-align:left;
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease,
+        background .3s ease;
+
+}
+
+.page-angel .angel-details-toggle:hover{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(198,160,77,.35);
+
+    box-shadow:
+        0 12px 25px
+        rgba(86,49,117,.06);
+
+}
+
+.page-angel .angel-details-icon{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex:0 0 auto;
+
+    border-radius:50%;
+
+    background:
+        rgba(198,160,77,.11);
+
+    color:
+        var(--angel-gold-deep);
+
+    font-size:1.1rem;
+
+    transition:
+        transform .35s ease;
+
+}
+
+.page-angel .angel-more-information.active
+.angel-details-icon{
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+/* ==========================================================
+   17. EXPANDED CARDS
+   ========================================================== */
+
+.page-angel .angel-details-content{
+
+    display:grid;
+
+    grid-template-rows:
+        0fr;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        grid-template-rows .55s cubic-bezier(.2,.8,.2,1),
+        opacity .35s ease,
+        visibility .55s ease;
+
+}
+
+.page-angel .angel-more-information.active
+.angel-details-content{
+
+    grid-template-rows:
+        1fr;
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.page-angel .angel-details-content > *{
+
+    min-height:0;
+
+    overflow:hidden;
+
+}
+
+.page-angel .angel-details-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+
+    padding-top:16px;
+
+}
+
+.page-angel .angel-detail-card{
+
+    min-width:0;
+
+    padding:25px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF6FD
+        );
+
+    box-shadow:
+        0 11px 28px
+        rgba(86,49,117,.045);
+
+}
+
+.page-angel .angel-detail-card h3{
+
+    margin-top:10px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.18rem;
+
+}
+
+.page-angel .angel-detail-card p{
+
+    margin-top:10px;
+
+    color:
+        #756878;
+
+    line-height:1.75;
+
+}
+
+.page-angel .angel-detail-card-wide{
+
+    grid-column:
+        1 / -1;
+
+}
+
+.page-angel .angel-detail-list{
+
+    display:grid;
+
+    gap:8px;
+
+    margin-top:18px;
+
+}
+
+.page-angel .angel-detail-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:9px;
+
+    color:
+        #6A5C70;
+
+    font-size:.83rem;
+
+    line-height:1.5;
+
+}
+
+.page-angel .angel-detail-check,
+.page-angel .icon-circle{
+
+    width:22px;
+    height:22px;
+
+    flex:0 0 auto;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(123,75,194,.09);
+
+    color:
+        var(--angel-purple);
+
+    font-size:.66rem;
+
+    font-weight:900;
+
+}
+
+
+/* ==========================================================
+   18. BENEFITS
+   ========================================================== */
+
+.page-angel .angel-benefits-section{
+
+    background:
+        #FFFFFF;
+
+}
+
+.page-angel .angel-benefit-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.page-angel .angel-benefit-card{
+
+    min-height:225px;
+
+    padding:27px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FBF8FE
+        );
+
+    box-shadow:
+        var(--angel-card-shadow);
+
     transition:
         transform .3s ease,
         box-shadow .3s ease,
         border-color .3s ease;
+
 }
 
-.angel-benefit-card:hover{
-    transform:translateY(-4px);
-    border-color:rgba(185,151,91,.25);
+.page-angel .angel-benefit-card:hover{
+
+    transform:
+        translateY(-6px);
+
+    border-color:
+        rgba(198,160,77,.28);
+
     box-shadow:
-        0 18px 45px rgba(43,32,21,.07);
+        0 25px 58px
+        rgba(86,49,117,.10);
+
 }
 
-.angel-benefit-icon{
+.page-angel .angel-benefit-top{
+
     display:flex;
+
     align-items:center;
-    justify-content:center;
-    width:48px;
-    height:48px;
-    margin-bottom:18px;
-    border-radius:14px;
-    background:rgba(185,151,91,.08);
-    font-size:21px;
-}
 
-
-/* ==========================================================
-   ANGEL — INFORMATION TOGGLE
-   ========================================================== */
-
-.angel-more-information{
-    width:100%;
-    margin-top:28px;
-}
-
-.angel-details-toggle{
-    width:100%;
-    display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:20px;
-    padding:18px 22px;
-    border:1px solid rgba(185,151,91,.18);
-    border-radius:16px;
-    background:#fff;
-    color:var(--text-primary,#211b16);
-    font-family:inherit;
-    font-size:14px;
-    font-weight:700;
-    text-align:left;
-    cursor:pointer;
-    transition:
-        border-color .3s ease,
-        background .3s ease,
-        box-shadow .3s ease;
+
 }
 
-.angel-details-toggle:hover{
-    border-color:rgba(185,151,91,.40);
-    background:#fcfaf7;
-    box-shadow:
-        0 10px 30px rgba(43,32,21,.06);
+.page-angel .angel-benefit-top span{
+
+    color:
+        rgba(123,75,194,.25);
+
+    font-size:.72rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
 }
 
-.angel-details-toggle:focus-visible{
-    outline:2px solid rgba(185,151,91,.55);
-    outline-offset:3px;
-}
+.page-angel .angel-benefit-top i{
 
-.angel-details-icon{
-    width:32px;
-    height:32px;
+    width:36px;
+    height:36px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    flex-shrink:0;
-    border:1px solid rgba(185,151,91,.25);
+
     border-radius:50%;
-    color:var(--color-gold,#b9975b);
-    font-size:20px;
-    font-weight:400;
-    line-height:1;
-    transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease;
+
+    background:
+        rgba(123,75,194,.08);
+
+    color:
+        var(--angel-purple);
+
+    font-style:normal;
+
 }
 
-.angel-more-information.active
-.angel-details-icon{
-    transform:rotate(45deg);
-    background:var(--color-gold,#b9975b);
-    color:#fff;
+.page-angel .angel-benefit-card h3{
+
+    margin-top:21px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.17rem;
+
 }
 
-.angel-details-content{
-    display:grid;
-    grid-template-rows:0fr;
-    opacity:0;
-    transition:
-        grid-template-rows .45s ease,
-        opacity .3s ease;
-}
+.page-angel .angel-benefit-card p{
 
-.angel-details-content > *{
-    min-height:0;
-    overflow:hidden;
-}
-
-.angel-more-information.active
-.angel-details-content{
-    grid-template-rows:1fr;
-    opacity:1;
-    padding-top:18px;
-}
-
-
-/* ==========================================================
-   ANGEL — DETAILS GRID
-   ========================================================== */
-
-.angel-details-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-    gap:20px;
-}
-
-.angel-detail-card{
-    padding:25px;
-    border:1px solid rgba(185,151,91,.14);
-    border-radius:20px;
-    background:#fcfaf7;
-}
-
-.angel-detail-card h3{
     margin-top:8px;
-}
 
-.angel-detail-card-wide{
-    grid-column:1 / -1;
-}
+    color:
+        #756979;
 
-.angel-detail-list{
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-}
+    line-height:1.7;
 
-.angel-detail-item,
-.icon-list-item{
-    display:flex;
-    align-items:center;
-    gap:11px;
-    color:var(--text-primary,#211b16);
-    font-size:13px;
-    line-height:1.5;
-}
+    font-size:.88rem;
 
-.icon-circle{
-    width:24px;
-    height:24px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    flex-shrink:0;
-    border-radius:50%;
-    background:rgba(185,151,91,.10);
-    color:var(--color-gold,#b9975b);
-    font-size:11px;
-    font-weight:700;
 }
 
 
 /* ==========================================================
-   ANGEL — COMPOSITION
+   19. PRODUCT DETAIL
    ========================================================== */
 
-.angel-composition-grid{
-    display:grid;
-    grid-template-columns:
-        minmax(0,.9fr)
-        minmax(0,1.1fr);
-    gap:60px;
-    align-items:center;
-}
+.page-angel .angel-product-section{
 
-.angel-composition-visual{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.angel-composition-image{
-    width:100%;
-    max-width:470px;
-    padding:24px;
-    border:1px solid rgba(185,151,91,.14);
-    border-radius:28px;
-    background:#fcfaf7;
-}
-
-.angel-composition-image img{
-    display:block;
-    width:100%;
-    height:auto;
-    object-fit:contain;
-}
-
-.angel-composition-content{
-    width:100%;
-}
-
-.angel-composition-items{
-    display:flex;
-    flex-direction:column;
-    gap:14px;
-}
-
-.angel-composition-item{
-    display:grid;
-    grid-template-columns:48px minmax(0,1fr);
-    gap:16px;
-    align-items:start;
-    padding:20px;
-    border:1px solid rgba(185,151,91,.12);
-    border-radius:18px;
-    background:#fff;
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-}
-
-.angel-composition-item:hover{
-    transform:translateX(3px);
-    border-color:rgba(185,151,91,.24);
-    box-shadow:
-        0 12px 28px rgba(43,32,21,.05);
-}
-
-.angel-composition-number{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:48px;
-    height:48px;
-    border-radius:14px;
-    background:rgba(185,151,91,.08);
-    color:var(--color-gold,#b9975b);
-    font-size:12px;
-    font-weight:700;
-}
-
-
-/* ==========================================================
-   ANGEL — SPECIFICATIONS
-   ========================================================== */
-
-.angel-composition-specs{
-    padding:40px;
-    border:1px solid rgba(185,151,91,.12);
-    border-radius:26px;
-    background:#fff;
-}
-
-.angel-spec-card{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    min-height:74px;
-    padding:18px 20px;
-}
-
-.angel-spec-icon{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:42px;
-    height:42px;
-    flex-shrink:0;
-    border-radius:12px;
-    background:rgba(185,151,91,.08);
-    font-size:18px;
-}
-
-.angel-spec-card strong{
-    font-size:14px;
-}
-
-.angel-spec-list{
-    display:grid;
-    grid-template-columns:
-        repeat(2,minmax(0,1fr));
-    gap:14px;
-    padding:20px;
-    border:1px solid rgba(185,151,91,.12);
-    border-radius:18px;
-    background:#fcfaf7;
-}
-
-
-/* ==========================================================
-   ANGEL — 7 PROPERTIES
-   ========================================================== */
-
-.angel-properties{
-    width:100%;
-}
-
-.angel-property-card{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    min-height:128px;
-    padding:22px;
-    border:1px solid rgba(185,151,91,.12);
-    border-radius:18px;
-    background:#fff;
-    transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-}
-
-.angel-property-card:hover{
-    transform:translateY(-3px);
-    border-color:rgba(185,151,91,.28);
-    box-shadow:
-        0 14px 32px rgba(43,32,21,.06);
-}
-
-.angel-property-number{
-    color:var(--color-gold,#b9975b);
-    font-size:11px;
-    font-weight:700;
-    letter-spacing:.08em;
-}
-
-
-/* ==========================================================
-   ANGEL — CERTIFICATION
-   ========================================================== */
-
-.angel-certification{
     position:relative;
-    width:100%;
-}
 
-.angel-certification-grid{
-    display:grid;
-    grid-template-columns:
-        repeat(4,minmax(0,1fr));
-    gap:18px;
-}
-
-.angel-certification-card{
     overflow:hidden;
-    border:1px solid rgba(185,151,91,.14);
-    border-radius:20px;
-    background:#fff;
-    box-shadow:
-        0 10px 30px rgba(43,32,21,.04);
+
+    background:
+        radial-gradient(
+            circle at 8% 28%,
+            rgba(201,177,238,.13),
+            transparent 26%
+        ),
+        radial-gradient(
+            circle at 92% 70%,
+            rgba(233,212,234,.13),
+            transparent 25%
+        ),
+        linear-gradient(
+            180deg,
+            #FBF8FE,
+            #FFFFFF
+        );
+
 }
 
-.angel-certification-image{
+.page-angel .angel-product-detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.95fr)
+        minmax(0,1.05fr);
+
+    gap:70px;
+
+    align-items:center;
+
+}
+
+.page-angel .angel-product-detail-visual{
+
     position:relative;
+
+    min-width:0;
+
+}
+
+.page-angel .angel-product-detail-frame{
+
+    position:relative;
+
+    min-height:570px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-    min-height:240px;
-    padding:12px;
+
     overflow:hidden;
-    background:#fcfaf7;
+
+    isolation:isolate;
+
+    border:
+        1px solid
+        rgba(123,75,194,.11);
+
+    border-radius:36px;
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(201,177,238,.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(233,212,234,.12),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F7F0FB
+        );
+
+    box-shadow:
+        var(--angel-heavy-shadow);
+
 }
 
-.angel-certification-image img{
-    display:block;
-    width:100%;
-    height:240px;
-    object-fit:contain;
-}
 
-.angel-certification-missing{
+/* ==========================================================
+   20. PRODUCT DETAIL DECORATION
+   ========================================================== */
+
+.page-angel .angel-detail-aura{
+
     position:absolute;
-    inset:0;
-    display:none;
-    flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    gap:5px;
-    padding:20px;
-    text-align:center;
-    color:var(--text-secondary,#766f68);
-    background:#fcfaf7;
-}
 
-.angel-certification-missing span{
-    color:var(--text-primary,#211b16);
-    font-size:13px;
-    font-weight:700;
-}
+    width:420px;
+    height:420px;
 
-.angel-certification-missing small{
-    font-size:11px;
-}
-
-.angel-certification-image.missing
-.angel-certification-missing{
-    display:flex;
-}
-
-.angel-certification-image.missing img{
-    display:none;
-}
-
-.angel-certification-caption{
-    padding:16px 18px 18px;
-}
-
-.angel-certification-caption strong{
-    font-size:13px;
-    line-height:1.45;
-}
-
-
-/* ==========================================================
-   ANGEL — VARIANTS
-   ========================================================== */
-
-.angel-variants{
-    position:relative;
-}
-
-.angel-variant-card{
-    overflow:hidden;
-}
-
-.angel-variant-card .product-card-image{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    min-height:300px;
-    padding:22px;
-    background:#fcfaf7;
-}
-
-.angel-variant-card .product-card-image img{
-    display:block;
-    width:100%;
-    max-width:280px;
-    height:260px;
-    object-fit:contain;
-}
-
-.angel-variant-card .product-card-content{
-    padding:24px;
-}
-
-.angel-variant-size{
-    display:block;
-    margin-top:7px;
-    color:var(--color-gold,#b9975b);
-    font-size:16px;
-}
-
-
-/* ==========================================================
-   ANGEL — FAQ
-   ========================================================== */
-
-.angel-faq{
-    position:relative;
-}
-
-.angel-faq-list{
-    width:100%;
-    max-width:900px;
-    margin-inline:auto;
-}
-
-.angel-faq-item{
-    overflow:hidden;
-    border-bottom:1px solid rgba(185,151,91,.14);
-}
-
-.angel-faq-item:first-child{
-    border-top:1px solid rgba(185,151,91,.14);
-}
-
-.angel-faq-question{
-    width:100%;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-    padding:22px 4px;
-    border:0;
-    background:transparent;
-    color:var(--text-primary,#211b16);
-    font-family:inherit;
-    font-size:15px;
-    font-weight:700;
-    text-align:left;
-    cursor:pointer;
-}
-
-.angel-faq-question:focus-visible{
-    outline:2px solid rgba(185,151,91,.5);
-    outline-offset:2px;
-    border-radius:6px;
-}
-
-.angel-faq-icon{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:30px;
-    height:30px;
-    flex-shrink:0;
-    border:1px solid rgba(185,151,91,.22);
     border-radius:50%;
-    color:var(--color-gold,#b9975b);
-    font-size:18px;
-    font-weight:400;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,177,238,.22),
+            rgba(123,75,194,.06) 47%,
+            transparent 73%
+        );
+
+    filter:blur(5px);
+
+}
+
+.page-angel .angel-detail-ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    z-index:1;
+
+}
+
+.page-angel .angel-detail-ring-1{
+
+    width:430px;
+    height:430px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.12);
+
+    box-shadow:
+        inset 0 0 70px
+        rgba(201,177,238,.08);
+
+}
+
+.page-angel .angel-detail-ring-2{
+
+    width:545px;
+    height:545px;
+
+    border:
+        1px dashed
+        rgba(198,160,77,.14);
+
+    animation:
+        angelDetailRotation
+        29s
+        linear
+        infinite;
+
+}
+
+@keyframes angelDetailRotation{
+
+    from{
+        transform:rotate(0deg);
+    }
+
+    to{
+        transform:rotate(360deg);
+    }
+
+}
+
+.page-angel .angel-detail-grid-decoration{
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    border-radius:50%;
+
+    background:
+        linear-gradient(
+            transparent 49.7%,
+            rgba(123,75,194,.04) 50%,
+            transparent 50.3%
+        ),
+        linear-gradient(
+            90deg,
+            transparent 49.7%,
+            rgba(198,160,77,.05) 50%,
+            transparent 50.3%
+        );
+
+    background-size:
+        52px 52px;
+
+    opacity:.24;
+
+    transform:
+        rotate(17deg);
+
+}
+
+.page-angel .angel-product-detail-image{
+
+    position:relative;
+
+    z-index:4;
+
+    width:min(73%,430px);
+
+    max-height:500px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 36px 48px
+            rgba(75,40,105,.19)
+        )
+        drop-shadow(
+            0 8px 18px
+            rgba(0,0,0,.05)
+        );
+
     transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease;
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s ease;
+
 }
 
-.angel-faq-item.active
-.angel-faq-icon{
-    transform:rotate(45deg);
-    background:var(--color-gold,#b9975b);
-    color:#fff;
+.page-angel
+.angel-product-detail-frame:hover
+.angel-product-detail-image{
+
+    transform:
+        translateY(-9px)
+        scale(1.035);
+
 }
 
-.angel-faq-answer{
-    display:grid;
-    grid-template-rows:0fr;
-    opacity:0;
-    transition:
-        grid-template-rows .4s ease,
-        opacity .3s ease;
+.page-angel .angel-detail-caption{
+
+    position:absolute;
+
+    z-index:6;
+
+    left:50%;
+    bottom:27px;
+
+    transform:
+        translateX(-50%);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:10px 16px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.11);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.76);
+
+    backdrop-filter:
+        blur(15px);
+
+    white-space:nowrap;
+
 }
 
-.angel-faq-answer > div{
-    min-height:0;
-    overflow:hidden;
+.page-angel .angel-detail-caption span{
+
+    color:
+        var(--angel-purple-mid);
+
+    font-size:.67rem;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+
 }
 
-.angel-faq-item.active
-.angel-faq-answer{
-    grid-template-rows:1fr;
-    opacity:1;
-    padding-bottom:20px;
-}
+.page-angel .angel-detail-caption strong{
 
-.angel-faq-answer p{
-    max-width:780px;
+    color:
+        var(--angel-gold-deep);
+
+    font-size:.73rem;
+
+    letter-spacing:.19em;
+
 }
 
 
 /* ==========================================================
-   ANGEL — CTA
+   21. PRODUCT DETAIL COPY
    ========================================================== */
 
-.angel-cta{
-    position:relative;
+.page-angel .angel-product-detail-copy{
+
+    min-width:0;
+
 }
 
-.angel-cta-box{
-    display:flex;
+.page-angel .angel-product-detail-copy
+.section-title{
+
+    max-width:650px;
+
+}
+
+
+/* ==========================================================
+   22. PRODUCT SPECS
+   ========================================================== */
+
+.page-angel .angel-product-specs{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:11px;
+
+    margin-top:30px;
+
+}
+
+.page-angel .angel-product-spec{
+
+    display:grid;
+
+    grid-template-columns:
+        38px 1fr;
+
+    gap:11px;
+
     align-items:center;
-    justify-content:space-between;
-    gap:40px;
-    padding:52px;
-    border:1px solid rgba(185,151,91,.18);
-    border-radius:30px;
+
+    min-height:72px;
+
+    padding:13px 14px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:17px;
+
+    background:
+        rgba(255,255,255,.84);
+
+    box-shadow:
+        0 9px 24px
+        rgba(86,49,117,.04);
+
+    transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+.page-angel .angel-product-spec:hover{
+
+    transform:
+        translateY(-3px);
+
+    border-color:
+        rgba(198,160,77,.30);
+
+    box-shadow:
+        0 15px 30px
+        rgba(86,49,117,.07);
+
+}
+
+.page-angel .angel-product-spec-number{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
     background:
         linear-gradient(
             135deg,
-            #fff,
-            #fcfaf7
+            rgba(123,75,194,.09),
+            rgba(198,160,77,.10)
         );
-    box-shadow:
-        0 22px 60px rgba(43,32,21,.06);
+
+    color:
+        var(--angel-purple);
+
+    font-size:.62rem;
+
+    font-weight:900;
+
 }
 
-.angel-cta-content{
-    max-width:650px;
+.page-angel .angel-product-spec strong{
+
+    display:block;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:.76rem;
+
+    font-weight:900;
+
 }
 
-.angel-cta-content h2{
-    margin-top:10px;
-    max-width:700px;
-}
+.page-angel .angel-product-spec div span{
 
-.angel-cta-actions{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
-    flex-shrink:0;
+    display:block;
+
+    margin-top:3px;
+
+    color:
+        #83758B;
+
+    font-size:.72rem;
+
+    line-height:1.45;
+
 }
 
 
 /* ==========================================================
-   ANGEL — ACCESSIBILITY / MOTION
+   23. PRODUCT HIGHLIGHT
+   ========================================================== */
+
+.page-angel .angel-product-highlight{
+
+    display:grid;
+
+    grid-template-columns:
+        45px 1fr;
+
+    gap:14px;
+
+    align-items:start;
+
+    margin-top:23px;
+
+    padding:20px;
+
+    border:
+        1px solid
+        rgba(198,160,77,.20);
+
+    border-radius:21px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(201,177,238,.08),
+            rgba(233,212,234,.05)
+        );
+
+}
+
+.page-angel .angel-product-highlight-icon{
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        var(--angel-purple-deep);
+
+    color:#FFFFFF;
+
+    box-shadow:
+        0 10px 22px
+        rgba(76,43,105,.12);
+
+}
+
+.page-angel .angel-product-highlight strong{
+
+    display:block;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:.9rem;
+
+}
+
+.page-angel .angel-product-highlight p{
+
+    margin-top:5px;
+
+    color:
+        #756978;
+
+    line-height:1.65;
+
+    font-size:.82rem;
+
+}
+
+
+/* ==========================================================
+   24. COMPOSITION
+   ========================================================== */
+
+.page-angel .angel-composition{
+
+    background:
+        #FFFFFF;
+
+}
+
+.page-angel .angel-section-heading{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr .9fr;
+
+    gap:50px;
+
+    align-items:end;
+
+}
+
+.page-angel .angel-composition-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:14px;
+
+    margin-top:42px;
+
+}
+
+.page-angel .angel-composition-item{
+
+    display:grid;
+
+    grid-template-columns:
+        48px 1fr;
+
+    gap:15px;
+
+    align-items:start;
+
+    padding:23px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:21px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FBF7FD
+        );
+
+    box-shadow:
+        0 12px 30px
+        rgba(86,49,117,.045);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease;
+
+}
+
+.page-angel .angel-composition-item:hover{
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(198,160,77,.26);
+
+}
+
+.page-angel .angel-composition-number{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.11),
+            rgba(198,160,77,.10)
+        );
+
+    color:
+        var(--angel-purple);
+
+    font-size:.66rem;
+
+    font-weight:900;
+
+}
+
+.page-angel .angel-composition-item h3{
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1rem;
+
+}
+
+.page-angel .angel-composition-item p{
+
+    margin-top:6px;
+
+    color:
+        #766A7D;
+
+    line-height:1.65;
+
+    font-size:.85rem;
+
+}
+
+
+/* ==========================================================
+   25. COMPOSITION SPECS
+   ========================================================== */
+
+.page-angel .angel-composition-specs{
+
+    margin-top:70px;
+
+}
+
+.page-angel .angel-spec-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-top:35px;
+
+}
+
+.page-angel .angel-spec-card{
+
+    min-height:120px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    padding:22px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:20px;
+
+    background:
+        var(--angel-surface);
+
+    box-shadow:
+        0 12px 28px
+        rgba(86,49,117,.045);
+
+}
+
+.page-angel .angel-spec-number{
+
+    color:
+        rgba(123,75,194,.28);
+
+    font-size:.65rem;
+
+    font-weight:900;
+
+}
+
+.page-angel .angel-spec-icon{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    background:
+        rgba(123,75,194,.08);
+
+    font-size:1rem;
+
+}
+
+.page-angel .angel-spec-card strong{
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:.82rem;
+
+}
+
+
+/* ==========================================================
+   26. SPEC DETAIL LIST
+   ========================================================== */
+
+.page-angel .angel-spec-detail-list{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:10px;
+
+    padding-top:16px;
+
+}
+
+.page-angel .angel-spec-detail-list
+.angel-detail-item{
+
+    padding:
+        12px 14px;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:15px;
+
+    background:
+        var(--angel-surface-soft);
+
+}
+
+
+/* ==========================================================
+   27. CERTIFICATION
+   ========================================================== */
+
+.page-angel .angel-certification{
+
+    margin-top:75px;
+
+    padding:
+        55px 0 10px;
+
+    border-top:
+        1px solid
+        var(--angel-line-soft);
+
+}
+
+.page-angel .angel-certification-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:14px;
+
+    margin-top:38px;
+
+}
+
+.page-angel .angel-certification-card{
+
+    min-width:0;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:21px;
+
+    background:
+        var(--angel-surface);
+
+    box-shadow:
+        0 12px 32px
+        rgba(86,49,117,.045);
+
+}
+
+.page-angel .angel-certification-image{
+
+    position:relative;
+
+    min-height:220px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:15px;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FBF8FD,
+            #F5EDF8
+        );
+
+}
+
+.page-angel .angel-certification-image img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+
+    border-radius:12px;
+
+}
+
+.page-angel .angel-certification-missing{
+
+    position:absolute;
+
+    inset:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FAF6FC,
+            #F4EDF8
+        );
+
+}
+
+.page-angel .angel-certification-image.missing
+.angel-certification-missing{
+
+    display:flex;
+
+}
+
+.page-angel .angel-certification-missing span{
+
+    color:
+        var(--angel-purple-deep);
+
+    font-weight:800;
+
+    font-size:.8rem;
+
+}
+
+.page-angel .angel-certification-missing small{
+
+    margin-top:5px;
+
+    color:
+        var(--angel-text-muted);
+
+    font-size:.7rem;
+
+}
+
+.page-angel .angel-certification-caption{
+
+    padding:15px 16px;
+
+    border-top:
+        1px solid
+        var(--angel-line-soft);
+
+}
+
+.page-angel .angel-certification-caption strong{
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:.78rem;
+
+    line-height:1.4;
+
+}
+
+
+/* ==========================================================
+   28. VARIANTS
+   ========================================================== */
+
+.page-angel .angel-variants{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FBF8FD,
+            #FFFFFF
+        );
+
+}
+
+.page-angel .angel-variant-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:42px;
+
+}
+
+.page-angel .angel-variant-card{
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:27px;
+
+    background:
+        var(--angel-surface);
+
+    box-shadow:
+        var(--angel-card-shadow);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+
+}
+
+.page-angel .angel-variant-card:hover{
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(198,160,77,.27);
+
+    box-shadow:
+        0 25px 58px
+        rgba(86,49,117,.10);
+
+}
+
+.page-angel .angel-variant-image{
+
+    position:relative;
+
+    min-height:330px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    padding:28px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(201,177,238,.17),
+            transparent 62%
+        ),
+        linear-gradient(
+            145deg,
+            #FCF9FE,
+            #F5ECF8
+        );
+
+}
+
+.page-angel .angel-variant-image img{
+
+    width:76%;
+
+    height:275px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 20px 28px
+            rgba(75,40,105,.14)
+        );
+
+    transition:
+        transform .45s ease;
+
+}
+
+.page-angel .angel-variant-card:hover
+.angel-variant-image img{
+
+    transform:
+        translateY(-5px)
+        scale(1.035);
+
+}
+
+.page-angel .angel-variant-content{
+
+    padding:24px;
+
+}
+
+.page-angel .angel-variant-content h3{
+
+    margin-top:7px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:1.28rem;
+
+}
+
+.page-angel .angel-variant-content strong{
+
+    display:inline-flex;
+
+    margin-top:7px;
+
+    padding:6px 9px;
+
+    border-radius:8px;
+
+    background:
+        rgba(123,75,194,.08);
+
+    color:
+        var(--angel-purple);
+
+    font-size:.72rem;
+
+}
+
+.page-angel .angel-variant-content p{
+
+    margin-top:10px;
+
+    color:
+        #766A7D;
+
+    line-height:1.65;
+
+    font-size:.84rem;
+
+}
+
+
+/* ==========================================================
+   29. FAQ
+   ========================================================== */
+
+.page-angel .angel-faq{
+
+    background:
+        #FFFFFF;
+
+}
+
+.page-angel .angel-faq-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:40px;
+
+}
+
+.page-angel .angel-faq-item{
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--angel-line);
+
+    border-radius:21px;
+
+    background:
+        var(--angel-surface-soft);
+
+    transition:
+        transform .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+.page-angel .angel-faq-item:hover{
+
+    border-color:
+        rgba(123,75,194,.20);
+
+}
+
+.page-angel .angel-faq-item.active{
+
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(198,160,77,.31);
+
+    box-shadow:
+        0 17px 42px
+        rgba(86,49,117,.07);
+
+}
+
+.page-angel .angel-faq-question{
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:
+        44px minmax(0,1fr) 34px;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:18px 20px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-weight:800;
+
+    text-align:left;
+
+    cursor:pointer;
+
+}
+
+.page-angel .angel-faq-number{
+
+    width:34px;
+    height:34px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(123,75,194,.07);
+
+    color:
+        var(--angel-purple);
+
+    font-size:.65rem;
+
+    font-weight:900;
+
+}
+
+.page-angel .angel-faq-text{
+
+    line-height:1.5;
+
+}
+
+.page-angel .angel-faq-icon{
+
+    width:30px;
+    height:30px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(198,160,77,.11);
+
+    color:
+        var(--angel-gold-deep);
+
+    font-size:1.1rem;
+
+    transition:
+        transform .35s ease,
+        background .35s ease;
+
+}
+
+.page-angel .angel-faq-item.active
+.angel-faq-icon{
+
+    transform:
+        rotate(45deg);
+
+    background:
+        rgba(123,75,194,.08);
+
+}
+
+.page-angel .angel-faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .45s ease;
+
+}
+
+.page-angel .angel-faq-item.active
+.angel-faq-answer{
+
+    max-height:320px;
+
+}
+
+.page-angel .angel-faq-answer p{
+
+    padding:
+        0 20px 20px 78px;
+
+    color:
+        #766A7D;
+
+    line-height:1.75;
+
+    font-size:.89rem;
+
+}
+
+
+/* ==========================================================
+   30. FINAL INFORMATION
+   ========================================================== */
+
+.page-angel .angel-disclaimer{
+
+    position:relative;
+
+    padding:
+        55px 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #F7F0FA,
+            #EFE6F5
+        );
+
+}
+
+.page-angel .angel-disclaimer::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:50%;
+
+    width:min(760px,70%);
+
+    height:1px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(198,160,77,.42),
+            transparent
+        );
+
+}
+
+.page-angel .angel-disclaimer-box{
+
+    display:grid;
+
+    grid-template-columns:
+        58px 1fr;
+
+    gap:20px;
+
+    align-items:start;
+
+    padding:30px 34px;
+
+    border:
+        1px solid
+        rgba(123,75,194,.10);
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.94),
+            rgba(251,246,253,.90)
+        );
+
+    box-shadow:
+        0 22px 55px
+        rgba(86,49,117,.07);
+
+}
+
+.page-angel .angel-disclaimer-icon{
+
+    width:48px;
+    height:48px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--angel-purple-deep),
+            var(--angel-purple)
+        );
+
+    color:#FFFFFF;
+
+    font-size:.9rem;
+
+    font-weight:900;
+
+    box-shadow:
+        0 12px 25px
+        rgba(75,40,105,.12);
+
+}
+
+.page-angel .angel-disclaimer-box h3{
+
+    margin-top:8px;
+
+    color:
+        var(--angel-purple-deep);
+
+    font-size:
+        clamp(
+            1.45rem,
+            2.7vw,
+            2rem
+        );
+
+    line-height:1.15;
+
+}
+
+.page-angel .angel-disclaimer-box p{
+
+    max-width:930px;
+
+    margin-top:9px;
+
+    color:
+        #71647A;
+
+    line-height:1.8;
+
+    font-size:.86rem;
+
+}
+
+
+/* ==========================================================
+   31. CTA
+   ========================================================== */
+
+.page-angel .angel-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 14% 18%,
+            rgba(201,177,238,.12),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #332047,
+            #4B287B 52%,
+            #281637
+        );
+
+}
+
+.page-angel .angel-cta-box{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr auto;
+
+    gap:40px;
+
+    align-items:center;
+
+    padding:48px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    border-radius:32px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.07),
+            rgba(255,255,255,.025)
+        );
+
+    box-shadow:
+        0 25px 75px
+        rgba(0,0,0,.20);
+
+    backdrop-filter:
+        blur(14px);
+
+}
+
+.page-angel .angel-label-light{
+
+    color:
+        #E2C77E !important;
+
+}
+
+.page-angel .angel-cta-box h2{
+
+    margin-top:10px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.4rem
+        );
+
+    line-height:1.05;
+
+}
+
+.page-angel .angel-cta-box h2 span{
+
+    color:
+        #DBB86D;
+
+}
+
+.page-angel .angel-cta-box p{
+
+    max-width:650px;
+
+    margin-top:13px;
+
+    color:
+        #D7CBDD;
+
+    line-height:1.7;
+
+}
+
+.page-angel .angel-cta-actions{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    min-width:220px;
+
+}
+
+
+/* ==========================================================
+   32. BUTTONS
+   ========================================================== */
+
+.page-angel .angel-btn-primary{
+
+    border:
+        1px solid
+        rgba(255,255,255,.08)
+        !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--angel-purple-deep),
+            var(--angel-purple)
+        )
+        !important;
+
+    color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 14px 32px
+        rgba(75,40,105,.16)
+        !important;
+
+}
+
+.page-angel .angel-btn-glass{
+
+    border-color:
+        rgba(123,75,194,.15)
+        !important;
+
+    color:
+        var(--angel-purple-deep)
+        !important;
+
+    background:
+        rgba(255,255,255,.78)
+        !important;
+
+}
+
+.page-angel .angel-btn-dark{
+
+    color:
+        #FFFFFF !important;
+
+    border-color:
+        rgba(255,255,255,.16)
+        !important;
+
+    background:
+        rgba(255,255,255,.05)
+        !important;
+
+}
+
+
+/* ==========================================================
+   33. DARK THEME
+   ========================================================== */
+
+html[data-theme="dark"] .page-angel,
+body.dark .page-angel{
+
+    --angel-bg:#100D13;
+    --angel-bg-soft:#17121B;
+
+    --angel-surface:#1B1620;
+    --angel-surface-soft:#19141E;
+
+    --angel-text:#F0E7F2;
+    --angel-text-soft:#C5B7C8;
+    --angel-text-muted:#9F91A3;
+
+    --angel-line:
+        rgba(255,255,255,.085);
+
+    --angel-line-soft:
+        rgba(255,255,255,.055);
+
+    --angel-card-shadow:
+        0 20px 48px rgba(0,0,0,.28);
+
+    --angel-heavy-shadow:
+        0 35px 90px rgba(0,0,0,.33);
+
+    background:
+        #100D13;
+
+    color:
+        var(--angel-text);
+
+}
+
+
+/* ==========================================================
+   34. DARK — HERO
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-hero,
+body.dark
+.page-angel .angel-hero{
+
+    background:
+        radial-gradient(
+            circle at 14% 20%,
+            rgba(123,75,194,.12),
+            transparent 29%
+        ),
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(233,212,234,.07),
+            transparent 29%
+        ),
+        linear-gradient(
+            135deg,
+            #17121C,
+            #151018 48%,
+            #100D13 100%
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-orbit,
+body.dark
+.page-angel .angel-orbit{
+
+    border-color:
+        rgba(255,255,255,.065);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-orbit-2,
+body.dark
+.page-angel .angel-orbit-2{
+
+    border-color:
+        rgba(198,160,77,.15);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-eyebrow,
+body.dark
+.page-angel .angel-eyebrow{
+
+    color:
+        #C7A1EA;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-hero .hero-title,
+body.dark
+.page-angel .angel-hero .hero-title{
+
+    color:
+        #F4EAF6 !important;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-hero .hero-sub,
+body.dark
+.page-angel .angel-hero .hero-sub{
+
+    color:
+        #B9AABC !important;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-hero-pills span,
+body.dark
+.page-angel .angel-hero-pills span{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        #E4D8E7;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-hero-meta strong,
+body.dark
+.page-angel .angel-hero-meta strong{
+
+    color:
+        #EFE4F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-hero-meta span,
+body.dark
+.page-angel .angel-hero-meta span{
+
+    color:
+        #948597;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-caption,
+body.dark
+.page-angel .angel-product-caption{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(20,16,24,.74);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-caption span,
+body.dark
+.page-angel .angel-product-caption span{
+
+    color:
+        #C39AE7;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-caption strong,
+body.dark
+.page-angel .angel-product-caption strong{
+
+    color:
+        #D8B96D;
+
+}
+
+
+/* ==========================================================
+   35. DARK — STANDARD SECTIONS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-overview-section,
+body.dark
+.page-angel .angel-overview-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #110E14,
+            #17121B
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-technology,
+body.dark
+.page-angel .angel-technology{
+
+    background:
+        linear-gradient(
+            180deg,
+            #151018,
+            #100D13
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-benefits-section,
+body.dark
+.page-angel .angel-benefits-section{
+
+    background:
+        #100D13;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-section,
+body.dark
+.page-angel .angel-product-section{
+
+    background:
+        radial-gradient(
+            circle at 10% 28%,
+            rgba(123,75,194,.08),
+            transparent 27%
+        ),
+        #120F16;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-composition,
+body.dark
+.page-angel .angel-composition{
+
+    background:
+        #100D13;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-variants,
+body.dark
+.page-angel .angel-variants{
+
+    background:
+        linear-gradient(
+            180deg,
+            #151018,
+            #100D13
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq,
+body.dark
+.page-angel .angel-faq{
+
+    background:
+        #100D13;
+
+}
+
+
+/* ==========================================================
+   36. DARK — GENERAL TYPOGRAPHY
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .section-title,
+body.dark
+.page-angel .section-title{
+
+    color:
+        #F2E7F4 !important;
+
+}
+
+html[data-theme="dark"]
+.page-angel .section-title span,
+body.dark
+.page-angel .section-title span{
+
+    color:
+        #C99BEA !important;
+
+}
+
+html[data-theme="dark"]
+.page-angel .lead,
+body.dark
+.page-angel .lead{
+
+    color:
+        #BDAFC1 !important;
+
+}
+
+html[data-theme="dark"]
+.page-angel .label,
+body.dark
+.page-angel .label{
+
+    color:
+        #C395E8 !important;
+
+}
+
+
+/* ==========================================================
+   37. DARK — OVERVIEW
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-overview-card,
+body.dark
+.page-angel .angel-overview-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1B1620,
+            #17121B
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-card-number,
+body.dark
+.page-angel .angel-card-number{
+
+    color:
+        rgba(255,255,255,.16);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-card-icon,
+body.dark
+.page-angel .angel-card-icon{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.12),
+            rgba(198,160,77,.08)
+        );
+
+    color:
+        #C69CE7;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-overview-card h3,
+body.dark
+.page-angel .angel-overview-card h3{
+
+    color:
+        #EFE3F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-overview-card p,
+body.dark
+.page-angel .angel-overview-card p{
+
+    color:
+        #A89AAA;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-overview-note,
+body.dark
+.page-angel .angel-overview-note{
+
+    border-color:
+        rgba(198,160,77,.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.055),
+            rgba(198,160,77,.035)
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-overview-note strong,
+body.dark
+.page-angel .angel-overview-note strong{
+
+    color:
+        #F0E6F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-overview-note p,
+body.dark
+.page-angel .angel-overview-note p{
+
+    color:
+        #A396A8;
+
+}
+
+
+/* ==========================================================
+   38. DARK — TECHNOLOGY
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-technology-card,
+body.dark
+.page-angel .angel-technology-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A151E,
+            #16111A
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-technology-top span,
+body.dark
+.page-angel .angel-technology-top span{
+
+    color:
+        rgba(255,255,255,.23);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-technology-top i,
+body.dark
+.page-angel .angel-technology-top i{
+
+    background:
+        rgba(123,75,194,.13);
+
+    color:
+        #C49CE8;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-technology-card h3,
+body.dark
+.page-angel .angel-technology-card h3{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-technology-card p,
+body.dark
+.page-angel .angel-technology-card p{
+
+    color:
+        #A99BAB;
+
+}
+
+
+/* ==========================================================
+   39. DARK — EXPANDER + DETAIL CARDS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-details-toggle,
+body.dark
+.page-angel .angel-details-toggle{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+    color:
+        #EEE4F0;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-details-toggle:hover,
+body.dark
+.page-angel .angel-details-toggle:hover{
+
+    background:
+        #1D1722;
+
+    border-color:
+        rgba(198,160,77,.27);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-details-icon,
+body.dark
+.page-angel .angel-details-icon{
+
+    background:
+        rgba(198,160,77,.10);
+
+    color:
+        #D5AC5C;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-detail-card,
+body.dark
+.page-angel .angel-detail-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1B1620,
+            #161119
+        );
+
+    box-shadow:
+        0 14px 32px
+        rgba(0,0,0,.18);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-detail-card h3,
+body.dark
+.page-angel .angel-detail-card h3{
+
+    color:
+        #F0E5F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-detail-card p,
+body.dark
+.page-angel .angel-detail-card p{
+
+    color:
+        #AA9DAC;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-detail-item,
+body.dark
+.page-angel .angel-detail-item{
+
+    color:
+        #B2A4B5;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-detail-check,
+html[data-theme="dark"]
+.page-angel .icon-circle,
+body.dark
+.page-angel .angel-detail-check,
+body.dark
+.page-angel .icon-circle{
+
+    background:
+        rgba(123,75,194,.14);
+
+    color:
+        #C5A0E8;
+
+}
+
+
+/* ==========================================================
+   40. DARK — BENEFITS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-benefit-card,
+body.dark
+.page-angel .angel-benefit-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A151E,
+            #16111A
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-benefit-top span,
+body.dark
+.page-angel .angel-benefit-top span{
+
+    color:
+        rgba(255,255,255,.22);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-benefit-top i,
+body.dark
+.page-angel .angel-benefit-top i{
+
+    background:
+        rgba(123,75,194,.13);
+
+    color:
+        #C49BE7;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-benefit-card h3,
+body.dark
+.page-angel .angel-benefit-card h3{
+
+    color:
+        #F0E5F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-benefit-card p,
+body.dark
+.page-angel .angel-benefit-card p{
+
+    color:
+        #A99CAB;
+
+}
+
+
+/* ==========================================================
+   41. DARK — PRODUCT DETAIL
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-product-detail-frame,
+body.dark
+.page-angel .angel-product-detail-frame{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        radial-gradient(
+            circle at 50% 42%,
+            rgba(123,75,194,.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 55%,
+            rgba(233,212,234,.05),
+            transparent 55%
+        ),
+        linear-gradient(
+            145deg,
+            #1B1620,
+            #141018
+        );
+
+    box-shadow:
+        0 30px 75px
+        rgba(0,0,0,.28);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-spec,
+body.dark
+.page-angel .angel-product-spec{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        rgba(27,22,31,.88);
+
+    box-shadow:
+        0 10px 26px
+        rgba(0,0,0,.16);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-spec strong,
+body.dark
+.page-angel .angel-product-spec strong{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-spec div span,
+body.dark
+.page-angel .angel-product-spec div span{
+
+    color:
+        #95889A;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-highlight,
+body.dark
+.page-angel .angel-product-highlight{
+
+    border-color:
+        rgba(198,160,77,.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.055),
+            rgba(198,160,77,.03)
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-highlight strong,
+body.dark
+.page-angel .angel-product-highlight strong{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-product-highlight p,
+body.dark
+.page-angel .angel-product-highlight p{
+
+    color:
+        #A195A7;
+
+}
+
+
+/* ==========================================================
+   42. DARK — COMPOSITION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-composition-item,
+body.dark
+.page-angel .angel-composition-item{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A151E,
+            #16111A
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-composition-item h3,
+body.dark
+.page-angel .angel-composition-item h3{
+
+    color:
+        #F0E5F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-composition-item p,
+body.dark
+.page-angel .angel-composition-item p{
+
+    color:
+        #A99BAB;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-composition-number,
+body.dark
+.page-angel .angel-composition-number{
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(123,75,194,.13),
+            rgba(198,160,77,.08)
+        );
+
+    color:
+        #C59DE6;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-spec-card,
+body.dark
+.page-angel .angel-spec-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-spec-card strong,
+body.dark
+.page-angel .angel-spec-card strong{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-spec-icon,
+body.dark
+.page-angel .angel-spec-icon{
+
+    background:
+        rgba(123,75,194,.12);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-spec-detail-list
+.angel-detail-item,
+body.dark
+.page-angel .angel-spec-detail-list
+.angel-detail-item{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+}
+
+
+/* ==========================================================
+   43. DARK — CERTIFICATION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-certification,
+body.dark
+.page-angel .angel-certification{
+
+    border-top-color:
+        rgba(255,255,255,.06);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-card,
+body.dark
+.page-angel .angel-certification-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-image,
+body.dark
+.page-angel .angel-certification-image{
+
+    background:
+        linear-gradient(
+            145deg,
+            #1C1721,
+            #16111A
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-caption,
+body.dark
+.page-angel .angel-certification-caption{
+
+    border-top-color:
+        rgba(255,255,255,.06);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-caption strong,
+body.dark
+.page-angel .angel-certification-caption strong{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-missing,
+body.dark
+.page-angel .angel-certification-missing{
+
+    background:
+        linear-gradient(
+            145deg,
+            #1B1620,
+            #161119
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-missing span,
+body.dark
+.page-angel .angel-certification-missing span{
+
+    color:
+        #E6D9E8;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-certification-missing small,
+body.dark
+.page-angel .angel-certification-missing small{
+
+    color:
+        #9B8DA0;
+
+}
+
+
+/* ==========================================================
+   44. DARK — VARIANTS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-variant-card,
+body.dark
+.page-angel .angel-variant-card{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-variant-image,
+body.dark
+.page-angel .angel-variant-image{
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(123,75,194,.10),
+            transparent 62%
+        ),
+        linear-gradient(
+            145deg,
+            #1D1822,
+            #16111A
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-variant-content h3,
+body.dark
+.page-angel .angel-variant-content h3{
+
+    color:
+        #F0E5F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-variant-content strong,
+body.dark
+.page-angel .angel-variant-content strong{
+
+    background:
+        rgba(123,75,194,.12);
+
+    color:
+        #C69FE6;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-variant-content p,
+body.dark
+.page-angel .angel-variant-content p{
+
+    color:
+        #A99BAB;
+
+}
+
+
+/* ==========================================================
+   45. DARK — FAQ
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-faq-item,
+body.dark
+.page-angel .angel-faq-item{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        #19141E;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq-item.active,
+body.dark
+.page-angel .angel-faq-item.active{
+
+    border-color:
+        rgba(198,160,77,.24);
+
+    box-shadow:
+        0 18px 42px
+        rgba(0,0,0,.23);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq-question,
+body.dark
+.page-angel .angel-faq-question{
+
+    color:
+        #EFE5F1;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq-number,
+body.dark
+.page-angel .angel-faq-number{
+
+    background:
+        rgba(123,75,194,.10);
+
+    color:
+        #C59CE8;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq-icon,
+body.dark
+.page-angel .angel-faq-icon{
+
+    background:
+        rgba(198,160,77,.09);
+
+    color:
+        #D4AA5B;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-faq-answer p,
+body.dark
+.page-angel .angel-faq-answer p{
+
+    color:
+        #A99CAB;
+
+}
+
+
+/* ==========================================================
+   46. DARK — FINAL INFORMATION
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-disclaimer,
+body.dark
+.page-angel .angel-disclaimer{
+
+    background:
+        linear-gradient(
+            180deg,
+            #17121B,
+            #100D13
+        );
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-disclaimer-box,
+body.dark
+.page-angel .angel-disclaimer-box{
+
+    border-color:
+        rgba(255,255,255,.08);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.045),
+            rgba(255,255,255,.02)
+        );
+
+    box-shadow:
+        0 22px 55px
+        rgba(0,0,0,.22);
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-disclaimer-box h3,
+body.dark
+.page-angel .angel-disclaimer-box h3{
+
+    color:
+        #F0E6F2;
+
+}
+
+html[data-theme="dark"]
+.page-angel .angel-disclaimer-box p,
+body.dark
+.page-angel .angel-disclaimer-box p{
+
+    color:
+        #A89AAA;
+
+}
+
+
+/* ==========================================================
+   47. DARK — BUTTONS
+   ========================================================== */
+
+html[data-theme="dark"]
+.page-angel .angel-btn-glass,
+body.dark
+.page-angel .angel-btn-glass{
+
+    border-color:
+        rgba(255,255,255,.10)
+        !important;
+
+    background:
+        rgba(255,255,255,.05)
+        !important;
+
+    color:
+        #EEE4F0
+        !important;
+
+}
+
+
+/* ==========================================================
+   48. RESPONSIVE — 1100px
+   ========================================================== */
+
+@media(max-width:1100px){
+
+    .page-angel .angel-overview-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-angel .angel-technology-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-angel .angel-product-detail-grid{
+
+        grid-template-columns:
+            1fr;
+
+        gap:45px;
+
+    }
+
+    .page-angel .angel-product-detail-frame{
+
+        min-height:520px;
+
+    }
+
+    .page-angel .angel-benefit-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-angel .angel-spec-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-angel .angel-certification-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+    .page-angel .angel-cta-box{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-cta-actions{
+
+        flex-direction:row;
+
+        flex-wrap:wrap;
+
+    }
+
+}
+
+
+/* ==========================================================
+   49. RESPONSIVE — 850px
+   ========================================================== */
+
+@media(max-width:850px){
+
+    .page-angel .angel-section-heading{
+
+        grid-template-columns:
+            1fr;
+
+        gap:20px;
+
+    }
+
+    .page-angel .angel-composition-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-details-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-detail-card-wide{
+
+        grid-column:auto;
+
+    }
+
+    .page-angel .angel-variant-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-certification-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+
+    }
+
+}
+
+
+/* ==========================================================
+   50. RESPONSIVE — 760px
+   ========================================================== */
+
+@media(max-width:760px){
+
+    .page-angel .angel-hero-product{
+
+        min-height:430px;
+
+    }
+
+    .page-angel .angel-hero-product img{
+
+        width:min(360px,87%);
+
+    }
+
+    .page-angel .angel-product-ring-1{
+
+        width:315px;
+        height:315px;
+
+    }
+
+    .page-angel .angel-product-ring-2{
+
+        width:395px;
+        height:395px;
+
+    }
+
+    .page-angel .angel-product-grid{
+
+        width:315px;
+        height:315px;
+
+        background-size:
+            42px 42px;
+
+    }
+
+    .page-angel .angel-product-aura{
+
+        width:325px;
+        height:325px;
+
+    }
+
+    .page-angel .angel-product-caption{
+
+        bottom:10px;
+
+    }
+
+    .page-angel .angel-overview-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-benefit-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-technology-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-spec-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-product-detail-frame{
+
+        min-height:430px;
+
+        border-radius:29px;
+
+    }
+
+    .page-angel .angel-product-detail-image{
+
+        width:min(74%,360px);
+
+    }
+
+    .page-angel .angel-detail-ring-1{
+
+        width:310px;
+        height:310px;
+
+    }
+
+    .page-angel .angel-detail-ring-2{
+
+        width:390px;
+        height:390px;
+
+    }
+
+    .page-angel .angel-detail-grid-decoration{
+
+        width:310px;
+        height:310px;
+
+    }
+
+    .page-angel .angel-detail-aura{
+
+        width:310px;
+        height:310px;
+
+    }
+
+    .page-angel .angel-product-specs{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-certification-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .page-angel .angel-cta-actions{
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+/* ==========================================================
+   51. RESPONSIVE — 520px
+   ========================================================== */
+
+@media(max-width:520px){
+
+    .page-angel .angel-eyebrow{
+
+        font-size:.66rem;
+
+    }
+
+    .page-angel .angel-hero-pills{
+
+        gap:7px;
+
+    }
+
+    .page-angel .angel-hero-pills span{
+
+        padding:7px 10px;
+
+        font-size:.67rem;
+
+    }
+
+    .page-angel .angel-hero-meta{
+
+        gap:18px;
+
+    }
+
+    .page-angel .angel-overview-card{
+
+        min-height:220px;
+
+        padding:24px;
+
+    }
+
+    .page-angel .angel-benefit-card{
+
+        min-height:210px;
+
+        padding:24px;
+
+    }
+
+    .page-angel .angel-technology-card{
+
+        min-height:200px;
+
+        padding:24px;
+
+    }
+
+    .page-angel .angel-product-detail-frame{
+
+        min-height:370px;
+
+        border-radius:24px;
+
+    }
+
+    .page-angel .angel-product-detail-image{
+
+        width:76%;
+
+    }
+
+    .page-angel .angel-detail-ring-1{
+
+        width:270px;
+        height:270px;
+
+    }
+
+    .page-angel .angel-detail-ring-2{
+
+        width:335px;
+        height:335px;
+
+    }
+
+    .page-angel .angel-detail-grid-decoration{
+
+        width:270px;
+        height:270px;
+
+        background-size:
+            38px 38px;
+
+    }
+
+    .page-angel .angel-detail-aura{
+
+        width:270px;
+        height:270px;
+
+    }
+
+    .page-angel .angel-detail-caption{
+
+        bottom:17px;
+
+        padding:8px 12px;
+
+    }
+
+    .page-angel .angel-composition-item{
+
+        padding:20px;
+
+    }
+
+    .page-angel .angel-spec-detail-list{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-certification-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .page-angel .angel-certification-image{
+
+        min-height:250px;
+
+    }
+
+    .page-angel .angel-variant-image{
+
+        min-height:300px;
+
+    }
+
+    .page-angel .angel-faq-question{
+
+        grid-template-columns:
+            36px minmax(0,1fr) 30px;
+
+        gap:10px;
+
+        padding:16px;
+
+    }
+
+    .page-angel .angel-faq-answer p{
+
+        padding:
+            0 16px 18px;
+
+    }
+
+    .page-angel .angel-disclaimer{
+
+        padding:
+            40px 0;
+
+    }
+
+    .page-angel .angel-disclaimer-box{
+
+        grid-template-columns:
+            1fr;
+
+        padding:25px;
+
+    }
+
+    .page-angel .angel-cta-box{
+
+        padding:30px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   52. REDUCED MOTION
    ========================================================== */
 
 @media(prefers-reduced-motion:reduce){
 
-    .angel-benefit-card,
-    .angel-composition-item,
-    .angel-property-card,
-    .angel-details-content,
-    .angel-details-icon,
-    .angel-faq-answer,
-    .angel-faq-icon{
-        transition:none !important;
-    }
+    .page-angel *,
+    .page-angel *::before,
+    .page-angel *::after{
 
-}
+        scroll-behavior:auto !important;
 
+        animation-duration:.01ms !important;
 
-/* ==========================================================
-   ANGEL — TABLET
-   ========================================================== */
+        animation-iteration-count:1 !important;
 
-@media(max-width:1000px){
+        transition-duration:.01ms !important;
 
-    .angel-composition-grid{
-        grid-template-columns:1fr;
-        gap:38px;
-    }
-
-    .angel-composition-visual{
-        order:1;
-    }
-
-    .angel-composition-content{
-        order:2;
-    }
-
-    .angel-certification-grid{
-        grid-template-columns:
-            repeat(2,minmax(0,1fr));
-    }
-
-    .angel-cta-box{
-        align-items:flex-start;
-        flex-direction:column;
-    }
-
-    .angel-cta-actions{
-        width:100%;
-    }
-
-}
-
-
-/* ==========================================================
-   ANGEL — MOBILE
-   ========================================================== */
-
-@media(max-width:700px){
-
-    .angel-hero .hero-actions{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .angel-hero .hero-actions .btn{
-        width:100%;
-    }
-
-    .angel-hero .hero-meta{
-        flex-direction:column;
-        gap:9px;
-    }
-
-    .product-image-wrapper{
-        min-height:300px;
-    }
-
-    .angel-product-card{
-        padding:12px;
-        border-radius:22px;
-    }
-
-    .product-image-caption{
-        padding:14px 5px 3px;
-    }
-
-    .angel-technology-card,
-    .angel-benefit-card{
-        min-height:auto;
-    }
-
-    .angel-details-toggle{
-        padding:16px 17px;
-        font-size:13px;
-    }
-
-    .angel-details-grid{
-        grid-template-columns:1fr;
-    }
-
-    .angel-detail-card-wide{
-        grid-column:auto;
-    }
-
-    .angel-composition-specs{
-        padding:24px 18px;
-        border-radius:20px;
-    }
-
-    .angel-spec-list{
-        grid-template-columns:1fr;
-        padding:16px;
-    }
-
-    .angel-certification-grid{
-        grid-template-columns:1fr;
-    }
-
-    .angel-certification-image{
-        min-height:220px;
-    }
-
-    .angel-certification-image img{
-        height:220px;
-    }
-
-    .angel-variant-card .product-card-image{
-        min-height:250px;
-    }
-
-    .angel-variant-card .product-card-image img{
-        height:220px;
-    }
-
-    .angel-cta-box{
-        padding:30px 22px;
-        border-radius:22px;
-    }
-
-    .angel-cta-actions{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .angel-cta-actions .btn{
-        width:100%;
-    }
-
-}
-
-
-/* ==========================================================
-   ANGEL — SMALL MOBILE
-   ========================================================== */
-
-@media(max-width:420px){
-
-    .angel-composition-item{
-        grid-template-columns:40px minmax(0,1fr);
-        gap:12px;
-        padding:16px;
-    }
-
-    .angel-composition-number{
-        width:40px;
-        height:40px;
-    }
-
-    .angel-property-card{
-        min-height:105px;
-        padding:18px;
-    }
-
-    .angel-faq-question{
-        padding:18px 0;
-        font-size:14px;
-    }
-
-    .angel-faq-icon{
-        width:28px;
-        height:28px;
     }
 
 }
