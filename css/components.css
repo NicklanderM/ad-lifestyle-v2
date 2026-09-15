@@ -13676,3399 +13676,2510 @@ body.dark
 }
 
 /* ==========================================================
-   AD LIFESTYLE V2
-   ALPHA VMAX
-   PAGE-SCOPED DESIGN SYSTEM
+   AD LIFESTYLE — ALPHA VMAX
+   Premium Product Page
+   Light / Dark Theme
    ========================================================== */
-
 
 /* ==========================================================
-   01. ALPHA VARIABLES
+   01. ROOT
    ========================================================== */
 
-.page-alpha{
+.page-alpha {
+    --alpha-blue: #0347B3;
+    --alpha-blue-deep: #022B73;
+    --alpha-blue-mid: #1767D4;
+    --alpha-blue-soft: #D8E6FF;
 
-    /* ===== IDENTIDADE PRINCIPAL ===== */
+    --alpha-gold: #D8A74D;
+    --alpha-gold-soft: #F3E2B9;
 
-    --alpha-blue:
-        #0347B3;
+    --alpha-white: #FFFFFF;
+    --alpha-black: #111111;
+    --alpha-text: #172033;
+    --alpha-text-soft: #5E6879;
 
-    --alpha-blue-dark:
-        #02389E;
-
-    --alpha-blue-light:
-        #1D5DC4;
-
-
-    /* ===== DOURADO ===== */
-
-    --alpha-gold:
-        #D8A74D;
-
-    --alpha-gold-light:
-        #F4D681;
-
-    --alpha-gold-dark:
-        #B98732;
-
-
-    /* ===== NEUTROS ===== */
-
-    --alpha-white:
-        #EEF2F8;
-
-    --alpha-navy:
-        #0D265E;
-
-    --alpha-text:
-        #10285F;
-
-    --alpha-text-soft:
-        #4C5F7D;
-
-
-    /* ===== SUPERFÍCIES ===== */
-
-    --alpha-surface:
-        #FFFFFF;
-
-    --alpha-surface-blue:
-        #F2F6FC;
-
-    --alpha-surface-dark:
-        #071B4B;
-
-
-    /* ===== GLASS ===== */
-
-    --alpha-glass:
-        rgba(7,27,75,.76);
-
-    --alpha-glass-light:
-        rgba(255,255,255,.08);
-
-
-    /* ===== BORDAS ===== */
-
-    --alpha-border:
-        rgba(216,167,77,.28);
-
-    --alpha-border-blue:
-        rgba(3,71,179,.16);
-
-
-    /* ===== SOMBRAS ===== */
+    --alpha-surface: #FFFFFF;
+    --alpha-surface-soft: #F5F8FD;
+    --alpha-card: rgba(255, 255, 255, 0.82);
+    --alpha-border: rgba(3, 71, 179, 0.12);
 
     --alpha-shadow:
-        0 25px 70px rgba(2,56,158,.18);
+        0 20px 60px rgba(3, 31, 80, 0.10);
 
-    --alpha-gold-shadow:
-        0 20px 55px rgba(216,167,77,.22);
+    --alpha-shadow-strong:
+        0 30px 90px rgba(3, 43, 115, 0.18);
 
-    --alpha-blue-shadow:
-        0 25px 65px rgba(3,71,179,.24);
+    --alpha-radius-lg: 30px;
+    --alpha-radius-md: 22px;
+    --alpha-radius-sm: 15px;
 
-
-    /* ===== TIPOGRAFIA ===== */
-
-    --alpha-heading:
-        var(--alpha-navy);
-
-    --alpha-body:
-        var(--alpha-text);
-
-    --alpha-muted:
-        var(--alpha-text-soft);
-
-}
-
-
-/* ==========================================================
-   02. ROOT / BACKGROUND
-   ========================================================== */
-
-.page-alpha{
-
-    position:relative;
-
-    isolation:isolate;
-
-    min-height:100vh;
-
-    overflow:hidden;
-
+    position: relative;
+    overflow: hidden;
     background:
-
-        radial-gradient(
-            circle at 90% 5%,
-            rgba(3,71,179,.08),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 5% 30%,
-            rgba(216,167,77,.07),
-            transparent 25%
-        ),
-
-        var(--alpha-white);
-
-    color:var(--alpha-body);
-
+        radial-gradient(circle at 90% 0%,
+            rgba(216, 167, 77, 0.08),
+            transparent 28%),
+        linear-gradient(
+            180deg,
+            #FDFEFF 0%,
+            #F7FAFF 38%,
+            #FFFFFF 100%
+        );
+    color: var(--alpha-text);
 }
 
-
 /* ==========================================================
-   03. GLOBAL ALPHA TEXT
+   02. GLOBAL CONTAINER / TYPOGRAPHY
    ========================================================== */
+
+.page-alpha .container {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.page-alpha section {
+    position: relative;
+}
 
 .page-alpha h1,
 .page-alpha h2,
 .page-alpha h3,
 .page-alpha h4,
-.page-alpha h5,
-.page-alpha h6{
-
-    color:var(--alpha-heading);
-
+.page-alpha p {
+    margin-top: 0;
 }
 
-
-.page-alpha p{
-
-    color:var(--alpha-body);
-
+.page-alpha p {
+    line-height: 1.75;
 }
 
-
-.page-alpha .text{
-
-    color:var(--alpha-muted);
-
+.page-alpha button,
+.page-alpha a {
+    -webkit-tap-highlight-color: transparent;
 }
 
-
-.page-alpha .lead{
-
-    color:var(--alpha-muted);
-
+.page-alpha img {
+    max-width: 100%;
+    display: block;
 }
-
-
-.page-alpha .label{
-
-    color:var(--alpha-blue);
-
-}
-
-
-.page-alpha .section-title{
-
-    color:var(--alpha-navy);
-
-}
-
 
 /* ==========================================================
-   04. ALPHA SECTIONS
+   03. HERO
    ========================================================== */
 
-.page-alpha .section,
-.page-alpha .section-sm{
+.alpha-hero {
+    min-height: 760px;
+    padding:
+        110px
+        0
+        90px;
 
-    position:relative;
+    display: flex;
+    align-items: center;
 
-    background:transparent;
-
-}
-
-
-.page-alpha .container,
-.page-alpha .container-sm{
-
-    position:relative;
-
-    z-index:2;
-
-}
-
-
-/* ==========================================================
-   05. HERO
-   ========================================================== */
-
-.page-alpha .alpha-hero{
-
-    position:relative;
-
-    min-height:
-        clamp(680px, 88vh, 900px);
-
-    display:flex;
-
-    align-items:center;
-
-    overflow:hidden;
+    isolation: isolate;
+    overflow: hidden;
 
     background:
-
         radial-gradient(
-            circle at 80% 20%,
-            rgba(216,167,77,.18),
+            circle at 72% 25%,
+            rgba(216, 167, 77, 0.15),
+            transparent 24%
+        ),
+        radial-gradient(
+            circle at 12% 75%,
+            rgba(3, 71, 179, 0.09),
             transparent 28%
-        ),
+        );
+}
 
+.alpha-hero-atmosphere {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: -2;
+    overflow: hidden;
+}
+
+.alpha-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.alpha-orb-1 {
+    width: 440px;
+    height: 440px;
+    top: -180px;
+    right: -100px;
+
+    background:
         radial-gradient(
-            circle at 15% 80%,
-            rgba(29,93,196,.28),
-            transparent 35%
-        ),
-
-        linear-gradient(
-            135deg,
-            #071B4B 0%,
-            #02389E 52%,
-            #0347B3 100%
+            circle,
+            rgba(3, 71, 179, 0.15),
+            rgba(3, 71, 179, 0) 68%
         );
-
-    color:#FFFFFF;
-
 }
 
-
-/* ==========================================================
-   HERO GENERIC OVERRIDES
-   ========================================================== */
-
-.page-alpha .alpha-hero h1,
-.page-alpha .alpha-hero h2,
-.page-alpha .alpha-hero h3,
-.page-alpha .alpha-hero p{
-
-    color:#FFFFFF;
-
-}
-
-
-.page-alpha .alpha-hero .hero-content{
-
-    position:relative;
-
-    z-index:5;
-
-}
-
-
-.page-alpha .alpha-hero .hero-title{
-
-    color:#FFFFFF;
-
-    font-weight:800;
-
-    letter-spacing:-.045em;
-
-}
-
-
-.page-alpha .alpha-hero .hero-title span{
-
-    display:block;
-
-    color:var(--alpha-gold-light);
+.alpha-orb-2 {
+    width: 360px;
+    height: 360px;
+    bottom: -160px;
+    left: -130px;
 
     background:
-
-        linear-gradient(
-            120deg,
-            var(--alpha-gold-dark),
-            var(--alpha-gold-light),
-            var(--alpha-gold)
+        radial-gradient(
+            circle,
+            rgba(216, 167, 77, 0.14),
+            rgba(216, 167, 77, 0) 70%
         );
-
-    -webkit-background-clip:text;
-    background-clip:text;
-
-    -webkit-text-fill-color:transparent;
-
 }
 
-
-/* ==========================================================
-   HERO SUBTITLE
-   ========================================================== */
-
-.page-alpha .alpha-hero .hero-sub{
-
-    max-width:650px;
-
-    color:
-        rgba(255,255,255,.82);
-
-    line-height:1.8;
-
+.alpha-orbit {
+    position: absolute;
+    border: 1px solid rgba(3, 71, 179, 0.09);
+    border-radius: 50%;
+    pointer-events: none;
 }
 
+.alpha-orbit-1 {
+    width: 580px;
+    height: 580px;
+    right: -210px;
+    top: 65px;
+}
 
-/* ==========================================================
-   HERO BADGE
-   ========================================================== */
+.alpha-orbit-2 {
+    width: 760px;
+    height: 760px;
+    right: -300px;
+    top: -25px;
+    border-color: rgba(216, 167, 77, 0.08);
+}
 
-.page-alpha .alpha-hero .badge{
+.alpha-hero .container {
+    position: relative;
+    z-index: 2;
+}
 
-    display:inline-flex;
+.alpha-hero-grid {
+    display: grid;
+    grid-template-columns:
+        minmax(0, 1.02fr)
+        minmax(380px, 0.98fr);
+    gap: 70px;
+    align-items: center;
+}
 
-    align-items:center;
+.alpha-hero-copy {
+    max-width: 660px;
+}
 
-    gap:8px;
+.alpha-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 
-    padding:9px 16px;
+    margin-bottom: 20px;
+    padding: 8px 14px;
 
-    border-radius:999px;
+    border-radius: 999px;
+    border: 1px solid rgba(3, 71, 179, 0.13);
 
     background:
-        rgba(216,167,77,.12);
+        rgba(3, 71, 179, 0.055);
 
-    border:
-        1px solid rgba(244,214,129,.35);
-
-    color:
-        var(--alpha-gold-light);
-
-    backdrop-filter:
-        blur(14px);
-
+    color: var(--alpha-blue);
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
+.alpha-eyebrow::before {
+    content: "";
+    width: 7px;
+    height: 7px;
 
-/* ==========================================================
-   HERO BUTTONS
-   ========================================================== */
-
-.page-alpha .alpha-hero .btn-primary,
-.page-alpha .alpha-cta .btn-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--alpha-gold),
-            var(--alpha-gold-light)
-        );
-
-    color:
-        #071B4B;
-
-    border:
-        1px solid
-        rgba(244,214,129,.7);
+    border-radius: 50%;
+    background: var(--alpha-gold);
 
     box-shadow:
-        var(--alpha-gold-shadow);
-
+        0 0 0 4px rgba(216, 167, 77, 0.10);
 }
 
+.alpha-hero h1 {
+    margin-bottom: 24px;
 
-.page-alpha .alpha-hero .btn-primary:hover,
-.page-alpha .alpha-cta .btn-primary:hover{
+    font-size:
+        clamp(3.7rem, 8vw, 7.2rem);
 
-    transform:
-        translateY(-2px);
+    line-height: 0.92;
+    letter-spacing: -0.065em;
+    font-weight: 900;
+
+    color: var(--alpha-blue-deep);
+}
+
+.alpha-hero h1 span {
+    color: var(--alpha-gold);
+}
+
+.alpha-hero-description {
+    max-width: 600px;
+    margin-bottom: 28px;
+
+    color: var(--alpha-text-soft);
+    font-size: 1.05rem;
+}
+
+.alpha-hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.alpha-hero-pill {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 36px;
+    padding: 8px 14px;
+
+    border: 1px solid rgba(3, 71, 179, 0.11);
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    color: var(--alpha-blue-deep);
+
+    font-size: 0.77rem;
+    font-weight: 700;
 
     box-shadow:
-        0 25px 65px
-        rgba(216,167,77,.32);
-
+        0 8px 24px rgba(3, 43, 115, 0.05);
 }
 
+.alpha-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
 
-.page-alpha .alpha-hero .btn-glass,
-.page-alpha .alpha-cta .btn-glass{
-
-    background:
-        rgba(255,255,255,.07);
-
-    color:#FFFFFF;
-
-    border:
-        1px solid
-        rgba(255,255,255,.20);
-
-    backdrop-filter:
-        blur(15px);
-
+    margin-bottom: 30px;
 }
 
-
-.page-alpha .alpha-hero .btn-glass:hover,
-.page-alpha .alpha-cta .btn-glass:hover{
-
-    background:
-        rgba(255,255,255,.13);
-
-    border-color:
-        rgba(244,214,129,.45);
-
+.alpha-hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 26px;
 }
 
-
-/* ==========================================================
-   HERO HIGHLIGHTS
-   ========================================================== */
-
-.page-alpha .alpha-hero-highlights{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px 18px;
-
-    margin-top:25px;
-
+.alpha-hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
-
-.page-alpha .alpha-hero-highlights span{
-
-    color:
-        rgba(255,255,255,.88);
-
-    font-size:14px;
-
+.alpha-hero-meta-label {
+    color: var(--alpha-text-soft);
+    font-size: 0.71rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
-
-.page-alpha .alpha-hero-highlights span::first-letter{
-
-    color:
-        var(--alpha-gold-light);
-
+.alpha-hero-meta-value {
+    color: var(--alpha-blue-deep);
+    font-size: 0.92rem;
+    font-weight: 800;
 }
-
-
-/* ==========================================================
-   HERO DISCLAIMER
-   ========================================================== */
-
-.page-alpha .alpha-disclaimer{
-
-    max-width:620px;
-
-    margin-top:20px;
-
-    color:
-        rgba(255,255,255,.52);
-
-    font-size:12px;
-
-    line-height:1.7;
-
-}
-
 
 /* ==========================================================
    HERO PRODUCT
    ========================================================== */
 
-.page-alpha .hero-product{
+.alpha-hero-product {
+    position: relative;
+    min-height: 590px;
 
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
+    display: grid;
+    place-items: center;
 }
 
+.alpha-product-aura {
+    position: absolute;
+    width: 450px;
+    height: 450px;
 
-.page-alpha .hero-product img{
+    border-radius: 50%;
 
-    position:relative;
+    background:
+        radial-gradient(
+            circle,
+            rgba(3, 71, 179, 0.13) 0%,
+            rgba(3, 71, 179, 0.06) 35%,
+            rgba(3, 71, 179, 0) 72%
+        );
 
-    z-index:3;
+    filter: blur(2px);
+}
 
-    max-width:
-        min(100%, 520px);
+.alpha-product-ring {
+    position: absolute;
+    width: 510px;
+    height: 510px;
 
-    width:100%;
+    border-radius: 50%;
+    border: 1px solid rgba(3, 71, 179, 0.10);
 
-    object-fit:contain;
+    transform: rotate(-12deg);
+}
+
+.alpha-product-ring::before {
+    content: "";
+    position: absolute;
+    inset: 24px;
+
+    border-radius: inherit;
+    border: 1px dashed rgba(216, 167, 77, 0.22);
+}
+
+.alpha-product-grid {
+    position: relative;
+    z-index: 3;
+
+    width: min(100%, 460px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alpha-product-grid img {
+    width: min(100%, 390px);
+    max-height: 540px;
+    object-fit: contain;
 
     filter:
         drop-shadow(
-            0 35px 55px
-            rgba(0,0,0,.35)
+            0 35px 40px rgba(3, 32, 88, 0.18)
         );
 
+    transform: translateY(-8px);
 }
 
+.alpha-product-caption {
+    position: absolute;
+    right: 0;
+    bottom: 20px;
 
-.page-alpha .product-glow{
+    max-width: 210px;
+    padding: 15px 18px;
 
-    position:absolute;
+    border:
+        1px solid rgba(216, 167, 77, 0.22);
 
-    width:460px;
-
-    height:460px;
-
-    border-radius:50%;
+    border-radius: 18px;
 
     background:
+        rgba(255, 255, 255, 0.83);
 
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    box-shadow:
+        0 18px 50px rgba(3, 43, 115, 0.10);
+}
+
+.alpha-product-caption strong {
+    display: block;
+    margin-bottom: 4px;
+
+    color: var(--alpha-blue-deep);
+    font-size: 0.82rem;
+}
+
+.alpha-product-caption span {
+    color: var(--alpha-text-soft);
+    font-size: 0.73rem;
+    line-height: 1.55;
+}
+
+/* ==========================================================
+   04. SECTION HEADINGS
+   ========================================================== */
+
+.alpha-section-heading {
+    max-width: 720px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.alpha-section-heading .eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+
+    color: var(--alpha-gold);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.alpha-section-heading h2 {
+    margin-bottom: 15px;
+
+    color: var(--alpha-blue-deep);
+
+    font-size:
+        clamp(2.3rem, 4.5vw, 4rem);
+
+    line-height: 1.03;
+    letter-spacing: -0.045em;
+}
+
+.alpha-section-heading p {
+    margin: 0 auto;
+
+    color: var(--alpha-text-soft);
+    font-size: 1rem;
+}
+
+/* ==========================================================
+   05. OVERVIEW
+   ========================================================== */
+
+.alpha-overview-section {
+    padding: 100px 0;
+}
+
+.alpha-overview-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.alpha-overview-card {
+    position: relative;
+
+    min-height: 235px;
+    padding: 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius: var(--alpha-radius-md);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(246, 249, 255, 0.86)
+        );
+
+    box-shadow: var(--alpha-shadow);
+
+    overflow: hidden;
+}
+
+.alpha-overview-card::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+
+    top: -45px;
+    right: -45px;
+
+    border-radius: 50%;
+
+    background:
         radial-gradient(
             circle,
-            rgba(216,167,77,.42),
-            rgba(3,71,179,.18) 40%,
-            transparent 72%
+            rgba(216, 167, 77, 0.17),
+            transparent 70%
+        );
+}
+
+.alpha-overview-icon {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    margin-bottom: 24px;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(3, 71, 179, 0.10),
+            rgba(216, 167, 77, 0.09)
         );
 
-    filter:
-        blur(20px);
-
-    z-index:1;
-
+    color: var(--alpha-blue);
+    font-size: 1.15rem;
 }
 
+.alpha-overview-card h3 {
+    margin-bottom: 9px;
+
+    color: var(--alpha-blue-deep);
+    font-size: 1.12rem;
+}
+
+.alpha-overview-card p {
+    margin: 0;
+
+    color: var(--alpha-text-soft);
+    font-size: 0.88rem;
+}
+
+.alpha-overview-note {
+    margin-top: 25px;
+
+    padding: 18px 22px;
+
+    border-left:
+        3px solid var(--alpha-gold);
+
+    border-radius: 0 14px 14px 0;
+
+    background:
+        rgba(216, 167, 77, 0.065);
+
+    color: var(--alpha-text-soft);
+    font-size: 0.88rem;
+}
 
 /* ==========================================================
-   GOLD RING
+   06. COMPOSITION
    ========================================================== */
 
-.page-alpha .alpha-gold-ring{
+.alpha-composition {
+    padding: 105px 0;
 
-    position:absolute;
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 71, 179, 0.025),
+            rgba(216, 167, 77, 0.035)
+        );
+}
 
-    width:390px;
+.alpha-composition-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
 
-    height:390px;
+    gap: 18px;
+}
 
-    border-radius:50%;
+.alpha-ingredient-card {
+    min-height: 285px;
+    padding: 28px;
 
     border:
-        1px solid
-        rgba(244,214,129,.45);
+        1px solid var(--alpha-border);
+
+    border-radius: var(--alpha-radius-md);
+
+    background:
+        rgba(255, 255, 255, 0.86);
+
+    box-shadow: var(--alpha-shadow);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.alpha-ingredient-card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(3, 71, 179, 0.20);
 
     box-shadow:
-
-        0 0 45px
-        rgba(216,167,77,.16),
-
-        inset 0 0 35px
-        rgba(216,167,77,.08);
-
-    z-index:2;
-
+        0 28px 70px rgba(3, 43, 115, 0.12);
 }
 
+.alpha-ingredient-symbol {
+    width: 50px;
+    height: 50px;
 
-/* ==========================================================
-   AURORA
-   ========================================================== */
+    display: grid;
+    place-items: center;
 
-.page-alpha .alpha-hero .aurora{
+    margin-bottom: 24px;
 
-    position:absolute;
-
-    inset:0;
-
-    pointer-events:none;
-
-    overflow:hidden;
-
-}
-
-
-.page-alpha .alpha-hero .blob{
-
-    position:absolute;
-
-    border-radius:50%;
-
-    filter:
-        blur(90px);
-
-    opacity:.28;
-
-}
-
-
-.page-alpha .alpha-hero .blob-1{
-
-    width:380px;
-    height:380px;
-
-    top:-160px;
-    right:-100px;
+    border-radius: 50%;
 
     background:
-        var(--alpha-gold);
+        linear-gradient(
+            145deg,
+            var(--alpha-blue),
+            var(--alpha-blue-mid)
+        );
 
-}
-
-
-.page-alpha .alpha-hero .blob-2{
-
-    width:300px;
-    height:300px;
-
-    bottom:-120px;
-    left:-100px;
-
-    background:
-        var(--alpha-blue-light);
-
-}
-
-
-.page-alpha .alpha-hero .blob-3{
-
-    width:220px;
-    height:220px;
-
-    top:35%;
-    left:40%;
-
-    background:
-        var(--alpha-gold-light);
-
-    opacity:.10;
-
-}
-
-
-/* ==========================================================
-   06. GENERIC CARDS — ALPHA OVERRIDE
-   ========================================================== */
-
-.page-alpha .card,
-.page-alpha .service-card{
-
-    background:
-        var(--alpha-surface);
-
-    color:
-        var(--alpha-body);
-
-    border:
-        1px solid
-        var(--alpha-border-blue);
+    color: white;
+    font-weight: 900;
 
     box-shadow:
-        var(--alpha-shadow);
-
+        0 12px 25px rgba(3, 71, 179, 0.20);
 }
 
+.alpha-ingredient-card h3 {
+    margin-bottom: 9px;
 
-.page-alpha .service-card h3,
-.page-alpha .card h3{
-
-    color:
-        var(--alpha-navy);
-
+    color: var(--alpha-blue-deep);
+    font-size: 1.08rem;
 }
 
+.alpha-ingredient-card p {
+    margin: 0;
 
-.page-alpha .service-card .text,
-.page-alpha .card .text{
-
-    color:
-        var(--alpha-muted);
-
+    color: var(--alpha-text-soft);
+    font-size: 0.87rem;
 }
 
+.alpha-information {
+    margin-top: 28px;
+}
 
-/* ==========================================================
-   SERVICE ICON
-   ========================================================== */
+.alpha-details-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
 
-.page-alpha .service-icon{
-
-    background:
-        rgba(3,71,179,.08);
-
-    color:
-        var(--alpha-blue);
+    min-height: 46px;
+    padding: 11px 18px;
 
     border:
-        1px solid
-        rgba(216,167,77,.25);
+        1px solid rgba(3, 71, 179, 0.14);
 
-}
-
-
-/* ==========================================================
-   07. COMPOSITION
-   ========================================================== */
-
-.page-alpha .alpha-composition{
+    border-radius: 999px;
 
     background:
-        var(--alpha-white);
+        rgba(255, 255, 255, 0.74);
 
+    color: var(--alpha-blue-deep);
+
+    font-size: 0.84rem;
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
 }
 
+.alpha-details-toggle:hover {
+    transform: translateY(-2px);
 
-.page-alpha .alpha-composition .section-center{
+    border-color:
+        rgba(3, 71, 179, 0.24);
 
-    max-width:780px;
-
-    margin-inline:auto;
-
+    background:
+        rgba(3, 71, 179, 0.045);
 }
 
-
-.page-alpha .alpha-composition .alpha-ingredient-card{
-
-    position:relative;
-
-    overflow:hidden;
-
+.alpha-details-toggle .icon {
+    transition: transform 0.3s ease;
 }
 
+.alpha-details-toggle[aria-expanded="true"] .icon {
+    transform: rotate(180deg);
+}
 
-.page-alpha .alpha-composition
-.alpha-ingredient-card::after{
+.alpha-details-content {
+    display: none;
 
-    content:"";
+    margin-top: 22px;
 
-    position:absolute;
+    animation:
+        alphaDetailsIn 0.35s ease both;
+}
 
-    left:0;
-    bottom:0;
+.alpha-details-content.is-open {
+    display: block;
+}
 
-    width:100%;
-    height:3px;
+@keyframes alphaDetailsIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alpha-details-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.alpha-detail-card {
+    padding: 20px;
+
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.72);
+}
+
+.alpha-detail-card h4 {
+    margin-bottom: 8px;
+
+    color: var(--alpha-blue-deep);
+    font-size: 0.91rem;
+}
+
+.alpha-detail-card p {
+    margin: 0;
+
+    color: var(--alpha-text-soft);
+    font-size: 0.78rem;
+    line-height: 1.65;
+}
+
+.alpha-detail-list {
+    display: grid;
+    gap: 12px;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.alpha-detail-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.alpha-detail-check {
+    flex: 0 0 auto;
+
+    width: 20px;
+    height: 20px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        rgba(3, 71, 179, 0.10);
+
+    color: var(--alpha-blue);
+
+    font-size: 0.72rem;
+    font-weight: 900;
+}
+
+/* ==========================================================
+   07. BENEFITS
+   ========================================================== */
+
+.alpha-benefits {
+    padding: 110px 0;
+}
+
+.alpha-benefit-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.alpha-benefit-card {
+    position: relative;
+
+    min-height: 260px;
+    padding: 28px;
+
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius: var(--alpha-radius-md);
+
+    background:
+        var(--alpha-card);
+
+    box-shadow: var(--alpha-shadow);
+
+    overflow: hidden;
+}
+
+.alpha-benefit-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 160px;
+    height: 160px;
+
+    right: -75px;
+    top: -75px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(3, 71, 179, 0.10),
+            transparent 70%
+        );
+}
+
+.alpha-benefit-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+    margin-bottom: 24px;
+}
+
+.alpha-benefit-number {
+    color: rgba(3, 71, 179, 0.18);
+
+    font-size: 2.6rem;
+    line-height: 1;
+    font-weight: 900;
+}
+
+.alpha-benefit-symbol {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(3, 71, 179, 0.10),
+            rgba(216, 167, 77, 0.13)
+        );
+
+    color: var(--alpha-blue);
+}
+
+.alpha-benefit-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--alpha-blue-deep);
+    font-size: 1.08rem;
+}
+
+.alpha-benefit-card p {
+    margin: 0;
+
+    color: var(--alpha-text-soft);
+    font-size: 0.87rem;
+}
+
+/* ==========================================================
+   08. PRODUCT DETAIL
+   ========================================================== */
+
+.alpha-product-section {
+    padding: 110px 0;
+}
+
+.alpha-product-detail-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        minmax(0, 0.92fr);
+
+    gap: 65px;
+
+    align-items: center;
+}
+
+.alpha-product-detail-frame {
+    position: relative;
+
+    min-height: 620px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius:
+        var(--alpha-radius-lg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239, 245, 255, 0.96),
+            rgba(255, 255, 255, 0.90)
+        );
+
+    border:
+        1px solid rgba(3, 71, 179, 0.10);
+
+    overflow: hidden;
+
+    box-shadow:
+        var(--alpha-shadow-strong);
+}
+
+.alpha-detail-aura {
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(3, 71, 179, 0.12),
+            transparent 68%
+        );
+}
+
+.alpha-detail-ring {
+    position: absolute;
+
+    width: 490px;
+    height: 490px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(216, 167, 77, 0.18);
+}
+
+.alpha-detail-grid-decoration {
+    position: absolute;
+
+    inset: 25px;
+
+    border:
+        1px dashed rgba(3, 71, 179, 0.08);
+
+    border-radius:
+        calc(var(--alpha-radius-lg) - 8px);
+
+    pointer-events: none;
+}
+
+.alpha-product-detail-image {
+    position: relative;
+    z-index: 2;
+
+    width: min(90%, 420px);
+    max-height: 570px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 35px 45px rgba(3, 43, 115, 0.18)
+        );
+}
+
+.alpha-detail-caption {
+    position: absolute;
+
+    left: 24px;
+    bottom: 24px;
+
+    z-index: 5;
+
+    padding: 12px 16px;
+
+    border:
+        1px solid rgba(216, 167, 77, 0.18);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.77);
+
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    color: var(--alpha-blue-deep);
+
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.alpha-product-detail-copy {
+    max-width: 610px;
+}
+
+.alpha-product-detail-copy .eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: var(--alpha-gold);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.alpha-product-detail-copy h2 {
+    margin-bottom: 18px;
+
+    color: var(--alpha-blue-deep);
+
+    font-size:
+        clamp(2.2rem, 4vw, 4.2rem);
+
+    line-height: 1.01;
+    letter-spacing: -0.045em;
+}
+
+.alpha-product-detail-copy > p {
+    margin-bottom: 30px;
+
+    color: var(--alpha-text-soft);
+}
+
+.alpha-product-specs {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 22px;
+}
+
+.alpha-product-spec {
+    padding: 18px;
+
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius: 17px;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+}
+
+.alpha-product-spec span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--alpha-text-soft);
+
+    font-size: 0.7rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+}
+
+.alpha-product-spec strong {
+    color: var(--alpha-blue-deep);
+    font-size: 0.86rem;
+}
+
+.alpha-product-highlight {
+    padding: 20px 22px;
+
+    border-left:
+        3px solid var(--alpha-gold);
+
+    border-radius:
+        0 16px 16px 0;
 
     background:
         linear-gradient(
             90deg,
-            var(--alpha-blue),
-            var(--alpha-gold)
+            rgba(216, 167, 77, 0.075),
+            rgba(216, 167, 77, 0.025)
         );
 
+    color: var(--alpha-text-soft);
+
+    font-size: 0.88rem;
 }
 
-
 /* ==========================================================
-   08. ALPHA INFORMATION
+   09. INGREDIENTS
    ========================================================== */
 
-.page-alpha .alpha-information{
+.alpha-ingredients {
+    padding: 105px 0;
 
-    border:
-        1px solid
-        var(--alpha-border-blue);
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 71, 179, 0.025),
+            rgba(255, 255, 255, 0)
+        );
+}
+
+.alpha-ingredients-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.alpha-ingredient-feature {
+    position: relative;
+
+    min-height: 250px;
+    padding: 27px;
 
     border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,.72);
-
-    box-shadow:
-        0 15px 40px
-        rgba(13,38,94,.06);
-
-    overflow:hidden;
-
-}
-
-
-.page-alpha .alpha-details-toggle{
-
-    width:100%;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    padding:20px 24px;
-
-    border:0;
-
-    background:
-        transparent;
-
-    color:
-        var(--alpha-navy);
-
-    font:inherit;
-
-    font-weight:700;
-
-    cursor:pointer;
-
-}
-
-
-.page-alpha .alpha-details-toggle:hover{
-
-    background:
-        rgba(3,71,179,.035);
-
-}
-
-
-.page-alpha .alpha-details-icon{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    width:32px;
-    height:32px;
-
-    border-radius:50%;
-
-    background:
-        var(--alpha-blue);
-
-    color:#FFFFFF;
-
-    transition:
-        transform .3s ease,
-        background .3s ease;
-
-}
-
-
-.page-alpha
-.alpha-information.active
-.alpha-details-icon{
-
-    transform:rotate(45deg);
-
-    background:
-        var(--alpha-gold);
-
-    color:
-        var(--alpha-navy);
-
-}
-
-
-.page-alpha .alpha-details-content{
-
-    display:grid;
-
-    grid-template-rows:0fr;
-
-    transition:
-        grid-template-rows .45s ease;
-
-}
-
-
-.page-alpha
-.alpha-information.active
-.alpha-details-content{
-
-    grid-template-rows:1fr;
-
-}
-
-
-.page-alpha .alpha-details-content > div{
-
-    min-height:0;
-
-    overflow:hidden;
-
-}
-
-
-.page-alpha .alpha-details-grid{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0,1fr));
-
-    gap:20px;
-
-    padding:0 24px 24px;
-
-}
-
-
-.page-alpha .alpha-detail-card{
-
-    padding:25px;
-
-    border-radius:18px;
-
-    background:
-        var(--alpha-surface-blue);
+        var(--alpha-radius-md);
 
     border:
-        1px solid
-        var(--alpha-border-blue);
-
-}
-
-
-.page-alpha .alpha-detail-card h3{
-
-    color:
-        var(--alpha-navy);
-
-}
-
-
-.page-alpha .alpha-detail-card .label{
-
-    color:
-        var(--alpha-gold-dark);
-
-}
-
-
-.page-alpha .alpha-detail-card-wide{
-
-    grid-column:
-        1 / -1;
-
-}
-
-
-/* ==========================================================
-   DETAIL ITEMS
-   ========================================================== */
-
-.page-alpha .alpha-detail-item{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-    margin-top:10px;
-
-    color:
-        var(--alpha-muted);
-
-    font-size:14px;
-
-}
-
-
-.page-alpha .alpha-detail-item
-.icon-circle{
-
-    flex-shrink:0;
-
-    width:22px;
-    height:22px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
+        1px solid var(--alpha-border);
 
     background:
-        rgba(3,71,179,.10);
-
-    color:
-        var(--alpha-blue);
-
-    font-size:12px;
-
-}
-
-
-/* ==========================================================
-   09. BENEFITS
-   ========================================================== */
-
-.page-alpha .alpha-benefits{
-
-    background:
-        #FFFFFF;
-
-}
-
-
-.page-alpha .alpha-benefit-image{
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    min-height:480px;
-
-}
-
-
-.page-alpha .alpha-benefit-image img{
-
-    position:relative;
-
-    z-index:2;
-
-    width:100%;
-
-    max-width:460px;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 30px 45px
-            rgba(2,56,158,.20)
-        );
-
-}
-
-
-.page-alpha .alpha-image-glow{
-
-    position:absolute;
-
-    width:330px;
-    height:330px;
-
-    border-radius:50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(216,167,77,.25),
-            rgba(3,71,179,.12),
-            transparent 70%
-        );
-
-    filter:
-        blur(25px);
-
-}
-
-
-/* ==========================================================
-   BENEFIT LIST
-   ========================================================== */
-
-.page-alpha .icon-list{
-
-    display:grid;
-
-    gap:14px;
-
-}
-
-
-.page-alpha .icon-item{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    color:
-        var(--alpha-text);
-
-}
-
-
-.page-alpha .icon-circle{
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    flex-shrink:0;
-
-    width:30px;
-    height:30px;
-
-    border-radius:50%;
-
-    background:
-        rgba(3,71,179,.09);
-
-    color:
-        var(--alpha-blue);
-
-    border:
-        1px solid
-        rgba(3,71,179,.12);
-
-    font-weight:700;
-
-}
-
-
-/* ==========================================================
-   10. INGREDIENTS BENTO
-   ========================================================== */
-
-.page-alpha .alpha-ingredients{
-
-    background:
-        var(--alpha-white);
-
-}
-
-
-.page-alpha .bento-card{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-        #FFFFFF;
-
-    color:
-        var(--alpha-text);
-
-    border:
-        1px solid
-        var(--alpha-border-blue);
+        rgba(255, 255, 255, 0.88);
 
     box-shadow:
         var(--alpha-shadow);
 
+    overflow: hidden;
 }
 
+.alpha-feature-number {
+    color: rgba(3, 71, 179, 0.17);
 
-.page-alpha .bento-card h3{
-
-    color:
-        var(--alpha-navy);
-
+    font-size: 2.8rem;
+    line-height: 1;
+    font-weight: 900;
 }
 
+.alpha-feature-symbol {
+    margin: 20px 0 18px;
 
-.page-alpha .bento-card .text{
+    color: var(--alpha-gold);
 
-    color:
-        var(--alpha-muted);
-
+    font-size: 1.3rem;
+    font-weight: 900;
 }
 
+.alpha-ingredient-feature h3 {
+    margin-bottom: 8px;
 
-.page-alpha .bento-card .label{
-
-    color:
-        var(--alpha-gold-dark);
-
+    color: var(--alpha-blue-deep);
+    font-size: 1.08rem;
 }
 
+.alpha-ingredient-feature p {
+    margin: 0;
 
-.page-alpha .alpha-bento-symbol{
-
-    position:absolute;
-
-    right:25px;
-    bottom:10px;
-
-    font-size:110px;
-
-    line-height:1;
-
-    font-weight:900;
-
-    color:
-        rgba(3,71,179,.055);
-
-    pointer-events:none;
-
+    color: var(--alpha-text-soft);
+    font-size: 0.84rem;
 }
 
+.alpha-ingredient-note {
+    margin-top: 24px;
+
+    padding: 18px 20px;
+
+    border:
+        1px solid rgba(3, 71, 179, 0.09);
+
+    border-radius: 15px;
+
+    background:
+        rgba(3, 71, 179, 0.035);
+
+    color: var(--alpha-text-soft);
+
+    font-size: 0.82rem;
+}
 
 /* ==========================================================
-   11. USAGE
+   10. USAGE
    ========================================================== */
 
-.page-alpha .alpha-usage{
+.alpha-usage {
+    padding: 105px 0;
+}
+
+.alpha-usage-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.alpha-usage-step {
+    position: relative;
+
+    padding: 28px;
+
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius:
+        var(--alpha-radius-md);
 
     background:
-        #FFFFFF;
+        rgba(255, 255, 255, 0.90);
 
+    box-shadow:
+        var(--alpha-shadow);
 }
 
+.alpha-usage-number {
+    width: 46px;
+    height: 46px;
 
-.page-alpha .alpha-usage .timeline{
+    display: grid;
+    place-items: center;
 
-    position:relative;
+    margin-bottom: 23px;
 
-}
-
-
-.page-alpha .alpha-usage .timeline::before{
-
-    background:
-        linear-gradient(
-            to bottom,
-            var(--alpha-blue),
-            var(--alpha-gold)
-        );
-
-}
-
-
-.page-alpha .alpha-usage
-.timeline-dot{
+    border-radius: 50%;
 
     background:
         var(--alpha-blue);
 
-    color:#FFFFFF;
+    color: white;
 
-    border:
-        3px solid
-        var(--alpha-white);
+    font-size: 0.82rem;
+    font-weight: 900;
 
     box-shadow:
-        0 0 0 2px
-        rgba(216,167,77,.45);
-
+        0 10px 25px rgba(3, 71, 179, 0.18);
 }
 
+.alpha-usage-step h3 {
+    margin-bottom: 9px;
 
-.page-alpha .alpha-usage
-.timeline-content{
+    color: var(--alpha-blue-deep);
+    font-size: 1.03rem;
+}
 
-    background:
-        var(--alpha-surface-blue);
+.alpha-usage-step p {
+    margin: 0;
+
+    color: var(--alpha-text-soft);
+    font-size: 0.85rem;
+}
+
+.alpha-usage-note {
+    margin-top: 26px;
+
+    padding: 19px 22px;
 
     border:
-        1px solid
-        var(--alpha-border-blue);
+        1px solid rgba(216, 167, 77, 0.16);
 
-    color:
-        var(--alpha-text);
-
-}
-
-
-.page-alpha .alpha-usage
-.timeline-content h3{
-
-    color:
-        var(--alpha-navy);
-
-}
-
-
-.page-alpha .alpha-usage-note{
-
-    padding:24px;
-
-    border-radius:18px;
+    border-radius: 16px;
 
     background:
-        rgba(3,71,179,.045);
+        rgba(216, 167, 77, 0.055);
 
-    border:
-        1px solid
-        rgba(3,71,179,.12);
+    color: var(--alpha-text-soft);
 
+    font-size: 0.84rem;
 }
-
-
-.page-alpha .alpha-usage-note .label{
-
-    color:
-        var(--alpha-gold-dark);
-
-}
-
 
 /* ==========================================================
-   12. PERFORMANCE
+   11. PERFORMANCE
    ========================================================== */
 
-.page-alpha .alpha-performance{
+.alpha-performance {
+    padding: 110px 0;
+}
+
+.alpha-performance-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.alpha-performance-card {
+    position: relative;
+
+    min-height: 300px;
+
+    padding: 31px;
+
+    border-radius:
+        var(--alpha-radius-md);
+
+    border:
+        1px solid var(--alpha-border);
 
     background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.96),
+            rgba(244, 248, 255, 0.91)
+        );
 
+    box-shadow:
+        var(--alpha-shadow);
+
+    overflow: hidden;
+}
+
+.alpha-performance-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 200px;
+
+    top: -100px;
+    right: -90px;
+
+    border-radius: 50%;
+
+    background:
         radial-gradient(
-            circle at 80% 20%,
-            rgba(216,167,77,.14),
-            transparent 30%
-        ),
+            circle,
+            rgba(216, 167, 77, 0.15),
+            transparent 70%
+        );
+}
 
+.alpha-performance-letter {
+    margin-bottom: 25px;
+
+    color: rgba(3, 71, 179, 0.16);
+
+    font-size: 4.2rem;
+    line-height: 0.8;
+    font-weight: 900;
+}
+
+.alpha-performance-card h3 {
+    margin-bottom: 10px;
+
+    color: var(--alpha-blue-deep);
+    font-size: 1.15rem;
+}
+
+.alpha-performance-card p {
+    margin: 0;
+
+    color: var(--alpha-text-soft);
+    font-size: 0.87rem;
+}
+
+.alpha-performance-feature {
+    margin-top: 20px;
+
+    padding: 20px 22px;
+
+    border-radius: 17px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(3, 71, 179, 0.05),
+            rgba(216, 167, 77, 0.04)
+        );
+
+    border:
+        1px solid rgba(3, 71, 179, 0.08);
+
+    color: var(--alpha-text-soft);
+
+    font-size: 0.87rem;
+}
+
+/* ==========================================================
+   12. FAQ
+   ========================================================== */
+
+.alpha-faq {
+    padding: 110px 0;
+}
+
+.alpha-faq-list {
+    max-width: 920px;
+    margin: 0 auto;
+
+    display: grid;
+    gap: 12px;
+}
+
+.alpha-faq-item {
+    border:
+        1px solid var(--alpha-border);
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.83);
+
+    box-shadow:
+        0 10px 35px rgba(3, 43, 115, 0.055);
+
+    overflow: hidden;
+}
+
+.alpha-faq-question {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        54px
+        1fr
+        30px;
+
+    gap: 18px;
+
+    align-items: center;
+
+    padding: 21px 22px;
+
+    border: 0;
+    background: transparent;
+
+    color: var(--alpha-blue-deep);
+
+    text-align: left;
+
+    font: inherit;
+    font-size: 0.94rem;
+    font-weight: 800;
+
+    cursor: pointer;
+}
+
+.alpha-faq-question:hover {
+    background:
+        rgba(3, 71, 179, 0.025);
+}
+
+.alpha-faq-number {
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 12px;
+
+    background:
+        rgba(3, 71, 179, 0.075);
+
+    color: var(--alpha-blue);
+
+    font-size: 0.74rem;
+    font-weight: 900;
+}
+
+.alpha-faq-text {
+    padding-right: 8px;
+}
+
+.alpha-faq-icon {
+    width: 28px;
+    height: 28px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(3, 71, 179, 0.11);
+
+    color: var(--alpha-blue);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.alpha-faq-question[aria-expanded="true"] .alpha-faq-icon {
+    transform: rotate(45deg);
+
+    background:
+        rgba(216, 167, 77, 0.11);
+}
+
+.alpha-faq-answer {
+    display: none;
+
+    padding:
+        0
+        22px
+        24px
+        94px;
+
+    color: var(--alpha-text-soft);
+
+    font-size: 0.88rem;
+    line-height: 1.75;
+
+    animation:
+        alphaFaqIn 0.3s ease both;
+}
+
+.alpha-faq-answer.is-open {
+    display: block;
+}
+
+@keyframes alphaFaqIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================
+   13. DISCLAIMER / INFORMATION
+   ========================================================== */
+
+.alpha-disclaimer {
+    padding: 45px 0 90px;
+}
+
+.alpha-disclaimer-box {
+    display: grid;
+
+    grid-template-columns:
+        auto
+        1fr;
+
+    gap: 20px;
+
+    align-items: flex-start;
+
+    padding: 28px 30px;
+
+    border:
+        1px solid rgba(3, 71, 179, 0.10);
+
+    border-radius: 22px;
+
+    background:
         linear-gradient(
             135deg,
-            #071B4B,
-            #02389E
+            rgba(3, 71, 179, 0.045),
+            rgba(216, 167, 77, 0.045)
         );
-
 }
 
+.alpha-disclaimer-icon {
+    width: 45px;
+    height: 45px;
 
-.page-alpha .alpha-performance
-.section-title{
+    display: grid;
+    place-items: center;
 
-    color:#FFFFFF;
-
-}
-
-
-.page-alpha .alpha-performance .lead{
-
-    color:
-        rgba(255,255,255,.70);
-
-}
-
-
-.page-alpha .alpha-performance .bento-card{
+    border-radius: 14px;
 
     background:
-        rgba(255,255,255,.055);
+        rgba(216, 167, 77, 0.12);
 
-    border:
-        1px solid
-        rgba(255,255,255,.10);
+    color: var(--alpha-gold);
 
-    box-shadow:
-        none;
-
-    backdrop-filter:
-        blur(18px);
-
+    font-weight: 900;
 }
 
+.alpha-disclaimer-box h3 {
+    margin-bottom: 7px;
 
-.page-alpha .alpha-performance
-.bento-card h3{
-
-    color:#FFFFFF;
-
+    color: var(--alpha-blue-deep);
+    font-size: 0.97rem;
 }
 
+.alpha-disclaimer-box p {
+    margin: 0;
 
-.page-alpha .alpha-performance
-.bento-card .text{
-
-    color:
-        rgba(255,255,255,.68);
-
+    color: var(--alpha-text-soft);
+    font-size: 0.81rem;
 }
-
-
-.page-alpha .alpha-performance
-.bento-card .label{
-
-    color:
-        var(--alpha-gold-light);
-
-}
-
-
-/* ==========================================================
-   METRICS
-   ========================================================== */
-
-.page-alpha .metric{
-
-    min-height:180px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-}
-
-
-.page-alpha .metric-number{
-
-    font-size:
-        clamp(70px,8vw,110px);
-
-    font-weight:900;
-
-    line-height:1;
-
-    color:
-        var(--alpha-gold-light);
-
-    text-shadow:
-        0 10px 35px
-        rgba(216,167,77,.22);
-
-}
-
-
-.page-alpha .metric-label{
-
-    margin-top:12px;
-
-    color:
-        rgba(255,255,255,.82);
-
-    font-weight:600;
-
-}
-
-
-/* ==========================================================
-   13. FAQ
-   ========================================================== */
-
-.page-alpha .alpha-faq{
-
-    background:
-        var(--alpha-white);
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-item{
-
-    background:
-        #FFFFFF;
-
-    border:
-        1px solid
-        var(--alpha-border-blue);
-
-    box-shadow:
-        0 10px 30px
-        rgba(13,38,94,.05);
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-question{
-
-    color:
-        var(--alpha-navy);
-
-    background:
-        transparent;
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-question:hover{
-
-    color:
-        var(--alpha-blue);
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-question span:last-child{
-
-    color:
-        var(--alpha-gold-dark);
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-answer{
-
-    color:
-        var(--alpha-muted);
-
-}
-
-
-.page-alpha .alpha-faq
-.faq-answer p{
-
-    color:
-        var(--alpha-muted);
-
-}
-
-
-/* ==========================================================
-   FAQ ACTIVE
-   ========================================================== */
-
-.page-alpha .alpha-faq
-.faq-item.active{
-
-    border-color:
-        rgba(216,167,77,.35);
-
-    box-shadow:
-        0 15px 40px
-        rgba(3,71,179,.08);
-
-}
-
 
 /* ==========================================================
    14. CTA
    ========================================================== */
 
-.page-alpha .alpha-cta{
+.alpha-cta {
+    padding: 0 0 100px;
+}
+
+.alpha-cta-box {
+    position: relative;
+
+    padding:
+        70px
+        60px;
+
+    border-radius:
+        34px;
+
+    overflow: hidden;
 
     background:
-        var(--alpha-white);
-
-}
-
-
-.page-alpha .alpha-cta .showcase{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(216,167,77,.18),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #071B4B,
-            #02389E
-        );
-
-    border:
-        1px solid
-        rgba(216,167,77,.22);
-
-    box-shadow:
-        var(--alpha-blue-shadow);
-
-}
-
-
-.page-alpha .alpha-cta
-.section-title{
-
-    color:#FFFFFF;
-
-}
-
-
-.page-alpha .alpha-cta
-.lead{
-
-    color:
-        rgba(255,255,255,.72);
-
-}
-
-
-.page-alpha .alpha-cta
-.badge{
-
-    color:
-        var(--alpha-gold-light);
-
-    background:
-        rgba(216,167,77,.12);
-
-    border:
-        1px solid
-        rgba(244,214,129,.30);
-
-}
-
-
-.page-alpha .alpha-cta-disclaimer{
-
-    color:
-        rgba(255,255,255,.48);
-
-    font-size:12px;
-
-    line-height:1.7;
-
-}
-
-
-/* ==========================================================
-   15. LINKS
-   ========================================================== */
-
-.page-alpha a{
-
-    color:
-        var(--alpha-blue);
-
-}
-
-
-.page-alpha a:hover{
-
-    color:
-        var(--alpha-gold-dark);
-
-}
-
-
-/* ==========================================================
-   16. BUTTON GENERAL OVERRIDE
-   ========================================================== */
-
-.page-alpha .btn{
-
-    font-family:
-        inherit;
-
-    cursor:pointer;
-
-}
-
-
-.page-alpha .btn:focus-visible{
-
-    outline:
-        3px solid
-        rgba(244,214,129,.65);
-
-    outline-offset:3px;
-
-}
-
-
-/* ==========================================================
-   17. SELECTION
-   ========================================================== */
-
-.page-alpha ::selection{
-
-    background:
-        var(--alpha-gold);
-
-    color:
-        var(--alpha-navy);
-
-}
-
-
-/* ==========================================================
-   18. SCROLLBAR
-   ========================================================== */
-
-.page-alpha::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-
-.page-alpha::-webkit-scrollbar-track{
-
-    background:
-        var(--alpha-white);
-
-}
-
-
-.page-alpha::-webkit-scrollbar-thumb{
-
-    background:
-        linear-gradient(
-            var(--alpha-blue),
-            var(--alpha-gold)
-        );
-
-    border-radius:999px;
-
-}
-
-
-/* ==========================================================
-   19. REMOVE OLD ALPHA BROWN / RED EFFECTS
-   ========================================================== */
-
-/*
-   IMPORTANTE:
-   Estas regras anulam possíveis efeitos herdados
-   de versões antigas do tema Alpha.
-*/
-
-.page-alpha .orb,
-.page-alpha .blob,
-.page-alpha .product-glow{
-
-    border-color:
-        rgba(216,167,77,.30);
-
-}
-
-
-.page-alpha .orb{
-
-    background:
-        var(--alpha-gold) !important;
-
-}
-
-
-.page-alpha .product-glow{
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(216,167,77,.42),
-            rgba(3,71,179,.18) 42%,
-            transparent 72%
-        ) !important;
-
-}
-
-
-/* ==========================================================
-   20. PROTECÇÃO CONTRA VARIÁVEIS GLOBAIS ANTIGAS
-   ========================================================== */
-
-.page-alpha .section-title,
-.page-alpha .hero-title,
-.page-alpha .lead,
-.page-alpha .text,
-.page-alpha .label,
-.page-alpha h1,
-.page-alpha h2,
-.page-alpha h3,
-.page-alpha p{
-
-    text-shadow:none;
-
-}
-
-
-/* ==========================================================
-   21. RESPONSIVE
-   ========================================================== */
-
-@media (max-width:900px){
-
-    .page-alpha .alpha-details-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .page-alpha .alpha-detail-card-wide{
-
-        grid-column:auto;
-
-    }
-
-    .page-alpha .hero-product img{
-
-        max-width:390px;
-
-    }
-
-    .page-alpha .alpha-gold-ring{
-
-        width:300px;
-        height:300px;
-
-    }
-
-}
-
-
-@media (max-width:700px){
-
-    .page-alpha .alpha-hero{
-
-        min-height:auto;
-
-        padding-top:100px;
-        padding-bottom:80px;
-
-    }
-
-    .page-alpha .hero-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .page-alpha .hero-content{
-
-        text-align:center;
-
-    }
-
-    .page-alpha .alpha-hero
-    .hero-actions{
-
-        justify-content:center;
-
-        flex-wrap:wrap;
-
-    }
-
-    .page-alpha .alpha-hero-highlights{
-
-        justify-content:center;
-
-    }
-
-    .page-alpha .alpha-disclaimer{
-
-        margin-inline:auto;
-
-    }
-
-    .page-alpha .hero-visual{
-
-        margin-top:35px;
-
-    }
-
-    .page-alpha .alpha-benefit-image{
-
-        min-height:360px;
-
-    }
-
-    .page-alpha .alpha-benefit-image img{
-
-        max-width:340px;
-
-    }
-
-    .page-alpha .alpha-image-glow{
-
-        width:260px;
-        height:260px;
-
-    }
-
-}
-
-
-@media (max-width:520px){
-
-    .page-alpha .alpha-details-toggle{
-
-        padding:18px;
-
-        font-size:14px;
-
-    }
-
-    .page-alpha .alpha-details-grid{
-
-        padding:
-            0 16px 16px;
-
-    }
-
-    .page-alpha .alpha-detail-card{
-
-        padding:20px;
-
-    }
-
-    .page-alpha .alpha-hero-highlights{
-
-        display:grid;
-
-        grid-template-columns:1fr 1fr;
-
-        text-align:left;
-
-    }
-
-    .page-alpha .metric{
-
-        min-height:150px;
-
-    }
-
-    .page-alpha .metric-number{
-
-        font-size:70px;
-
-    }
-
-}
-
-
-/* ==========================================================
-   22. REDUCED MOTION
-   ========================================================== */
-
-@media (prefers-reduced-motion:reduce){
-
-    .page-alpha *,
-    .page-alpha *::before,
-    .page-alpha *::after{
-
-        animation-duration:.01ms !important;
-
-        animation-iteration-count:1 !important;
-
-        transition-duration:.01ms !important;
-
-        scroll-behavior:auto !important;
-
-    }
-
-}
-        z-index:2;
-    }
-}
-
-
-/* ==========================================================
-   27. ALPHAVMAX — MOBILE
-   ========================================================== */
-
-@media (max-width:600px){
-
-    .alpha-section{
-
-        padding:
-            68px 0;
-    }
-
-
-    .alpha-container{
-
-        width:
-            min(92%, 500px);
-    }
-
-
-    .alpha-hero{
-
-        padding:
-            75px 0 55px;
-    }
-
-
-    .alpha-hero .hero-title{
-
-        font-size:
-            clamp(50px, 17vw, 78px);
-    }
-
-
-    .alpha-hero .hero-sub{
-
-        font-size:
-            15px;
-
-        line-height:
-            1.7;
-    }
-
-
-    .alpha-hero .hero-actions{
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-    }
-
-
-    .alpha-hero .hero-actions .btn{
-
-        width:100%;
-    }
-
-
-    .alpha-highlights{
-
-        grid-template-columns:
-            1fr 1fr;
-
-        gap:8px;
-    }
-
-
-    .alpha-highlight{
-
-        padding:
-            12px;
-
-        border-radius:
-            14px;
-    }
-
-
-    .alpha-hero .hero-visual{
-
-        min-height:
-            360px;
-    }
-
-
-    .alpha-hero .hero-product img{
-
-        width:
-            85vw;
-
-        max-width:
-            340px;
-    }
-
-
-    .alpha-gold-ring{
-
-        width:
-            280px;
-
-        height:
-            280px;
-    }
-
-
-    .alpha-section-header{
-
-        margin-bottom:
-            38px;
-    }
-
-
-    .alpha-section-header h2{
-
-        font-size:
-            clamp(32px, 10vw, 46px);
-    }
-
-
-    .alpha-section-header p{
-
-        font-size:
-            14px;
-
-        line-height:
-            1.7;
-    }
-
-
-    .alpha-composition-grid,
-    .alpha-ingredients-grid{
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .alpha-composition-card{
-
-        min-height:
-            auto;
-
-        padding:
-            25px;
-    }
-
-
-    .alpha-details-grid{
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .alpha-details-toggle{
-
-        padding:
-            19px;
-    }
-
-
-    .alpha-details-content{
-
-        padding:
-            0 19px 20px;
-    }
-
-
-    .alpha-benefits-visual{
-
-        min-height:
-            320px;
-    }
-
-
-    .alpha-benefits-visual img{
-
-        width:
-            min(360px,90vw);
-    }
-
-
-    .alpha-benefits-content h2{
-
-        font-size:
-            clamp(32px, 10vw, 45px);
-    }
-
-
-    .alpha-benefit-list{
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .alpha-benefit-item{
-
-        padding:
-            14px;
-    }
-
-
-    .alpha-ingredient-card{
-
-        min-height:
-            220px;
-    }
-
-
-    .alpha-usage-note{
-
-        margin-top:
-            40px;
-
-        padding:
-            18px;
-    }
-
-
-    .alpha-performance-card{
-
-        min-height:
-            auto;
-
-        padding:
-            25px;
-    }
-
-
-    .alpha-performance-philosophy{
-
-        padding:
-            25px;
-    }
-
-
-    .alpha-faq-question{
-
-        padding:
-            18px;
-    }
-
-
-    .alpha-faq-answer{
-
-        padding:
-            0 18px 20px;
-    }
-
-
-    .alpha-cta{
-
-        padding:
-            75px 0;
-    }
-
-
-    .alpha-cta-content h2{
-
-        font-size:
-            clamp(36px, 11vw, 52px);
-    }
-
-
-    .alpha-cta-content p{
-
-        font-size:
-            14px;
-    }
-
-
-    .alpha-cta-actions{
-
-        flex-direction:
-            column;
-
-        align-items:
-            stretch;
-    }
-
-
-    .alpha-whatsapp,
-    .alpha-back-home{
-
-        width:100%;
-    }
-}
-
-
-/* ==========================================================
-   28. ALPHAVMAX — MOBILE SMALL
-   ========================================================== */
-
-@media (max-width:400px){
-
-    .alpha-highlights{
-
-        grid-template-columns:
-            1fr;
-    }
-
-
-    .alpha-hero .hero-visual{
-
-        min-height:
-            320px;
-    }
-
-
-    .alpha-gold-ring{
-
-        width:
-            245px;
-
-        height:
-            245px;
-    }
-
-
-    .alpha-hero .hero-product img{
-
-        max-width:
-            290px;
-    }
-
-
-    .alpha-card-number{
-
-        width:
-            38px;
-
-        height:
-            38px;
-    }
-
-
-    .alpha-composition-card h3{
-
-        font-size:
-            18px;
-    }
-}
-
-
-/* ==========================================================
-   29. ALPHAVMAX — REDUCED MOTION
-   ========================================================== */
-
-@media (prefers-reduced-motion:reduce){
-
-    .alpha-hero .blob,
-    .alpha-gold-ring{
-
-        animation:
-            none !important;
-    }
-
-
-    .alpha-page *,
-    .alpha-page *::before,
-    .alpha-page *::after{
-
-        scroll-behavior:
-            auto !important;
-
-        transition-duration:
-            .01ms !important;
-
-        animation-duration:
-            .01ms !important;
-
-        animation-iteration-count:
-            1 !important;
-    }
-}
-
-
-/* ==========================================================
-   30. ALPHAVMAX — ACCESSIBILITY
-   ========================================================== */
-
-.alpha-page button:focus-visible,
-.alpha-page a:focus-visible{
-
-    outline:
-        3px solid
-        rgba(216,167,77,.65);
-
-    outline-offset:
-        4px;
-}
-
-
-/* ==========================================================
-   31. ALPHAVMAX — PRINT
-   ========================================================== */
-
-@media print{
-
-    .alpha-hero,
-    .alpha-ingredients,
-    .alpha-cta{
-
-        background:
-            #FFFFFF !important;
-
-        color:
-            #000000 !important;
-    }
-
-
-    .alpha-hero .hero-title,
-    .alpha-hero .hero-sub,
-    .alpha-ingredients .alpha-section-header h2,
-    .alpha-cta-content h2,
-    .alpha-cta-content p{
-
-        color:
-            #000000 !important;
-    }
-
-
-    .alpha-hero .aurora,
-    .alpha-gold-ring{
-
-        display:none !important;
-    }
-}
-
-/* ==========================================================
-   AD LIFESTYLE V2
-   ALPHA VMAX
-   FINAL PAGE OVERRIDE
-   BLUE / GOLD ONLY
-   ========================================================== */
-
-
-/* ==========================================================
-   IDENTIDADE
-   ========================================================== */
-
-.page-alpha{
-
-    --alpha-blue: #0347B3;
-    --alpha-blue-dark: #02389E;
-    --alpha-blue-light: #1D5DC4;
-
-    --alpha-gold: #D8A74D;
-    --alpha-gold-light: #F4D681;
-    --alpha-gold-dark: #B98732;
-
-    --alpha-white: #EEF2F8;
-    --alpha-navy: #0D265E;
-
-    --alpha-text: #10285F;
-    --alpha-text-soft: #4C5F7D;
-
-    --alpha-surface: #FFFFFF;
-    --alpha-surface-soft: #F2F6FC;
-
-}
-
-
-/* ==========================================================
-   PÁGINA
-   ========================================================== */
-
-.page-alpha{
-
-    background:
-        #EEF2F8 !important;
-
-    color:
-        #10285F !important;
-
-}
-
-
-/* ==========================================================
-   TODOS OS ELEMENTOS DE TEXTO
-   ========================================================== */
-
-.page-alpha p,
-.page-alpha .text,
-.page-alpha .lead{
-
-    color:
-        #10285F !important;
-
-}
-
-
-.page-alpha h1,
-.page-alpha h2,
-.page-alpha h3,
-.page-alpha h4,
-.page-alpha h5,
-.page-alpha h6{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .section-title{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .label{
-
-    color:
-        #0347B3 !important;
-
-}
-
-
-/* ==========================================================
-   HERO — EXCEPÇÃO: FUNDO ESCURO
-   ========================================================== */
-
-.page-alpha .alpha-hero{
-
-    background:
-
-        radial-gradient(
-            circle at 85% 18%,
-            rgba(216,167,77,.18),
-            transparent 28%
-        ),
-
-        radial-gradient(
-            circle at 12% 85%,
-            rgba(29,93,196,.25),
-            transparent 34%
-        ),
-
-        linear-gradient(
-            135deg,
-            #071B4B,
-            #02389E,
-            #0347B3
-        ) !important;
-
-}
-
-
-/* HERO TEXT */
-
-.page-alpha .alpha-hero h1,
-.page-alpha .alpha-hero h2,
-.page-alpha .alpha-hero h3{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-hero p,
-.page-alpha .alpha-hero .hero-sub{
-
-    color:
-        rgba(255,255,255,.82) !important;
-
-}
-
-
-.page-alpha .alpha-hero .section-title{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-hero .label{
-
-    color:
-        #F4D681 !important;
-
-}
-
-
-/* ==========================================================
-   HERO TITLE GOLD
-   ========================================================== */
-
-.page-alpha .alpha-hero .hero-title span{
-
-    color:
-        #F4D681 !important;
-
-    background:none !important;
-
-    -webkit-background-clip:
-        initial !important;
-
-    background-clip:
-        initial !important;
-
-    -webkit-text-fill-color:
-        #F4D681 !important;
-
-}
-
-
-/* ==========================================================
-   HERO HIGHLIGHTS
-   ========================================================== */
-
-.page-alpha .alpha-hero-highlights span{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-/* ==========================================================
-   HERO DISCLAIMER
-   ========================================================== */
-
-.page-alpha .alpha-disclaimer{
-
-    color:
-        rgba(255,255,255,.56) !important;
-
-}
-
-
-/* ==========================================================
-   HERO BADGE
-   ========================================================== */
-
-.page-alpha .alpha-hero .badge{
-
-    color:
-        #F4D681 !important;
-
-    background:
-        rgba(216,167,77,.12) !important;
-
-    border:
-        1px solid
-        rgba(244,214,129,.34) !important;
-
-}
-
-
-/* ==========================================================
-   HERO BOTÕES
-   ========================================================== */
-
-.page-alpha .alpha-hero .btn-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #D8A74D,
-            #F4D681
-        ) !important;
-
-    color:
-        #071B4B !important;
-
-}
-
-
-.page-alpha .alpha-hero .btn-glass{
-
-    background:
-        rgba(255,255,255,.08) !important;
-
-    color:
-        #FFFFFF !important;
-
-    border:
-        1px solid
-        rgba(255,255,255,.22) !important;
-
-}
-
-
-/* ==========================================================
-   PRODUCT GLOW
-   ========================================================== */
-
-.page-alpha .product-glow{
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(216,167,77,.42),
-            rgba(3,71,179,.20) 42%,
-            transparent 72%
-        ) !important;
-
-}
-
-
-/* ==========================================================
-   CARDS CLAROS
-   ========================================================== */
-
-.page-alpha .card,
-.page-alpha .service-card,
-.page-alpha .alpha-ingredient-card,
-.page-alpha .alpha-detail-card,
-.page-alpha .bento-card,
-.page-alpha .faq-item{
-
-    background:
-        #FFFFFF !important;
-
-    color:
-        #10285F !important;
-
-    border-color:
-        rgba(3,71,179,.15) !important;
-
-}
-
-
-/* CARD TITLES */
-
-.page-alpha .card h3,
-.page-alpha .service-card h3,
-.page-alpha .alpha-ingredient-card h3,
-.page-alpha .alpha-detail-card h3,
-.page-alpha .bento-card h3{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-/* CARD TEXT */
-
-.page-alpha .card p,
-.page-alpha .service-card p,
-.page-alpha .alpha-ingredient-card p,
-.page-alpha .alpha-detail-card p,
-.page-alpha .bento-card p{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-/* ==========================================================
-   ICONES
-   ========================================================== */
-
-.page-alpha .service-icon{
-
-    background:
-        rgba(3,71,179,.08) !important;
-
-    color:
-        #0347B3 !important;
-
-    border:
-        1px solid
-        rgba(216,167,77,.28) !important;
-
-}
-
-
-/* ==========================================================
-   INFORMATION BOX
-   ========================================================== */
-
-.page-alpha .alpha-information{
-
-    background:
-        #FFFFFF !important;
-
-    border-color:
-        rgba(3,71,179,.15) !important;
-
-}
-
-
-.page-alpha .alpha-details-toggle{
-
-    color:
-        #0D265E !important;
-
-    background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-details-toggle span:first-child{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-details-icon{
-
-    background:
-        #0347B3 !important;
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha
-.alpha-information.active
-.alpha-details-icon{
-
-    background:
-        #D8A74D !important;
-
-    color:
-        #0D265E !important;
-
-}
-
-
-/* ==========================================================
-   DETAIL CARD
-   ========================================================== */
-
-.page-alpha .alpha-detail-card{
-
-    background:
-        #F2F6FC !important;
-
-}
-
-
-.page-alpha .alpha-detail-card h3{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-detail-card p{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-detail-card .label{
-
-    color:
-        #B98732 !important;
-
-}
-
-
-/* ==========================================================
-   DETAIL LIST
-   ========================================================== */
-
-.page-alpha .alpha-detail-item{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-detail-item .icon-circle{
-
-    background:
-        rgba(3,71,179,.09) !important;
-
-    color:
-        #0347B3 !important;
-
-}
-
-
-/* ==========================================================
-   BENEFITS
-   ========================================================== */
-
-.page-alpha .alpha-benefits{
-
-    background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-benefits .section-title{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-benefits .text{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-benefits .icon-item{
-
-    color:
-        #10285F !important;
-
-}
-
-
-.page-alpha .alpha-benefits .icon-circle{
-
-    background:
-        rgba(3,71,179,.09) !important;
-
-    color:
-        #0347B3 !important;
-
-}
-
-
-/* ==========================================================
-   BENTO CLARO
-   ========================================================== */
-
-.page-alpha .alpha-ingredients{
-
-    background:
-        #EEF2F8 !important;
-
-}
-
-
-.page-alpha .alpha-ingredients .bento-card{
-
-    background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-ingredients .bento-card h3{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-ingredients .bento-card .text{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-ingredients .bento-card .label{
-
-    color:
-        #B98732 !important;
-
-}
-
-
-.page-alpha .alpha-bento-symbol{
-
-    color:
-        rgba(3,71,179,.055) !important;
-
-}
-
-
-/* ==========================================================
-   USAGE
-   ========================================================== */
-
-.page-alpha .alpha-usage{
-
-    background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-usage .section-title{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-usage .lead{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-usage .timeline-content{
-
-    background:
-        #F2F6FC !important;
-
-}
-
-
-.page-alpha .alpha-usage .timeline-content h3{
-
-    color:
-        #0D265E !important;
-
-}
-
-
-.page-alpha .alpha-usage .timeline-content p{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-usage .timeline-dot{
-
-    background:
-        #0347B3 !important;
-
-    color:
-        #FFFFFF !important;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(216,167,77,.40) !important;
-
-}
-
-
-.page-alpha .alpha-usage-note{
-
-    background:
-        rgba(3,71,179,.045) !important;
-
-}
-
-
-.page-alpha .alpha-usage-note .label{
-
-    color:
-        #B98732 !important;
-
-}
-
-
-.page-alpha .alpha-usage-note .text{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-/* ==========================================================
-   PERFORMANCE
-   ESTA SECÇÃO É ESCURA
-   ========================================================== */
-
-.page-alpha .alpha-performance{
-
-    background:
-
         radial-gradient(
             circle at 85% 15%,
-            rgba(216,167,77,.16),
-            transparent 30%
+            rgba(216, 167, 77, 0.22),
+            transparent 28%
         ),
-
         linear-gradient(
             135deg,
-            #071B4B,
-            #02389E
-        ) !important;
+            #02275F,
+            #0347B3 60%,
+            #155FB9
+        );
 
+    box-shadow:
+        0 35px 90px rgba(3, 43, 115, 0.24);
+
+    color: white;
 }
 
+.alpha-cta-box::before {
+    content: "";
 
-/* PERFORMANCE TEXT */
+    position: absolute;
 
-.page-alpha .alpha-performance h1,
-.page-alpha .alpha-performance h2,
-.page-alpha .alpha-performance h3{
+    width: 320px;
+    height: 320px;
 
-    color:
-        #FFFFFF !important;
+    right: -150px;
+    bottom: -170px;
 
-}
-
-
-.page-alpha .alpha-performance p,
-.page-alpha .alpha-performance .text,
-.page-alpha .alpha-performance .lead{
-
-    color:
-        rgba(255,255,255,.72) !important;
-
-}
-
-
-.page-alpha .alpha-performance .section-title{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-performance .label{
-
-    color:
-        #F4D681 !important;
-
-}
-
-
-/* PERFORMANCE CARDS */
-
-.page-alpha .alpha-performance .bento-card{
-
-    background:
-        rgba(255,255,255,.06) !important;
+    border-radius: 50%;
 
     border:
-        1px solid
-        rgba(255,255,255,.12) !important;
-
+        1px solid rgba(255,255,255,0.16);
 }
 
+.alpha-cta-box::after {
+    content: "";
 
-/* MÉTRICAS */
+    position: absolute;
 
-.page-alpha .alpha-performance .metric-number{
+    inset: 18px;
+
+    border:
+        1px solid rgba(255,255,255,0.08);
+
+    border-radius: 26px;
+
+    pointer-events: none;
+}
+
+.alpha-cta-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+.alpha-label-light {
+    display: inline-block;
+
+    margin-bottom: 13px;
 
     color:
-        #F4D681 !important;
+        rgba(255,255,255,0.68);
 
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
 }
 
+.alpha-cta-box h2 {
+    max-width: 780px;
 
-.page-alpha .alpha-performance .metric-label{
+    margin-bottom: 15px;
+
+    color: white;
+
+    font-size:
+        clamp(2.35rem, 5vw, 4.5rem);
+
+    line-height: 0.98;
+    letter-spacing: -0.045em;
+}
+
+.alpha-cta-box p {
+    max-width: 650px;
+
+    margin-bottom: 28px;
 
     color:
-        rgba(255,255,255,.84) !important;
+        rgba(255,255,255,0.76);
 
+    font-size: 0.95rem;
 }
 
+.alpha-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
 
 /* ==========================================================
-   FAQ
+   15. BUTTONS
    ========================================================== */
 
-.page-alpha .alpha-faq{
+.alpha-btn-primary,
+.alpha-btn-glass,
+.alpha-btn-dark {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 48px;
+
+    padding:
+        12px
+        20px;
+
+    border-radius: 999px;
+
+    font-size: 0.82rem;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.alpha-btn-primary {
+    border:
+        1px solid transparent;
 
     background:
-        #EEF2F8 !important;
+        var(--alpha-blue);
 
+    color: white;
+
+    box-shadow:
+        0 15px 30px rgba(3, 71, 179, 0.18);
 }
 
+.alpha-btn-primary:hover {
+    transform: translateY(-2px);
 
-.page-alpha .alpha-faq .faq-item{
+    box-shadow:
+        0 20px 36px rgba(3, 71, 179, 0.25);
+}
+
+.alpha-btn-glass {
+    border:
+        1px solid rgba(3, 71, 179, 0.14);
 
     background:
-        #FFFFFF !important;
-
-}
-
-
-.page-alpha .alpha-faq .faq-question{
+        rgba(255, 255, 255, 0.64);
 
     color:
-        #0D265E !important;
+        var(--alpha-blue-deep);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.alpha-btn-glass:hover {
+    transform: translateY(-2px);
 
     background:
-        #FFFFFF !important;
+        rgba(3, 71, 179, 0.045);
 
+    border-color:
+        rgba(3, 71, 179, 0.23);
 }
 
+.alpha-btn-dark {
+    border:
+        1px solid rgba(255,255,255,0.18);
 
-.page-alpha .alpha-faq .faq-question span:first-child{
+    background:
+        rgba(255,255,255,0.10);
 
-    color:
-        #0D265E !important;
+    color: white;
 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 
+.alpha-btn-dark:hover {
+    transform: translateY(-2px);
 
-.page-alpha .alpha-faq .faq-question span:last-child{
-
-    color:
-        #B98732 !important;
-
+    background:
+        rgba(255,255,255,0.17);
 }
-
-
-.page-alpha .alpha-faq .faq-answer{
-
-    color:
-        #4C5F7D !important;
-
-}
-
-
-.page-alpha .alpha-faq .faq-answer p{
-
-    color:
-        #4C5F7D !important;
-
-}
-
 
 /* ==========================================================
-   CTA — ESCURO
+   16. RESPONSIVE — TABLET
    ========================================================== */
 
-.page-alpha .alpha-cta{
+@media (max-width: 1050px) {
 
-    background:
-        #EEF2F8 !important;
+    .alpha-hero-grid {
+        grid-template-columns:
+            minmax(0, 1fr)
+            minmax(330px, 0.8fr);
 
+        gap: 35px;
+    }
+
+    .alpha-overview-grid,
+    .alpha-composition-grid,
+    .alpha-ingredients-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .alpha-benefit-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .alpha-usage-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .alpha-performance-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .alpha-performance-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .alpha-details-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+    }
+
+    .alpha-hero {
+        min-height: auto;
+    }
+
+    .alpha-hero-product {
+        min-height: 500px;
+    }
+
+    .alpha-product-detail-grid {
+        gap: 35px;
+    }
 }
 
+/* ==========================================================
+   17. RESPONSIVE — MOBILE
+   ========================================================== */
 
-.page-alpha .alpha-cta .showcase{
+@media (max-width: 760px) {
+
+    .page-alpha .container {
+        width:
+            min(
+                100% - 28px,
+                1180px
+            );
+    }
+
+    .alpha-hero {
+        padding:
+            85px 0
+            65px;
+    }
+
+    .alpha-hero-grid,
+    .alpha-product-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alpha-hero-copy {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .alpha-eyebrow,
+    .alpha-hero-pills,
+    .alpha-hero-actions,
+    .alpha-hero-meta {
+        justify-content: center;
+    }
+
+    .alpha-hero-description {
+        margin-inline: auto;
+    }
+
+    .alpha-hero-product {
+        min-height: 440px;
+    }
+
+    .alpha-product-grid img {
+        width: min(80%, 320px);
+        max-height: 420px;
+    }
+
+    .alpha-product-ring {
+        width: 380px;
+        height: 380px;
+    }
+
+    .alpha-product-aura {
+        width: 340px;
+        height: 340px;
+    }
+
+    .alpha-product-caption {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 0;
+
+        width:
+            min(
+                210px,
+                calc(100% - 25px)
+            );
+    }
+
+    .alpha-overview-section,
+    .alpha-composition,
+    .alpha-benefits,
+    .alpha-product-section,
+    .alpha-ingredients,
+    .alpha-usage,
+    .alpha-performance,
+    .alpha-faq {
+        padding:
+            80px 0;
+    }
+
+    .alpha-overview-grid,
+    .alpha-composition-grid,
+    .alpha-ingredients-grid,
+    .alpha-benefit-grid,
+    .alpha-usage-grid,
+    .alpha-performance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alpha-performance-card:last-child {
+        grid-column: auto;
+    }
+
+    .alpha-details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .alpha-section-heading {
+        margin-bottom: 38px;
+    }
+
+    .alpha-product-detail-frame {
+        min-height: 470px;
+    }
+
+    .alpha-product-detail-image {
+        width: min(82%, 340px);
+        max-height: 440px;
+    }
+
+    .alpha-detail-ring {
+        width: 380px;
+        height: 380px;
+    }
+
+    .alpha-product-specs {
+        grid-template-columns: 1fr;
+    }
+
+    .alpha-faq-question {
+        grid-template-columns:
+            42px
+            1fr
+            28px;
+
+        gap: 12px;
+
+        padding:
+            17px;
+    }
+
+    .alpha-faq-number {
+        width: 34px;
+        height: 34px;
+    }
+
+    .alpha-faq-answer {
+        padding:
+            0
+            18px
+            21px
+            70px;
+    }
+
+    .alpha-disclaimer-box {
+        grid-template-columns: 1fr;
+
+        padding:
+            22px;
+    }
+
+    .alpha-cta-box {
+        padding:
+            50px 28px;
+        border-radius: 26px;
+    }
+
+    .alpha-orbit-1 {
+        width: 420px;
+        height: 420px;
+        right: -260px;
+    }
+
+    .alpha-orbit-2 {
+        width: 560px;
+        height: 560px;
+        right: -330px;
+    }
+}
+
+/* ==========================================================
+   18. RESPONSIVE — SMALL MOBILE
+   ========================================================== */
+
+@media (max-width: 480px) {
+
+    .alpha-hero h1 {
+        font-size:
+            clamp(
+                3.2rem,
+                17vw,
+                4.7rem
+            );
+    }
+
+    .alpha-hero-description {
+        font-size: 0.92rem;
+    }
+
+    .alpha-hero-actions,
+    .alpha-cta-actions {
+        flex-direction: column;
+    }
+
+    .alpha-hero-actions > *,
+    .alpha-cta-actions > * {
+        width: 100%;
+    }
+
+    .alpha-hero-meta {
+        display: grid;
+
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .alpha-hero-meta-item {
+        text-align: center;
+    }
+
+    .alpha-product-detail-frame {
+        min-height: 410px;
+    }
+
+    .alpha-product-detail-image {
+        width: 78%;
+        max-height: 375px;
+    }
+
+    .alpha-detail-ring {
+        width: 315px;
+        height: 315px;
+    }
+
+    .alpha-faq-question {
+        grid-template-columns:
+            36px
+            1fr
+            24px;
+    }
+
+    .alpha-faq-text {
+        font-size: 0.84rem;
+    }
+
+    .alpha-faq-answer {
+        padding-left: 58px;
+        font-size: 0.81rem;
+    }
+
+    .alpha-cta-box h2 {
+        font-size: 2.3rem;
+    }
+}
+
+/* ==========================================================
+   19. DARK MODE
+   ========================================================== */
+
+html[data-theme="dark"] .page-alpha,
+body.dark .page-alpha {
+
+    --alpha-blue: #6FA2FF;
+    --alpha-blue-deep: #EAF1FF;
+    --alpha-blue-mid: #4C88F1;
+
+    --alpha-gold: #E2B864;
+    --alpha-gold-soft: #574725;
+
+    --alpha-text: #EDF2FB;
+    --alpha-text-soft: #AAB5C8;
+
+    --alpha-surface: #0F1624;
+    --alpha-surface-soft: #121B2C;
+    --alpha-card: rgba(19, 28, 43, 0.86);
+
+    --alpha-border:
+        rgba(122, 158, 216, 0.16);
+
+    --alpha-shadow:
+        0 22px 65px rgba(0, 0, 0, 0.27);
+
+    --alpha-shadow-strong:
+        0 30px 90px rgba(0, 0, 0, 0.38);
 
     background:
-
         radial-gradient(
-            circle at 90% 10%,
-            rgba(216,167,77,.18),
+            circle at 90% 0%,
+            rgba(216, 167, 77, 0.06),
             transparent 30%
         ),
-
         linear-gradient(
-            135deg,
-            #071B4B,
-            #02389E
-        ) !important;
-
+            180deg,
+            #0B111B 0%,
+            #0E1521 45%,
+            #0B111A 100%
+        );
 }
 
+html[data-theme="dark"] .page-alpha .alpha-hero,
+body.dark .page-alpha .alpha-hero {
+    background:
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(3, 71, 179, 0.17),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 10% 80%,
+            rgba(216, 167, 77, 0.08),
+            transparent 30%
+        );
+}
 
-/* CTA TEXT */
+html[data-theme="dark"] .page-alpha .alpha-eyebrow,
+body.dark .page-alpha .alpha-eyebrow {
+    background:
+        rgba(111, 162, 255, 0.08);
 
-.page-alpha .alpha-cta h1,
-.page-alpha .alpha-cta h2,
-.page-alpha .alpha-cta h3{
+    border-color:
+        rgba(111, 162, 255, 0.17);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-hero-pill,
+body.dark .page-alpha .alpha-hero-pill {
+    background:
+        rgba(20, 30, 46, 0.82);
+
+    border-color:
+        rgba(122, 158, 216, 0.14);
 
     color:
-        #FFFFFF !important;
-
+        #E7EEFC;
 }
 
+html[data-theme="dark"] .page-alpha .alpha-orbit,
+body.dark .page-alpha .alpha-orbit {
+    border-color:
+        rgba(111, 162, 255, 0.09);
+}
 
-.page-alpha .alpha-cta .section-title{
+html[data-theme="dark"] .page-alpha .alpha-orbit-2,
+body.dark .page-alpha .alpha-orbit-2 {
+    border-color:
+        rgba(216, 167, 77, 0.09);
+}
 
+html[data-theme="dark"] .page-alpha .alpha-product-ring,
+body.dark .page-alpha .alpha-product-ring {
+    border-color:
+        rgba(111, 162, 255, 0.12);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-product-ring::before,
+body.dark .page-alpha .alpha-product-ring::before {
+    border-color:
+        rgba(216, 167, 77, 0.16);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-product-caption,
+body.dark .page-alpha .alpha-product-caption {
+    background:
+        rgba(14, 22, 35, 0.80);
+
+    border-color:
+        rgba(216, 167, 77, 0.18);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-product-caption strong,
+body.dark .page-alpha .alpha-product-caption strong {
     color:
-        #FFFFFF !important;
-
+        #F0F5FF;
 }
 
-
-.page-alpha .alpha-cta .lead{
-
+html[data-theme="dark"] .page-alpha .alpha-product-caption span,
+body.dark .page-alpha .alpha-product-caption span {
     color:
-        rgba(255,255,255,.72) !important;
-
+        #AAB5C8;
 }
 
-
-.page-alpha .alpha-cta .badge{
-
-    color:
-        #F4D681 !important;
-
-}
-
-
-.page-alpha .alpha-cta-disclaimer{
-
-    color:
-        rgba(255,255,255,.52) !important;
-
-}
-
-
-/* CTA BOTÃO */
-
-.page-alpha .alpha-cta .btn-primary{
-
+html[data-theme="dark"] .page-alpha .alpha-overview-card,
+body.dark .page-alpha .alpha-overview-card,
+html[data-theme="dark"] .page-alpha .alpha-ingredient-card,
+body.dark .page-alpha .alpha-ingredient-card,
+html[data-theme="dark"] .page-alpha .alpha-benefit-card,
+body.dark .page-alpha .alpha-benefit-card,
+html[data-theme="dark"] .page-alpha .alpha-ingredient-feature,
+body.dark .page-alpha .alpha-ingredient-feature,
+html[data-theme="dark"] .page-alpha .alpha-usage-step,
+body.dark .page-alpha .alpha-usage-step,
+html[data-theme="dark"] .page-alpha .alpha-performance-card,
+body.dark .page-alpha .alpha-performance-card,
+html[data-theme="dark"] .page-alpha .alpha-faq-item,
+body.dark .page-alpha .alpha-faq-item {
     background:
         linear-gradient(
-            135deg,
-            #D8A74D,
-            #F4D681
-        ) !important;
+            145deg,
+            rgba(20, 30, 46, 0.92),
+            rgba(15, 24, 38, 0.88)
+        );
 
-    color:
-        #071B4B !important;
+    border-color:
+        rgba(122, 158, 216, 0.13);
 
+    box-shadow:
+        0 22px 60px rgba(0, 0, 0, 0.22);
 }
 
-
-.page-alpha .alpha-cta .btn-glass{
-
+html[data-theme="dark"] .page-alpha .alpha-overview-icon,
+body.dark .page-alpha .alpha-overview-icon,
+html[data-theme="dark"] .page-alpha .alpha-benefit-symbol,
+body.dark .page-alpha .alpha-benefit-symbol,
+html[data-theme="dark"] .page-alpha .alpha-feature-symbol,
+body.dark .page-alpha .alpha-feature-symbol {
     background:
-        rgba(255,255,255,.08) !important;
+        linear-gradient(
+            145deg,
+            rgba(111, 162, 255, 0.11),
+            rgba(216, 167, 77, 0.10)
+        );
+}
+
+html[data-theme="dark"] .page-alpha .alpha-detail-card,
+body.dark .page-alpha .alpha-detail-card,
+html[data-theme="dark"] .page-alpha .alpha-product-spec,
+body.dark .page-alpha .alpha-product-spec {
+    background:
+        rgba(17, 27, 42, 0.80);
+
+    border-color:
+        rgba(122, 158, 216, 0.12);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-details-toggle,
+body.dark .page-alpha .alpha-details-toggle {
+    background:
+        rgba(20, 31, 48, 0.80);
 
     color:
-        #FFFFFF !important;
+        #EAF1FF;
 
-    border:
-        1px solid
-        rgba(255,255,255,.22) !important;
-
+    border-color:
+        rgba(122, 158, 216, 0.14);
 }
 
+html[data-theme="dark"] .page-alpha .alpha-details-toggle:hover,
+body.dark .page-alpha .alpha-details-toggle:hover {
+    background:
+        rgba(111, 162, 255, 0.075);
+}
 
-/* ==========================================================
-   LINK / HOVER
-   ========================================================== */
+html[data-theme="dark"] .page-alpha .alpha-product-detail-frame,
+body.dark .page-alpha .alpha-product-detail-frame {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(20, 31, 48, 0.96),
+            rgba(12, 20, 32, 0.92)
+        );
 
-.page-alpha a{
+    border-color:
+        rgba(122, 158, 216, 0.13);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-detail-grid-decoration,
+body.dark .page-alpha .alpha-detail-grid-decoration {
+    border-color:
+        rgba(111, 162, 255, 0.08);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-detail-caption,
+body.dark .page-alpha .alpha-detail-caption {
+    background:
+        rgba(13, 21, 33, 0.80);
+
+    border-color:
+        rgba(216, 167, 77, 0.18);
 
     color:
-        #0347B3 !important;
-
+        #EFF4FF;
 }
 
-
-.page-alpha a:hover{
-
-    color:
-        #B98732 !important;
-
-}
-
-
-/* ==========================================================
-   ELIMINA QUALQUER VESTÍGIO DE CASTANHO ANTIGO
-   ========================================================== */
-
-.page-alpha,
-.page-alpha *,
-.page-alpha *::before,
-.page-alpha *::after{
-
-    --brown:
-        transparent;
-
-}
-
-
-/* ==========================================================
-   PROTECÇÃO CONTRA CORES ANTIGAS
-   ========================================================== */
-
-.page-alpha .card::after,
-.page-alpha .service-card::after{
-
+html[data-theme="dark"] .page-alpha .alpha-product-highlight,
+body.dark .page-alpha .alpha-product-highlight {
     background:
         linear-gradient(
             90deg,
-            #0347B3,
-            #D8A74D
-        ) !important;
-
+            rgba(216, 167, 77, 0.08),
+            rgba(216, 167, 77, 0.025)
+        );
 }
 
-
-.page-alpha .orb{
-
+html[data-theme="dark"] .page-alpha .alpha-ingredient-note,
+body.dark .page-alpha .alpha-ingredient-note,
+html[data-theme="dark"] .page-alpha .alpha-usage-note,
+body.dark .page-alpha .alpha-usage-note,
+html[data-theme="dark"] .page-alpha .alpha-performance-feature,
+body.dark .page-alpha .alpha-performance-feature {
     background:
-        #D8A74D !important;
+        rgba(111, 162, 255, 0.045);
 
+    border-color:
+        rgba(111, 162, 255, 0.10);
 }
 
+html[data-theme="dark"] .page-alpha .alpha-faq-question:hover,
+body.dark .page-alpha .alpha-faq-question:hover {
+    background:
+        rgba(111, 162, 255, 0.04);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-faq-icon,
+body.dark .page-alpha .alpha-faq-icon {
+    border-color:
+        rgba(122, 158, 216, 0.15);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-disclaimer-box,
+body.dark .page-alpha .alpha-disclaimer-box {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(111, 162, 255, 0.055),
+            rgba(216, 167, 77, 0.045)
+        );
+
+    border-color:
+        rgba(122, 158, 216, 0.13);
+}
+
+html[data-theme="dark"] .page-alpha .alpha-btn-glass,
+body.dark .page-alpha .alpha-btn-glass {
+    background:
+        rgba(20, 30, 46, 0.76);
+
+    border-color:
+        rgba(122, 158, 216, 0.15);
+
+    color:
+        #EAF1FF;
+}
+
+html[data-theme="dark"] .page-alpha .alpha-btn-glass:hover,
+body.dark .page-alpha .alpha-btn-glass:hover {
+    background:
+        rgba(111, 162, 255, 0.07);
+}
 
 /* ==========================================================
-   RESPONSIVE
+   20. ACCESSIBILITY / REDUCED MOTION
    ========================================================== */
 
-@media (max-width:700px){
+@media (prefers-reduced-motion: reduce) {
 
-    .page-alpha .alpha-hero{
-
-        background:
-            linear-gradient(
-                180deg,
-                #071B4B,
-                #02389E
-            ) !important;
-
+    .page-alpha *,
+    .page-alpha *::before,
+    .page-alpha *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
     }
-
 }
-
 
 /* ==========================================================
    AD LIFESTYLE V2
