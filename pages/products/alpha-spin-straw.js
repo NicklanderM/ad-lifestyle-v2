@@ -1,7 +1,7 @@
 /* ==========================================================
    AD LIFESTYLE V2
    ALPHA SPIN STRAW
-   Premium Smart Living Product Page
+   Premium Product Page
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
@@ -60,21 +60,22 @@ function strawHero(){
     return `
     <section class="hero straw-hero" id="straw-top">
 
-        <div class="straw-hero-atmosphere" aria-hidden="true">
+        <div
+            class="straw-hero-atmosphere"
+            aria-hidden="true">
+
             <span class="straw-orb straw-orb-1"></span>
             <span class="straw-orb straw-orb-2"></span>
             <span class="straw-orb straw-orb-3"></span>
+
             <span class="straw-orbit straw-orbit-1"></span>
             <span class="straw-orbit straw-orbit-2"></span>
+
         </div>
 
         <div class="container hero-grid">
 
             <div class="hero-content reveal">
-
-                <span class="badge straw-badge">
-                    SMART LIVING
-                </span>
 
                 <span class="straw-eyebrow">
                     ALPHA SPIN · WELLNESS TECHNOLOGY
@@ -92,10 +93,23 @@ function strawHero(){
                 </p>
 
                 <div class="straw-hero-pills">
-                    <span>Vidro</span>
-                    <span>Pureza</span>
-                    <span>Água estruturada</span>
-                    <span>Smart Living</span>
+
+                    <span>
+                        Vidro
+                    </span>
+
+                    <span>
+                        Pureza
+                    </span>
+
+                    <span>
+                        Água estruturada
+                    </span>
+
+                    <span>
+                        Utilização diária
+                    </span>
+
                 </div>
 
                 <div class="hero-actions">
@@ -104,33 +118,63 @@ function strawHero(){
                         type="button"
                         class="btn btn-primary straw-btn-primary"
                         id="buyAlphaSpinStraw">
+
                         Pedir informações
+
                     </button>
 
                     <button
                         type="button"
                         class="btn btn-glass straw-btn-glass"
                         id="discoverAlphaSpinStraw">
+
                         Descobrir o produto
+
                     </button>
 
                 </div>
 
+                <!--
+                    Informação de produto substitui a antiga
+                    referência à identidade visual.
+                -->
+
                 <div class="straw-hero-meta">
 
                     <div>
-                        <strong>65%</strong>
-                        <span>verde na identidade visual</span>
+
+                        <strong>
+                            Vidro
+                        </strong>
+
+                        <span>
+                            Material do canudo
+                        </span>
+
                     </div>
 
                     <div>
-                        <strong>Vidro</strong>
-                        <span>elemento central do produto</span>
+
+                        <strong>
+                            Água
+                        </strong>
+
+                        <span>
+                            Pensado para o consumo diário
+                        </span>
+
                     </div>
 
                     <div>
-                        <strong>Premium</strong>
-                        <span>conceito Alpha Spin</span>
+
+                        <strong>
+                            Bebidas
+                        </strong>
+
+                        <span>
+                            Experiência versátil de utilização
+                        </span>
+
                     </div>
 
                 </div>
@@ -141,13 +185,23 @@ function strawHero(){
 
                 <div class="straw-hero-product floating">
 
-                    <div class="straw-product-aura" aria-hidden="true"></div>
+                    <div
+                        class="straw-product-aura"
+                        aria-hidden="true">
+                    </div>
 
-                    <div class="straw-product-ring straw-product-ring-1"></div>
+                    <div
+                        class="straw-product-ring straw-product-ring-1">
+                    </div>
 
-                    <div class="straw-product-ring straw-product-ring-2"></div>
+                    <div
+                        class="straw-product-ring straw-product-ring-2">
+                    </div>
 
-                    <div class="straw-product-grid" aria-hidden="true"></div>
+                    <div
+                        class="straw-product-grid"
+                        aria-hidden="true">
+                    </div>
 
                     <img
                         class="parallax"
@@ -156,8 +210,15 @@ function strawHero(){
                         alt="Alpha Spin Straw — canudo de vidro">
 
                     <div class="straw-product-caption">
-                        <span>ALPHA SPIN</span>
-                        <strong>STRAW</strong>
+
+                        <span>
+                            ALPHA SPIN
+                        </span>
+
+                        <strong>
+                            STRAW
+                        </strong>
+
                     </div>
 
                 </div>
@@ -191,7 +252,9 @@ function strawOverview(){
 
                 <h2 class="section-title">
                     Um acessório.
-                    <span>Uma nova experiência de bebida.</span>
+                    <span>
+                        Uma nova experiência de bebida.
+                    </span>
                 </h2>
 
                 <p class="lead">
@@ -224,8 +287,8 @@ function strawOverview(){
 
                 ${strawOverviewCard(
                     "04",
-                    "Smart Living",
-                    "Integra-se no universo Alpha Spin como um elemento de rotina, bem-estar e tecnologia aplicada ao quotidiano."
+                    "Rotina",
+                    "Um acessório pensado para integrar momentos de hidratação e consumo no dia-a-dia."
                 )}
 
             </div>
@@ -309,7 +372,9 @@ function strawExperience(){
 
                 <h2 class="section-title">
                     Leve o seu ritual de bebida
-                    <span>para outro nível.</span>
+                    <span>
+                        para outro nível.
+                    </span>
                 </h2>
 
                 <p class="lead">
@@ -405,7 +470,9 @@ function strawBenefits(){
 
                     <h2 class="section-title">
                         O que é associado
-                        <span>ao Alpha Spin Straw.</span>
+                        <span>
+                            ao Alpha Spin Straw.
+                        </span>
                     </h2>
 
                 </div>
@@ -518,7 +585,7 @@ function strawBenefit(number,title,text){
 }
 
 /* ==========================================================
-   TECHNOLOGY
+   PRODUCT / MATERIAL
    ========================================================== */
 
 function strawTechnology(){
@@ -528,24 +595,42 @@ function strawTechnology(){
 
         <div class="container">
 
-            <div class="straw-tech-grid">
+            <div class="straw-product-detail-grid">
 
-                <div class="straw-tech-visual reveal-left">
+                <!-- ==================================================
+                     IMAGEM DO PRODUTO — ESQUERDA
+                     ================================================== -->
 
-                    <div class="straw-tech-panel">
+                <div class="straw-product-detail-visual reveal-left">
+
+                    <div class="straw-product-detail-frame">
 
                         <div
-                            class="straw-tech-lines"
+                            class="straw-detail-orb"
                             aria-hidden="true">
-
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-
                         </div>
 
-                        <div class="straw-tech-core">
+                        <div
+                            class="straw-detail-ring straw-detail-ring-1"
+                            aria-hidden="true">
+                        </div>
+
+                        <div
+                            class="straw-detail-ring straw-detail-ring-2"
+                            aria-hidden="true">
+                        </div>
+
+                        <div
+                            class="straw-detail-grid"
+                            aria-hidden="true">
+                        </div>
+
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="Alpha Spin Straw — canudo de vidro"
+                            class="straw-product-detail-image">
+
+                        <div class="straw-detail-caption">
 
                             <span>
                                 ALPHA SPIN
@@ -555,75 +640,81 @@ function strawTechnology(){
                                 STRAW
                             </strong>
 
-                            <small>
-                                GLASS · SMART LIVING
-                            </small>
-
                         </div>
 
                     </div>
 
                 </div>
 
-                <div class="straw-tech-copy reveal-right">
+                <!-- ==================================================
+                     INFORMAÇÃO DO PRODUTO — DIREITA
+                     ================================================== -->
+
+                <div class="straw-product-detail-copy reveal-right">
 
                     <span class="label">
-                        IDENTIDADE
+                        O PRODUTO
                     </span>
 
                     <h2 class="section-title">
-                        Verde profundo.
-                        <span>Dourado preciso.</span>
+                        Vidro, simplicidade
+                        <span>
+                            e experiência.
+                        </span>
                     </h2>
 
                     <p class="lead">
-                        A identidade visual foi construída para transmitir
-                        natureza, tecnologia, profundidade e acabamento premium.
+                        O Alpha Spin Straw é apresentado como um canudo de vidro
+                        concebido para acompanhar água e outras bebidas numa
+                        experiência de consumo simples e diferenciada.
                     </p>
 
-                    <div class="straw-palette">
+                    <div class="straw-product-specs">
 
-                        ${palette(
-                            "#07543F",
-                            "Verde esmeralda profundo",
-                            "Cor principal"
+                        ${productSpec(
+                            "01",
+                            "Construção",
+                            "Canudo de vidro"
                         )}
 
-                        ${palette(
-                            "#0D3F32",
-                            "Verde floresta",
-                            "Sombras e profundidade"
+                        ${productSpec(
+                            "02",
+                            "Utilização",
+                            "Água e outras bebidas"
                         )}
 
-                        ${palette(
-                            "#146B50",
-                            "Verde médio",
-                            "Detalhes"
+                        ${productSpec(
+                            "03",
+                            "Conceito",
+                            "Bebida estruturada"
                         )}
 
-                        ${palette(
-                            "#C6A04D",
-                            "Dourado / latão",
-                            "Acentos premium"
+                        ${productSpec(
+                            "04",
+                            "Experiência",
+                            "Uso simples no quotidiano"
                         )}
 
-                        ${palette(
-                            "#151515",
-                            "Preto carvão",
-                            "Contraste"
-                        )}
+                    </div>
 
-                        ${palette(
-                            "#BFC3C1",
-                            "Prata metálico",
-                            "Componentes"
-                        )}
+                    <div class="straw-product-highlight">
 
-                        ${palette(
-                            "#F7F7F5",
-                            "Branco",
-                            "Neutros"
-                        )}
+                        <span class="straw-product-highlight-icon">
+                            ◎
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Pensado para o dia-a-dia.
+                            </strong>
+
+                            <p>
+                                Uma abordagem minimalista que coloca o próprio
+                                produto no centro da experiência.
+                            </p>
+
+                        </div>
 
                     </div>
 
@@ -637,25 +728,27 @@ function strawTechnology(){
     `;
 }
 
-function palette(hex,name,role){
+/* ==========================================================
+   PRODUCT SPEC
+   ========================================================== */
+
+function productSpec(number,title,text){
 
     return `
-        <div class="straw-palette-row">
+        <div class="straw-product-spec">
 
-            <span
-                class="straw-swatch"
-                style="--swatch:${hex}"
-                aria-hidden="true">
+            <span class="straw-product-spec-number">
+                ${number}
             </span>
 
             <div>
 
                 <strong>
-                    ${name}
+                    ${title}
                 </strong>
 
                 <span>
-                    ${hex} · ${role}
+                    ${text}
                 </span>
 
             </div>
@@ -683,7 +776,9 @@ function strawUse(){
 
                 <h2 class="section-title">
                     Uma utilização
-                    <span>simples e elegante.</span>
+                    <span>
+                        simples e elegante.
+                    </span>
                 </h2>
 
                 <p class="lead">
@@ -811,7 +906,9 @@ function strawClaims(){
 
                     <h2>
                         O que está confirmado
-                        <span>e o que precisa de validação.</span>
+                        <span>
+                            e o que precisa de validação.
+                        </span>
                     </h2>
 
                     <p>
@@ -860,7 +957,9 @@ function strawFaq(){
 
                 <h2 class="section-title">
                     Antes de escolher o
-                    <span>Alpha Spin Straw.</span>
+                    <span>
+                        Alpha Spin Straw.
+                    </span>
                 </h2>
 
                 <p class="lead">
@@ -1047,7 +1146,9 @@ function strawCta(){
 
                     <h2>
                         Descubra uma nova
-                        <span>forma de beber.</span>
+                        <span>
+                            forma de beber.
+                        </span>
                     </h2>
 
                     <p>
@@ -1063,14 +1164,18 @@ function strawCta(){
                         type="button"
                         class="btn btn-primary straw-btn-primary"
                         data-buy-straw>
+
                         Pedir pelo WhatsApp
+
                     </button>
 
                     <button
                         type="button"
                         class="btn btn-glass straw-btn-dark"
                         data-back-home>
+
                         Voltar à AD Lifestyle
+
                     </button>
 
                 </div>
@@ -1172,9 +1277,9 @@ function initialiseAlphaSpinStraw(){
         "click",
         function(event){
 
-            /* ---------------------------
+            /* -----------------------------------------------
                SCROLL
-               --------------------------- */
+               ----------------------------------------------- */
 
             const scrollTrigger =
                 event.target.closest(
@@ -1204,9 +1309,9 @@ function initialiseAlphaSpinStraw(){
                 return;
             }
 
-            /* ---------------------------
+            /* -----------------------------------------------
                WHATSAPP
-               --------------------------- */
+               ----------------------------------------------- */
 
             const buyButton =
                 event.target.closest(
@@ -1222,9 +1327,9 @@ function initialiseAlphaSpinStraw(){
                 return;
             }
 
-            /* ---------------------------
+            /* -----------------------------------------------
                HOME
-               --------------------------- */
+               ----------------------------------------------- */
 
             const backButton =
                 event.target.closest(
@@ -1238,9 +1343,9 @@ function initialiseAlphaSpinStraw(){
                 return;
             }
 
-            /* ---------------------------
+            /* -----------------------------------------------
                MORE
-               --------------------------- */
+               ----------------------------------------------- */
 
             const moreButton =
                 event.target.closest(
@@ -1257,9 +1362,9 @@ function initialiseAlphaSpinStraw(){
                 return;
             }
 
-            /* ---------------------------
+            /* -----------------------------------------------
                FAQ
-               --------------------------- */
+               ----------------------------------------------- */
 
             const faqButton =
                 event.target.closest(
