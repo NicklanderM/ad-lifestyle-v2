@@ -1,7 +1,7 @@
 /* ==========================================================
    AD LIFESTYLE V2
    ALPHAMETA.JS
-   Premium AlphaMeta Page
+   Premium AlphaMeta Product Page
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
@@ -10,17 +10,30 @@ import { ripple, stagger } from "../../js/animations.js";
 
 
 /* ==========================================================
-   LOAD ALPHAMETA PAGE
+   CONFIG
+   ========================================================== */
+
+const PRODUCT_IMAGE =
+    "./assets/products/alphameta.png";
+
+const WHATSAPP_NUMBER =
+    "244924964666";
+
+
+/* ==========================================================
+   LOAD
    ========================================================== */
 
 export function loadAlphaMeta(){
 
     applyTheme("alphameta");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    if(!app) return;
-
+    if(!app){
+        return;
+    }
 
     app.innerHTML = `
 
@@ -30,9 +43,13 @@ export function loadAlphaMeta(){
 
             ${hero()}
 
+            ${overview()}
+
             ${composition()}
 
             ${benefits()}
+
+            ${productDetail()}
 
             ${ingredients()}
 
@@ -44,12 +61,13 @@ export function loadAlphaMeta(){
 
             ${faq()}
 
+            ${information()}
+
             ${cta()}
 
         </div>
 
     `;
-
 
     initialiseAlphaMeta();
 
@@ -62,139 +80,300 @@ export function loadAlphaMeta(){
 
 function hero(){
 
-return `
+    return `
 
-<section class="hero alphameta-hero">
+    <section class="hero alphameta-hero">
 
-    <div class="aurora">
+        <div class="alphameta-hero-atmosphere">
 
-        <div class="blob blob-1"></div>
+            <div class="alphameta-orb alphameta-orb-1"></div>
 
-        <div class="blob blob-2"></div>
+            <div class="alphameta-orb alphameta-orb-2"></div>
 
-        <div class="blob blob-3"></div>
+            <div class="alphameta-orbit alphameta-orbit-1"></div>
 
-    </div>
-
-
-    <div class="container hero-grid">
-
-
-        <div class="hero-content reveal">
-
-            <span class="badge">
-                AlphaMeta · Nutrição Celular
-            </span>
-
-
-            <h1 class="hero-title">
-
-                Alpha
-                <span>Meta</span>
-
-            </h1>
-
-
-            <p class="hero-sub">
-
-                Uma proposta nutricional de inspiração
-                botânica e cereal, apresentada para integrar
-                uma rotina orientada para equilíbrio,
-                vitalidade, energia e bem-estar.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-
-                <button
-                    class="btn btn-primary"
-                    id="buyAlphaMeta"
-                    type="button">
-
-                    Comprar Agora
-
-                </button>
-
-
-                <button
-                    class="btn btn-glass"
-                    id="alphaMetaComposition"
-                    type="button">
-
-                    Ver Composição
-
-                </button>
-
-
-            </div>
-
-
-            <div class="alphameta-hero-highlights">
-
-                <span>
-                    ✓ Organic Oryza
-                </span>
-
-                <span>
-                    ✓ Nutrição Celular
-                </span>
-
-                <span>
-                    ✓ Fórmula em pó
-                </span>
-
-                <span>
-                    ✓ 25 saquetas
-
-                </span>
-
-            </div>
-
-
-            <p class="alphameta-disclaimer">
-
-                As informações desta página têm finalidade
-                informativa e baseiam-se no material de apresentação
-                fornecido para o AlphaMeta. Não constituem diagnóstico,
-                tratamento ou garantia de resultados médicos.
-
-            </p>
+            <div class="alphameta-orbit alphameta-orbit-2"></div>
 
         </div>
 
 
-        <div class="hero-visual reveal-right">
-
-            <div class="hero-product floating">
+        <div class="container alphameta-hero-grid">
 
 
-                <div class="product-glow"></div>
+            <div class="alphameta-hero-copy reveal">
+
+                <span class="alphameta-eyebrow">
+
+                    ALPHAMETA · NUTRIÇÃO
+
+                </span>
 
 
-                <div class="alphameta-gold-ring"></div>
+                <h1>
+
+                    Alpha
+                    <span>Meta.</span>
+
+                </h1>
 
 
-                <img
-                    class="parallax"
-                    data-speed="40"
-                    src="./assets/products/alphameta.png"
-                    alt="AlphaMeta"
-                    loading="eager"
-                >
+                <p class="alphameta-hero-description">
+
+                    Uma bebida nutricional de inspiração
+                    cereal e botânica, apresentada dentro
+                    de uma proposta de nutrição, equilíbrio,
+                    vitalidade e bem-estar.
+
+                </p>
+
+
+                <div class="alphameta-hero-pills">
+
+
+                    <span class="alphameta-hero-pill">
+                        Organic Oryza
+                    </span>
+
+
+                    <span class="alphameta-hero-pill">
+                        Arroz Integral Orgânico
+                    </span>
+
+
+                    <span class="alphameta-hero-pill">
+                        Nutrição Celular
+                    </span>
+
+
+                    <span class="alphameta-hero-pill">
+                        25 Saquetas
+                    </span>
+
+
+                </div>
+
+
+                <div class="alphameta-hero-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="buyAlphaMeta">
+
+                        Comprar agora
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="alphaMetaComposition"
+                        data-scroll="#alphameta-composition">
+
+                        Ver composição
+
+                    </button>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="alphameta-hero-product reveal-right">
+
+
+                <div class="alphameta-product-aura"></div>
+
+
+                <div class="alphameta-product-ring"></div>
+
+
+                <div class="alphameta-product-grid">
+
+
+                    <img
+                        src="${PRODUCT_IMAGE}"
+                        alt="AlphaMeta"
+                        loading="eager"
+                    >
+
+
+                </div>
+
+
+                <div class="alphameta-product-caption">
+
+                    <strong>ALPHAMETA</strong>
+
+                    <span>
+                        ORGANIC ORYZA
+                    </span>
+
+                </div>
 
 
             </div>
 
+
+        </div>
+
+    </section>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
+function overview(){
+
+    return `
+
+    <section
+        id="alphameta-overview"
+        class="section alphameta-overview-section">
+
+        <div class="container">
+
+
+            <div class="section-center reveal">
+
+                <span class="label">
+                    VISÃO GERAL
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Conheça o conceito
+                    <span>AlphaMeta.</span>
+
+                </h2>
+
+
+                <p class="lead">
+
+                    A apresentação do produto está centrada
+                    no conceito Organic Oryza Cereal Drink,
+                    no arroz integral orgânico e numa proposta
+                    de nutrição integrada no quotidiano.
+
+                </p>
+
+            </div>
+
+
+            <div class="alphameta-overview-grid">
+
+
+                ${overviewCard(
+                    "01",
+                    "Organic Oryza",
+                    "O arroz integral orgânico é apresentado como um dos elementos centrais do produto."
+                )}
+
+
+                ${overviewCard(
+                    "02",
+                    "Bebida de cereal",
+                    "A embalagem apresenta o AlphaMeta como Organic Oryza Cereal Drink."
+                )}
+
+
+                ${overviewCard(
+                    "03",
+                    "Nutrição celular",
+                    "“Nutrição Celular” faz parte da linguagem utilizada na apresentação do produto."
+                )}
+
+
+                ${overviewCard(
+                    "04",
+                    "Rotina",
+                    "O produto é apresentado para integração numa rotina orientada para consistência e bem-estar."
+                )}
+
+
+            </div>
+
+
+            <div class="alphameta-overview-note reveal">
+
+                <strong>
+                    Uma proposta nutricional apresentada
+                    com uma identidade tecnológica.
+                </strong>
+
+                <p>
+
+                    As características técnicas, científicas
+                    e alegações de saúde devem ser confirmadas
+                    através da documentação oficial correspondente.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    `;
+
+}
+
+
+function overviewCard(
+    number,
+    title,
+    text
+){
+
+    const symbols = {
+        "01":"◇",
+        "02":"○",
+        "03":"⌁",
+        "04":"✦"
+    };
+
+    return `
+
+    <article class="alphameta-overview-card reveal">
+
+        <span class="alphameta-card-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="alphameta-card-icon"
+            aria-hidden="true">
+
+            ${symbols[number] || "◇"}
+
         </div>
 
 
-    </div>
+        <h3>
+            ${title}
+        </h3>
 
-</section>
 
-`;
+        <p>
+            ${text}
+        </p>
+
+
+    </article>
+
+    `;
 
 }
 
@@ -205,308 +384,211 @@ return `
 
 function composition(){
 
-return `
+    return `
 
-<section
-    id="alphameta-composition"
-    class="section alphameta-composition">
+    <section
+        id="alphameta-composition"
+        class="section alphameta-composition">
 
-    <div class="container">
-
-
-        <div class="section-center reveal">
+        <div class="container">
 
 
-            <span class="label">
-                Nutrição Celular
-            </span>
+            <div class="alphameta-section-heading reveal">
 
-
-            <h2 class="section-title">
-
-                Uma fórmula de
-                inspiração nutricional
-
-            </h2>
-
-
-            <p class="lead">
-
-                O material de apresentação do AlphaMeta
-                destaca o arroz integral orgânico e uma
-                proposta de nutrição celular associada
-                a tecnologia e processamento especializado.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="grid grid-4 mt-6">
-
-
-            ${ingredient(
-                "🌾",
-                "Arroz Integral Orgânico",
-                "Ingrediente central destacado no material de apresentação do AlphaMeta."
-            )}
-
-
-            ${ingredient(
-                "🧬",
-                "Nutrição Celular",
-                "Conceito utilizado na comunicação do produto para representar a sua proposta nutricional."
-            )}
-
-
-            ${ingredient(
-                "⚙️",
-                "Nanotecnologia",
-                "A apresentação do produto associa a sua produção a tecnologia de processamento avançada."
-            )}
-
-
-            ${ingredient(
-                "🌿",
-                "Sem Produtos Químicos e Tóxicos",
-                "Característica apresentada no material promocional fornecido para o produto."
-            )}
-
-
-        </div>
-
-
-        <div class="alphameta-information mt-6">
-
-
-            <button
-                class="alphameta-details-toggle"
-                type="button"
-                aria-expanded="false">
-
-                <span>
-                    Ver detalhes da composição
+                <span class="eyebrow">
+                    COMPOSIÇÃO
                 </span>
 
-                <span class="alphameta-details-icon">
-                    +
-                </span>
 
-            </button>
+                <h2>
 
+                    Uma fórmula de
+                    <span>inspiração nutricional.</span>
 
-            <div class="alphameta-details-content">
-
-
-                <div class="alphameta-details-grid">
+                </h2>
 
 
-                    <article class="alphameta-detail-card">
+                <p>
 
-                        <span class="label">
-                            01 — Organic Oryza
-                        </span>
+                    O material de apresentação destaca
+                    o arroz integral orgânico, a proposta
+                    de nutrição celular e uma abordagem
+                    tecnológica associada ao produto.
+
+                </p>
+
+            </div>
 
 
-                        <h3>
-                            Base cereal
-                        </h3>
+            <div class="alphameta-composition-grid">
 
 
-                        <p class="text mt-2">
+                ${ingredientCard(
+                    "01",
+                    "🌾",
+                    "Arroz Integral Orgânico",
+                    "Ingrediente central destacado na apresentação do AlphaMeta."
+                )}
 
+
+                ${ingredientCard(
+                    "02",
+                    "🧬",
+                    "Nutrição Celular",
+                    "Conceito utilizado na comunicação nutricional do produto."
+                )}
+
+
+                ${ingredientCard(
+                    "03",
+                    "⚙",
+                    "Tecnologia",
+                    "O material fornecido associa o desenvolvimento do produto a tecnologia de processamento avançada."
+                )}
+
+
+                ${ingredientCard(
+                    "04",
+                    "🌿",
+                    "Origem vegetal",
+                    "A apresentação destaca uma identidade associada a ingredientes de origem vegetal."
+                )}
+
+
+            </div>
+
+
+            <div
+                class="alphameta-more-wrap"
+                data-more-container="composition">
+
+                <button
+                    type="button"
+                    class="alphameta-more-toggle"
+                    data-more-toggle="composition"
+                    aria-expanded="false"
+                    aria-controls="alphameta-composition-more">
+
+                    <span>
+                        Ver detalhes da composição
+                    </span>
+
+                    <i aria-hidden="true">
+                        +
+                    </i>
+
+                </button>
+
+
+                <div
+                    id="alphameta-composition-more"
+                    class="alphameta-more-panel"
+                    data-more-panel="composition"
+                    aria-hidden="true">
+
+                    <div class="alphameta-detail-grid">
+
+
+                        ${detailCard(
+                            "01 — ORGANIC ORYZA",
+                            "Base cereal",
+                            `
                             A apresentação comercial identifica
                             o produto como Organic Oryza Cereal Drink,
                             destacando o arroz integral orgânico
                             como elemento central.
-
-                        </p>
-
-
-                        <div class="alphameta-detail-list mt-3">
-
-                            ${detailItem(
-                                "Ingrediente de origem vegetal"
-                            )}
-
-                            ${detailItem(
-                                "Base cereal apresentada no produto"
-                            )}
-
-                            ${detailItem(
+                            `,
+                            [
+                                "Ingrediente de origem vegetal",
+                                "Base cereal apresentada no produto",
                                 "Integra a identidade nutricional AlphaMeta"
-                            )}
+                            ]
+                        )}
 
-                        </div>
 
+                        ${detailCard(
+                            "02 — NUTRIÇÃO CELULAR",
+                            "Conceito AlphaMeta",
+                            `
+                            A expressão “Nutrição Celular” é utilizada
+                            na comunicação fornecida para representar
+                            o posicionamento nutricional do produto.
+                            `,
+                            [
+                                "Posicionamento nutricional",
+                                "Conceito ligado à comunicação celular",
+                                "Parte da apresentação do produto"
+                            ]
+                        )}
 
-                    </article>
 
+                        ${detailCard(
+                            "03 — TECNOLOGIA",
+                            "Processamento",
+                            `
+                            O material fornecido associa o AlphaMeta
+                            à utilização de tecnologia de processamento
+                            avançada.
+                            `,
+                            [
+                                "Tecnologia apresentada pela marca",
+                                "Processamento especializado",
+                                "Posicionamento tecnológico"
+                            ]
+                        )}
 
-                    <article class="alphameta-detail-card">
 
-                        <span class="label">
-                            02 — Nutrição Celular
-                        </span>
+                        ${detailCard(
+                            "04 — NATURALIDADE",
+                            "Origem e proposta",
+                            `
+                            A apresentação destaca uma proposta associada
+                            a ingredientes de origem vegetal e a uma visão
+                            nutricional orientada para o quotidiano.
+                            `,
+                            [
+                                "Ingrediente vegetal",
+                                "Identidade ligada ao cereal",
+                                "Proposta nutricional"
+                            ]
+                        )}
 
 
-                        <h3>
-                            Conceito AlphaMeta
-                        </h3>
+                        <article class="alphameta-detail-card alphameta-detail-card-wide">
 
+                            <span class="label">
+                                INFORMAÇÃO IMPORTANTE
+                            </span>
 
-                        <p class="text mt-2">
 
-                            A expressão “Nutrição Celular”
-                            é utilizada na comunicação fornecida
-                            para representar o posicionamento
-                            nutricional do AlphaMeta.
+                            <h3>
+                                Comunicação responsável
+                            </h3>
 
-                        </p>
 
+                            <p>
 
-                        <div class="alphameta-detail-list mt-3">
+                                Algumas apresentações promocionais
+                                do AlphaMeta atribuem ao produto efeitos
+                                relacionados com imunidade, metabolismo,
+                                envelhecimento, doenças e outras condições
+                                de saúde.
 
-                            ${detailItem(
-                                "Posicionamento nutricional"
-                            )}
+                            </p>
 
-                            ${detailItem(
-                                "Foco conceptual nas células"
-                            )}
 
-                            ${detailItem(
-                                "Integra a comunicação oficial apresentada"
-                            )}
+                            <p>
 
-                        </div>
+                                Nesta página, essas afirmações não são
+                                apresentadas como resultados clínicos
+                                comprovados ou garantidos.
 
+                            </p>
 
-                    </article>
+                        </article>
 
 
-                    <article class="alphameta-detail-card">
-
-                        <span class="label">
-                            03 — Tecnologia
-                        </span>
-
-
-                        <h3>
-                            Processamento avançado
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O material apresentado associa
-                            o AlphaMeta à utilização de
-                            nanotecnologia no seu processo
-                            de desenvolvimento.
-
-                        </p>
-
-
-                        <div class="alphameta-detail-list mt-3">
-
-                            ${detailItem(
-                                "Tecnologia apresentada pela marca"
-                            )}
-
-                            ${detailItem(
-                                "Abordagem de processamento especializado"
-                            )}
-
-                            ${detailItem(
-                                "Posicionamento tecnológico premium"
-                            )}
-
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="alphameta-detail-card">
-
-                        <span class="label">
-                            04 — Naturalidade
-                        </span>
-
-
-                        <h3>
-                            Origem e proposta
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            A apresentação do AlphaMeta
-                            destaca uma proposta associada
-                            a ingredientes de origem vegetal
-                            e nutrição consciente.
-
-                        </p>
-
-
-                        <div class="alphameta-detail-list mt-3">
-
-                            ${detailItem(
-                                "Ingrediente vegetal"
-                            )}
-
-                            ${detailItem(
-                                "Identidade ligada ao cereal"
-                            )}
-
-                            ${detailItem(
-                                "Proposta nutricional premium"
-                            )}
-
-                        </div>
-
-
-                    </article>
-
-
-                    <article
-                        class="alphameta-detail-card
-                               alphameta-detail-card-wide">
-
-                        <span class="label">
-                            Informação importante
-                        </span>
-
-
-                        <h3>
-                            Comunicação responsável
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            Algumas apresentações promocionais
-                            do AlphaMeta atribuem ao produto
-                            efeitos relacionados com imunidade,
-                            metabolismo, envelhecimento,
-                            doenças e outras condições de saúde.
-
-                        </p>
-
-
-                        <p class="text mt-2">
-
-                            Nesta página, essas afirmações não são
-                            apresentadas como resultados clínicos
-                            comprovados ou garantidos. Para questões
-                            de saúde, tratamento ou utilização,
-                            deve ser consultado um profissional de saúde.
-
-                        </p>
-
-                    </article>
-
+                    </div>
 
                 </div>
 
@@ -515,40 +597,127 @@ return `
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-`;
+    `;
 
 }
 
 
-function ingredient(icon, title, text){
+function ingredientCard(
+    number,
+    symbol,
+    title,
+    text
+){
 
-return `
+    return `
 
-<article class="card service-card alphameta-ingredient-card reveal">
+    <article class="alphameta-ingredient-card reveal">
 
 
-    <div class="service-icon">
-        ${icon}
+        <span class="alphameta-ingredient-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="alphameta-ingredient-symbol"
+            aria-hidden="true">
+
+            ${symbol}
+
+        </div>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+    </article>
+
+    `;
+
+}
+
+
+function detailCard(
+    label,
+    title,
+    text,
+    items = []
+){
+
+    return `
+
+    <article class="alphameta-detail-card">
+
+
+        <span class="label">
+            ${label}
+        </span>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+        ${
+            items.length
+                ? `
+                    <div class="alphameta-detail-list">
+
+                        ${items
+                            .map(item => detailItem(item))
+                            .join("")
+                        }
+
+                    </div>
+                  `
+                : ""
+        }
+
+
+    </article>
+
+    `;
+
+}
+
+
+function detailItem(text){
+
+    return `
+
+    <div class="alphameta-detail-item">
+
+        <span
+            class="alphameta-check"
+            aria-hidden="true">
+
+            ✓
+
+        </span>
+
+        <span>
+            ${text}
+        </span>
+
     </div>
 
-
-    <h3>
-        ${title}
-    </h3>
-
-
-    <p class="text mt-2">
-        ${text}
-    </p>
-
-
-</article>
-
-`;
+    `;
 
 }
 
@@ -559,219 +728,178 @@ return `
 
 function benefits(){
 
-return `
+    return `
 
-<section class="section-sm alphameta-benefits">
+    <section
+        class="section alphameta-benefits">
 
-    <div class="container">
-
-
-        <div class="split">
+        <div class="container">
 
 
-            <div class="split-image reveal-left">
+            <div class="alphameta-benefits-grid">
 
 
-                <div class="alphameta-benefit-image">
+                <div class="alphameta-benefits-visual reveal-left">
 
-                    <div class="alphameta-image-glow"></div>
+                    <div class="alphameta-benefits-frame">
 
-
-                    <img
-                        src="./assets/products/alphameta.png"
-                        alt="AlphaMeta"
-                        loading="lazy"
-                    >
-
-                </div>
+                        <div class="alphameta-benefits-aura"></div>
 
 
-            </div>
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="AlphaMeta"
+                            loading="lazy"
+                        >
 
-
-            <div class="split-content reveal-right">
-
-
-                <span class="label">
-                    Destaques
-                </span>
-
-
-                <h2 class="section-title">
-
-                    Nutrição.
-                    Equilíbrio.
-                    Vitalidade.
-
-                </h2>
-
-
-                <p class="text mt-3">
-
-                    O AlphaMeta é apresentado como
-                    uma solução nutricional integrada
-                    numa filosofia de bem-estar,
-                    consistência e longevidade.
-
-                </p>
-
-
-                <div class="icon-list mt-4">
-
-
-                    ${check(
-                        "Nutrição orientada para uma rotina equilibrada"
-                    )}
-
-
-                    ${check(
-                        "Proposta baseada em ingredientes de origem vegetal"
-                    )}
-
-
-                    ${check(
-                        "Foco conceptual na nutrição celular"
-                    )}
-
-
-                    ${check(
-                        "Energia e vitalidade no dia-a-dia"
-                    )}
-
-
-                    ${check(
-                        "Integração numa rotina activa"
-                    )}
-
-
-                    ${check(
-                        "Parte da filosofia de longevidade AD Lifestyle"
-                    )}
-
+                    </div>
 
                 </div>
 
 
-                <div class="alphameta-information mt-5">
+                <div class="alphameta-benefits-copy reveal-right">
 
 
-                    <button
-                        class="alphameta-details-toggle"
-                        type="button"
-                        aria-expanded="false">
-
-                        <span>
-                            Ver informações funcionais
-                        </span>
-
-                        <span class="alphameta-details-icon">
-                            +
-                        </span>
-
-                    </button>
+                    <span class="label">
+                        DESTAQUES
+                    </span>
 
 
-                    <div class="alphameta-details-content">
+                    <h2 class="section-title">
+
+                        Nutrição.
+                        Equilíbrio.
+                        <span>Vitalidade.</span>
+
+                    </h2>
 
 
-                        <div class="alphameta-details-grid">
+                    <p class="lead">
+
+                        O AlphaMeta é apresentado como uma
+                        solução nutricional integrada numa
+                        filosofia de consistência, bem-estar
+                        e rotina activa.
+
+                    </p>
 
 
-                            <article class="alphameta-detail-card">
-
-                                <span class="label">
-                                    Vitalidade
-                                </span>
+                    <div class="alphameta-check-list">
 
 
-                                <h3>
-                                    Rotina activa
-                                </h3>
+                        ${benefitCheck(
+                            "Nutrição orientada para uma rotina equilibrada"
+                        )}
 
 
-                                <p class="text mt-2">
+                        ${benefitCheck(
+                            "Proposta associada a ingredientes de origem vegetal"
+                        )}
 
+
+                        ${benefitCheck(
+                            "Conceito de nutrição celular"
+                        )}
+
+
+                        ${benefitCheck(
+                            "Integração numa rotina activa"
+                        )}
+
+
+                        ${benefitCheck(
+                            "Identidade ligada ao cereal e à tecnologia"
+                        )}
+
+
+                        ${benefitCheck(
+                            "Apresentação dentro da filosofia de bem-estar AD Lifestyle"
+                        )}
+
+
+                    </div>
+
+
+                    <div
+                        class="alphameta-more-wrap"
+                        data-more-container="benefits">
+
+
+                        <button
+                            type="button"
+                            class="alphameta-more-toggle"
+                            data-more-toggle="benefits"
+                            aria-expanded="false"
+                            aria-controls="alphameta-benefits-more">
+
+                            <span>
+                                Ver informações funcionais
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
+                        </button>
+
+
+                        <div
+                            id="alphameta-benefits-more"
+                            class="alphameta-more-panel"
+                            data-more-panel="benefits"
+                            aria-hidden="true">
+
+
+                            <div class="alphameta-detail-grid">
+
+
+                                ${detailCard(
+                                    "VITALIDADE",
+                                    "Rotina activa",
+                                    `
                                     O material promocional associa
                                     o AlphaMeta a energia, vitalidade
                                     e construção de uma rotina activa.
-
-                                </p>
-
-                            </article>
+                                    `
+                                )}
 
 
-                            <article class="alphameta-detail-card">
-
-                                <span class="label">
-                                    Metabolismo
-                                </span>
-
-
-                                <h3>
-                                    Conceito celular
-                                </h3>
-
-
-                                <p class="text mt-2">
-
-                                    A apresentação do produto utiliza
-                                    conceitos relacionados com metabolismo,
-                                    restauração, regeneração e protecção celular.
-
-                                </p>
-
-                            </article>
+                                ${detailCard(
+                                    "METABOLISMO",
+                                    "Conceito celular",
+                                    `
+                                    A apresentação utiliza conceitos
+                                    relacionados com metabolismo,
+                                    restauração, regeneração e
+                                    protecção celular.
+                                    `
+                                )}
 
 
-                            <article class="alphameta-detail-card">
-
-                                <span class="label">
-                                    Imunidade
-                                </span>
-
-
-                                <h3>
-                                    Defesa do organismo
-                                </h3>
-
-
-                                <p class="text mt-2">
-
-                                    O material fornecido associa o produto
-                                    a uma proposta de suporte à imunidade.
-                                    Esta associação não deve ser interpretada
-                                    como garantia de efeito clínico.
-
-                                </p>
-
-                            </article>
+                                ${detailCard(
+                                    "IMUNIDADE",
+                                    "Defesa do organismo",
+                                    `
+                                    O material fornecido associa
+                                    o produto a uma proposta de
+                                    suporte à imunidade.
+                                    `
+                                )}
 
 
-                            <article
-                                class="alphameta-detail-card
-                                       alphameta-detail-card-wide">
-
-                                <span class="label">
-                                    Saúde
-                                </span>
-
-
-                                <h3>
-                                    Sem promessas médicas
-                                </h3>
-
-
-                                <p class="text mt-2">
-
+                                ${detailCard(
+                                    "SAÚDE",
+                                    "Sem promessas médicas",
+                                    `
                                     Afirmações relativas a doenças,
                                     gravidez, bebés, tratamentos,
-                                    cura ou prevenção devem ser avaliadas
-                                    através da documentação oficial
-                                    e de profissionais de saúde.
+                                    cura ou prevenção não são tratadas
+                                    nesta página como garantias clínicas.
+                                    `
+                                )}
 
-                                </p>
 
-                            </article>
+                            </div>
 
 
                         </div>
@@ -787,202 +915,277 @@ return `
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-`;
+    `;
 
 }
 
 
-function check(text){
+function benefitCheck(text){
 
-return `
+    return `
 
-<div class="icon-item">
+    <div class="alphameta-benefit-check">
 
+        <span>
+            ✓
+        </span>
 
-    <div class="icon-circle">
-        ✓
+        <p>
+            ${text}
+        </p>
+
     </div>
 
-
-    <div>
-        ${text}
-    </div>
-
-
-</div>
-
-`;
+    `;
 
 }
 
 
 /* ==========================================================
-   INGREDIENTS
+   PRODUCT DETAIL
    ========================================================== */
 
-function ingredients(){
+function productDetail(){
 
-return `
+    return `
 
-<section class="section alphameta-ingredients">
+    <section
+        class="section alphameta-product-section">
 
-    <div class="container">
-
-
-        <div class="section-center reveal">
+        <div class="container">
 
 
-            <span class="label">
-                Conceito Nutricional
-            </span>
+            <div class="alphameta-product-detail-grid">
 
 
-            <h2 class="section-title">
-
-                A essência do AlphaMeta
-
-            </h2>
+                <div class="alphameta-product-detail-frame reveal-left">
 
 
-            <p class="lead">
+                    <div class="alphameta-detail-aura"></div>
 
-                Uma identidade construída em torno
-                do cereal, da tecnologia nutricional
-                e de uma visão moderna de bem-estar.
+                    <div class="alphameta-detail-ring"></div>
 
-            </p>
+                    <div class="alphameta-detail-decoration"></div>
+
+
+                    <img
+                        src="${PRODUCT_IMAGE}"
+                        alt="AlphaMeta"
+                        class="alphameta-product-detail-image"
+                        loading="lazy"
+                    >
+
+
+                    <div class="alphameta-detail-caption">
+
+                        ORGANIC ORYZA
+                        ·
+                        CEREAL DRINK
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="alphameta-product-detail-copy reveal-right">
+
+
+                    <span class="label">
+                        O PRODUTO
+                    </span>
+
+
+                    <h2 class="section-title">
+
+                        AlphaMeta
+                        <span>Organic Oryza.</span>
+
+                    </h2>
+
+
+                    <p class="lead">
+
+                        A própria apresentação comercial
+                        identifica o produto como Organic Oryza
+                        Cereal Drink, colocando o cereal e o arroz
+                        integral orgânico no centro da sua identidade.
+
+                    </p>
+
+
+                    <div class="alphameta-spec-grid">
+
+
+                        ${productSpec(
+                            "Formato",
+                            "Bebida em pó"
+                        )}
+
+
+                        ${productSpec(
+                            "Ingrediente destacado",
+                            "Arroz integral orgânico"
+                        )}
+
+
+                        ${productSpec(
+                            "Quantidade",
+                            "25 saquetas"
+                        )}
+
+
+                        ${productSpec(
+                            "Conceito",
+                            "Nutrição celular"
+                        )}
+
+
+                    </div>
+
+
+                    <div class="alphameta-product-highlight">
+
+
+                        <strong>
+                            Organic Oryza Cereal Drink
+                        </strong>
+
+
+                        <p>
+
+                            Uma apresentação centrada
+                            no cereal, na nutrição e numa
+                            experiência integrada na rotina.
+
+                        </p>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
 
 
         </div>
 
+    </section>
 
-        <div class="bento mt-6">
+    `;
+
+}
 
 
-            <div class="bento-card span-7 reveal">
+function productSpec(
+    label,
+    value
+){
+
+    return `
+
+    <div class="alphameta-product-spec">
+
+        <span>
+            ${label}
+        </span>
+
+        <strong>
+            ${value}
+        </strong>
+
+    </div>
+
+    `;
+
+}
 
 
-                <span class="label">
-                    01
+/* ==========================================================
+   INGREDIENTS / CONCEPT
+   ========================================================== */
+
+function ingredients(){
+
+    return `
+
+    <section
+        class="section alphameta-ingredients">
+
+        <div class="container">
+
+
+            <div class="alphameta-section-heading reveal">
+
+
+                <span class="eyebrow">
+                    CONCEITO NUTRICIONAL
                 </span>
 
 
-                <h3>
-                    Organic Oryza
-                </h3>
+                <h2>
+
+                    A essência do
+                    <span>AlphaMeta.</span>
+
+                </h2>
 
 
-                <p class="text mt-2">
+                <p>
 
-                    O arroz integral orgânico é um dos
-                    principais elementos destacados
-                    na apresentação do AlphaMeta.
+                    Uma identidade construída em torno
+                    do cereal, da tecnologia e de uma visão
+                    moderna de nutrição e bem-estar.
 
                 </p>
-
-
-                <div class="alphameta-bento-symbol">
-                    O
-                </div>
 
 
             </div>
 
 
-            <div class="bento-card span-5 reveal delay-1">
+            <div class="alphameta-concept-grid">
 
 
-                <span class="label">
-                    02
-                </span>
+                ${conceptCard(
+                    "01",
+                    "O",
+                    "Organic Oryza",
+                    "O arroz integral orgânico é um dos elementos centrais destacados na apresentação."
+                )}
 
 
-                <h3>
-                    Nutrição Celular
-                </h3>
+                ${conceptCard(
+                    "02",
+                    "N",
+                    "Nutrição Celular",
+                    "Conceito utilizado para enquadrar a proposta nutricional do AlphaMeta."
+                )}
 
 
-                <p class="text mt-2">
-
-                    O conceito central utilizado
-                    na identidade e apresentação do produto.
-
-                </p>
-
-
-                <div class="alphameta-bento-symbol">
-                    N
-                </div>
+                ${conceptCard(
+                    "03",
+                    "T",
+                    "Tecnologia",
+                    "A apresentação associa o produto a uma abordagem tecnológica de processamento."
+                )}
 
 
-            </div>
-
-
-            <div class="bento-card span-5 reveal delay-2">
-
-
-                <span class="label">
-                    03
-                </span>
-
-
-                <h3>
-                    Tecnologia
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    O material fornecido destaca
-                    a utilização de nanotecnologia
-                    na proposta do produto.
-
-                </p>
-
-
-                <div class="alphameta-bento-symbol">
-                    T
-                </div>
+                ${conceptCard(
+                    "04",
+                    "A",
+                    "Naturalidade",
+                    "Cereal, origem vegetal e nutrição fazem parte da identidade comunicada."
+                )}
 
 
             </div>
 
 
-            <div class="bento-card span-7 reveal delay-3">
-
-
-                <span class="label">
-                    04
-                </span>
-
-
-                <h3>
-                    Naturalidade
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    Cereal, natureza e nutrição
-                    formam parte importante da
-                    identidade visual do AlphaMeta.
-
-                </p>
-
-
-                <div class="alphameta-bento-symbol">
-                    A
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-12 reveal delay-4">
+            <div class="alphameta-concept-wide reveal">
 
 
                 <span class="label">
@@ -995,13 +1198,11 @@ return `
                 </h3>
 
 
-                <p class="text mt-2">
+                <p>
 
-                    A própria embalagem apresenta
-                    o AlphaMeta como Organic Oryza
-                    Cereal Drink, reforçando a sua
-                    identidade de bebida nutricional
-                    à base de cereal.
+                    A designação presente na embalagem reforça
+                    a identidade do AlphaMeta enquanto bebida
+                    nutricional à base de cereal.
 
                 </p>
 
@@ -1011,11 +1212,48 @@ return `
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    `;
 
-`;
+}
+
+
+function conceptCard(
+    number,
+    symbol,
+    title,
+    text
+){
+
+    return `
+
+    <article class="alphameta-concept-card reveal">
+
+
+        <span class="alphameta-concept-number">
+            ${number}
+        </span>
+
+
+        <div class="alphameta-concept-symbol">
+            ${symbol}
+        </div>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+    </article>
+
+    `;
 
 }
 
@@ -1026,138 +1264,141 @@ return `
 
 function routine(){
 
-return `
+    return `
 
-<section class="section-sm alphameta-routine">
+    <section
+        class="section alphameta-routine">
 
-    <div class="container-sm">
-
-
-        <div class="section-center reveal">
+        <div class="container-sm">
 
 
-            <span class="label">
-                Consumo Recomendado
-            </span>
+            <div class="alphameta-section-heading reveal">
 
 
-            <h2 class="section-title">
-
-                Uma rotina simples
-                e consistente
-
-            </h2>
+                <span class="eyebrow">
+                    UTILIZAÇÃO
+                </span>
 
 
-            <p class="lead">
+                <h2>
 
-                O material de apresentação do produto
-                indica uma utilização estruturada,
-                devendo sempre ser confirmada a orientação
-                presente na embalagem oficial.
+                    Uma rotina simples
+                    e <span>consistente.</span>
 
-            </p>
+                </h2>
+
+
+                <p>
+
+                    As indicações abaixo reproduzem
+                    o material de apresentação fornecido
+                    para o produto. A embalagem oficial
+                    deve prevalecer.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="alphameta-routine-list">
+
+
+                ${routineStep(
+                    "01",
+                    "Preparação",
+                    "Verter 1 saqueta em 300 ml a 1 litro de água, conforme a indicação apresentada."
+                )}
+
+
+                ${routineStep(
+                    "02",
+                    "Rotina intensiva",
+                    "O material fornecido indica 3 utilizações por dia antes das refeições durante pelo menos 3 meses."
+                )}
+
+
+                ${routineStep(
+                    "03",
+                    "Manutenção",
+                    "A apresentação indica 1 a 2 utilizações por dia para manutenção."
+                )}
+
+
+                ${routineStep(
+                    "04",
+                    "Confirmação",
+                    "Consultar sempre as instruções, composição e recomendações presentes na embalagem oficial."
+                )}
+
+
+            </div>
+
+
+            <div class="alphameta-routine-note reveal">
+
+
+                <span class="label">
+                    INFORMAÇÃO IMPORTANTE
+                </span>
+
+
+                <p>
+
+                    No caso de crianças, gravidez,
+                    amamentação, doenças ou utilização
+                    de medicamentos, a utilização deve
+                    ser previamente avaliada por um
+                    profissional de saúde.
+
+                </p>
+
+
+            </div>
 
 
         </div>
 
+    </section>
 
-        <div class="timeline mt-6">
-
-
-            ${step(
-                "1",
-                "Preparação",
-                "Verter 1 saqueta em 300 ml a 1 litro de água, conforme as indicações apresentadas."
-            )}
-
-
-            ${step(
-                "2",
-                "Rotina intensiva",
-                "O material fornecido indica 3 utilizações por dia antes das refeições durante pelo menos 3 meses."
-            )}
-
-
-            ${step(
-                "3",
-                "Manutenção",
-                "A apresentação indica 1 a 2 utilizações por dia para manutenção."
-            )}
-
-
-            ${step(
-                "4",
-                "Orientação",
-                "Confirme sempre as instruções, composição e recomendações da embalagem oficial do produto."
-            )}
-
-
-        </div>
-
-
-        <div class="alphameta-routine-note mt-5">
-
-
-            <span class="label">
-                Informação importante
-            </span>
-
-
-            <p class="text mt-2">
-
-                As instruções acima reproduzem o material
-                promocional fornecido. Antes da utilização,
-                deve ser consultada a embalagem oficial,
-                especialmente no caso de crianças, gravidez,
-                amamentação, doenças ou utilização de medicamentos.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
 
-function step(number, title, text){
+function routineStep(
+    number,
+    title,
+    text
+){
 
-return `
+    return `
 
-<div class="timeline-item reveal">
-
-
-    <div class="timeline-dot">
-        ${number}
-    </div>
-
-
-    <div class="timeline-content">
+    <article class="alphameta-routine-step reveal">
 
 
-        <h3>
-            ${title}
-        </h3>
+        <div class="alphameta-routine-number">
+            ${number}
+        </div>
 
 
-        <p class="text mt-1">
-            ${text}
-        </p>
+        <div>
+
+            <h3>
+                ${title}
+            </h3>
 
 
-    </div>
+            <p>
+                ${text}
+            </p>
+
+        </div>
 
 
-</div>
+    </article>
 
-`;
+    `;
 
 }
 
@@ -1168,257 +1409,83 @@ return `
 
 function certifications(){
 
-return `
+    return `
 
-<section class="section alphameta-certifications">
+    <section
+        class="section alphameta-certifications">
 
-    <div class="container">
+        <div class="container">
 
 
-        <div class="section-center reveal">
+            <div class="alphameta-section-heading reveal">
 
 
-            <span class="label">
-                Certificações
-            </span>
-
-
-            <h2 class="section-title">
-
-                Apresentação e certificações
-
-            </h2>
-
-
-            <p class="lead">
-
-                O material disponibilizado inclui referências
-                visuais a certificações da União Europeia
-                e certificação Halal.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="alphameta-certification-grid mt-6">
-
-
-            ${certificate(
-                "CERTIFICATE",
-                "Certificação",
-                "Documento apresentado no material fornecido."
-            )}
-
-
-            ${certificate(
-                "ANNEX",
-                "Anexo",
-                "Documento complementar apresentado no material."
-            )}
-
-
-            ${certificate(
-                "HALAL",
-                "Certificação Halal",
-                "A apresentação inclui referência a certificação Halal."
-            )}
-
-
-        </div>
-
-
-        <div class="alphameta-certification-note mt-5">
-
-
-            <span class="label">
-                Nota
-            </span>
-
-
-            <p class="text mt-2">
-
-                A existência, validade, entidade certificadora,
-                âmbito e datas de qualquer certificação devem ser
-                confirmados directamente na documentação oficial
-                correspondente.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
-}
-
-
-function certificate(code, title, text){
-
-return `
-
-<article class="alphameta-certificate reveal">
-
-
-    <div class="alphameta-certificate-mark">
-        ${code}
-    </div>
-
-
-    <div class="alphameta-certificate-content">
-
-
-        <span class="label">
-            ${title}
-        </span>
-
-
-        <p class="text mt-2">
-            ${text}
-        </p>
-
-
-    </div>
-
-
-</article>
-
-`;
-
-}
-
-
-/* ==========================================================
-   PERFORMANCE
-   ========================================================== */
-
-function performance(){
-
-return `
-
-<section class="section alphameta-performance">
-
-    <div class="container">
-
-
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Filosofia AlphaMeta
-            </span>
-
-
-            <h2 class="section-title">
-
-                Nutrição.
-                Tecnologia.
-                Consistência.
-
-            </h2>
-
-
-            <p class="lead">
-
-                O conceito AlphaMeta combina uma
-                identidade nutricional baseada em cereal
-                com uma apresentação tecnológica e premium.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="bento mt-6">
-
-
-            <div class="bento-card span-4 reveal">
-
-
-                <div class="metric">
-
-                    <div class="metric-number">
-                        N
-                    </div>
-
-
-                    <div class="metric-label">
-                        Nutrição
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-4 reveal delay-1">
-
-
-                <div class="metric">
-
-                    <div class="metric-number">
-                        T
-                    </div>
-
-
-                    <div class="metric-label">
-                        Tecnologia
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-4 reveal delay-2">
-
-
-                <div class="metric">
-
-                    <div class="metric-number">
-                        E
-                    </div>
-
-
-                    <div class="metric-label">
-                        Equilíbrio
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-12 reveal delay-3">
-
-
-                <span class="label">
-                    AD Lifestyle
+                <span class="eyebrow">
+                    DOCUMENTAÇÃO
                 </span>
 
 
-                <h3>
-                    A filosofia AlphaMeta
-                </h3>
+                <h2>
+
+                    Apresentação e
+                    <span>certificações.</span>
+
+                </h2>
 
 
-                <p class="text mt-2">
+                <p>
 
-                    Mais do que uma bebida nutricional,
-                    o conceito AlphaMeta é apresentado
-                    dentro de uma filosofia de hábitos,
-                    equilíbrio, consistência, disciplina
-                    e qualidade de vida.
+                    O material disponibilizado apresenta
+                    referências visuais a certificações
+                    europeias e Halal.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="alphameta-certification-grid">
+
+
+                ${certificateCard(
+                    "CERT",
+                    "Certificação",
+                    "Documento apresentado no material fornecido."
+                )}
+
+
+                ${certificateCard(
+                    "ANNEX",
+                    "Anexo",
+                    "Documento complementar apresentado no material."
+                )}
+
+
+                ${certificateCard(
+                    "HALAL",
+                    "Certificação Halal",
+                    "A apresentação inclui referência a certificação Halal."
+                )}
+
+
+            </div>
+
+
+            <div class="alphameta-certification-note reveal">
+
+
+                <span class="label">
+                    NOTA
+                </span>
+
+
+                <p>
+
+                    A validade, entidade certificadora,
+                    âmbito, datas e correspondência de
+                    qualquer certificação devem ser
+                    confirmados através da documentação oficial.
 
                 </p>
 
@@ -1428,11 +1495,185 @@ return `
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    `;
 
-`;
+}
+
+
+function certificateCard(
+    code,
+    title,
+    text
+){
+
+    return `
+
+    <article class="alphameta-certificate reveal">
+
+
+        <div class="alphameta-certificate-mark">
+            ${code}
+        </div>
+
+
+        <div>
+
+            <span class="label">
+                ${title}
+            </span>
+
+
+            <p>
+                ${text}
+            </p>
+
+        </div>
+
+
+    </article>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   PERFORMANCE / PHILOSOPHY
+   ========================================================== */
+
+function performance(){
+
+    return `
+
+    <section
+        class="section alphameta-performance">
+
+        <div class="container">
+
+
+            <div class="alphameta-section-heading reveal">
+
+
+                <span class="eyebrow">
+                    FILOSOFIA ALPHAMETA
+                </span>
+
+
+                <h2>
+
+                    Nutrição.
+                    Tecnologia.
+                    <span>Consistência.</span>
+
+                </h2>
+
+
+                <p>
+
+                    O conceito AlphaMeta combina uma
+                    identidade nutricional baseada em
+                    cereal com uma apresentação tecnológica
+                    e uma filosofia de rotina.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="alphameta-performance-grid">
+
+
+                ${performanceCard(
+                    "N",
+                    "Nutrição",
+                    "O cereal e a proposta nutricional estão no centro da apresentação."
+                )}
+
+
+                ${performanceCard(
+                    "T",
+                    "Tecnologia",
+                    "A comunicação do produto inclui referências a processamento tecnológico."
+                )}
+
+
+                ${performanceCard(
+                    "E",
+                    "Equilíbrio",
+                    "A identidade do produto é apresentada associada a uma rotina de consistência e bem-estar."
+                )}
+
+
+            </div>
+
+
+            <div class="alphameta-performance-feature reveal">
+
+
+                <span class="label">
+                    AD LIFESTYLE
+                </span>
+
+
+                <h3>
+                    Uma filosofia de hábitos.
+                </h3>
+
+
+                <p>
+
+                    O AlphaMeta é apresentado dentro de
+                    uma abordagem que valoriza rotina,
+                    consistência, equilíbrio e escolhas
+                    conscientes.
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    `;
+
+}
+
+
+function performanceCard(
+    letter,
+    title,
+    text
+){
+
+    return `
+
+    <article class="alphameta-performance-card reveal">
+
+
+        <div class="alphameta-performance-letter">
+            ${letter}
+        </div>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+    </article>
+
+    `;
 
 }
 
@@ -1443,142 +1684,253 @@ return `
 
 function faq(){
 
-return `
+    const questions = [
 
-<section class="section-sm alphameta-faq">
+        [
+            "O que é o AlphaMeta?",
+            "O AlphaMeta é apresentado como Organic Oryza Cereal Drink, integrado na proposta de nutrição e bem-estar da AD Lifestyle."
+        ],
 
-    <div class="container-sm">
+        [
+            "Qual é o principal ingrediente destacado?",
+            "O material fornecido destaca o arroz integral orgânico como um dos principais elementos da apresentação do produto."
+        ],
+
+        [
+            "Quantas saquetas contém uma caixa?",
+            "Segundo a informação fornecida, uma caixa contém 25 saquetas."
+        ],
+
+        [
+            "Como é apresentada a utilização?",
+            "O material fornecido indica 1 saqueta em 300 ml a 1 litro de água, 3 vezes por dia antes das refeições durante pelo menos 3 meses, e 1 a 2 vezes por dia para manutenção. A indicação presente na embalagem oficial deve prevalecer."
+        ],
+
+        [
+            "O AlphaMeta substitui uma alimentação equilibrada?",
+            "Não. O produto não deve ser apresentado como substituto de uma alimentação variada e equilibrada."
+        ],
+
+        [
+            "O AlphaMeta é um medicamento?",
+            "Nesta página, o AlphaMeta é apresentado como produto nutricional. Não deve ser apresentado como medicamento ou como tratamento de doenças."
+        ],
+
+        [
+            "O AlphaMeta pode curar doenças?",
+            "Algumas apresentações promocionais fazem afirmações relativas a várias condições de saúde. Essas afirmações não são apresentadas nesta página como garantias clínicas ou tratamentos comprovados."
+        ],
+
+        [
+            "Pode ser utilizado por gestantes, crianças ou bebés?",
+            "Essa indicação aparece no material promocional fornecido, mas não deve ser entendida como recomendação universal. Gravidez, amamentação e utilização por crianças devem ser avaliadas com orientação de um profissional de saúde."
+        ],
+
+        [
+            "O que significam as referências a certificações?",
+            "O material disponibilizado apresenta referências visuais a certificações europeias e Halal. A validade, âmbito e entidade certificadora devem ser confirmados na documentação oficial."
+        ],
+
+        [
+            "Onde posso obter mais informações?",
+            "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre o produto, disponibilidade e aquisição."
+        ]
+
+    ];
 
 
-        <div class="section-center reveal">
+    return `
+
+    <section
+        id="alphameta-faq"
+        class="section alphameta-faq">
+
+        <div class="container-sm">
 
 
-            <span class="label">
-                Perguntas Frequentes
-            </span>
+            <div class="alphameta-section-heading reveal">
 
 
-            <h2 class="section-title">
-                Tudo sobre o AlphaMeta
-            </h2>
+                <span class="eyebrow">
+                    PERGUNTAS FREQUENTES
+                </span>
+
+
+                <h2>
+
+                    Tudo sobre o
+                    <span>AlphaMeta.</span>
+
+                </h2>
+
+
+                <p>
+
+                    Respostas claras sobre apresentação,
+                    utilização, composição e informações
+                    importantes do produto.
+
+                </p>
+
+
+            </div>
+
+
+            <div class="alphameta-faq-list">
+
+
+                ${questions
+                    .map(
+                        (item,index) =>
+                            faqItem(
+                                String(index + 1).padStart(2,"0"),
+                                item[0],
+                                item[1]
+                            )
+                    )
+                    .join("")
+                }
+
+
+            </div>
 
 
         </div>
 
+    </section>
 
-        <div class="faq mt-5">
-
-
-            ${question(
-                "O que é o AlphaMeta?",
-                "O AlphaMeta é apresentado como Organic Oryza Cereal Drink, integrado na proposta de nutrição celular e bem-estar da AD Lifestyle."
-            )}
-
-
-            ${question(
-                "Qual é o principal ingrediente destacado?",
-                "O material fornecido destaca o arroz integral orgânico como uma das principais bases da apresentação do produto."
-            )}
-
-
-            ${question(
-                "Quantas saquetas contém uma caixa?",
-                "Segundo a informação fornecida, uma caixa contém 25 pacotinhos ou saquetas."
-            )}
-
-
-            ${question(
-                "Como é apresentado o consumo recomendado?",
-                "O material fornecido indica 1 saqueta em 300 ml a 1 litro de água, 3 vezes por dia antes das refeições durante pelo menos 3 meses, e 1 a 2 vezes por dia para manutenção. A indicação da embalagem oficial deve prevalecer."
-            )}
-
-
-            ${question(
-                "O AlphaMeta substitui uma alimentação equilibrada?",
-                "Não. O produto não deve ser apresentado como substituto de uma alimentação variada e equilibrada."
-            )}
-
-
-            ${question(
-                "O AlphaMeta é um medicamento?",
-                "Nesta página o AlphaMeta é apresentado como produto nutricional e de bem-estar. Não deve ser apresentado como medicamento nem como tratamento de doenças."
-            )}
-
-
-            ${question(
-                "O AlphaMeta pode curar doenças?",
-                "Algumas apresentações promocionais fazem afirmações sobre diabetes, hipertensão, cancro, miomas e outras condições. Essas afirmações não são apresentadas nesta página como garantias clínicas ou tratamentos comprovados."
-            )}
-
-
-            ${question(
-                "Pode ser utilizado por gestantes ou bebés?",
-                "Essa indicação aparece no material promocional fornecido, mas não deve ser tratada como recomendação universal. Gravidez, amamentação e utilização por crianças exigem orientação de um profissional de saúde."
-            )}
-
-
-            ${question(
-                "O que significam as referências a certificações?",
-                "As capturas fornecidas apresentam referências visuais a certificações da União Europeia e Halal. A validade, âmbito e entidade certificadora devem ser confirmados na documentação oficial."
-            )}
-
-
-            ${question(
-                "Onde posso obter mais informações?",
-                "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade, apresentação e aquisição."
-            )}
-
-
-        </div>
-
-    </div>
-
-</section>
-
-`;
+    `;
 
 }
 
 
-function question(questionText, answerText){
+function faqItem(
+    number,
+    questionText,
+    answerText
+){
 
-return `
+    const answerId =
+        `alphameta-faq-answer-${number}`;
 
-<div class="faq-item">
+    return `
 
-
-    <button
-        class="faq-question"
-        type="button"
-        aria-expanded="false">
-
-        <span>
-            ${questionText}
-        </span>
+    <article class="alphameta-faq-item">
 
 
-        <span>
-            +
-        </span>
+        <button
+            type="button"
+            class="alphameta-faq-question"
+            aria-expanded="false"
+            aria-controls="${answerId}">
 
 
-    </button>
+            <span class="alphameta-faq-number">
+                ${number}
+            </span>
 
 
-    <div class="faq-answer">
+            <span class="alphameta-faq-text">
+                ${questionText}
+            </span>
 
 
-        <p>
-            ${answerText}
-        </p>
+            <span
+                class="alphameta-faq-plus"
+                aria-hidden="true">
+
+                +
+
+            </span>
 
 
-    </div>
+        </button>
 
 
-</div>
+        <div
+            id="${answerId}"
+            class="alphameta-faq-answer"
+            role="region"
+            aria-hidden="true">
 
-`;
+
+            <p>
+                ${answerText}
+            </p>
+
+
+        </div>
+
+
+    </article>
+
+    `;
+
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+function information(){
+
+    return `
+
+    <section
+        class="section alphameta-information-section">
+
+        <div class="container">
+
+
+            <div class="alphameta-information-box reveal">
+
+
+                <div class="alphameta-information-icon">
+                    i
+                </div>
+
+
+                <div>
+
+
+                    <span class="label">
+                        COMUNICAÇÃO RESPONSÁVEL
+                    </span>
+
+
+                    <h2>
+
+                        O que está apresentado
+                        e o que requer confirmação.
+
+                    </h2>
+
+
+                    <p>
+
+                        As informações desta página foram
+                        organizadas a partir do material fornecido
+                        para o AlphaMeta. Alegações terapêuticas,
+                        científicas ou sanitárias devem ser
+                        confirmadas através de documentação oficial
+                        antes de serem utilizadas como garantias
+                        ou promessas de resultado.
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    `;
 
 }
 
@@ -1589,61 +1941,59 @@ return `
 
 function cta(){
 
-return `
+    return `
 
-<section class="section alphameta-cta">
+    <section
+        class="section alphameta-cta">
 
-    <div class="container">
-
-
-        <div class="showcase">
+        <div class="container">
 
 
-            <div class="showcase-content section-center">
+            <div class="alphameta-cta-box reveal">
 
 
-                <span class="badge">
-                    AlphaMeta
+                <span class="alphameta-label-light">
+                    ALPHAMETA
                 </span>
 
 
-                <h2 class="section-title mt-3">
+                <h2>
 
                     Faça da nutrição
-                    parte da sua rotina
+                    parte da sua <span>rotina.</span>
 
                 </h2>
 
 
-                <p class="lead">
+                <p>
 
-                    Descubra uma proposta nutricional
-                    premium inspirada no arroz integral
-                    orgânico e na filosofia de bem-estar
-                    da AD Lifestyle.
+                    Conheça uma proposta nutricional
+                    apresentada a partir do arroz integral
+                    orgânico, do conceito Organic Oryza
+                    e da filosofia de bem-estar AD Lifestyle.
 
                 </p>
 
 
-                <div class="hero-actions center mt-4">
+                <div class="alphameta-cta-actions">
 
 
                     <button
+                        type="button"
                         class="btn btn-primary"
-                        id="alphaMetaWhats"
-                        type="button">
+                        id="alphaMetaWhats">
 
-                        Falar no WhatsApp
+                        Pedir pelo WhatsApp
 
                     </button>
 
 
                     <button
+                        type="button"
                         class="btn btn-glass"
-                        id="backHome"
-                        type="button">
+                        id="backHome">
 
-                        Voltar ao Início
+                        Voltar à AD Lifestyle
 
                     </button>
 
@@ -1651,54 +2001,14 @@ return `
                 </div>
 
 
-                <p class="alphameta-cta-disclaimer mt-4">
-
-                    Informação apresentada para fins informativos.
-                    Não constitui aconselhamento médico,
-                    diagnóstico, tratamento ou garantia de resultados.
-
-                </p>
-
-
             </div>
 
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
-}
-
-
-/* ==========================================================
-   DETAIL ITEM
-   ========================================================== */
-
-function detailItem(text){
-
-return `
-
-<div class="alphameta-detail-item">
-
-
-    <span class="icon-circle">
-        ✓
-    </span>
-
-
-    <span>
-        ${text}
-    </span>
-
-
-</div>
-
-`;
+    `;
 
 }
 
@@ -1709,223 +2019,512 @@ return `
 
 function initialiseAlphaMeta(){
 
+    const root =
+        document.querySelector(
+            ".page-alphameta"
+        );
+
+
+    if(!root){
+        return;
+    }
+
+
+    /* ------------------------------------------------------
+       RIPPLE
+       ------------------------------------------------------ */
 
     try{
 
-        stagger(".alphameta-ingredient-card");
-
-        stagger(".alphameta-detail-card");
-
-        stagger(".alphameta-certificate");
+        ripple(root);
 
     }catch(error){
 
         console.warn(
-            "AlphaMeta animations:",
+            "AlphaMeta: ripple não inicializado.",
             error
         );
 
     }
 
 
+    /* ------------------------------------------------------
+       STAGGER
+       ------------------------------------------------------ */
+
     try{
 
-        document
-            .querySelectorAll(".page-alphameta .btn")
-            .forEach(button => {
-
-                ripple(button);
-
-            });
+        stagger(
+            root.querySelectorAll(
+                `
+                .alphameta-overview-grid .reveal,
+                .alphameta-composition-grid .reveal,
+                .alphameta-benefits-grid .reveal,
+                .alphameta-concept-grid .reveal,
+                .alphameta-routine-list .reveal,
+                .alphameta-certification-grid .reveal,
+                .alphameta-performance-grid .reveal
+                `
+            )
+        );
 
     }catch(error){
 
         console.warn(
-            "AlphaMeta ripple:",
+            "AlphaMeta: stagger não inicializado.",
             error
         );
 
     }
 
 
-    /*
-     * Composition
-     */
+    /* ------------------------------------------------------
+       SCROLL
+       ------------------------------------------------------ */
 
-    document
-        .getElementById("alphaMetaComposition")
-        ?.addEventListener(
-            "click",
-            () => {
+    root.addEventListener(
+        "click",
+        function(event){
 
-                document
-                    .getElementById("alphameta-composition")
-                    ?.scrollIntoView({
+            const trigger =
+                event.target.closest(
+                    "[data-scroll]"
+                );
 
-                        behavior:"smooth",
-                        block:"start"
 
-                    });
+            if(!trigger){
+                return;
+            }
+
+
+            const selector =
+                trigger.getAttribute(
+                    "data-scroll"
+                );
+
+
+            if(!selector){
+                return;
+            }
+
+
+            const target =
+                root.querySelector(
+                    selector
+                );
+
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
 
             }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       MORE / DETAILS
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "[data-more-toggle]"
+                );
+
+
+            if(!button){
+                return;
+            }
+
+
+            const key =
+                button.getAttribute(
+                    "data-more-toggle"
+                );
+
+
+            const panel =
+                root.querySelector(
+                    `[data-more-panel="${key}"]`
+                );
+
+
+            if(!panel){
+                return;
+            }
+
+
+            const isOpen =
+                button.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+
+            button.setAttribute(
+                "aria-expanded",
+                String(!isOpen)
+            );
+
+
+            button.classList.toggle(
+                "active",
+                !isOpen
+            );
+
+
+            panel.classList.toggle(
+                "active",
+                !isOpen
+            );
+
+
+            panel.setAttribute(
+                "aria-hidden",
+                String(isOpen)
+            );
+
+
+            if(!isOpen){
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+            }else{
+
+                panel.style.maxHeight =
+                    "0px";
+
+            }
+
+
+            const label =
+                button.querySelector(
+                    "span"
+                );
+
+
+            if(label){
+
+                label.textContent =
+                    !isOpen
+                        ? closeMoreLabel(key)
+                        : openMoreLabel(key);
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       FAQ
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    ".alphameta-faq-question"
+                );
+
+
+            if(!button){
+                return;
+            }
+
+
+            const item =
+                button.closest(
+                    ".alphameta-faq-item"
+                );
+
+
+            if(!item){
+                return;
+            }
+
+
+            const answer =
+                item.querySelector(
+                    ".alphameta-faq-answer"
+                );
+
+
+            if(!answer){
+                return;
+            }
+
+
+            const isOpen =
+                item.classList.contains(
+                    "active"
+                );
+
+
+            root
+                .querySelectorAll(
+                    ".alphameta-faq-item.active"
+                )
+                .forEach(
+                    otherItem => {
+
+                        if(
+                            otherItem !== item
+                        ){
+
+                            closeFaqItem(
+                                otherItem
+                            );
+
+                        }
+
+                    }
+                );
+
+
+            if(isOpen){
+
+                closeFaqItem(item);
+
+            }else{
+
+                openFaqItem(
+                    item,
+                    button,
+                    answer
+                );
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       RESIZE FAQ / DETAILS
+       ------------------------------------------------------ */
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            root
+                .querySelectorAll(
+                    `
+                    .alphameta-faq-item.active
+                    .alphameta-faq-answer
+                    `
+                )
+                .forEach(
+                    answer => {
+
+                        answer.style.maxHeight =
+                            `${answer.scrollHeight}px`;
+
+                    }
+                );
+
+
+            root
+                .querySelectorAll(
+                    `
+                    .alphameta-more-panel.active
+                    `
+                )
+                .forEach(
+                    panel => {
+
+                        panel.style.maxHeight =
+                            `${panel.scrollHeight}px`;
+
+                    }
+                );
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       BUY
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "#buyAlphaMeta, #alphaMetaWhats"
+                );
+
+
+            if(!button){
+                return;
+            }
+
+
+            openWhatsApp();
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       HOME
+       ------------------------------------------------------ */
+
+    const backHome =
+        root.querySelector(
+            "#backHome"
         );
 
 
-    /*
-     * Expandable information
-     */
+    if(backHome){
 
-    document
-        .querySelectorAll(
-            ".page-alphameta .alphameta-details-toggle"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const container =
-                        button.closest(
-                            ".alphameta-information"
-                        );
-
-
-                    if(!container) return;
-
-
-                    const isOpen =
-                        container.classList.contains(
-                            "active"
-                        );
-
-
-                    container.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * FAQ
-     */
-
-    document
-        .querySelectorAll(
-            ".page-alphameta .faq-question"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const item =
-                        button.closest(".faq-item");
-
-
-                    if(!item) return;
-
-
-                    const isOpen =
-                        item.classList.contains(
-                            "active"
-                        );
-
-
-                    document
-                        .querySelectorAll(
-                            ".page-alphameta .faq-item"
-                        )
-                        .forEach(other => {
-
-                            if(other !== item){
-
-                                other.classList.remove(
-                                    "active"
-                                );
-
-
-                                other
-                                    .querySelector(
-                                        ".faq-question"
-                                    )
-                                    ?.setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                            }
-
-                        });
-
-
-                    item.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * Home
-     */
-
-    document
-        .getElementById("backHome")
-        ?.addEventListener(
+        backHome.addEventListener(
             "click",
-            () => {
+            function(){
 
                 navigate("/");
 
             }
         );
 
+    }
 
-    /*
-     * Buy
-     */
+}
 
-    document
-        .getElementById("buyAlphaMeta")
-        ?.addEventListener(
-            "click",
-            openWhats
+
+/* ==========================================================
+   FAQ HELPERS
+   ========================================================== */
+
+function openFaqItem(
+    item,
+    button,
+    answer
+){
+
+    item.classList.add(
+        "active"
+    );
+
+
+    button.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+
+    answer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    answer.style.maxHeight =
+        `${answer.scrollHeight}px`;
+
+}
+
+
+function closeFaqItem(item){
+
+    const button =
+        item.querySelector(
+            ".alphameta-faq-question"
         );
 
 
-    /*
-     * WhatsApp
-     */
-
-    document
-        .getElementById("alphaMetaWhats")
-        ?.addEventListener(
-            "click",
-            openWhats
+    const answer =
+        item.querySelector(
+            ".alphameta-faq-answer"
         );
+
+
+    item.classList.remove(
+        "active"
+    );
+
+
+    if(button){
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    if(answer){
+
+        answer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        answer.style.maxHeight =
+            "0px";
+
+    }
+
+}
+
+
+/* ==========================================================
+   MORE LABELS
+   ========================================================== */
+
+function openMoreLabel(key){
+
+    const labels = {
+
+        composition:
+            "Ver detalhes da composição",
+
+        benefits:
+            "Ver informações funcionais"
+
+    };
+
+
+    return (
+        labels[key] ||
+        "Ver mais"
+    );
+
+}
+
+
+function closeMoreLabel(key){
+
+    const labels = {
+
+        composition:
+            "Ocultar detalhes da composição",
+
+        benefits:
+            "Ocultar informações funcionais"
+
+    };
+
+
+    return (
+        labels[key] ||
+        "Ocultar"
+    );
 
 }
 
@@ -1934,18 +2533,14 @@ function initialiseAlphaMeta(){
    WHATSAPP
    ========================================================== */
 
-function openWhats(){
-
-    const phone =
-        "244924964666";
-
+function openWhatsApp(){
 
     const message =
         "Olá AD Lifestyle! Tenho interesse no AlphaMeta e gostaria de receber mais informações sobre o produto.";
 
 
     const url =
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
 
     window.open(
