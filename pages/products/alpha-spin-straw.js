@@ -13,7 +13,7 @@ import { ripple, stagger } from "../../js/animations.js";
    ========================================================== */
 
 const WHATSAPP_NUMBER = "244924964666";
-const PRODUCT_IMAGE = "./images/products/straw.png";
+const PRODUCT_IMAGE = "./assets/products/straw.png";
 
 /* ==========================================================
    LOAD
