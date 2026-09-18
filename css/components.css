@@ -58623,3 +58623,3710 @@ body.dark .products-cta-button.secondary {
     }
 
 }
+
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   MINOSEED — PREMIUM PRODUCT PAGE
+   Modelo visual inspirado no iSMART S3
+   ========================================================== */
+
+.page-minoseed{
+
+    --mino-white:#FFFFFF;
+
+    --mino-cream:#FBF8F0;
+    --mino-soft:#F6F2E8;
+    --mino-mist:#F1EBDD;
+
+    --mino-green:#6A8B57;
+    --mino-green-dark:#3F6238;
+    --mino-green-light:#A8C096;
+
+    --mino-gold:#C9A45B;
+    --mino-gold-light:#E2C987;
+    --mino-gold-dark:#967633;
+
+    --mino-brown:#6D543C;
+    --mino-deep:#2F3A2B;
+
+    --mino-text:#4F574A;
+    --mino-muted:#7E8579;
+
+    --mino-line:rgba(83,100,64,.13);
+
+    --mino-shadow:
+        0 24px 78px rgba(67,63,43,.10);
+
+    --mino-shadow-heavy:
+        0 32px 90px rgba(50,43,24,.23);
+
+    --mino-radius:32px;
+    --mino-radius-sm:21px;
+
+
+    color:
+        var(--mino-text);
+
+    background:
+        var(--mino-white);
+
+    font-family:
+        Inter,
+        "Avenir Next",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+    text-rendering:
+        optimizeLegibility;
+}
+
+
+/* ==========================================================
+   RESET LOCAL
+   ========================================================== */
+
+.page-minoseed *{
+    box-sizing:border-box;
+}
+
+.page-minoseed button,
+.page-minoseed input,
+.page-minoseed textarea,
+.page-minoseed select{
+    font:inherit;
+}
+
+.page-minoseed img{
+    display:block;
+    max-width:100%;
+}
+
+.page-minoseed p{
+    margin:0;
+}
+
+
+/* ==========================================================
+   COMMON TYPE
+   ========================================================== */
+
+.page-minoseed .section-title{
+
+    max-width:920px;
+    margin:0;
+
+    color:
+        var(--mino-deep) !important;
+
+    font-size:
+        clamp(
+            2.25rem,
+            4.9vw,
+            4.65rem
+        );
+
+    line-height:1.01;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+}
+
+.page-minoseed .section-title span{
+
+    display:block;
+
+    margin-top:.08em;
+
+    color:
+        var(--mino-green) !important;
+}
+
+.page-minoseed .lead{
+
+    max-width:760px;
+
+    margin-top:22px;
+
+    color:#697064 !important;
+
+    font-size:1.04rem;
+
+    line-height:1.82;
+}
+
+.page-minoseed .section-center{
+
+    max-width:940px;
+
+    margin-inline:auto;
+
+    text-align:center;
+}
+
+.page-minoseed .label,
+.page-minoseed .eyebrow{
+
+    color:
+        var(--mino-green-dark) !important;
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+}
+
+.page-minoseed .eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:17px;
+}
+
+.page-minoseed .eyebrow::before{
+
+    content:"";
+
+    width:28px;
+
+    height:1px;
+
+    background:
+        currentColor;
+
+    opacity:.65;
+}
+
+.page-minoseed .minoseed-section-heading{
+
+    max-width:900px;
+
+    margin:
+        0 auto 42px;
+}
+
+.page-minoseed
+.minoseed-section-heading h2{
+
+    margin:0;
+
+    color:
+        var(--mino-deep);
+
+    font-size:
+        clamp(
+            2.3rem,
+            4.9vw,
+            4.7rem
+        );
+
+    line-height:1.01;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-section-heading h2 span{
+
+    display:block;
+
+    color:
+        var(--mino-green);
+}
+
+.page-minoseed
+.minoseed-section-heading p{
+
+    max-width:760px;
+
+    margin-top:24px;
+
+    color:#70776A;
+
+    font-size:1rem;
+
+    line-height:1.92;
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.page-minoseed .btn{
+
+    width:auto !important;
+
+    min-height:49px;
+
+    padding:
+        0 20px !important;
+
+    border-radius:
+        14px !important;
+
+    font-size:.82rem !important;
+
+    font-weight:850 !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.page-minoseed .btn:hover{
+    transform:translateY(-2px);
+}
+
+.page-minoseed .btn-primary{
+
+    border:
+        1px solid transparent !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--mino-deep),
+            var(--mino-green-dark)
+        ) !important;
+
+    color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 14px 30px
+        rgba(53,78,44,.20);
+}
+
+.page-minoseed .btn-glass{
+
+    border:
+        1px solid
+        rgba(83,100,64,.15) !important;
+
+    background:
+        rgba(255,255,255,.62) !important;
+
+    color:
+        var(--mino-deep) !important;
+}
+
+
+/* ==========================================================
+   MORE
+   ========================================================== */
+
+.page-minoseed .minoseed-more-wrap{
+    margin-top:30px;
+}
+
+.page-minoseed .minoseed-more-toggle{
+
+    display:inline-flex;
+
+    width:max-content !important;
+
+    max-width:100%;
+
+    min-height:40px;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        0 14px !important;
+
+    border:
+        1px solid
+        rgba(83,100,64,.15) !important;
+
+    border-radius:
+        999px !important;
+
+    background:
+        rgba(255,255,255,.72) !important;
+
+    color:
+        var(--mino-green-dark) !important;
+
+    box-shadow:
+        none !important;
+
+    font-size:.70rem !important;
+
+    font-weight:900 !important;
+}
+
+.page-minoseed .minoseed-more-toggle:hover{
+
+    background:
+        #FFFFFF !important;
+}
+
+.page-minoseed .minoseed-more-toggle i{
+
+    font-style:normal;
+
+    font-size:1rem;
+
+    line-height:1;
+
+    transition:
+        transform .25s ease;
+}
+
+.page-minoseed
+.minoseed-more-toggle.active
+i{
+
+    transform:
+        rotate(45deg);
+}
+
+.page-minoseed .minoseed-more-panel{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        max-height .55s cubic-bezier(.22,.61,.36,1),
+        opacity .30s ease,
+        visibility 0s linear .55s;
+}
+
+.page-minoseed
+.minoseed-more-panel.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:
+        max-height .58s cubic-bezier(.22,.61,.36,1),
+        opacity .35s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.page-minoseed .minoseed-hero{
+
+    position:relative;
+
+    min-height:
+        min(860px,92vh);
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+
+        radial-gradient(
+            circle at 18% 18%,
+            rgba(215,205,167,.55),
+            transparent 33%
+        ),
+
+        radial-gradient(
+            circle at 82% 31%,
+            rgba(106,139,87,.10),
+            transparent 26%
+        ),
+
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #FAF7EE 54%,
+            #EDE7D4
+        );
+}
+
+.page-minoseed
+.minoseed-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-2;
+
+    background:
+
+        linear-gradient(
+            rgba(89,105,70,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(89,105,70,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        52px 52px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000,
+            transparent 88%
+        );
+}
+
+.page-minoseed
+.minoseed-hero-atmosphere{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+.page-minoseed .minoseed-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:
+        blur(70px);
+}
+
+.page-minoseed .minoseed-orb-1{
+
+    width:460px;
+    height:460px;
+
+    left:-190px;
+    top:-170px;
+
+    background:
+        rgba(106,139,87,.13);
+
+    animation:
+        minoFloatOne
+        14s
+        ease-in-out
+        infinite;
+}
+
+.page-minoseed .minoseed-orb-2{
+
+    width:390px;
+    height:390px;
+
+    right:-100px;
+    top:10%;
+
+    background:
+        rgba(201,164,91,.11);
+
+    animation:
+        minoFloatTwo
+        17s
+        ease-in-out
+        infinite;
+}
+
+.page-minoseed .minoseed-orbit{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(83,100,64,.10);
+}
+
+.page-minoseed .minoseed-orbit-1{
+
+    width:500px;
+    height:500px;
+
+    right:4%;
+    top:7%;
+
+    transform:
+        rotate(20deg)
+        scaleY(.58);
+
+    animation:
+        minoOrbit
+        28s
+        linear
+        infinite;
+}
+
+.page-minoseed .minoseed-orbit-2{
+
+    width:640px;
+    height:640px;
+
+    right:-5%;
+    top:-7%;
+
+    transform:
+        rotate(-15deg)
+        scaleY(.58);
+
+    border-color:
+        rgba(201,164,91,.11);
+
+    animation:
+        minoOrbit
+        38s
+        linear
+        infinite reverse;
+}
+
+
+/* ==========================================================
+   HERO — CORRECÇÃO DE ENQUADRAMENTO
+   ========================================================== */
+
+.page-minoseed
+.minoseed-hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    width:
+        min(
+            1220px,
+            calc(100% - 96px)
+        );
+
+    margin-inline:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(420px,.88fr);
+
+    gap:72px;
+
+    align-items:center;
+
+    padding:
+        82px 0 72px;
+}
+
+.page-minoseed
+.minoseed-hero-copy{
+
+    width:100%;
+
+    max-width:650px;
+
+    padding-left:16px;
+
+    justify-self:start;
+}
+
+.page-minoseed
+.minoseed-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:18px;
+
+    color:
+        var(--mino-gold-dark);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+}
+
+.page-minoseed
+.minoseed-eyebrow::before{
+
+    content:"";
+
+    width:28px;
+    height:1px;
+
+    background:
+        currentColor;
+
+    opacity:.65;
+}
+
+.page-minoseed
+.minoseed-hero-copy h1{
+
+    max-width:680px;
+
+    margin:0;
+
+    color:
+        var(--mino-deep);
+
+    font-size:
+        clamp(
+            4.4rem,
+            7.2vw,
+            7.3rem
+        );
+
+    line-height:.84;
+
+    letter-spacing:-.075em;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-hero-copy h1 span{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--mino-deep),
+            var(--mino-green) 52%,
+            var(--mino-gold-dark)
+        );
+
+    -webkit-background-clip:text;
+
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
+
+.page-minoseed
+.minoseed-hero-description{
+
+    max-width:590px;
+
+    margin-top:30px;
+
+    color:#66705F;
+
+    font-size:1.06rem;
+
+    line-height:1.86;
+}
+
+.page-minoseed
+.minoseed-hero-pills{
+
+    max-width:600px;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:9px;
+
+    margin-top:26px;
+}
+
+.page-minoseed
+.minoseed-hero-pill{
+
+    min-height:34px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid
+        rgba(83,100,64,.12);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.68);
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.65rem;
+
+    font-weight:850;
+}
+
+.page-minoseed
+.minoseed-hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:13px;
+
+    margin-top:34px;
+}
+
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
+
+.page-minoseed
+.minoseed-hero-product{
+
+    width:100%;
+
+    min-height:590px;
+
+    position:relative;
+
+    display:grid;
+
+    place-items:center;
+
+    justify-self:end;
+
+    transform:
+        translateX(8px);
+}
+
+.page-minoseed
+.minoseed-product-aura{
+
+    position:absolute;
+
+    width:74%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,164,91,.14),
+            rgba(106,139,87,.08) 34%,
+            transparent 71%
+        );
+
+    filter:
+        blur(10px);
+
+    animation:
+        minoPulse
+        5.8s
+        ease-in-out
+        infinite;
+}
+
+.page-minoseed
+.minoseed-product-ring{
+
+    position:absolute;
+
+    width:82%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(106,139,87,.17);
+
+    box-shadow:
+
+        0 0 0 32px
+        rgba(214,204,167,.08),
+
+        0 0 0 66px
+        rgba(201,164,91,.045);
+}
+
+.page-minoseed
+.minoseed-product-grid{
+
+    width:100%;
+
+    min-height:560px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    position:relative;
+
+    z-index:5;
+}
+
+.page-minoseed
+.minoseed-product-grid img{
+
+    position:relative;
+
+    z-index:5;
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:500px;
+    max-height:570px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(52,44,26,.18)
+        ) !important;
+
+    transform:
+        translate3d(
+            8px,
+            0,
+            0
+        );
+
+    backface-visibility:hidden;
+
+    image-rendering:auto;
+}
+
+.page-minoseed
+.minoseed-product-caption{
+
+    position:absolute;
+
+    right:2%;
+
+    bottom:5%;
+
+    z-index:7;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid
+        rgba(83,100,64,.10);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.56);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.page-minoseed
+.minoseed-product-caption strong{
+
+    color:
+        var(--mino-deep);
+
+    font-size:.66rem;
+
+    letter-spacing:.14em;
+}
+
+.page-minoseed
+.minoseed-product-caption span{
+
+    color:
+        var(--mino-green);
+
+    font-size:.54rem;
+
+    font-weight:850;
+
+    letter-spacing:.13em;
+}
+
+
+/* ==========================================================
+   IMAGE FALLBACK
+   ========================================================== */
+
+.page-minoseed
+.minoseed-product-grid.image-error::after,
+.page-minoseed
+.minoseed-product-card-visual.image-error::after,
+.page-minoseed
+.minoseed-benefits-frame.image-error::after{
+
+    content:
+        "Imagem não encontrada — verificar caminho do ficheiro";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:28px;
+
+    transform:
+        translateX(-50%);
+
+    width:max-content;
+
+    max-width:84%;
+
+    padding:
+        8px 11px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.92);
+
+    border:
+        1px solid
+        rgba(83,100,64,.11);
+
+    color:#7B8174;
+
+    font-size:.59rem;
+
+    font-weight:800;
+
+    text-align:center;
+
+    z-index:20;
+}
+
+
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
+.page-minoseed
+.minoseed-overview-section{
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #FBF9F2
+        );
+}
+
+.page-minoseed
+.minoseed-overview-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:14px;
+
+    margin-top:46px;
+}
+
+.page-minoseed
+.minoseed-overview-card{
+
+    min-height:240px;
+
+    padding:24px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:24px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 14px 42px
+        rgba(67,63,43,.055);
+}
+
+.page-minoseed
+.minoseed-card-number{
+
+    display:block;
+
+    color:
+        rgba(83,100,64,.19);
+
+    font-size:.67rem;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+}
+
+.page-minoseed
+.minoseed-card-icon{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:19px;
+
+    border-radius:13px;
+
+    background:
+        #EEF3E9;
+
+    color:
+        var(--mino-green-dark);
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-overview-card h3{
+
+    margin-top:21px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.15rem;
+
+    line-height:1.15;
+
+    letter-spacing:-.02em;
+}
+
+.page-minoseed
+.minoseed-overview-card p{
+
+    margin-top:12px;
+
+    color:#7B8177;
+
+    font-size:.81rem;
+
+    line-height:1.78;
+}
+
+.page-minoseed
+.minoseed-overview-note{
+
+    margin-top:19px;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.78);
+}
+
+.page-minoseed
+.minoseed-overview-note strong{
+
+    color:
+        var(--mino-deep);
+
+    font-size:.83rem;
+}
+
+.page-minoseed
+.minoseed-overview-note p{
+
+    margin-top:4px;
+
+    color:#7A8075;
+
+    font-size:.74rem;
+
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   COMPOSITION
+   ========================================================== */
+
+.page-minoseed
+.minoseed-composition{
+
+    background:#FFFFFF;
+}
+
+.page-minoseed
+.minoseed-composition-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:46px;
+}
+
+.page-minoseed
+.minoseed-composition-card{
+
+    min-height:290px;
+
+    padding:25px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:24px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F5F1E6
+        );
+
+    box-shadow:
+        0 18px 50px
+        rgba(67,63,43,.06);
+}
+
+.page-minoseed
+.minoseed-composition-number{
+
+    color:
+        rgba(83,100,64,.16);
+
+    font-size:.65rem;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+}
+
+.page-minoseed
+.minoseed-composition-symbol{
+
+    width:46px;
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:24px;
+
+    border-radius:15px;
+
+    background:
+        #EEF3E9;
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:1.12rem;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-composition-label{
+
+    display:block;
+
+    margin-top:27px;
+
+    color:
+        var(--mino-gold-dark);
+
+    font-size:.61rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.page-minoseed
+.minoseed-composition-card h3{
+
+    margin-top:7px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.18rem;
+
+    line-height:1.12;
+}
+
+.page-minoseed
+.minoseed-composition-card p{
+
+    margin-top:12px;
+
+    color:#797F74;
+
+    font-size:.80rem;
+
+    line-height:1.78;
+}
+
+
+/* ==========================================================
+   DETAILS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:14px;
+
+    margin-top:16px;
+}
+
+.page-minoseed
+.minoseed-detail-card{
+
+    padding:23px;
+
+    border:
+        1px solid
+        rgba(83,100,64,.11);
+
+    border-radius:21px;
+
+    background:
+        #FAF8F1;
+}
+
+.page-minoseed
+.minoseed-detail-card-wide{
+
+    grid-column:
+        span 3;
+}
+
+.page-minoseed
+.minoseed-detail-card h3{
+
+    margin-top:11px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.12rem;
+}
+
+.page-minoseed
+.minoseed-detail-card p{
+
+    margin-top:8px;
+
+    color:#777D72;
+
+    font-size:.82rem;
+
+    line-height:1.68;
+}
+
+.page-minoseed
+.minoseed-detail-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:15px;
+
+    padding:16px;
+
+    border:
+        1px solid
+        rgba(83,100,64,.09);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.76);
+}
+
+.page-minoseed
+.minoseed-detail-item{
+
+    display:flex;
+
+    gap:9px;
+
+    align-items:flex-start;
+}
+
+.page-minoseed
+.minoseed-check{
+
+    flex:
+        0 0 22px;
+
+    width:22px;
+    height:22px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(106,139,87,.12);
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.62rem;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-detail-item
+> span:last-child{
+
+    color:#73796E;
+
+    font-size:.76rem;
+
+    line-height:1.58;
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-minoseed
+.minoseed-benefits{
+
+    background:
+        #F8F5ED;
+}
+
+.page-minoseed
+.minoseed-benefits-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    gap:64px;
+
+    align-items:center;
+}
+
+.page-minoseed
+.minoseed-benefits-frame{
+
+    position:relative;
+
+    min-height:560px;
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(106,139,87,.09),
+            rgba(214,204,167,.25) 36%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #EEE9DB
+        );
+
+    box-shadow:
+        var(--mino-shadow);
+}
+
+.page-minoseed
+.minoseed-benefits-aura{
+
+    position:absolute;
+
+    width:76%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.96),
+            transparent 68%
+        );
+}
+
+.page-minoseed
+.minoseed-benefits-ring{
+
+    position:absolute;
+
+    width:64%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(106,139,87,.17);
+}
+
+.page-minoseed
+.minoseed-benefits-frame img{
+
+    position:relative;
+
+    z-index:3;
+
+    width:auto;
+
+    max-width:440px;
+
+    max-height:500px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        );
+}
+
+.page-minoseed
+.minoseed-benefit-checks{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:32px;
+}
+
+.page-minoseed
+.minoseed-benefit-check{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-height:34px;
+}
+
+.page-minoseed
+.minoseed-benefit-check > span{
+
+    width:27px;
+    height:27px;
+
+    flex:
+        0 0 27px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        rgba(106,139,87,.12);
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.74rem;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-benefit-check p{
+
+    color:#5F685A;
+
+    font-size:.90rem;
+
+    line-height:1.62;
+}
+
+
+/* ==========================================================
+   PRODUCT
+   ========================================================== */
+
+.page-minoseed
+.minoseed-product-section{
+
+    background:#FFFFFF;
+}
+
+.page-minoseed
+.minoseed-product-card{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    overflow:hidden;
+
+    margin-top:46px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:31px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        var(--mino-shadow);
+}
+
+.page-minoseed
+.minoseed-product-card-visual{
+
+    position:relative;
+
+    min-height:560px;
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(201,164,91,.10),
+            transparent 48%
+        ),
+
+        linear-gradient(
+            145deg,
+            #FBF9F2,
+            #EEE8D8
+        );
+}
+
+.page-minoseed
+.minoseed-detail-aura{
+
+    position:absolute;
+
+    width:78%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.80),
+            transparent 66%
+        );
+}
+
+.page-minoseed
+.minoseed-detail-ring{
+
+    position:absolute;
+
+    width:68%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(106,139,87,.15);
+
+    box-shadow:
+        0 0 0 28px
+        rgba(214,204,167,.065);
+}
+
+.page-minoseed
+.minoseed-product-detail-grid{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    min-height:500px;
+
+    display:grid;
+
+    place-items:center;
+
+    padding:30px;
+}
+
+.page-minoseed
+.minoseed-product-detail-image{
+
+    position:relative;
+
+    z-index:5;
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:470px;
+
+    max-height:490px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 28px 40px
+            rgba(0,0,0,.17)
+        ) !important;
+}
+
+.page-minoseed
+.minoseed-detail-caption{
+
+    position:absolute;
+
+    right:22px;
+
+    bottom:20px;
+
+    z-index:7;
+
+    color:
+        rgba(83,100,64,.56);
+
+    font-size:.61rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+.page-minoseed
+.minoseed-product-card-copy{
+
+    padding:
+        48px 48px 52px;
+}
+
+.page-minoseed
+.minoseed-product-card-copy h3{
+
+    margin-top:17px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:2.15rem;
+
+    line-height:1.03;
+
+    letter-spacing:-.04em;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-product-card-copy h3 span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:
+        var(--mino-green);
+}
+
+.page-minoseed
+.minoseed-product-card-copy > p{
+
+    margin-top:24px;
+
+    color:#6E7569;
+
+    font-size:.91rem;
+
+    line-height:1.86;
+}
+
+.page-minoseed
+.minoseed-product-spec-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.page-minoseed
+.minoseed-product-spec{
+
+    display:flex;
+
+    align-items:baseline;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-bottom:12px;
+
+    border-bottom:
+        1px solid
+        rgba(83,100,64,.09);
+}
+
+.page-minoseed
+.minoseed-product-spec span{
+
+    color:#93998E;
+
+    font-size:.65rem;
+
+    font-weight:800;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+}
+
+.page-minoseed
+.minoseed-product-spec strong{
+
+    color:
+        var(--mino-deep);
+
+    font-size:.78rem;
+
+    text-align:right;
+}
+
+.page-minoseed
+.minoseed-card-buy{
+
+    margin-top:34px;
+}
+
+
+/* ==========================================================
+   ROUTINE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-routine{
+
+    background:#FFFFFF;
+}
+
+.page-minoseed
+.minoseed-routine-list{
+
+    position:relative;
+
+    margin-top:43px;
+}
+
+.page-minoseed
+.minoseed-routine-list::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:21px;
+
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:
+        linear-gradient(
+            var(--mino-line),
+            transparent
+        );
+}
+
+.page-minoseed
+.minoseed-routine-step{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        44px
+        minmax(0,1fr);
+
+    gap:18px;
+
+    padding-bottom:27px;
+}
+
+.page-minoseed
+.minoseed-routine-number{
+
+    position:relative;
+
+    z-index:2;
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(83,100,64,.14);
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.68rem;
+
+    font-weight:900;
+
+    box-shadow:
+        0 8px 23px
+        rgba(67,63,43,.06);
+}
+
+.page-minoseed
+.minoseed-routine-step h3{
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.06rem;
+}
+
+.page-minoseed
+.minoseed-routine-step p{
+
+    margin-top:5px;
+
+    color:#747B70;
+
+    font-size:.81rem;
+
+    line-height:1.68;
+}
+
+.page-minoseed
+.minoseed-routine-note{
+
+    margin-top:29px;
+
+    padding:
+        17px 18px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:18px;
+
+    background:
+        #F8F5ED;
+}
+
+.page-minoseed
+.minoseed-routine-note p{
+
+    margin-top:7px;
+
+    color:#787F74;
+
+    font-size:.75rem;
+
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   EXPERIENCE
+   ========================================================== */
+
+.page-minoseed
+.minoseed-experience{
+
+    background:
+        #F8F5ED;
+}
+
+.page-minoseed
+.minoseed-experience-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:46px;
+}
+
+.page-minoseed
+.minoseed-experience-card{
+
+    min-height:225px;
+
+    padding:24px;
+
+    border:
+        1px solid
+        var(--mino-line);
+
+    border-radius:23px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 15px 43px
+        rgba(67,63,43,.05);
+}
+
+.page-minoseed
+.minoseed-experience-icon{
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+        #EEF3E9;
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:1.08rem;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-experience-number{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:
+        var(--mino-gold-dark);
+
+    font-size:.58rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+}
+
+.page-minoseed
+.minoseed-experience-card h3{
+
+    margin-top:7px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.14rem;
+}
+
+.page-minoseed
+.minoseed-experience-card p{
+
+    margin-top:9px;
+
+    color:#767D72;
+
+    font-size:.79rem;
+
+    line-height:1.72;
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-minoseed
+.minoseed-faq-section{
+
+    background:
+        #F8F5ED;
+}
+
+.page-minoseed
+.minoseed-faq-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+    margin-top:42px;
+}
+
+.page-minoseed
+.minoseed-faq-item{
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(83,100,64,.12);
+
+    border-radius:19px;
+
+    background:#FFFFFF;
+
+    transition:
+        box-shadow .28s ease,
+        border-color .28s ease;
+}
+
+.page-minoseed
+.minoseed-faq-item.active{
+
+    border-color:
+        rgba(106,139,87,.25);
+
+    box-shadow:
+        0 16px 43px
+        rgba(67,63,43,.075);
+}
+
+.page-minoseed
+.minoseed-faq-question{
+
+    width:100%;
+
+    min-height:72px;
+
+    display:grid;
+
+    grid-template-columns:
+        38px
+        minmax(0,1fr)
+        32px;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:
+        12px 15px;
+
+    border:0;
+
+    background:transparent;
+
+    color:
+        var(--mino-deep);
+
+    text-align:left;
+}
+
+.page-minoseed
+.minoseed-faq-question:hover{
+
+    background:
+        #FCFBF7;
+}
+
+.page-minoseed
+.minoseed-faq-number{
+
+    width:31px;
+    height:31px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:10px;
+
+    background:
+        #EEF3E9;
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.60rem;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-faq-text{
+
+    color:
+        var(--mino-deep);
+
+    font-size:.88rem;
+
+    line-height:1.45;
+
+    font-weight:850;
+}
+
+.page-minoseed
+.minoseed-faq-plus{
+
+    width:29px;
+    height:29px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(83,100,64,.12);
+
+    border-radius:50%;
+
+    color:
+        var(--mino-green-dark);
+
+    font-size:.96rem;
+}
+
+.page-minoseed
+.minoseed-faq-item.active
+.minoseed-faq-plus{
+
+    background:
+        var(--mino-deep);
+
+    color:#FFFFFF;
+}
+
+.page-minoseed
+.minoseed-faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .44s
+        cubic-bezier(.22,.61,.36,1);
+}
+
+.page-minoseed
+.minoseed-faq-answer p{
+
+    padding:
+        0 17px 19px 66px;
+
+    color:#747A70;
+
+    font-size:.82rem;
+
+    line-height:1.72;
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+.page-minoseed
+.minoseed-information-section{
+
+    padding-top:0;
+
+    background:
+        #F8F5ED;
+}
+
+.page-minoseed
+.minoseed-information-box{
+
+    display:grid;
+
+    grid-template-columns:
+        40px
+        minmax(0,1fr);
+
+    gap:14px;
+
+    padding:
+        22px 23px;
+
+    border:
+        1px solid
+        rgba(83,100,64,.12);
+
+    border-radius:22px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F0EBDD
+        );
+}
+
+.page-minoseed
+.minoseed-information-icon{
+
+    width:37px;
+    height:37px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
+
+    background:
+        #EAF0E5;
+
+    color:
+        var(--mino-deep);
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-information-box h2{
+
+    margin-top:9px;
+
+    color:
+        var(--mino-deep);
+
+    font-size:1.38rem;
+
+    line-height:1.1;
+
+    letter-spacing:-.025em;
+}
+
+.page-minoseed
+.minoseed-information-box p{
+
+    margin-top:8px;
+
+    color:#777E72;
+
+    font-size:.76rem;
+
+    line-height:1.68;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.page-minoseed
+.minoseed-cta-section{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 50% -15%,
+            rgba(201,164,91,.12),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            140deg,
+            #1F281B,
+            #3B4D31
+        );
+}
+
+.page-minoseed
+.minoseed-cta-box{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:920px;
+
+    margin-inline:auto;
+
+    padding:
+        78px 30px 82px;
+
+    text-align:center;
+}
+
+.page-minoseed
+.minoseed-label-light{
+
+    color:
+        var(--mino-gold-light);
+
+    font-size:.63rem;
+
+    font-weight:900;
+
+    letter-spacing:.19em;
+}
+
+.page-minoseed
+.minoseed-cta-box h2{
+
+    margin-top:17px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            2.6rem,
+            5vw,
+            5rem
+        );
+
+    line-height:.96;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+}
+
+.page-minoseed
+.minoseed-cta-box h2 span{
+
+    display:block;
+
+    margin-top:.10em;
+
+    color:
+        #E6E4D1;
+}
+
+.page-minoseed
+.minoseed-cta-box > p{
+
+    max-width:650px;
+
+    margin:
+        21px auto 0;
+
+    color:#D1D8C9;
+
+    font-size:.96rem;
+
+    line-height:1.78;
+}
+
+.page-minoseed
+.minoseed-cta-actions{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:29px;
+}
+
+.page-minoseed
+.minoseed-cta-actions
+.btn-glass{
+
+    border-color:
+        rgba(255,255,255,.16) !important;
+
+    background:
+        rgba(255,255,255,.045) !important;
+
+    color:#FFFFFF !important;
+}
+
+.page-minoseed
+.minoseed-cta-disclaimer{
+
+    margin-top:
+        22px !important;
+
+    color:
+        rgba(255,255,255,.58) !important;
+
+    font-size:
+        .67rem !important;
+
+    line-height:
+        1.6 !important;
+}
+
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark .page-minoseed,
+body[data-theme="dark"] .page-minoseed,
+[data-theme="dark"] .page-minoseed,
+.dark .page-minoseed{
+
+    --mino-white:#111510;
+
+    --mino-soft:#141914;
+    --mino-mist:#171C17;
+
+    --mino-deep:#F1F5EC;
+
+    --mino-text:#DCE4D8;
+    --mino-muted:#B8C2B3;
+
+    --mino-line:
+        rgba(226,235,220,.10);
+
+    background:
+        #111510;
+
+    color:
+        #DCE4D8;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-hero,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-hero,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-hero,
+.dark
+.page-minoseed
+.minoseed-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 16% 17%,
+            rgba(106,139,87,.12),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 82% 28%,
+            rgba(201,164,91,.06),
+            transparent 24%
+        ),
+
+        linear-gradient(
+            135deg,
+            #111510,
+            #172016 58%,
+            #263020
+        );
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-hero-copy h1,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-copy h1,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-copy h1,
+.dark
+.page-minoseed
+.minoseed-hero-copy h1{
+
+    color:#F4F7F1;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-hero-description,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-description,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-description,
+.dark
+.page-minoseed
+.minoseed-hero-description{
+
+    color:#BCC7B7;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-hero-pill,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-pill,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-hero-pill,
+.dark
+.page-minoseed
+.minoseed-hero-pill{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#DDE8D8;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-overview-section,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-overview-section,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-overview-section,
+.dark
+.page-minoseed
+.minoseed-overview-section,
+body.dark
+.page-minoseed
+.minoseed-overview-card,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-overview-card,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-overview-card,
+.dark
+.page-minoseed
+.minoseed-overview-card{
+
+    background:#141914;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-composition,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-composition,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-composition,
+.dark
+.page-minoseed
+.minoseed-composition,
+body.dark
+.page-minoseed
+.minoseed-product-section,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-product-section,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-product-section,
+.dark
+.page-minoseed
+.minoseed-product-section,
+body.dark
+.page-minoseed
+.minoseed-routine,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-routine,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-routine,
+.dark
+.page-minoseed
+.minoseed-routine{
+
+    background:#111510;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-benefits,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-benefits,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-benefits,
+.dark
+.page-minoseed
+.minoseed-benefits,
+body.dark
+.page-minoseed
+.minoseed-experience,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-experience,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-experience,
+.dark
+.page-minoseed
+.minoseed-experience,
+body.dark
+.page-minoseed
+.minoseed-faq-section,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-faq-section,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-faq-section,
+.dark
+.page-minoseed
+.minoseed-faq-section,
+body.dark
+.page-minoseed
+.minoseed-information-section,
+body[data-theme="dark"]
+.page-minoseed
+.minoseed-information-section,
+[data-theme="dark"]
+.page-minoseed
+.minoseed-information-section,
+.dark
+.page-minoseed
+.minoseed-information-section{
+
+    background:#151A15;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-section-heading h2,
+body.dark
+.page-minoseed
+.section-title,
+body.dark
+.page-minoseed
+.minoseed-overview-card h3,
+body.dark
+.page-minoseed
+.minoseed-composition-card h3,
+body.dark
+.page-minoseed
+.minoseed-detail-card h3,
+body.dark
+.page-minoseed
+.minoseed-product-card-copy h3,
+body.dark
+.page-minoseed
+.minoseed-routine-step h3,
+body.dark
+.page-minoseed
+.minoseed-experience-card h3,
+body.dark
+.page-minoseed
+.minoseed-faq-text,
+body.dark
+.page-minoseed
+.minoseed-information-box h2{
+
+    color:#F0F4EC !important;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-section-heading p,
+body.dark
+.page-minoseed
+.lead,
+body.dark
+.page-minoseed
+.minoseed-overview-card p,
+body.dark
+.page-minoseed
+.minoseed-composition-card p,
+body.dark
+.page-minoseed
+.minoseed-detail-card p,
+body.dark
+.page-minoseed
+.minoseed-detail-item > span:last-child,
+body.dark
+.page-minoseed
+.minoseed-product-card-copy > p,
+body.dark
+.page-minoseed
+.minoseed-product-spec span,
+body.dark
+.page-minoseed
+.minoseed-routine-step p,
+body.dark
+.page-minoseed
+.minoseed-experience-card p,
+body.dark
+.page-minoseed
+.minoseed-faq-answer p,
+body.dark
+.page-minoseed
+.minoseed-information-box p{
+
+    color:#B9C3B4 !important;
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-overview-note,
+body.dark
+.page-minoseed
+.minoseed-detail-card,
+body.dark
+.page-minoseed
+.minoseed-detail-list,
+body.dark
+.page-minoseed
+.minoseed-experience-card,
+body.dark
+.page-minoseed
+.minoseed-certificate,
+body.dark
+.page-minoseed
+.minoseed-routine-note,
+body.dark
+.page-minoseed
+.minoseed-information-box,
+body.dark
+.page-minoseed
+.minoseed-faq-item{
+
+    background:
+        #1A211A;
+
+    border-color:
+        rgba(226,235,220,.09);
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-product-card{
+
+    background:
+        #1A211A;
+
+    border-color:
+        rgba(226,235,220,.09);
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-product-card-visual{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(106,139,87,.08),
+            transparent 48%
+        ),
+
+        linear-gradient(
+            145deg,
+            #172017,
+            #202A20
+        );
+}
+
+
+body.dark
+.page-minoseed
+.minoseed-benefits-frame{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(106,139,87,.07),
+            rgba(201,164,91,.06) 36%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            145deg,
+            #171D17,
+            #232C22
+        );
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media(max-width:1120px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            min(
+                100%,
+                calc(100% - 64px)
+            );
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(350px,.82fr);
+
+        gap:44px;
+
+        padding:
+            72px 0 64px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy{
+
+        padding-left:8px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy h1{
+
+        font-size:
+            clamp(
+                4rem,
+                7.5vw,
+                6.4rem
+            );
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-product{
+
+        min-height:540px;
+
+        transform:
+            translateX(0);
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid{
+
+        min-height:500px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid img{
+
+        max-width:440px;
+
+        max-height:520px;
+
+        transform:
+            translate3d(0,0,0);
+    }
+
+
+    .page-minoseed
+    .minoseed-overview-grid,
+    .page-minoseed
+    .minoseed-composition-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-minoseed
+    .minoseed-benefits-grid{
+
+        gap:40px;
+    }
+
+
+    .page-minoseed
+    .minoseed-experience-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-card-wide{
+
+        grid-column:
+            span 2;
+    }
+}
+
+
+@media(max-width:900px){
+
+    .page-minoseed
+    .minoseed-hero{
+
+        min-height:auto;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            min(
+                720px,
+                calc(100% - 36px)
+            );
+
+        grid-template-columns:1fr;
+
+        gap:28px;
+
+        padding:
+            64px 0 56px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy{
+
+        max-width:700px;
+
+        padding-left:0;
+
+        margin-inline:auto;
+
+        text-align:center;
+    }
+
+
+    .page-minoseed
+    .minoseed-eyebrow{
+
+        justify-content:center;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy h1{
+
+        margin-inline:auto;
+
+        font-size:
+            clamp(
+                4rem,
+                12vw,
+                6rem
+            );
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-description{
+
+        margin-inline:auto;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-pills,
+    .page-minoseed
+    .minoseed-hero-actions{
+
+        justify-content:center;
+
+        margin-inline:auto;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-product{
+
+        width:
+            min(
+                680px,
+                100%
+            );
+
+        min-height:470px;
+
+        margin-inline:auto;
+
+        transform:none;
+    }
+
+
+    .page-minoseed
+    .minoseed-benefits-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card-visual{
+
+        min-height:510px;
+    }
+
+
+    .page-minoseed
+    .minoseed-experience-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:680px){
+
+    .page-minoseed
+    .section-title,
+    .page-minoseed
+    .minoseed-section-heading h2{
+
+        font-size:
+            clamp(
+                2.05rem,
+                9vw,
+                3.4rem
+            );
+    }
+
+
+    .page-minoseed
+    .lead{
+
+        font-size:.95rem;
+
+        line-height:1.76;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            calc(100% - 32px);
+
+        gap:22px;
+
+        padding:
+            50px 0 44px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy h1{
+
+        font-size:
+            clamp(
+                3.45rem,
+                15vw,
+                5.3rem
+            );
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-description{
+
+        max-width:560px;
+
+        margin-top:24px;
+
+        font-size:.97rem;
+
+        line-height:1.78;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-pills{
+
+        margin-top:23px;
+
+        gap:8px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        margin-top:29px;
+
+        gap:11px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-actions .btn{
+
+        width:100% !important;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-product{
+
+        min-height:380px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid{
+
+        min-height:350px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid img{
+
+        max-width:310px;
+
+        max-height:370px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-caption{
+
+        display:none;
+    }
+
+
+    .page-minoseed
+    .minoseed-overview-grid,
+    .page-minoseed
+    .minoseed-composition-grid,
+    .page-minoseed
+    .minoseed-experience-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-minoseed
+    .minoseed-detail-card-wide{
+
+        grid-column:auto;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card-visual{
+
+        min-height:390px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-detail-grid{
+
+        min-height:360px;
+
+        padding:
+            20px 10px 38px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-detail-image{
+
+        max-width:320px;
+
+        max-height:360px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card-copy{
+
+        padding:
+            34px 25px 38px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card-copy > p{
+
+        margin-top:20px;
+
+        line-height:1.78;
+    }
+
+
+    .page-minoseed
+    .minoseed-benefit-checks{
+
+        margin-top:27px;
+
+        gap:13px;
+    }
+
+
+    .page-minoseed
+    .minoseed-information-box{
+
+        grid-template-columns:
+            34px
+            minmax(0,1fr);
+    }
+
+
+    .page-minoseed
+    .minoseed-faq-question{
+
+        grid-template-columns:
+            34px
+            minmax(0,1fr)
+            28px;
+
+        gap:9px;
+
+        min-height:65px;
+
+        padding:
+            10px 11px;
+    }
+
+
+    .page-minoseed
+    .minoseed-faq-text{
+
+        font-size:.82rem;
+    }
+
+
+    .page-minoseed
+    .minoseed-faq-answer p{
+
+        padding:
+            0 13px 19px 54px;
+
+        font-size:.77rem;
+    }
+
+
+    .page-minoseed
+    .minoseed-cta-box{
+
+        padding:
+            58px 18px 63px;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            calc(100% - 24px);
+
+        padding:
+            44px 0 38px;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-copy h1{
+
+        font-size:
+            3rem;
+    }
+
+
+    .page-minoseed
+    .minoseed-hero-product{
+
+        min-height:320px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid{
+
+        min-height:295px;
+    }
+
+
+    .page-minoseed
+    .minoseed-product-grid img{
+
+        max-width:270px;
+
+        max-height:315px;
+    }
+
+
+    .page-minoseed
+    .minoseed-more-toggle{
+
+        max-width:
+            calc(100vw - 44px);
+    }
+
+
+    .page-minoseed
+    .minoseed-product-card-copy h3{
+
+        font-size:1.82rem;
+    }
+}
+
+
+/* ==========================================================
+   MOTION
+   ========================================================== */
+
+@keyframes minoFloatOne{
+
+    0%,100%{
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50%{
+        transform:
+            translate3d(15px,-11px,0);
+    }
+}
+
+
+@keyframes minoFloatTwo{
+
+    0%,100%{
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50%{
+        transform:
+            translate3d(-18px,17px,0);
+    }
+}
+
+
+@keyframes minoOrbit{
+
+    from{
+        rotate:0deg;
+    }
+
+    to{
+        rotate:360deg;
+    }
+}
+
+
+@keyframes minoPulse{
+
+    0%,100%{
+
+        transform:
+            scale(.96);
+
+        opacity:.72;
+    }
+
+    50%{
+
+        transform:
+            scale(1.04);
+
+        opacity:1;
+    }
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    .page-minoseed *{
+
+        animation-duration:
+            .001ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .001ms !important;
+
+        scroll-behavior:
+            auto !important;
+    }
+}
+
+
+/* ==========================================================
+   FINAL HERO REFINEMENT
+   Mantém o Hero centralizado e respirado
+   ========================================================== */
+
+.page-minoseed
+.minoseed-hero-grid{
+
+    width:
+        min(
+            1220px,
+            calc(100% - 96px)
+        );
+
+    margin-inline:auto;
+
+    gap:72px;
+}
+
+
+@media(max-width:1120px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            min(
+                100%,
+                calc(100% - 64px)
+            );
+
+        gap:44px;
+    }
+}
+
+
+@media(max-width:900px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            min(
+                720px,
+                calc(100% - 36px)
+            );
+
+        gap:28px;
+    }
+
+    .page-minoseed
+    .minoseed-hero-copy{
+
+        padding-left:0;
+    }
+}
+
+
+@media(max-width:680px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            calc(100% - 32px);
+
+        gap:22px;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .page-minoseed
+    .minoseed-hero-grid{
+
+        width:
+            calc(100% - 24px);
+    }
+}
