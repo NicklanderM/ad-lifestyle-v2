@@ -1,7 +1,8 @@
 /* ==========================================================
    AD LIFESTYLE V2
    EZENO.JS
-   Premium Oral Care Product Page
+   Premium EZENO Oral Care Product Page
+   Modelo estrutural: iSMART S3
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
@@ -10,17 +11,30 @@ import { ripple, stagger } from "../../js/animations.js";
 
 
 /* ==========================================================
-   LOAD EZENO
+   CONFIG
+   ========================================================== */
+
+const PRODUCT_IMAGE =
+    "./assets/products/ezeno.png";
+
+const WHATSAPP_NUMBER =
+    "244924964666";
+
+
+/* ==========================================================
+   LOAD
    ========================================================== */
 
 export function loadEzeno(){
 
     applyTheme("ezeno");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    if(!app) return;
-
+    if(!app){
+        return;
+    }
 
     app.innerHTML = `
 
@@ -30,11 +44,15 @@ export function loadEzeno(){
 
             ${hero()}
 
+            ${overview()}
+
             ${oralCare()}
 
             ${ingredients()}
 
             ${benefits()}
+
+            ${productDetail()}
 
             ${technology()}
 
@@ -46,15 +64,15 @@ export function loadEzeno(){
 
             ${faq()}
 
+            ${information()}
+
             ${cta()}
 
         </div>
 
     `;
 
-
     initialiseEzeno();
-
 }
 
 
@@ -64,149 +82,271 @@ export function loadEzeno(){
 
 function hero(){
 
-return `
+    return `
 
-<section class="hero ezeno-hero">
+    <section class="hero ezeno-hero">
 
-    <div class="aurora">
+        <div class="ezeno-hero-atmosphere">
 
-        <div class="blob blob-1"></div>
+            <div class="ezeno-orb ezeno-orb-1"></div>
 
-        <div class="blob blob-2"></div>
+            <div class="ezeno-orb ezeno-orb-2"></div>
 
-        <div class="blob blob-3"></div>
+            <div class="ezeno-orbit ezeno-orbit-1"></div>
 
-    </div>
-
-
-    <div class="container hero-grid">
-
-
-        <div class="hero-content reveal">
-
-
-            <span class="badge">
-                EZENO · Premium Oral Care
-            </span>
-
-
-            <h1 class="hero-title">
-
-                EZENO
-                <span>Herbal</span>
-
-            </h1>
-
-
-            <p class="hero-sub">
-
-                Dentífrico à base de ginseng,
-                apresentado como uma solução de cuidado
-                oral orientada para limpeza profunda,
-                frescura, cuidado das gengivas e higiene
-                oral diária.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-
-                <button
-                    class="btn btn-primary"
-                    id="buyEzeno"
-                    type="button">
-
-                    Comprar Agora
-
-                </button>
-
-
-                <button
-                    class="btn btn-glass"
-                    id="ezenoIngredients"
-                    type="button">
-
-                    Ver Ingredientes
-
-                </button>
-
-
-            </div>
-
-
-            <div class="ezeno-hero-highlights">
-
-
-                <span>
-                    ✓ Panax Ginseng
-                </span>
-
-
-                <span>
-                    ✓ Árvore do Chá
-                </span>
-
-
-                <span>
-                    ✓ Sem Flúor
-                </span>
-
-
-                <span>
-                    ✓ Cuidado Oral
-                </span>
-
-
-            </div>
-
-
-            <p class="ezeno-disclaimer">
-
-                Algumas características e números apresentados
-                nesta página correspondem ao material promocional
-                fornecido para o produto e não constituem garantia
-                de resultados clínicos.
-
-            </p>
-
+            <div class="ezeno-orbit ezeno-orbit-2"></div>
 
         </div>
 
 
-        <div class="hero-visual reveal-right">
+        <div class="container ezeno-hero-grid">
+
+            <div class="ezeno-hero-copy reveal">
+
+                <span class="ezeno-eyebrow">
+                    EZENO · PREMIUM ORAL CARE
+                </span>
 
 
-            <div class="hero-product floating">
+                <h1>
+                    EZENO
+                    <span>Herbal.</span>
+                </h1>
 
 
-                <div class="product-glow"></div>
+                <p class="ezeno-hero-description">
+                    Dentífrico de inspiração herbal, apresentado
+                    como uma solução de cuidado oral orientada
+                    para limpeza, frescura, higiene diária
+                    e cuidado das gengivas.
+                </p>
 
 
-                <div class="ezeno-gold-ring"></div>
+                <div class="ezeno-hero-pills">
+
+                    <span class="ezeno-hero-pill">
+                        Panax Ginseng
+                    </span>
+
+                    <span class="ezeno-hero-pill">
+                        Árvore do Chá
+                    </span>
+
+                    <span class="ezeno-hero-pill">
+                        Sem Flúor
+                    </span>
+
+                    <span class="ezeno-hero-pill">
+                        Cuidado Oral
+                    </span>
+
+                </div>
 
 
-                <img
-                    class="parallax"
-                    data-speed="30"
-                    src="./assets/products/ezeno.png"
-                    alt="EZENO Herbal Toothpaste"
-                    loading="eager"
-                >
+                <div class="ezeno-hero-actions">
 
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="buyEzeno">
+
+                        Comprar EZENO
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="ezenoIngredients"
+                        data-scroll="#ezeno-ingredients">
+
+                        Conhecer ingredientes
+
+                    </button>
+
+                </div>
 
             </div>
 
 
+            <div class="ezeno-hero-product reveal-right">
+
+                <div class="ezeno-product-aura"></div>
+
+                <div class="ezeno-product-ring"></div>
+
+
+                <div class="ezeno-product-grid">
+
+                    <img
+                        src="${PRODUCT_IMAGE}"
+                        alt="EZENO Herbal Toothpaste"
+                        loading="eager"
+                        decoding="async"
+                        class="ezeno-product-image"
+                    >
+
+                </div>
+
+
+                <div class="ezeno-product-caption">
+
+                    <strong>
+                        EZENO
+                    </strong>
+
+                    <span>
+                        PREMIUM ORAL CARE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
+function overview(){
+
+    return `
+
+    <section
+        id="ezeno-overview"
+        class="section ezeno-overview-section">
+
+        <div class="container">
+
+            <div class="section-center ezeno-section-heading reveal">
+
+                <span class="label">
+                    VISÃO GERAL
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Conheça o conceito
+                    <span>EZENO.</span>
+
+                </h2>
+
+
+                <p class="lead">
+                    O EZENO é apresentado como um dentífrico
+                    de inspiração herbal, com destaque para
+                    limpeza profunda, frescura, cuidado das
+                    gengivas e ingredientes associados ao
+                    conceito de higiene oral diária.
+                </p>
+
+            </div>
+
+
+            <div class="ezeno-overview-grid">
+
+                ${overviewCard(
+                    "01",
+                    "Limpeza profunda",
+                    "A comunicação destaca limpeza da superfície dentária, resíduos, placa e manchas."
+                )}
+
+                ${overviewCard(
+                    "02",
+                    "Ginseng",
+                    "O extracto de Panax Ginseng é apresentado como um dos componentes centrais."
+                )}
+
+                ${overviewCard(
+                    "03",
+                    "Frescura",
+                    "O produto é apresentado com uma proposta de hálito fresco e experiência refrescante."
+                )}
+
+                ${overviewCard(
+                    "04",
+                    "Cuidado oral",
+                    "A identidade do EZENO está orientada para uma rotina diária de higiene da boca."
+                )}
+
+            </div>
+
+
+            <div class="ezeno-overview-note reveal">
+
+                <strong>
+                    Uma proposta herbal para a rotina de higiene oral.
+                </strong>
+
+
+                <p>
+                    As características, percentagens, tempos e outras especificações
+                    desta página reproduzem o enquadramento do material promocional
+                    fornecido e devem ser confirmados na documentação oficial.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function overviewCard(
+    number,
+    title,
+    text
+){
+
+    const symbols = {
+        "01":"◉",
+        "02":"✿",
+        "03":"✦",
+        "04":"◇"
+    };
+
+    return `
+
+    <article class="ezeno-overview-card reveal">
+
+        <span class="ezeno-card-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="ezeno-card-icon"
+            aria-hidden="true">
+
+            ${symbols[number] || "✦"}
+
         </div>
 
 
-    </div>
+        <h3>
+            ${title}
+        </h3>
 
-</section>
 
-`;
+        <p>
+            ${text}
+        </p>
 
+    </article>
+
+    `;
 }
 
 
@@ -216,360 +356,292 @@ return `
 
 function oralCare(){
 
-return `
+    return `
 
-<section
-    id="ezeno-care"
-    class="section ezeno-care">
+    <section
+        id="ezeno-care"
+        class="section ezeno-care">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Cuidado Oral
-            </span>
-
-
-            <h2 class="section-title">
-
-                Mais do que um dentífrico
-
-            </h2>
-
-
-            <p class="lead">
-
-                A apresentação do EZENO destaca
-                uma combinação de limpeza, frescura,
-                cuidado das gengivas e protecção oral
-                como parte da rotina diária.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="grid grid-4 mt-6">
-
-
-            ${careCard(
-                "🦷",
-                "Limpeza Profunda",
-                "A comunicação destaca uma limpeza profunda da superfície dentária e dos resíduos."
-            )}
-
-
-            ${careCard(
-                "🌿",
-                "Ginseng",
-                "O Panax Ginseng é apresentado como ingrediente central do dentífrico."
-            )}
-
-
-            ${careCard(
-                "🌱",
-                "Árvore do Chá",
-                "O óleo da árvore do chá é destacado na comunicação relacionada com o hálito."
-            )}
-
-
-            ${careCard(
-                "✨",
-                "Hálito Fresco",
-                "O produto é apresentado com uma proposta de frescura oral prolongada."
-            )}
-
-
-        </div>
-
-
-        <div class="ezeno-information mt-6">
-
-
-            <button
-                class="ezeno-details-toggle"
-                type="button"
-                aria-expanded="false">
-
-
-                <span>
-                    Ver detalhes do produto
+                <span class="eyebrow">
+                    CUIDADO ORAL
                 </span>
 
 
-                <span class="ezeno-details-icon">
-                    +
-                </span>
+                <h2>
+                    Mais do que um
+                    <span>dentífrico.</span>
+                </h2>
 
 
-            </button>
+                <p>
+                    A apresentação do EZENO destaca uma combinação
+                    de limpeza, frescura, cuidado das gengivas e
+                    características específicas de formulação.
+                </p>
+
+            </div>
 
 
-            <div class="ezeno-details-content">
+            <div class="ezeno-care-grid">
+
+                ${careCard(
+                    "01",
+                    "Limpeza Profunda",
+                    "A comunicação destaca limpeza da superfície dentária e remoção de resíduos.",
+                    "🦷"
+                )}
+
+                ${careCard(
+                    "02",
+                    "Ginseng",
+                    "O Panax Ginseng ocupa uma posição central na apresentação do dentífrico.",
+                    "🌿"
+                )}
+
+                ${careCard(
+                    "03",
+                    "Árvore do Chá",
+                    "O óleo da árvore do chá é destacado no contexto da frescura oral.",
+                    "🌱"
+                )}
+
+                ${careCard(
+                    "04",
+                    "Hálito Fresco",
+                    "O produto é apresentado com uma proposta de frescura oral prolongada.",
+                    "✦"
+                )}
+
+            </div>
 
 
-                <div class="ezeno-details-grid">
+            <div class="ezeno-more-wrap">
+
+                <button
+                    type="button"
+                    class="ezeno-more-toggle"
+                    data-more-toggle="care"
+                    data-open-label="Ver detalhes do produto"
+                    data-close-label="Ocultar detalhes"
+                    aria-expanded="false"
+                    aria-controls="ezeno-care-more">
+
+                    <span>
+                        Ver detalhes do produto
+                    </span>
+
+                    <i aria-hidden="true">
+                        +
+                    </i>
+
+                </button>
 
 
-                    <article class="ezeno-detail-card">
+                <div
+                    id="ezeno-care-more"
+                    class="ezeno-more-panel"
+                    data-more-panel="care"
+                    aria-hidden="true">
 
+                    <div class="ezeno-detail-grid">
 
-                        <span class="label">
-                            01 — Gengivas
-                        </span>
-
-
-                        <h3>
-                            Cuidado periodontal
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O material promocional associa
-                            o produto ao cuidado das gengivas,
-                            periodonto e higiene da cavidade oral.
-
-                        </p>
-
-
-                        <div class="ezeno-detail-list mt-3">
-
-                            ${detailItem(
-                                "Cuidado das gengivas"
-                            )}
-
-                            ${detailItem(
-                                "Higiene periodontal"
-                            )}
-
-                            ${detailItem(
+                        ${detailCard(
+                            "01 — GENGIVAS",
+                            "Cuidado periodontal",
+                            "O material promocional associa o produto ao cuidado das gengivas, periodonto e higiene da cavidade oral.",
+                            [
+                                "Cuidado das gengivas",
+                                "Higiene periodontal",
                                 "Rotina diária de escovagem"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="ezeno-detail-card">
-
-
-                        <span class="label">
-                            02 — Frescura
-                        </span>
-
-
-                        <h3>
-                            Hálito mais fresco
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            A apresentação destaca o óleo
-                            da árvore do chá e uma proposta
-                            de frescura prolongada.
-
-                        </p>
-
-
-                        <div class="ezeno-detail-list mt-3">
-
-                            ${detailItem(
-                                "Sensação refrescante"
-                            )}
-
-                            ${detailItem(
-                                "Cuidado do hálito"
-                            )}
-
-                            ${detailItem(
+                        ${detailCard(
+                            "02 — FRESCURA",
+                            "Hálito mais fresco",
+                            "A apresentação destaca o óleo da árvore do chá e uma proposta de frescura prolongada.",
+                            [
+                                "Sensação refrescante",
+                                "Cuidado do hálito",
                                 "Experiência prolongada"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="ezeno-detail-card">
-
-
-                        <span class="label">
-                            03 — Limpeza
-                        </span>
-
-
-                        <h3>
-                            Manchas e placa
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O material do produto descreve
-                            uma acção de limpeza associada
-                            à remoção de manchas persistentes
-                            e resíduos da superfície dentária.
-
-                        </p>
-
-
-                        <div class="ezeno-detail-list mt-3">
-
-                            ${detailItem(
-                                "Limpeza da superfície dentária"
-                            )}
-
-                            ${detailItem(
-                                "Remoção de manchas"
-                            )}
-
-                            ${detailItem(
+                        ${detailCard(
+                            "03 — LIMPEZA",
+                            "Manchas e placa",
+                            "O material descreve uma acção de limpeza associada a manchas persistentes e resíduos da superfície dentária.",
+                            [
+                                "Limpeza da superfície dentária",
+                                "Remoção de manchas",
                                 "Cuidado da placa dentária"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="ezeno-detail-card">
-
-
-                        <span class="label">
-                            04 — Composição
-                        </span>
-
-
-                        <h3>
-                            Fórmula apresentada
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            A documentação fornecida destaca
-                            o extracto de Panax Ginseng,
-                            óleo da árvore do chá e sílica,
-                            além de características específicas
-                            de formulação.
-
-                        </p>
-
-
-                        <div class="ezeno-detail-list mt-3">
-
-                            ${detailItem(
-                                "Panax Ginseng"
-                            )}
-
-                            ${detailItem(
-                                "Óleo da árvore do chá"
-                            )}
-
-                            ${detailItem(
+                        ${detailCard(
+                            "04 — FORMULAÇÃO",
+                            "Fórmula apresentada",
+                            "A documentação fornecida destaca extracto de Panax Ginseng, óleo da árvore do chá e sílica.",
+                            [
+                                "Panax Ginseng",
+                                "Óleo da árvore do chá",
                                 "Sílica"
-                            )}
+                            ]
+                        )}
 
-                        </div>
+                        ${detailCard(
+                            "INFORMAÇÃO",
+                            "Comunicação responsável",
+                            "O material promocional contém afirmações sobre protecção contra bactérias e cáries, melhoria do periodonto, reparação das gengivas e duração da frescura.",
+                            [
+                                "Conteúdo promocional",
+                                "Não constitui garantia clínica",
+                                "Confirmar documentação oficial"
+                            ],
+                            true
+                        )}
 
-
-                    </article>
-
-
-                    <article
-                        class="ezeno-detail-card
-                               ezeno-detail-card-wide">
-
-
-                        <span class="label">
-                            Informação importante
-                        </span>
-
-
-                        <h3>
-                            Comunicação responsável
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O material promocional contém
-                            afirmações sobre protecção contra
-                            bactérias e cáries, melhoria do
-                            periodonto, reparação das gengivas
-                            e duração da frescura.
-
-                        </p>
-
-
-                        <p class="text mt-2">
-
-                            Essas afirmações são apresentadas
-                            nesta página como características
-                            declaradas no material do produto,
-                            e não como garantias de tratamento
-                            ou resultado clínico.
-
-                        </p>
-
-
-                    </article>
-
+                    </div>
 
                 </div>
 
             </div>
 
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function careCard(
+    number,
+    title,
+    text,
+    icon
+){
+
+    return `
+
+    <article class="ezeno-care-card reveal">
+
+        <span class="ezeno-care-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="ezeno-care-icon"
+            aria-hidden="true">
+
+            ${icon}
 
         </div>
 
 
-    </div>
+        <span class="ezeno-care-label">
+            CUIDADO ORAL
+        </span>
 
-</section>
 
-`;
+        <h3>
+            ${title}
+        </h3>
 
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
 }
 
 
-function careCard(icon, title, text){
+/* ==========================================================
+   GENERIC DETAIL CARD
+   ========================================================== */
 
-return `
+function detailCard(
+    label,
+    title,
+    text,
+    items = [],
+    wide = false
+){
 
-<article
-    class="card service-card ezeno-care-card reveal">
+    return `
+
+    <article
+        class="
+            ezeno-detail-card
+            ${wide ? "ezeno-detail-card-wide" : ""}
+        ">
+
+        <span class="label">
+            ${label}
+        </span>
 
 
-    <div class="service-icon">
-        ${icon}
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+        ${
+            items.length
+                ? `
+                    <div class="ezeno-detail-list">
+
+                        ${items
+                            .map(item => detailItem(item))
+                            .join("")
+                        }
+
+                    </div>
+                  `
+                : ""
+        }
+
+    </article>
+
+    `;
+}
+
+
+function detailItem(text){
+
+    return `
+
+    <div class="ezeno-detail-item">
+
+        <span
+            class="ezeno-check"
+            aria-hidden="true">
+
+            ✓
+
+        </span>
+
+
+        <span>
+            ${text}
+        </span>
+
     </div>
 
-
-    <h3>
-        ${title}
-    </h3>
-
-
-    <p class="text mt-2">
-        ${text}
-    </p>
-
-
-</article>
-
-`;
-
+    `;
 }
 
 
@@ -579,167 +651,70 @@ return `
 
 function ingredients(){
 
-return `
+    return `
 
-<section
-    id="ezeno-ingredients"
-    class="section ezeno-ingredients">
+    <section
+        id="ezeno-ingredients"
+        class="section ezeno-ingredients">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Ingredientes & Fórmula
-            </span>
-
-
-            <h2 class="section-title">
-
-                A fórmula por trás do EZENO
-
-            </h2>
-
-
-            <p class="lead">
-
-                A apresentação disponibilizada destaca
-                ingredientes específicos associados à
-                identidade herbal e ao conceito de cuidado oral.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="bento mt-6">
-
-
-            <div class="bento-card span-7 reveal">
-
-
-                <span class="label">
-                    01
+                <span class="eyebrow">
+                    INGREDIENTES & FÓRMULA
                 </span>
 
 
-                <h3>
-                    Panax Ginseng
-                </h3>
+                <h2>
+                    A fórmula por trás
+                    <span>do EZENO.</span>
+                </h2>
 
 
-                <p class="text mt-2">
-
-                    O extracto de Panax Ginseng é apresentado
-                    como um dos principais componentes
-                    do dentífrico EZENO.
-
+                <p>
+                    A apresentação disponibilizada destaca ingredientes
+                    específicos associados à identidade herbal e ao
+                    conceito de cuidado oral.
                 </p>
-
-
-                <div class="ezeno-bento-symbol">
-                    G
-                </div>
-
 
             </div>
 
 
-            <div class="bento-card span-5 reveal delay-1">
+            <div class="ezeno-ingredients-grid">
 
+                ${ingredientCard(
+                    "01",
+                    "G",
+                    "Panax Ginseng",
+                    "O extracto de Panax Ginseng é apresentado como um dos principais componentes do dentífrico EZENO."
+                )}
 
-                <span class="label">
-                    02
-                </span>
+                ${ingredientCard(
+                    "02",
+                    "T",
+                    "Óleo da Árvore do Chá",
+                    "Destacado no material promocional em associação com o cuidado do hálito e partículas odoríferas."
+                )}
 
+                ${ingredientCard(
+                    "03",
+                    "S",
+                    "Sílica",
+                    "Apresentada no material como elemento associado à limpeza das manchas persistentes da superfície dentária."
+                )}
 
-                <h3>
-                    Óleo da Árvore do Chá
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    Destacado no material promocional
-                    em associação com o cuidado do hálito
-                    e partículas odoríferas.
-
-                </p>
-
-
-                <div class="ezeno-bento-symbol">
-                    T
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-5 reveal delay-2">
-
-
-                <span class="label">
-                    03
-                </span>
-
-
-                <h3>
-                    Sílica
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    Apresentada no material como elemento
-                    associado à limpeza das manchas
-                    persistentes da superfície dentária.
-
-                </p>
-
-
-                <div class="ezeno-bento-symbol">
-                    S
-                </div>
-
+                ${ingredientCard(
+                    "04",
+                    "30",
+                    "Saponinas & Ginsenósidos",
+                    "A apresentação destaca cerca de 30 tipos de saponinas e ginsenósidos no extracto de ginseng."
+                )}
 
             </div>
 
 
-            <div class="bento-card span-7 reveal delay-3">
-
-
-                <span class="label">
-                    04
-                </span>
-
-
-                <h3>
-                    Ginseng & Saponinas
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    A apresentação destaca a presença
-                    de cerca de 30 tipos de saponinas
-                    e ginsenósidos no extracto de ginseng.
-
-                </p>
-
-
-                <div class="ezeno-bento-symbol">
-                    30
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-12 reveal delay-4">
-
+            <div class="ezeno-formulation-card reveal">
 
                 <span class="label">
                     FORMULAÇÃO
@@ -751,28 +726,86 @@ return `
                 </h3>
 
 
-                <p class="text mt-2">
-
-                    O material promocional fornecido também
-                    apresenta referências a uma formulação
-                    sem flúor, sem triclosano, sem álcool,
-                    sem esteróides, sem metais pesados
-                    e sem certos contaminantes.
-
+                <p>
+                    O material promocional fornecido também apresenta referências
+                    a uma formulação sem flúor, sem triclosano, sem álcool,
+                    sem esteróides, sem metais pesados e sem determinados
+                    contaminantes.
                 </p>
 
 
-            </div>
+                <div class="ezeno-formulation-tags">
 
+                    <span>
+                        Sem Flúor
+                    </span>
+
+                    <span>
+                        Sem Triclosano
+                    </span>
+
+                    <span>
+                        Sem Álcool
+                    </span>
+
+                    <span>
+                        Sem Metais Pesados
+                    </span>
+
+                </div>
+
+            </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
+    `;
+}
 
-`;
 
+function ingredientCard(
+    number,
+    symbol,
+    title,
+    text
+){
+
+    return `
+
+    <article class="ezeno-ingredient-card reveal">
+
+        <span class="ezeno-ingredient-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="ezeno-ingredient-symbol"
+            aria-hidden="true">
+
+            ${symbol}
+
+        </div>
+
+
+        <span class="ezeno-ingredient-label">
+            COMPONENTE
+        </span>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
 }
 
 
@@ -782,156 +815,384 @@ return `
 
 function benefits(){
 
-return `
+    return `
 
-<section class="section-sm ezeno-benefits">
+    <section class="section ezeno-benefits">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-benefits-grid">
 
-        <div class="split">
+                <div class="ezeno-benefits-visual reveal-left">
 
+                    <div class="ezeno-benefits-frame">
 
-            <div class="split-image reveal-left">
+                        <div class="ezeno-benefits-aura"></div>
 
-
-                <div class="ezeno-benefit-image">
-
-
-                    <div class="ezeno-image-glow"></div>
+                        <div class="ezeno-benefits-ring"></div>
 
 
-                    <img
-                        src="./assets/products/ezeno.png"
-                        alt="EZENO"
-                        loading="lazy"
-                    >
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="EZENO Herbal Toothpaste"
+                            loading="lazy"
+                            decoding="async"
+                        >
 
-
-                </div>
-
-
-            </div>
-
-
-            <div class="split-content reveal-right">
-
-
-                <span class="label">
-                    Benefícios
-                </span>
-
-
-                <h2 class="section-title">
-
-                    Limpeza.
-                    Frescura.
-                    Cuidado.
-
-                </h2>
-
-
-                <p class="text mt-3">
-
-                    O material de apresentação do EZENO
-                    posiciona o produto como uma solução
-                    de higiene oral de utilização diária.
-
-                </p>
-
-
-                <div class="icon-list mt-4">
-
-
-                    ${check(
-                        "Limpeza em profundidade"
-                    )}
-
-
-                    ${check(
-                        "Cuidado diário das gengivas"
-                    )}
-
-
-                    ${check(
-                        "Sensação de hálito fresco"
-                    )}
-
-
-                    ${check(
-                        "Cuidado da placa e da superfície dentária"
-                    )}
-
-
-                    ${check(
-                        "Fórmula de inspiração herbal"
-                    )}
-
-
-                    ${check(
-                        "Escovagem orientada para uma rotina consistente"
-                    )}
-
+                    </div>
 
                 </div>
 
 
-                <div class="ezeno-benefit-note mt-5">
-
+                <div class="ezeno-benefits-copy reveal-right">
 
                     <span class="label">
-                        Apresentação do produto
+                        BENEFÍCIOS
                     </span>
 
 
-                    <p class="text mt-2">
+                    <h2 class="section-title">
 
-                        O material promocional refere
-                        protecção prolongada, cuidado
-                        periodontal e redução de bactérias.
-                        Esses resultados devem ser entendidos
-                        como alegações da apresentação.
+                        Limpeza.
+                        Frescura.
+                        <span>Cuidado.</span>
 
+                    </h2>
+
+
+                    <p class="lead">
+                        O material de apresentação do EZENO posiciona
+                        o produto como uma solução de higiene oral
+                        de utilização diária.
                     </p>
 
 
-                </div>
+                    <div class="ezeno-benefit-checks">
 
+                        ${benefitCheck(
+                            "Limpeza em profundidade"
+                        )}
+
+                        ${benefitCheck(
+                            "Cuidado diário das gengivas"
+                        )}
+
+                        ${benefitCheck(
+                            "Sensação de hálito fresco"
+                        )}
+
+                        ${benefitCheck(
+                            "Cuidado da placa e da superfície dentária"
+                        )}
+
+                        ${benefitCheck(
+                            "Fórmula de inspiração herbal"
+                        )}
+
+                        ${benefitCheck(
+                            "Rotina consistente de escovagem"
+                        )}
+
+                    </div>
+
+
+                    <div class="ezeno-more-wrap">
+
+                        <button
+                            type="button"
+                            class="ezeno-more-toggle"
+                            data-more-toggle="benefits"
+                            data-open-label="Ver informações funcionais"
+                            data-close-label="Ocultar informações"
+                            aria-expanded="false"
+                            aria-controls="ezeno-benefits-more">
+
+                            <span>
+                                Ver informações funcionais
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
+                        </button>
+
+
+                        <div
+                            id="ezeno-benefits-more"
+                            class="ezeno-more-panel"
+                            data-more-panel="benefits"
+                            aria-hidden="true">
+
+                            <div class="ezeno-detail-grid">
+
+                                ${detailCard(
+                                    "LIMPEZA",
+                                    "Superfície dentária",
+                                    "O material apresenta uma proposta de limpeza relacionada com resíduos, manchas e placa dentária."
+                                )}
+
+                                ${detailCard(
+                                    "GENGIVAS",
+                                    "Cuidado periodontal",
+                                    "A apresentação relaciona o produto com uma rotina de higiene e cuidado das gengivas."
+                                )}
+
+                                ${detailCard(
+                                    "FRESCURA",
+                                    "Experiência refrescante",
+                                    "O óleo da árvore do chá aparece no material promocional associado à experiência de frescura oral.",
+                                    [],
+                                    true
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </div>
+    </section>
 
-</section>
-
-`;
-
+    `;
 }
 
 
-function check(text){
+function benefitCheck(text){
 
-return `
+    return `
 
-<div class="icon-item">
+    <div class="ezeno-benefit-check">
+
+        <span>
+            ✓
+        </span>
 
 
-    <div class="icon-circle">
-        ✓
+        <p>
+            ${text}
+        </p>
+
     </div>
 
+    `;
+}
 
-    <div>
-        ${text}
+
+/* ==========================================================
+   PRODUCT DETAIL
+   ========================================================== */
+
+function productDetail(){
+
+    return `
+
+    <section
+        id="ezeno-product"
+        class="section ezeno-product-section">
+
+        <div class="container">
+
+            <div class="ezeno-section-heading reveal">
+
+                <span class="eyebrow">
+                    O PRODUTO
+                </span>
+
+
+                <h2>
+                    EZENO.
+                    <span>Premium Oral Care.</span>
+                </h2>
+
+
+                <p>
+                    O produto é apresentado através de uma identidade
+                    herbal, uma proposta de higiene oral diária e
+                    características específicas de formulação.
+                </p>
+
+            </div>
+
+
+            <article class="ezeno-product-card reveal">
+
+
+                <div class="ezeno-product-card-visual">
+
+                    <div class="ezeno-detail-aura"></div>
+
+                    <div class="ezeno-detail-ring"></div>
+
+
+                    <div class="ezeno-product-detail-grid">
+
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="EZENO Herbal Toothpaste"
+                            loading="lazy"
+                            decoding="async"
+                            class="ezeno-product-detail-image"
+                        >
+
+                    </div>
+
+
+                    <span class="ezeno-detail-caption">
+                        EZENO · HERBAL ORAL CARE
+                    </span>
+
+                </div>
+
+
+                <div class="ezeno-product-card-copy">
+
+                    <span class="label">
+                        EZENO HERBAL
+                    </span>
+
+
+                    <h3>
+
+                        Cuidado oral.
+                        <span>Todos os dias.</span>
+
+                    </h3>
+
+
+                    <p>
+                        Uma proposta de higiene oral apresentada
+                        com destaque para ginseng, frescura,
+                        limpeza e cuidado da cavidade oral.
+                    </p>
+
+
+                    <div class="ezeno-product-spec-list">
+
+                        ${productSpec(
+                            "Categoria",
+                            "Premium Oral Care"
+                        )}
+
+                        ${productSpec(
+                            "Ingrediente",
+                            "Panax Ginseng"
+                        )}
+
+                        ${productSpec(
+                            "Destaque",
+                            "Frescura oral"
+                        )}
+
+                        ${productSpec(
+                            "Formulação",
+                            "Sem Flúor"
+                        )}
+
+                    </div>
+
+
+                    <div class="ezeno-more-wrap">
+
+                        <button
+                            type="button"
+                            class="ezeno-more-toggle"
+                            data-more-toggle="product"
+                            data-open-label="Ver mais características"
+                            data-close-label="Ocultar características"
+                            aria-expanded="false"
+                            aria-controls="ezeno-product-more">
+
+                            <span>
+                                Ver mais características
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
+                        </button>
+
+
+                        <div
+                            id="ezeno-product-more"
+                            class="ezeno-more-panel"
+                            data-more-panel="product"
+                            aria-hidden="true">
+
+                            <div class="ezeno-detail-list">
+
+                                ${detailItem(
+                                    "Produto apresentado para uma rotina diária de higiene oral."
+                                )}
+
+                                ${detailItem(
+                                    "Extracto de Panax Ginseng destacado na formulação apresentada."
+                                )}
+
+                                ${detailItem(
+                                    "Óleo da árvore do chá e sílica também são destacados no material."
+                                )}
+
+                                ${detailItem(
+                                    "A utilização deve seguir as instruções oficiais da embalagem."
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary ezeno-card-buy"
+                        data-buy="product">
+
+                        Adquirir EZENO
+
+                    </button>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function productSpec(
+    label,
+    value
+){
+
+    return `
+
+    <div class="ezeno-product-spec">
+
+        <span>
+            ${label}
+        </span>
+
+
+        <strong>
+            ${value}
+        </strong>
+
     </div>
 
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -941,207 +1202,190 @@ return `
 
 function technology(){
 
-return `
+    return `
 
-<section class="section ezeno-technology">
+    <section class="section ezeno-technology">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-section-heading ezeno-heading-dark reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Tecnologia & Protecção
-            </span>
+                <span class="eyebrow">
+                    TECNOLOGIA & PROTECÇÃO
+                </span>
 
 
-            <h2 class="section-title">
-
-                Uma abordagem completa
-                à higiene oral
-
-            </h2>
+                <h2>
+                    Uma abordagem completa
+                    <span>à higiene oral.</span>
+                </h2>
 
 
-            <p class="lead">
+                <p>
+                    A comunicação do EZENO combina ingredientes herbais,
+                    limpeza, frescura e características específicas
+                    de formulação.
+                </p>
 
-                A comunicação do EZENO combina
-                ingredientes herbais, limpeza,
-                frescura e características específicas
-                de formulação.
-
-            </p>
-
-
-        </div>
+            </div>
 
 
-        <div class="grid grid-3 mt-6">
+            <div class="ezeno-technology-grid">
+
+                ${technologyCard(
+                    "01",
+                    "Cuidado periodontal",
+                    "O material promocional associa o produto ao cuidado das gengivas e do periodonto.",
+                    "🦷"
+                )}
+
+                ${technologyCard(
+                    "02",
+                    "Protecção",
+                    "A apresentação refere uma proposta de protecção prolongada contra cáries e bactérias.",
+                    "◉"
+                )}
+
+                ${technologyCard(
+                    "03",
+                    "Frescura",
+                    "A comunicação destaca uma experiência de hálito fresco e duradouro.",
+                    "✦"
+                )}
+
+                ${technologyCard(
+                    "04",
+                    "Ginseng",
+                    "O extracto de Panax Ginseng ocupa uma posição central na identidade do produto.",
+                    "🌿"
+                )}
+
+                ${technologyCard(
+                    "05",
+                    "Espuma",
+                    "A apresentação destaca uma textura e espuma de alta densidade.",
+                    "◌"
+                )}
+
+                ${technologyCard(
+                    "06",
+                    "Experiência Premium",
+                    "Uma proposta de higiene oral apresentada com posicionamento premium.",
+                    "◇"
+                )}
+
+            </div>
 
 
-            ${feature(
-                "🦷",
-                "Cuidado Periodontal",
-                "O material promocional associa o produto ao cuidado das gengivas e do periodonto."
-            )}
+            <div class="ezeno-technology-feature reveal">
 
-
-            ${feature(
-                "🛡️",
-                "Protecção",
-                "A apresentação refere protecção prolongada contra cáries e bactérias."
-            )}
-
-
-            ${feature(
-                "✨",
-                "Frescura",
-                "A comunicação destaca uma experiência de hálito fresco e duradouro."
-            )}
-
-
-            ${feature(
-                "🌿",
-                "Ginseng",
-                "O extracto de Panax Ginseng ocupa uma posição central na identidade do produto."
-            )}
-
-
-            ${feature(
-                "🫧",
-                "Espuma",
-                "A apresentação destaca uma textura e espuma de alta densidade."
-            )}
-
-
-            ${feature(
-                "💎",
-                "Experiência Premium",
-                "Uma proposta de higiene oral apresentada com posicionamento premium."
-            )}
-
-
-        </div>
-
-
-        <div class="ezeno-protection-bento mt-6">
-
-
-            <div class="ezeno-protection-card reveal">
-
-
-                <span class="protection-number">
+                <div class="ezeno-technology-number">
                     99,9%
-                </span>
+                </div>
 
 
-                <h3>
-                    Protecção declarada
-                </h3>
+                <div>
+
+                    <span>
+                        DESTAQUE DO MATERIAL PROMOCIONAL
+                    </span>
 
 
-                <p class="text mt-2">
+                    <p>
+                        Percentagem apresentada no material relativamente
+                        à protecção contra bactérias. Este valor deve ser
+                        entendido como alegação do material promocional
+                        e confirmado na documentação oficial.
+                    </p>
 
-                    Percentagem apresentada
-                    no material promocional
-                    relativamente à protecção
-                    contra bactérias.
-
-                </p>
-
-
-            </div>
-
-
-            <div class="ezeno-protection-card reveal delay-1">
-
-
-                <span class="protection-number">
-                    24H
-                </span>
-
-
-                <h3>
-                    Frescura declarada
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    Duração indicada na
-                    apresentação promocional
-                    relativamente à frescura oral.
-
-                </p>
-
+                </div>
 
             </div>
 
 
-            <div class="ezeno-protection-card reveal delay-2">
+            <div class="ezeno-technology-stats">
 
+                ${technologyStat(
+                    "24H",
+                    "Frescura declarada"
+                )}
 
-                <span class="protection-number">
-                    2×
-                </span>
+                ${technologyStat(
+                    "2×",
+                    "Escovagem diária"
+                )}
 
-
-                <h3>
-                    Utilização diária
-                </h3>
-
-
-                <p class="text mt-2">
-
-                    O material recomenda escovar
-                    cuidadosamente pelo menos
-                    duas vezes por dia.
-
-                </p>
-
+                ${technologyStat(
+                    "30",
+                    "Saponinas e ginsenósidos destacados"
+                )}
 
             </div>
-
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function feature(icon, title, text){
+function technologyCard(
+    number,
+    title,
+    text,
+    icon
+){
 
-return `
+    return `
 
-<div class="card service-card ezeno-feature-card reveal">
+    <article class="ezeno-technology-card reveal">
 
-
-    <div class="service-icon">
-        ${icon}
-    </div>
-
-
-    <h3>
-        ${title}
-    </h3>
-
-
-    <p class="text mt-2">
-        ${text}
-    </p>
+        <span>
+            ${number}
+        </span>
 
 
-</div>
+        <div class="ezeno-technology-icon">
+            ${icon}
+        </div>
 
-`;
 
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
+
+function technologyStat(
+    value,
+    label
+){
+
+    return `
+
+    <article class="ezeno-technology-stat reveal">
+
+        <strong>
+            ${value}
+        </strong>
+
+        <span>
+            ${label}
+        </span>
+
+    </article>
+
+    `;
 }
 
 
@@ -1151,151 +1395,135 @@ return `
 
 function certifications(){
 
-return `
+    return `
 
-<section class="section-sm ezeno-certifications">
+    <section class="section ezeno-certifications">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Certificações
-            </span>
+                <span class="eyebrow">
+                    DOCUMENTAÇÃO
+                </span>
 
 
-            <h2 class="section-title">
-
-                Qualidade e conformidade
-
-            </h2>
-
-
-            <p class="lead">
-
-                O material fornecido apresenta referências
-                a patentes, relatórios clínicos, inspecções
-                e determinadas características de formulação.
-
-            </p>
+                <h2>
+                    Qualidade,
+                    <span>testes e conformidade.</span>
+                </h2>
 
 
-        </div>
+                <p>
+                    O material fornecido apresenta referências
+                    a patentes, relatórios clínicos, inspecções
+                    e determinadas características de formulação.
+                </p>
+
+            </div>
 
 
-        <div class="ezeno-certification-grid mt-6">
+            <div class="ezeno-certification-grid">
+
+                ${certificateCard(
+                    "01",
+                    "Patentes concedidas",
+                    "Referência apresentada no material promocional fornecido."
+                )}
+
+                ${certificateCard(
+                    "02",
+                    "Relatórios clínicos",
+                    "O material faz referência a relatórios clínicos aprovados."
+                )}
+
+                ${certificateCard(
+                    "03",
+                    "Inspecção",
+                    "A apresentação inclui referência a inspecção aprovada."
+                )}
+
+                ${certificateCard(
+                    "04",
+                    "Sem Flúor",
+                    "Característica declarada na documentação promocional fornecida."
+                )}
+
+                ${certificateCard(
+                    "05",
+                    "Sem Triclosano",
+                    "Característica declarada na apresentação do produto."
+                )}
+
+                ${certificateCard(
+                    "06",
+                    "Sem Metais Pesados",
+                    "Característica indicada no material promocional fornecido."
+                )}
+
+            </div>
 
 
-            ${certificate(
-                "01",
-                "Patentes concedidas",
-                "Referência apresentada no material promocional fornecido."
-            )}
+            <div class="ezeno-certification-note reveal">
+
+                <span class="label">
+                    VERIFICAÇÃO
+                </span>
 
 
-            ${certificate(
-                "02",
-                "Relatórios clínicos",
-                "O material faz referência a relatórios clínicos aprovados."
-            )}
+                <p>
+                    Números, entidades certificadoras, validade,
+                    âmbito e autenticidade de qualquer certificação,
+                    patente ou relatório devem ser confirmados
+                    na documentação oficial correspondente.
+                </p>
 
-
-            ${certificate(
-                "03",
-                "Inspecção",
-                "A apresentação inclui referência a inspecção aprovada."
-            )}
-
-
-            ${certificate(
-                "04",
-                "Sem flúor",
-                "Característica declarada na documentação promocional fornecida."
-            )}
-
-
-            ${certificate(
-                "05",
-                "Sem triclosano",
-                "Característica declarada na apresentação do produto."
-            )}
-
-
-            ${certificate(
-                "06",
-                "Sem metais pesados",
-                "Característica indicada no material promocional fornecido."
-            )}
-
-
-        </div>
-
-
-        <div class="ezeno-certification-note mt-5">
-
-
-            <span class="label">
-                Verificação
-            </span>
-
-
-            <p class="text mt-2">
-
-                Números, entidades certificadoras,
-                validade, âmbito e autenticidade
-                de qualquer certificação ou patente
-                devem ser confirmados na documentação
-                oficial correspondente.
-
-            </p>
-
+            </div>
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function certificate(code, title, text){
+function certificateCard(
+    number,
+    title,
+    text
+){
 
-return `
+    return `
 
-<article class="ezeno-certificate reveal">
+    <article class="ezeno-certificate reveal">
 
-
-    <div class="ezeno-certificate-number">
-        ${code}
-    </div>
-
-
-    <div>
-
-
-        <h3>
-            ${title}
-        </h3>
+        <div class="ezeno-certificate-number">
+            ${number}
+        </div>
 
 
-        <p class="text mt-2">
-            ${text}
-        </p>
+        <div>
+
+            <span class="ezeno-certificate-label">
+                DOCUMENTAÇÃO
+            </span>
 
 
-    </div>
+            <h3>
+                ${title}
+            </h3>
 
 
-</article>
+            <p>
+                ${text}
+            </p>
 
-`;
+        </div>
 
+    </article>
+
+    `;
 }
 
 
@@ -1305,137 +1533,147 @@ return `
 
 function howToUse(){
 
-return `
+    return `
 
-<section class="section-sm ezeno-routine">
+    <section class="section ezeno-routine">
 
-    <div class="container-sm">
+        <div class="container-sm">
 
+            <div class="ezeno-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Utilização
-            </span>
+                <span class="eyebrow">
+                    UTILIZAÇÃO
+                </span>
 
 
-            <h2 class="section-title">
-
-                Uma rotina simples
-                de higiene oral
-
-            </h2>
+                <h2>
+                    Uma rotina simples
+                    de <span>higiene oral.</span>
+                </h2>
 
 
-            <p class="lead">
+                <p>
+                    O material do produto recomenda uma escovagem
+                    cuidadosa pelo menos duas vezes por dia.
+                </p>
 
-                O material do produto recomenda uma
-                escovagem cuidadosa pelo menos duas
-                vezes por dia.
+            </div>
 
-            </p>
 
+            <div class="ezeno-routine-list">
+
+                ${routineStep(
+                    "01",
+                    "Preparar",
+                    "Humedeça a escova e coloque uma quantidade adequada de EZENO."
+                )}
+
+
+                ${routineStep(
+                    "02",
+                    "Escovar",
+                    "Escove cuidadosamente os dentes e a linha das gengivas."
+                )}
+
+
+                <div
+                    class="ezeno-more-panel"
+                    data-more-panel="routine"
+                    aria-hidden="true"
+                    id="ezeno-routine-more">
+
+                    ${routineStep(
+                        "03",
+                        "Limpar",
+                        "Dedique atenção à superfície dentária e às zonas de difícil acesso."
+                    )}
+
+
+                    ${routineStep(
+                        "04",
+                        "Repetir",
+                        "Utilize pelo menos duas vezes por dia, de acordo com a orientação apresentada."
+                    )}
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="button"
+                class="ezeno-more-toggle"
+                data-more-toggle="routine"
+                data-open-label="Ver mais passos"
+                data-close-label="Ocultar passos"
+                aria-expanded="false"
+                aria-controls="ezeno-routine-more">
+
+                <span>
+                    Ver mais passos
+                </span>
+
+                <i aria-hidden="true">
+                    +
+                </i>
+
+            </button>
+
+
+            <div class="ezeno-routine-note reveal">
+
+                <span class="label">
+                    NOTA IMPORTANTE
+                </span>
+
+
+                <p>
+                    As instruções específicas da embalagem oficial devem prevalecer.
+                    Uma boa higiene oral também inclui acompanhamento regular
+                    por profissionais de saúde oral.
+                </p>
+
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="timeline mt-6">
-
-
-            ${step(
-                "1",
-                "Preparar",
-                "Humedeça a escova e coloque uma quantidade adequada de EZENO."
-            )}
-
-
-            ${step(
-                "2",
-                "Escovar",
-                "Escove cuidadosamente os dentes e a linha das gengivas."
-            )}
-
-
-            ${step(
-                "3",
-                "Limpar",
-                "Dedique atenção à superfície dentária e às zonas de difícil acesso."
-            )}
-
-
-            ${step(
-                "4",
-                "Repetir",
-                "Utilize pelo menos duas vezes por dia, de acordo com a orientação apresentada."
-            )}
-
-
-        </div>
-
-
-        <div class="ezeno-routine-note mt-5">
-
-
-            <span class="label">
-                Nota importante
-            </span>
-
-
-            <p class="text mt-2">
-
-                As instruções específicas da embalagem
-                oficial devem prevalecer. Uma boa higiene
-                oral também inclui acompanhamento regular
-                por profissionais de saúde oral.
-
-            </p>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function step(number, title, text){
+function routineStep(
+    number,
+    title,
+    text
+){
 
-return `
+    return `
 
-<div class="timeline-item reveal">
+    <article class="ezeno-routine-step reveal">
 
-
-    <div class="timeline-dot">
-        ${number}
-    </div>
-
-
-    <div class="timeline-content">
-
-
-        <h3>
-            ${title}
-        </h3>
+        <div class="ezeno-routine-number">
+            ${number}
+        </div>
 
 
-        <p class="text mt-1">
-            ${text}
-        </p>
+        <div>
+
+            <h3>
+                ${title}
+            </h3>
 
 
-    </div>
+            <p>
+                ${text}
+            </p>
 
+        </div>
 
-</div>
+    </article>
 
-`;
-
+    `;
 }
 
 
@@ -1445,125 +1683,116 @@ return `
 
 function experience(){
 
-return `
+    return `
 
-<section class="section ezeno-experience">
+    <section class="section ezeno-experience">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="section-center ezeno-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                EZENO Lifestyle
-            </span>
+                <span class="label">
+                    EZENO LIFESTYLE
+                </span>
 
 
-            <h2 class="section-title">
+                <h2 class="section-title">
 
-                Um sorriso cuidado
-                começa na rotina
+                    Um sorriso cuidado
+                    começa na <span>rotina.</span>
 
-            </h2>
-
-
-            <p class="lead">
-
-                Uma abordagem de higiene oral que
-                combina cuidado, frescura, ingredientes
-                destacados pela marca e uma experiência
-                premium de escovagem.
-
-            </p>
+                </h2>
 
 
-        </div>
+                <p class="lead">
+                    Uma abordagem de higiene oral que combina cuidado,
+                    frescura, ingredientes destacados pela marca
+                    e uma experiência premium de escovagem.
+                </p>
+
+            </div>
 
 
-        <div class="grid grid-3 mt-6">
+            <div class="ezeno-experience-grid">
 
+                ${experienceCard(
+                    "🌿",
+                    "Herbal",
+                    "Identidade construída em torno do ginseng e de ingredientes de origem vegetal."
+                )}
 
-            ${experienceCard(
-                "🌿",
-                "Herbal",
-                "Identidade construída em torno do ginseng e de ingredientes de origem vegetal."
-            )}
+                ${experienceCard(
+                    "🦷",
+                    "Oral Care",
+                    "Foco na higiene diária dos dentes, gengivas e boca."
+                )}
 
+                ${experienceCard(
+                    "✦",
+                    "Frescura",
+                    "Uma experiência orientada para um hálito fresco e agradável."
+                )}
 
-            ${experienceCard(
-                "🦷",
-                "Oral Care",
-                "Foco na higiene diária dos dentes, gengivas e boca."
-            )}
+                ${experienceCard(
+                    "◉",
+                    "Protecção",
+                    "O material destaca uma proposta de protecção oral prolongada."
+                )}
 
+                ${experienceCard(
+                    "◇",
+                    "Premium",
+                    "Uma apresentação sofisticada para uma rotina de higiene oral."
+                )}
 
-            ${experienceCard(
-                "✨",
-                "Frescura",
-                "Uma experiência orientada para um hálito fresco e agradável."
-            )}
+                ${experienceCard(
+                    "🌱",
+                    "Natureza",
+                    "Uma proposta visual e conceptual ligada a ingredientes botânicos."
+                )}
 
-
-            ${experienceCard(
-                "🛡️",
-                "Protecção",
-                "O material destaca uma proposta de protecção oral prolongada."
-            )}
-
-
-            ${experienceCard(
-                "💎",
-                "Premium",
-                "Uma apresentação sofisticada para uma rotina de higiene oral."
-            )}
-
-
-            ${experienceCard(
-                "🌱",
-                "Natureza",
-                "Uma proposta visual e conceptual ligada a ingredientes botânicos."
-            )}
-
+            </div>
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function experienceCard(icon, title, text){
+function experienceCard(
+    icon,
+    title,
+    text
+){
 
-return `
+    return `
 
-<article class="card service-card ezeno-experience-card reveal">
+    <article class="ezeno-experience-card reveal">
 
-
-    <div class="service-icon">
-        ${icon}
-    </div>
-
-
-    <h3>
-        ${title}
-    </h3>
+        <div class="ezeno-experience-icon">
+            ${icon}
+        </div>
 
 
-    <p class="text mt-2">
-        ${text}
-    </p>
+        <span class="ezeno-experience-number">
+            CONCEITO
+        </span>
 
 
-</article>
+        <h3>
+            ${title}
+        </h3>
 
-`;
 
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
 }
 
 
@@ -1573,145 +1802,222 @@ return `
 
 function faq(){
 
-return `
+    const questions = [
 
-<section class="section-sm ezeno-faq">
+        [
+            "O que é o EZENO?",
+            "O EZENO é apresentado como um dentífrico de base herbal, com destaque para o extracto de Panax Ginseng e uma proposta de higiene oral diária."
+        ],
 
-    <div class="container-sm">
+        [
+            "Qual é o principal ingrediente?",
+            "O material fornecido destaca o extracto de Panax Ginseng, associado a cerca de 30 tipos de saponinas e ginsenósidos na apresentação comercial."
+        ],
+
+        [
+            "O EZENO contém flúor?",
+            "O material promocional fornecido apresenta o EZENO como uma fórmula sem flúor. A composição oficial deve ser sempre confirmada no rótulo e documentação do produto."
+        ],
+
+        [
+            "O EZENO contém triclosano?",
+            "A apresentação do produto indica “sem triclosano”. A composição oficial deve ser confirmada na embalagem correspondente."
+        ],
+
+        [
+            "O EZENO ajuda a manter o hálito fresco?",
+            "Sim, essa é uma das características destacadas no material promocional, incluindo referência ao óleo da árvore do chá e a uma frescura prolongada."
+        ],
+
+        [
+            "Com que frequência devo escovar?",
+            "O material fornecido recomenda escovar cuidadosamente pelo menos duas vezes por dia."
+        ],
+
+        [
+            "O EZENO protege contra cáries e bactérias?",
+            "A apresentação promocional afirma protecção contra cáries e bactérias. Esses números e efeitos devem ser entendidos como alegações da apresentação do produto e não como garantia clínica."
+        ],
+
+        [
+            "O EZENO repara as gengivas?",
+            "O material promocional apresenta uma afirmação de reparação das gengivas em determinado período. Essa afirmação não deve ser interpretada como garantia de tratamento ou resultado para uma condição periodontal."
+        ],
+
+        [
+            "O EZENO substitui uma consulta de dentista?",
+            "Não. Um dentífrico faz parte da higiene oral diária, mas não substitui avaliação, diagnóstico ou tratamento realizado por um dentista."
+        ],
+
+        [
+            "Onde posso obter mais informações?",
+            "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade e aquisição."
+        ]
+
+    ];
 
 
-        <div class="section-center reveal">
+    return `
+
+    <section
+        id="ezeno-faq"
+        class="section ezeno-faq-section">
+
+        <div class="container-sm">
+
+            <div class="ezeno-section-heading reveal">
+
+                <span class="eyebrow">
+                    PERGUNTAS FREQUENTES
+                </span>
 
 
-            <span class="label">
-                Perguntas Frequentes
-            </span>
+                <h2>
+                    Tudo sobre o
+                    <span>EZENO.</span>
+                </h2>
 
 
-            <h2 class="section-title">
-                Tudo sobre o EZENO
-            </h2>
+                <p>
+                    As respostas abrem individualmente para manter
+                    a leitura organizada e facilitar a consulta.
+                </p>
 
+            </div>
+
+
+            <div class="ezeno-faq-list">
+
+                ${questions
+                    .map(
+                        ([questionText,answerText],index) =>
+                            faqItem(
+                                String(index + 1).padStart(2,"0"),
+                                questionText,
+                                answerText
+                            )
+                    )
+                    .join("")
+                }
+
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="faq mt-5">
-
-
-            ${question(
-                "O que é o EZENO?",
-                "O EZENO é apresentado como um dentífrico de base herbal, com destaque para o extracto de Panax Ginseng e uma proposta de higiene oral diária."
-            )}
-
-
-            ${question(
-                "Qual é o principal ingrediente?",
-                "O material fornecido destaca o extracto de Panax Ginseng, associado a cerca de 30 tipos de saponinas e ginsenósidos na apresentação comercial."
-            )}
-
-
-            ${question(
-                "O EZENO contém flúor?",
-                "O material promocional fornecido apresenta o EZENO como uma fórmula sem flúor. A composição oficial deve ser sempre confirmada no rótulo e documentação do produto."
-            )}
-
-
-            ${question(
-                "O EZENO contém triclosano?",
-                "A apresentação do produto indica “sem triclosano”. A composição oficial deve ser confirmada na embalagem correspondente."
-            )}
-
-
-            ${question(
-                "O EZENO ajuda a manter o hálito fresco?",
-                "Sim, essa é uma das características destacadas no material promocional, incluindo referência ao óleo da árvore do chá e a uma frescura prolongada."
-            )}
-
-
-            ${question(
-                "Com que frequência devo escovar?",
-                "O material fornecido recomenda escovar cuidadosamente pelo menos duas vezes por dia."
-            )}
-
-
-            ${question(
-                "O EZENO protege contra cáries e bactérias?",
-                "A apresentação promocional afirma protecção contra cáries e bactérias. Esses números e efeitos devem ser entendidos como alegações da apresentação do produto e não como garantia clínica."
-            )}
-
-
-            ${question(
-                "O EZENO repara as gengivas?",
-                "O material promocional apresenta uma afirmação de reparação das gengivas em determinado período. Essa afirmação não deve ser interpretada como garantia de tratamento ou resultado para uma condição periodontal."
-            )}
-
-
-            ${question(
-                "O EZENO substitui uma consulta de dentista?",
-                "Não. Um dentífrico faz parte da higiene oral diária, mas não substitui avaliação, diagnóstico ou tratamento realizado por um dentista."
-            )}
-
-
-            ${question(
-                "Onde posso obter mais informações?",
-                "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade e aquisição."
-            )}
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function question(questionText, answerText){
+function faqItem(
+    number,
+    questionText,
+    answerText
+){
 
-return `
+    const answerId =
+        `ezeno-faq-answer-${number}`;
 
-<div class="faq-item">
+    return `
 
+    <article class="ezeno-faq-item">
 
-    <button
-        class="faq-question"
-        type="button"
-        aria-expanded="false">
+        <button
+            type="button"
+            class="ezeno-faq-question"
+            aria-expanded="false"
+            aria-controls="${answerId}">
 
-
-        <span>
-            ${questionText}
-        </span>
-
-
-        <span>
-            +
-        </span>
-
-
-    </button>
+            <span class="ezeno-faq-number">
+                ${number}
+            </span>
 
 
-    <div class="faq-answer">
+            <span class="ezeno-faq-text">
+                ${questionText}
+            </span>
 
 
-        <p>
-            ${answerText}
-        </p>
+            <span
+                class="ezeno-faq-plus"
+                aria-hidden="true">
+
+                +
+
+            </span>
+
+        </button>
 
 
-    </div>
+        <div
+            id="${answerId}"
+            class="ezeno-faq-answer"
+            role="region"
+            aria-hidden="true">
+
+            <p>
+                ${answerText}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
 
 
-</div>
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
 
-`;
+function information(){
 
+    return `
+
+    <section class="section ezeno-information-section">
+
+        <div class="container">
+
+            <div class="ezeno-information-box reveal">
+
+                <div class="ezeno-information-icon">
+                    i
+                </div>
+
+
+                <div>
+
+                    <span class="label">
+                        COMUNICAÇÃO RESPONSÁVEL
+                    </span>
+
+
+                    <h2>
+                        O que é apresentado
+                        e o que requer confirmação.
+                    </h2>
+
+
+                    <p>
+                        As informações desta página foram organizadas
+                        a partir do material disponibilizado para o EZENO.
+                        Percentagens, tempos, certificações, benefícios
+                        e outras alegações específicas devem ser confirmados
+                        através da documentação oficial antes de serem
+                        utilizados como garantias ou promessas clínicas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
 }
 
 
@@ -1721,48 +2027,37 @@ return `
 
 function cta(){
 
-return `
+    return `
 
-<section class="section ezeno-cta">
+    <section class="section ezeno-cta-section">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="ezeno-cta-box reveal">
 
-        <div class="showcase">
-
-
-            <div class="showcase-content section-center">
-
-
-                <span class="badge">
-                    EZENO
+                <span class="ezeno-label-light">
+                    EZENO HERBAL
                 </span>
 
 
-                <h2 class="section-title mt-3">
-
+                <h2>
                     Mais do que um dentífrico.
-                    Uma rotina de cuidado.
-
+                    <span>Uma rotina de cuidado.</span>
                 </h2>
 
 
-                <p class="lead">
-
-                    Descubra o EZENO e conheça uma
-                    proposta de higiene oral inspirada
+                <p>
+                    Descubra uma proposta de higiene oral inspirada
                     no ginseng, na frescura e no cuidado diário.
-
                 </p>
 
 
-                <div class="hero-actions center mt-4">
-
+                <div class="ezeno-cta-actions">
 
                     <button
+                        type="button"
                         class="btn btn-primary"
-                        id="ezenoWhats"
-                        type="button">
+                        id="ezenoWhats">
 
                         Falar no WhatsApp
 
@@ -1770,67 +2065,29 @@ return `
 
 
                     <button
+                        type="button"
                         class="btn btn-glass"
-                        id="backHome"
-                        type="button">
+                        id="backHome">
 
-                        Voltar ao Início
+                        Voltar à AD Lifestyle
 
                     </button>
-
 
                 </div>
 
 
-                <p class="ezeno-cta-disclaimer mt-4">
-
-                    Informação apresentada com base
-                    no material disponibilizado para
-                    o produto.
-
+                <p class="ezeno-cta-disclaimer">
+                    Informação apresentada com base no material
+                    disponibilizado para o produto.
                 </p>
-
 
             </div>
 
-
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
-}
-
-
-/* ==========================================================
-   DETAIL ITEM
-   ========================================================== */
-
-function detailItem(text){
-
-return `
-
-<div class="ezeno-detail-item">
-
-
-    <span class="icon-circle">
-        ✓
-    </span>
-
-
-    <span>
-        ${text}
-    </span>
-
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -1840,231 +2097,554 @@ return `
 
 function initialiseEzeno(){
 
+    const root =
+        document.querySelector(
+            ".page-ezeno"
+        );
+
+    if(!root){
+        return;
+    }
+
+
+    /* ------------------------------------------------------
+       RIPPLE
+       ------------------------------------------------------ */
 
     try{
 
-        stagger(".ezeno-care-card");
-
-        stagger(".ezeno-detail-card");
-
-        stagger(".ezeno-feature-card");
-
-        stagger(".ezeno-experience-card");
-
-        stagger(".ezeno-certificate");
+        root
+            .querySelectorAll(".btn")
+            .forEach(button => ripple(button));
 
     }catch(error){
 
         console.warn(
-            "EZENO animations:",
+            "EZENO: ripple não inicializado.",
             error
         );
 
     }
 
 
+    /* ------------------------------------------------------
+       STAGGER
+       ------------------------------------------------------ */
+
     try{
 
-        document
-            .querySelectorAll(
-                ".page-ezeno .btn"
+        stagger(
+            root.querySelectorAll(
+                `
+                .ezeno-overview-grid .reveal,
+                .ezeno-care-grid .reveal,
+                .ezeno-ingredients-grid .reveal,
+                .ezeno-benefits-grid .reveal,
+                .ezeno-technology-grid .reveal,
+                .ezeno-certification-grid .reveal,
+                .ezeno-experience-grid .reveal,
+                .ezeno-routine-list .reveal
+                `
             )
-            .forEach(button => {
-
-                ripple(button);
-
-            });
+        );
 
     }catch(error){
 
         console.warn(
-            "EZENO ripple:",
+            "EZENO: stagger não inicializado.",
             error
         );
 
     }
 
 
-    /*
-     * Ingredients button
-     */
+    /* ------------------------------------------------------
+       SCROLL
+       ------------------------------------------------------ */
 
-    document
-        .getElementById("ezenoIngredients")
-        ?.addEventListener(
-            "click",
-            () => {
+    root.addEventListener(
+        "click",
+        function(event){
 
-                document
-                    .getElementById("ezeno-ingredients")
-                    ?.scrollIntoView({
+            const trigger =
+                event.target.closest(
+                    "[data-scroll]"
+                );
 
-                        behavior:"smooth",
-                        block:"start"
+            if(!trigger){
+                return;
+            }
 
-                    });
+            const selector =
+                trigger.getAttribute(
+                    "data-scroll"
+                );
+
+            if(!selector){
+                return;
+            }
+
+            const target =
+                root.querySelector(
+                    selector
+                );
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
 
             }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       MORE / DETAILS
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "[data-more-toggle]"
+                );
+
+            if(!button){
+                return;
+            }
+
+            const key =
+                button.getAttribute(
+                    "data-more-toggle"
+                );
+
+            const panel =
+                root.querySelector(
+                    `[data-more-panel="${key}"]`
+                );
+
+            if(!panel){
+                return;
+            }
+
+            const isOpen =
+                button.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+            const nextState =
+                !isOpen;
+
+
+            button.setAttribute(
+                "aria-expanded",
+                String(nextState)
+            );
+
+
+            button.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.setAttribute(
+                "aria-hidden",
+                String(!nextState)
+            );
+
+
+            if(nextState){
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+            }else{
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+                requestAnimationFrame(()=>{
+
+                    panel.style.maxHeight =
+                        "0px";
+
+                });
+
+            }
+
+
+            const label =
+                button.querySelector(
+                    "span"
+                );
+
+
+            if(label){
+
+                label.textContent =
+                    nextState
+                        ? button.dataset.closeLabel || "Ocultar"
+                        : button.dataset.openLabel || "Ver mais";
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       FAQ — APENAS UMA ABERTA
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    ".ezeno-faq-question"
+                );
+
+            if(!button){
+                return;
+            }
+
+
+            const item =
+                button.closest(
+                    ".ezeno-faq-item"
+                );
+
+            if(!item){
+                return;
+            }
+
+
+            const answer =
+                item.querySelector(
+                    ".ezeno-faq-answer"
+                );
+
+            if(!answer){
+                return;
+            }
+
+
+            const isOpen =
+                item.classList.contains(
+                    "active"
+                );
+
+
+            root
+                .querySelectorAll(
+                    ".ezeno-faq-item.active"
+                )
+                .forEach(
+                    otherItem=>{
+
+                        if(
+                            otherItem !== item
+                        ){
+
+                            closeFaqItem(
+                                otherItem
+                            );
+
+                        }
+
+                    }
+                );
+
+
+            if(isOpen){
+
+                closeFaqItem(item);
+
+            }else{
+
+                openFaqItem(
+                    item,
+                    button,
+                    answer
+                );
+
+                openFaqPlus(item);
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       IMAGE FALLBACK
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(
+            "img"
+        )
+        .forEach(image=>{
+
+            image.addEventListener(
+                "error",
+                function(){
+
+                    const parent =
+                        image.closest(
+                            ".ezeno-product-grid, " +
+                            ".ezeno-product-card-visual, " +
+                            ".ezeno-benefits-frame"
+                        );
+
+                    if(parent){
+
+                        parent.classList.add(
+                            "image-error"
+                        );
+
+                    }
+
+                },
+                {
+                    once:true
+                }
+            );
+
+        });
+
+
+    /* ------------------------------------------------------
+       BUY
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "#buyEzeno, #ezenoWhats, [data-buy]"
+                );
+
+            if(!button){
+                return;
+            }
+
+
+            let message =
+                "Olá AD Lifestyle! Tenho interesse no EZENO e gostaria de receber mais informações sobre o produto.";
+
+
+            const type =
+                button.getAttribute(
+                    "data-buy"
+                );
+
+
+            if(type === "product"){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o EZENO.";
+
+            }
+
+
+            if(
+                button.id === "buyEzeno"
+            ){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o EZENO.";
+
+            }
+
+
+            openWhatsApp(message);
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       HOME
+       ------------------------------------------------------ */
+
+    const backHome =
+        root.querySelector(
+            "#backHome"
         );
 
+    if(backHome){
 
-    /*
-     * Expandable information
-     */
-
-    document
-        .querySelectorAll(
-            ".page-ezeno .ezeno-details-toggle"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const container =
-                        button.closest(
-                            ".ezeno-information"
-                        );
-
-
-                    if(!container) return;
-
-
-                    const isOpen =
-                        container.classList.contains(
-                            "active"
-                        );
-
-
-                    container.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * FAQ accordion
-     */
-
-    document
-        .querySelectorAll(
-            ".page-ezeno .faq-question"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const item =
-                        button.closest(
-                            ".faq-item"
-                        );
-
-
-                    if(!item) return;
-
-
-                    const isOpen =
-                        item.classList.contains(
-                            "active"
-                        );
-
-
-                    document
-                        .querySelectorAll(
-                            ".page-ezeno .faq-item"
-                        )
-                        .forEach(other => {
-
-                            if(other !== item){
-
-                                other.classList.remove(
-                                    "active"
-                                );
-
-
-                                other
-                                    .querySelector(
-                                        ".faq-question"
-                                    )
-                                    ?.setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                            }
-
-                        });
-
-
-                    item.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * Home
-     */
-
-    document
-        .getElementById("backHome")
-        ?.addEventListener(
+        backHome.addEventListener(
             "click",
-            () => {
+            function(){
 
                 navigate("/");
 
             }
         );
 
+    }
 
-    /*
-     * Buy
-     */
 
-    document
-        .getElementById("buyEzeno")
-        ?.addEventListener(
-            "click",
-            openWhats
+    /* ------------------------------------------------------
+       RESIZE
+       ------------------------------------------------------ */
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            root
+                .querySelectorAll(
+                    ".ezeno-faq-item.active .ezeno-faq-answer"
+                )
+                .forEach(answer=>{
+
+                    answer.style.maxHeight =
+                        `${answer.scrollHeight}px`;
+
+                });
+
+
+            root
+                .querySelectorAll(
+                    ".ezeno-more-panel.active"
+                )
+                .forEach(panel=>{
+
+                    panel.style.maxHeight =
+                        `${panel.scrollHeight}px`;
+
+                });
+
+        },
+        {
+            passive:true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   FAQ HELPERS
+   ========================================================== */
+
+function openFaqItem(
+    item,
+    button,
+    answer
+){
+
+    item.classList.add(
+        "active"
+    );
+
+
+    button.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+
+    answer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+
+    answer.style.maxHeight =
+        `${answer.scrollHeight}px`;
+
+}
+
+
+function closeFaqItem(item){
+
+    const button =
+        item.querySelector(
+            ".ezeno-faq-question"
+        );
+
+    const answer =
+        item.querySelector(
+            ".ezeno-faq-answer"
+        );
+
+    const plus =
+        item.querySelector(
+            ".ezeno-faq-plus"
         );
 
 
-    /*
-     * WhatsApp
-     */
+    item.classList.remove(
+        "active"
+    );
 
-    document
-        .getElementById("ezenoWhats")
-        ?.addEventListener(
-            "click",
-            openWhats
+
+    if(button){
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
         );
+
+    }
+
+
+    if(answer){
+
+        answer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        answer.style.maxHeight =
+            "0px";
+
+    }
+
+
+    if(plus){
+
+        plus.textContent =
+            "+";
+
+    }
+
+}
+
+
+function openFaqPlus(item){
+
+    const plus =
+        item.querySelector(
+            ".ezeno-faq-plus"
+        );
+
+    if(plus){
+
+        plus.textContent =
+            "−";
+
+    }
 
 }
 
@@ -2073,19 +2653,10 @@ function initialiseEzeno(){
    WHATSAPP
    ========================================================== */
 
-function openWhats(){
-
-    const phone =
-        "244924964666";
-
-
-    const message =
-        "Olá AD Lifestyle! Tenho interesse no EZENO e gostaria de receber mais informações sobre o produto.";
-
+function openWhatsApp(message){
 
     const url =
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(
         url,
