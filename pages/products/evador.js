@@ -1,7 +1,8 @@
 /* ==========================================================
    AD LIFESTYLE V2
    EVADOR.JS
-   Premium Evador Page
+   Premium Evador Product Page
+   Modelo estrutural: iSMART S3
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
@@ -10,17 +11,30 @@ import { ripple, stagger } from "../../js/animations.js";
 
 
 /* ==========================================================
-   LOAD EVADOR
+   CONFIG
+   ========================================================== */
+
+const PRODUCT_IMAGE =
+    "./assets/products/evador.png";
+
+const WHATSAPP_NUMBER =
+    "244924964666";
+
+
+/* ==========================================================
+   LOAD
    ========================================================== */
 
 export function loadEvador(){
 
     applyTheme("evador");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    if(!app) return;
-
+    if(!app){
+        return;
+    }
 
     app.innerHTML = `
 
@@ -30,13 +44,15 @@ export function loadEvador(){
 
             ${hero()}
 
+            ${overview()}
+
             ${fragrance()}
 
             ${identity()}
 
             ${benefits()}
 
-            ${composition()}
+            ${productDetail()}
 
             ${routine()}
 
@@ -44,15 +60,15 @@ export function loadEvador(){
 
             ${faq()}
 
+            ${information()}
+
             ${cta()}
 
         </div>
 
     `;
 
-
     initialiseEvador();
-
 }
 
 
@@ -62,149 +78,262 @@ export function loadEvador(){
 
 function hero(){
 
-return `
+    return `
 
-<section class="hero evador-hero">
+    <section class="hero evador-hero">
 
-    <div class="aurora">
+        <div class="evador-hero-atmosphere">
 
-        <div class="blob blob-1"></div>
+            <div class="evador-orb evador-orb-1"></div>
 
-        <div class="blob blob-2"></div>
+            <div class="evador-orb evador-orb-2"></div>
 
-        <div class="blob blob-3"></div>
+            <div class="evador-orbit evador-orbit-1"></div>
 
-    </div>
-
-
-    <div class="container hero-grid">
-
-
-        <div class="hero-content reveal">
-
-
-            <span class="badge">
-                Evador · Beyond Fragrance
-            </span>
-
-
-            <h1 class="hero-title">
-
-                EVA
-                <span>DOR</span>
-
-            </h1>
-
-
-            <p class="hero-sub">
-
-                O futuro do perfume.
-                Além da fragrância.
-
-                Uma experiência refinada que combina
-                beleza, conforto, atenção, confiança
-                e uma identidade olfactiva personalizada.
-
-            </p>
-
-
-            <div class="hero-actions">
-
-
-                <button
-                    class="btn btn-primary"
-                    id="buyEvador"
-                    type="button">
-
-                    Comprar Agora
-
-                </button>
-
-
-                <button
-                    class="btn btn-glass"
-                    id="evadorDiscover"
-                    type="button">
-
-                    Descobrir Evador
-
-                </button>
-
-
-            </div>
-
-
-            <div class="evador-hero-highlights">
-
-
-                <span>
-                    ✓ Luxuoso
-                </span>
-
-
-                <span>
-                    ✓ Refinado
-                </span>
-
-
-                <span>
-                    ✓ Elegante
-                </span>
-
-
-                <span>
-                    ✓ Único
-                </span>
-
-
-            </div>
-
-
-            <p class="evador-disclaimer">
-
-                As descrições desta página baseiam-se
-                no material promocional disponibilizado
-                para o produto.
-
-            </p>
-
+            <div class="evador-orbit evador-orbit-2"></div>
 
         </div>
 
 
-        <div class="hero-visual reveal-right">
+        <div class="container evador-hero-grid">
+
+            <div class="evador-hero-copy reveal">
+
+                <span class="evador-eyebrow">
+                    EVADOR · BEYOND FRAGRANCE
+                </span>
+
+                <h1>
+                    EVA
+                    <span>DOR.</span>
+                </h1>
+
+                <p class="evador-hero-description">
+                    O futuro do perfume. Além da fragrância.
+                    Uma experiência refinada que combina beleza,
+                    conforto, atenção, confiança e uma identidade
+                    olfactiva personalizada.
+                </p>
 
 
-            <div class="hero-product floating">
+                <div class="evador-hero-pills">
+
+                    <span class="evador-hero-pill">
+                        Luxuoso
+                    </span>
+
+                    <span class="evador-hero-pill">
+                        Refinado
+                    </span>
+
+                    <span class="evador-hero-pill">
+                        Elegante
+                    </span>
+
+                    <span class="evador-hero-pill">
+                        Único
+                    </span>
+
+                </div>
 
 
-                <div class="product-glow"></div>
+                <div class="evador-hero-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="buyEvador">
+
+                        Comprar o Evador
+
+                    </button>
 
 
-                <div class="evador-gold-ring"></div>
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="evadorDiscover"
+                        data-scroll="#evador-fragrance">
 
+                        Descobrir Evador
 
-                <img
-                    class="parallax"
-                    data-speed="40"
-                    src="./assets/products/evador.png"
-                    alt="Evador"
-                    loading="eager"
-                >
+                    </button>
 
+                </div>
 
             </div>
 
 
+            <div class="evador-hero-product reveal-right">
+
+                <div class="evador-product-aura"></div>
+
+                <div class="evador-product-ring"></div>
+
+
+                <div class="evador-product-grid">
+
+                    <img
+                        src="${PRODUCT_IMAGE}"
+                        alt="Evador"
+                        loading="eager"
+                        decoding="async"
+                        class="evador-product-image"
+                    >
+
+                </div>
+
+
+                <div class="evador-product-caption">
+
+                    <strong>
+                        EVADOR
+                    </strong>
+
+                    <span>
+                        BEYOND FRAGRANCE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
+function overview(){
+
+    return `
+
+    <section
+        id="evador-overview"
+        class="section evador-overview-section">
+
+        <div class="container">
+
+            <div class="section-center evador-section-heading reveal">
+
+                <span class="label">
+                    VISÃO GERAL
+                </span>
+
+                <h2 class="section-title">
+                    Conheça o conceito
+                    <span>Evador.</span>
+                </h2>
+
+                <p class="lead">
+                    O Evador é apresentado como uma experiência de perfumaria
+                    que procura ir além do aroma, valorizando frescura, conforto,
+                    elegância, presença pessoal e uma identidade olfactiva própria.
+                </p>
+
+            </div>
+
+
+            <div class="evador-overview-grid">
+
+                ${overviewCard(
+                    "01",
+                    "Fragrância",
+                    "Uma experiência olfactiva premium concebida para acompanhar o quotidiano."
+                )}
+
+                ${overviewCard(
+                    "02",
+                    "Conforto",
+                    "A proposta destaca frescura e uma sensação prolongada de conforto."
+                )}
+
+                ${overviewCard(
+                    "03",
+                    "Identidade",
+                    "A comunicação posiciona a fragrância como parte da expressão pessoal."
+                )}
+
+                ${overviewCard(
+                    "04",
+                    "Exclusividade",
+                    "A experiência é apresentada como pessoal, diferenciada e sofisticada."
+                )}
+
+            </div>
+
+
+            <div class="evador-overview-note reveal">
+
+                <strong>
+                    O futuro do perfume. Além da fragrância.
+                </strong>
+
+                <p>
+                    As características apresentadas nesta página reproduzem
+                    a informação promocional disponibilizada para o produto
+                    e a sua linguagem de posicionamento.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function overviewCard(
+    number,
+    title,
+    text
+){
+
+    const symbols = {
+        "01":"✦",
+        "02":"◉",
+        "03":"◇",
+        "04":"∞"
+    };
+
+    return `
+
+    <article class="evador-overview-card reveal">
+
+        <span class="evador-card-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="evador-card-icon"
+            aria-hidden="true">
+
+            ${symbols[number] || "✦"}
+
         </div>
 
 
-    </div>
+        <h3>
+            ${title}
+        </h3>
 
-</section>
 
-`;
+        <p>
+            ${text}
+        </p>
 
+    </article>
+
+    `;
 }
 
 
@@ -214,356 +343,285 @@ return `
 
 function fragrance(){
 
-return `
+    return `
 
-<section
-    id="evador-fragrance"
-    class="section evador-fragrance">
+    <section
+        id="evador-fragrance"
+        class="section evador-fragrance">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="evador-section-heading reveal">
 
-        <div class="section-center reveal">
-
-
-            <span class="label">
-                Além da Fragrância
-            </span>
-
-
-            <h2 class="section-title">
-
-                O futuro do perfume
-
-            </h2>
-
-
-            <p class="lead">
-
-                O Evador apresenta uma proposta que vai
-                além de simplesmente perfumar. A comunicação
-                do produto destaca uma experiência pensada
-                para frescura, conforto e expressão pessoal.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="grid grid-4 mt-6">
-
-
-            ${fragranceCard(
-                "✦",
-                "Fragrância",
-                "Uma experiência olfactiva premium concebida para acompanhar o quotidiano."
-            )}
-
-
-            ${fragranceCard(
-                "◉",
-                "Conforto",
-                "A proposta destaca frescura e uma sensação prolongada de conforto."
-            )}
-
-
-            ${fragranceCard(
-                "◇",
-                "Elegância",
-                "Uma identidade sofisticada para quem valoriza presença e refinamento."
-            )}
-
-
-            ${fragranceCard(
-                "∞",
-                "Exclusividade",
-                "A comunicação do produto destaca uma experiência pessoal e diferenciada."
-            )}
-
-
-        </div>
-
-
-        <div class="evador-information mt-6">
-
-
-            <button
-                class="evador-details-toggle"
-                type="button"
-                aria-expanded="false">
-
-
-                <span>
-                    Ver mais sobre a fragrância
+                <span class="eyebrow">
+                    ALÉM DA FRAGRÂNCIA
                 </span>
 
+                <h2>
+                    O futuro do
+                    <span>perfume.</span>
+                </h2>
 
-                <span class="evador-details-icon">
-                    +
-                </span>
+                <p>
+                    O Evador apresenta uma proposta que vai além de simplesmente
+                    perfumar. A comunicação do produto destaca uma experiência
+                    pensada para frescura, conforto e expressão pessoal.
+                </p>
 
-
-            </button>
-
-
-            <div class="evador-details-content">
-
-
-                <div class="evador-details-grid">
-
-
-                    <article class="evador-detail-card">
+            </div>
 
 
-                        <span class="label">
-                            01 — Fragrância
-                        </span>
+            <div class="evador-fragrance-grid">
+
+                ${fragranceCard(
+                    "01",
+                    "Fragrância",
+                    "Uma experiência olfactiva premium concebida para acompanhar o quotidiano.",
+                    "✦"
+                )}
+
+                ${fragranceCard(
+                    "02",
+                    "Conforto",
+                    "A proposta destaca frescura e uma sensação prolongada de conforto.",
+                    "◉"
+                )}
+
+                ${fragranceCard(
+                    "03",
+                    "Elegância",
+                    "Uma identidade sofisticada para quem valoriza presença e refinamento.",
+                    "◇"
+                )}
+
+                ${fragranceCard(
+                    "04",
+                    "Exclusividade",
+                    "A comunicação do produto destaca uma experiência pessoal e diferenciada.",
+                    "∞"
+                )}
+
+            </div>
 
 
-                        <h3>
-                            Uma assinatura pessoal
-                        </h3>
+            <div class="evador-more-wrap">
+
+                <button
+                    type="button"
+                    class="evador-more-toggle"
+                    data-more-toggle="fragrance"
+                    data-open-label="Ver mais sobre a fragrância"
+                    data-close-label="Ocultar detalhes"
+                    aria-expanded="false"
+                    aria-controls="evador-fragrance-more">
+
+                    <span>
+                        Ver mais sobre a fragrância
+                    </span>
+
+                    <i aria-hidden="true">
+                        +
+                    </i>
+
+                </button>
 
 
-                        <p class="text mt-2">
+                <div
+                    id="evador-fragrance-more"
+                    class="evador-more-panel"
+                    data-more-panel="fragrance"
+                    aria-hidden="true">
 
-                            Segundo a apresentação do produto,
-                            a fragrância mistura-se subtilmente
-                            com o aroma natural de cada pessoa,
-                            contribuindo para uma experiência
-                            olfactiva individualizada.
+                    <div class="evador-detail-grid">
 
-                        </p>
-
-
-                        <div class="evador-detail-list mt-3">
-
-                            ${detailItem(
-                                "Experiência olfactiva personalizada"
-                            )}
-
-
-                            ${detailItem(
-                                "Interacção com o aroma natural"
-                            )}
-
-
-                            ${detailItem(
+                        ${detailCard(
+                            "01 — FRAGRÂNCIA",
+                            "Uma assinatura pessoal",
+                            "Segundo a apresentação do produto, a fragrância mistura-se subtilmente com o aroma natural de cada pessoa, contribuindo para uma experiência olfactiva individualizada.",
+                            [
+                                "Experiência olfactiva personalizada",
+                                "Interacção com o aroma natural",
                                 "Identidade diferenciada"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="evador-detail-card">
-
-
-                        <span class="label">
-                            02 — Qualidade
-                        </span>
-
-
-                        <h3>
-                            Uma abordagem refinada
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            A comunicação do Evador posiciona
-                            a fragrância dentro de uma proposta
-                            de qualidade, sofisticação e atenção
-                            aos detalhes.
-
-                        </p>
-
-
-                        <div class="evador-detail-list mt-3">
-
-                            ${detailItem(
-                                "Posicionamento premium"
-                            )}
-
-
-                            ${detailItem(
-                                "Perfume refinado"
-                            )}
-
-
-                            ${detailItem(
+                        ${detailCard(
+                            "02 — QUALIDADE",
+                            "Uma abordagem refinada",
+                            "A comunicação do Evador posiciona a fragrância dentro de uma proposta de qualidade, sofisticação e atenção aos detalhes.",
+                            [
+                                "Posicionamento premium",
+                                "Perfume refinado",
                                 "Experiência elegante"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="evador-detail-card">
-
-
-                        <span class="label">
-                            03 — Frescura
-                        </span>
-
-
-                        <h3>
-                            Conforto prolongado
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O material promocional destaca
-                            frescura e duração do aroma como
-                            elementos da experiência Evador.
-
-                        </p>
-
-
-                        <div class="evador-detail-list mt-3">
-
-                            ${detailItem(
-                                "Sensação de frescura"
-                            )}
-
-
-                            ${detailItem(
-                                "Aroma duradouro"
-                            )}
-
-
-                            ${detailItem(
+                        ${detailCard(
+                            "03 — FRESCURA",
+                            "Conforto prolongado",
+                            "O material promocional destaca frescura e duração do aroma como elementos da experiência Evador.",
+                            [
+                                "Sensação de frescura",
+                                "Aroma duradouro",
                                 "Conforto ao longo do dia"
-                            )}
+                            ]
+                        )}
 
-                        </div>
-
-
-                    </article>
-
-
-                    <article class="evador-detail-card">
-
-
-                        <span class="label">
-                            04 — Identidade
-                        </span>
-
-
-                        <h3>
-                            O perfume de cada pessoa
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            A proposta apresentada é que a mesma
-                            fragrância possa adquirir uma expressão
-                            diferente conforme o aroma natural
-                            de quem a utiliza.
-
-                        </p>
-
-
-                        <div class="evador-detail-list mt-3">
-
-                            ${detailItem(
-                                "Expressão individual"
-                            )}
-
-
-                            ${detailItem(
-                                "Presença pessoal"
-                            )}
-
-
-                            ${detailItem(
+                        ${detailCard(
+                            "04 — IDENTIDADE",
+                            "O perfume de cada pessoa",
+                            "A proposta apresentada é que a mesma fragrância possa adquirir uma expressão diferente conforme o aroma natural de quem a utiliza.",
+                            [
+                                "Expressão individual",
+                                "Presença pessoal",
                                 "Assinatura olfactiva"
-                            )}
+                            ]
+                        )}
 
-                        </div>
+                        ${detailCard(
+                            "CONCEITO",
+                            "Além da fragrância",
+                            "O conceito Evador une fragrância, identidade, conforto, estética e presença pessoal para criar uma experiência de cuidado mais completa.",
+                            [],
+                            true
+                        )}
 
-
-                    </article>
-
-
-                    <article
-                        class="evador-detail-card
-                               evador-detail-card-wide">
-
-
-                        <span class="label">
-                            Conceito
-                        </span>
-
-
-                        <h3>
-                            Além da fragrância
-                        </h3>
-
-
-                        <p class="text mt-2">
-
-                            O conceito Evador une fragrância,
-                            identidade, conforto, estética e
-                            presença pessoal para criar uma
-                            experiência de cuidado mais completa.
-
-                        </p>
-
-
-                    </article>
-
+                    </div>
 
                 </div>
 
             </div>
 
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function fragranceCard(
+    number,
+    title,
+    text,
+    symbol
+){
+
+    return `
+
+    <article class="evador-fragrance-card reveal">
+
+        <span class="evador-fragrance-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="evador-fragrance-symbol"
+            aria-hidden="true">
+
+            ${symbol}
 
         </div>
 
 
-    </div>
+        <span class="evador-fragrance-label">
+            EXPERIÊNCIA
+        </span>
 
-</section>
 
-`;
+        <h3>
+            ${title}
+        </h3>
 
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
 }
 
 
-function fragranceCard(icon, title, text){
+/* ==========================================================
+   DETAIL HELPERS
+   ========================================================== */
 
-return `
+function detailCard(
+    label,
+    title,
+    text,
+    items = [],
+    wide = false
+){
 
-<article class="card service-card evador-fragrance-card reveal">
+    return `
+
+    <article
+        class="
+            evador-detail-card
+            ${wide ? "evador-detail-card-wide" : ""}
+        ">
+
+        <span class="label">
+            ${label}
+        </span>
 
 
-    <div class="service-icon">
-        ${icon}
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+
+        ${
+            items.length
+                ? `
+                    <div class="evador-detail-list">
+
+                        ${items
+                            .map(item => detailItem(item))
+                            .join("")
+                        }
+
+                    </div>
+                  `
+                : ""
+        }
+
+    </article>
+
+    `;
+}
+
+
+function detailItem(text){
+
+    return `
+
+    <div class="evador-detail-item">
+
+        <span
+            class="evador-check"
+            aria-hidden="true">
+
+            ✓
+
+        </span>
+
+        <span>
+            ${text}
+        </span>
+
     </div>
 
-
-    <h3>
-        ${title}
-    </h3>
-
-
-    <p class="text mt-2">
-        ${text}
-    </p>
-
-
-</article>
-
-`;
-
+    `;
 }
 
 
@@ -573,155 +631,115 @@ return `
 
 function identity(){
 
-return `
+    return `
 
-<section class="section-sm evador-identity">
+    <section class="section evador-identity">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="evador-identity-grid">
 
-        <div class="split">
+                <div class="evador-identity-visual reveal-left">
 
+                    <div class="evador-identity-frame">
 
-            <div class="split-image reveal-left">
+                        <div class="evador-identity-aura"></div>
 
-
-                <div class="evador-benefit-image">
-
-
-                    <div class="evador-image-glow"></div>
+                        <div class="evador-identity-ring"></div>
 
 
-                    <img
-                        src="./assets/products/evador.png"
-                        alt="Evador"
-                        loading="lazy"
-                    >
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="Evador"
+                            loading="lazy"
+                            decoding="async"
+                        >
 
-
-                </div>
-
-
-            </div>
-
-
-            <div class="split-content reveal-right">
-
-
-                <span class="label">
-                    Identidade
-                </span>
-
-
-                <h2 class="section-title">
-
-                    Beleza.
-                    Presença.
-                    Confiança.
-
-                </h2>
-
-
-                <p class="text mt-3">
-
-                    Mais do que uma fragrância,
-                    o Evador é apresentado como
-                    uma extensão da identidade pessoal
-                    de quem o utiliza.
-
-                </p>
-
-
-                <div class="icon-list mt-4">
-
-
-                    ${check(
-                        "Luxuoso"
-                    )}
-
-
-                    ${check(
-                        "Refinado"
-                    )}
-
-
-                    ${check(
-                        "Elegante"
-                    )}
-
-
-                    ${check(
-                        "Confortável"
-                    )}
-
-
-                    ${check(
-                        "Confiante"
-                    )}
-
-
-                    ${check(
-                        "Único"
-                    )}
-
+                    </div>
 
                 </div>
 
 
-                <div class="evador-identity-quote mt-5">
-
+                <div class="evador-identity-copy reveal-right">
 
                     <span class="label">
-                        Evador
+                        IDENTIDADE
                     </span>
 
 
-                    <blockquote>
+                    <h2 class="section-title">
 
-                        “Além da fragrância.”
+                        Beleza.
+                        Presença.
+                        <span>Confiança.</span>
 
-                    </blockquote>
+                    </h2>
 
+
+                    <p class="lead">
+                        Mais do que uma fragrância, o Evador é apresentado
+                        como uma extensão da identidade pessoal de quem o utiliza.
+                    </p>
+
+
+                    <div class="evador-benefit-checks">
+
+                        ${benefitCheck("Luxuoso")}
+
+                        ${benefitCheck("Refinado")}
+
+                        ${benefitCheck("Elegante")}
+
+                        ${benefitCheck("Confortável")}
+
+                        ${benefitCheck("Confiante")}
+
+                        ${benefitCheck("Único")}
+
+                    </div>
+
+
+                    <div class="evador-identity-note">
+
+                        <span class="label">
+                            EVADOR
+                        </span>
+
+                        <strong>
+                            Além da fragrância.
+                        </strong>
+
+                    </div>
 
                 </div>
 
-
             </div>
-
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function check(text){
+function benefitCheck(text){
 
-return `
+    return `
 
-<div class="icon-item">
+    <div class="evador-benefit-check">
 
+        <span>
+            ✓
+        </span>
 
-    <div class="icon-circle">
-        ✓
+        <p>
+            ${text}
+        </p>
+
     </div>
 
-
-    <div>
-        ${text}
-    </div>
-
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -731,267 +749,316 @@ return `
 
 function benefits(){
 
-return `
+    return `
 
-<section class="section evador-benefits">
+    <section class="section evador-benefits">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="evador-section-heading reveal">
 
-        <div class="section-center reveal">
+                <span class="eyebrow">
+                    A EXPERIÊNCIA
+                </span>
 
+                <h2>
+                    Uma presença que
+                    <span>deixa impressão.</span>
+                </h2>
 
-            <span class="label">
-                A Experiência
-            </span>
-
-
-            <h2 class="section-title">
-
-                Uma presença que
-                deixa impressão
-
-            </h2>
-
-
-            <p class="lead">
-
-                A proposta Evador combina frescura,
-                aroma duradouro, conforto e uma expressão
-                pessoal diferenciada.
-
-            </p>
-
-
-        </div>
-
-
-        <div class="bento mt-6">
-
-
-            <div class="bento-card span-4 reveal">
-
-
-                <div class="metric">
-
-                    <div class="metric-number">
-                        LUX
-                    </div>
-
-
-                    <div class="metric-label">
-                        Luxuoso
-                    </div>
-
-                </div>
-
+                <p>
+                    A proposta Evador combina frescura, aroma duradouro,
+                    conforto e uma expressão pessoal diferenciada.
+                </p>
 
             </div>
 
 
-            <div class="bento-card span-4 reveal delay-1">
+            <div class="evador-benefits-grid">
 
+                ${benefitCard(
+                    "LUX",
+                    "Luxuoso",
+                    "Uma estética premium pensada para transmitir exclusividade."
+                )}
 
-                <div class="metric">
+                ${benefitCard(
+                    "REF",
+                    "Refinado",
+                    "Uma abordagem de perfumaria orientada para sofisticação e detalhe."
+                )}
 
-                    <div class="metric-number">
-                        REF
-                    </div>
+                ${benefitCard(
+                    "UNI",
+                    "Único",
+                    "A comunicação destaca uma expressão diferente em cada pessoa."
+                )}
 
-
-                    <div class="metric-label">
-                        Refinado
-                    </div>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="bento-card span-4 reveal delay-2">
-
-
-                <div class="metric">
-
-                    <div class="metric-number">
-                        UNI
-                    </div>
-
-
-                    <div class="metric-label">
-                        Único
-                    </div>
-
-                </div>
-
+                ${benefitCard(
+                    "EVA",
+                    "Identidade",
+                    "A fragrância é apresentada como parte da expressão pessoal."
+                )}
 
             </div>
 
 
-            <div class="bento-card span-12 reveal delay-3">
-
+            <div class="evador-benefits-note reveal">
 
                 <span class="label">
                     EVADOR
                 </span>
 
-
                 <h3>
-                    A fragrância encontra a identidade
+                    A fragrância encontra a identidade.
                 </h3>
 
-
-                <p class="text mt-2">
-
-                    Segundo a apresentação comercial,
-                    a fragrância pode assumir uma expressão
-                    distinta em cada pessoa devido à sua
-                    interacção com o aroma natural da pele.
-
+                <p>
+                    Segundo a apresentação comercial, a fragrância pode assumir
+                    uma expressão distinta em cada pessoa devido à sua interacção
+                    com o aroma natural da pele.
                 </p>
-
 
             </div>
 
-
         </div>
 
+    </section>
 
-    </div>
+    `;
+}
 
-</section>
 
-`;
+function benefitCard(
+    code,
+    title,
+    text
+){
 
+    return `
+
+    <article class="evador-benefit-card reveal">
+
+        <div class="evador-benefit-code">
+            ${code}
+        </div>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
 }
 
 
 /* ==========================================================
-   COMPOSITION
+   PRODUCT DETAIL
    ========================================================== */
 
-function composition(){
+function productDetail(){
 
-return `
+    return `
 
-<section
-    id="evador-composition"
-    class="section-sm evador-composition">
+    <section
+        id="evador-product"
+        class="section evador-product-section">
 
-    <div class="container">
+        <div class="container">
+
+            <div class="evador-section-heading reveal">
+
+                <span class="eyebrow">
+                    O PRODUTO
+                </span>
+
+                <h2>
+                    Evador.
+                    <span>Além da fragrância.</span>
+                </h2>
+
+                <p>
+                    O produto é apresentado através de uma identidade premium,
+                    uma proposta olfactiva diferenciada e uma linguagem centrada
+                    em presença pessoal.
+                </p>
+
+            </div>
 
 
-        <div class="section-center reveal">
+            <article class="evador-product-card reveal">
 
 
-            <span class="label">
-                Conceito de Produto
-            </span>
+                <div class="evador-product-card-visual">
+
+                    <div class="evador-detail-aura"></div>
+
+                    <div class="evador-detail-ring"></div>
 
 
-            <h2 class="section-title">
+                    <div class="evador-product-detail-grid">
 
-                Mais do que aroma
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="Evador"
+                            loading="lazy"
+                            decoding="async"
+                            class="evador-product-detail-image"
+                        >
 
-            </h2>
+                    </div>
 
 
-            <p class="lead">
+                    <span class="evador-detail-caption">
+                        EVADOR · BEYOND FRAGRANCE
+                    </span>
 
-                O conceito Evador é construído à volta
-                de diferentes dimensões da experiência
-                de perfumaria e cuidado pessoal.
+                </div>
 
-            </p>
 
+                <div class="evador-product-card-copy">
+
+                    <span class="label">
+                        EVADOR
+                    </span>
+
+
+                    <h3>
+                        Fragrância.
+                        <span>Assinatura pessoal.</span>
+                    </h3>
+
+
+                    <p>
+                        Uma experiência olfactiva apresentada para acompanhar
+                        a identidade, o estilo e a presença de quem a utiliza.
+                    </p>
+
+
+                    <div class="evador-product-spec-list">
+
+                        ${productSpec(
+                            "Categoria",
+                            "Beauty & Fragrance"
+                        )}
+
+                        ${productSpec(
+                            "Proposta",
+                            "Além da fragrância"
+                        )}
+
+                        ${productSpec(
+                            "Experiência",
+                            "Identidade olfactiva"
+                        )}
+
+                        ${productSpec(
+                            "Posicionamento",
+                            "Premium"
+                        )}
+
+                    </div>
+
+
+                    <div class="evador-more-wrap">
+
+                        <button
+                            type="button"
+                            class="evador-more-toggle"
+                            data-more-toggle="product"
+                            data-open-label="Ver mais características"
+                            data-close-label="Ocultar características"
+                            aria-expanded="false"
+                            aria-controls="evador-product-more">
+
+                            <span>
+                                Ver mais características
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
+                        </button>
+
+
+                        <div
+                            id="evador-product-more"
+                            class="evador-more-panel"
+                            data-more-panel="product"
+                            aria-hidden="true">
+
+                            <div class="evador-detail-list">
+
+                                ${detailItem(
+                                    "Experiência olfactiva com posicionamento premium."
+                                )}
+
+                                ${detailItem(
+                                    "Conceito de assinatura pessoal."
+                                )}
+
+                                ${detailItem(
+                                    "Aroma apresentado como diferenciado conforme o utilizador."
+                                )}
+
+                                ${detailItem(
+                                    "A utilização deve seguir as orientações oficiais do produto."
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-primary evador-card-buy"
+                        data-buy="product">
+
+                        Adquirir Evador
+
+                    </button>
+
+                </div>
+
+            </article>
 
         </div>
 
+    </section>
 
-        <div class="grid grid-3 mt-6">
-
-
-            ${feature(
-                "✦",
-                "Fragrância",
-                "Uma assinatura olfactiva concebida para acompanhar cada pessoa."
-            )}
-
-
-            ${feature(
-                "◉",
-                "Frescura",
-                "O material promocional destaca uma sensação prolongada de frescura."
-            )}
-
-
-            ${feature(
-                "◇",
-                "Conforto",
-                "Uma experiência pensada para acompanhar o utilizador no quotidiano."
-            )}
-
-
-            ${feature(
-                "∞",
-                "Identidade",
-                "A fragrância é apresentada como parte da expressão pessoal."
-            )}
-
-
-            ${feature(
-                "◆",
-                "Elegância",
-                "Uma abordagem refinada e sofisticada à perfumaria."
-            )}
-
-
-            ${feature(
-                "★",
-                "Confiança",
-                "Uma presença olfactiva associada a segurança e personalidade."
-            )}
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function feature(icon, title, text){
+function productSpec(
+    label,
+    value
+){
 
-return `
+    return `
 
-<div class="card service-card evador-feature-card reveal">
+    <div class="evador-product-spec">
 
+        <span>
+            ${label}
+        </span>
 
-    <div class="service-icon">
-        ${icon}
+        <strong>
+            ${value}
+        </strong>
+
     </div>
 
-
-    <h3>
-        ${title}
-    </h3>
-
-
-    <p class="text mt-2">
-        ${text}
-    </p>
-
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -1001,116 +1068,126 @@ return `
 
 function routine(){
 
-return `
+    return `
 
-<section class="section-sm evador-routine">
+    <section class="section evador-routine">
 
-    <div class="container-sm">
+        <div class="container-sm">
+
+            <div class="evador-section-heading reveal">
+
+                <span class="eyebrow">
+                    RITUAL EVADOR
+                </span>
+
+                <h2>
+                    Transforme a fragrância
+                    numa <span>assinatura.</span>
+                </h2>
+
+                <p>
+                    O perfume ganha significado quando se transforma
+                    numa parte consistente da identidade pessoal.
+                </p>
+
+            </div>
 
 
-        <div class="section-center reveal">
+            <div class="evador-routine-list">
+
+                ${routineStep(
+                    "01",
+                    "Escolha",
+                    "Conheça a fragrância e descubra a experiência olfactiva do Evador."
+                )}
+
+                ${routineStep(
+                    "02",
+                    "Aplique",
+                    "Utilize a fragrância de acordo com as orientações oficiais do produto."
+                )}
 
 
-            <span class="label">
-                Ritual Evador
-            </span>
+                <div
+                    class="evador-more-panel"
+                    data-more-panel="routine"
+                    aria-hidden="true"
+                    id="evador-routine-more">
+
+                    ${routineStep(
+                        "03",
+                        "Personalize",
+                        "Permita que a fragrância se integre naturalmente na sua presença pessoal."
+                    )}
+
+                    ${routineStep(
+                        "04",
+                        "Expresse",
+                        "Faça do perfume uma extensão da sua identidade, estilo e confiança."
+                    )}
+
+                </div>
+
+            </div>
 
 
-            <h2 class="section-title">
+            <button
+                type="button"
+                class="evador-more-toggle"
+                data-more-toggle="routine"
+                data-open-label="Ver mais passos"
+                data-close-label="Ocultar passos"
+                aria-expanded="false"
+                aria-controls="evador-routine-more">
 
-                Transforme a fragrância
-                numa assinatura
+                <span>
+                    Ver mais passos
+                </span>
 
-            </h2>
+                <i aria-hidden="true">
+                    +
+                </i>
 
-
-            <p class="lead">
-
-                O perfume ganha significado quando
-                se transforma numa parte consistente
-                da identidade pessoal.
-
-            </p>
+            </button>
 
 
         </div>
 
+    </section>
 
-        <div class="timeline mt-6">
-
-
-            ${step(
-                "1",
-                "Escolha",
-                "Conheça a fragrância e descubra a experiência olfactiva do Evador."
-            )}
-
-
-            ${step(
-                "2",
-                "Aplique",
-                "Utilize a fragrância de acordo com as orientações oficiais do produto."
-            )}
-
-
-            ${step(
-                "3",
-                "Personalize",
-                "Permita que a fragrância se integre naturalmente na sua presença pessoal."
-            )}
-
-
-            ${step(
-                "4",
-                "Expresse",
-                "Faça do perfume uma extensão da sua identidade, estilo e confiança."
-            )}
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function step(number, title, text){
+function routineStep(
+    number,
+    title,
+    text
+){
 
-return `
+    return `
 
-<div class="timeline-item reveal">
+    <article class="evador-routine-step reveal">
 
+        <div class="evador-routine-number">
+            ${number}
+        </div>
 
-    <div class="timeline-dot">
-        ${number}
-    </div>
+        <div>
 
+            <h3>
+                ${title}
+            </h3>
 
-    <div class="timeline-content">
+            <p>
+                ${text}
+            </p>
 
+        </div>
 
-        <h3>
-            ${title}
-        </h3>
+    </article>
 
-
-        <p class="text mt-1">
-            ${text}
-        </p>
-
-
-    </div>
-
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -1120,125 +1197,109 @@ return `
 
 function experience(){
 
-return `
+    return `
 
-<section class="section evador-experience">
+    <section class="section evador-experience">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="section-center reveal">
 
-        <div class="section-center reveal">
+                <span class="label">
+                    EVADOR LIFESTYLE
+                </span>
 
+                <h2 class="section-title">
+                    Luxuoso.
+                    Refinado.
+                    <span>Inconfundível.</span>
+                </h2>
 
-            <span class="label">
-                Evador Lifestyle
-            </span>
+                <p class="lead">
+                    Uma experiência concebida para quem procura mais
+                    do que uma fragrância: procura presença.
+                </p>
 
-
-            <h2 class="section-title">
-
-                Luxuoso.
-                Refinado.
-                Inconfundível.
-
-            </h2>
-
-
-            <p class="lead">
-
-                Uma experiência concebida para quem
-                procura mais do que uma fragrância:
-                procura presença.
-
-            </p>
+            </div>
 
 
-        </div>
+            <div class="evador-experience-grid">
 
+                ${experienceCard(
+                    "✦",
+                    "Luxuoso",
+                    "Uma estética premium pensada para transmitir exclusividade."
+                )}
 
-        <div class="grid grid-3 mt-6">
+                ${experienceCard(
+                    "◇",
+                    "Refinado",
+                    "Detalhes e posicionamento que valorizam a sofisticação."
+                )}
 
+                ${experienceCard(
+                    "◉",
+                    "Elegante",
+                    "Uma expressão de cuidado e bom gosto."
+                )}
 
-            ${experienceCard(
-                "✦",
-                "Luxuoso",
-                "Uma estética premium pensada para transmitir exclusividade."
-            )}
+                ${experienceCard(
+                    "∞",
+                    "Confiante",
+                    "Uma presença olfactiva associada a personalidade."
+                )}
 
+                ${experienceCard(
+                    "◆",
+                    "Confortável",
+                    "Uma experiência que procura acompanhar o dia com frescura."
+                )}
 
-            ${experienceCard(
-                "◇",
-                "Refinado",
-                "Detalhes e posicionamento que valorizam a sofisticação."
-            )}
+                ${experienceCard(
+                    "★",
+                    "Único",
+                    "A proposta destaca uma expressão diferente em cada pessoa."
+                )}
 
-
-            ${experienceCard(
-                "◉",
-                "Elegante",
-                "Uma expressão de cuidado e bom gosto."
-            )}
-
-
-            ${experienceCard(
-                "∞",
-                "Confiante",
-                "Uma presença olfactiva associada a personalidade."
-            )}
-
-
-            ${experienceCard(
-                "◆",
-                "Confortável",
-                "Uma experiência que procura acompanhar o dia com frescura."
-            )}
-
-
-            ${experienceCard(
-                "★",
-                "Único",
-                "A proposta destaca uma expressão diferente em cada pessoa."
-            )}
-
+            </div>
 
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function experienceCard(icon, title, text){
+function experienceCard(
+    icon,
+    title,
+    text
+){
 
-return `
+    return `
 
-<article class="card service-card evador-experience-card reveal">
+    <article class="evador-experience-card reveal">
 
+        <div class="evador-experience-icon">
+            ${icon}
+        </div>
 
-    <div class="service-icon">
-        ${icon}
-    </div>
+        <span class="evador-experience-number">
+            CONCEITO
+        </span>
 
+        <h3>
+            ${title}
+        </h3>
 
-    <h3>
-        ${title}
-    </h3>
+        <p>
+            ${text}
+        </p>
 
+    </article>
 
-    <p class="text mt-2">
-        ${text}
-    </p>
-
-
-</article>
-
-`;
-
+    `;
 }
 
 
@@ -1248,139 +1309,209 @@ return `
 
 function faq(){
 
-return `
+    const questions = [
 
-<section class="section-sm evador-faq">
+        [
+            "O que é o Evador?",
+            "O Evador é uma fragrância apresentada pela BZZWORLD dentro de uma proposta de beleza, conforto, cuidado pessoal e identidade."
+        ],
 
-    <div class="container-sm">
+        [
+            "O que significa “Além da fragrância”?",
+            "É o conceito utilizado para posicionar o Evador como uma experiência que vai além do aroma, valorizando identidade, frescura, conforto, elegância e presença pessoal."
+        ],
+
+        [
+            "A fragrância é igual em todas as pessoas?",
+            "Segundo o material promocional fornecido, a fragrância mistura-se com o aroma natural de cada pessoa, podendo assumir uma expressão diferente em diferentes utilizadores."
+        ],
+
+        [
+            "O Evador tem aroma duradouro?",
+            "A apresentação do produto destaca frescura e duração prolongadas do aroma."
+        ],
+
+        [
+            "O Evador é luxuoso?",
+            "O posicionamento do produto é apresentado como premium, refinado e elegante, com foco numa experiência sofisticada."
+        ],
+
+        [
+            "Como devo utilizar o Evador?",
+            "A utilização deve seguir as orientações oficiais disponibilizadas para a fragrância e a embalagem do produto."
+        ],
+
+        [
+            "O Evador substitui os cuidados pessoais?",
+            "Não. Uma fragrância complementa o cuidado pessoal, mas não substitui higiene, cuidados da pele ou outros hábitos adequados."
+        ],
+
+        [
+            "O que torna o Evador diferente?",
+            "A sua proposta de valor está centrada no conceito de identidade olfactiva individual, frescura, conforto e uma apresentação premium."
+        ],
+
+        [
+            "Onde posso obter mais informações?",
+            "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade e aquisição."
+        ]
+
+    ];
 
 
-        <div class="section-center reveal">
+    return `
+
+    <section
+        id="evador-faq"
+        class="section evador-faq-section">
+
+        <div class="container-sm">
+
+            <div class="evador-section-heading reveal">
+
+                <span class="eyebrow">
+                    PERGUNTAS FREQUENTES
+                </span>
+
+                <h2>
+                    Tudo sobre o
+                    <span>Evador.</span>
+                </h2>
+
+                <p>
+                    As respostas abrem individualmente para manter
+                    a leitura organizada e facilitar a consulta.
+                </p>
+
+            </div>
 
 
-            <span class="label">
-                Perguntas Frequentes
-            </span>
+            <div class="evador-faq-list">
 
+                ${questions
+                    .map(
+                        ([questionText,answerText],index) =>
+                            faqItem(
+                                String(index + 1).padStart(2,"0"),
+                                questionText,
+                                answerText
+                            )
+                    )
+                    .join("")
+                }
 
-            <h2 class="section-title">
-                Tudo sobre o Evador
-            </h2>
-
+            </div>
 
         </div>
 
+    </section>
 
-        <div class="faq mt-5">
-
-
-            ${question(
-                "O que é o Evador?",
-                "O Evador é uma fragrância apresentada pela BZZWORLD dentro de uma proposta de beleza, conforto, cuidado pessoal e identidade."
-            )}
-
-
-            ${question(
-                "O que significa “Além da fragrância”?",
-                "É o conceito utilizado para posicionar o Evador como uma experiência que vai além do aroma, valorizando identidade, frescura, conforto, elegância e presença pessoal."
-            )}
-
-
-            ${question(
-                "A fragrância é igual em todas as pessoas?",
-                "Segundo o material promocional fornecido, a fragrância mistura-se com o aroma natural de cada pessoa, podendo assumir uma expressão diferente em diferentes utilizadores."
-            )}
-
-
-            ${question(
-                "O Evador tem aroma duradouro?",
-                "A apresentação do produto destaca frescura e duração prolongadas do aroma."
-            )}
-
-
-            ${question(
-                "O Evador é luxuoso?",
-                "O posicionamento do produto é explicitamente premium, refinado e elegante, com foco numa experiência sofisticada."
-            )}
-
-
-            ${question(
-                "Como devo utilizar o Evador?",
-                "A utilização deve seguir as orientações oficiais disponibilizadas para a fragrância e a embalagem do produto."
-            )}
-
-
-            ${question(
-                "O Evador substitui os cuidados pessoais?",
-                "Não. Uma fragrância complementa o cuidado pessoal, mas não substitui higiene, cuidados da pele ou outros hábitos adequados."
-            )}
-
-
-            ${question(
-                "O que torna o Evador diferente?",
-                "A sua proposta de valor está centrada no conceito de identidade olfactiva individual, frescura, conforto e uma apresentação premium."
-            )}
-
-
-            ${question(
-                "Onde posso obter mais informações?",
-                "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre disponibilidade e aquisição."
-            )}
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-`;
-
+    `;
 }
 
 
-function question(questionText, answerText){
+function faqItem(
+    number,
+    questionText,
+    answerText
+){
 
-return `
+    const answerId =
+        `evador-faq-answer-${number}`;
 
-<div class="faq-item">
+    return `
 
+    <article class="evador-faq-item">
 
-    <button
-        class="faq-question"
-        type="button"
-        aria-expanded="false">
+        <button
+            type="button"
+            class="evador-faq-question"
+            aria-expanded="false"
+            aria-controls="${answerId}">
 
+            <span class="evador-faq-number">
+                ${number}
+            </span>
 
-        <span>
-            ${questionText}
-        </span>
+            <span class="evador-faq-text">
+                ${questionText}
+            </span>
 
+            <span
+                class="evador-faq-plus"
+                aria-hidden="true">
 
-        <span>
-            +
-        </span>
+                +
 
+            </span>
 
-    </button>
-
-
-    <div class="faq-answer">
-
-
-        <p>
-            ${answerText}
-        </p>
-
-
-    </div>
+        </button>
 
 
-</div>
+        <div
+            id="${answerId}"
+            class="evador-faq-answer"
+            role="region"
+            aria-hidden="true">
 
-`;
+            <p>
+                ${answerText}
+            </p>
 
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+function information(){
+
+    return `
+
+    <section class="section evador-information-section">
+
+        <div class="container">
+
+            <div class="evador-information-box reveal">
+
+                <div class="evador-information-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <span class="label">
+                        COMUNICAÇÃO RESPONSÁVEL
+                    </span>
+
+                    <h2>
+                        O que é apresentado
+                        e o que requer confirmação.
+                    </h2>
+
+                    <p>
+                        As informações desta página foram organizadas
+                        a partir do material disponibilizado para o Evador.
+                        Características específicas, duração, composição
+                        e outras especificações devem ser confirmadas
+                        através da documentação oficial do produto.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
 }
 
 
@@ -1390,48 +1521,35 @@ return `
 
 function cta(){
 
-return `
+    return `
 
-<section class="section evador-cta">
+    <section class="section evador-cta-section">
 
-    <div class="container">
+        <div class="container">
 
+            <div class="evador-cta-box reveal">
 
-        <div class="showcase">
-
-
-            <div class="showcase-content section-center">
-
-
-                <span class="badge">
-                    Evador
+                <span class="evador-label-light">
+                    EVADOR
                 </span>
 
-
-                <h2 class="section-title mt-3">
-
+                <h2>
                     Além da fragrância.
-                    A sua assinatura.
-
+                    <span>A sua assinatura.</span>
                 </h2>
 
-
-                <p class="lead">
-
-                    Descubra uma experiência luxuosa,
-                    refinada e elegante, criada para
-                    acompanhar a sua identidade.
-
+                <p>
+                    Descubra uma experiência luxuosa, refinada
+                    e elegante, criada para acompanhar a sua identidade.
                 </p>
 
 
-                <div class="hero-actions center mt-4">
-
+                <div class="evador-cta-actions">
 
                     <button
+                        type="button"
                         class="btn btn-primary"
-                        id="evadorWhats"
-                        type="button">
+                        id="evadorWhats">
 
                         Falar no WhatsApp
 
@@ -1439,67 +1557,29 @@ return `
 
 
                     <button
+                        type="button"
                         class="btn btn-glass"
-                        id="backHome"
-                        type="button">
+                        id="backHome">
 
-                        Voltar ao Início
+                        Voltar à AD Lifestyle
 
                     </button>
-
 
                 </div>
 
 
-                <p class="evador-cta-disclaimer mt-4">
-
-                    Informação apresentada com base
-                    no material disponibilizado para
-                    o produto.
-
+                <p class="evador-cta-disclaimer">
+                    Informação apresentada com base no material
+                    disponibilizado para o produto.
                 </p>
-
 
             </div>
 
-
         </div>
 
+    </section>
 
-    </div>
-
-</section>
-
-`;
-
-}
-
-
-/* ==========================================================
-   DETAIL ITEM
-   ========================================================== */
-
-function detailItem(text){
-
-return `
-
-<div class="evador-detail-item">
-
-
-    <span class="icon-circle">
-        ✓
-    </span>
-
-
-    <span>
-        ${text}
-    </span>
-
-
-</div>
-
-`;
-
+    `;
 }
 
 
@@ -1509,230 +1589,549 @@ return `
 
 function initialiseEvador(){
 
+    const root =
+        document.querySelector(
+            ".page-evador"
+        );
+
+    if(!root){
+        return;
+    }
+
+
+    /* ------------------------------------------------------
+       RIPPLE
+       ------------------------------------------------------ */
 
     try{
 
-        stagger(".evador-fragrance-card");
-
-        stagger(".evador-detail-card");
-
-        stagger(".evador-feature-card");
-
-        stagger(".evador-experience-card");
+        root
+            .querySelectorAll(".btn")
+            .forEach(button => ripple(button));
 
     }catch(error){
 
         console.warn(
-            "Evador animations:",
+            "Evador: ripple não inicializado.",
             error
         );
 
     }
 
 
+    /* ------------------------------------------------------
+       STAGGER
+       ------------------------------------------------------ */
+
     try{
 
-        document
-            .querySelectorAll(
-                ".page-evador .btn"
+        stagger(
+            root.querySelectorAll(
+                `
+                .evador-overview-grid .reveal,
+                .evador-fragrance-grid .reveal,
+                .evador-benefits-grid .reveal,
+                .evador-experience-grid .reveal,
+                .evador-routine-list .reveal
+                `
             )
-            .forEach(button => {
-
-                ripple(button);
-
-            });
+        );
 
     }catch(error){
 
         console.warn(
-            "Evador ripple:",
+            "Evador: stagger não inicializado.",
             error
         );
 
     }
 
 
-    /*
-     * Discover
-     */
+    /* ------------------------------------------------------
+       SCROLL
+       ------------------------------------------------------ */
 
-    document
-        .getElementById("evadorDiscover")
-        ?.addEventListener(
-            "click",
-            () => {
+    root.addEventListener(
+        "click",
+        function(event){
 
-                document
-                    .getElementById("evador-fragrance")
-                    ?.scrollIntoView({
+            const trigger =
+                event.target.closest(
+                    "[data-scroll]"
+                );
 
-                        behavior:"smooth",
+            if(!trigger){
+                return;
+            }
 
-                        block:"start"
+            const selector =
+                trigger.getAttribute(
+                    "data-scroll"
+                );
 
-                    });
+            if(!selector){
+                return;
+            }
+
+            const target =
+                root.querySelector(
+                    selector
+                );
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
 
             }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       MORE / DETAILS
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "[data-more-toggle]"
+                );
+
+            if(!button){
+                return;
+            }
+
+            const key =
+                button.getAttribute(
+                    "data-more-toggle"
+                );
+
+            const panel =
+                root.querySelector(
+                    `[data-more-panel="${key}"]`
+                );
+
+            if(!panel){
+                return;
+            }
+
+            const isOpen =
+                button.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+            const nextState =
+                !isOpen;
+
+
+            button.setAttribute(
+                "aria-expanded",
+                String(nextState)
+            );
+
+
+            button.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.setAttribute(
+                "aria-hidden",
+                String(!nextState)
+            );
+
+
+            if(nextState){
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+            }else{
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+                requestAnimationFrame(()=>{
+
+                    panel.style.maxHeight =
+                        "0px";
+
+                });
+
+            }
+
+
+            const label =
+                button.querySelector(
+                    "span"
+                );
+
+
+            if(label){
+
+                label.textContent =
+                    nextState
+                        ? button.dataset.closeLabel || "Ocultar"
+                        : button.dataset.openLabel || "Ver mais";
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       FAQ — APENAS UMA ABERTA
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    ".evador-faq-question"
+                );
+
+            if(!button){
+                return;
+            }
+
+
+            const item =
+                button.closest(
+                    ".evador-faq-item"
+                );
+
+            if(!item){
+                return;
+            }
+
+
+            const answer =
+                item.querySelector(
+                    ".evador-faq-answer"
+                );
+
+            if(!answer){
+                return;
+            }
+
+
+            const isOpen =
+                item.classList.contains(
+                    "active"
+                );
+
+
+            root
+                .querySelectorAll(
+                    ".evador-faq-item.active"
+                )
+                .forEach(
+                    otherItem=>{
+
+                        if(
+                            otherItem !== item
+                        ){
+
+                            closeFaqItem(
+                                otherItem
+                            );
+
+                        }
+
+                    }
+                );
+
+
+            if(isOpen){
+
+                closeFaqItem(item);
+
+            }else{
+
+                openFaqItem(
+                    item,
+                    button,
+                    answer
+                );
+
+                openFaqPlus(item);
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       IMAGE FALLBACK
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(
+            "img"
+        )
+        .forEach(image=>{
+
+            image.addEventListener(
+                "error",
+                function(){
+
+                    const parent =
+                        image.closest(
+                            ".evador-product-grid, " +
+                            ".evador-product-card-visual, " +
+                            ".evador-benefits-frame, " +
+                            ".evador-identity-frame"
+                        );
+
+                    if(parent){
+
+                        parent.classList.add(
+                            "image-error"
+                        );
+
+                    }
+
+                },
+                {
+                    once:true
+                }
+            );
+
+        });
+
+
+    /* ------------------------------------------------------
+       BUY BUTTONS
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "#buyEvador, #evadorWhats, [data-buy]"
+                );
+
+            if(!button){
+                return;
+            }
+
+
+            let message =
+                "Olá AD Lifestyle! Tenho interesse no Evador e gostaria de receber mais informações sobre o produto.";
+
+
+            const type =
+                button.getAttribute(
+                    "data-buy"
+                );
+
+
+            if(type === "product"){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Evador.";
+
+            }
+
+
+            if(
+                button.id === "buyEvador"
+            ){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Evador.";
+
+            }
+
+
+            openWhatsApp(message);
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       HOME
+       ------------------------------------------------------ */
+
+    const backHome =
+        root.querySelector(
+            "#backHome"
         );
 
+    if(backHome){
 
-    /*
-     * Expandable sections
-     */
-
-    document
-        .querySelectorAll(
-            ".page-evador .evador-details-toggle"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const container =
-                        button.closest(
-                            ".evador-information"
-                        );
-
-
-                    if(!container) return;
-
-
-                    const isOpen =
-                        container.classList.contains(
-                            "active"
-                        );
-
-
-                    container.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * FAQ
-     */
-
-    document
-        .querySelectorAll(
-            ".page-evador .faq-question"
-        )
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                () => {
-
-                    const item =
-                        button.closest(
-                            ".faq-item"
-                        );
-
-
-                    if(!item) return;
-
-
-                    const isOpen =
-                        item.classList.contains(
-                            "active"
-                        );
-
-
-                    document
-                        .querySelectorAll(
-                            ".page-evador .faq-item"
-                        )
-                        .forEach(other => {
-
-                            if(other !== item){
-
-                                other.classList.remove(
-                                    "active"
-                                );
-
-
-                                other
-                                    .querySelector(
-                                        ".faq-question"
-                                    )
-                                    ?.setAttribute(
-                                        "aria-expanded",
-                                        "false"
-                                    );
-
-                            }
-
-                        });
-
-
-                    item.classList.toggle(
-                        "active",
-                        !isOpen
-                    );
-
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(!isOpen)
-                    );
-
-                }
-            );
-
-        });
-
-
-    /*
-     * Home
-     */
-
-    document
-        .getElementById("backHome")
-        ?.addEventListener(
+        backHome.addEventListener(
             "click",
-            () => {
+            function(){
 
                 navigate("/");
 
             }
         );
 
+    }
 
-    /*
-     * Buy
-     */
 
-    document
-        .getElementById("buyEvador")
-        ?.addEventListener(
-            "click",
-            openWhats
+    /* ------------------------------------------------------
+       RESIZE
+       ------------------------------------------------------ */
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            root
+                .querySelectorAll(
+                    ".evador-faq-item.active .evador-faq-answer"
+                )
+                .forEach(answer=>{
+
+                    answer.style.maxHeight =
+                        `${answer.scrollHeight}px`;
+
+                });
+
+
+            root
+                .querySelectorAll(
+                    ".evador-more-panel.active"
+                )
+                .forEach(panel=>{
+
+                    panel.style.maxHeight =
+                        `${panel.scrollHeight}px`;
+
+                });
+
+        },
+        {
+            passive:true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   FAQ HELPERS
+   ========================================================== */
+
+function openFaqItem(
+    item,
+    button,
+    answer
+){
+
+    item.classList.add(
+        "active"
+    );
+
+    button.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    answer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    answer.style.maxHeight =
+        `${answer.scrollHeight}px`;
+
+}
+
+
+function closeFaqItem(item){
+
+    const button =
+        item.querySelector(
+            ".evador-faq-question"
+        );
+
+    const answer =
+        item.querySelector(
+            ".evador-faq-answer"
+        );
+
+    const plus =
+        item.querySelector(
+            ".evador-faq-plus"
         );
 
 
-    /*
-     * WhatsApp
-     */
+    item.classList.remove(
+        "active"
+    );
 
-    document
-        .getElementById("evadorWhats")
-        ?.addEventListener(
-            "click",
-            openWhats
+
+    if(button){
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
         );
+
+    }
+
+
+    if(answer){
+
+        answer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        answer.style.maxHeight =
+            "0px";
+
+    }
+
+
+    if(plus){
+
+        plus.textContent =
+            "+";
+
+    }
+
+}
+
+
+function openFaqPlus(item){
+
+    const plus =
+        item.querySelector(
+            ".evador-faq-plus"
+        );
+
+    if(plus){
+
+        plus.textContent =
+            "−";
+
+    }
 
 }
 
@@ -1741,19 +2140,10 @@ function initialiseEvador(){
    WHATSAPP
    ========================================================== */
 
-function openWhats(){
-
-    const phone =
-        "244924964666";
-
-
-    const message =
-        "Olá AD Lifestyle! Tenho interesse no Evador e gostaria de receber mais informações sobre o produto.";
-
+function openWhatsApp(message){
 
     const url =
-        `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(
         url,
