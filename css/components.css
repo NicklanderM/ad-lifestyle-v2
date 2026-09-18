@@ -20575,545 +20575,824 @@ body.dark
 }
 /* ==========================================================
    AD LIFESTYLE V2
-   ALPHASPIN ULTRA
-   PAGE-SCOPED COMPONENT SYSTEM
-   ========================================================== */
-
-
-/* ==========================================================
-   01. VARIABLES
+   ALPHASPIN ULTRA — PREMIUM PRODUCT PAGE
+   Modelo visual inspirado directamente no iSMART S3
    ========================================================== */
 
 .page-alphaspin-ultra{
 
-    --alphaspin-primary:#40225C;
-    --alphaspin-secondary:#573475;
-    --alphaspin-violet:#6E4790;
-    --alphaspin-light:#885CAF;
-    --alphaspin-lilac:#A57BCF;
-    --alphaspin-silver-lilac:#B6BADF;
-    --alphaspin-lavender:#D2DFAF;
-    --alphaspin-lime:#D6E08B;
-    --alphaspin-silver:#EEEEF1;
-    --alphaspin-dark:#1F0E2F;
+    --alpha-white:#FFFFFF;
+    --alpha-ice:#E8E0F4;
+    --alpha-mist:#F4F0F8;
+    --alpha-soft:#F8F6FA;
 
-    --alphaspin-text:#1F0E2F;
-    --alphaspin-muted:#63576E;
+    --alpha-violet:#7657A8;
+    --alpha-violet-dark:#503878;
+    --alpha-violet-light:#A88BD0;
 
-    --alphaspin-surface:#FFFFFF;
-    --alphaspin-surface-soft:#F8F6FA;
+    --alpha-gold:#CBA85B;
+    --alpha-gold-light:#E6CA88;
+    --alpha-gold-dark:#917331;
 
-    --alphaspin-border:
-        rgba(64,34,92,.14);
+    --alpha-deep:#201B2D;
+    --alpha-graphite:#28252F;
 
-    --alphaspin-shadow:
-        0 25px 65px rgba(31,14,47,.10);
+    --alpha-text:#4D4658;
+    --alpha-muted:#7C7487;
 
-}
+    --alpha-line:rgba(89,68,122,.13);
+
+    --alpha-shadow:
+        0 24px 78px rgba(46,31,70,.10);
+
+    --alpha-shadow-heavy:
+        0 32px 90px rgba(31,20,47,.24);
+
+    --alpha-radius:32px;
+    --alpha-radius-sm:21px;
 
 
-/* ==========================================================
-   02. PAGE ROOT
-   ========================================================== */
-
-.page-alphaspin-ultra{
-
-    position:relative;
-
-    isolation:isolate;
-
-    min-height:100vh;
-
-    overflow:hidden;
+    color:var(--alpha-text);
 
     background:
-        #EEEEF1 !important;
+        var(--alpha-white);
 
-    color:
-        #1F0E2F !important;
+    font-family:
+        Inter,
+        "Avenir Next",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
 
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
 }
 
 
 /* ==========================================================
-   03. TEXT
+   RESET LOCAL
    ========================================================== */
 
-.page-alphaspin-ultra h1,
-.page-alphaspin-ultra h2,
-.page-alphaspin-ultra h3,
-.page-alphaspin-ultra h4,
-.page-alphaspin-ultra h5,
-.page-alphaspin-ultra h6{
-
-    color:
-        #1F0E2F !important;
-
+.page-alphaspin-ultra *{
+    box-sizing:border-box;
 }
 
+.page-alphaspin-ultra button,
+.page-alphaspin-ultra input,
+.page-alphaspin-ultra textarea,
+.page-alphaspin-ultra select{
+    font:inherit;
+}
+
+.page-alphaspin-ultra img{
+    display:block;
+    max-width:100%;
+}
 
 .page-alphaspin-ultra p{
-
-    color:
-        #1F0E2F !important;
-
+    margin:0;
 }
 
 
-.page-alphaspin-ultra .text,
-.page-alphaspin-ultra .lead{
-
-    color:
-        #63576E !important;
-
-}
-
-
-.page-alphaspin-ultra .label{
-
-    color:
-        #6E4790 !important;
-
-}
-
+/* ==========================================================
+   COMMON TYPE
+   ========================================================== */
 
 .page-alphaspin-ultra .section-title{
 
-    color:
-        #1F0E2F !important;
+    max-width:920px;
+    margin:0;
 
+    color:
+        var(--alpha-deep) !important;
+
+    font-size:
+        clamp(
+            2.25rem,
+            4.9vw,
+            4.65rem
+        );
+
+    line-height:1.01;
+    letter-spacing:-.055em;
+    font-weight:900;
+}
+
+.page-alphaspin-ultra .section-title span{
+
+    display:block;
+
+    margin-top:.08em;
+
+    color:
+        var(--alpha-violet) !important;
+}
+
+.page-alphaspin-ultra .lead{
+
+    max-width:760px;
+
+    margin-top:22px;
+
+    color:#6A6175 !important;
+
+    font-size:1.04rem;
+    line-height:1.82;
+}
+
+.page-alphaspin-ultra .section-center{
+
+    max-width:940px;
+
+    margin-inline:auto;
+
+    text-align:center;
+}
+
+.page-alphaspin-ultra .label,
+.page-alphaspin-ultra .eyebrow{
+
+    color:
+        var(--alpha-gold-dark) !important;
+
+    font-size:.69rem;
+    font-weight:900;
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+}
+
+.page-alphaspin-ultra .eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:17px;
+}
+
+.page-alphaspin-ultra .eyebrow::before{
+
+    content:"";
+
+    width:28px;
+    height:1px;
+
+    background:
+        currentColor;
+
+    opacity:.65;
+}
+
+.page-alphaspin-ultra .alphaspin-section-heading{
+
+    max-width:900px;
+
+    margin:0 auto 42px;
+}
+
+.page-alphaspin-ultra .alphaspin-section-heading h2{
+
+    margin:0;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:
+        clamp(
+            2.3rem,
+            4.9vw,
+            4.7rem
+        );
+
+    line-height:1.01;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra .alphaspin-section-heading h2 span{
+
+    display:block;
+
+    color:
+        var(--alpha-violet);
+}
+
+.page-alphaspin-ultra .alphaspin-section-heading p{
+
+    max-width:760px;
+
+    margin-top:24px;
+
+    color:#6F667A;
+
+    font-size:1rem;
+
+    line-height:1.92;
 }
 
 
 /* ==========================================================
-   04. HERO
+   BUTTONS
+   ========================================================== */
+
+.page-alphaspin-ultra .btn{
+
+    width:auto !important;
+
+    min-height:49px;
+
+    padding:
+        0 20px !important;
+
+    border-radius:
+        14px !important;
+
+    font-size:.82rem !important;
+    font-weight:850 !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+}
+
+.page-alphaspin-ultra .btn:hover{
+    transform:translateY(-2px);
+}
+
+.page-alphaspin-ultra .btn-primary{
+
+    border:
+        1px solid transparent !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alpha-deep),
+            var(--alpha-violet-dark)
+        ) !important;
+
+    color:
+        #FFFFFF !important;
+
+    box-shadow:
+        0 14px 30px
+        rgba(54,36,75,.20);
+}
+
+.page-alphaspin-ultra .btn-glass{
+
+    border:
+        1px solid rgba(89,68,122,.14) !important;
+
+    background:
+        rgba(255,255,255,.58) !important;
+
+    color:
+        var(--alpha-deep) !important;
+}
+
+
+/* ==========================================================
+   MORE / DETAILS
+   ========================================================== */
+
+.page-alphaspin-ultra .alphaspin-more-wrap{
+    margin-top:30px;
+}
+
+.page-alphaspin-ultra .alphaspin-more-toggle{
+
+    display:inline-flex;
+
+    width:max-content !important;
+
+    max-width:100%;
+
+    min-height:40px;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:9px;
+
+    padding:
+        0 14px !important;
+
+    border:
+        1px solid rgba(89,68,122,.15) !important;
+
+    border-radius:
+        999px !important;
+
+    background:
+        rgba(255,255,255,.70) !important;
+
+    color:
+        var(--alpha-violet-dark) !important;
+
+    box-shadow:
+        none !important;
+
+    font-size:.70rem !important;
+
+    font-weight:900 !important;
+}
+
+.page-alphaspin-ultra .alphaspin-more-toggle:hover{
+
+    background:
+        #FFFFFF !important;
+}
+
+.page-alphaspin-ultra .alphaspin-more-toggle i{
+
+    font-style:normal;
+
+    font-size:1rem;
+
+    line-height:1;
+
+    transition:
+        transform .25s ease;
+}
+
+.page-alphaspin-ultra
+.alphaspin-more-toggle.active
+i{
+
+    transform:
+        rotate(45deg);
+}
+
+.page-alphaspin-ultra .alphaspin-more-panel{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:
+        max-height .55s cubic-bezier(.22,.61,.36,1),
+        opacity .30s ease,
+        visibility 0s linear .55s;
+}
+
+.page-alphaspin-ultra
+.alphaspin-more-panel.active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transition:
+        max-height .58s cubic-bezier(.22,.61,.36,1),
+        opacity .35s ease,
+        visibility 0s linear 0s;
+}
+
+
+/* ==========================================================
+   HERO
    ========================================================== */
 
 .page-alphaspin-ultra .alphaspin-ultra-hero{
 
+    position:relative;
+
+    min-height:
+        min(860px,92vh);
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
     background:
 
         radial-gradient(
-            circle at 30% 30%,
-            rgba(214,224,139,.24),
-            transparent 28%
+            circle at 18% 18%,
+            rgba(196,182,221,.64),
+            transparent 33%
         ),
 
         radial-gradient(
-            circle at 70% 35%,
-            rgba(165,123,207,.34),
-            transparent 32%
+            circle at 82% 30%,
+            rgba(203,168,91,.11),
+            transparent 26%
         ),
 
         linear-gradient(
             135deg,
-            #40225C,
-            #573475,
-            #885CAF
-        ) !important;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-ultra-hero h1,
-.page-alphaspin-ultra
-.alphaspin-ultra-hero h2,
-.page-alphaspin-ultra
-.alphaspin-ultra-hero h3{
-
-    color:
-        #FFFFFF !important;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-ultra-hero
-.hero-sub{
-
-    color:
-        rgba(255,255,255,.84) !important;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-ultra-hero
-.hero-title
-span{
-
-    color:
-        #D6E08B !important;
-
-    background:none !important;
-
-    -webkit-background-clip:
-        initial !important;
-
-    background-clip:
-        initial !important;
-
-    -webkit-text-fill-color:
-        #D6E08B !important;
-
-}
-
-
-/* ==========================================================
-   05. HERO BADGE
-   ========================================================== */
-
-.page-alphaspin-ultra
-.alphaspin-ultra-hero
-.badge{
-
-    color:
-        #D6E08B !important;
-
-    background:
-        rgba(214,224,139,.10) !important;
-
-    border:
-        1px solid
-        rgba(214,224,139,.35) !important;
-
-}
-
-
-/* ==========================================================
-   06. HERO HIGHLIGHTS
-   ========================================================== */
-
-.page-alphaspin-ultra
-.alphaspin-hero-highlights{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px 18px;
-
-    margin-top:24px;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-hero-highlights span{
-
-    color:
-        #FFFFFF !important;
-
-    font-size:
-        14px;
-
-}
-
-
-/* ==========================================================
-   07. DISCLAIMER
-   ========================================================== */
-
-.page-alphaspin-ultra
-.alphaspin-disclaimer{
-
-    max-width:650px;
-
-    margin-top:20px;
-
-    color:
-        rgba(255,255,255,.55) !important;
-
-    font-size:
-        12px;
-
-    line-height:
-        1.7;
-
-}
-
-
-/* ==========================================================
-   08. PRODUCT
-   ========================================================== */
-
-.page-alphaspin-ultra
-.product-glow{
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(214,224,139,.48),
-            rgba(165,123,207,.42) 36%,
-            rgba(110,71,144,.20) 52%,
-            transparent 72%
-        ) !important;
-
-}
-
-
-.page-alphaspin-ultra
-.hero-product img{
-
-    position:relative;
-
-    z-index:3;
-
-    max-width:
-        min(100%,520px);
-
-    width:100%;
-
-    object-fit:contain;
-
-    filter:
-        drop-shadow(
-            0 35px 55px
-            rgba(31,14,47,.32)
+            #FFFFFF,
+            #F5F0F8 55%,
+            #E7DDF0
         );
-
 }
 
-
-/* ==========================================================
-   09. RING
-   ========================================================== */
-
 .page-alphaspin-ultra
-.alphaspin-ultra-ring{
-
-    position:absolute;
-
-    width:390px;
-
-    height:390px;
-
-    border-radius:50%;
-
-    border:
-        1px solid
-        rgba(214,224,139,.48);
-
-    box-shadow:
-
-        0 0 50px
-        rgba(165,123,207,.18),
-
-        inset 0 0 35px
-        rgba(214,224,139,.09);
-
-    z-index:2;
-
-}
-
-
-/* ==========================================================
-   10. CARDS
-   ========================================================== */
-
-.page-alphaspin-ultra
-.card,
-.page-alphaspin-ultra
-.service-card,
-.page-alphaspin-ultra
-.alphaspin-technology-card,
-.page-alphaspin-ultra
-.alphaspin-feature-card,
-.page-alphaspin-ultra
-.alphaspin-detail-card,
-.page-alphaspin-ultra
-.alphaspin-frequency-card,
-.page-alphaspin-ultra
-.alphaspin-certificate,
-.page-alphaspin-ultra
-.faq-item{
-
-    background:
-        #FFFFFF !important;
-
-    color:
-        #1F0E2F !important;
-
-    border:
-        1px solid
-        rgba(64,34,92,.14) !important;
-
-    box-shadow:
-        var(--alphaspin-shadow);
-
-}
-
-
-/* ==========================================================
-   11. CARD TITLES
-   ========================================================== */
-
-.page-alphaspin-ultra
-.card h3,
-.page-alphaspin-ultra
-.service-card h3,
-.page-alphaspin-ultra
-.alphaspin-detail-card h3,
-.page-alphaspin-ultra
-.alphaspin-frequency-card h3{
-
-    color:
-        #1F0E2F !important;
-
-}
-
-
-/* ==========================================================
-   12. CARD TEXT
-   ========================================================== */
-
-.page-alphaspin-ultra
-.card p,
-.page-alphaspin-ultra
-.service-card p,
-.page-alphaspin-ultra
-.alphaspin-detail-card p,
-.page-alphaspin-ultra
-.alphaspin-frequency-card p{
-
-    color:
-        #63576E !important;
-
-}
-
-
-/* ==========================================================
-   13. SERVICE ICON
-   ========================================================== */
-
-.page-alphaspin-ultra
-.service-icon{
-
-    background:
-        rgba(110,71,144,.09) !important;
-
-    color:
-        #6E4790 !important;
-
-    border:
-        1px solid
-        rgba(165,123,207,.28) !important;
-
-}
-
-
-/* ==========================================================
-   14. TECHNOLOGY
-   ========================================================== */
-
-.page-alphaspin-ultra
-.alphaspin-technology{
-
-    background:
-        #EEEEF1 !important;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-technology-card::after{
+.alphaspin-ultra-hero::before{
 
     content:"";
 
     position:absolute;
 
-    left:0;
+    inset:0;
 
-    bottom:0;
-
-    width:100%;
-
-    height:3px;
+    z-index:-2;
 
     background:
 
         linear-gradient(
-            90deg,
-            #40225C,
-            #885CAF,
-            #D6E08B
-        ) !important;
+            rgba(89,68,122,.027) 1px,
+            transparent 1px
+        ),
 
+        linear-gradient(
+            90deg,
+            rgba(89,68,122,.027) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        52px 52px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000,
+            transparent 88%
+        );
 }
 
-
-/* ==========================================================
-   15. INFORMATION ACCORDION
-   ========================================================== */
-
 .page-alphaspin-ultra
-.alphaspin-information{
+.alphaspin-hero-atmosphere{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-1;
+
+    pointer-events:none;
+}
+
+.page-alphaspin-ultra .alphaspin-orb{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    filter:
+        blur(70px);
+}
+
+.page-alphaspin-ultra .alphaspin-orb-1{
+
+    width:460px;
+    height:460px;
+
+    left:-190px;
+    top:-170px;
 
     background:
-        #FFFFFF !important;
+        rgba(118,87,168,.16);
 
-    border:
-        1px solid
-        rgba(64,34,92,.14) !important;
-
-    border-radius:
-        20px;
-
-    overflow:hidden;
-
+    animation:
+        alphaFloatOne
+        14s
+        ease-in-out
+        infinite;
 }
 
+.page-alphaspin-ultra .alphaspin-orb-2{
+
+    width:390px;
+    height:390px;
+
+    right:-100px;
+    top:10%;
+
+    background:
+        rgba(203,168,91,.11);
+
+    animation:
+        alphaFloatTwo
+        17s
+        ease-in-out
+        infinite;
+}
+
+.page-alphaspin-ultra .alphaspin-orbit{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(89,68,122,.10);
+}
+
+.page-alphaspin-ultra .alphaspin-orbit-1{
+
+    width:500px;
+    height:500px;
+
+    right:4%;
+    top:7%;
+
+    transform:
+        rotate(20deg)
+        scaleY(.58);
+
+    animation:
+        alphaOrbit
+        28s
+        linear
+        infinite;
+}
+
+.page-alphaspin-ultra .alphaspin-orbit-2{
+
+    width:640px;
+    height:640px;
+
+    right:-5%;
+    top:-7%;
+
+    transform:
+        rotate(-15deg)
+        scaleY(.58);
+
+    border-color:
+        rgba(203,168,91,.12);
+
+    animation:
+        alphaOrbit
+        38s
+        linear
+        infinite reverse;
+}
 
 .page-alphaspin-ultra
-.alphaspin-details-toggle{
+.alphaspin-hero-grid{
+
+    position:relative;
+
+    z-index:2;
 
     width:100%;
 
-    display:flex;
+    display:grid;
 
-    justify-content:space-between;
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(420px,.95fr);
+
+    gap:48px;
 
     align-items:center;
 
-    gap:20px;
+    padding:
+        82px 0 72px;
+}
 
-    padding:20px 24px;
+.page-alphaspin-ultra
+.alphaspin-hero-copy{
 
-    border:0;
+    max-width:680px;
+
+    padding-right:20px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-eyebrow{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    margin-bottom:18px;
+
+    color:
+        var(--alpha-gold-dark);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+}
+
+.page-alphaspin-ultra
+.alphaspin-eyebrow::before{
+
+    content:"";
+
+    width:28px;
+    height:1px;
 
     background:
-        #FFFFFF !important;
+        currentColor;
 
-    color:
-        #1F0E2F !important;
-
-    font:inherit;
-
-    font-weight:700;
-
-    cursor:pointer;
-
+    opacity:.65;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-details-toggle
-span:first-child{
+.alphaspin-hero-copy h1{
+
+    margin:0;
 
     color:
-        #1F0E2F !important;
+        var(--alpha-deep);
 
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7.8rem
+        );
+
+    line-height:.84;
+
+    letter-spacing:-.075em;
+
+    font-weight:900;
 }
 
+.page-alphaspin-ultra
+.alphaspin-hero-copy h1 span{
+
+    display:block;
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--alpha-deep),
+            var(--alpha-violet) 50%,
+            var(--alpha-gold-dark)
+        );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+}
 
 .page-alphaspin-ultra
-.alphaspin-details-icon{
+.alphaspin-hero-description{
 
-    width:32px;
+    max-width:620px;
 
-    height:32px;
+    margin-top:32px;
+
+    color:#665D70;
+
+    font-size:1.08rem;
+
+    line-height:1.90;
+}
+
+.page-alphaspin-ultra
+.alphaspin-hero-pills{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:28px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-hero-pill{
+
+    min-height:34px;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    padding:
+        0 12px;
+
+    border:
+        1px solid rgba(89,68,122,.11);
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.64);
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-size:.65rem;
+
+    font-weight:850;
+}
+
+.page-alphaspin-ultra
+.alphaspin-hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-top:38px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-hero-product{
+
+    position:relative;
+
+    min-height:610px;
+
+    display:grid;
+
+    place-items:center;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-aura{
+
+    position:absolute;
+
+    width:70%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(203,168,91,.16),
+            rgba(118,87,168,.09) 34%,
+            transparent 71%
+        );
+
+    filter:
+        blur(10px);
+
+    animation:
+        alphaPulse
+        5.8s
+        ease-in-out
+        infinite;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-ring{
+
+    position:absolute;
+
+    width:78%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(118,87,168,.18);
+
+    box-shadow:
+
+        0 0 0 32px
+        rgba(196,182,221,.08),
+
+        0 0 0 66px
+        rgba(203,168,91,.045);
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-grid{
+
+    position:relative;
+
+    z-index:5;
 
     display:flex;
 
@@ -21121,370 +21400,1251 @@ span:first-child{
 
     justify-content:center;
 
-    border-radius:50%;
+    width:100%;
 
-    background:
-        #6E4790 !important;
-
-    color:
-        #FFFFFF !important;
-
+    min-height:540px;
 }
 
+.page-alphaspin-ultra
+.alphaspin-product-grid img{
+
+    position:relative;
+
+    z-index:5;
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:470px;
+    max-height:550px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.18)
+        ) !important;
+
+    transform:
+        translate3d(0,0,0);
+
+    backface-visibility:hidden;
+
+    image-rendering:auto;
+}
 
 .page-alphaspin-ultra
-.alphaspin-information.active
-.alphaspin-details-icon{
+.alphaspin-product-caption{
+
+    position:absolute;
+
+    right:4%;
+
+    bottom:6%;
+
+    z-index:7;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2px;
+
+    padding:
+        9px 12px;
+
+    border:
+        1px solid rgba(57,41,79,.10);
+
+    border-radius:999px;
 
     background:
-        #D6E08B !important;
+        rgba(255,255,255,.54);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-caption strong{
 
     color:
-        #1F0E2F !important;
+        var(--alpha-deep);
 
+    font-size:.66rem;
+
+    letter-spacing:.14em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-caption span{
+
+    color:
+        var(--alpha-violet);
+
+    font-size:.54rem;
+
+    font-weight:850;
+
+    letter-spacing:.13em;
 }
 
 
 /* ==========================================================
-   16. ACCORDION CONTENT
+   IMAGE FALLBACK
    ========================================================== */
 
 .page-alphaspin-ultra
-.alphaspin-details-content{
+.alphaspin-product-grid.image-error::after,
+.page-alphaspin-ultra
+.alphaspin-product-card-visual.image-error::after,
+.page-alphaspin-ultra
+.alphaspin-benefits-frame.image-error::after{
 
-    display:grid;
+    content:
+        "Imagem não encontrada — verificar caminho do ficheiro";
 
-    grid-template-rows:
-        0fr;
+    position:absolute;
 
-    transition:
-        grid-template-rows .45s ease;
+    left:50%;
+    bottom:28px;
 
+    transform:
+        translateX(-50%);
+
+    width:max-content;
+
+    max-width:84%;
+
+    padding:
+        8px 11px;
+
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border:
+        1px solid rgba(89,68,122,.11);
+
+    color:#7D7288;
+
+    font-size:.59rem;
+
+    font-weight:800;
+
+    text-align:center;
+
+    z-index:20;
 }
 
 
+/* ==========================================================
+   OVERVIEW
+   ========================================================== */
+
 .page-alphaspin-ultra
-.alphaspin-information.active
-.alphaspin-details-content{
+.alphaspin-overview-section{
 
-    grid-template-rows:
-        1fr;
-
+    background:
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #F9F7FB
+        );
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-details-content
-> div{
-
-    min-height:0;
-
-    overflow:hidden;
-
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-details-grid{
+.alphaspin-overview-grid{
 
     display:grid;
 
     grid-template-columns:
-        repeat(2,minmax(0,1fr));
+        repeat(4,minmax(0,1fr));
 
-    gap:20px;
+    gap:14px;
 
-    padding:
-        0 24px 24px;
-
+    margin-top:46px;
 }
 
+.page-alphaspin-ultra
+.alphaspin-overview-card{
+
+    min-height:240px;
+
+    padding:24px;
+
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:24px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 14px 42px
+        rgba(46,31,70,.06);
+}
+
+.page-alphaspin-ultra
+.alphaspin-card-number{
+
+    display:block;
+
+    color:
+        rgba(89,68,122,.19);
+
+    font-size:.67rem;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-card-icon{
+
+    width:40px;
+    height:40px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:19px;
+
+    border-radius:13px;
+
+    background:
+        #F0EBF6;
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-overview-card h3{
+
+    margin-top:21px;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:1.15rem;
+
+    line-height:1.15;
+
+    letter-spacing:-.02em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-overview-card p{
+
+    margin-top:12px;
+
+    color:#7A7083;
+
+    font-size:.81rem;
+
+    line-height:1.78;
+}
+
+.page-alphaspin-ultra
+.alphaspin-overview-note{
+
+    margin-top:19px;
+
+    padding:
+        18px 20px;
+
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.76);
+}
+
+.page-alphaspin-ultra
+.alphaspin-overview-note strong{
+
+    color:
+        var(--alpha-deep);
+
+    font-size:.83rem;
+}
+
+.page-alphaspin-ultra
+.alphaspin-overview-note p{
+
+    margin-top:4px;
+
+    color:#7C7187;
+
+    font-size:.74rem;
+
+    line-height:1.65;
+}
+
+
+/* ==========================================================
+   TECHNOLOGY
+   ========================================================== */
+
+.page-alphaspin-ultra
+.alphaspin-technology{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 87% 12%,
+            rgba(203,168,91,.10),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            140deg,
+            #21192E,
+            #382A4F
+        );
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology::before{
+
+    content:"ULTRA";
+
+    position:absolute;
+
+    right:2vw;
+    top:-52px;
+
+    color:
+        rgba(255,255,255,.025);
+
+    font-size:10rem;
+
+    line-height:1;
+
+    font-weight:900;
+
+    letter-spacing:-.06em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-heading-dark{
+
+    color:#FFFFFF;
+}
+
+.page-alphaspin-ultra
+.alphaspin-heading-dark h2{
+
+    color:#FFFFFF !important;
+}
+
+.page-alphaspin-ultra
+.alphaspin-heading-dark h2 span{
+
+    color:
+        var(--alpha-ice) !important;
+}
+
+.page-alphaspin-ultra
+.alphaspin-heading-dark p{
+
+    color:#D6CCDF;
+}
+
+.page-alphaspin-ultra
+.alphaspin-heading-dark .eyebrow{
+
+    color:
+        var(--alpha-gold-light) !important;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:46px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-card{
+
+    min-height:290px;
+
+    padding:25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.09);
+
+    border-radius:24px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:
+        blur(14px);
+
+    box-shadow:
+        0 18px 50px
+        rgba(0,0,0,.08);
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-number{
+
+    color:
+        rgba(255,255,255,.20);
+
+    font-size:.65rem;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-symbol{
+
+    width:46px;
+    height:46px;
+
+    display:grid;
+
+    place-items:center;
+
+    margin-top:24px;
+
+    border-radius:15px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:
+        var(--alpha-gold-light);
+
+    font-size:1.14rem;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-label{
+
+    display:block;
+
+    margin-top:27px;
+
+    color:
+        var(--alpha-gold-light);
+
+    font-size:.61rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+    text-transform:uppercase;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-card h3{
+
+    margin-top:7px;
+
+    color:#FFFFFF;
+
+    font-size:1.18rem;
+
+    line-height:1.12;
+}
+
+.page-alphaspin-ultra
+.alphaspin-technology-card p{
+
+    margin-top:12px;
+
+    color:#C7BDCF;
+
+    font-size:.80rem;
+
+    line-height:1.78;
+}
+
+
+/* ==========================================================
+   DETAILS
+   ========================================================== */
+
+.page-alphaspin-ultra
+.alphaspin-detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:14px;
+
+    margin-top:16px;
+}
 
 .page-alphaspin-ultra
 .alphaspin-detail-card{
 
-    padding:25px;
+    padding:23px;
+
+    border:
+        1px solid
+        rgba(89,68,122,.11);
+
+    border-radius:21px;
 
     background:
-        #F8F6FA !important;
-
+        #F9F7FB;
 }
-
-
-.page-alphaspin-ultra
-.alphaspin-detail-card
-.label{
-
-    color:
-        #6E4790 !important;
-
-}
-
 
 .page-alphaspin-ultra
 .alphaspin-detail-card-wide{
 
     grid-column:
-        1 / -1;
-
+        span 3;
 }
 
+.page-alphaspin-ultra
+.alphaspin-detail-card h3{
 
-/* ==========================================================
-   17. DETAIL ITEMS
-   ========================================================== */
+    margin-top:11px;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:1.12rem;
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-card p{
+
+    margin-top:8px;
+
+    color:#766C80;
+
+    font-size:.82rem;
+
+    line-height:1.68;
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
+
+    margin-top:15px;
+
+    padding:16px;
+
+    border:
+        1px solid
+        rgba(89,68,122,.09);
+
+    border-radius:16px;
+
+    background:
+        rgba(255,255,255,.74);
+}
 
 .page-alphaspin-ultra
 .alphaspin-detail-item{
 
     display:flex;
 
+    gap:9px;
+
     align-items:flex-start;
-
-    gap:10px;
-
-    margin-top:10px;
-
-    color:
-        #63576E !important;
-
-    font-size:
-        14px;
-
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-detail-item
-.icon-circle{
+.alphaspin-check{
+
+    flex:
+        0 0 22px;
 
     width:22px;
-
     height:22px;
 
-    display:flex;
+    display:grid;
 
-    align-items:center;
-
-    justify-content:center;
-
-    flex-shrink:0;
+    place-items:center;
 
     border-radius:50%;
 
     background:
-        rgba(110,71,144,.10) !important;
+        rgba(203,168,91,.13);
 
     color:
-        #6E4790 !important;
+        var(--alpha-gold-dark);
 
+    font-size:.62rem;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-item
+> span:last-child{
+
+    color:#756B80;
+
+    font-size:.76rem;
+
+    line-height:1.58;
 }
 
 
 /* ==========================================================
-   18. BENEFITS
+   BENEFITS
    ========================================================== */
 
 .page-alphaspin-ultra
 .alphaspin-benefits{
 
-    background:
-        #FFFFFF !important;
-
+    background:#F8F6FA;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-benefits
-.section-title{
+.alphaspin-benefits-grid{
 
-    color:
-        #1F0E2F !important;
+    display:grid;
 
-}
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
 
-
-.page-alphaspin-ultra
-.alphaspin-benefits
-.text{
-
-    color:
-        #63576E !important;
-
-}
-
-
-.page-alphaspin-ultra
-.icon-item{
-
-    color:
-        #1F0E2F !important;
-
-}
-
-
-.page-alphaspin-ultra
-.icon-circle{
-
-    background:
-        rgba(110,71,144,.10) !important;
-
-    color:
-        #6E4790 !important;
-
-}
-
-
-/* ==========================================================
-   19. BENEFIT IMAGE
-   ========================================================== */
-
-.page-alphaspin-ultra
-.alphaspin-benefit-image{
-
-    position:relative;
-
-    min-height:480px;
-
-    display:flex;
+    gap:64px;
 
     align-items:center;
-
-    justify-content:center;
-
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-benefit-image img{
+.alphaspin-benefits-frame{
 
     position:relative;
 
-    z-index:2;
+    min-height:560px;
 
-    width:100%;
+    display:grid;
 
-    max-width:460px;
+    place-items:center;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(203,168,91,.10),
+            rgba(196,182,221,.23) 36%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #EFE8F4
+        );
+
+    box-shadow:
+        var(--alpha-shadow);
+}
+
+.page-alphaspin-ultra
+.alphaspin-benefits-aura{
+
+    position:absolute;
+
+    width:76%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.96),
+            transparent 68%
+        );
+}
+
+.page-alphaspin-ultra
+.alphaspin-benefits-ring{
+
+    position:absolute;
+
+    width:64%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(118,87,168,.18);
+}
+
+.page-alphaspin-ultra
+.alphaspin-benefits-frame img{
+
+    position:relative;
+
+    z-index:3;
+
+    width:auto;
+
+    max-width:440px;
+
+    max-height:500px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 30px 45px
-            rgba(31,14,47,.22)
+            0 26px 38px
+            rgba(0,0,0,.18)
         );
-
 }
 
+.page-alphaspin-ultra
+.alphaspin-benefit-checks{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+
+    margin-top:32px;
+}
 
 .page-alphaspin-ultra
-.alphaspin-image-glow{
+.alphaspin-benefit-check{
 
-    position:absolute;
+    display:flex;
 
-    width:340px;
+    align-items:center;
 
-    height:340px;
+    gap:12px;
+
+    min-height:34px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-benefit-check > span{
+
+    width:27px;
+    height:27px;
+
+    flex:
+        0 0 27px;
+
+    display:grid;
+
+    place-items:center;
 
     border-radius:50%;
 
     background:
+        rgba(203,168,91,.12);
 
-        radial-gradient(
-            circle,
-            rgba(214,224,139,.28),
-            rgba(165,123,207,.20),
-            transparent 70%
-        );
+    color:
+        var(--alpha-gold-dark);
 
-    filter:
-        blur(25px);
+    font-size:.74rem;
 
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-benefit-check p{
+
+    color:#62586E;
+
+    font-size:.90rem;
+
+    line-height:1.62;
 }
 
 
 /* ==========================================================
-   20. EXPERIENCE
+   PRODUCT
    ========================================================== */
 
 .page-alphaspin-ultra
-.alphaspin-experience{
+.alphaspin-product-section{
+
+    background:#FFFFFF;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:31px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        var(--alpha-shadow);
+
+    margin-top:46px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card-visual{
+
+    position:relative;
+
+    min-height:560px;
+
+    display:grid;
+
+    place-items:center;
+
+    overflow:hidden;
 
     background:
-        #EEEEF1 !important;
 
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(203,168,91,.10),
+            transparent 48%
+        ),
+
+        linear-gradient(
+            145deg,
+            #F9F7FB,
+            #EDE6F3
+        );
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-aura{
+
+    position:absolute;
+
+    width:78%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.80),
+            transparent 66%
+        );
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-ring{
+
+    position:absolute;
+
+    width:68%;
+
+    aspect-ratio:1;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        rgba(118,87,168,.15);
+
+    box-shadow:
+        0 0 0 28px
+        rgba(196,182,221,.065);
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-detail-grid{
+
+    position:relative;
+
+    z-index:5;
+
+    width:100%;
+
+    min-height:500px;
+
+    display:grid;
+
+    place-items:center;
+
+    padding:
+        30px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-detail-image{
+
+    position:relative;
+
+    z-index:5;
+
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:470px;
+    max-height:490px;
+
+    object-fit:contain;
+
+    object-position:center;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 28px 40px
+            rgba(0,0,0,.18)
+        ) !important;
+}
+
+.page-alphaspin-ultra
+.alphaspin-detail-caption{
+
+    position:absolute;
+
+    right:22px;
+
+    bottom:20px;
+
+    z-index:7;
+
+    color:
+        rgba(89,68,122,.57);
+
+    font-size:.61rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card-copy{
+
+    padding:
+        48px 48px 52px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card-copy h3{
+
+    margin-top:17px;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:2.15rem;
+
+    line-height:1.03;
+
+    letter-spacing:-.04em;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card-copy h3 span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:
+        var(--alpha-violet);
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-card-copy > p{
+
+    margin-top:24px;
+
+    color:#6D6477;
+
+    font-size:.91rem;
+
+    line-height:1.86;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-spec-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-top:30px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-spec{
+
+    display:flex;
+
+    align-items:baseline;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+    padding-bottom:12px;
+
+    border-bottom:
+        1px solid
+        rgba(89,68,122,.09);
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-spec span{
+
+    color:#948A9B;
+
+    font-size:.65rem;
+
+    font-weight:800;
+
+    letter-spacing:.05em;
+
+    text-transform:uppercase;
+}
+
+.page-alphaspin-ultra
+.alphaspin-product-spec strong{
+
+    color:
+        var(--alpha-deep);
+
+    font-size:.78rem;
+
+    text-align:right;
+}
+
+.page-alphaspin-ultra
+.alphaspin-card-buy{
+
+    margin-top:34px;
 }
 
 
 /* ==========================================================
-   21. FREQUENCY
+   FREQUENCY
    ========================================================== */
 
 .page-alphaspin-ultra
 .alphaspin-frequency{
 
     background:
-
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(165,123,207,.12),
-            transparent 30%
-        ),
-
-        #F8F6FA !important;
-
+        linear-gradient(
+            180deg,
+            #FFFFFF,
+            #F7F3FA
+        );
 }
 
+.page-alphaspin-ultra
+.alphaspin-frequency-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:16px;
+
+    margin-top:46px;
+}
 
 .page-alphaspin-ultra
 .alphaspin-frequency-card{
 
-    padding:30px;
+    min-height:280px;
 
-    text-align:center;
+    padding:29px;
 
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:27px;
+
+    background:
+        #FFFFFF;
+
+    box-shadow:
+        0 18px 50px
+        rgba(46,31,70,.06);
 }
 
+.page-alphaspin-ultra
+.alphaspin-frequency-number{
+
+    color:
+        var(--alpha-deep);
+
+    font-size:4.4rem;
+
+    line-height:.86;
+
+    letter-spacing:-.07em;
+
+    font-weight:900;
+}
 
 .page-alphaspin-ultra
-.frequency-number{
+.alphaspin-frequency-unit{
 
-    font-size:
-        clamp(60px,7vw,95px);
+    margin-top:6px;
+
+    color:
+        var(--alpha-gold-dark);
+
+    font-size:.72rem;
 
     font-weight:900;
 
-    line-height:1;
+    letter-spacing:.16em;
 
-    color:
-        #885CAF !important;
-
+    text-transform:uppercase;
 }
-
 
 .page-alphaspin-ultra
-.frequency-unit{
+.alphaspin-frequency-card h3{
 
-    margin-top:5px;
+    margin-top:34px;
 
     color:
-        #6E4790 !important;
+        var(--alpha-deep);
 
-    font-weight:700;
-
+    font-size:1.15rem;
 }
 
+.page-alphaspin-ultra
+.alphaspin-frequency-card p{
+
+    margin-top:8px;
+
+    color:#766D7F;
+
+    font-size:.80rem;
+
+    line-height:1.72;
+}
 
 .page-alphaspin-ultra
 .alphaspin-frequency-card-wide{
 
     grid-column:
-        1 / -1;
+        span 2;
 
-    text-align:left;
+    min-height:250px;
 
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(203,168,91,.11),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F1EBF6
+        );
 }
 
+.page-alphaspin-ultra
+.alphaspin-frequency-highlight{
+
+    margin-top:20px;
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-size:4.2rem;
+
+    line-height:.9;
+
+    letter-spacing:-.06em;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-frequency-highlight small{
+
+    font-size:1rem;
+
+    margin-left:7px;
+
+    color:
+        var(--alpha-gold-dark);
+}
+
+
+/* ==========================================================
+   FREQUENCY BENEFITS
+   ========================================================== */
 
 .page-alphaspin-ultra
 .alphaspin-frequency-benefits{
@@ -21492,166 +22652,335 @@ span:first-child{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3,minmax(0,1fr));
 
-    gap:20px;
+    gap:14px;
 
+    margin-top:16px;
 }
-
 
 .page-alphaspin-ultra
 .alphaspin-frequency-benefit{
 
-    padding:25px;
+    min-height:205px;
 
-    background:
-        #FFFFFF !important;
+    padding:23px;
 
     border:
         1px solid
-        rgba(64,34,92,.12);
+        var(--alpha-line);
 
-    border-radius:
-        20px;
+    border-radius:22px;
 
+    background:#FFFFFF;
 }
 
-
 .page-alphaspin-ultra
-.frequency-benefit-icon{
+.alphaspin-frequency-benefit-icon{
 
-    width:42px;
+    width:40px;
+    height:40px;
 
-    height:42px;
+    display:grid;
 
-    display:flex;
+    place-items:center;
 
-    align-items:center;
-
-    justify-content:center;
-
-    margin-bottom:15px;
-
-    border-radius:50%;
+    border-radius:13px;
 
     background:
-        rgba(214,224,139,.18);
+        #F1EBF6;
 
     color:
-        #6E4790;
+        var(--alpha-violet-dark);
 
-    font-size:20px;
+    font-size:1.10rem;
 
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-frequency-benefit h3{
+
+    margin-top:24px;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:1.05rem;
+}
+
+.page-alphaspin-ultra
+.alphaspin-frequency-benefit p{
+
+    margin-top:8px;
+
+    color:#756B80;
+
+    font-size:.77rem;
+
+    line-height:1.67;
 }
 
 
 /* ==========================================================
-   22. ROUTINE
+   EXPERIENCE
+   ========================================================== */
+
+.page-alphaspin-ultra
+.alphaspin-experience{
+
+    background:
+        #F8F6FA;
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:15px;
+
+    margin-top:46px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-card{
+
+    min-height:225px;
+
+    padding:24px;
+
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:23px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 15px 43px
+        rgba(46,31,70,.05);
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-icon{
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:14px;
+
+    background:
+        #F1EBF6;
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-size:1.08rem;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-number{
+
+    display:block;
+
+    margin-top:20px;
+
+    color:
+        var(--alpha-gold-dark);
+
+    font-size:.58rem;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-card h3{
+
+    margin-top:7px;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:1.14rem;
+}
+
+.page-alphaspin-ultra
+.alphaspin-experience-card p{
+
+    margin-top:9px;
+
+    color:#766D80;
+
+    font-size:.79rem;
+
+    line-height:1.72;
+}
+
+
+/* ==========================================================
+   ROUTINE
    ========================================================== */
 
 .page-alphaspin-ultra
 .alphaspin-routine{
 
-    background:
-        #FFFFFF !important;
-
+    background:#FFFFFF;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-routine
-.timeline-dot{
+.alphaspin-routine-list{
 
-    background:
-        #6E4790 !important;
+    position:relative;
 
-    color:
-        #FFFFFF !important;
-
-    border:
-        3px solid
-        #FFFFFF !important;
-
-    box-shadow:
-        0 0 0 2px
-        rgba(214,224,139,.50) !important;
-
+    margin-top:43px;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-routine
-.timeline-content{
+.alphaspin-routine-list::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:21px;
+
+    top:0;
+    bottom:0;
+
+    width:1px;
 
     background:
-        #F8F6FA !important;
+        linear-gradient(
+            var(--alpha-line),
+            transparent
+        );
+}
+
+.page-alphaspin-ultra
+.alphaspin-routine-step{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        44px
+        minmax(0,1fr);
+
+    gap:18px;
+
+    padding-bottom:27px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-routine-number{
+
+    position:relative;
+
+    z-index:2;
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+
+    place-items:center;
 
     border:
         1px solid
-        rgba(64,34,92,.12) !important;
+        rgba(89,68,122,.14);
 
-}
+    border-radius:50%;
 
-
-.page-alphaspin-ultra
-.alphaspin-routine
-.timeline-content h3{
+    background:#FFFFFF;
 
     color:
-        #1F0E2F !important;
+        var(--alpha-violet-dark);
 
+    font-size:.68rem;
+
+    font-weight:900;
+
+    box-shadow:
+        0 8px 23px
+        rgba(46,31,70,.06);
 }
-
 
 .page-alphaspin-ultra
-.alphaspin-routine
-.timeline-content .text{
+.alphaspin-routine-step h3{
 
     color:
-        #63576E !important;
+        var(--alpha-deep);
 
+    font-size:1.06rem;
 }
 
+.page-alphaspin-ultra
+.alphaspin-routine-step p{
+
+    margin-top:5px;
+
+    color:#74808A;
+
+    font-size:.81rem;
+
+    line-height:1.68;
+}
 
 .page-alphaspin-ultra
 .alphaspin-routine-note{
 
-    padding:24px;
+    margin-top:29px;
+
+    padding:
+        17px 18px;
+
+    border:
+        1px solid
+        var(--alpha-line);
 
     border-radius:18px;
 
     background:
-        rgba(165,123,207,.07) !important;
-
-    border:
-        1px solid
-        rgba(165,123,207,.16);
-
+        #F8F5FA;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-routine-note
-.label{
+.alphaspin-routine-note p{
 
-    color:
-        #6E4790 !important;
+    margin-top:7px;
 
+    color:#786E80;
+
+    font-size:.75rem;
+
+    line-height:1.65;
 }
 
 
 /* ==========================================================
-   23. CERTIFICATIONS
+   CERTIFICATIONS
    ========================================================== */
 
 .page-alphaspin-ultra
 .alphaspin-certifications{
 
     background:
-        #F8F6FA !important;
-
+        #F8F6FA;
 }
-
 
 .page-alphaspin-ultra
 .alphaspin-certification-grid{
@@ -21659,315 +22988,1318 @@ span:first-child{
     display:grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3,minmax(0,1fr));
 
-    gap:22px;
+    gap:15px;
 
+    margin-top:44px;
 }
-
 
 .page-alphaspin-ultra
 .alphaspin-certificate{
 
-    min-height:230px;
+    min-height:250px;
 
-    padding:30px;
+    padding:25px;
+
+    border:
+        1px solid
+        var(--alpha-line);
+
+    border-radius:24px;
+
+    background:#FFFFFF;
+
+    box-shadow:
+        0 15px 43px
+        rgba(46,31,70,.06);
 
     display:flex;
 
     flex-direction:column;
 
     justify-content:space-between;
-
 }
-
 
 .page-alphaspin-ultra
 .alphaspin-certificate-mark{
 
-    min-height:100px;
+    width:72px;
+    height:72px;
 
-    display:flex;
+    display:grid;
 
-    align-items:center;
+    place-items:center;
 
-    justify-content:center;
-
-    border-radius:16px;
+    border-radius:20px;
 
     background:
-
         linear-gradient(
-            135deg,
-            #40225C,
-            #885CAF
+            145deg,
+            #F0EAF6,
+            #E8DDF1
         );
 
     color:
-        #D6E08B;
+        var(--alpha-violet-dark);
+
+    font-size:.80rem;
 
     font-weight:900;
 
     letter-spacing:.08em;
-
 }
-
 
 .page-alphaspin-ultra
-.alphaspin-certificate
-.label{
+.alphaspin-certificate-content{
 
-    color:
-        #6E4790 !important;
-
+    margin-top:28px;
 }
 
+.page-alphaspin-ultra
+.alphaspin-certificate-content .label{
+
+    display:block;
+}
+
+.page-alphaspin-ultra
+.alphaspin-certificate-content p{
+
+    margin-top:8px;
+
+    color:#776D80;
+
+    font-size:.78rem;
+
+    line-height:1.67;
+}
 
 .page-alphaspin-ultra
 .alphaspin-certification-note{
 
-    padding:24px;
+    margin-top:18px;
 
-    background:
-        #FFFFFF !important;
+    padding:
+        17px 18px;
 
     border:
         1px solid
-        rgba(64,34,92,.12);
+        var(--alpha-line);
 
-    border-radius:
-        18px;
+    border-radius:18px;
 
+    background:
+        rgba(255,255,255,.72);
+}
+
+.page-alphaspin-ultra
+.alphaspin-certification-note p{
+
+    margin-top:7px;
+
+    color:#7A7083;
+
+    font-size:.75rem;
+
+    line-height:1.65;
 }
 
 
 /* ==========================================================
-   24. PERFORMANCE-STYLE DARK SECTION
+   FAQ
    ========================================================== */
 
 .page-alphaspin-ultra
-.alphaspin-certifications
-.section-title{
+.alphaspin-faq-section{
+
+    background:
+        #F8F6FA;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:9px;
+
+    margin-top:42px;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-item{
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        rgba(89,68,122,.12);
+
+    border-radius:19px;
+
+    background:#FFFFFF;
+
+    transition:
+        box-shadow .28s ease,
+        border-color .28s ease;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-item.active{
+
+    border-color:
+        rgba(203,168,91,.28);
+
+    box-shadow:
+        0 16px 43px
+        rgba(46,31,70,.075);
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-question{
+
+    width:100%;
+
+    min-height:72px;
+
+    display:grid;
+
+    grid-template-columns:
+        38px
+        minmax(0,1fr)
+        32px;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:
+        12px 15px;
+
+    border:0;
+
+    background:transparent;
 
     color:
-        #1F0E2F !important;
+        var(--alpha-deep);
 
+    text-align:left;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-question:hover{
+
+    background:
+        #FBF9FC;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-number{
+
+    width:31px;
+    height:31px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:10px;
+
+    background:
+        #F0EBF6;
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-size:.60rem;
+
+    font-weight:900;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-text{
+
+    color:
+        var(--alpha-deep);
+
+    font-size:.88rem;
+
+    line-height:1.45;
+
+    font-weight:850;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-plus{
+
+    width:29px;
+    height:29px;
+
+    display:grid;
+
+    place-items:center;
+
+    border:
+        1px solid
+        rgba(89,68,122,.12);
+
+    border-radius:50%;
+
+    color:
+        var(--alpha-violet-dark);
+
+    font-size:.96rem;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-item.active
+.alphaspin-faq-plus{
+
+    background:
+        var(--alpha-deep);
+
+    color:#FFFFFF;
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:
+        max-height .44s
+        cubic-bezier(.22,.61,.36,1);
+}
+
+.page-alphaspin-ultra
+.alphaspin-faq-answer p{
+
+    padding:
+        0 17px 19px 66px;
+
+    color:#756B80;
+
+    font-size:.82rem;
+
+    line-height:1.72;
 }
 
 
 /* ==========================================================
-   25. FAQ
+   INFORMATION
    ========================================================== */
 
 .page-alphaspin-ultra
-.alphaspin-faq{
+.alphaspin-information-section{
+
+    padding-top:0;
 
     background:
-        #EEEEF1 !important;
-
+        #F8F6FA;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-faq
-.faq-item{
+.alphaspin-information-box{
+
+    display:grid;
+
+    grid-template-columns:
+        40px
+        minmax(0,1fr);
+
+    gap:14px;
+
+    padding:
+        22px 23px;
+
+    border:
+        1px solid
+        rgba(89,68,122,.12);
+
+    border-radius:22px;
 
     background:
-        #FFFFFF !important;
-
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F0EBF5
+        );
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-faq
-.faq-question{
+.alphaspin-information-icon{
+
+    width:37px;
+    height:37px;
+
+    display:grid;
+
+    place-items:center;
+
+    border-radius:50%;
 
     background:
-        #FFFFFF !important;
+        #EDE5F3;
 
     color:
-        #1F0E2F !important;
+        var(--alpha-deep);
 
+    font-weight:900;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-faq
-.faq-question span:first-child{
+.alphaspin-information-box h2{
+
+    margin-top:9px;
 
     color:
-        #1F0E2F !important;
+        var(--alpha-deep);
 
+    font-size:1.38rem;
+
+    line-height:1.1;
+
+    letter-spacing:-.025em;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-faq
-.faq-question span:last-child{
+.alphaspin-information-box p{
 
-    color:
-        #6E4790 !important;
+    margin-top:8px;
 
-}
+    color:#776D80;
 
+    font-size:.76rem;
 
-.page-alphaspin-ultra
-.alphaspin-faq
-.faq-answer p{
-
-    color:
-        #63576E !important;
-
+    line-height:1.68;
 }
 
 
 /* ==========================================================
-   26. CTA
+   CTA
    ========================================================== */
 
 .page-alphaspin-ultra
-.alphaspin-cta{
+.alphaspin-cta-section{
 
-    background:
-        #EEEEF1 !important;
+    position:relative;
 
-}
-
-
-.page-alphaspin-ultra
-.alphaspin-cta
-.showcase{
+    overflow:hidden;
 
     background:
 
         radial-gradient(
-            circle at 25% 20%,
-            rgba(214,224,139,.16),
+            circle at 50% -15%,
+            rgba(203,168,91,.12),
             transparent 28%
         ),
 
-        radial-gradient(
-            circle at 85% 15%,
-            rgba(165,123,207,.20),
-            transparent 30%
-        ),
-
         linear-gradient(
-            135deg,
-            #40225C,
-            #573475,
-            #6E4790
-        ) !important;
-
+            140deg,
+            #17121F,
+            #30213E
+        );
 }
 
+.page-alphaspin-ultra
+.alphaspin-cta-box{
+
+    position:relative;
+
+    z-index:2;
+
+    max-width:920px;
+
+    margin-inline:auto;
+
+    padding:
+        78px 30px 82px;
+
+    text-align:center;
+}
 
 .page-alphaspin-ultra
-.alphaspin-cta
-.section-title{
+.alphaspin-label-light{
 
     color:
-        #FFFFFF !important;
+        var(--alpha-gold-light);
 
+    font-size:.63rem;
+
+    font-weight:900;
+
+    letter-spacing:.19em;
 }
 
+.page-alphaspin-ultra
+.alphaspin-cta-box h2{
+
+    margin-top:17px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            2.6rem,
+            5vw,
+            5rem
+        );
+
+    line-height:.96;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+}
 
 .page-alphaspin-ultra
-.alphaspin-cta
-.lead{
+.alphaspin-cta-box h2 span{
+
+    display:block;
+
+    margin-top:.10em;
 
     color:
-        rgba(255,255,255,.76) !important;
-
+        var(--alpha-ice);
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-cta
-.badge{
+.alphaspin-cta-box > p{
 
-    color:
-        #D6E08B !important;
+    max-width:650px;
 
+    margin:
+        21px auto 0;
+
+    color:#CFC3D8;
+
+    font-size:.96rem;
+
+    line-height:1.78;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-cta
-.btn-primary{
+.alphaspin-cta-actions{
 
-    background:
+    display:flex;
 
-        linear-gradient(
-            135deg,
-            #D6E08B,
-            #B6BADF
-        ) !important;
+    justify-content:center;
 
-    color:
-        #1F0E2F !important;
+    flex-wrap:wrap;
 
+    gap:12px;
+
+    margin-top:29px;
 }
 
-
 .page-alphaspin-ultra
-.alphaspin-cta
+.alphaspin-cta-actions
 .btn-glass{
 
+    border-color:
+        rgba(255,255,255,.16) !important;
+
     background:
-        rgba(255,255,255,.08) !important;
+        rgba(255,255,255,.045) !important;
 
-    color:
-        #FFFFFF !important;
-
-    border:
-        1px solid
-        rgba(255,255,255,.23) !important;
-
+    color:#FFFFFF !important;
 }
-
 
 .page-alphaspin-ultra
 .alphaspin-cta-disclaimer{
 
-    color:
-        rgba(255,255,255,.50) !important;
+    margin-top:22px !important;
 
+    color:
+        rgba(255,255,255,.58) !important;
+
+    font-size:.67rem !important;
+
+    line-height:1.6 !important;
 }
 
 
 /* ==========================================================
-   27. LINKS
+   DARK MODE
    ========================================================== */
 
-.page-alphaspin-ultra a{
+body.dark .page-alphaspin-ultra,
+body[data-theme="dark"] .page-alphaspin-ultra,
+[data-theme="dark"] .page-alphaspin-ultra,
+.dark .page-alphaspin-ultra{
+
+    --alpha-white:#101019;
+    --alpha-mist:#15131C;
+    --alpha-soft:#17151F;
+
+    --alpha-deep:#F3EFF7;
+    --alpha-text:#DDD5E5;
+    --alpha-muted:#B8AFC0;
+
+    --alpha-line:
+        rgba(229,217,238,.10);
+
+    background:
+        #101019;
 
     color:
-        #6E4790 !important;
-
+        #DDD5E5;
 }
 
 
-.page-alphaspin-ultra a:hover{
+body.dark
+.page-alphaspin-ultra
+.alphaspin-ultra-hero,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-ultra-hero,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-ultra-hero,
+.dark
+.page-alphaspin-ultra
+.alphaspin-ultra-hero{
+
+    background:
+
+        radial-gradient(
+            circle at 16% 17%,
+            rgba(118,87,168,.15),
+            transparent 31%
+        ),
+
+        radial-gradient(
+            circle at 82% 28%,
+            rgba(203,168,91,.06),
+            transparent 24%
+        ),
+
+        linear-gradient(
+            135deg,
+            #101019,
+            #171421 58%,
+            #241B2B
+        );
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-hero-copy h1,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-copy h1,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-copy h1,
+.dark
+.page-alphaspin-ultra
+.alphaspin-hero-copy h1{
+
+    color:#F4F0F7;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-hero-description,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-description,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-description,
+.dark
+.page-alphaspin-ultra
+.alphaspin-hero-description{
+
+    color:#BDB3C7;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-hero-pill,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-pill,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-hero-pill,
+.dark
+.page-alphaspin-ultra
+.alphaspin-hero-pill{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:#E5DBEC;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-overview-section,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-overview-section,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-overview-section,
+.dark
+.page-alphaspin-ultra
+.alphaspin-overview-section,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-overview-card,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-overview-card,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-overview-card,
+.dark
+.page-alphaspin-ultra
+.alphaspin-overview-card{
+
+    background:
+        #13121A;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-section,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-product-section,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-product-section,
+.dark
+.page-alphaspin-ultra
+.alphaspin-product-section,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-routine,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-routine,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-routine,
+.dark
+.page-alphaspin-ultra
+.alphaspin-routine{
+
+    background:
+        #101019;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-benefits,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-benefits,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-benefits,
+.dark
+.page-alphaspin-ultra
+.alphaspin-benefits,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-frequency,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-frequency,
+.dark
+.page-alphaspin-ultra
+.alphaspin-frequency,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-experience,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-experience,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-experience,
+.dark
+.page-alphaspin-ultra
+.alphaspin-experience,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-certifications,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-certifications,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-certifications,
+.dark
+.page-alphaspin-ultra
+.alphaspin-certifications,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-faq-section,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-faq-section,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-faq-section,
+.dark
+.page-alphaspin-ultra
+.alphaspin-faq-section,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-information-section,
+body[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-information-section,
+[data-theme="dark"]
+.page-alphaspin-ultra
+.alphaspin-information-section,
+.dark
+.page-alphaspin-ultra
+.alphaspin-information-section{
+
+    background:
+        #14131B;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-section-heading h2,
+body.dark
+.page-alphaspin-ultra
+.section-title,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-overview-card h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-detail-card h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-card-copy h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency-card h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-experience-card h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-routine-step h3,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-faq-text,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-information-box h2{
 
     color:
-        #40225C !important;
+        #F2EDF6 !important;
+}
 
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-section-heading p,
+body.dark
+.page-alphaspin-ultra
+.lead,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-overview-card p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-detail-card p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-card-copy > p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-benefit-check p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-spec span,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency-card p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency-benefit p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-experience-card p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-routine-step p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-faq-answer p,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-information-box p{
+
+    color:
+        #B9B0C0 !important;
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-overview-note,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-detail-card,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-detail-list,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency-card,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-experience-card,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-certificate,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-routine-note,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-information-box,
+body.dark
+.page-alphaspin-ultra
+.alphaspin-faq-item{
+
+    background:
+        #191720;
+
+    border-color:
+        rgba(229,217,238,.09);
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-card{
+
+    background:
+        #191720;
+
+    border-color:
+        rgba(229,217,238,.09);
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-product-card-visual{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(118,87,168,.10),
+            transparent 48%
+        ),
+
+        linear-gradient(
+            145deg,
+            #16141C,
+            #201A28
+        );
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-benefits-frame{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(203,168,91,.05),
+            rgba(118,87,168,.10) 36%,
+            transparent 70%
+        ),
+
+        linear-gradient(
+            145deg,
+            #15131B,
+            #221B2A
+        );
+}
+
+
+body.dark
+.page-alphaspin-ultra
+.alphaspin-frequency-card-wide{
+
+    background:
+
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(203,168,91,.05),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            145deg,
+            #191720,
+            #211A29
+        );
 }
 
 
 /* ==========================================================
-   28. RESPONSIVE
+   RESPONSIVE
    ========================================================== */
 
-@media (max-width:900px){
+@media(max-width:1120px){
 
     .page-alphaspin-ultra
-    .alphaspin-details-grid{
+    .alphaspin-hero-grid{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(360px,.85fr);
+
+        gap:26px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-overview-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-technology-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(0,.92fr);
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-benefits-grid{
+
+        gap:40px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-experience-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-certification-grid{
+
+        grid-template-columns:
+            repeat(3,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-detail-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-detail-card-wide{
+
+        grid-column:
+            span 2;
+    }
+}
+
+
+@media(max-width:900px){
+
+    .page-alphaspin-ultra
+    .alphaspin-ultra-hero{
+
+        min-height:auto;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-grid{
+
+        grid-template-columns:1fr;
+
+        padding:
+            66px 0 58px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-copy{
+
+        max-width:760px;
+
+        margin-inline:auto;
+
+        text-align:center;
+
+        padding-right:0;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-eyebrow{
+
+        justify-content:center;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-description{
+
+        margin-inline:auto;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-pills,
+    .page-alphaspin-ultra
+    .alphaspin-hero-actions{
+
+        justify-content:center;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-product{
+
+        width:
+            min(720px,100%);
+
+        min-height:500px;
+
+        margin-inline:auto;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-benefits-grid{
 
         grid-template-columns:
             1fr;
+    }
 
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-visual{
+
+        min-height:510px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-benefits{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-certification-grid{
+
+        grid-template-columns:
+            repeat(2,minmax(0,1fr));
+    }
+}
+
+
+@media(max-width:680px){
+
+    .page-alphaspin-ultra
+    .section-title,
+    .page-alphaspin-ultra
+    .alphaspin-section-heading h2{
+
+        font-size:
+            clamp(
+                2.05rem,
+                9vw,
+                3.4rem
+            );
+    }
+
+
+    .page-alphaspin-ultra
+    .lead{
+
+        font-size:.95rem;
+
+        line-height:1.76;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-grid{
+
+        padding:
+            51px 18px 48px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-copy h1{
+
+        font-size:
+            clamp(
+                3.35rem,
+                16vw,
+                5.4rem
+            );
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-description{
+
+        font-size:.98rem;
+
+        margin-top:25px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-pills{
+
+        margin-top:25px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-actions{
+
+        margin-top:31px;
+
+        gap:11px;
+
+        flex-direction:column;
+
+        align-items:stretch;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-actions
+    .btn{
+
+        width:100% !important;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-product{
+
+        min-height:390px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-grid{
+
+        min-height:340px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-grid img{
+
+        max-width:330px;
+
+        max-height:390px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-caption{
+
+        display:none;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-overview-grid,
+    .page-alphaspin-ultra
+    .alphaspin-technology-grid,
+    .page-alphaspin-ultra
+    .alphaspin-experience-grid,
+    .page-alphaspin-ultra
+    .alphaspin-certification-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-detail-grid{
+
+        grid-template-columns:
+            1fr;
     }
 
 
@@ -21976,7 +24308,74 @@ span:first-child{
 
         grid-column:
             auto;
+    }
 
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-visual{
+
+        min-height:390px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-detail-grid{
+
+        min-height:360px;
+
+        padding:
+            20px 10px 38px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-detail-image{
+
+        max-width:320px;
+
+        max-height:360px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-copy{
+
+        padding:
+            34px 25px 38px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-copy > p{
+
+        margin-top:20px;
+
+        line-height:1.78;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-benefit-checks{
+
+        margin-top:27px;
+
+        gap:13px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-grid{
+
+        grid-template-columns:
+            1fr;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-card-wide{
+
+        grid-column:
+            auto;
     }
 
 
@@ -21985,166 +24384,331 @@ span:first-child{
 
         grid-template-columns:
             1fr;
-
     }
 
 
     .page-alphaspin-ultra
-    .alphaspin-certification-grid{
+    .alphaspin-routine-note{
+
+        margin-top:25px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-information-box{
 
         grid-template-columns:
-            1fr;
-
-    }
-
-}
-
-
-@media (max-width:700px){
-
-    .page-alphaspin-ultra
-    .alphaspin-ultra-hero{
-
-        min-height:auto;
-
-        padding-top:100px;
-
-        padding-bottom:80px;
-
+            34px
+            minmax(0,1fr);
     }
 
 
     .page-alphaspin-ultra
-    .hero-grid{
+    .alphaspin-faq-question{
 
         grid-template-columns:
-            1fr;
+            34px
+            minmax(0,1fr)
+            28px;
 
-    }
+        gap:9px;
 
-
-    .page-alphaspin-ultra
-    .hero-content{
-
-        text-align:center;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .alphaspin-hero-highlights{
-
-        justify-content:center;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .hero-visual{
-
-        margin-top:35px;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .alphaspin-ultra-ring{
-
-        width:300px;
-
-        height:300px;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .alphaspin-benefit-image{
-
-        min-height:360px;
-
-    }
-
-}
-
-
-@media (max-width:520px){
-
-    .page-alphaspin-ultra
-    .alphaspin-hero-highlights{
-
-        display:grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        text-align:left;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .alphaspin-details-toggle{
-
-        padding:18px;
-
-        font-size:14px;
-
-    }
-
-
-    .page-alphaspin-ultra
-    .alphaspin-details-grid{
+        min-height:65px;
 
         padding:
-            0 16px 16px;
-
+            10px 11px;
     }
 
 
     .page-alphaspin-ultra
-    .alphaspin-detail-card{
+    .alphaspin-faq-text{
 
-        padding:20px;
-
+        font-size:.82rem;
     }
 
 
     .page-alphaspin-ultra
-    .frequency-number{
+    .alphaspin-faq-answer p{
 
-        font-size:65px;
+        padding:
+            0 13px 19px 54px;
 
+        font-size:.77rem;
     }
 
+
+    .page-alphaspin-ultra
+    .alphaspin-cta-box{
+
+        padding:
+            58px 18px 63px;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-copy h1{
+
+        font-size:3.05rem;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-hero-product{
+
+        min-height:330px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-grid{
+
+        min-height:300px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-grid img{
+
+        max-width:270px;
+
+        max-height:310px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-more-toggle{
+
+        max-width:
+            calc(100vw - 44px);
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-copy h3{
+
+        font-size:1.82rem;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-number{
+
+        font-size:3.55rem;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-highlight{
+
+        font-size:3.45rem;
+    }
 }
 
 
 /* ==========================================================
-   29. REDUCED MOTION
+   MOTION
    ========================================================== */
 
-@media (prefers-reduced-motion:reduce){
+@keyframes alphaFloatOne{
 
-    .page-alphaspin-ultra *,
-    .page-alphaspin-ultra *::before,
-    .page-alphaspin-ultra *::after{
+    0%,100%{
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50%{
+        transform:
+            translate3d(15px,-11px,0);
+    }
+}
+
+
+@keyframes alphaFloatTwo{
+
+    0%,100%{
+        transform:
+            translate3d(0,0,0);
+    }
+
+    50%{
+        transform:
+            translate3d(-18px,17px,0);
+    }
+}
+
+
+@keyframes alphaOrbit{
+
+    from{
+        rotate:0deg;
+    }
+
+    to{
+        rotate:360deg;
+    }
+}
+
+
+@keyframes alphaPulse{
+
+    0%,100%{
+
+        transform:
+            scale(.96);
+
+        opacity:.72;
+    }
+
+    50%{
+
+        transform:
+            scale(1.04);
+
+        opacity:1;
+    }
+}
+
+
+@media(prefers-reduced-motion:reduce){
+
+    .page-alphaspin-ultra *{
 
         animation-duration:
-            .01ms !important;
+            .001ms !important;
 
         animation-iteration-count:
             1 !important;
 
         transition-duration:
-            .01ms !important;
+            .001ms !important;
 
         scroll-behavior:
             auto !important;
-
     }
-
 }
 
+
+/* ==========================================================
+   REFINED SPACING
+   ========================================================== */
+
+.page-alphaspin-ultra
+.alphaspin-section-heading p{
+
+    margin-top:24px;
+
+    line-height:1.92;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-benefits-copy
+.section-title{
+
+    margin-bottom:4px;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-benefits-copy
+.lead{
+
+    margin-top:26px;
+
+    line-height:1.9;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-product-card-copy
+.alphaspin-more-wrap{
+
+    margin-top:27px;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-more-wrap
++ .btn{
+
+    margin-top:34px;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-certificate{
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease;
+}
+
+
+.page-alphaspin-ultra
+.alphaspin-certificate:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 22px 54px
+        rgba(46,31,70,.09);
+}
+
+
+@media(max-width:900px){
+
+    .page-alphaspin-ultra
+    .alphaspin-section-heading{
+
+        margin-bottom:34px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-copy{
+
+        padding:
+            42px 38px 46px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-frequency-benefits{
+
+        gap:13px;
+    }
+}
+
+
+@media(max-width:680px){
+
+    .page-alphaspin-ultra
+    .alphaspin-section-heading{
+
+        margin-bottom:28px;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-section-heading p{
+
+        margin-top:18px;
+
+        line-height:1.80;
+    }
+
+
+    .page-alphaspin-ultra
+    .alphaspin-product-card-copy{
+
+        padding:
+            34px 25px 38px;
+    }
+}
 /* ==========================================================
    AD LIFESTYLE V2
    MINOSEED
