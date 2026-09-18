@@ -1,147 +1,204 @@
 /* ==========================================================
    AD LIFESTYLE V2
-   iSMART S3 — PREMIUM PRODUCT PAGE
-   Cobertor Inteligente + Almofada Gravidade Zero
+   ISMARTS3.JS
+   Premium iSMART S3 Product Page
+   Modelo estrutural: AlphaMeta
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
 import { navigate } from "../../js/router.js";
 import { ripple, stagger } from "../../js/animations.js";
 
-const KIT_IMAGE = "./assets/products/ismarts3.png";
-const BLANKET_IMAGE = "./assets/products/ismarts3-blanket.png";
-const PILLOW_IMAGE = "./assets/products/ismarts3-pillow.png";
-const WHATSAPP_NUMBER = "244924964666";
+/* ==========================================================
+   CONFIG
+   ========================================================== */
+
+const KIT_IMAGE =
+    "./assets/products/ismarts3.png";
+
+const BLANKET_IMAGE =
+    "./assets/products/ismarts3-blanket.png";
+
+const PILLOW_IMAGE =
+    "./assets/products/ismarts3-pillow.png";
+
+const CERTIFICATION_01 =
+    "./assets/certifications/ismarts3-cert-01.png";
+
+const CERTIFICATION_02 =
+    "./assets/certifications/ismarts3-cert-02.png";
+
+const CERTIFICATION_03 =
+    "./assets/certifications/ismarts3-cert-03.png";
+
+const CERTIFICATION_04 =
+    "./assets/certifications/ismarts3-cert-04.png";
+
+const WHATSAPP_NUMBER =
+    "244924964666";
+
+
+/* ==========================================================
+   LOAD
+   ========================================================== */
 
 export function loadISmartS3(){
+
     applyTheme("ismarts3");
 
-    const app = document.getElementById("app");
-    if(!app) return;
+    const app =
+        document.getElementById("app");
+
+    if(!app){
+        return;
+    }
 
     app.innerHTML = `
-        <div class="page-ismarts3" data-product-page="ismarts3">
+
+        <div
+            class="page-ismarts3"
+            data-product-page="ismarts3">
+
             ${hero()}
-            ${kitOverview()}
-            ${products()}
+
+            ${overview()}
+
+            ${composition()}
+
+            ${benefits()}
+
+            ${productDetail()}
+
             ${sleepQuality()}
+
             ${circulation()}
-            ${jointHealth()}
+
             ${sleepImpact()}
-            ${layerTechnology()}
-            ${smartFunctions()}
-            ${zeroGravityPillow()}
+
+            ${technology()}
+
+            ${pillow()}
+
             ${certifications()}
-            ${lifestyleRoutine()}
+
+            ${routine()}
+
             ${faq()}
-            ${medicalDisclaimer()}
+
+            ${information()}
+
             ${cta()}
-            <div class="ismarts3-scroll-progress" aria-hidden="true">
-                <span></span>
-            </div>
+
         </div>
+
     `;
 
     initialiseISmartS3();
 }
+
 
 /* ==========================================================
    HERO
    ========================================================== */
 
 function hero(){
+
     return `
+
     <section class="hero ismarts3-hero">
 
-        <div class="ismarts3-hero-noise" aria-hidden="true"></div>
+        <div class="ismarts3-hero-atmosphere">
 
-        <div class="ismarts3-aurora" aria-hidden="true">
-            <div class="ismarts3-blob ismarts3-blob-1"></div>
-            <div class="ismarts3-blob ismarts3-blob-2"></div>
-            <div class="ismarts3-blob ismarts3-blob-3"></div>
+            <div class="ismarts3-orb ismarts3-orb-1"></div>
+            <div class="ismarts3-orb ismarts3-orb-2"></div>
+
+            <div class="ismarts3-orbit ismarts3-orbit-1"></div>
+            <div class="ismarts3-orbit ismarts3-orbit-2"></div>
+
         </div>
 
-        <div class="ismarts3-hero-grid container">
+        <div class="container ismarts3-hero-grid">
 
             <div class="ismarts3-hero-copy reveal">
 
-                <span class="ismarts3-hero-kicker">
-                    iSMART S3 · SMART LAB LIVING
+                <span class="ismarts3-eyebrow">
+                    iSMART S3 · SMART LIVING
                 </span>
 
-                <h1 class="ismarts3-hero-title">
-                    A EXPERIÊNCIA
-                    <span>DO SONO REPARADOR</span>
+                <h1>
+                    iSMART
+                    <span>S3.</span>
                 </h1>
 
-                <p class="ismarts3-hero-sub">
-                    Um sistema de descanso apresentado através de tecnologia térmica,
-                    camadas funcionais e uma proposta de Smart Living.
+                <p class="ismarts3-hero-description">
+                    Um sistema de descanso apresentado através de conforto,
+                    tecnologia térmica e uma arquitectura de várias camadas.
                 </p>
+
+                <div class="ismarts3-hero-pills">
+
+                    <span class="ismarts3-hero-pill">
+                        Cobertor inteligente
+                    </span>
+
+                    <span class="ismarts3-hero-pill">
+                        Almofada Gravidade Zero
+                    </span>
+
+                    <span class="ismarts3-hero-pill">
+                        Smart Sleep System
+                    </span>
+
+                    <span class="ismarts3-hero-pill">
+                        Kit 2 em 1
+                    </span>
+
+                </div>
 
                 <div class="ismarts3-hero-actions">
 
                     <button
                         type="button"
                         class="btn btn-primary"
-                        id="buyISmartS3"
-                    >
+                        id="buyISmartS3">
                         Comprar o Kit
                     </button>
 
                     <button
                         type="button"
                         class="btn btn-glass"
-                        id="learnMore"
-                    >
-                        Descobrir o sistema
+                        id="ismarts3Overview"
+                        data-scroll="#ismarts3-overview">
+                        Conhecer o sistema
                     </button>
-
-                </div>
-
-                <div class="ismarts3-hero-signature">
-
-                    <span>01</span>
-
-                    <div>
-                        <strong>Cobertor + Almofada</strong>
-                        <small>um sistema, duas peças</small>
-                    </div>
 
                 </div>
 
             </div>
 
-            <div class="ismarts3-hero-visual reveal-right">
+            <div class="ismarts3-hero-product reveal-right">
 
-                <div class="ismarts3-hero-frame">
+                <div class="ismarts3-product-aura"></div>
 
-                    <div
-                        class="ismarts3-hero-orbit orbit-a"
-                        aria-hidden="true">
-                    </div>
+                <div class="ismarts3-product-ring"></div>
 
-                    <div
-                        class="ismarts3-hero-orbit orbit-b"
-                        aria-hidden="true">
-                    </div>
-
-                    <div
-                        class="ismarts3-hero-glow"
-                        aria-hidden="true">
-                    </div>
+                <div class="ismarts3-product-grid">
 
                     <img
-                        class="ismarts3-hero-product-image floating parallax"
-                        data-speed="18"
                         src="${KIT_IMAGE}"
                         alt="Kit iSMART S3"
                         loading="eager"
                         decoding="async"
                     >
 
-                    <span class="ismarts3-hero-caption">
-                        S3 / SMART SLEEP SYSTEM
+                </div>
+
+                <div class="ismarts3-product-caption">
+
+                    <strong>ISMART S3</strong>
+
+                    <span>
+                        SMART SLEEP SYSTEM
                     </span>
 
                 </div>
@@ -150,504 +207,822 @@ function hero(){
 
         </div>
 
-        <div class="ismarts3-hero-bottom" aria-hidden="true">
-
-            <span>CONFORTO</span>
-            <i></i>
-            <span>FRESCURA</span>
-            <i></i>
-            <span>DESCANSO</span>
-
-        </div>
-
     </section>
+
     `;
 }
 
+
 /* ==========================================================
-   KIT OVERVIEW
+   OVERVIEW
    ========================================================== */
 
-function kitOverview(){
+function overview(){
 
     return `
+
     <section
-        id="ismarts3-kit"
-        class="section ismarts3-kit-section"
-    >
+        id="ismarts3-overview"
+        class="section ismarts3-overview-section">
 
         <div class="container">
 
-            <div class="ismarts3-section-head reveal">
+            <div class="section-center reveal">
 
-                <span class="ismarts3-eyebrow">
-                    01 · O SISTEMA
+                <span class="label">
+                    VISÃO GERAL
                 </span>
 
                 <h2 class="section-title">
-                    Duas peças.<br>
-                    <span>Uma experiência de sono.</span>
+                    Conheça o conceito
+                    <span>iSMART S3.</span>
                 </h2>
 
                 <p class="lead">
-                    O iSMART S3 é apresentado como um conjunto formado por um
-                    cobertor inteligente e uma almofada de gravidade zero.
-                    Ambos podem ser utilizados em conjunto ou separadamente.
+                    O iSMART S3 é apresentado como um sistema composto por
+                    um Cobertor Inteligente e uma Almofada Gravidade Zero,
+                    reunidos numa experiência orientada para conforto e descanso.
                 </p>
 
             </div>
 
-            <div
-                class="ismarts3-system-line"
-                aria-hidden="true">
-            </div>
+            <div class="ismarts3-overview-grid">
 
-            <div class="ismarts3-kit-grid">
-
-                ${kitCard(
+                ${overviewCard(
                     "01",
-                    "Produto principal",
-                    "Cobertor Inteligente",
-                    "iSMART S3",
-                    "Regulação térmica, conforto e tecnologia dentro da proposta Smart Living.",
-                    [
-                        "Temperatura",
-                        "Conforto",
-                        "Tecnologia"
-                    ],
-                    "#product-blanket"
+                    "Cobertor inteligente",
+                    "Peça principal do sistema, apresentada com tecnologia de regulação térmica e conforto."
                 )}
 
-                <div
-                    class="ismarts3-kit-plus"
-                    aria-hidden="true">
-                    +
-                </div>
-
-                ${kitCard(
+                ${overviewCard(
                     "02",
-                    "Produto complementar",
-                    "Almofada",
-                    "Gravidade Zero",
-                    "Design de dupla face, apresentado para acompanhar a zona cervical e diferentes posições de utilização.",
-                    [
-                        "Dupla face",
-                        "Ergonomia",
-                        "Pescoço"
-                    ],
-                    "#product-pillow"
+                    "Almofada Gravidade Zero",
+                    "Peça complementar com design de dupla face e proposta de suporte da zona cervical."
+                )}
+
+                ${overviewCard(
+                    "03",
+                    "Smart Sleep System",
+                    "O produto é apresentado dentro de uma abordagem tecnológica orientada para o descanso."
+                )}
+
+                ${overviewCard(
+                    "04",
+                    "Experiência integrada",
+                    "O kit pode ser utilizado em conjunto ou os produtos podem ser adquiridos separadamente."
                 )}
 
             </div>
 
-            <div class="ismarts3-note reveal">
+            <div class="ismarts3-overview-note reveal">
 
-                <span class="ismarts3-note-mark">
-                    ✓
-                </span>
+                <strong>
+                    Um sistema de descanso com identidade tecnológica.
+                </strong>
 
-                <div>
-
-                    <strong>
-                        Kit completo ou compra individual
-                    </strong>
-
-                    <p>
-                        O cobertor e a almofada podem ser apresentados e adquiridos separadamente.
-                    </p>
-
-                </div>
+                <p>
+                    As especificações, benefícios e certificações devem ser
+                    entendidos de acordo com a informação oficial e a documentação
+                    disponível para o produto.
+                </p>
 
             </div>
 
         </div>
 
     </section>
+
     `;
 }
 
-function kitCard(
+
+function overviewCard(
     number,
-    eyebrow,
     title,
-    highlight,
-    text,
-    tags,
-    target
+    text
 ){
 
+    const symbols = {
+        "01":"◇",
+        "02":"○",
+        "03":"⌁",
+        "04":"✦"
+    };
+
     return `
-    <article class="ismarts3-kit-card reveal">
 
-        <div class="ismarts3-card-number">
+    <article class="ismarts3-overview-card reveal">
+
+        <span class="ismarts3-card-number">
             ${number}
-        </div>
-
-        <span class="ismarts3-mini-label">
-            ${eyebrow}
         </span>
+
+        <div
+            class="ismarts3-card-icon"
+            aria-hidden="true">
+            ${symbols[number] || "◇"}
+        </div>
 
         <h3>
             ${title}
-            <span>${highlight}</span>
         </h3>
 
         <p>
             ${text}
         </p>
 
-        <div class="ismarts3-tag-row">
-
-            ${tags.map(tag=>`
-                <span>${tag}</span>
-            `).join("")}
-
-        </div>
-
-        <button
-            type="button"
-            class="ismarts3-anchor-btn"
-            data-scroll="${target}"
-        >
-            Conhecer
-            ${number === "01" ? "o cobertor" : "a almofada"}
-
-            <span aria-hidden="true">
-                ↗
-            </span>
-
-        </button>
-
     </article>
+
     `;
 }
 
+
 /* ==========================================================
-   PRODUCTS
+   COMPOSITION / ARCHITECTURE
    ========================================================== */
 
-function products(){
+function composition(){
 
     return `
-    <section class="section-sm ismarts3-products-section">
+
+    <section
+        id="ismarts3-composition"
+        class="section ismarts3-composition">
 
         <div class="container">
 
-            <div class="ismarts3-section-head reveal">
+            <div class="ismarts3-section-heading reveal">
 
-                <span class="ismarts3-eyebrow">
-                    02 · PRODUTOS
+                <span class="eyebrow">
+                    ARQUITECTURA
                 </span>
 
-                <h2 class="section-title">
-                    Conheça
-                    <span>as duas peças.</span>
+                <h2>
+                    Uma construção em
+                    <span>várias camadas.</span>
                 </h2>
 
-                <p class="lead">
-                    Uma apresentação visual mais limpa, com os detalhes essenciais
-                    primeiro e o restante por abertura.
+                <p>
+                    A apresentação do produto descreve uma composição em diferentes
+                    camadas funcionais. Os elementos abaixo reproduzem o enquadramento
+                    disponibilizado para esta página.
                 </p>
 
             </div>
 
-            <div class="ismarts3-product-showcase">
+            <div class="ismarts3-composition-grid">
 
-                ${singleProduct({
+                ${compositionCard(
+                    "01",
+                    "❄",
+                    "Camada de arrefecimento",
+                    "Seda de gelo",
+                    "Associada ao conceito de frescura e regulação térmica."
+                )}
 
-                    id:"product-blanket",
+                ${compositionCard(
+                    "02",
+                    "◇",
+                    "Camada de protecção",
+                    "Protecção contra o ar",
+                    "Apresentada como elemento adicional de protecção."
+                )}
 
-                    number:"01",
+                ${compositionCard(
+                    "03",
+                    "◌",
+                    "Camada biomagnética",
+                    "Biomagnetismo",
+                    "Associada à tecnologia biomagnética indicada no material."
+                )}
 
-                    label:"PRODUTO PRINCIPAL",
+                ${compositionCard(
+                    "04",
+                    "⌁",
+                    "Camada protectora",
+                    "Protecção",
+                    "Estrutura intermédia destinada a complementar a composição."
+                )}
 
-                    title:"Cobertor Inteligente",
+            </div>
 
-                    accent:"iSMART S3",
+            <div class="ismarts3-more-wrap">
 
-                    description:
-                        "Um cobertor inteligente apresentado como solução de nova geração para uma experiência de sono mais confortável, fresca e integrada no conceito Smart Living.",
+                <button
+                    type="button"
+                    class="ismarts3-more-toggle"
+                    data-more-toggle="composition"
+                    data-open-label="Ver toda a arquitectura"
+                    data-close-label="Ocultar arquitectura"
+                    aria-expanded="false"
+                    aria-controls="ismarts3-composition-more">
 
-                    image:BLANKET_IMAGE,
+                    <span>
+                        Ver toda a arquitectura
+                    </span>
 
-                    alt:"Cobertor Inteligente iSMART S3",
+                    <i aria-hidden="true">
+                        +
+                    </i>
 
-                    theme:"blanket",
+                </button>
 
-                    visible:[
-                        [
-                            "❄",
-                            "Regulação térmica",
-                            "Tecnologia de sono com proposta de regulação da temperatura."
-                        ],
-                        [
-                            "◌",
-                            "Conforto e frescura",
-                            "Conceção orientada para uma experiência confortável durante o descanso."
-                        ]
-                    ],
+                <div
+                    id="ismarts3-composition-more"
+                    class="ismarts3-more-panel"
+                    data-more-panel="composition"
+                    aria-hidden="true">
 
-                    hidden:[
-                        [
-                            "⌁",
-                            "Leve e transportável",
-                            "Peso total indicado no material: aproximadamente 8 kg, incluindo a mala."
-                        ],
-                        [
-                            "↻",
-                            "Auto-limpeza",
-                            "O produto é apresentado com sistema de auto-limpeza incorporado."
-                        ]
-                    ],
+                    <div class="ismarts3-detail-grid">
 
-                    buy:"cobertor",
+                        ${detailCard(
+                            "05 — ENCHIMENTO",
+                            "Infravermelho longínquo",
+                            "O material promocional associa esta camada à tecnologia de infravermelho distante."
+                        )}
 
-                    buyLabel:"Adquirir cobertor"
+                        ${detailCard(
+                            "06 — ISOLAMENTO",
+                            "Antiderrapante",
+                            "Camada final apresentada com função de isolamento e estabilidade."
+                        )}
 
-                })}
+                        ${detailCard(
+                            "S3 — CONJUNTO",
+                            "Arquitectura funcional",
+                            "A composição é apresentada como um sistema de múltiplas camadas, cada uma ligada a uma característica específica."
+                        )}
 
-                ${singleProduct({
+                    </div>
 
-                    id:"product-pillow",
-
-                    number:"02",
-
-                    label:"PRODUTO COMPLEMENTAR",
-
-                    title:"Almofada iSMART S3",
-
-                    accent:"Gravidade Zero",
-
-                    description:
-                        "Uma almofada apresentada dentro do conceito “Gravidade Zero”, com design pensado para acompanhar a zona do pescoço independentemente da posição.",
-
-                    image:PILLOW_IMAGE,
-
-                    alt:"Almofada iSMART S3 Gravidade Zero",
-
-                    theme:"pillow",
-
-                    reverse:true,
-
-                    visible:[
-                        [
-                            "◈",
-                            "Gravidade Zero",
-                            "Conceção orientada para uma sensação de suporte e adaptação."
-                        ],
-                        [
-                            "↔",
-                            "Dupla face",
-                            "Design de duas faces para diferentes experiências de utilização."
-                        ]
-                    ],
-
-                    hidden:[
-                        [
-                            "⌁",
-                            "Estrutura estável",
-                            "O material promocional apresenta a almofada como não deformável."
-                        ],
-                        [
-                            "◎",
-                            "Zona cervical",
-                            "Conceção destinada a acompanhar a região do pescoço."
-                        ]
-                    ],
-
-                    buy:"almofada",
-
-                    buyLabel:"Adquirir almofada"
-
-                })}
+                </div>
 
             </div>
 
         </div>
 
     </section>
+
     `;
 }
 
-function singleProduct({
 
-    id,
+function compositionCard(
     number,
-    label,
+    symbol,
     title,
-    accent,
-    description,
-    image,
-    alt,
-    theme,
-    reverse=false,
-    visible,
-    hidden,
-    buy,
-    buyLabel
-
-}){
-
-    const panelId = `${id}-more`;
+    subtitle,
+    text
+){
 
     return `
-    <article
-        id="${id}"
-        class="
-            ismarts3-single-product
-            ${reverse ? "is-reverse" : ""}
-            ${theme}
-            reveal
-        "
-    >
 
-        <div class="ismarts3-product-media">
+    <article class="ismarts3-composition-card reveal">
 
-            <div
-                class="ismarts3-product-halo"
-                aria-hidden="true">
-            </div>
-
-            <div class="ismarts3-image-stage">
-
-                <img
-                    src="${image}"
-                    alt="${alt}"
-                    class="ismarts3-product-image"
-                    loading="lazy"
-                    decoding="async"
-                    data-product-image
-                >
-
-                <div
-                    class="ismarts3-image-fallback"
-                    hidden
-                >
-
-                    <span>
-                        ${number}
-                    </span>
-
-                    <strong>
-                        Imagem do produto
-                    </strong>
-
-                    <small>
-                        ${image}
-                    </small>
-
-                </div>
-
-            </div>
-
-            <div class="ismarts3-media-label">
-                iSMART S3 / ${number}
-            </div>
-
-        </div>
-
-        <div class="ismarts3-product-copy">
-
-            <span class="ismarts3-product-label">
-                ${label}
-            </span>
-
-            <h3>
-                ${title}
-                <span>${accent}</span>
-            </h3>
-
-            <p class="ismarts3-product-intro">
-                ${description}
-            </p>
-
-            <div class="ismarts3-feature-list">
-
-                ${visible.map(
-                    ([icon,name,text]) =>
-                        productFeature(icon,name,text)
-                ).join("")}
-
-                <div
-                    class="ismarts3-more-panel"
-                    data-more-panel="${id}"
-                    id="${panelId}"
-                >
-
-                    ${hidden.map(
-                        ([icon,name,text]) =>
-                            productFeature(icon,name,text)
-                    ).join("")}
-
-                </div>
-
-                <button
-                    type="button"
-                    class="ismarts3-more-toggle"
-                    data-more-toggle="${id}"
-                    aria-expanded="false"
-                    aria-controls="${panelId}"
-                >
-                    <span>
-                        Ver mais
-                    </span>
-
-                    <i aria-hidden="true">
-                        +
-                    </i>
-                </button>
-
-            </div>
-
-            <div class="ismarts3-product-footer">
-
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-buy="${buy}"
-                >
-                    ${buyLabel}
-                </button>
-
-                <span>
-                    ${number} / 02
-                </span>
-
-            </div>
-
-        </div>
-
-    </article>
-    `;
-}
-
-function productFeature(icon,title,text){
-
-    return `
-    <div class="ismarts3-product-feature">
+        <span class="ismarts3-composition-number">
+            ${number}
+        </span>
 
         <div
-            class="ismarts3-feature-icon"
-            aria-hidden="true"
-        >
-            ${icon}
+            class="ismarts3-composition-symbol"
+            aria-hidden="true">
+            ${symbol}
         </div>
 
-        <div>
+        <span class="ismarts3-composition-label">
+            ${subtitle}
+        </span>
 
-            <strong>
-                ${title}
-            </strong>
+        <h3>
+            ${title}
+        </h3>
 
-            <p>
-                ${text}
-            </p>
+        <p>
+            ${text}
+        </p>
 
-        </div>
+    </article>
 
-    </div>
     `;
 }
+
+
+function detailCard(
+    label,
+    title,
+    text
+){
+
+    return `
+
+    <article class="ismarts3-detail-card">
+
+        <span class="label">
+            ${label}
+        </span>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+function benefits(){
+
+    return `
+
+    <section class="section ismarts3-benefits">
+
+        <div class="container">
+
+            <div class="ismarts3-benefits-grid">
+
+                <div class="ismarts3-benefits-visual reveal-left">
+
+                    <div class="ismarts3-benefits-frame">
+
+                        <div class="ismarts3-benefits-aura"></div>
+
+                        <div class="ismarts3-benefits-ring"></div>
+
+                        <img
+                            src="${KIT_IMAGE}"
+                            alt="Kit iSMART S3"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                </div>
+
+                <div class="ismarts3-benefits-copy reveal-right">
+
+                    <span class="label">
+                        DESTAQUES
+                    </span>
+
+                    <h2 class="section-title">
+                        Conforto.
+                        Tecnologia.
+                        <span>Descanso.</span>
+                    </h2>
+
+                    <p class="lead">
+                        A linguagem do iSMART S3 combina uma proposta de conforto
+                        com referências a frescura, circulação, descanso e tecnologias
+                        integradas na construção do produto.
+                    </p>
+
+                    <div class="ismarts3-benefit-checks">
+
+                        ${benefitCheck(
+                            "Regulação térmica e sensação de frescura"
+                        )}
+
+                        ${benefitCheck(
+                            "Conceção orientada para conforto durante o descanso"
+                        )}
+
+                        ${benefitCheck(
+                            "Arquitectura de várias camadas funcionais"
+                        )}
+
+                        ${benefitCheck(
+                            "Sistema composto por cobertor e almofada"
+                        )}
+
+                    </div>
+
+                    <div class="ismarts3-more-wrap">
+
+                        <button
+                            type="button"
+                            class="ismarts3-more-toggle"
+                            data-more-toggle="benefits"
+                            data-open-label="Ver informações funcionais"
+                            data-close-label="Ocultar informações"
+                            aria-expanded="false"
+                            aria-controls="ismarts3-benefits-more">
+
+                            <span>
+                                Ver informações funcionais
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
+                        </button>
+
+                        <div
+                            id="ismarts3-benefits-more"
+                            class="ismarts3-more-panel"
+                            data-more-panel="benefits"
+                            aria-hidden="true">
+
+                            <div class="ismarts3-detail-grid">
+
+                                ${detailCard(
+                                    "CONFORTO",
+                                    "Experiência térmica",
+                                    "O material apresenta o sistema em associação com regulação térmica, frescura e conforto."
+                                )}
+
+                                ${detailCard(
+                                    "CIRCULAÇÃO",
+                                    "Contexto educativo",
+                                    "A apresentação educativa fornecida aborda a importância da circulação, do oxigénio, nutrientes e evacuação de resíduos."
+                                )}
+
+                                ${detailCard(
+                                    "SONO",
+                                    "Descanso profundo",
+                                    "A linguagem promocional relaciona o sistema com uma experiência de sono profundo e reparador."
+                                )}
+
+                                ${detailCard(
+                                    "SMART",
+                                    "Tecnologia integrada",
+                                    "O produto é enquadrado na proposta Smart Living através de diferentes características funcionais."
+                                )}
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function benefitCheck(text){
+
+    return `
+
+    <div class="ismarts3-benefit-check">
+
+        <span>
+            ✓
+        </span>
+
+        <p>
+            ${text}
+        </p>
+
+    </div>
+
+    `;
+}
+
+
+/* ==========================================================
+   PRODUCT DETAIL — COBERTOR + ALMOFADA
+   ========================================================== */
+
+function productDetail(){
+
+    return `
+
+    <section
+        id="ismarts3-products"
+        class="section ismarts3-product-section">
+
+        <div class="container">
+
+            <div class="ismarts3-section-heading reveal">
+
+                <span class="eyebrow">
+                    O PRODUTO
+                </span>
+
+                <h2>
+                    Duas peças.
+                    <span>Uma identidade.</span>
+                </h2>
+
+                <p>
+                    O sistema pode ser explorado através de cada peça individual,
+                    mantendo a mesma linguagem visual e funcional.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-product-detail-grid">
+
+                <article class="ismarts3-product-card reveal">
+
+                    <div class="ismarts3-product-card-visual">
+
+                        <div class="ismarts3-detail-aura"></div>
+                        <div class="ismarts3-detail-ring"></div>
+
+                        <div class="ismarts3-product-grid">
+
+                            <img
+                                src="${BLANKET_IMAGE}"
+                                alt="Cobertor Inteligente iSMART S3"
+                                loading="lazy"
+                                decoding="async"
+                                class="ismarts3-product-detail-image"
+                            >
+
+                        </div>
+
+                        <span class="ismarts3-detail-caption">
+                            iSMART S3 · COBERTOR
+                        </span>
+
+                    </div>
+
+                    <div class="ismarts3-product-card-copy">
+
+                        <span class="label">
+                            PRODUTO 01
+                        </span>
+
+                        <h3>
+                            Cobertor Inteligente
+                            <span>iSMART S3.</span>
+                        </h3>
+
+                        <p>
+                            Um cobertor apresentado como peça principal do sistema,
+                            associado a conforto, frescura, tecnologia térmica e
+                            arquitectura funcional.
+                        </p>
+
+                        <div class="ismarts3-product-spec-list">
+
+                            ${productSpec(
+                                "Tecnologia",
+                                "Regulação térmica"
+                            )}
+
+                            ${productSpec(
+                                "Experiência",
+                                "Conforto e frescura"
+                            )}
+
+                            ${productSpec(
+                                "Mobilidade",
+                                "Leve e transportável"
+                            )}
+
+                        </div>
+
+                        <div class="ismarts3-more-wrap">
+
+                            <button
+                                type="button"
+                                class="ismarts3-more-toggle"
+                                data-more-toggle="blanket"
+                                data-open-label="Ver mais características"
+                                data-close-label="Ocultar características"
+                                aria-expanded="false"
+                                aria-controls="ismarts3-blanket-more">
+
+                                <span>
+                                    Ver mais características
+                                </span>
+
+                                <i aria-hidden="true">
+                                    +
+                                </i>
+
+                            </button>
+
+                            <div
+                                id="ismarts3-blanket-more"
+                                class="ismarts3-more-panel"
+                                data-more-panel="blanket"
+                                aria-hidden="true">
+
+                                <div class="ismarts3-detail-list">
+
+                                    ${detailItem(
+                                        "Peso total indicado no material: aproximadamente 8 kg incluindo a mala."
+                                    )}
+
+                                    ${detailItem(
+                                        "O produto é apresentado com sistema de auto-limpeza incorporado."
+                                    )}
+
+                                    ${detailItem(
+                                        "A utilização deve seguir as instruções oficiais do fabricante."
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary ismarts3-card-buy"
+                            data-buy="cobertor">
+                            Adquirir cobertor
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="ismarts3-product-card is-reverse reveal">
+
+                    <div class="ismarts3-product-card-visual">
+
+                        <div class="ismarts3-detail-aura"></div>
+                        <div class="ismarts3-detail-ring"></div>
+
+                        <div class="ismarts3-product-grid">
+
+                            <img
+                                src="${PILLOW_IMAGE}"
+                                alt="Almofada iSMART S3 Gravidade Zero"
+                                loading="lazy"
+                                decoding="async"
+                                class="ismarts3-product-detail-image"
+                            >
+
+                        </div>
+
+                        <span class="ismarts3-detail-caption">
+                            iSMART S3 · ALMOFADA
+                        </span>
+
+                    </div>
+
+                    <div class="ismarts3-product-card-copy">
+
+                        <span class="label">
+                            PRODUTO 02
+                        </span>
+
+                        <h3>
+                            Almofada iSMART S3
+                            <span>Gravidade Zero.</span>
+                        </h3>
+
+                        <p>
+                            Almofada complementar apresentada com design de dupla face,
+                            proposta de suporte da zona cervical e utilização em diferentes posições.
+                        </p>
+
+                        <div class="ismarts3-product-spec-list">
+
+                            ${productSpec(
+                                "Conceito",
+                                "Gravidade Zero"
+                            )}
+
+                            ${productSpec(
+                                "Estrutura",
+                                "Dupla face"
+                            )}
+
+                            ${productSpec(
+                                "Zona",
+                                "Região cervical"
+                            )}
+
+                        </div>
+
+                        <div class="ismarts3-more-wrap">
+
+                            <button
+                                type="button"
+                                class="ismarts3-more-toggle"
+                                data-more-toggle="pillow"
+                                data-open-label="Ver mais características"
+                                data-close-label="Ocultar características"
+                                aria-expanded="false"
+                                aria-controls="ismarts3-pillow-more">
+
+                                <span>
+                                    Ver mais características
+                                </span>
+
+                                <i aria-hidden="true">
+                                    +
+                                </i>
+
+                            </button>
+
+                            <div
+                                id="ismarts3-pillow-more"
+                                class="ismarts3-more-panel"
+                                data-more-panel="pillow"
+                                aria-hidden="true">
+
+                                <div class="ismarts3-detail-list">
+
+                                    ${detailItem(
+                                        "Estrutura apresentada pelo material como não deformável."
+                                    )}
+
+                                    ${detailItem(
+                                        "Conceção destinada a acompanhar a região do pescoço."
+                                    )}
+
+                                    ${detailItem(
+                                        "Pode ser comercializada e adquirida separadamente."
+                                    )}
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn btn-primary ismarts3-card-buy"
+                            data-buy="almofada">
+                            Adquirir almofada
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function productSpec(
+    label,
+    value
+){
+
+    return `
+
+    <div class="ismarts3-product-spec">
+
+        <span>
+            ${label}
+        </span>
+
+        <strong>
+            ${value}
+        </strong>
+
+    </div>
+
+    `;
+}
+
+
+function detailItem(text){
+
+    return `
+
+    <div class="ismarts3-detail-item">
+
+        <span
+            class="ismarts3-check"
+            aria-hidden="true">
+            ✓
+        </span>
+
+        <span>
+            ${text}
+        </span>
+
+    </div>
+
+    `;
+}
+
 
 /* ==========================================================
    SLEEP QUALITY
@@ -656,26 +1031,26 @@ function productFeature(icon,title,text){
 function sleepQuality(){
 
     return `
-    <section class="section ismarts3-dark-section">
+
+    <section class="section ismarts3-sleep-section">
 
         <div class="container">
 
-            <div
-                class="
-                    ismarts3-section-head
-                    ismarts3-head-dark
-                    reveal
-                "
-            >
+            <div class="ismarts3-section-heading reveal">
 
-                <span class="ismarts3-eyebrow">
-                    03 · QUALIDADE DO SONO
+                <span class="eyebrow">
+                    QUALIDADE DO SONO
                 </span>
 
-                <h2 class="section-title">
-                    Como determinar
-                    <span>um bom sono?</span>
+                <h2>
+                    Como reconhecer
+                    <span>um bom descanso.</span>
                 </h2>
+
+                <p>
+                    A apresentação educativa fornecida diferencia uma experiência de
+                    sono de qualidade de sinais associados a uma experiência menos confortável.
+                </p>
 
             </div>
 
@@ -683,7 +1058,7 @@ function sleepQuality(){
 
                 <article class="ismarts3-sleep-card good reveal">
 
-                    <span class="ismarts3-status">
+                    <span class="ismarts3-sleep-label">
                         01 · Boa qualidade
                     </span>
 
@@ -692,20 +1067,16 @@ function sleepQuality(){
                     </h3>
 
                     <div class="ismarts3-check-list">
-
                         ${checkItem("Sono rápido")}
-
                         ${checkItem("Sono ininterrupto")}
-
                         ${checkItem("Sono reparador")}
-
                     </div>
 
                 </article>
 
                 <article class="ismarts3-sleep-card attention reveal">
 
-                    <span class="ismarts3-status">
+                    <span class="ismarts3-sleep-label">
                         02 · Atenção
                     </span>
 
@@ -714,13 +1085,9 @@ function sleepQuality(){
                     </h3>
 
                     <div class="ismarts3-check-list">
-
                         ${checkItem("Insónia")}
-
                         ${checkItem("Transpiração abundante")}
-
-                        ${checkItem("Má qualidade de sono")}
-
+                        ${checkItem("Sono não reparador")}
                     </div>
 
                 </article>
@@ -730,8 +1097,10 @@ function sleepQuality(){
         </div>
 
     </section>
+
     `;
 }
+
 
 /* ==========================================================
    CIRCULATION
@@ -739,19 +1108,19 @@ function sleepQuality(){
 
 function circulation(){
 
-    const panelId =
-        "circulation-details-content";
-
     return `
-    <section class="section ismarts3-light-section">
+
+    <section class="section ismarts3-circulation">
 
         <div class="container">
 
-            <div class="ismarts3-split">
+            <div class="ismarts3-circulation-grid">
 
-                <div class="ismarts3-editorial-visual reveal-left">
+                <div class="ismarts3-circulation-visual reveal-left">
 
-                    <div class="ismarts3-orbital-icon">
+                    <div class="ismarts3-circulation-orbit"></div>
+
+                    <div class="ismarts3-circulation-icon">
                         ◌
                     </div>
 
@@ -765,20 +1134,21 @@ function circulation(){
 
                 </div>
 
-                <div class="ismarts3-split-copy reveal-right">
+                <div class="ismarts3-circulation-copy reveal-right">
 
-                    <span class="ismarts3-eyebrow">
-                        04 · CONTEXTO EDUCATIVO
+                    <span class="label">
+                        CONTEXTO EDUCATIVO
                     </span>
 
                     <h2 class="section-title">
-                        A má circulação
-                        <span>sanguínea</span>
+                        A circulação
+                        <span>sanguínea.</span>
                     </h2>
 
                     <p class="lead">
-                        O material educativo fornecido enquadra a circulação como parte importante do equilíbrio fisiológico,
-                        destacando o fornecimento de oxigénio e nutrientes e a evacuação dos resíduos.
+                        O conteúdo educativo fornecido enquadra a circulação como parte
+                        importante do equilíbrio fisiológico, destacando o fornecimento
+                        de oxigénio e nutrientes e a evacuação dos resíduos.
                     </p>
 
                     <div class="ismarts3-info-stack">
@@ -797,9 +1167,9 @@ function circulation(){
 
                         <div
                             class="ismarts3-more-panel"
-                            data-more-panel="circulation-details"
-                            id="${panelId}"
-                        >
+                            data-more-panel="circulation"
+                            aria-hidden="true"
+                            id="ismarts3-circulation-more">
 
                             ${infoLine(
                                 "03",
@@ -819,11 +1189,13 @@ function circulation(){
 
                     <button
                         type="button"
-                        class="ismarts3-more-toggle light"
-                        data-more-toggle="circulation-details"
+                        class="ismarts3-more-toggle"
+                        data-more-toggle="circulation"
+                        data-open-label="Ver mais contexto"
+                        data-close-label="Ocultar contexto"
                         aria-expanded="false"
-                        aria-controls="${panelId}"
-                    >
+                        aria-controls="ismarts3-circulation-more">
+
                         <span>
                             Ver mais contexto
                         </span>
@@ -831,6 +1203,7 @@ function circulation(){
                         <i aria-hidden="true">
                             +
                         </i>
+
                     </button>
 
                 </div>
@@ -840,1125 +1213,19 @@ function circulation(){
         </div>
 
     </section>
+
     `;
 }
 
-/* ==========================================================
-   JOINT HEALTH
-   ========================================================== */
 
-function jointHealth(){
-
-    return `
-    <section class="section ismarts3-joint-section">
-
-        <div class="container">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    05 · MOBILIDADE
-                </span>
-
-                <h2 class="section-title">
-                    As doenças
-                    <span>articulares</span>
-                </h2>
-
-                <p class="lead">
-                    O conteúdo fornecido também aborda a relação entre descanso,
-                    mobilidade e desconfortos associados ao sistema músculo-esquelético.
-                </p>
-
-            </div>
-
-            <div class="ismarts3-joint-grid">
-
-                ${jointCard(
-                    "01",
-                    "Flexibilidade",
-                    "Má flexibilidade é apresentada como um dos factores associados às dificuldades articulares."
-                )}
-
-                ${jointCard(
-                    "02",
-                    "Dores",
-                    "O material menciona dores como parte das queixas associadas às articulações."
-                )}
-
-                ${jointCard(
-                    "03",
-                    "Ossos e coluna",
-                    "São referidas condições relacionadas com ossos e coluna vertebral."
-                )}
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function jointCard(number,title,text){
+function infoLine(
+    number,
+    title,
+    text
+){
 
     return `
-    <article class="ismarts3-joint-card reveal">
 
-        <span>
-            ${number}
-        </span>
-
-        <h3>
-            ${title}
-        </h3>
-
-        <p>
-            ${text}
-        </p>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   SLEEP IMPACT
-   ========================================================== */
-
-function sleepImpact(){
-
-    const panelId =
-        "impact-details-content";
-
-    return `
-    <section class="section ismarts3-impact-section">
-
-        <div class="container">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    06 · IMPACTO
-                </span>
-
-                <h2 class="section-title">
-                    Os distúrbios do sono
-                    <span>afectam a sua saúde</span>
-                </h2>
-
-                <p class="lead">
-                    A apresentação educativa fornecida relaciona uma má qualidade
-                    do sono com várias dimensões do bem-estar e da saúde.
-                </p>
-
-            </div>
-
-            <div class="ismarts3-impact-grid">
-
-                ${impactCard(
-                    "01",
-                    "Stress, ansiedade e depressão"
-                )}
-
-                ${impactCard(
-                    "02",
-                    "Doenças crónicas e metabólicas"
-                )}
-
-                ${impactCard(
-                    "03",
-                    "Doenças neurodegenerativas"
-                )}
-
-                ${impactCard(
-                    "04",
-                    "Obesidade e resistência à insulina"
-                )}
-
-                <div
-                    class="
-                        ismarts3-more-panel
-                        impact-panel
-                    "
-                    data-more-panel="impact-details"
-                    id="${panelId}"
-                >
-
-                    ${impactCard(
-                        "05",
-                        "Distúrbios hormonais"
-                    )}
-
-                    ${impactCard(
-                        "06",
-                        "Envelhecimento prematuro"
-                    )}
-
-                    ${impactCard(
-                        "07",
-                        "Baixa resistência e distúrbios da sexualidade"
-                    )}
-
-                </div>
-
-            </div>
-
-            <button
-                type="button"
-                class="
-                    ismarts3-more-toggle
-                    light
-                    centered
-                "
-                data-more-toggle="impact-details"
-                aria-expanded="false"
-                aria-controls="${panelId}"
-            >
-                <span>
-                    Ver mais áreas
-                </span>
-
-                <i aria-hidden="true">
-                    +
-                </i>
-            </button>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function impactCard(number,text){
-
-    return `
-    <article class="ismarts3-impact-card reveal">
-
-        <span>
-            ${number}
-        </span>
-
-        <strong>
-            ${text}
-        </strong>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   LAYERS
-   ========================================================== */
-
-function layerTechnology(){
-
-    const panelId =
-        "layer-details-content";
-
-    return `
-    <section class="section ismarts3-layers-section">
-
-        <div class="container">
-
-            <div
-                class="
-                    ismarts3-section-head
-                    ismarts3-head-dark
-                    reveal
-                "
-            >
-
-                <span class="ismarts3-eyebrow">
-                    07 · TECNOLOGIA
-                </span>
-
-                <h2 class="section-title">
-                    Conceção de
-                    <span>várias camadas</span>
-                </h2>
-
-                <p class="lead">
-                    A arquitectura do produto é apresentada através de diferentes
-                    camadas funcionais, cada uma associada a uma característica específica.
-                </p>
-
-            </div>
-
-            <div class="ismarts3-layers-grid">
-
-                ${layer(
-                    "01",
-                    "Camada de arrefecimento",
-                    "Seda de gelo",
-                    "Camada associada ao conceito de frescura e regulação térmica."
-                )}
-
-                ${layer(
-                    "02",
-                    "Camada de protecção",
-                    "Protecção contra o ar",
-                    "Estrutura apresentada como elemento adicional de protecção."
-                )}
-
-                ${layer(
-                    "03",
-                    "Camada biomagnética",
-                    "Biomagnetismo",
-                    "Camada associada à tecnologia biomagnética indicada no material."
-                )}
-
-                <div
-                    class="
-                        ismarts3-more-panel
-                        layers-panel
-                    "
-                    data-more-panel="layer-details"
-                    id="${panelId}"
-                >
-
-                    ${layer(
-                        "04",
-                        "Camada protectora",
-                        "Protecção",
-                        "Estrutura intermédia destinada a complementar a composição do produto."
-                    )}
-
-                    ${layer(
-                        "05",
-                        "Camada de enchimento",
-                        "Infravermelho longínquo",
-                        "Material promocional associa esta camada à tecnologia de infravermelho distante."
-                    )}
-
-                    ${layer(
-                        "06",
-                        "Camada de isolamento",
-                        "Antiderrapante",
-                        "Camada final apresentada com função de isolamento e estabilidade."
-                    )}
-
-                </div>
-
-            </div>
-
-            <button
-                type="button"
-                class="ismarts3-more-toggle centered"
-                data-more-toggle="layer-details"
-                aria-expanded="false"
-                aria-controls="${panelId}"
-            >
-                <span>
-                    Ver todas as camadas
-                </span>
-
-                <i aria-hidden="true">
-                    +
-                </i>
-            </button>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function layer(number,title,tech,text){
-
-    return `
-    <article class="ismarts3-layer-card reveal">
-
-        <span class="ismarts3-layer-number">
-            ${number}
-        </span>
-
-        <div>
-
-            <small>
-                ${tech}
-            </small>
-
-            <h3>
-                ${title}
-            </h3>
-
-            <p>
-                ${text}
-            </p>
-
-        </div>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   SMART FUNCTIONS
-   ========================================================== */
-
-function smartFunctions(){
-
-    return `
-    <section class="section ismarts3-functions-section">
-
-        <div class="container">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    08 · FUNÇÕES
-                </span>
-
-                <h2 class="section-title">
-                    As funções
-                    <span>do iSMART S3</span>
-                </h2>
-
-            </div>
-
-            <div class="ismarts3-function-feature reveal">
-
-                <div class="ismarts3-function-number">
-                    &gt; 4.000
-                </div>
-
-                <div>
-
-                    <span>
-                        DESTAQUE DO MATERIAL PROMOCIONAL
-                    </span>
-
-                    <p>
-                        O conteúdo fornecido associa o sistema à emissão de mais de
-                        4.000 iões por cm³ e apresenta outras funções relacionadas
-                        com a experiência de sono.
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="ismarts3-function-grid">
-
-                ${functionCard(
-                    "01",
-                    "Sono profundo",
-                    "Favorece uma experiência associada ao descanso profundo."
-                )}
-
-                ${functionCard(
-                    "02",
-                    "pH sanguíneo",
-                    "O material promocional associa o sistema à regulação do pH sanguíneo."
-                )}
-
-                ${functionCard(
-                    "03",
-                    "Ligação ao oxigénio",
-                    "É apresentada uma associação com a capacidade de ligação ao oxigénio."
-                )}
-
-                ${functionCard(
-                    "04",
-                    "Iões negativos",
-                    "A tecnologia é apresentada em associação com iões negativos."
-                )}
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function functionCard(number,title,text){
-
-    return `
-    <article class="ismarts3-function-card reveal">
-
-        <span>
-            ${number}
-        </span>
-
-        <h3>
-            ${title}
-        </h3>
-
-        <p>
-            ${text}
-        </p>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   ZERO GRAVITY PILLOW
-   ========================================================== */
-
-function zeroGravityPillow(){
-
-    const panelId =
-        "pillow-points-content";
-
-    return `
-    <section class="section ismarts3-pillow-section">
-
-        <div class="container">
-
-            <div class="ismarts3-pillow-layout">
-
-                <div class="ismarts3-pillow-copy reveal-left">
-
-                    <span class="ismarts3-eyebrow">
-                        09 · ALMOFADA
-                    </span>
-
-                    <h2 class="section-title">
-                        Almofada
-                        <span>Gravidade Zero</span>
-                    </h2>
-
-                    <p class="lead">
-                        Ajusta-se ao pescoço independentemente da posição,
-                        segundo a proposta apresentada para o produto.
-                    </p>
-
-                    <div class="ismarts3-pillow-points">
-
-                        ${checkItem(
-                            "Design de dupla face"
-                        )}
-
-                        ${checkItem(
-                            "Estrutura apresentada como não deformável"
-                        )}
-
-                        <div
-                            class="ismarts3-more-panel"
-                            data-more-panel="pillow-points"
-                            id="${panelId}"
-                        >
-
-                            ${checkItem(
-                                "Conceção em gravidade zero"
-                            )}
-
-                            ${checkItem(
-                                "Pode ser comercializada separadamente"
-                            )}
-
-                        </div>
-
-                    </div>
-
-                    <button
-                        type="button"
-                        class="ismarts3-more-toggle light"
-                        data-more-toggle="pillow-points"
-                        aria-expanded="false"
-                        aria-controls="${panelId}"
-                    >
-                        <span>
-                            Ver mais características
-                        </span>
-
-                        <i aria-hidden="true">
-                            +
-                        </i>
-                    </button>
-
-                    <div class="ismarts3-inline-action">
-
-                        <button
-                            type="button"
-                            class="btn btn-primary"
-                            data-buy="almofada"
-                        >
-                            Quero a almofada
-                        </button>
-
-                    </div>
-
-                </div>
-
-                <div class="ismarts3-pillow-media reveal-right">
-
-                    <div class="ismarts3-pillow-frame">
-
-                        <img
-                            src="${PILLOW_IMAGE}"
-                            alt="Almofada iSMART S3 Gravidade Zero"
-                            class="ismarts3-pillow-image"
-                            loading="lazy"
-                            decoding="async"
-                            data-product-image
-                        >
-
-                        <div
-                            class="ismarts3-image-fallback"
-                            hidden
-                        >
-
-                            <span>
-                                02
-                            </span>
-
-                            <strong>
-                                Imagem da almofada
-                            </strong>
-
-                            <small>
-                                ${PILLOW_IMAGE}
-                            </small>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-/* ==========================================================
-   CERTIFICATIONS / IMAGE SLOTS
-   ========================================================== */
-
-function certifications(){
-
-    const certs = [
-
-        [
-            "01",
-            "Teste / certificação",
-            "./assets/certifications/ismarts3-cert-01.png"
-        ],
-
-        [
-            "02",
-            "Teste / certificação",
-            "./assets/certifications/ismarts3-cert-02.png"
-        ],
-
-        [
-            "03",
-            "Teste / certificação",
-            "./assets/certifications/ismarts3-cert-03.png"
-        ],
-
-        [
-            "04",
-            "Teste / certificação",
-            "./assets/certifications/ismarts3-cert-04.png"
-        ]
-
-    ];
-
-    return `
-    <section class="section ismarts3-certifications-section">
-
-        <div class="container">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    10 · DOCUMENTAÇÃO
-                </span>
-
-                <h2 class="section-title">
-                    Certificações
-                    <span>e testes</span>
-                </h2>
-
-                <p class="lead">
-                    Espaços preparados para receber imagens dos documentos e selos correspondentes.
-                    Os nomes específicos devem ser preenchidos apenas após confirmação documental.
-                </p>
-
-            </div>
-
-            <div class="ismarts3-cert-grid">
-
-                ${certs.map(
-                    ([number,title,path]) =>
-                        certCard(number,title,path)
-                ).join("")}
-
-            </div>
-
-            <div class="ismarts3-cert-info reveal">
-
-                <span class="ismarts3-cert-info-mark">
-                    DOC
-                </span>
-
-                <div>
-
-                    <strong>
-                        Área preparada para prova visual
-                    </strong>
-
-                    <p>
-                        Substitua os quatro ficheiros pelos certificados,
-                        relatórios ou selos oficiais correspondentes antes da publicação.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function certCard(number,title,path){
-
-    return `
-    <article class="ismarts3-cert-card reveal">
-
-        <div class="ismarts3-cert-image-slot">
-
-            <img
-                src="${path}"
-                alt="Espaço para imagem da certificação ${number}"
-                loading="lazy"
-                decoding="async"
-                data-cert-image
-            >
-
-            <div class="ismarts3-cert-placeholder">
-
-                <span>
-                    ${number}
-                </span>
-
-                <strong>
-                    Adicionar imagem
-                </strong>
-
-                <small>
-                    ${path}
-                </small>
-
-            </div>
-
-        </div>
-
-        <div class="ismarts3-cert-meta">
-
-            <span>
-                ${number}
-            </span>
-
-            <strong>
-                ${title}
-            </strong>
-
-            <small>
-                Documento oficial
-            </small>
-
-        </div>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   ROUTINE
-   ========================================================== */
-
-function lifestyleRoutine(){
-
-    const panelId =
-        "routine-details-content";
-
-    return `
-    <section class="section-sm ismarts3-routine-section">
-
-        <div class="container-sm">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    11 · ROTINA
-                </span>
-
-                <h2 class="section-title">
-                    Uma experiência
-                    <span>integrada no quotidiano</span>
-                </h2>
-
-            </div>
-
-            <div class="ismarts3-timeline">
-
-                ${step(
-                    "1",
-                    "Conhecer",
-                    "Conheça o cobertor e a almofada e perceba como o kit está estruturado."
-                )}
-
-                ${step(
-                    "2",
-                    "Escolher",
-                    "Opte pelo kit completo ou adquira individualmente o cobertor ou a almofada."
-                )}
-
-                <div
-                    class="ismarts3-more-panel"
-                    data-more-panel="routine-details"
-                    id="${panelId}"
-                >
-
-                    ${step(
-                        "3",
-                        "Utilizar",
-                        "Utilize os produtos de acordo com as instruções e recomendações oficiais."
-                    )}
-
-                    ${step(
-                        "4",
-                        "Integrar",
-                        "Integre o sistema numa rotina de descanso confortável e equilibrada."
-                    )}
-
-                </div>
-
-            </div>
-
-            <button
-                type="button"
-                class="ismarts3-more-toggle light centered"
-                data-more-toggle="routine-details"
-                aria-expanded="false"
-                aria-controls="${panelId}"
-            >
-                <span>
-                    Ver mais passos
-                </span>
-
-                <i aria-hidden="true">
-                    +
-                </i>
-            </button>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function step(number,title,text){
-
-    return `
-    <article class="ismarts3-timeline-item reveal">
-
-        <div class="ismarts3-timeline-index">
-            ${number}
-        </div>
-
-        <div>
-
-            <h3>
-                ${title}
-            </h3>
-
-            <p>
-                ${text}
-            </p>
-
-        </div>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   FAQ
-   ========================================================== */
-
-function faq(){
-
-    const questions = [
-
-        [
-            "01",
-            "O que é o iSMART S3?",
-            "O iSMART S3 é apresentado como um sistema de sono da linha Smart Lab Living, constituído por um cobertor inteligente e uma almofada Gravidade Zero."
-        ],
-
-        [
-            "02",
-            "O iSMART S3 é um único produto?",
-            "Não. Nesta página o iSMART S3 é apresentado como um kit com dois produtos: o Cobertor Inteligente iSMART S3 e a Almofada iSMART S3."
-        ],
-
-        [
-            "03",
-            "Posso comprar apenas o cobertor?",
-            "Sim. O cobertor pode ser apresentado e adquirido separadamente."
-        ],
-
-        [
-            "04",
-            "Posso comprar apenas a almofada?",
-            "Sim. A Almofada iSMART S3 Gravidade Zero também pode ser comercializada e adquirida separadamente."
-        ],
-
-        [
-            "05",
-            "Qual é o peso do kit?",
-            "O material fornecido indica um peso total de aproximadamente 8 kg, incluindo a mala."
-        ],
-
-        [
-            "06",
-            "O cobertor pode ser lavado com água?",
-            "Segundo as informações fornecidas, o produto possui um sistema de auto-limpeza incorporado e não é lavado com água. A utilização deve seguir as instruções oficiais."
-        ],
-
-        [
-            "07",
-            "Para quem é apresentado o produto?",
-            "O material promocional menciona crianças, grávidas, adultos e idosos. A adequação individual deve seguir as instruções oficiais e, quando necessário, orientação profissional."
-        ],
-
-        [
-            "08",
-            "O iSMART S3 substitui tratamentos médicos?",
-            "Não. O produto não deve ser apresentado como substituto de diagnóstico, tratamento médico, medicamentos ou acompanhamento profissional."
-        ]
-
-    ];
-
-    return `
-    <section class="section-sm ismarts3-faq-section">
-
-        <div class="container-sm">
-
-            <div class="ismarts3-section-head reveal">
-
-                <span class="ismarts3-eyebrow">
-                    12 · PERGUNTAS
-                </span>
-
-                <h2 class="section-title">
-                    Dúvidas sobre
-                    <span>o iSMART S3</span>
-                </h2>
-
-                <p class="lead">
-                    Uma leitura simples e funcional. Ao abrir uma pergunta,
-                    a anterior fecha automaticamente.
-                </p>
-
-            </div>
-
-            <div
-                class="ismarts3-faq"
-                data-faq-root
-            >
-
-                ${questions.map(
-                    ([number,q,a]) =>
-                        question(q,a,number)
-                ).join("")}
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-function question(q,a,number){
-
-    const id =
-        `ismarts3-faq-${number}`;
-
-    return `
-    <article class="ismarts3-faq-item">
-
-        <button
-            type="button"
-            class="ismarts3-faq-question"
-            aria-expanded="false"
-            aria-controls="${id}-answer"
-        >
-
-            <span class="ismarts3-faq-number">
-                ${number}
-            </span>
-
-            <span class="ismarts3-faq-question-text">
-                ${q}
-            </span>
-
-            <span
-                class="ismarts3-faq-icon"
-                aria-hidden="true"
-            >
-                +
-            </span>
-
-        </button>
-
-        <div
-            class="ismarts3-faq-answer"
-            id="${id}-answer"
-            role="region"
-        >
-
-            <div class="ismarts3-faq-answer-inner">
-
-                <p>
-                    ${a}
-                </p>
-
-            </div>
-
-        </div>
-
-    </article>
-    `;
-}
-
-/* ==========================================================
-   TRUST / HEALTH NOTICE
-   ========================================================== */
-
-function medicalDisclaimer(){
-
-    return `
-    <section class="ismarts3-trust-section">
-
-        <div class="container">
-
-            <div class="ismarts3-trust-box reveal">
-
-                <div class="ismarts3-trust-mark">
-                    !
-                </div>
-
-                <div>
-
-                    <span class="ismarts3-eyebrow">
-                        NOTA IMPORTANTE
-                    </span>
-
-                    <strong>
-                        Utilize apenas alegações e certificações
-                        documentalmente comprovadas.
-                    </strong>
-
-                    <p>
-                        Alguns benefícios e efeitos mencionados nesta página
-                        foram fornecidos pela informação promocional do produto.
-                        Estes conteúdos não constituem, por si só, garantia clínica
-                        nem substituem aconselhamento, diagnóstico ou tratamento médico.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-/* ==========================================================
-   CTA
-   ========================================================== */
-
-function cta(){
-
-    return `
-    <section class="section ismarts3-cta-section">
-
-        <div class="container">
-
-            <div class="ismarts3-cta-shell reveal">
-
-                <span class="ismarts3-cta-label">
-                    iSMART S3 · SMART LIVING
-                </span>
-
-                <h2>
-                    Transforme o descanso numa experiência
-                    <span>mais sofisticada.</span>
-                </h2>
-
-                <p>
-                    Explore o sistema completo, adquira o kit ou escolha
-                    individualmente o Cobertor Inteligente ou a Almofada
-                    Gravidade Zero.
-                </p>
-
-                <div class="ismarts3-cta-actions">
-
-                    <button
-                        type="button"
-                        class="btn btn-primary"
-                        id="ismarts3Whats"
-                    >
-                        Falar no WhatsApp
-                    </button>
-
-                    <button
-                        type="button"
-                        class="btn btn-glass"
-                        id="backHome"
-                    >
-                        Voltar ao início
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-    `;
-}
-
-/* ==========================================================
-   HELPERS
-   ========================================================== */
-
-function checkItem(text){
-
-    return `
-    <div class="ismarts3-check-item">
-
-        <span>
-            ✓
-        </span>
-
-        <strong>
-            ${text}
-        </strong>
-
-    </div>
-    `;
-}
-
-function infoLine(number,title,text){
-
-    return `
     <div class="ismarts3-info-line">
 
         <span>
@@ -1978,8 +1245,884 @@ function infoLine(number,title,text){
         </div>
 
     </div>
+
     `;
 }
+
+
+/* ==========================================================
+   SLEEP IMPACT
+   ========================================================== */
+
+function sleepImpact(){
+
+    return `
+
+    <section class="section ismarts3-impact-section">
+
+        <div class="container">
+
+            <div class="ismarts3-section-heading reveal">
+
+                <span class="eyebrow">
+                    CONTEXTO DO SONO
+                </span>
+
+                <h2>
+                    Os distúrbios do sono
+                    <span>e o bem-estar.</span>
+                </h2>
+
+                <p>
+                    A apresentação educativa fornecida relaciona uma má qualidade do sono
+                    com diferentes dimensões do bem-estar e da saúde.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-impact-grid">
+
+                ${impactCard("01","Stress, ansiedade e depressão")}
+                ${impactCard("02","Doenças crónicas e metabólicas")}
+                ${impactCard("03","Doenças neurodegenerativas")}
+                ${impactCard("04","Obesidade e resistência à insulina")}
+
+            </div>
+
+            <div class="ismarts3-more-wrap">
+
+                <button
+                    type="button"
+                    class="ismarts3-more-toggle"
+                    data-more-toggle="impact"
+                    data-open-label="Ver mais áreas"
+                    data-close-label="Ocultar áreas"
+                    aria-expanded="false"
+                    aria-controls="ismarts3-impact-more">
+
+                    <span>
+                        Ver mais áreas
+                    </span>
+
+                    <i aria-hidden="true">
+                        +
+                    </i>
+
+                </button>
+
+                <div
+                    id="ismarts3-impact-more"
+                    class="ismarts3-more-panel"
+                    data-more-panel="impact"
+                    aria-hidden="true">
+
+                    <div class="ismarts3-impact-grid ismarts3-impact-grid-more">
+
+                        ${impactCard("05","Distúrbios hormonais")}
+                        ${impactCard("06","Envelhecimento prematuro")}
+                        ${impactCard("07","Baixa resistência e distúrbios da sexualidade")}
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function impactCard(
+    number,
+    text
+){
+
+    return `
+
+    <article class="ismarts3-impact-card reveal">
+
+        <span>
+            ${number}
+        </span>
+
+        <strong>
+            ${text}
+        </strong>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   TECHNOLOGY / FUNCTIONS
+   ========================================================== */
+
+function technology(){
+
+    return `
+
+    <section class="section ismarts3-technology">
+
+        <div class="container">
+
+            <div class="ismarts3-section-heading ismarts3-heading-dark reveal">
+
+                <span class="eyebrow">
+                    TECNOLOGIA
+                </span>
+
+                <h2>
+                    Inteligência integrada
+                    <span>no descanso.</span>
+                </h2>
+
+                <p>
+                    O material fornecido associa o sistema a diferentes funções e
+                    características de tecnologia de sono.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-technology-feature reveal">
+
+                <div class="ismarts3-technology-number">
+                    &gt; 4.000
+                </div>
+
+                <div>
+
+                    <span>
+                        DESTAQUE DO MATERIAL PROMOCIONAL
+                    </span>
+
+                    <p>
+                        O conteúdo fornecido associa o sistema à emissão de mais de
+                        4.000 iões por cm³ e apresenta outras funções relacionadas
+                        com a experiência de sono.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="ismarts3-technology-grid">
+
+                ${technologyCard(
+                    "01",
+                    "Sono profundo",
+                    "Favorece uma experiência associada ao descanso profundo."
+                )}
+
+                ${technologyCard(
+                    "02",
+                    "pH sanguíneo",
+                    "O material promocional associa o sistema à regulação do pH sanguíneo."
+                )}
+
+                ${technologyCard(
+                    "03",
+                    "Ligação ao oxigénio",
+                    "É apresentada uma associação com a capacidade de ligação ao oxigénio."
+                )}
+
+                ${technologyCard(
+                    "04",
+                    "Iões negativos",
+                    "A tecnologia é apresentada em associação com iões negativos."
+                )}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function technologyCard(
+    number,
+    title,
+    text
+){
+
+    return `
+
+    <article class="ismarts3-technology-card reveal">
+
+        <span>
+            ${number}
+        </span>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   PILLOW FEATURE
+   ========================================================== */
+
+function pillow(){
+
+    return `
+
+    <section class="section ismarts3-pillow-section">
+
+        <div class="container">
+
+            <div class="ismarts3-pillow-grid">
+
+                <div class="ismarts3-pillow-copy reveal-left">
+
+                    <span class="label">
+                        ALMOFADA
+                    </span>
+
+                    <h2 class="section-title">
+                        Gravidade
+                        <span>Zero.</span>
+                    </h2>
+
+                    <p class="lead">
+                        Uma peça complementar apresentada com design de dupla face,
+                        estrutura estável e uma proposta centrada na zona cervical.
+                    </p>
+
+                    <div class="ismarts3-benefit-checks">
+
+                        ${benefitCheck(
+                            "Design de dupla face"
+                        )}
+
+                        ${benefitCheck(
+                            "Estrutura apresentada como não deformável"
+                        )}
+
+                        ${benefitCheck(
+                            "Conceção para acompanhar a região do pescoço"
+                        )}
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-buy="almofada">
+                        Adquirir almofada
+                    </button>
+
+                </div>
+
+                <div class="ismarts3-pillow-visual reveal-right">
+
+                    <div class="ismarts3-pillow-frame">
+
+                        <div class="ismarts3-pillow-aura"></div>
+
+                        <div class="ismarts3-pillow-grid">
+
+                            <img
+                                src="${PILLOW_IMAGE}"
+                                alt="Almofada iSMART S3 Gravidade Zero"
+                                loading="lazy"
+                                decoding="async"
+                            >
+
+                        </div>
+
+                        <span>
+                            iSMART S3 · GRAVIDADE ZERO
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   CERTIFICATIONS
+   ========================================================== */
+
+function certifications(){
+
+    return `
+
+    <section class="section ismarts3-certifications">
+
+        <div class="container">
+
+            <div class="ismarts3-section-heading reveal">
+
+                <span class="eyebrow">
+                    DOCUMENTAÇÃO
+                </span>
+
+                <h2>
+                    Certificações
+                    <span>e testes.</span>
+                </h2>
+
+                <p>
+                    Quatro espaços visuais preparados para receber os certificados,
+                    relatórios ou selos oficiais correspondentes ao iSMART S3.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-certification-grid">
+
+                ${certificateCard(
+                    "01",
+                    "Certificação / teste",
+                    CERTIFICATION_01
+                )}
+
+                ${certificateCard(
+                    "02",
+                    "Certificação / teste",
+                    CERTIFICATION_02
+                )}
+
+                ${certificateCard(
+                    "03",
+                    "Certificação / teste",
+                    CERTIFICATION_03
+                )}
+
+                ${certificateCard(
+                    "04",
+                    "Certificação / teste",
+                    CERTIFICATION_04
+                )}
+
+            </div>
+
+            <div class="ismarts3-certification-note reveal">
+
+                <span class="label">
+                    NOTA
+                </span>
+
+                <p>
+                    A validade, entidade certificadora, âmbito, datas e correspondência
+                    dos documentos devem ser confirmados através da documentação oficial
+                    antes da publicação de qualquer alegação específica.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function certificateCard(
+    number,
+    title,
+    image
+){
+
+    return `
+
+    <article class="ismarts3-certificate reveal">
+
+        <div class="ismarts3-certificate-image">
+
+            <img
+                src="${image}"
+                alt="Espaço para certificação ${number} do iSMART S3"
+                loading="lazy"
+                decoding="async"
+            >
+
+            <div class="ismarts3-certificate-placeholder">
+
+                <span>
+                    ${number}
+                </span>
+
+                <strong>
+                    INSERIR DOCUMENTO
+                </strong>
+
+                <small>
+                    ${image}
+                </small>
+
+            </div>
+
+        </div>
+
+        <div class="ismarts3-certificate-content">
+
+            <span>
+                ${number}
+            </span>
+
+            <div>
+
+                <strong>
+                    ${title}
+                </strong>
+
+                <small>
+                    Documento oficial
+                </small>
+
+            </div>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   ROUTINE
+   ========================================================== */
+
+function routine(){
+
+    return `
+
+    <section class="section ismarts3-routine">
+
+        <div class="container-sm">
+
+            <div class="ismarts3-section-heading reveal">
+
+                <span class="eyebrow">
+                    EXPERIÊNCIA
+                </span>
+
+                <h2>
+                    Uma rotina simples
+                    e <span>consistente.</span>
+                </h2>
+
+                <p>
+                    Uma sequência editorial para apresentar o sistema dentro do quotidiano,
+                    sem sobrecarregar a página com toda a informação de uma só vez.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-routine-list">
+
+                ${routineStep(
+                    "01",
+                    "Conhecer",
+                    "Conheça o cobertor e a almofada e perceba como o kit está estruturado."
+                )}
+
+                ${routineStep(
+                    "02",
+                    "Escolher",
+                    "Opte pelo kit completo ou adquira individualmente o cobertor ou a almofada."
+                )}
+
+                <div
+                    class="ismarts3-more-panel"
+                    data-more-panel="routine"
+                    aria-hidden="true"
+                    id="ismarts3-routine-more">
+
+                    ${routineStep(
+                        "03",
+                        "Utilizar",
+                        "Utilize os produtos de acordo com as instruções e recomendações oficiais."
+                    )}
+
+                    ${routineStep(
+                        "04",
+                        "Integrar",
+                        "Integre o sistema numa rotina de descanso confortável e equilibrada."
+                    )}
+
+                </div>
+
+            </div>
+
+            <button
+                type="button"
+                class="ismarts3-more-toggle"
+                data-more-toggle="routine"
+                data-open-label="Ver mais passos"
+                data-close-label="Ocultar passos"
+                aria-expanded="false"
+                aria-controls="ismarts3-routine-more">
+
+                <span>
+                    Ver mais passos
+                </span>
+
+                <i aria-hidden="true">
+                    +
+                </i>
+
+            </button>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function routineStep(
+    number,
+    title,
+    text
+){
+
+    return `
+
+    <article class="ismarts3-routine-step reveal">
+
+        <div class="ismarts3-routine-number">
+            ${number}
+        </div>
+
+        <div>
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                ${text}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+function faq(){
+
+    const questions = [
+
+        [
+            "O que é o iSMART S3?",
+            "O iSMART S3 é apresentado como um sistema de sono da linha Smart Lab Living, constituído por um Cobertor Inteligente e uma Almofada Gravidade Zero."
+        ],
+
+        [
+            "O iSMART S3 é um único produto?",
+            "Não. Nesta página o iSMART S3 é apresentado como um kit com dois produtos, que também podem ser comercializados separadamente."
+        ],
+
+        [
+            "Posso comprar apenas o cobertor?",
+            "Sim. O Cobertor Inteligente iSMART S3 pode ser apresentado e adquirido separadamente."
+        ],
+
+        [
+            "Posso comprar apenas a almofada?",
+            "Sim. A Almofada iSMART S3 Gravidade Zero pode ser apresentada e adquirida separadamente."
+        ],
+
+        [
+            "Qual é o peso do kit?",
+            "O material fornecido indica um peso total de aproximadamente 8 kg, incluindo a mala."
+        ],
+
+        [
+            "O cobertor pode ser lavado com água?",
+            "Segundo a informação fornecida, o produto possui sistema de auto-limpeza incorporado e não é lavado com água. A utilização deve seguir as instruções oficiais."
+        ],
+
+        [
+            "Quais são as características da almofada?",
+            "A almofada é apresentada com conceito Gravidade Zero, design de dupla face, estrutura não deformável segundo o material e uma proposta de acompanhamento da zona cervical."
+        ],
+
+        [
+            "O que significam as certificações?",
+            "Os espaços desta página foram preparados para receber os certificados, relatórios ou selos oficiais. A validade, entidade certificadora e âmbito devem ser confirmados na documentação correspondente."
+        ],
+
+        [
+            "O iSMART S3 substitui tratamentos médicos?",
+            "Não. O produto não deve ser apresentado como substituto de diagnóstico, tratamento médico, medicamentos ou acompanhamento profissional."
+        ],
+
+        [
+            "Onde posso obter mais informações?",
+            "Pode contactar directamente a AD Lifestyle através do WhatsApp para informações sobre produto, disponibilidade e aquisição."
+        ]
+
+    ];
+
+    return `
+
+    <section
+        id="ismarts3-faq"
+        class="section ismarts3-faq-section">
+
+        <div class="container-sm">
+
+            <div class="ismarts3-section-heading reveal">
+
+                <span class="eyebrow">
+                    PERGUNTAS FREQUENTES
+                </span>
+
+                <h2>
+                    Tudo sobre o
+                    <span>iSMART S3.</span>
+                </h2>
+
+                <p>
+                    As respostas abrem de forma individual: ao seleccionar outra pergunta,
+                    a anterior fecha automaticamente.
+                </p>
+
+            </div>
+
+            <div class="ismarts3-faq-list">
+
+                ${questions
+                    .map(
+                        ([questionText,answerText],index) =>
+                            faqItem(
+                                String(index + 1).padStart(2,"0"),
+                                questionText,
+                                answerText
+                            )
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function faqItem(
+    number,
+    questionText,
+    answerText
+){
+
+    const answerId =
+        `ismarts3-faq-answer-${number}`;
+
+    return `
+
+    <article class="ismarts3-faq-item">
+
+        <button
+            type="button"
+            class="ismarts3-faq-question"
+            aria-expanded="false"
+            aria-controls="${answerId}">
+
+            <span class="ismarts3-faq-number">
+                ${number}
+            </span>
+
+            <span class="ismarts3-faq-text">
+                ${questionText}
+            </span>
+
+            <span
+                class="ismarts3-faq-plus"
+                aria-hidden="true">
+                +
+            </span>
+
+        </button>
+
+        <div
+            id="${answerId}"
+            class="ismarts3-faq-answer"
+            role="region"
+            aria-hidden="true">
+
+            <p>
+                ${answerText}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+function information(){
+
+    return `
+
+    <section class="section ismarts3-information-section">
+
+        <div class="container">
+
+            <div class="ismarts3-information-box reveal">
+
+                <div class="ismarts3-information-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <span class="label">
+                        COMUNICAÇÃO RESPONSÁVEL
+                    </span>
+
+                    <h2>
+                        O que é apresentado
+                        e o que requer confirmação.
+                    </h2>
+
+                    <p>
+                        As informações desta página foram organizadas a partir do material
+                        disponibilizado para o iSMART S3. Alegações terapêuticas, científicas,
+                        sanitárias ou certificações específicas devem ser confirmadas através
+                        da documentação oficial antes de serem usadas como garantias ou promessas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+function cta(){
+
+    return `
+
+    <section class="section ismarts3-cta-section">
+
+        <div class="container">
+
+            <div class="ismarts3-cta-box reveal">
+
+                <span class="ismarts3-label-light">
+                    ISMART S3
+                </span>
+
+                <h2>
+                    Eleve a experiência do descanso
+                    <span>ao Smart Living.</span>
+                </h2>
+
+                <p>
+                    Conheça o kit completo ou escolha individualmente o Cobertor Inteligente
+                    e a Almofada Gravidade Zero.
+                </p>
+
+                <div class="ismarts3-cta-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="ismarts3Whats">
+                        Pedir pelo WhatsApp
+                    </button>
+
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="backHome">
+                        Voltar à AD Lifestyle
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   HELPERS
+   ========================================================== */
+
+function checkItem(text){
+
+    return `
+
+    <div class="ismarts3-check-item">
+
+        <span>
+            ✓
+        </span>
+
+        <strong>
+            ${text}
+        </strong>
+
+    </div>
+
+    `;
+}
+
 
 /* ==========================================================
    INITIALISE
@@ -1992,420 +2135,392 @@ function initialiseISmartS3(){
             ".page-ismarts3"
         );
 
-    if(!root) return;
+    if(!root){
+        return;
+    }
 
-    /* --------------------------------------------------------
-       BASE ANIMATIONS
-       -------------------------------------------------------- */
+    try{
 
-    stagger(
-        ".page-ismarts3 .card"
-    );
+        root
+            .querySelectorAll(".btn")
+            .forEach(button=>ripple(button));
 
-    stagger(
-        ".page-ismarts3 .ismarts3-cert-card"
-    );
+    }catch(error){
 
-    /* --------------------------------------------------------
-       RIPPLE
-       -------------------------------------------------------- */
-
-    root
-        .querySelectorAll(".btn")
-        .forEach(
-            button => ripple(button)
+        console.warn(
+            "iSMART S3: ripple não inicializado.",
+            error
         );
 
-    /* --------------------------------------------------------
-       INTERNAL ANCHORS
-       -------------------------------------------------------- */
+    }
 
-    root
-        .querySelectorAll("[data-scroll]")
-        .forEach(button=>{
+    try{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+        stagger(
+            root.querySelectorAll(
+                `
+                .ismarts3-overview-grid .reveal,
+                .ismarts3-composition-grid .reveal,
+                .ismarts3-benefits-grid .reveal,
+                .ismarts3-product-detail-grid .reveal,
+                .ismarts3-sleep-grid .reveal,
+                .ismarts3-impact-grid .reveal,
+                .ismarts3-technology-grid .reveal,
+                .ismarts3-certification-grid .reveal,
+                .ismarts3-routine-list .reveal
+                `
+            )
+        );
 
-                    const target =
-                        button.getAttribute(
-                            "data-scroll"
-                        );
+    }catch(error){
 
-                    root
-                        .querySelector(target)
-                        ?.scrollIntoView({
-                            behavior:"smooth",
-                            block:"start"
-                        });
+        console.warn(
+            "iSMART S3: stagger não inicializado.",
+            error
+        );
 
-                }
+    }
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const trigger =
+                event.target.closest(
+                    "[data-scroll]"
+                );
+
+            if(!trigger){
+                return;
+            }
+
+            const selector =
+                trigger.getAttribute(
+                    "data-scroll"
+                );
+
+            if(!selector){
+                return;
+            }
+
+            const target =
+                root.querySelector(
+                    selector
+                );
+
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            }
+
+        }
+    );
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "[data-more-toggle]"
+                );
+
+            if(!button){
+                return;
+            }
+
+            const key =
+                button.getAttribute(
+                    "data-more-toggle"
+                );
+
+            const panel =
+                root.querySelector(
+                    `[data-more-panel="${key}"]`
+                );
+
+            if(!panel){
+                return;
+            }
+
+            const isOpen =
+                button.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+            const nextState =
+                !isOpen;
+
+            button.setAttribute(
+                "aria-expanded",
+                String(nextState)
             );
 
-        });
+            button.classList.toggle(
+                "active",
+                nextState
+            );
 
-    /* --------------------------------------------------------
-       HERO DISCOVER
-       -------------------------------------------------------- */
+            panel.classList.toggle(
+                "active",
+                nextState
+            );
 
-    root
-        .querySelector("#learnMore")
-        ?.addEventListener(
-            "click",
-            ()=>{
+            panel.setAttribute(
+                "aria-hidden",
+                String(!nextState)
+            );
 
-                root
-                    .querySelector("#ismarts3-kit")
-                    ?.scrollIntoView({
-                        behavior:"smooth",
-                        block:"start"
+            if(nextState){
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+                panel
+                    .querySelectorAll(
+                        ".reveal"
+                    )
+                    .forEach(item=>{
+
+                        item.classList.add(
+                            "is-visible"
+                        );
+
                     });
 
+            }else{
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+                requestAnimationFrame(()=>{
+
+                    panel.style.maxHeight =
+                        "0px";
+
+                });
+
             }
-        );
 
-    /* --------------------------------------------------------
-       HOME
-       -------------------------------------------------------- */
-
-    root
-        .querySelector("#backHome")
-        ?.addEventListener(
-            "click",
-            ()=>navigate("/")
-        );
-
-    /* --------------------------------------------------------
-       BUY KIT
-       -------------------------------------------------------- */
-
-    root
-        .querySelector("#buyISmartS3")
-        ?.addEventListener(
-            "click",
-            ()=>{
-
-                openWhats(
-                    "Olá AD Lifestyle! Gostaria de adquirir o Kit iSMART S3."
+            const label =
+                button.querySelector(
+                    "span"
                 );
 
+            if(label){
+
+                label.textContent =
+                    nextState
+                        ? button.dataset.closeLabel || "Ver menos"
+                        : button.dataset.openLabel || "Ver mais";
+
             }
-        );
 
-    /* --------------------------------------------------------
-       CTA
-       -------------------------------------------------------- */
+        }
+    );
 
-    root
-        .querySelector("#ismarts3Whats")
-        ?.addEventListener(
-            "click",
-            ()=>{
+    root.addEventListener(
+        "click",
+        function(event){
 
-                openWhats(
-                    "Olá AD Lifestyle! Gostaria de saber mais sobre o Kit iSMART S3."
+            const button =
+                event.target.closest(
+                    ".ismarts3-faq-question"
                 );
 
+            if(!button){
+                return;
             }
-        );
 
-    /* --------------------------------------------------------
-       INDIVIDUAL BUY
-       -------------------------------------------------------- */
+            const item =
+                button.closest(
+                    ".ismarts3-faq-item"
+                );
 
-    root
-        .querySelectorAll("[data-buy]")
-        .forEach(button=>{
+            if(!item){
+                return;
+            }
 
-            button.addEventListener(
-                "click",
-                ()=>{
+            const answer =
+                item.querySelector(
+                    ".ismarts3-faq-answer"
+                );
 
-                    const type =
-                        button.getAttribute(
-                            "data-buy"
-                        );
+            if(!answer){
+                return;
+            }
 
-                    const messages = {
+            const isOpen =
+                item.classList.contains(
+                    "active"
+                );
 
-                        cobertor:
-                            "Olá AD Lifestyle! Gostaria de adquirir o Cobertor Inteligente iSMART S3.",
+            root
+                .querySelectorAll(
+                    ".ismarts3-faq-item.active"
+                )
+                .forEach(
+                    otherItem=>{
 
-                        almofada:
-                            "Olá AD Lifestyle! Gostaria de adquirir a Almofada iSMART S3 Gravidade Zero."
+                        if(
+                            otherItem !== item
+                        ){
 
-                    };
+                            closeFaqItem(
+                                otherItem
+                            );
 
-                    openWhats(
-                        messages[type] ||
-                        "Olá AD Lifestyle! Gostaria de saber mais sobre o iSMART S3."
-                    );
+                        }
 
-                }
-            );
+                    }
+                );
 
-        });
+            if(isOpen){
 
-    /* --------------------------------------------------------
-       PROGRESSIVE DISCLOSURE
-       -------------------------------------------------------- */
+                closeFaqItem(item);
+
+            }else{
+
+                openFaqItem(
+                    item,
+                    button,
+                    answer
+                );
+
+                openFaqPlus(item);
+
+            }
+
+        }
+    );
 
     root
         .querySelectorAll(
-            "[data-more-toggle]"
+            ".ismarts3-product-grid img"
         )
-        .forEach(button=>{
+        .forEach(image=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+            image.addEventListener(
+                "error",
+                function(){
 
-                    const key =
-                        button.getAttribute(
-                            "data-more-toggle"
+                    const parent =
+                        image.closest(
+                            ".ismarts3-product-grid"
                         );
 
-                    const panel =
-                        root.querySelector(
-                            `[data-more-panel="${key}"]`
-                        );
+                    if(parent){
 
-                    if(!panel) return;
-
-                    const open =
-                        panel.classList.toggle(
-                            "is-open"
-                        );
-
-                    button.classList.toggle(
-                        "is-open",
-                        open
-                    );
-
-                    button.setAttribute(
-                        "aria-expanded",
-                        String(open)
-                    );
-
-                    const label =
-                        button.querySelector(
-                            "span"
-                        );
-
-                    if(label){
-
-                        label.textContent =
-                            open
-                                ? "Ver menos"
-                                : getMoreLabel(button);
-
-                    }
-
-                    if(open){
-
-                        panel
-                            .querySelectorAll(".reveal")
-                            .forEach(item=>{
-                                item.classList.add(
-                                    "is-visible"
-                                );
-                            });
-
-                        requestAnimationFrame(
-                            ()=>{
-                                panel.style.maxHeight =
-                                    `${panel.scrollHeight}px`;
-                            }
-                        );
-
-                    }else{
-
-                        panel.style.maxHeight =
-                            `${panel.scrollHeight}px`;
-
-                        requestAnimationFrame(
-                            ()=>{
-                                panel.style.maxHeight =
-                                    "0px";
-                            }
+                        parent.classList.add(
+                            "image-error"
                         );
 
                     }
 
+                },
+                {
+                    once:true
                 }
             );
 
         });
 
-    /* --------------------------------------------------------
-       FAQ ACCORDION
-       Apenas uma pergunta aberta de cada vez.
-       -------------------------------------------------------- */
+    root.addEventListener(
+        "click",
+        function(event){
 
-    const faqItems = [
-        ...root.querySelectorAll(
-            ".ismarts3-faq-item"
-        )
-    ];
+            const button =
+                event.target.closest(
+                    "#buyISmartS3, #ismarts3Whats, [data-buy]"
+                );
 
-    const closeFaq = item=>{
+            if(!button){
+                return;
+            }
 
-        const questionButton =
-            item.querySelector(
-                ".ismarts3-faq-question"
-            );
+            let message =
+                "Olá AD Lifestyle! Tenho interesse no iSMART S3 e gostaria de receber mais informações sobre o produto.";
 
-        const answer =
-            item.querySelector(
-                ".ismarts3-faq-answer"
-            );
+            const type =
+                button.getAttribute(
+                    "data-buy"
+                );
 
-        const icon =
-            item.querySelector(
-                ".ismarts3-faq-icon"
-            );
+            if(type === "cobertor"){
 
-        if(
-            !questionButton ||
-            !answer
-        ) return;
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Cobertor Inteligente iSMART S3.";
 
-        item.classList.remove(
-            "is-open"
-        );
+            }
 
-        questionButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
+            if(type === "almofada"){
 
-        answer.style.maxHeight =
-            "0px";
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir a Almofada iSMART S3 Gravidade Zero.";
 
-        if(icon){
-            icon.textContent =
-                "+";
+            }
+
+            if(
+                button.id === "buyISmartS3"
+            ){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Kit iSMART S3.";
+
+            }
+
+            openWhatsApp(message);
+
         }
-    };
+    );
 
-    const openFaq = item=>{
-
-        const questionButton =
-            item.querySelector(
-                ".ismarts3-faq-question"
-            );
-
-        const answer =
-            item.querySelector(
-                ".ismarts3-faq-answer"
-            );
-
-        const icon =
-            item.querySelector(
-                ".ismarts3-faq-icon"
-            );
-
-        if(
-            !questionButton ||
-            !answer
-        ) return;
-
-        item.classList.add(
-            "is-open"
+    const backHome =
+        root.querySelector(
+            "#backHome"
         );
 
-        questionButton.setAttribute(
-            "aria-expanded",
-            "true"
+    if(backHome){
+
+        backHome.addEventListener(
+            "click",
+            function(){
+
+                navigate("/");
+
+            }
         );
 
-        answer.style.maxHeight =
-            `${answer.scrollHeight}px`;
-
-        if(icon){
-            icon.textContent =
-                "−";
-        }
-    };
-
-    faqItems.forEach(item=>{
-
-        item
-            .querySelector(
-                ".ismarts3-faq-question"
-            )
-            ?.addEventListener(
-                "click",
-                ()=>{
-
-                    const alreadyOpen =
-                        item.classList.contains(
-                            "is-open"
-                        );
-
-                    faqItems.forEach(
-                        other=>{
-
-                            if(
-                                other !== item
-                            ){
-                                closeFaq(
-                                    other
-                                );
-                            }
-
-                        }
-                    );
-
-                    if(alreadyOpen){
-
-                        closeFaq(
-                            item
-                        );
-
-                    }else{
-
-                        openFaq(
-                            item
-                        );
-
-                    }
-
-                }
-            );
-
-    });
-
-    /* --------------------------------------------------------
-       RESIZE
-       -------------------------------------------------------- */
+    }
 
     window.addEventListener(
         "resize",
-        ()=>{
+        function(){
 
             root
                 .querySelectorAll(
-                    ".ismarts3-faq-item.is-open .ismarts3-faq-answer"
+                    `.ismarts3-faq-item.active .ismarts3-faq-answer`
                 )
-                .forEach(
-                    answer=>{
-                        answer.style.maxHeight =
-                            `${answer.scrollHeight}px`;
-                    }
-                );
+                .forEach(answer=>{
+
+                    answer.style.maxHeight =
+                        `${answer.scrollHeight}px`;
+
+                });
 
             root
                 .querySelectorAll(
-                    ".ismarts3-more-panel.is-open"
+                    `.ismarts3-more-panel.active`
                 )
-                .forEach(
-                    panel=>{
-                        panel.style.maxHeight =
-                            `${panel.scrollHeight}px`;
-                    }
-                );
+                .forEach(panel=>{
+
+                    panel.style.maxHeight =
+                        `${panel.scrollHeight}px`;
+
+                });
 
         },
         {
@@ -2413,170 +2528,114 @@ function initialiseISmartS3(){
         }
     );
 
-    /* --------------------------------------------------------
-       PRODUCT IMAGE FALLBACK
-       -------------------------------------------------------- */
+}
 
-    root
-        .querySelectorAll(
-            "[data-product-image]"
-        )
-        .forEach(image=>{
 
-            image.addEventListener(
-                "error",
-                ()=>{
+/* ==========================================================
+   FAQ HELPERS
+   ========================================================== */
 
-                    image.hidden =
-                        true;
+function openFaqItem(
+    item,
+    button,
+    answer
+){
 
-                    const fallback =
-                        image
-                            .closest(
-                                ".ismarts3-image-stage,.ismarts3-pillow-frame"
-                            )
-                            ?.querySelector(
-                                ".ismarts3-image-fallback"
-                            );
+    item.classList.add(
+        "active"
+    );
 
-                    if(fallback){
-                        fallback.hidden =
-                            false;
-                    }
+    button.setAttribute(
+        "aria-expanded",
+        "true"
+    );
 
-                },
-                {
-                    once:true
-                }
-            );
+    answer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
 
-        });
+    answer.style.maxHeight =
+        `${answer.scrollHeight}px`;
 
-    /* --------------------------------------------------------
-       CERTIFICATION IMAGE FALLBACK
-       -------------------------------------------------------- */
+}
 
-    root
-        .querySelectorAll(
-            "[data-cert-image]"
-        )
-        .forEach(image=>{
 
-            const placeholder =
-                image
-                    .closest(
-                        ".ismarts3-cert-image-slot"
-                    )
-                    ?.querySelector(
-                        ".ismarts3-cert-placeholder"
-                    );
+function closeFaqItem(item){
 
-            image.addEventListener(
-                "error",
-                ()=>{
-
-                    image.hidden =
-                        true;
-
-                    if(placeholder){
-                        placeholder.classList.add(
-                            "is-visible"
-                        );
-                    }
-
-                },
-                {
-                    once:true
-                }
-            );
-
-            image.addEventListener(
-                "load",
-                ()=>{
-
-                    if(placeholder){
-                        placeholder.classList.remove(
-                            "is-visible"
-                        );
-                    }
-
-                },
-                {
-                    once:true
-                }
-            );
-
-        });
-
-    /* --------------------------------------------------------
-       SCROLL PROGRESS
-       -------------------------------------------------------- */
-
-    const progress =
-        root.querySelector(
-            ".ismarts3-scroll-progress span"
+    const button =
+        item.querySelector(
+            ".ismarts3-faq-question"
         );
 
-    if(progress){
-
-        const updateProgress = ()=>{
-
-            const doc =
-                document.documentElement;
-
-            const max =
-                doc.scrollHeight -
-                window.innerHeight;
-
-            const value =
-                max > 0
-                    ? (
-                        window.scrollY /
-                        max
-                    ) * 100
-                    : 0;
-
-            progress.style.width =
-                `${value}%`;
-
-        };
-
-        window.addEventListener(
-            "scroll",
-            updateProgress,
-            {
-                passive:true
-            }
+    const answer =
+        item.querySelector(
+            ".ismarts3-faq-answer"
         );
 
-        updateProgress();
+    const plus =
+        item.querySelector(
+            ".ismarts3-faq-plus"
+        );
 
+    item.classList.remove(
+        "active"
+    );
+
+    if(button){
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+    if(answer){
+
+        answer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        answer.style.maxHeight =
+            "0px";
+
+    }
+
+    if(plus){
+        plus.textContent = "+";
     }
 
 }
 
-function getMoreLabel(button){
 
-    const text =
-        button.classList.contains(
-            "ismarts3-more-toggle-faq"
-        )
-            ? "Ver mais perguntas"
-            : button.dataset.moreDefault;
+function openFaqPlus(item){
 
-    return text || "Ver mais";
+    const plus =
+        item.querySelector(
+            ".ismarts3-faq-plus"
+        );
+
+    if(plus){
+        plus.textContent = "−";
+    }
+
 }
 
-function openWhats(message){
+
+/* ==========================================================
+   WHATSAPP
+   ========================================================== */
+
+function openWhatsApp(message){
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(
-
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-
+        url,
         "_blank",
-
         "noopener,noreferrer"
-
     );
-
 }
