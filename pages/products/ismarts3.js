@@ -1118,10 +1118,19 @@ function circulation(){
 
                 <div class="ismarts3-circulation-visual reveal-left">
 
+                    <div class="ismarts3-circulation-aura"></div>
+
                     <div class="ismarts3-circulation-orbit"></div>
 
-                    <div class="ismarts3-circulation-icon">
-                        ◌
+                    <div class="ismarts3-circulation-image-wrap">
+
+                        <img
+                            src="${KIT_IMAGE}"
+                            alt="Kit iSMART S3"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
                     </div>
 
                     <span>
@@ -1536,7 +1545,7 @@ function pillow(){
 
                         <div class="ismarts3-pillow-aura"></div>
 
-                        <div class="ismarts3-pillow-grid">
+                        <div class="ismarts3-pillow-image-grid">
 
                             <img
                                 src="${PILLOW_IMAGE}"
@@ -2139,20 +2148,24 @@ function initialiseISmartS3(){
         return;
     }
 
-    try{
+    /* ------------------------------------------------------
+       RIPPLE
+       ------------------------------------------------------ */
 
+    try{
         root
             .querySelectorAll(".btn")
             .forEach(button=>ripple(button));
-
     }catch(error){
-
         console.warn(
             "iSMART S3: ripple não inicializado.",
             error
         );
-
     }
+
+    /* ------------------------------------------------------
+       STAGGER
+       ------------------------------------------------------ */
 
     try{
 
@@ -2180,6 +2193,10 @@ function initialiseISmartS3(){
         );
 
     }
+
+    /* ------------------------------------------------------
+       SCROLL
+       ------------------------------------------------------ */
 
     root.addEventListener(
         "click",
@@ -2219,6 +2236,10 @@ function initialiseISmartS3(){
 
         }
     );
+
+    /* ------------------------------------------------------
+       MORE / DETAILS
+       ------------------------------------------------------ */
 
     root.addEventListener(
         "click",
@@ -2285,11 +2306,9 @@ function initialiseISmartS3(){
                         ".reveal"
                     )
                     .forEach(item=>{
-
                         item.classList.add(
                             "is-visible"
                         );
-
                     });
 
             }else{
@@ -2322,6 +2341,10 @@ function initialiseISmartS3(){
 
         }
     );
+
+    /* ------------------------------------------------------
+       FAQ — APENAS UMA ABERTA
+       ------------------------------------------------------ */
 
     root.addEventListener(
         "click",
@@ -2369,11 +2392,9 @@ function initialiseISmartS3(){
                         if(
                             otherItem !== item
                         ){
-
                             closeFaqItem(
                                 otherItem
                             );
-
                         }
 
                     }
@@ -2397,6 +2418,10 @@ function initialiseISmartS3(){
 
         }
     );
+
+    /* ------------------------------------------------------
+       IMAGE FALLBACKS
+       ------------------------------------------------------ */
 
     root
         .querySelectorAll(
@@ -2422,12 +2447,14 @@ function initialiseISmartS3(){
                     }
 
                 },
-                {
-                    once:true
-                }
+                { once:true }
             );
 
         });
+
+    /* ------------------------------------------------------
+       BUY BUTTONS
+       ------------------------------------------------------ */
 
     root.addEventListener(
         "click",
@@ -2478,6 +2505,10 @@ function initialiseISmartS3(){
         }
     );
 
+    /* ------------------------------------------------------
+       HOME
+       ------------------------------------------------------ */
+
     const backHome =
         root.querySelector(
             "#backHome"
@@ -2488,13 +2519,15 @@ function initialiseISmartS3(){
         backHome.addEventListener(
             "click",
             function(){
-
                 navigate("/");
-
             }
         );
 
     }
+
+    /* ------------------------------------------------------
+       RESIZE
+       ------------------------------------------------------ */
 
     window.addEventListener(
         "resize",
@@ -2527,7 +2560,6 @@ function initialiseISmartS3(){
             passive:true
         }
     );
-
 }
 
 
@@ -2606,9 +2638,12 @@ function closeFaqItem(item){
     if(plus){
         plus.textContent = "+";
     }
-
 }
 
+
+/* ==========================================================
+   OPEN FAQ PLUS / MINUS
+   ========================================================== */
 
 function openFaqPlus(item){
 
@@ -2620,8 +2655,8 @@ function openFaqPlus(item){
     if(plus){
         plus.textContent = "−";
     }
-
 }
+
 
 
 /* ==========================================================
