@@ -29609,7 +29609,7 @@ span:first-child{
     place-items:center;
 }
 
-.page-ismarts3 .ismarts3-pillow-grid img{
+.page-ismarts3 .ismarts3-pillow-image-grid img{
 
     position:relative;
     z-index:5;
@@ -30633,7 +30633,7 @@ body[data-theme="dark"] .page-ismarts3 .ismarts3-certificate-content strong,
         min-height:340px;
     }
 
-    .page-ismarts3 .ismarts3-pillow-grid img{
+    .page-ismarts3 .ismarts3-pillow-image-grid img{
         max-width:310px;
         max-height:350px;
     }
@@ -30689,7 +30689,7 @@ body[data-theme="dark"] .page-ismarts3 .ismarts3-certificate-content strong,
     }
 
     .page-ismarts3 .ismarts3-product-grid img,
-    .page-ismarts3 .ismarts3-pillow-grid img{
+    .page-ismarts3 .ismarts3-pillow-image-grid img{
         max-width:270px;
         max-height:310px;
     }
@@ -30762,6 +30762,365 @@ body[data-theme="dark"] .page-ismarts3 .ismarts3-certificate-content strong,
         scroll-behavior:auto !important;
     }
 }
+
+/* ==========================================================
+   REFINED SPACING / POSITIONING PASS
+   Mantém a linguagem AlphaMeta, com mais respiro visual.
+   ========================================================== */
+
+.page-ismarts3 .ismarts3-section-heading{
+    margin-bottom:42px;
+}
+
+.page-ismarts3 .ismarts3-section-heading p{
+    margin-top:24px;
+    line-height:1.92;
+}
+
+.page-ismarts3 .section-title{
+    line-height:1.01;
+}
+
+.page-ismarts3 .ismarts3-hero-description{
+    margin-top:32px;
+    line-height:1.9;
+}
+
+.page-ismarts3 .ismarts3-hero-pills{
+    margin-top:28px;
+    gap:10px;
+}
+
+.page-ismarts3 .ismarts3-hero-actions{
+    margin-top:38px;
+    gap:15px;
+}
+
+.page-ismarts3 .ismarts3-hero-copy{
+    padding-right:20px;
+}
+
+.page-ismarts3 .ismarts3-overview-grid,
+.page-ismarts3 .ismarts3-composition-grid,
+.page-ismarts3 .ismarts3-certification-grid,
+.page-ismarts3 .ismarts3-technology-grid{
+    row-gap:22px;
+}
+
+.page-ismarts3 .ismarts3-overview-card h3,
+.page-ismarts3 .ismarts3-composition-card h3,
+.page-ismarts3 .ismarts3-technology-card h3{
+    margin-top:20px;
+}
+
+.page-ismarts3 .ismarts3-overview-card p,
+.page-ismarts3 .ismarts3-composition-card p,
+.page-ismarts3 .ismarts3-technology-card p{
+    margin-top:12px;
+    line-height:1.78;
+}
+
+.page-ismarts3 .ismarts3-benefits-copy .section-title{
+    margin-bottom:4px;
+}
+
+.page-ismarts3 .ismarts3-benefits-copy .lead{
+    margin-top:26px;
+    line-height:1.9;
+}
+
+.page-ismarts3 .ismarts3-benefit-checks{
+    gap:16px;
+    margin-top:32px;
+}
+
+.page-ismarts3 .ismarts3-benefit-check{
+    min-height:34px;
+    gap:12px;
+}
+
+.page-ismarts3 .ismarts3-benefit-check p{
+    font-size:.9rem;
+    line-height:1.62;
+}
+
+.page-ismarts3 .ismarts3-benefits-copy .ismarts3-more-wrap{
+    margin-top:30px;
+}
+
+.page-ismarts3 .ismarts3-product-detail-grid{
+    gap:64px;
+}
+
+.page-ismarts3 .ismarts3-product-card-copy{
+    padding:48px 48px 52px;
+}
+
+.page-ismarts3 .ismarts3-product-card-copy h3{
+    margin-top:17px;
+    line-height:1.05;
+}
+
+.page-ismarts3 .ismarts3-product-card-copy > p{
+    margin-top:24px;
+    line-height:1.86;
+}
+
+.page-ismarts3 .ismarts3-product-spec-list{
+    gap:14px;
+    margin-top:30px;
+}
+
+.page-ismarts3 .ismarts3-product-spec{
+    padding-bottom:12px;
+}
+
+.page-ismarts3 .ismarts3-product-card-copy .ismarts3-more-wrap{
+    margin-top:27px;
+}
+
+.page-ismarts3 .ismarts3-card-buy{
+    margin-top:30px;
+}
+
+.page-ismarts3 .ismarts3-circulation-grid{
+    gap:78px;
+}
+
+.page-ismarts3 .ismarts3-circulation-copy .lead{
+    margin-top:28px;
+    line-height:1.9;
+}
+
+.page-ismarts3 .ismarts3-info-stack{
+    gap:21px;
+    margin-top:34px;
+}
+
+.page-ismarts3 .ismarts3-circulation-copy .ismarts3-more-toggle{
+    margin-top:28px;
+}
+
+/* Imagem real na secção de circulação */
+.page-ismarts3 .ismarts3-circulation-image-wrap{
+    position:relative;
+    z-index:4;
+    width:86%;
+    min-height:390px;
+    display:grid;
+    place-items:center;
+}
+
+.page-ismarts3 .ismarts3-circulation-image-wrap img{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:430px;
+    max-height:470px;
+    object-fit:contain;
+    object-position:center;
+    opacity:1 !important;
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        ) !important;
+    transform:translate3d(0,0,0);
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-ismarts3 .ismarts3-circulation-aura{
+    position:absolute;
+    z-index:1;
+    width:68%;
+    aspect-ratio:1;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(57,211,83,.13),
+            rgba(120,148,176,.08) 36%,
+            transparent 71%
+        );
+    filter:blur(9px);
+}
+
+.page-ismarts3 .ismarts3-circulation-orbit{
+    position:absolute;
+    z-index:2;
+    width:70%;
+    aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(120,148,176,.18);
+    box-shadow:
+        0 0 0 28px rgba(201,217,233,.08),
+        0 0 0 56px rgba(201,217,233,.04);
+}
+
+/* Almofada: enquadramento mais controlado */
+.page-ismarts3 .ismarts3-pillow-frame{
+    min-height:570px;
+}
+
+.page-ismarts3 .ismarts3-pillow-image-grid{
+    position:relative;
+    z-index:4;
+    width:100%;
+    min-height:520px;
+    display:grid;
+    place-items:center;
+    padding:28px 18px 42px;
+}
+
+.page-ismarts3 .ismarts3-pillow-image-grid img{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:460px;
+    max-height:500px;
+    object-fit:contain;
+    object-position:center 48%;
+    opacity:1 !important;
+    filter:
+        drop-shadow(
+            0 28px 40px
+            rgba(0,0,0,.17)
+        ) !important;
+    transform:translate3d(0,-8px,0);
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-ismarts3 .ismarts3-pillow-frame > span{
+    left:28px;
+    bottom:24px;
+}
+
+/* Evita que os botões fiquem colados ao bloco de informação. */
+.page-ismarts3 .ismarts3-more-wrap + .btn,
+.page-ismarts3 .ismarts3-product-card-copy > .btn,
+.page-ismarts3 .ismarts3-pillow-copy > .btn{
+    margin-top:34px;
+}
+
+/* Nos cartões, o botão é uma acção final, não parte da descrição. */
+.page-ismarts3 .ismarts3-product-card-copy .ismarts3-card-buy{
+    margin-top:34px;
+}
+
+@media(max-width:900px){
+
+    .page-ismarts3 .ismarts3-section-heading{
+        margin-bottom:34px;
+    }
+
+    .page-ismarts3 .ismarts3-product-card-copy{
+        padding:42px 38px 46px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-grid{
+        gap:48px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-image-wrap{
+        min-height:340px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-image-wrap img{
+        max-height:390px;
+    }
+
+    .page-ismarts3 .ismarts3-pillow-frame{
+        min-height:500px;
+    }
+
+    .page-ismarts3 .ismarts3-pillow-image-grid{
+        min-height:440px;
+    }
+}
+
+@media(max-width:680px){
+
+    .page-ismarts3 .ismarts3-section-heading{
+        margin-bottom:28px;
+    }
+
+    .page-ismarts3 .ismarts3-section-heading p{
+        margin-top:18px;
+        line-height:1.8;
+    }
+
+    .page-ismarts3 .ismarts3-hero-description{
+        margin-top:25px;
+    }
+
+    .page-ismarts3 .ismarts3-hero-pills{
+        margin-top:25px;
+    }
+
+    .page-ismarts3 .ismarts3-hero-actions{
+        margin-top:31px;
+        gap:11px;
+    }
+
+    .page-ismarts3 .ismarts3-product-card-copy{
+        padding:34px 25px 38px;
+    }
+
+    .page-ismarts3 .ismarts3-product-card-copy > p{
+        margin-top:20px;
+        line-height:1.78;
+    }
+
+    .page-ismarts3 .ismarts3-benefit-checks{
+        margin-top:27px;
+        gap:13px;
+    }
+
+    .page-ismarts3 .ismarts3-product-card-copy .ismarts3-more-wrap{
+        margin-top:24px;
+    }
+
+    .page-ismarts3 .ismarts3-card-buy{
+        margin-top:27px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-image-wrap{
+        width:92%;
+        min-height:330px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-image-wrap img{
+        max-width:330px;
+        max-height:350px;
+    }
+
+    .page-ismarts3 .ismarts3-circulation-copy .ismarts3-more-toggle{
+        margin-top:24px;
+    }
+
+    .page-ismarts3 .ismarts3-pillow-frame{
+        min-height:420px;
+    }
+
+    .page-ismarts3 .ismarts3-pillow-image-grid{
+        min-height:365px;
+        padding:18px 8px 40px;
+    }
+
+    .page-ismarts3 .ismarts3-pillow-image-grid img{
+        max-width:330px;
+        max-height:350px;
+        transform:translate3d(0,-4px,0);
+    }
+
+}
+
 
 
  /* ==========================================================
