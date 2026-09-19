@@ -82,7 +82,7 @@ function alphaHero(){
     return `
 
     <section
-        class="hero alpha-hero"
+        class="alpha-hero"
         id="alpha-top">
 
 
@@ -103,14 +103,14 @@ function alphaHero(){
         </div>
 
 
-        <div class="container hero-grid">
+        <div class="alpha-hero-grid">
 
 
             <!-- ==================================================
                  HERO CONTENT
                  ================================================== -->
 
-            <div class="hero-content reveal">
+            <div class="alpha-hero-copy reveal">
 
 
                 <span class="alpha-eyebrow">
@@ -242,7 +242,7 @@ function alphaHero(){
                  HERO PRODUCT
                  ================================================== -->
 
-            <div class="hero-visual reveal-right">
+            <div class="alpha-hero-visual reveal-right">
 
 
                 <div class="alpha-hero-product floating">
@@ -2290,6 +2290,67 @@ function initialiseAlpha(){
         );
 
     }
+
+
+    /* ======================================================
+       IMAGE FALLBACK
+       ====================================================== */
+
+    root.querySelectorAll("img").forEach(img => {
+
+        img.addEventListener("error", () => {
+
+            if(img.dataset.fallbackApplied === "true") return;
+
+            img.dataset.fallbackApplied = "true";
+            img.style.display = "none";
+
+            const frame = img.closest(
+                ".alpha-hero-product, .alpha-product-detail-frame"
+            );
+
+            if(
+                !frame ||
+                frame.querySelector(".alpha-image-fallback")
+            ){
+
+                return;
+
+            }
+
+
+            const fallback =
+                document.createElement("div");
+
+
+            fallback.className =
+                "alpha-image-fallback";
+
+
+            fallback.innerHTML = `
+
+                <span>
+                    ALPHA
+                </span>
+
+                <strong>
+                    VMAX
+                </strong>
+
+                <small>
+                    imagem indisponível
+                </small>
+
+            `;
+
+
+            frame.appendChild(
+                fallback
+            );
+
+        });
+
+    });
 
 
     /* ======================================================
