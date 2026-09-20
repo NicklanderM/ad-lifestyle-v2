@@ -70791,7 +70791,7 @@ body.dark
 }
 
 .page-alpha .alpha-hero-copy{
-    grid-column:2;
+    grid-column:1;
     grid-row:1;
     max-width:680px;
     padding-left:0;
@@ -70949,7 +70949,7 @@ body.dark
    ========================================================== */
 
 .page-alpha .alpha-hero-product{
-    grid-column:1;
+    grid-column:2;
     grid-row:1;
     position:relative;
     min-height:610px;
