@@ -2,6 +2,7 @@
    AD LIFESTYLE V2
    ABOUT PAGE
    Premium / Editorial / Institutional
+   Base visual: EVENTS
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
@@ -157,7 +158,10 @@ function renderHero(){
                                 class="about-button about-button-gold"
                                 data-scroll-target="#about-ecosystem"
                             >
-                                <span>Descobrir o nosso universo</span>
+                                <span>
+                                    Descobrir o nosso universo
+                                </span>
+
                                 ${icons.arrow}
                             </a>
 
@@ -166,7 +170,9 @@ function renderHero(){
                                 class="about-button about-button-outline"
                                 data-scroll-target="#about-story"
                             >
-                                <span>Conhecer a nossa história</span>
+                                <span>
+                                    Conhecer a nossa história
+                                </span>
                             </a>
 
                         </div>
@@ -182,6 +188,8 @@ function renderHero(){
                                 <img
                                     src="${ASSETS.abdoulahi}"
                                     alt="Abdoulahi Doucoure"
+                                    loading="eager"
+                                    decoding="async"
                                 >
 
                             </div>
@@ -197,6 +205,7 @@ function renderHero(){
                                 <img
                                     src="${ASSETS.logo}"
                                     alt="AD Lifestyle"
+                                    loading="eager"
                                 >
 
                             </div>
@@ -269,8 +278,15 @@ function renderManifesto(){
             <div class="about-container about-manifesto-grid">
 
                 <div class="about-section-label">
-                    <strong>02</strong>
-                    <span>MANIFESTO</span>
+
+                    <strong>
+                        02
+                    </strong>
+
+                    <span>
+                        MANIFESTO
+                    </span>
+
                 </div>
 
                 <div class="about-manifesto-content">
@@ -325,7 +341,9 @@ function renderWhoWeAre(){
 
                         <h2>
                             Uma organização construída
-                            <span>à volta das pessoas.</span>
+                            <span>
+                                à volta das pessoas.
+                            </span>
                         </h2>
 
                     </div>
@@ -405,7 +423,9 @@ function renderEcosystemIntro(){
 
                         <h2>
                             Dois universos.
-                            <span>Uma direcção.</span>
+                            <span>
+                                Uma direcção.
+                            </span>
                         </h2>
 
                     </div>
@@ -422,8 +442,13 @@ function renderEcosystemIntro(){
 
                     <div class="about-ecosystem-side">
 
-                        <small>01</small>
-                        <strong>WELLNESS</strong>
+                        <small>
+                            01
+                        </small>
+
+                        <strong>
+                            WELLNESS
+                        </strong>
 
                     </div>
 
@@ -434,6 +459,7 @@ function renderEcosystemIntro(){
                         <img
                             src="${ASSETS.logo}"
                             alt="AD Lifestyle"
+                            loading="lazy"
                         >
 
                     </div>
@@ -442,8 +468,13 @@ function renderEcosystemIntro(){
 
                     <div class="about-ecosystem-side about-ecosystem-side-right">
 
-                        <small>02</small>
-                        <strong>EVOLUTION</strong>
+                        <small>
+                            02
+                        </small>
+
+                        <strong>
+                            EVOLUTION
+                        </strong>
 
                     </div>
 
@@ -477,6 +508,8 @@ function renderBzzworld(){
                         <img
                             src="${ASSETS.bzzworld}"
                             alt="BZZWORLD"
+                            loading="lazy"
+                            decoding="async"
                         >
 
                     </div>
@@ -627,6 +660,8 @@ function renderAcademy21(){
                         <img
                             src="${ASSETS.academy21}"
                             alt="Academy Twenty One"
+                            loading="lazy"
+                            decoding="async"
                         >
 
                     </div>
@@ -659,11 +694,15 @@ function renderLeadership(){
                     <img
                         src="${ASSETS.abdoulahi}"
                         alt="Abdoulahi Doucoure"
+                        loading="lazy"
+                        decoding="async"
                     >
 
                     <div class="about-leadership-image-info">
 
-                        <span>VISION</span>
+                        <span>
+                            VISION
+                        </span>
 
                         <strong>
                             AD LIFESTYLE
@@ -685,7 +724,9 @@ function renderLeadership(){
 
                     <h2>
                         Abdoulahi
-                        <span>Doucoure</span>
+                        <span>
+                            Doucoure
+                        </span>
                     </h2>
 
                     <div class="about-leadership-line"></div>
@@ -734,7 +775,9 @@ function renderDirection(){
 
                     <h2>
                         O que nos orienta
-                        <span>todos os dias.</span>
+                        <span>
+                            todos os dias.
+                        </span>
                     </h2>
 
                 </div>
@@ -743,7 +786,9 @@ function renderDirection(){
 
                     <article>
 
-                        <span>01</span>
+                        <span>
+                            01
+                        </span>
 
                         <h3>
                             Visão
@@ -759,7 +804,9 @@ function renderDirection(){
 
                     <article class="about-direction-main">
 
-                        <span>02</span>
+                        <span>
+                            02
+                        </span>
 
                         <h3>
                             Missão
@@ -776,7 +823,9 @@ function renderDirection(){
 
                     <article>
 
-                        <span>03</span>
+                        <span>
+                            03
+                        </span>
 
                         <h3>
                             Valores
@@ -863,7 +912,9 @@ function renderJourney(){
 
                     <h2>
                         Uma construção
-                        <span>contínua.</span>
+                        <span>
+                            contínua.
+                        </span>
                     </h2>
 
                 </div>
@@ -878,12 +929,23 @@ function renderJourney(){
                             </div>
 
                             <div class="about-journey-title">
-                                <small>${item[0]}</small>
-                                <h3>${item[1]}</h3>
+
+                                <small>
+                                    ${item[0]}
+                                </small>
+
+                                <h3>
+                                    ${item[1]}
+                                </h3>
+
                             </div>
 
                             <div class="about-journey-text">
-                                <p>${item[2]}</p>
+
+                                <p>
+                                    ${item[2]}
+                                </p>
+
                             </div>
 
                         </article>
@@ -921,7 +983,9 @@ function renderFuture(){
                     <h2>
                         Hoje construímos
                         a organização que
-                        <span>queremos ver amanhã.</span>
+                        <span>
+                            queremos ver amanhã.
+                        </span>
                     </h2>
 
                     <p>
@@ -957,6 +1021,7 @@ function renderCTA(){
                         <img
                             src="${ASSETS.logo}"
                             alt="AD Lifestyle"
+                            loading="lazy"
                         >
 
                     </div>
@@ -969,7 +1034,9 @@ function renderCTA(){
 
                         <h2>
                             O próximo passo
-                            <span>começa aqui.</span>
+                            <span>
+                                começa aqui.
+                            </span>
                         </h2>
 
                         <p>
@@ -1050,8 +1117,8 @@ function initialiseAbout(){
                 }
 
                 target.scrollIntoView({
-                    behavior:"smooth",
-                    block:"start"
+                    behavior: "smooth",
+                    block: "start"
                 });
 
             });
@@ -1079,7 +1146,7 @@ function initialiseAbout(){
         });
 
     /* ------------------------------------------------------
-       Ripple
+       Buttons
        ------------------------------------------------------ */
 
     document
@@ -1103,7 +1170,6 @@ function initialiseAbout(){
             .about-manifesto-content,
             .about-section-heading,
             .about-who-card,
-            .about-ecosystem-heading,
             .about-ecosystem-map,
             .about-brand,
             .about-leadership-grid,
@@ -1114,6 +1180,11 @@ function initialiseAbout(){
             .about-future-content,
             .about-cta-box
         `);
+
+    /*
+       Os elementos já ficam visíveis por CSS.
+       O observer apenas acrescenta a animação.
+    */
 
     if("IntersectionObserver" in window){
 
@@ -1139,8 +1210,8 @@ function initialiseAbout(){
 
                 },
                 {
-                    threshold:.12,
-                    rootMargin:"0px 0px -40px"
+                    threshold: 0.12,
+                    rootMargin: "0px 0px -40px"
                 }
             );
 
@@ -1175,7 +1246,8 @@ function initialiseAbout(){
     if(
         hero &&
         heroImage &&
-        window.matchMedia("(pointer:fine)").matches
+        window.matchMedia("(pointer:fine)").matches &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ){
 
         hero.addEventListener(
@@ -1187,11 +1259,11 @@ function initialiseAbout(){
 
                 const x =
                     ((event.clientX - rect.left) /
-                        rect.width) - .5;
+                        rect.width) - 0.5;
 
                 const y =
                     ((event.clientY - rect.top) /
-                        rect.height) - .5;
+                        rect.height) - 0.5;
 
                 heroImage.style.transform = `
                     translate(
