@@ -1,14 +1,13 @@
 /* ==========================================================
    AD LIFESTYLE V2
    ALPHA.JS
-   Premium Alpha Vmax Product Page
+   ALPHA VMAX — PREMIUM PRODUCT PAGE
    Modelo estrutural: iSMART S3 / AlphaMeta
    ========================================================== */
 
 import { applyTheme } from "../../js/theme.js";
 import { navigate } from "../../js/router.js";
 import { ripple, stagger } from "../../js/animations.js";
-
 
 /* ==========================================================
    CONFIG
@@ -19,7 +18,6 @@ const PRODUCT_IMAGE =
 
 const WHATSAPP_NUMBER =
     "244924964666";
-
 
 /* ==========================================================
    LOAD
@@ -32,9 +30,7 @@ export function loadAlpha(){
     const app =
         document.getElementById("app");
 
-    if(!app){
-        return;
-    }
+    if(!app) return;
 
     app.innerHTML = `
 
@@ -42,47 +38,35 @@ export function loadAlpha(){
             class="page-alpha"
             data-product-page="alpha-vmax">
 
-            ${alphaHero()}
-
-            ${alphaOverview()}
-
-            ${alphaComposition()}
-
-            ${alphaBenefits()}
-
-            ${alphaProductDetail()}
-
-            ${alphaIngredients()}
-
-            ${alphaUsage()}
-
-            ${alphaPerformance()}
-
-            ${alphaFaq()}
-
-            ${alphaDisclaimer()}
-
-            ${alphaCta()}
+            ${hero()}
+            ${overview()}
+            ${composition()}
+            ${benefits()}
+            ${productDetail()}
+            ${ingredients()}
+            ${usage()}
+            ${performance()}
+            ${faq()}
+            ${information()}
+            ${cta()}
 
         </div>
 
     `;
 
     initialiseAlpha();
-
 }
-
 
 /* ==========================================================
    HERO
    ========================================================== */
 
-function alphaHero(){
+function hero(){
 
     return `
 
     <section
-        class="hero alpha-hero"
+        class="section hero alpha-hero"
         id="alpha-top">
 
         <div
@@ -91,19 +75,13 @@ function alphaHero(){
 
             <span class="alpha-orb alpha-orb-1"></span>
             <span class="alpha-orb alpha-orb-2"></span>
-            <span class="alpha-orb alpha-orb-3"></span>
 
             <span class="alpha-orbit alpha-orbit-1"></span>
             <span class="alpha-orbit alpha-orbit-2"></span>
 
         </div>
 
-
         <div class="container alpha-hero-grid">
-
-            <!-- ==================================================
-                 HERO COPY
-                 ================================================== -->
 
             <div class="alpha-hero-copy reveal">
 
@@ -209,17 +187,19 @@ function alphaHero(){
             </div>
 
 
-            <!-- ==================================================
-                 HERO PRODUCT
-                 ================================================== -->
-
             <div class="alpha-hero-product reveal-right">
 
                 <div class="alpha-product-aura"></div>
 
-                <div class="alpha-product-ring alpha-product-ring-1"></div>
+                <div
+                    class="alpha-product-ring
+                           alpha-product-ring-1">
+                </div>
 
-                <div class="alpha-product-ring alpha-product-ring-2"></div>
+                <div
+                    class="alpha-product-ring
+                           alpha-product-ring-2">
+                </div>
 
                 <div class="alpha-product-grid"></div>
 
@@ -250,15 +230,13 @@ function alphaHero(){
     </section>
 
     `;
-
 }
-
 
 /* ==========================================================
    OVERVIEW
    ========================================================== */
 
-function alphaOverview(){
+function overview(){
 
     return `
 
@@ -268,27 +246,29 @@ function alphaOverview(){
 
         <div class="container">
 
-            <div class="alpha-section-heading alpha-section-heading-center reveal">
+            <div class="section-center reveal">
 
                 <span class="eyebrow">
                     VISÃO GERAL
                 </span>
 
                 <h2 class="section-title">
+
                     Vitalidade.
+
                     <span>
                         Energia. Performance.
                     </span>
+
                 </h2>
 
-                <p>
+                <p class="lead">
                     O Alpha Vmax é apresentado como um complemento
                     para uma rotina masculina orientada para bem-estar,
                     disciplina, energia e vitalidade.
                 </p>
 
             </div>
-
 
             <div class="alpha-overview-grid">
 
@@ -322,7 +302,6 @@ function alphaOverview(){
 
             </div>
 
-
             <div class="alpha-overview-note reveal">
 
                 <strong>
@@ -342,7 +321,6 @@ function alphaOverview(){
     </section>
 
     `;
-
 }
 
 
@@ -361,8 +339,12 @@ function overviewCard(
             ${number}
         </span>
 
-        <div class="alpha-card-icon">
+        <div
+            class="alpha-card-icon"
+            aria-hidden="true">
+
             ${icon}
+
         </div>
 
         <h3>
@@ -376,7 +358,6 @@ function overviewCard(
     </article>
 
     `;
-
 }
 
 
@@ -384,7 +365,7 @@ function overviewCard(
    COMPOSITION
    ========================================================== */
 
-function alphaComposition(){
+function composition(){
 
     return `
 
@@ -401,16 +382,20 @@ function alphaComposition(){
                 </span>
 
                 <h2 class="section-title">
+
                     Uma composição
+
                     <span>
                         de inspiração botânica.
                     </span>
+
                 </h2>
 
                 <p>
-                    A apresentação do produto destaca quatro matérias-primas
-                    principais, associadas no material a energia, vitalidade,
-                    circulação e bem-estar.
+                    A apresentação do produto destaca quatro
+                    matérias-primas principais, associadas no
+                    material a energia, vitalidade, circulação
+                    e bem-estar.
                 </p>
 
             </div>
@@ -449,99 +434,76 @@ function alphaComposition(){
             </div>
 
 
-            <div class="alpha-more-wrap">
+            ${moreButton(
+                "composition",
+                "Ver detalhes da composição",
+                "Ocultar detalhes da composição",
 
-                <button
-                    type="button"
-                    class="alpha-more-toggle"
-                    data-more-toggle="composition"
-                    data-open-label="Ver detalhes da composição"
-                    data-close-label="Ocultar detalhes da composição"
-                    aria-expanded="false"
-                    aria-controls="alpha-composition-more">
+                `
 
-                    <span>
-                        Ver detalhes da composição
-                    </span>
+                <div class="alpha-detail-grid">
 
-                    <i aria-hidden="true">
-                        +
-                    </i>
+                    ${detailCard(
+                        "01 — CORDYCEPS",
+                        "Energia e vitalidade",
+                        "O Cordyceps é apresentado no material de comunicação do Alpha Vmax como uma das matérias-primas orgânicas da fórmula.",
+                        [
+                            "Matéria-prima de origem botânica",
+                            "Associado à energia no material do produto",
+                            "Integra a composição Alpha Vmax"
+                        ]
+                    )}
 
-                </button>
+                    ${detailCard(
+                        "02 — BAGAS DE GOJI",
+                        "Botânico seleccionado",
+                        "As bagas de Goji aparecem entre as matérias-primas orgânicas apresentadas para o Alpha Vmax.",
+                        [
+                            "Ingrediente vegetal",
+                            "Parte da composição botânica",
+                            "Associado à vitalidade no material apresentado"
+                        ]
+                    )}
 
+                    ${detailCard(
+                        "03 — GANODERMA",
+                        "Cogumelo tradicional",
+                        "O Ganoderma é apresentado como uma das matérias-primas orgânicas utilizadas na formulação.",
+                        [
+                            "Ingrediente de origem natural",
+                            "Tradicionalmente utilizado em produtos de bem-estar",
+                            "Integra a fórmula Alpha Vmax"
+                        ]
+                    )}
 
-                <div
-                    id="alpha-composition-more"
-                    class="alpha-more-panel"
-                    data-more-panel="composition"
-                    aria-hidden="true">
+                    ${detailCard(
+                        "04 — GRAINHAS DE UVA",
+                        "Circulação e bem-estar",
+                        "As grainhas de uva são destacadas no material do produto como uma das matérias-primas orgânicas.",
+                        [
+                            "Ingrediente de origem vegetal",
+                            "Associado à circulação no material apresentado",
+                            "Relacionado com protecção cardiovascular na apresentação"
+                        ]
+                    )}
 
-                    <div class="alpha-detail-grid">
-
-                        ${detailCard(
-                            "01 — CORDYCEPS",
-                            "Energia e vitalidade",
-                            "O Cordyceps é apresentado no material de comunicação do Alpha Vmax como uma das matérias-primas orgânicas da fórmula.",
-                            [
-                                "Matéria-prima de origem botânica",
-                                "Associado à energia no material do produto",
-                                "Integra a composição Alpha Vmax"
-                            ]
-                        )}
-
-                        ${detailCard(
-                            "02 — BAGAS DE GOJI",
-                            "Botânico seleccionado",
-                            "As bagas de Goji aparecem entre as matérias-primas orgânicas apresentadas para o Alpha Vmax.",
-                            [
-                                "Ingrediente vegetal",
-                                "Parte da composição botânica",
-                                "Associado à vitalidade no material apresentado"
-                            ]
-                        )}
-
-                        ${detailCard(
-                            "03 — GANODERMA",
-                            "Cogumelo tradicional",
-                            "O Ganoderma é apresentado como uma das matérias-primas orgânicas utilizadas na formulação.",
-                            [
-                                "Ingrediente de origem natural",
-                                "Tradicionalmente utilizado em produtos de bem-estar",
-                                "Integra a fórmula Alpha Vmax"
-                            ]
-                        )}
-
-                        ${detailCard(
-                            "04 — GRAINHAS DE UVA",
-                            "Circulação e bem-estar",
-                            "As grainhas de uva são destacadas no material do produto como uma das matérias-primas orgânicas.",
-                            [
-                                "Ingrediente de origem vegetal",
-                                "Associado à circulação no material apresentado",
-                                "Relacionado com protecção cardiovascular na apresentação"
-                            ]
-                        )}
-
-                        ${detailCard(
-                            "INFORMAÇÃO IMPORTANTE",
-                            "Comunicação responsável",
-                            "As características apresentadas nesta página baseiam-se no material de apresentação disponibilizado para o Alpha Vmax. Estas informações não constituem diagnóstico, tratamento ou garantia de resultados médicos.",
-                            []
-                        )}
-
-                    </div>
+                    ${detailCard(
+                        "INFORMAÇÃO IMPORTANTE",
+                        "Comunicação responsável",
+                        "As características apresentadas nesta página baseiam-se no material de apresentação disponibilizado para o Alpha Vmax. Estas informações não constituem diagnóstico, tratamento ou garantia de resultados médicos.",
+                        []
+                    )}
 
                 </div>
 
-            </div>
+                `
+            )}
 
         </div>
 
     </section>
 
     `;
-
 }
 
 
@@ -583,7 +545,6 @@ function ingredientCard(
     </article>
 
     `;
-
 }
 
 
@@ -591,7 +552,7 @@ function ingredientCard(
    BENEFITS
    ========================================================== */
 
-function alphaBenefits(){
+function benefits(){
 
     return `
 
@@ -610,10 +571,13 @@ function alphaBenefits(){
                     </span>
 
                     <h2 class="section-title">
+
                         Uma proposta de
+
                         <span>
                             vitalidade e performance.
                         </span>
+
                     </h2>
 
                     <p class="alpha-benefits-intro">
@@ -651,59 +615,37 @@ function alphaBenefits(){
                     </div>
 
 
-                    <div class="alpha-more-wrap">
+                    ${moreButton(
+                        "benefits",
+                        "Ver informações funcionais",
+                        "Ocultar informações",
 
-                        <button
-                            type="button"
-                            class="alpha-more-toggle"
-                            data-more-toggle="benefits"
-                            data-open-label="Ver informações funcionais"
-                            data-close-label="Ocultar informações"
-                            aria-expanded="false"
-                            aria-controls="alpha-benefits-more">
+                        `
 
-                            <span>
-                                Ver informações funcionais
-                            </span>
+                        <div class="alpha-detail-grid">
 
-                            <i aria-hidden="true">
-                                +
-                            </i>
+                            ${simpleDetailCard(
+                                "VITALIDADE",
+                                "Rotina masculina",
+                                "O material promocional do Alpha Vmax posiciona o produto dentro de uma proposta de vitalidade e bem-estar masculino."
+                            )}
 
-                        </button>
+                            ${simpleDetailCard(
+                                "PERFORMANCE",
+                                "Energia e disciplina",
+                                "A proposta da linha combina alimentação, hábitos consistentes, actividade física e desenvolvimento pessoal."
+                            )}
 
-
-                        <div
-                            id="alpha-benefits-more"
-                            class="alpha-more-panel"
-                            data-more-panel="benefits"
-                            aria-hidden="true">
-
-                            <div class="alpha-detail-grid">
-
-                                ${simpleDetailCard(
-                                    "VITALIDADE",
-                                    "Rotina masculina",
-                                    "O material promocional do Alpha Vmax posiciona o produto dentro de uma proposta de vitalidade e bem-estar masculino."
-                                )}
-
-                                ${simpleDetailCard(
-                                    "PERFORMANCE",
-                                    "Energia e disciplina",
-                                    "A proposta da linha combina alimentação, hábitos consistentes, actividade física e desenvolvimento pessoal."
-                                )}
-
-                                ${simpleDetailCard(
-                                    "SAÚDE E BEM-ESTAR",
-                                    "Comunicação responsável",
-                                    "Alegações relativas a hormonas, fertilidade, circulação, função renal ou condições cardiovasculares devem ser confirmadas através da documentação oficial e de um profissional de saúde."
-                                )}
-
-                            </div>
+                            ${simpleDetailCard(
+                                "SAÚDE E BEM-ESTAR",
+                                "Comunicação responsável",
+                                "Alegações relativas a hormonas, fertilidade, circulação, função renal ou condições cardiovasculares devem ser confirmadas através da documentação oficial e de um profissional de saúde."
+                            )}
 
                         </div>
 
-                    </div>
+                        `
+                    )}
 
                 </div>
 
@@ -736,7 +678,6 @@ function alphaBenefits(){
     </section>
 
     `;
-
 }
 
 
@@ -744,7 +685,7 @@ function benefitCheck(text){
 
     return `
 
-    <div class="alpha-benefit-check">
+    <div class="alpha-benefit-check reveal">
 
         <span>
             ✓
@@ -757,7 +698,6 @@ function benefitCheck(text){
     </div>
 
     `;
-
 }
 
 
@@ -765,7 +705,7 @@ function benefitCheck(text){
    PRODUCT DETAIL
    ========================================================== */
 
-function alphaProductDetail(){
+function productDetail(){
 
     return `
 
@@ -782,17 +722,20 @@ function alphaProductDetail(){
                 </span>
 
                 <h2 class="section-title">
+
                     Uma fórmula de inspiração
+
                     <span>
                         botânica.
                     </span>
+
                 </h2>
 
                 <p>
                     O Alpha Vmax é apresentado como um complemento
-                    de bem-estar masculino, reunindo quatro matérias-primas
-                    de origem botânica numa proposta de vitalidade,
-                    energia e performance.
+                    de bem-estar masculino, reunindo quatro
+                    matérias-primas de origem botânica numa proposta
+                    de vitalidade, energia e performance.
                 </p>
 
             </div>
@@ -808,16 +751,19 @@ function alphaProductDetail(){
 
                         <div class="alpha-detail-ring"></div>
 
-                        <div class="alpha-detail-ring alpha-detail-ring-secondary"></div>
+                        <div
+                            class="alpha-detail-ring
+                                   alpha-detail-ring-secondary">
+                        </div>
 
                         <div class="alpha-detail-grid-decoration"></div>
 
                         <img
                             src="${PRODUCT_IMAGE}"
                             alt="Alpha Vmax"
+                            class="alpha-product-detail-image"
                             loading="lazy"
                             decoding="async"
-                            class="alpha-product-detail-image"
                         >
 
                         <div class="alpha-detail-caption">
@@ -844,7 +790,8 @@ function alphaProductDetail(){
                     </span>
 
                     <h3>
-                        Uma abordagem orientada para a rotina.
+                        Uma abordagem orientada
+                        para a rotina.
                     </h3>
 
                     <p class="lead">
@@ -852,7 +799,6 @@ function alphaProductDetail(){
                         disciplina, actividade e hábitos de bem-estar
                         numa experiência coerente.
                     </p>
-
 
                     <div class="alpha-product-spec-grid">
 
@@ -891,7 +837,6 @@ function alphaProductDetail(){
     </section>
 
     `;
-
 }
 
 
@@ -924,7 +869,6 @@ function productSpec(
     </div>
 
     `;
-
 }
 
 
@@ -932,7 +876,7 @@ function productSpec(
    INGREDIENTS
    ========================================================== */
 
-function alphaIngredients(){
+function ingredients(){
 
     return `
 
@@ -942,20 +886,23 @@ function alphaIngredients(){
 
         <div class="container">
 
-            <div class="alpha-section-heading alpha-section-heading-center reveal">
+            <div class="section-center reveal">
 
-                <span class="eyebrow">
+                <span class="label">
                     MATÉRIAS-PRIMAS
                 </span>
 
                 <h2 class="section-title">
+
                     Quatro elementos
+
                     <span>
                         numa fórmula diferenciada.
                     </span>
+
                 </h2>
 
-                <p>
+                <p class="lead">
                     Uma combinação de matérias-primas apresentada
                     para acompanhar uma proposta de bem-estar premium.
                 </p>
@@ -1004,14 +951,14 @@ function alphaIngredients(){
 
             <div class="alpha-ingredient-note reveal">
 
-                <strong>
+                <span>
                     ALPHAVMAX
-                </strong>
+                </span>
 
                 <p>
-                    A apresentação do produto identifica a fórmula como
-                    uma mistura botânica em pó, reforçando a identidade
-                    natural da linha.
+                    A apresentação do produto identifica a fórmula
+                    como uma mistura botânica em pó, reforçando a
+                    identidade natural da linha.
                 </p>
 
             </div>
@@ -1021,7 +968,6 @@ function alphaIngredients(){
     </section>
 
     `;
-
 }
 
 
@@ -1062,7 +1008,6 @@ function ingredientFeature(
     </article>
 
     `;
-
 }
 
 
@@ -1070,7 +1015,7 @@ function ingredientFeature(
    USAGE
    ========================================================== */
 
-function alphaUsage(){
+function usage(){
 
     return `
 
@@ -1080,20 +1025,23 @@ function alphaUsage(){
 
         <div class="container">
 
-            <div class="alpha-section-heading alpha-section-heading-center reveal">
+            <div class="section-center reveal">
 
-                <span class="eyebrow">
+                <span class="label">
                     MODO DE USO
                 </span>
 
                 <h2 class="section-title">
+
                     Uma rotina
+
                     <span>
                         progressiva.
                     </span>
+
                 </h2>
 
-                <p>
+                <p class="lead">
                     O material de apresentação disponibilizado
                     indica uma utilização progressiva por caixas.
                 </p>
@@ -1137,12 +1085,11 @@ function alphaUsage(){
                 </span>
 
                 <p>
-                    A utilização deve respeitar a embalagem
-                    e as orientações oficiais do produto.
-                    Pessoas com doenças, que utilizem medicamentos
-                    ou que tenham dúvidas sobre a utilização de
-                    suplementos devem procurar orientação de
-                    um profissional de saúde.
+                    A utilização deve respeitar a embalagem e as
+                    orientações oficiais do produto. Pessoas com
+                    doenças, que utilizem medicamentos ou que tenham
+                    dúvidas sobre suplementos devem procurar orientação
+                    de um profissional de saúde.
                 </p>
 
             </div>
@@ -1152,7 +1099,6 @@ function alphaUsage(){
     </section>
 
     `;
-
 }
 
 
@@ -1185,7 +1131,6 @@ function usageStep(
     </article>
 
     `;
-
 }
 
 
@@ -1193,7 +1138,7 @@ function usageStep(
    PERFORMANCE
    ========================================================== */
 
-function alphaPerformance(){
+function performance(){
 
     return `
 
@@ -1203,20 +1148,23 @@ function alphaPerformance(){
 
         <div class="container">
 
-            <div class="alpha-section-heading alpha-section-heading-center reveal">
+            <div class="section-center reveal">
 
-                <span class="eyebrow">
+                <span class="label">
                     FILOSOFIA ALPHA
                 </span>
 
                 <h2 class="section-title">
+
                     Performance começa
+
                     <span>
                         na rotina.
                     </span>
+
                 </h2>
 
-                <p>
+                <p class="lead">
                     O conceito Alpha Vmax combina disciplina,
                     vitalidade, hábitos saudáveis e desenvolvimento pessoal.
                 </p>
@@ -1258,10 +1206,10 @@ function alphaPerformance(){
                 </h3>
 
                 <p>
-                    Mais do que uma fórmula, o conceito Alpha representa
-                    uma mentalidade baseada em disciplina, consistência,
-                    confiança, actividade física, alimentação equilibrada
-                    e evolução contínua.
+                    Mais do que uma fórmula, o conceito Alpha
+                    representa uma mentalidade baseada em disciplina,
+                    consistência, confiança, actividade física,
+                    alimentação equilibrada e evolução contínua.
                 </p>
 
             </div>
@@ -1271,7 +1219,6 @@ function alphaPerformance(){
     </section>
 
     `;
-
 }
 
 
@@ -1300,7 +1247,6 @@ function performanceCard(
     </article>
 
     `;
-
 }
 
 
@@ -1308,7 +1254,7 @@ function performanceCard(
    FAQ
    ========================================================== */
 
-function alphaFaq(){
+function faq(){
 
     return `
 
@@ -1318,20 +1264,23 @@ function alphaFaq(){
 
         <div class="container-sm">
 
-            <div class="alpha-section-heading alpha-section-heading-center reveal">
+            <div class="section-center reveal">
 
-                <span class="eyebrow">
+                <span class="label">
                     PERGUNTAS FREQUENTES
                 </span>
 
                 <h2 class="section-title">
+
                     Tudo sobre
+
                     <span>
                         o Alpha Vmax.
                     </span>
+
                 </h2>
 
-                <p>
+                <p class="lead">
                     Respostas para as perguntas mais relevantes
                     sobre composição, utilização e posicionamento.
                 </p>
@@ -1344,7 +1293,8 @@ function alphaFaq(){
                 ${faqItem(
                     "01",
                     "O que é o Alpha Vmax?",
-                    "O Alpha Vmax é apresentado como um produto de inspiração botânica destinado a integrar uma rotina masculina orientada para vitalidade, energia, desempenho e bem-estar."
+                    "O Alpha Vmax é apresentado como um produto de inspiração botânica destinado a integrar uma rotina masculina orientada para vitalidade, energia, desempenho e bem-estar.",
+                    true
                 )}
 
                 ${faqItem(
@@ -1396,14 +1346,14 @@ function alphaFaq(){
     </section>
 
     `;
-
 }
 
 
 function faqItem(
     number,
-    question,
-    answer
+    questionText,
+    answerText,
+    isOpen = false
 ){
 
     const id =
@@ -1411,12 +1361,13 @@ function faqItem(
 
     return `
 
-    <article class="alpha-faq-item">
+    <article
+        class="alpha-faq-item ${isOpen ? "active" : ""}">
 
         <button
             type="button"
             class="alpha-faq-question"
-            aria-expanded="false"
+            aria-expanded="${isOpen}"
             aria-controls="${id}">
 
             <span class="alpha-faq-number">
@@ -1424,13 +1375,15 @@ function faqItem(
             </span>
 
             <span class="alpha-faq-text">
-                ${question}
+                ${questionText}
             </span>
 
             <span
                 class="alpha-faq-plus"
                 aria-hidden="true">
-                +
+
+                ${isOpen ? "−" : "+"}
+
             </span>
 
         </button>
@@ -1439,10 +1392,10 @@ function faqItem(
         <div
             id="${id}"
             class="alpha-faq-answer"
-            aria-hidden="true">
+            aria-hidden="${!isOpen}">
 
             <p>
-                ${answer}
+                ${answerText}
             </p>
 
         </div>
@@ -1450,25 +1403,25 @@ function faqItem(
     </article>
 
     `;
-
 }
 
 
 /* ==========================================================
-   DISCLAIMER
+   INFORMATION
    ========================================================== */
 
-function alphaDisclaimer(){
+function information(){
 
     return `
 
-    <section class="alpha-disclaimer">
+    <section
+        class="section alpha-information-section">
 
         <div class="container">
 
-            <div class="alpha-disclaimer-box reveal">
+            <div class="alpha-information-box reveal">
 
-                <div class="alpha-disclaimer-icon">
+                <div class="alpha-information-icon">
                     i
                 </div>
 
@@ -1478,9 +1431,10 @@ function alphaDisclaimer(){
                         INFORMAÇÃO IMPORTANTE
                     </span>
 
-                    <h3>
-                        Comunicação responsável sobre o Alpha Vmax
-                    </h3>
+                    <h2>
+                        Comunicação responsável
+                        sobre o Alpha Vmax
+                    </h2>
 
                     <p>
                         As características, propriedades e alegações
@@ -1490,11 +1444,11 @@ function alphaDisclaimer(){
                     </p>
 
                     <p>
-                        Informações relacionadas com efeitos terapêuticos,
-                        alterações fisiológicas ou benefícios clínicos
-                        devem ser confirmadas através de documentação
-                        técnica, evidência oficial e orientação profissional
-                        adequada.
+                        Informações relacionadas com efeitos
+                        terapêuticos, alterações fisiológicas ou
+                        benefícios clínicos devem ser confirmadas
+                        através de documentação técnica, evidência
+                        oficial e orientação profissional adequada.
                     </p>
 
                 </div>
@@ -1506,7 +1460,6 @@ function alphaDisclaimer(){
     </section>
 
     `;
-
 }
 
 
@@ -1514,7 +1467,7 @@ function alphaDisclaimer(){
    CTA
    ========================================================== */
 
-function alphaCta(){
+function cta(){
 
     return `
 
@@ -1533,10 +1486,13 @@ function alphaCta(){
                     </span>
 
                     <h2>
+
                         Eleve a sua rotina
+
                         <span>
                             para outro nível.
                         </span>
+
                     </h2>
 
                     <p>
@@ -1577,12 +1533,11 @@ function alphaCta(){
     </section>
 
     `;
-
 }
 
 
 /* ==========================================================
-   DETAIL CARD
+   DETAIL HELPERS
    ========================================================== */
 
 function detailCard(
@@ -1611,10 +1566,13 @@ function detailCard(
         ${
             items.length
                 ? `
+
                     <div class="alpha-detail-list">
 
                         ${
-                            items.map(item => `
+                            items.map(
+                                item => `
+
                                 <div class="alpha-detail-item">
 
                                     <span class="alpha-detail-check">
@@ -1626,10 +1584,13 @@ function detailCard(
                                     </span>
 
                                 </div>
-                            `).join("")
+
+                                `
+                            ).join("")
                         }
 
                     </div>
+
                   `
                 : ""
         }
@@ -1637,7 +1598,6 @@ function detailCard(
     </article>
 
     `;
-
 }
 
 
@@ -1647,26 +1607,62 @@ function simpleDetailCard(
     text
 ){
 
+    return detailCard(
+        label,
+        title,
+        text,
+        []
+    );
+}
+
+
+function moreButton(
+    key,
+    openLabel,
+    closeLabel,
+    content
+){
+
+    const id =
+        `alpha-more-${key}`;
+
     return `
 
-    <article class="alpha-detail-card">
+    <div class="alpha-more-wrap">
 
-        <span class="label">
-            ${label}
-        </span>
+        <button
+            type="button"
+            class="alpha-more-toggle"
+            data-more-toggle="${key}"
+            data-open-label="${openLabel}"
+            data-close-label="${closeLabel}"
+            aria-expanded="false"
+            aria-controls="${id}">
 
-        <h3>
-            ${title}
-        </h3>
+            <span>
+                ${openLabel}
+            </span>
 
-        <p>
-            ${text}
-        </p>
+            <i aria-hidden="true">
+                +
+            </i>
 
-    </article>
+        </button>
+
+
+        <div
+            id="${id}"
+            class="alpha-more-panel"
+            data-more-panel="${key}"
+            aria-hidden="true">
+
+            ${content}
+
+        </div>
+
+    </div>
 
     `;
-
 }
 
 
@@ -1681,9 +1677,7 @@ function initialiseAlpha(){
             ".page-alpha"
         );
 
-    if(!root){
-        return;
-    }
+    if(!root) return;
 
 
     /* ------------------------------------------------------
@@ -1694,7 +1688,7 @@ function initialiseAlpha(){
 
         root
             .querySelectorAll(
-                ".btn"
+                ".btn, .alpha-more-toggle, .alpha-faq-question"
             )
             .forEach(
                 button => ripple(button)
@@ -1721,8 +1715,8 @@ function initialiseAlpha(){
                 `
                 .alpha-overview-grid .reveal,
                 .alpha-composition-grid .reveal,
-                .alpha-benefit-check.reveal,
-                .alpha-benefit-card.reveal,
+                .alpha-benefits-grid .reveal,
+                .alpha-product-detail-grid .reveal,
                 .alpha-ingredients-grid .reveal,
                 .alpha-usage-grid .reveal,
                 .alpha-performance-grid .reveal
@@ -1753,7 +1747,10 @@ function initialiseAlpha(){
                     "[data-scroll]"
                 );
 
-            if(!trigger){
+            if(
+                !trigger ||
+                !root.contains(trigger)
+            ){
                 return;
             }
 
@@ -1785,8 +1782,7 @@ function initialiseAlpha(){
 
 
     /* ------------------------------------------------------
-       MORE / DETAILS
-       Mesmo sistema das outras product pages
+       MORE / VER MAIS
        ------------------------------------------------------ */
 
     root.addEventListener(
@@ -1798,7 +1794,10 @@ function initialiseAlpha(){
                     "[data-more-toggle]"
                 );
 
-            if(!button){
+            if(
+                !button ||
+                !root.contains(button)
+            ){
                 return;
             }
 
@@ -1825,15 +1824,15 @@ function initialiseAlpha(){
                 !isOpen;
 
 
-            button.setAttribute(
-                "aria-expanded",
-                String(nextState)
-            );
-
-
             button.classList.toggle(
                 "active",
                 nextState
+            );
+
+
+            button.setAttribute(
+                "aria-expanded",
+                String(nextState)
             );
 
 
@@ -1891,7 +1890,7 @@ function initialiseAlpha(){
 
     /* ------------------------------------------------------
        FAQ
-       Apenas uma aberta
+       Apenas uma resposta aberta de cada vez
        ------------------------------------------------------ */
 
     root.addEventListener(
@@ -1903,7 +1902,10 @@ function initialiseAlpha(){
                     ".alpha-faq-question"
                 );
 
-            if(!button){
+            if(
+                !button ||
+                !root.contains(button)
+            ){
                 return;
             }
 
@@ -1936,14 +1938,14 @@ function initialiseAlpha(){
                     ".alpha-faq-item.active"
                 )
                 .forEach(
-                    otherItem => {
+                    other => {
 
                         if(
-                            otherItem !== item
+                            other !== item
                         ){
 
-                            closeFaqItem(
-                                otherItem
+                            closeAlphaFaq(
+                                other
                             );
 
                         }
@@ -1954,13 +1956,13 @@ function initialiseAlpha(){
 
             if(isOpen){
 
-                closeFaqItem(
+                closeAlphaFaq(
                     item
                 );
 
             }else{
 
-                openFaqItem(
+                openAlphaFaq(
                     item,
                     button,
                     answer
@@ -1970,6 +1972,43 @@ function initialiseAlpha(){
 
         }
     );
+
+
+    /* ------------------------------------------------------
+       PRIMEIRA RESPOSTA VISÍVEL
+       ------------------------------------------------------ */
+
+    const firstFaq =
+        root.querySelector(
+            ".alpha-faq-item"
+        );
+
+    if(firstFaq){
+
+        const firstButton =
+            firstFaq.querySelector(
+                ".alpha-faq-question"
+            );
+
+        const firstAnswer =
+            firstFaq.querySelector(
+                ".alpha-faq-answer"
+            );
+
+        if(
+            firstButton &&
+            firstAnswer
+        ){
+
+            openAlphaFaq(
+                firstFaq,
+                firstButton,
+                firstAnswer
+            );
+
+        }
+
+    }
 
 
     /* ------------------------------------------------------
@@ -1987,27 +2026,25 @@ function initialiseAlpha(){
                     "error",
                     function(){
 
-                        if(
-                            image.dataset.errorHandled === "true"
-                        ){
-                            return;
-                        }
-
-                        image.dataset.errorHandled =
-                            "true";
-
-                        const parent =
+                        const frame =
                             image.closest(
-                                ".alpha-hero-product, .alpha-product-detail-frame, .alpha-benefits-frame"
+                                `
+                                .alpha-hero-product,
+                                .alpha-product-detail-frame,
+                                .alpha-benefits-frame
+                                `
                             );
 
-                        if(parent){
+                        if(frame){
 
-                            parent.classList.add(
+                            frame.classList.add(
                                 "image-error"
                             );
 
                         }
+
+                        image.style.display =
+                            "none";
 
                     },
                     {
@@ -2020,7 +2057,7 @@ function initialiseAlpha(){
 
 
     /* ------------------------------------------------------
-       BUY BUTTONS
+       BUY
        ------------------------------------------------------ */
 
     root.addEventListener(
@@ -2032,7 +2069,10 @@ function initialiseAlpha(){
                     "#buyAlpha, #alphaWhats"
                 );
 
-            if(!button){
+            if(
+                !button ||
+                !root.contains(button)
+            ){
                 return;
             }
 
@@ -2052,7 +2092,7 @@ function initialiseAlpha(){
         )
         ?.addEventListener(
             "click",
-            function(){
+            () => {
 
                 navigate("/");
 
@@ -2108,7 +2148,7 @@ function initialiseAlpha(){
    FAQ HELPERS
    ========================================================== */
 
-function openFaqItem(
+function openAlphaFaq(
     item,
     button,
     answer
@@ -2131,10 +2171,22 @@ function openFaqItem(
     answer.style.maxHeight =
         `${answer.scrollHeight}px`;
 
+    const plus =
+        item.querySelector(
+            ".alpha-faq-plus"
+        );
+
+    if(plus){
+
+        plus.textContent =
+            "−";
+
+    }
+
 }
 
 
-function closeFaqItem(
+function closeAlphaFaq(
     item
 ){
 
@@ -2148,9 +2200,15 @@ function closeFaqItem(
             ".alpha-faq-answer"
         );
 
+    const plus =
+        item.querySelector(
+            ".alpha-faq-plus"
+        );
+
     item.classList.remove(
         "active"
     );
+
 
     if(button){
 
@@ -2161,6 +2219,7 @@ function closeFaqItem(
 
     }
 
+
     if(answer){
 
         answer.setAttribute(
@@ -2170,6 +2229,14 @@ function closeFaqItem(
 
         answer.style.maxHeight =
             "0px";
+
+    }
+
+
+    if(plus){
+
+        plus.textContent =
+            "+";
 
     }
 
