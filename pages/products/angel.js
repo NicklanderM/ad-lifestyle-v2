@@ -1,486 +1,643 @@
+/* ==========================================================
+   AD LIFESTYLE V2
+   ANGEL.JS
+   Premium Angel Moon Product Page
+   Modelo estrutural: EVADOR / iSMART S3
+   ========================================================== */
+
 import { applyTheme } from "../../js/theme.js";
 import { navigate } from "../../js/router.js";
 import { ripple, stagger } from "../../js/animations.js";
 
-const WHATSAPP_NUMBER = "244924964666";
-const PRODUCT_IMAGE = "./assets/products/angel.png";
 
-const CERTIFICATIONS = [
+/* ==========================================================
+   CONFIG
+   ========================================================== */
+
+const PRODUCT_IMAGE =
+    "./assets/products/angel.png";
+
+const WHATSAPP_NUMBER =
+    "244924964666";
+
+
+const ANGEL_CERTIFICATIONS = [
+
     {
-        image: "./assets/products/certifications/angel-cert-01.png",
-        title: "Documento / Certificação 01",
-        type: "DOCUMENTAÇÃO OFICIAL"
+        image:
+            "./assets/products/certifications/angel-cert-01.png",
+
+        title:
+            "Documento / Certificação 01",
+
+        type:
+            "DOCUMENTAÇÃO OFICIAL"
     },
+
     {
-        image: "./assets/products/certifications/angel-cert-02.png",
-        title: "Documento / Certificação 02",
-        type: "DOCUMENTAÇÃO OFICIAL"
+        image:
+            "./assets/products/certifications/angel-cert-02.png",
+
+        title:
+            "Documento / Certificação 02",
+
+        type:
+            "DOCUMENTAÇÃO OFICIAL"
     },
+
     {
-        image: "./assets/products/certifications/angel-cert-03.png",
-        title: "Documento / Certificação 03",
-        type: "DOCUMENTAÇÃO OFICIAL"
+        image:
+            "./assets/products/certifications/angel-cert-03.png",
+
+        title:
+            "Documento / Certificação 03",
+
+        type:
+            "DOCUMENTAÇÃO OFICIAL"
     },
+
     {
-        image: "./assets/products/certifications/angel-cert-04.png",
-        title: "Documento / Certificação 04",
-        type: "DOCUMENTAÇÃO OFICIAL"
+        image:
+            "./assets/products/certifications/angel-cert-04.png",
+
+        title:
+            "Documento / Certificação 04",
+
+        type:
+            "DOCUMENTAÇÃO OFICIAL"
     }
+
 ];
 
-const VARIANTS = [
+
+const ANGEL_VARIANTS = [
+
     {
-        image: "./assets/products/angel1.png",
-        name: "Angel Moon Dia",
-        tag: "24 cm",
-        text: "Formato pensado para utilização durante o dia."
+        image:
+            "./assets/products/angel1.png",
+
+        name:
+            "Angel Moon Dia",
+
+        tag:
+            "24 cm",
+
+        text:
+            "Formato concebido para utilização durante o dia."
     },
+
     {
-        image: "./assets/products/angel2.png",
-        name: "Angel Moon Noite",
-        tag: "29 cm",
-        text: "Formato mais longo para utilização nocturna."
+        image:
+            "./assets/products/angel2.png",
+
+        name:
+            "Angel Moon Noite",
+
+        tag:
+            "29 cm",
+
+        text:
+            "Formato mais longo concebido para utilização nocturna."
     },
+
     {
-        image: "./assets/products/angel3.png",
-        name: "Angel Moon Panty Liner",
-        tag: "18 cm",
-        text: "Formato ligeiro para protecção diária."
+        image:
+            "./assets/products/angel3.png",
+
+        name:
+            "Angel Moon Panty Liner",
+
+        tag:
+            "18 cm",
+
+        text:
+            "Formato ligeiro para protecção diária."
     }
+
 ];
 
-const ICONS = {
-    comfort: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 20s7-4.35 7-10A4 4 0 0 0 12 7 4 4 0 0 0 5 10c0 5.65 7 10 7 10Z"
-                stroke="currentColor" stroke-width="1.7"/>
-            <path d="M8.5 11.5h7"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-        </svg>
-    `,
 
-    absorb: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 3s6 6.4 6 11a6 6 0 1 1-12 0c0-4.6 6-11 6-11Z"
-                stroke="currentColor" stroke-width="1.7"/>
-            <path d="M9 15.5c.7.9 1.7 1.4 3 1.4"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-        </svg>
-    `,
+/* ==========================================================
+   LOAD
+   ========================================================== */
 
-    air: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M3 8h11a3 3 0 1 0-3-3"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-            <path d="M3 12h14a3 3 0 1 1-3 3"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-            <path d="M3 16h7"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-        </svg>
-    `,
-
-    tech: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <rect x="5" y="5" width="14" height="14" rx="3"
-                stroke="currentColor" stroke-width="1.7"/>
-            <path d="M9 9h6v6H9zM12 2v3M12 19v3M2 12h3M19 12h3"
-                stroke="currentColor" stroke-width="1.7"
-                stroke-linecap="round"/>
-        </svg>
-    `,
-
-    arrow: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m9 6 6 6-6 6"
-                stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-    `,
-
-    chevron: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m6 9 6 6 6-6"
-                stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-    `,
-
-    check: `
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="m5 12 4 4L19 6"
-                stroke="currentColor" stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round"/>
-        </svg>
-    `
-};
-
-export function loadAngel() {
+export function loadAngel(){
 
     applyTheme("angel");
 
-    const app = document.getElementById("app");
+    const app =
+        document.getElementById("app");
 
-    if (!app) return;
+    if(!app){
+        return;
+    }
 
     app.innerHTML = `
-        <main class="page-angel">
 
-            ${angelHero()}
-            ${angelOverview()}
-            ${angelTechnology()}
-            ${angelBenefits()}
-            ${angelProduct()}
-            ${angelComposition()}
-            ${angelCertifications()}
-            ${angelVariants()}
-            ${angelFaq()}
-            ${angelInformation()}
-            ${angelCta()}
+        <div
+            class="page-angel"
+            data-product-page="angel">
 
-        </main>
+            ${hero()}
+
+            ${overview()}
+
+            ${technology()}
+
+            ${identity()}
+
+            ${benefits()}
+
+            ${productDetail()}
+
+            ${routine()}
+
+            ${experience()}
+
+            ${variants()}
+
+            ${certifications()}
+
+            ${faq()}
+
+            ${information()}
+
+            ${cta()}
+
+        </div>
+
     `;
 
     initialiseAngel();
 }
 
-function iconMarkup(icon = "check") {
-    return ICONS[icon] || ICONS.check;
-}
 
 /* ==========================================================
    HERO
    ========================================================== */
 
-function angelHero() {
+function hero(){
 
     return `
-        <section class="angel-hero" id="angel-top">
 
-            <div class="angel-hero-atmosphere" aria-hidden="true">
-                <span class="angel-orb angel-orb-one"></span>
-                <span class="angel-orb angel-orb-two"></span>
-                <span class="angel-orb angel-orb-three"></span>
-            </div>
+    <section
+        class="hero angel-hero">
 
-            <div class="angel-container angel-hero-grid">
+        <div class="angel-hero-atmosphere">
 
-                <div class="angel-hero-copy" data-animate>
+            <div class="angel-orb angel-orb-1"></div>
 
-                    <span class="eyebrow angel-eyebrow">
-                        ANGEL MOON · CUIDADO ÍNTIMO
+            <div class="angel-orb angel-orb-2"></div>
+
+            <div class="angel-orbit angel-orbit-1"></div>
+
+            <div class="angel-orbit angel-orbit-2"></div>
+
+        </div>
+
+
+        <div class="container angel-hero-grid">
+
+            <div class="angel-hero-copy reveal">
+
+                <span class="angel-eyebrow">
+                    ANGEL MOON · INTIMATE CARE
+                </span>
+
+
+                <h1>
+                    ANGEL
+                    <span>MOON.</span>
+                </h1>
+
+
+                <p class="angel-hero-description">
+
+                    Conforto, protecção e tecnologia reunidos
+                    numa experiência de cuidado íntimo concebida
+                    para acompanhar diferentes momentos do dia.
+
+                </p>
+
+
+                <div class="angel-hero-pills">
+
+                    <span class="angel-hero-pill">
+                        Fino
                     </span>
 
-                    <h1 class="angel-hero-title">
-                        Conforto que
-                        <span>acompanha.</span>
-                    </h1>
+                    <span class="angel-hero-pill">
+                        Flexível
+                    </span>
 
-                    <p class="angel-hero-description">
-                        Uma proposta de cuidado íntimo que combina
-                        conforto, protecção, absorção e tecnologia
-                        numa construção pensada para o uso diário.
-                    </p>
+                    <span class="angel-hero-pill">
+                        Super absorvente
+                    </span>
 
-                    <div class="angel-hero-actions">
-
-                        <a
-                            class="btn btn-primary"
-                            href="#angel-technology"
-                            data-ripple
-                        >
-                            Descobrir Angel Moon
-                            ${iconMarkup("arrow")}
-                        </a>
-
-                        <button
-                            class="btn btn-glass"
-                            type="button"
-                            data-whatsapp
-                            data-ripple
-                        >
-                            Pedir informações
-                        </button>
-
-                    </div>
-
-                    <div class="angel-hero-signature">
-                        <span></span>
-                        ANGEL MOON · INTIMATE CARE
-                    </div>
+                    <span class="angel-hero-pill">
+                        Respirável
+                    </span>
 
                 </div>
 
-                <div class="angel-hero-product" data-animate>
 
-                    <div class="angel-hero-product-aura" aria-hidden="true"></div>
-                    <div class="angel-hero-product-rings" aria-hidden="true"></div>
-                    <div class="angel-hero-product-grid" aria-hidden="true"></div>
+                <div class="angel-hero-actions">
 
-                    <div class="angel-hero-product-frame">
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="buyAngel">
 
-                        <span class="angel-product-badge">
-                            ANGEL MOON
-                        </span>
+                        Adquirir Angel Moon
 
-                        <img
-                            class="angel-hero-product-image"
-                            src="${PRODUCT_IMAGE}"
-                            alt="Angel Moon"
-                            loading="eager"
-                        >
+                    </button>
 
-                        <div class="angel-image-fallback">
-                            <div>
-                                <strong>Imagem do produto</strong>
-                                <span>${PRODUCT_IMAGE}</span>
-                            </div>
-                        </div>
 
-                    </div>
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="angelDiscover"
+                        data-scroll="#angel-technology">
+
+                        Descobrir Angel Moon
+
+                    </button>
 
                 </div>
 
             </div>
 
-        </section>
+
+            <div class="angel-hero-product reveal-right">
+
+                <div class="angel-product-aura"></div>
+
+                <div class="angel-product-ring"></div>
+
+
+                <div class="angel-product-grid">
+
+                    <img
+                        src="${PRODUCT_IMAGE}"
+                        alt="Angel Moon"
+                        loading="eager"
+                        decoding="async"
+                        class="angel-product-image"
+                    >
+
+                </div>
+
+
+                <div class="angel-product-caption">
+
+                    <strong>
+                        ANGEL MOON
+                    </strong>
+
+                    <span>
+                        INTIMATE CARE
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
     `;
 }
+
 
 /* ==========================================================
    OVERVIEW
    ========================================================== */
 
-function angelOverview() {
-
-    const highlights = [
-        [
-            "comfort",
-            "Conforto",
-            "Construção fina e flexível."
-        ],
-        [
-            "absorb",
-            "Absorção",
-            "Estrutura orientada para retenção de líquidos."
-        ],
-        [
-            "air",
-            "Respirabilidade",
-            "Base apresentada como permeável ao ar."
-        ]
-    ];
+function overview(){
 
     return `
-        <section class="angel-section angel-overview" id="angel-overview">
 
-            <div class="angel-container">
+    <section
+        id="angel-overview"
+        class="section angel-overview-section">
 
-                <div class="angel-section-heading is-centered" data-animate>
+        <div class="container">
 
-                    <span class="label">
-                        A essência Angel Moon
-                    </span>
+            <div
+                class="section-center angel-section-heading reveal">
 
-                    <h2 class="section-title">
-                        Pensado para o seu
-                        <span>ritmo.</span>
-                    </h2>
+                <span class="label">
+                    VISÃO GERAL
+                </span>
 
-                    <p class="lead">
-                        O Angel Moon reúne características concebidas
-                        para proporcionar uma experiência equilibrada
-                        entre conforto, protecção e leveza.
-                    </p>
+                <h2 class="section-title">
+                    Conheça o conceito
+                    <span>Angel Moon.</span>
+                </h2>
 
-                </div>
+                <p class="lead">
 
-                <div class="angel-overview-grid">
+                    Angel Moon é apresentado como uma proposta
+                    de cuidado íntimo que combina conforto,
+                    protecção, absorção, respirabilidade e tecnologia
+                    numa construção pensada para utilização diária.
 
-                    ${highlights.map(
-                        ([icon, title, text], index) => `
-                            <article
-                                class="angel-overview-card"
-                                data-animate
-                                data-delay="${index * 70}"
-                            >
-
-                                <div class="angel-overview-icon">
-                                    ${iconMarkup(icon)}
-                                </div>
-
-                                <div>
-                                    <h3>${title}</h3>
-                                    <p>${text}</p>
-                                </div>
-
-                            </article>
-                        `
-                    ).join("")}
-
-                </div>
+                </p>
 
             </div>
 
-        </section>
+
+            <div class="angel-overview-grid">
+
+                ${overviewCard(
+                    "01",
+                    "Conforto",
+                    "Construção fina e flexível concebida para acompanhar os movimentos."
+                )}
+
+                ${overviewCard(
+                    "02",
+                    "Absorção",
+                    "Estrutura apresentada para absorção e retenção de líquidos."
+                )}
+
+                ${overviewCard(
+                    "03",
+                    "Respirabilidade",
+                    "Base apresentada como permeável ao ar."
+                )}
+
+                ${overviewCard(
+                    "04",
+                    "Tecnologia",
+                    "Integra elementos tecnológicos apresentados para a linha Angel Moon."
+                )}
+
+            </div>
+
+
+            <div class="angel-overview-note reveal">
+
+                <strong>
+                    Cuidado íntimo com tecnologia integrada.
+                </strong>
+
+                <p>
+                    As características apresentadas nesta página
+                    reproduzem a informação promocional e técnica
+                    disponibilizada para o produto.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
     `;
 }
+
+
+function overviewCard(
+    number,
+    title,
+    text
+){
+
+    const symbols = {
+
+        "01":"♡",
+        "02":"◉",
+        "03":"≈",
+        "04":"✦"
+
+    };
+
+
+    return `
+
+    <article class="angel-overview-card reveal">
+
+        <span class="angel-card-number">
+            ${number}
+        </span>
+
+
+        <div
+            class="angel-card-icon"
+            aria-hidden="true">
+
+            ${symbols[number] || "✦"}
+
+        </div>
+
+
+        <h3>
+            ${title}
+        </h3>
+
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
 
 /* ==========================================================
    TECHNOLOGY
    ========================================================== */
 
-function angelTechnology() {
-
-    const layers = [
-        [
-            "01",
-            "Superfície",
-            "Camada de contacto."
-        ],
-        [
-            "02",
-            "Distribuição",
-            "Encaminhamento da humidade."
-        ],
-        [
-            "03",
-            "Absorção",
-            "Núcleo destinado à retenção."
-        ],
-        [
-            "04",
-            "Negative Ion Core",
-            "Tecnologia apresentada para a linha."
-        ],
-        [
-            "05",
-            "Nano Silver",
-            "Elemento tecnológico comunicado."
-        ],
-        [
-            "06",
-            "Protecção",
-            "Barreira na estrutura."
-        ],
-        [
-            "07",
-            "Base respirável",
-            "Camada inferior permeável ao ar."
-        ]
-    ];
+function technology(){
 
     return `
-        <section
-            class="angel-section angel-technology"
-            id="angel-technology"
-        >
 
-            <div class="angel-container">
+    <section
+        id="angel-technology"
+        class="section angel-technology">
 
-                <div
-                    class="angel-section-heading is-centered"
-                    data-animate
-                >
+        <div class="container">
 
-                    <span class="label">
-                        Estrutura Angel Moon
-                    </span>
+            <div class="angel-section-heading reveal">
 
-                    <h2 class="section-title">
-                        Tecnologia que
-                        <span>se integra.</span>
-                    </h2>
+                <span class="eyebrow">
+                    TECNOLOGIA ANGEL MOON
+                </span>
 
-                    <p class="lead">
-                        Uma construção multicamada que reúne os elementos
-                        apresentados para a linha Angel Moon.
-                    </p>
+                <h2>
+                    Uma estrutura pensada
+                    <span>em camadas.</span>
+                </h2>
 
-                </div>
+                <p>
+                    A construção Angel Moon reúne diferentes elementos
+                    numa arquitectura orientada para absorção, protecção,
+                    conforto e tecnologia.
+                </p>
 
-                <div class="angel-technology-layout">
+            </div>
 
-                    <div class="angel-technology-visual" data-animate>
 
-                        <div class="angel-tech-image-aura"></div>
+            <div class="angel-technology-grid">
+
+
+                <div class="angel-technology-visual reveal-left">
+
+                    <div class="angel-tech-aura"></div>
+
+                    <div class="angel-tech-ring"></div>
+
+
+                    <div class="angel-tech-image-frame">
 
                         <img
                             src="${PRODUCT_IMAGE}"
-                            alt="Angel Moon — detalhe do produto"
-                            class="angel-technology-image"
+                            alt="Angel Moon"
                             loading="lazy"
+                            decoding="async"
+                            class="angel-tech-product-image"
                         >
 
                     </div>
 
-                    <div class="angel-technology-copy">
 
-                        <div class="angel-technology-highlights">
+                    <div class="angel-tech-caption">
 
-                            <div class="angel-tech-highlight">
-                                <strong>Estrutura</strong>
-                                <span>Multi-camadas</span>
-                            </div>
+                        <strong>
+                            ANGEL MOON
+                        </strong>
 
-                            <div class="angel-tech-highlight">
-                                <strong>Core</strong>
-                                <span>Negative Ion Core</span>
-                            </div>
+                        <span>
+                            SMART INTIMATE TECHNOLOGY
+                        </span>
 
-                            <div class="angel-tech-highlight">
-                                <strong>Base</strong>
-                                <span>Respirável</span>
-                            </div>
+                    </div>
 
-                        </div>
+                </div>
+
+
+                <div class="angel-technology-copy reveal-right">
+
+                    ${technologyCard(
+                        "01",
+                        "Construção multicamada",
+                        "Uma arquitectura apresentada através de sete camadas."
+                    )}
+
+                    ${technologyCard(
+                        "02",
+                        "Negative Ion Core",
+                        "Elemento tecnológico apresentado na comunicação da linha."
+                    )}
+
+                    ${technologyCard(
+                        "03",
+                        "Nano Silver",
+                        "Tecnologia apresentada como parte da construção do produto."
+                    )}
+
+                    ${technologyCard(
+                        "04",
+                        "Conforto e respirabilidade",
+                        "Estrutura fina, flexível e apresentada como permeável ao ar."
+                    )}
+
+
+                    <div class="angel-more-wrap">
 
                         <button
-                            class="angel-more-toggle"
                             type="button"
-                            data-angel-more="technology"
+                            class="angel-more-toggle"
+                            data-more-toggle="technology"
+                            data-open-label="Ver mais sobre a tecnologia"
+                            data-close-label="Ocultar detalhes"
                             aria-expanded="false"
-                            aria-controls="angel-more-technology"
-                            data-ripple
-                        >
-                            Ver estrutura completa
-                            ${iconMarkup("chevron")}
+                            aria-controls="angel-technology-more">
+
+                            <span>
+                                Ver mais sobre a tecnologia
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
                         </button>
 
+
                         <div
+                            id="angel-technology-more"
                             class="angel-more-panel"
-                            id="angel-more-technology"
-                            aria-hidden="true"
-                        >
-                            <div>
+                            data-more-panel="technology"
+                            aria-hidden="true">
 
-                                <div class="angel-layer-list">
+                            <div class="angel-layer-grid">
 
-                                    ${layers.map(
-                                        ([number, title, text]) => `
-                                            <div class="angel-layer-item">
+                                ${layerCard(
+                                    "01",
+                                    "Superfície de contacto",
+                                    "Camada superior de contacto."
+                                )}
 
-                                                <span>${number}</span>
+                                ${layerCard(
+                                    "02",
+                                    "Distribuição",
+                                    "Encaminhamento do líquido dentro da estrutura."
+                                )}
 
-                                                <div>
-                                                    <strong>${title}</strong>
-                                                    <small>${text}</small>
-                                                </div>
+                                ${layerCard(
+                                    "03",
+                                    "Núcleo absorvente",
+                                    "Área destinada à absorção e retenção."
+                                )}
 
-                                            </div>
-                                        `
-                                    ).join("")}
+                                ${layerCard(
+                                    "04",
+                                    "Negative Ion Core",
+                                    "Elemento tecnológico comunicado para o produto."
+                                )}
 
-                                </div>
+                                ${layerCard(
+                                    "05",
+                                    "Nano Silver",
+                                    "Elemento tecnológico apresentado na estrutura."
+                                )}
+
+                                ${layerCard(
+                                    "06",
+                                    "Protecção",
+                                    "Camada destinada a ajudar a limitar a passagem de humidade."
+                                )}
+
+                                ${layerCard(
+                                    "07",
+                                    "Base respirável",
+                                    "Camada inferior apresentada como permeável ao ar."
+                                )}
 
                             </div>
+
+
+                            <div class="angel-technology-note">
+
+                                <strong>
+                                    Outras tecnologias apresentadas
+                                </strong>
+
+                                <p>
+                                    A comunicação do produto também menciona
+                                    biomagnetismo, infravermelho longínquo,
+                                    acção antibacteriana e propriedades
+                                    desodorizantes. Estas alegações devem ser
+                                    confirmadas na documentação oficial do produto.
+                                </p>
+
+                            </div>
+
                         </div>
 
                     </div>
@@ -489,445 +646,848 @@ function angelTechnology() {
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
+
     `;
 }
+
+
+function technologyCard(
+    number,
+    title,
+    text
+){
+
+    return `
+
+    <article class="angel-technology-card reveal">
+
+        <span class="angel-technology-number">
+            ${number}
+        </span>
+
+        <div>
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                ${text}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+function layerCard(
+    number,
+    title,
+    text
+){
+
+    return `
+
+    <article class="angel-layer-card">
+
+        <span>
+            ${number}
+        </span>
+
+        <div>
+
+            <strong>
+                ${title}
+            </strong>
+
+            <small>
+                ${text}
+            </small>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   IDENTITY
+   ========================================================== */
+
+function identity(){
+
+    return `
+
+    <section class="section angel-identity">
+
+        <div class="container">
+
+            <div class="angel-identity-grid">
+
+                <div class="angel-identity-visual reveal-left">
+
+                    <div class="angel-identity-frame">
+
+                        <div class="angel-identity-aura"></div>
+
+                        <div class="angel-identity-ring"></div>
+
+
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="Angel Moon"
+                            loading="lazy"
+                            decoding="async"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="angel-identity-copy reveal-right">
+
+                    <span class="label">
+                        IDENTIDADE
+                    </span>
+
+
+                    <h2 class="section-title">
+
+                        Leveza.
+                        Protecção.
+                        <span>Cuidado.</span>
+
+                    </h2>
+
+
+                    <p class="lead">
+
+                        Angel Moon é apresentado como uma experiência
+                        de cuidado íntimo em que conforto, discrição
+                        e tecnologia fazem parte da mesma proposta.
+
+                    </p>
+
+
+                    <div class="angel-benefit-checks">
+
+                        ${benefitCheck("Fino")}
+
+                        ${benefitCheck("Flexível")}
+
+                        ${benefitCheck("Super absorvente")}
+
+                        ${benefitCheck("Respirável")}
+
+                        ${benefitCheck("Discreto")}
+
+                        ${benefitCheck("Versátil")}
+
+                    </div>
+
+
+                    <div class="angel-identity-note">
+
+                        <span class="label">
+                            ANGEL MOON
+                        </span>
+
+                        <strong>
+                            Conforto que acompanha.
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function benefitCheck(text){
+
+    return `
+
+    <div class="angel-benefit-check">
+
+        <span>
+            ✓
+        </span>
+
+        <p>
+            ${text}
+        </p>
+
+    </div>
+
+    `;
+}
+
 
 /* ==========================================================
    BENEFITS
    ========================================================== */
 
-function angelBenefits() {
-
-    const benefits = [
-        [
-            "01",
-            "Conforto",
-            "Formato fino e flexível pensado para acompanhar os movimentos."
-        ],
-        [
-            "02",
-            "Absorção",
-            "Construção orientada para absorção e retenção."
-        ],
-        [
-            "03",
-            "Respirabilidade",
-            "Estrutura inferior apresentada como permeável ao ar."
-        ],
-        [
-            "04",
-            "Discrição",
-            "Construção concebida para utilização discreta."
-        ],
-        [
-            "05",
-            "Versatilidade",
-            "Disponível em diferentes formatos de utilização."
-        ],
-        [
-            "06",
-            "Tecnologia",
-            "Integra elementos tecnológicos comunicados para a linha."
-        ]
-    ];
+function benefits(){
 
     return `
-        <section class="angel-section angel-benefits" id="angel-benefits">
 
-            <div class="angel-container">
+    <section class="section angel-benefits">
 
-                <div class="angel-section-heading is-centered" data-animate>
+        <div class="container">
 
-                    <span class="label">
-                        Principais características
-                    </span>
+            <div class="angel-section-heading reveal">
 
-                    <h2 class="section-title">
-                        O essencial,
-                        <span>bem definido.</span>
-                    </h2>
+                <span class="eyebrow">
+                    A EXPERIÊNCIA
+                </span>
 
-                    <p class="lead">
-                        Tudo o que importa, apresentado de forma simples,
-                        sem sobrecarregar a leitura.
-                    </p>
+                <h2>
+                    O essencial em
+                    <span>equilíbrio.</span>
+                </h2>
 
-                </div>
-
-                <div class="angel-benefits-grid">
-
-                    ${benefits.map(
-                        ([number, title, text], index) => `
-                            <article
-                                class="angel-benefit-card"
-                                data-animate
-                                data-delay="${index * 55}"
-                            >
-
-                                <span class="angel-benefit-index">
-                                    ${number}
-                                </span>
-
-                                <h3>${title}</h3>
-
-                                <p>${text}</p>
-
-                            </article>
-                        `
-                    ).join("")}
-
-                </div>
+                <p>
+                    A proposta Angel Moon procura equilibrar
+                    absorção, conforto, respirabilidade e discrição.
+                </p>
 
             </div>
 
-        </section>
+
+            <div class="angel-benefits-grid">
+
+                ${benefitCard(
+                    "COM",
+                    "Conforto",
+                    "Uma construção fina e flexível pensada para utilização diária."
+                )}
+
+                ${benefitCard(
+                    "ABS",
+                    "Absorção",
+                    "Estrutura apresentada para retenção de líquidos."
+                )}
+
+                ${benefitCard(
+                    "AIR",
+                    "Respirabilidade",
+                    "Base apresentada como permeável ao ar."
+                )}
+
+                ${benefitCard(
+                    "TEC",
+                    "Tecnologia",
+                    "Elementos tecnológicos integrados na construção do produto."
+                )}
+
+            </div>
+
+
+            <div class="angel-benefits-note reveal">
+
+                <span class="label">
+                    ANGEL MOON
+                </span>
+
+                <h3>
+                    Tecnologia integrada no cuidado íntimo.
+                </h3>
+
+                <p>
+                    A descrição comercial do produto inclui referências
+                    a Negative Ion Core, Nano Silver, biomagnetismo,
+                    infravermelho longínquo, propriedades antibacterianas
+                    e desodorizantes. Estas alegações requerem confirmação
+                    através da documentação oficial correspondente.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
     `;
 }
+
+
+function benefitCard(
+    code,
+    title,
+    text
+){
+
+    return `
+
+    <article class="angel-benefit-card reveal">
+
+        <div class="angel-benefit-code">
+            ${code}
+        </div>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
 
 /* ==========================================================
    PRODUCT DETAIL
    ========================================================== */
 
-function angelProduct() {
+function productDetail(){
 
     return `
-        <section class="angel-section angel-product-detail" id="angel-product">
 
-            <div class="angel-container angel-product-detail-grid">
+    <section
+        id="angel-product"
+        class="section angel-product-section">
 
-                <div class="angel-product-detail-visual" data-animate>
+        <div class="container">
 
-                    <div class="angel-product-detail-halo"></div>
+            <div class="angel-section-heading reveal">
 
-                    <img
-                        src="${PRODUCT_IMAGE}"
-                        alt="Angel Moon"
-                        class="angel-product-detail-image"
-                        loading="lazy"
-                    >
+                <span class="eyebrow">
+                    O PRODUTO
+                </span>
 
-                    <div class="angel-image-fallback">
-                        <div>
-                            <strong>Imagem do produto</strong>
-                            <span>${PRODUCT_IMAGE}</span>
-                        </div>
+                <h2>
+                    Angel Moon.
+                    <span>Concebido para acompanhar.</span>
+                </h2>
+
+                <p>
+                    A linha é apresentada através de uma construção
+                    multicamada e de diferentes formatos para diferentes
+                    momentos de utilização.
+                </p>
+
+            </div>
+
+
+            <article class="angel-product-card reveal">
+
+
+                <div class="angel-product-card-visual">
+
+                    <div class="angel-detail-aura"></div>
+
+                    <div class="angel-detail-ring"></div>
+
+
+                    <div class="angel-product-detail-grid">
+
+                        <img
+                            src="${PRODUCT_IMAGE}"
+                            alt="Angel Moon"
+                            loading="lazy"
+                            decoding="async"
+                            class="angel-product-detail-image"
+                        >
+
                     </div>
+
+
+                    <span class="angel-detail-caption">
+                        ANGEL MOON · INTIMATE CARE
+                    </span>
 
                 </div>
 
-                <div class="angel-product-detail-copy" data-animate>
 
-                    <span class="eyebrow">
-                        DETALHE DO PRODUTO
+                <div class="angel-product-card-copy">
+
+                    <span class="label">
+                        ANGEL MOON
                     </span>
 
-                    <h2>
-                        Uma experiência construída
-                        para o <span>quotidiano.</span>
-                    </h2>
+
+                    <h3>
+                        Cuidado íntimo.
+                        <span>Tecnologia integrada.</span>
+                    </h3>
+
 
                     <p>
-                        O Angel Moon apresenta uma construção fina,
-                        flexível e multicamada, com diferentes formatos
-                        para acompanhar diferentes momentos de utilização.
+                        Uma construção apresentada para combinar
+                        absorção, conforto, respirabilidade e diferentes
+                        formatos de utilização.
                     </p>
 
-                    <div class="angel-spec-grid">
 
-                        <div class="angel-spec">
-                            <span>Construção</span>
-                            <strong>Fina e flexível</strong>
-                        </div>
+                    <div class="angel-product-spec-list">
 
-                        <div class="angel-spec">
-                            <span>Estrutura</span>
-                            <strong>Multi-camadas</strong>
-                        </div>
+                        ${productSpec(
+                            "Estrutura",
+                            "7 camadas"
+                        )}
 
-                        <div class="angel-spec">
-                            <span>Tecnologia</span>
-                            <strong>Negative Ion Core</strong>
-                        </div>
+                        ${productSpec(
+                            "Tecnologia",
+                            "Negative Ion Core"
+                        )}
 
-                        <div class="angel-spec">
-                            <span>Opções</span>
-                            <strong>Dia · Noite · Panty Liner</strong>
-                        </div>
+                        ${productSpec(
+                            "Material",
+                            "Nano Silver"
+                        )}
+
+                        ${productSpec(
+                            "Linha",
+                            "Dia · Noite · Panty Liner"
+                        )}
 
                     </div>
+
 
                     <div class="angel-more-wrap">
 
                         <button
-                            class="angel-more-toggle"
                             type="button"
-                            data-angel-more="details"
+                            class="angel-more-toggle"
+                            data-more-toggle="product"
+                            data-open-label="Ver mais características"
+                            data-close-label="Ocultar características"
                             aria-expanded="false"
-                            aria-controls="angel-more-details"
-                            data-ripple
-                        >
-                            Ver mais detalhes
-                            ${iconMarkup("chevron")}
+                            aria-controls="angel-product-more">
+
+                            <span>
+                                Ver mais características
+                            </span>
+
+                            <i aria-hidden="true">
+                                +
+                            </i>
+
                         </button>
 
+
                         <div
+                            id="angel-product-more"
                             class="angel-more-panel"
-                            id="angel-more-details"
-                            aria-hidden="true"
-                        >
-                            <div>
+                            data-more-panel="product"
+                            aria-hidden="true">
 
-                                <div class="angel-more-content">
+                            <div class="angel-detail-list">
 
-                                    <ul>
-                                        <li>Super absorvente</li>
-                                        <li>Fino e flexível</li>
-                                        <li>Ventilação apresentada como óptima</li>
-                                        <li>Estrutura orientada para conforto</li>
-                                        <li>Formatos para diferentes utilizações</li>
-                                        <li>Elementos tecnológicos comunicados para a linha</li>
-                                    </ul>
+                                ${detailItem(
+                                    "Fino e flexível."
+                                )}
 
-                                </div>
+                                ${detailItem(
+                                    "Super absorvente."
+                                )}
+
+                                ${detailItem(
+                                    "Ventilação apresentada como óptima."
+                                )}
+
+                                ${detailItem(
+                                    "Tecnologia Negative Ion Core."
+                                )}
+
+                                ${detailItem(
+                                    "Nano Silver."
+                                )}
+
+                                ${detailItem(
+                                    "Biomagnetismo e infravermelho longínquo mencionados na comunicação promocional."
+                                )}
+
+                                ${detailItem(
+                                    "Propriedades antibacterianas e desodorizantes mencionadas na apresentação do produto."
+                                )}
 
                             </div>
+
                         </div>
 
                     </div>
 
+
+                    <button
+                        type="button"
+                        class="btn btn-primary angel-card-buy"
+                        data-buy="product">
+
+                        Adquirir Angel Moon
+
+                    </button>
+
                 </div>
 
-            </div>
+            </article>
 
-        </section>
+        </div>
+
+    </section>
+
     `;
 }
 
-/* ==========================================================
-   COMPOSITION
-   ========================================================== */
 
-function angelComposition() {
-
-    const items = [
-        ["A", "Camada superior", "Contacto e gestão inicial da humidade."],
-        ["B", "Distribuição", "Encaminhamento do líquido."],
-        ["C", "Núcleo absorvente", "Área destinada à retenção."],
-        ["D", "Tecnologia", "Negative Ion Core e Nano Silver, conforme a informação comunicada."],
-        ["E", "Protecção", "Barreira na construção."],
-        ["F", "Base", "Estrutura inferior apresentada como respirável."]
-    ];
+function productSpec(
+    label,
+    value
+){
 
     return `
-        <section class="angel-section angel-composition" id="angel-composition">
 
-            <div class="angel-container">
+    <div class="angel-product-spec">
 
-                <div class="angel-section-heading is-centered" data-animate>
+        <span>
+            ${label}
+        </span>
 
-                    <span class="label">
-                        Composição
-                    </span>
+        <strong>
+            ${value}
+        </strong>
 
-                    <h2 class="section-title">
-                        Tudo no lugar
-                        <span>certo.</span>
-                    </h2>
+    </div>
 
-                    <p class="lead">
-                        A construção pode ser consultada por partes,
-                        mantendo o primeiro contacto com a página limpo.
-                    </p>
-
-                </div>
-
-                <div class="angel-composition-grid">
-
-                    ${items.map(
-                        ([letter, title, text], index) => `
-                            <article
-                                class="angel-composition-card"
-                                data-animate
-                                data-delay="${index * 50}"
-                            >
-
-                                <span class="angel-composition-mark">
-                                    ${letter}
-                                </span>
-
-                                <div>
-                                    <h3>${title}</h3>
-                                    <p>${text}</p>
-                                </div>
-
-                            </article>
-                        `
-                    ).join("")}
-
-                </div>
-
-            </div>
-
-        </section>
     `;
 }
 
-/* ==========================================================
-   CERTIFICATIONS
-   ========================================================== */
 
-function angelCertifications() {
+function detailItem(text){
 
     return `
-        <section
-            class="angel-section angel-certifications"
-            id="angel-certifications"
-        >
 
-            <div class="angel-container">
+    <div class="angel-detail-item">
+
+        <span
+            class="angel-check"
+            aria-hidden="true">
+
+            ✓
+
+        </span>
+
+        <span>
+            ${text}
+        </span>
+
+    </div>
+
+    `;
+}
+
+
+/* ==========================================================
+   ROUTINE / USAGE
+   ========================================================== */
+
+function routine(){
+
+    return `
+
+    <section class="section angel-routine">
+
+        <div class="container-sm">
+
+            <div class="angel-section-heading reveal">
+
+                <span class="eyebrow">
+                    LINHA ANGEL MOON
+                </span>
+
+                <h2>
+                    Escolha o formato
+                    <span>certo.</span>
+                </h2>
+
+                <p>
+                    A linha foi apresentada em diferentes formatos
+                    para diferentes momentos de utilização.
+                </p>
+
+            </div>
+
+
+            <div class="angel-routine-list">
+
+                ${routineStep(
+                    "01",
+                    "Dia",
+                    "Angel Moon Dia · 24 cm · protecção diária."
+                )}
+
+                ${routineStep(
+                    "02",
+                    "Noite",
+                    "Angel Moon Noite · 29 cm · protecção nocturna."
+                )}
+
 
                 <div
-                    class="angel-section-heading is-centered"
-                    data-animate
-                >
+                    class="angel-more-panel"
+                    data-more-panel="routine"
+                    aria-hidden="true"
+                    id="angel-routine-more">
 
-                    <span class="label">
-                        Certificações
-                    </span>
+                    ${routineStep(
+                        "03",
+                        "Panty Liner",
+                        "Angel Moon Panty Liner · 18 cm · protecção ligeira."
+                    )}
 
-                    <h2 class="section-title">
-                        A documentação
-                        <span>fala por si.</span>
-                    </h2>
-
-                    <p class="lead">
-                        Área preparada para receber as imagens das
-                        certificações e documentos oficiais do produto.
-                    </p>
-
-                </div>
-
-                <div class="angel-certifications-grid">
-
-                    ${CERTIFICATIONS.map(
-                        (cert, index) => `
-                            <article
-                                class="angel-certification-card"
-                                data-animate
-                                data-delay="${index * 70}"
-                            >
-
-                                <div class="angel-certification-image-wrap">
-
-                                    <img
-                                        class="angel-certification-image"
-                                        src="${cert.image}"
-                                        alt="${cert.title}"
-                                        loading="lazy"
-                                        data-cert-image
-                                    >
-
-                                    <div
-                                        class="angel-certification-placeholder"
-                                        data-cert-placeholder
-                                    >
-                                        <div>
-                                            <strong>${cert.title}</strong>
-                                            <span>Imagem ainda não disponível</span>
-                                        </div>
-                                    </div>
-
-                                </div>
-
-                                <div class="angel-certification-content">
-
-                                    <span class="angel-certification-type">
-                                        ${cert.type}
-                                    </span>
-
-                                    <h3>${cert.title}</h3>
-
-                                    <a
-                                        href="${cert.image}"
-                                        target="_blank"
-                                        rel="noopener"
-                                        class="angel-certification-link"
-                                        data-cert-link
-                                    >
-                                        Abrir documento
-                                        ${iconMarkup("arrow")}
-                                    </a>
-
-                                </div>
-
-                            </article>
-                        `
-                    ).join("")}
+                    ${routineStep(
+                        "04",
+                        "Escolha pessoal",
+                        "A escolha deve acompanhar a necessidade e o momento de utilização."
+                    )}
 
                 </div>
 
             </div>
 
-        </section>
+
+            <button
+                type="button"
+                class="angel-more-toggle"
+                data-more-toggle="routine"
+                data-open-label="Ver todos os formatos"
+                data-close-label="Ocultar formatos"
+                aria-expanded="false"
+                aria-controls="angel-routine-more">
+
+                <span>
+                    Ver todos os formatos
+                </span>
+
+                <i aria-hidden="true">
+                    +
+                </i>
+
+            </button>
+
+        </div>
+
+    </section>
+
     `;
 }
+
+
+function routineStep(
+    number,
+    title,
+    text
+){
+
+    return `
+
+    <article class="angel-routine-step reveal">
+
+        <div class="angel-routine-number">
+            ${number}
+        </div>
+
+        <div>
+
+            <h3>
+                ${title}
+            </h3>
+
+            <p>
+                ${text}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   EXPERIENCE
+   ========================================================== */
+
+function experience(){
+
+    return `
+
+    <section class="section angel-experience">
+
+        <div class="container">
+
+            <div class="section-center reveal">
+
+                <span class="label">
+                    ANGEL MOON LIFESTYLE
+                </span>
+
+                <h2 class="section-title">
+                    Confortável.
+                    Discreto.
+                    <span>Confiante.</span>
+                </h2>
+
+                <p class="lead">
+                    Uma proposta de cuidado íntimo pensada para integrar
+                    protecção, leveza e tecnologia no quotidiano.
+                </p>
+
+            </div>
+
+
+            <div class="angel-experience-grid">
+
+                ${experienceCard(
+                    "♡",
+                    "Conforto",
+                    "Construção fina e flexível apresentada para utilização diária."
+                )}
+
+                ${experienceCard(
+                    "◉",
+                    "Protecção",
+                    "Estrutura orientada para absorção e retenção."
+                )}
+
+                ${experienceCard(
+                    "≈",
+                    "Respirabilidade",
+                    "Base apresentada como permeável ao ar."
+                )}
+
+                ${experienceCard(
+                    "✦",
+                    "Tecnologia",
+                    "Elementos tecnológicos integrados na construção."
+                )}
+
+                ${experienceCard(
+                    "◇",
+                    "Discrição",
+                    "Uma proposta centrada numa experiência discreta."
+                )}
+
+                ${experienceCard(
+                    "∞",
+                    "Versatilidade",
+                    "Diferentes formatos para diferentes momentos."
+                )}
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function experienceCard(
+    icon,
+    title,
+    text
+){
+
+    return `
+
+    <article class="angel-experience-card reveal">
+
+        <div class="angel-experience-icon">
+            ${icon}
+        </div>
+
+        <span class="angel-experience-number">
+            CONCEITO
+        </span>
+
+        <h3>
+            ${title}
+        </h3>
+
+        <p>
+            ${text}
+        </p>
+
+    </article>
+
+    `;
+}
+
 
 /* ==========================================================
    VARIANTS
    ========================================================== */
 
-function angelVariants() {
+function variants(){
 
     return `
-        <section class="angel-section angel-variants" id="angel-variants">
 
-            <div class="angel-container">
+    <section
+        id="angel-variants"
+        class="section angel-variants">
 
-                <div class="angel-section-heading is-centered" data-animate>
+        <div class="container">
 
-                    <span class="label">
-                        Linha Angel Moon
-                    </span>
+            <div class="section-center angel-section-heading reveal">
 
-                    <h2 class="section-title">
-                        Um formato para
-                        <span>cada momento.</span>
-                    </h2>
+                <span class="label">
+                    FORMATOS
+                </span>
 
-                    <p class="lead">
-                        Três apresentações dentro da linha Angel Moon.
-                    </p>
+                <h2 class="section-title">
+                    Uma linha.
+                    <span>Três formatos.</span>
+                </h2>
 
-                </div>
+                <p class="lead">
+                    Diferentes opções para diferentes momentos
+                    de utilização.
+                </p>
 
-                <div class="angel-variants-grid">
+            </div>
 
-                    ${VARIANTS.map(
-                        (variant, index) => `
-                            <article
-                                class="angel-variant-card"
-                                data-animate
-                                data-delay="${index * 70}"
-                            >
 
-                                <div class="angel-variant-image-wrap">
+            <div class="angel-variants-grid">
+
+                ${ANGEL_VARIANTS
+                    .map(
+                        variant => `
+                            <article class="angel-variant-card reveal">
+
+                                <div class="angel-variant-image">
 
                                     <img
                                         src="${variant.image}"
                                         alt="${variant.name}"
-                                        class="angel-variant-image"
                                         loading="lazy"
+                                        decoding="async"
                                     >
 
-                                    <div class="angel-image-fallback">
-                                        <div>
-                                            <strong>${variant.name}</strong>
-                                            <span>${variant.image}</span>
-                                        </div>
-                                    </div>
-
                                 </div>
+
 
                                 <div class="angel-variant-content">
 
@@ -935,622 +1495,1052 @@ function angelVariants() {
                                         ${variant.tag}
                                     </span>
 
-                                    <h3>${variant.name}</h3>
+                                    <h3>
+                                        ${variant.name}
+                                    </h3>
 
-                                    <p>${variant.text}</p>
+                                    <p>
+                                        ${variant.text}
+                                    </p>
 
                                 </div>
 
                             </article>
                         `
-                    ).join("")}
-
-                </div>
-
-            </div>
-
-        </section>
-    `;
-}
-
-/* ==========================================================
-   FAQ
-   ========================================================== */
-
-function angelFaq() {
-
-    const faq = [
-        [
-            "Quais são os formatos disponíveis?",
-            "A linha apresentada nesta página inclui Angel Moon Dia, Angel Moon Noite e Angel Moon Panty Liner."
-        ],
-        [
-            "O que significa Negative Ion Core?",
-            "É uma designação tecnológica apresentada na comunicação do produto. As especificações e alegações associadas devem ser confirmadas através da documentação oficial."
-        ],
-        [
-            "A página já está preparada para certificações?",
-            "Sim. Os cartões de documentação estão preparados para receber as imagens oficiais."
-        ],
-        [
-            "O Angel Moon substitui cuidados médicos?",
-            "Não. O produto não substitui diagnóstico, aconselhamento ou tratamento médico."
-        ],
-        [
-            "As propriedades relacionadas com saúde estão verificadas?",
-            "As características técnicas e alegações relacionadas com saúde devem ser confirmadas através da documentação oficial e do enquadramento aplicável."
-        ]
-    ];
-
-    return `
-        <section class="angel-section angel-faq" id="angel-faq">
-
-            <div class="angel-container">
-
-                <div class="angel-section-heading is-centered" data-animate>
-
-                    <span class="label">
-                        Perguntas frequentes
-                    </span>
-
-                    <h2 class="section-title">
-                        Informação clara,
-                        <span>sem excesso.</span>
-                    </h2>
-
-                </div>
-
-                <div class="angel-faq-list">
-
-                    ${faq.map(
-                        ([question, answer], index) => `
-                            <article
-                                class="angel-faq-item"
-                                data-faq-item
-                                data-animate
-                                data-delay="${index * 45}"
-                            >
-
-                                <button
-                                    class="angel-faq-question"
-                                    type="button"
-                                    aria-expanded="false"
-                                    aria-controls="angel-faq-answer-${index}"
-                                    data-faq-toggle
-                                    data-ripple
-                                >
-
-                                    <span>${question}</span>
-                                    ${iconMarkup("chevron")}
-
-                                </button>
-
-                                <div
-                                    class="angel-faq-answer"
-                                    id="angel-faq-answer-${index}"
-                                    aria-hidden="true"
-                                >
-                                    <div>
-
-                                        <div class="angel-faq-answer-content">
-                                            ${answer}
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                            </article>
-                        `
-                    ).join("")}
-
-                </div>
-
-            </div>
-
-        </section>
-    `;
-}
-
-/* ==========================================================
-   INFORMATION
-   ========================================================== */
-
-function angelInformation() {
-
-    return `
-        <section class="angel-section angel-information" id="angel-information">
-
-            <div class="angel-container">
-
-                <div class="angel-information-box" data-animate>
-
-                    <div class="angel-information-icon">
-                        ${iconMarkup("check")}
-                    </div>
-
-                    <div>
-
-                        <span class="label">
-                            Informação
-                        </span>
-
-                        <h3>
-                            Comunicação responsável
-                        </h3>
-
-                        <p>
-                            Esta página organiza as características e tecnologias
-                            comunicadas para o Angel Moon de forma comercial e informativa.
-                        </p>
-
-                        <p>
-                            As alegações técnicas ou relacionadas com saúde devem
-                            ser confirmadas na documentação oficial do fabricante.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-    `;
-}
-
-/* ==========================================================
-   CTA
-   ========================================================== */
-
-function angelCta() {
-
-    return `
-        <section class="angel-cta" id="angel-contact">
-
-            <div class="angel-container angel-cta-inner" data-animate>
-
-                <span class="eyebrow">
-                    ANGEL MOON
-                </span>
-
-                <h2>
-                    Descubra a experiência Angel Moon.
-                </h2>
-
-                <p>
-                    Obtenha informações sobre os formatos,
-                    disponibilidade e documentação do produto.
-                </p>
-
-                <div class="angel-cta-actions">
-
-                    <button
-                        class="btn btn-primary"
-                        type="button"
-                        data-whatsapp
-                        data-ripple
-                    >
-                        Falar pelo WhatsApp
-                        ${iconMarkup("arrow")}
-                    </button>
-
-                    <button
-                        class="btn btn-glass"
-                        type="button"
-                        data-home
-                        data-ripple
-                    >
-                        Voltar ao início
-                    </button>
-
-                </div>
-
-            </div>
-
-        </section>
-    `;
-}
-
-/* ==========================================================
-   INITIALISATION
-   ========================================================== */
-
-function initialiseAngel() {
-
-    initialiseReveal();
-    initialiseMorePanels();
-    initialiseFaq();
-    initialiseWhatsApp();
-    initialiseCertificationImages();
-    initialiseHomeButton();
-    initialiseRipples();
-
-    requestAnimationFrame(() => {
-
-        try {
-            stagger?.(
-                ".page-angel [data-animate]",
-                65
-            );
-        } catch {
-            /* animação opcional */
-        }
-
-    });
-}
-
-/* ==========================================================
-   REVEAL
-   ========================================================== */
-
-function initialiseReveal() {
-
-    const elements =
-        document.querySelectorAll(
-            ".page-angel [data-animate]"
-        );
-
-    if (!elements.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-
-        elements.forEach((element) => {
-            element.classList.add("is-visible");
-        });
-
-        return;
-    }
-
-    const observer =
-        new IntersectionObserver(
-            (entries, obs) => {
-
-                entries.forEach((entry) => {
-
-                    if (!entry.isIntersecting) return;
-
-                    const delay =
-                        Number(
-                            entry.target.dataset.delay || 0
-                        );
-
-                    setTimeout(() => {
-
-                        entry.target.classList.add(
-                            "is-visible"
-                        );
-
-                    }, delay);
-
-                    obs.unobserve(entry.target);
-
-                });
-
-            },
-            {
-                threshold: 0.12,
-                rootMargin: "0px 0px -40px"
-            }
-        );
-
-    elements.forEach((element) => {
-        observer.observe(element);
-    });
-}
-
-/* ==========================================================
-   VER MAIS
-   ========================================================== */
-
-function initialiseMorePanels() {
-
-    document
-        .querySelectorAll(
-            ".page-angel [data-angel-more]"
-        )
-        .forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                const panelId =
-                    button.getAttribute(
-                        "aria-controls"
-                    );
-
-                const panel =
-                    document.getElementById(panelId);
-
-                if (!panel) return;
-
-                const open =
-                    button.getAttribute(
-                        "aria-expanded"
-                    ) !== "true";
-
-                button.setAttribute(
-                    "aria-expanded",
-                    String(open)
-                );
-
-                panel.setAttribute(
-                    "aria-hidden",
-                    String(!open)
-                );
-
-                panel.classList.toggle(
-                    "is-open",
-                    open
-                );
-
-            });
-
-        });
-}
-
-/* ==========================================================
-   FAQ
-   ========================================================== */
-
-function initialiseFaq() {
-
-    document
-        .querySelectorAll(
-            ".page-angel [data-faq-toggle]"
-        )
-        .forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                const item =
-                    button.closest(
-                        "[data-faq-item]"
-                    );
-
-                const answerId =
-                    button.getAttribute(
-                        "aria-controls"
-                    );
-
-                const answer =
-                    document.getElementById(answerId);
-
-                if (!item || !answer) return;
-
-                const open =
-                    button.getAttribute(
-                        "aria-expanded"
-                    ) !== "true";
-
-                document
-                    .querySelectorAll(
-                        ".page-angel [data-faq-item]"
                     )
-                    .forEach((other) => {
+                    .join("")
+                }
 
-                        const otherButton =
-                            other.querySelector(
-                                "[data-faq-toggle]"
-                            );
+            </div>
 
-                        const otherAnswer =
-                            other.querySelector(
-                                ".angel-faq-answer"
-                            );
+        </div>
 
-                        if (
-                            !otherButton ||
-                            !otherAnswer ||
-                            other === item
-                        ) {
-                            return;
-                        }
+    </section>
 
-                        otherButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                        otherAnswer.setAttribute(
-                            "aria-hidden",
-                            "true"
-                        );
-
-                        otherAnswer.classList.remove(
-                            "is-open"
-                        );
-
-                        other.classList.remove(
-                            "is-open"
-                        );
-                    });
-
-                button.setAttribute(
-                    "aria-expanded",
-                    String(open)
-                );
-
-                answer.setAttribute(
-                    "aria-hidden",
-                    String(!open)
-                );
-
-                answer.classList.toggle(
-                    "is-open",
-                    open
-                );
-
-                item.classList.toggle(
-                    "is-open",
-                    open
-                );
-
-            });
-
-        });
+    `;
 }
 
-/* ==========================================================
-   WHATSAPP
-   ========================================================== */
-
-function initialiseWhatsApp() {
-
-    document
-        .querySelectorAll(
-            ".page-angel [data-whatsapp]"
-        )
-        .forEach((button) => {
-
-            button.addEventListener("click", () => {
-
-                const message =
-                    encodeURIComponent(
-                        "Olá, gostaria de obter informações sobre o Angel Moon."
-                    );
-
-                const url =
-                    `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
-
-                window.open(
-                    url,
-                    "_blank",
-                    "noopener,noreferrer"
-                );
-
-            });
-
-        });
-}
 
 /* ==========================================================
    CERTIFICATIONS
    ========================================================== */
 
-function initialiseCertificationImages() {
+function certifications(){
 
-    document
-        .querySelectorAll(
-            ".page-angel [data-cert-image]"
-        )
-        .forEach((image) => {
+    return `
 
-            const card =
-                image.closest(
-                    ".angel-certification-card"
+    <section
+        id="angel-certifications"
+        class="section angel-certifications">
+
+        <div class="container">
+
+            <div class="section-center angel-section-heading reveal">
+
+                <span class="label">
+                    CERTIFICAÇÕES
+                </span>
+
+                <h2 class="section-title">
+                    Documentação
+                    <span>Angel Moon.</span>
+                </h2>
+
+                <p class="lead">
+                    Área preparada para receber as imagens das certificações,
+                    relatórios e outros documentos oficiais do produto.
+                </p>
+
+            </div>
+
+
+            <div class="angel-certifications-grid">
+
+                ${ANGEL_CERTIFICATIONS
+                    .map(
+                        (cert, index) => `
+                            <article
+                                class="angel-certification-card reveal">
+
+                                <div class="angel-certification-image-wrap">
+
+                                    <img
+                                        src="${cert.image}"
+                                        alt="${cert.title}"
+                                        loading="lazy"
+                                        decoding="async"
+                                        data-cert-image
+                                    >
+
+                                    <div
+                                        class="angel-certification-placeholder"
+                                        data-cert-placeholder>
+
+                                        <strong>
+                                            ${cert.title}
+                                        </strong>
+
+                                        <span>
+                                            Imagem ainda não disponível
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="angel-certification-content">
+
+                                    <span class="angel-certification-type">
+                                        ${cert.type}
+                                    </span>
+
+                                    <h3>
+                                        ${cert.title}
+                                    </h3>
+
+                                    <a
+                                        href="${cert.image}"
+                                        target="_blank"
+                                        rel="noopener"
+                                        class="angel-certification-link"
+                                        data-cert-link>
+
+                                        Abrir documento
+
+                                    </a>
+
+                                </div>
+
+                            </article>
+                        `
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+function faq(){
+
+    const questions = [
+
+        [
+            "O que é o Angel Moon?",
+            "Angel Moon é uma linha de cuidado íntimo apresentada com foco em conforto, absorção, respirabilidade e tecnologia."
+        ],
+
+        [
+            "Quais são os formatos disponíveis?",
+            "A linha apresentada nesta página inclui Angel Moon Dia, Angel Moon Noite e Angel Moon Panty Liner."
+        ],
+
+        [
+            "O que são as sete camadas?",
+            "A apresentação do produto descreve uma estrutura composta por sete camadas, desde a superfície de contacto até à base respirável."
+        ],
+
+        [
+            "O que significa Negative Ion Core?",
+            "É uma designação tecnológica apresentada na comunicação do produto. As características e efeitos associados devem ser confirmados na documentação oficial."
+        ],
+
+        [
+            "O produto menciona Nano Silver?",
+            "Sim. Nano Silver é apresentado como um dos elementos tecnológicos da construção do Angel Moon."
+        ],
+
+        [
+            "O Angel Moon é respirável?",
+            "A apresentação do produto descreve a base como permeável ao ar."
+        ],
+
+        [
+            "Que outras tecnologias são mencionadas?",
+            "A comunicação promocional fornecida menciona ainda biomagnetismo, infravermelho longínquo, propriedades antibacterianas e desodorizantes."
+        ],
+
+        [
+            "Estas propriedades estão oficialmente certificadas?",
+            "A confirmação deve ser feita através dos documentos, certificações e informações oficiais correspondentes. Esta página dispõe de uma área específica para essa documentação."
+        ],
+
+        [
+            "O Angel Moon substitui tratamento médico?",
+            "Não. Um produto de cuidado íntimo não substitui diagnóstico, aconselhamento ou tratamento médico."
+        ]
+
+    ];
+
+
+    return `
+
+    <section
+        id="angel-faq"
+        class="section angel-faq-section">
+
+        <div class="container-sm">
+
+            <div class="angel-section-heading reveal">
+
+                <span class="eyebrow">
+                    PERGUNTAS FREQUENTES
+                </span>
+
+                <h2>
+                    Tudo sobre o
+                    <span>Angel Moon.</span>
+                </h2>
+
+                <p>
+                    As respostas abrem individualmente para manter
+                    a informação simples e organizada.
+                </p>
+
+            </div>
+
+
+            <div class="angel-faq-list">
+
+                ${questions
+                    .map(
+                        ([questionText, answerText], index) =>
+                            faqItem(
+                                String(index + 1).padStart(2,"0"),
+                                questionText,
+                                answerText
+                            )
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+function faqItem(
+    number,
+    questionText,
+    answerText
+){
+
+    const answerId =
+        `angel-faq-answer-${number}`;
+
+
+    return `
+
+    <article class="angel-faq-item">
+
+        <button
+            type="button"
+            class="angel-faq-question"
+            aria-expanded="false"
+            aria-controls="${answerId}">
+
+            <span class="angel-faq-number">
+                ${number}
+            </span>
+
+            <span class="angel-faq-text">
+                ${questionText}
+            </span>
+
+            <span
+                class="angel-faq-plus"
+                aria-hidden="true">
+
+                +
+
+            </span>
+
+        </button>
+
+
+        <div
+            id="${answerId}"
+            class="angel-faq-answer"
+            role="region"
+            aria-hidden="true">
+
+            <p>
+                ${answerText}
+            </p>
+
+        </div>
+
+    </article>
+
+    `;
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+function information(){
+
+    return `
+
+    <section class="section angel-information-section">
+
+        <div class="container">
+
+            <div class="angel-information-box reveal">
+
+                <div class="angel-information-icon">
+                    i
+                </div>
+
+                <div>
+
+                    <span class="label">
+                        COMUNICAÇÃO RESPONSÁVEL
+                    </span>
+
+                    <h2>
+                        Informação organizada.
+                        <span>Documentação em primeiro lugar.</span>
+                    </h2>
+
+                    <p>
+                        As informações desta página foram organizadas
+                        a partir do material disponibilizado para o Angel Moon.
+                        Características específicas, composição, tecnologias
+                        e alegações associadas ao produto devem ser confirmadas
+                        através da documentação oficial correspondente.
+                    </p>
+
+                    <p>
+                        As certificações e documentos oficiais serão apresentados
+                        na área própria assim que as imagens finais forem integradas.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+function cta(){
+
+    return `
+
+    <section class="section angel-cta-section">
+
+        <div class="container">
+
+            <div class="angel-cta-box reveal">
+
+                <span class="angel-label-light">
+                    ANGEL MOON
+                </span>
+
+                <h2>
+                    Conforto.
+                    <span>Protecção.</span>
+                    Tecnologia.
+                </h2>
+
+                <p>
+                    Descubra a linha Angel Moon e obtenha
+                    informações sobre formatos, disponibilidade
+                    e documentação.
+                </p>
+
+
+                <div class="angel-cta-actions">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        id="angelWhats">
+
+                        Falar no WhatsApp
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="btn btn-glass"
+                        id="backHome">
+
+                        Voltar à AD Lifestyle
+
+                    </button>
+
+                </div>
+
+
+                <p class="angel-cta-disclaimer">
+                    Informação apresentada com base no material
+                    disponibilizado para o produto.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    `;
+}
+
+
+/* ==========================================================
+   INITIALISE
+   ========================================================== */
+
+function initialiseAngel(){
+
+    const root =
+        document.querySelector(
+            ".page-angel"
+        );
+
+    if(!root){
+        return;
+    }
+
+
+    /* ------------------------------------------------------
+       RIPPLE
+       ------------------------------------------------------ */
+
+    try{
+
+        root
+            .querySelectorAll(".btn")
+            .forEach(button => ripple(button));
+
+    }catch(error){
+
+        console.warn(
+            "Angel Moon: ripple não inicializado.",
+            error
+        );
+
+    }
+
+
+    /* ------------------------------------------------------
+       STAGGER
+       ------------------------------------------------------ */
+
+    try{
+
+        stagger(
+            root.querySelectorAll(
+                `
+                .angel-overview-grid .reveal,
+                .angel-benefits-grid .reveal,
+                .angel-experience-grid .reveal,
+                .angel-routine-list .reveal,
+                .angel-variants-grid .reveal,
+                .angel-certifications-grid .reveal
+                `
+            )
+        );
+
+    }catch(error){
+
+        console.warn(
+            "Angel Moon: stagger não inicializado.",
+            error
+        );
+
+    }
+
+
+    /* ------------------------------------------------------
+       SCROLL
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const trigger =
+                event.target.closest(
+                    "[data-scroll]"
                 );
 
-            const placeholder =
-                card?.querySelector(
-                    "[data-cert-placeholder]"
-                );
-
-            const link =
-                card?.querySelector(
-                    "[data-cert-link]"
-                );
-
-            if (!card || !placeholder || !link) {
+            if(!trigger){
                 return;
             }
 
-            const ready = () => {
-
-                card.classList.add(
-                    "has-image"
+            const selector =
+                trigger.getAttribute(
+                    "data-scroll"
                 );
 
-                placeholder.classList.remove(
-                    "is-visible"
+            if(!selector){
+                return;
+            }
+
+            const target =
+                root.querySelector(
+                    selector
                 );
 
-                link.classList.remove(
-                    "is-disabled"
+            if(target){
+
+                target.scrollIntoView({
+                    behavior:"smooth",
+                    block:"start"
+                });
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       MORE / DETAILS
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "[data-more-toggle]"
                 );
 
-                link.removeAttribute(
-                    "aria-disabled"
-                );
-            };
+            if(!button){
+                return;
+            }
 
-            const missing = () => {
-
-                card.classList.remove(
-                    "has-image"
+            const key =
+                button.getAttribute(
+                    "data-more-toggle"
                 );
 
-                placeholder.classList.add(
-                    "is-visible"
+            const panel =
+                root.querySelector(
+                    `[data-more-panel="${key}"]`
                 );
 
-                link.classList.add(
-                    "is-disabled"
+            if(!panel){
+                return;
+            }
+
+            const isOpen =
+                button.getAttribute(
+                    "aria-expanded"
+                ) === "true";
+
+            const nextState =
+                !isOpen;
+
+
+            button.setAttribute(
+                "aria-expanded",
+                String(nextState)
+            );
+
+
+            button.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.classList.toggle(
+                "active",
+                nextState
+            );
+
+
+            panel.setAttribute(
+                "aria-hidden",
+                String(!nextState)
+            );
+
+
+            if(nextState){
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+            }else{
+
+                panel.style.maxHeight =
+                    `${panel.scrollHeight}px`;
+
+                requestAnimationFrame(()=>{
+
+                    panel.style.maxHeight =
+                        "0px";
+
+                });
+
+            }
+
+
+            const label =
+                button.querySelector(
+                    "span"
                 );
 
-                link.setAttribute(
-                    "aria-disabled",
-                    "true"
+
+            if(label){
+
+                label.textContent =
+                    nextState
+                        ? button.dataset.closeLabel || "Ocultar"
+                        : button.dataset.openLabel || "Ver mais";
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       FAQ
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    ".angel-faq-question"
                 );
-            };
+
+            if(!button){
+                return;
+            }
+
+
+            const item =
+                button.closest(
+                    ".angel-faq-item"
+                );
+
+            if(!item){
+                return;
+            }
+
+
+            const answer =
+                item.querySelector(
+                    ".angel-faq-answer"
+                );
+
+            if(!answer){
+                return;
+            }
+
+
+            const isOpen =
+                item.classList.contains(
+                    "active"
+                );
+
+
+            root
+                .querySelectorAll(
+                    ".angel-faq-item.active"
+                )
+                .forEach(
+                    otherItem=>{
+
+                        if(
+                            otherItem !== item
+                        ){
+
+                            closeFaqItem(
+                                otherItem
+                            );
+
+                        }
+
+                    }
+                );
+
+
+            if(isOpen){
+
+                closeFaqItem(item);
+
+            }else{
+
+                openFaqItem(
+                    item,
+                    button,
+                    answer
+                );
+
+                openFaqPlus(item);
+
+            }
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       CERTIFICATION IMAGE FALLBACK
+       ------------------------------------------------------ */
+
+    root
+        .querySelectorAll(
+            "[data-cert-image]"
+        )
+        .forEach(image=>{
 
             image.addEventListener(
                 "load",
-                ready,
-                { once: true }
+                function(){
+
+                    const card =
+                        image.closest(
+                            ".angel-certification-card"
+                        );
+
+                    const placeholder =
+                        card?.querySelector(
+                            "[data-cert-placeholder]"
+                        );
+
+                    if(placeholder){
+
+                        placeholder.style.display =
+                            "none";
+
+                    }
+
+                },
+                {
+                    once:true
+                }
             );
+
 
             image.addEventListener(
                 "error",
-                missing,
-                { once: true }
+                function(){
+
+                    const card =
+                        image.closest(
+                            ".angel-certification-card"
+                        );
+
+                    const placeholder =
+                        card?.querySelector(
+                            "[data-cert-placeholder]"
+                        );
+
+                    const link =
+                        card?.querySelector(
+                            "[data-cert-link]"
+                        );
+
+
+                    if(card){
+
+                        card.classList.add(
+                            "image-error"
+                        );
+
+                    }
+
+
+                    if(placeholder){
+
+                        placeholder.style.display =
+                            "flex";
+
+                    }
+
+
+                    if(link){
+
+                        link.classList.add(
+                            "is-disabled"
+                        );
+
+                        link.setAttribute(
+                            "aria-disabled",
+                            "true"
+                        );
+
+                    }
+
+                },
+                {
+                    once:true
+                }
             );
 
-            if (image.complete) {
+        });
 
-                image.naturalWidth > 0
-                    ? ready()
-                    : missing();
+
+    /* ------------------------------------------------------
+       BUY / WHATSAPP
+       ------------------------------------------------------ */
+
+    root.addEventListener(
+        "click",
+        function(event){
+
+            const button =
+                event.target.closest(
+                    "#buyAngel, #angelWhats, [data-buy]"
+                );
+
+            if(!button){
+                return;
             }
 
-        });
-}
 
-/* ==========================================================
-   HOME
-   ========================================================== */
+            let message =
+                "Olá AD Lifestyle! Tenho interesse no Angel Moon e gostaria de receber mais informações.";
 
-function initialiseHomeButton() {
 
-    document
-        .querySelectorAll(
-            ".page-angel [data-home]"
-        )
-        .forEach((button) => {
+            const type =
+                button.getAttribute(
+                    "data-buy"
+                );
 
-            button.addEventListener(
-                "click",
-                () => navigate("/")
-            );
 
-        });
-}
+            if(type === "product"){
 
-/* ==========================================================
-   RIPPLE
-   ========================================================== */
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Angel Moon.";
 
-function initialiseRipples() {
-
-    document
-        .querySelectorAll(
-            ".page-angel [data-ripple]"
-        )
-        .forEach((element) => {
-
-            try {
-                ripple?.(element);
-            } catch {
-                /* opcional */
             }
 
-        });
+
+            if(
+                button.id === "buyAngel"
+            ){
+
+                message =
+                    "Olá AD Lifestyle! Gostaria de adquirir o Angel Moon.";
+
+            }
+
+
+            openWhatsApp(message);
+
+        }
+    );
+
+
+    /* ------------------------------------------------------
+       HOME
+       ------------------------------------------------------ */
+
+    const backHome =
+        root.querySelector(
+            "#backHome"
+        );
+
+    if(backHome){
+
+        backHome.addEventListener(
+            "click",
+            function(){
+
+                navigate("/");
+
+            }
+        );
+
+    }
+
+
+    /* ------------------------------------------------------
+       RESIZE
+       ------------------------------------------------------ */
+
+    window.addEventListener(
+        "resize",
+        function(){
+
+            root
+                .querySelectorAll(
+                    ".angel-faq-item.active .angel-faq-answer"
+                )
+                .forEach(answer=>{
+
+                    answer.style.maxHeight =
+                        `${answer.scrollHeight}px`;
+
+                });
+
+
+            root
+                .querySelectorAll(
+                    ".angel-more-panel.active"
+                )
+                .forEach(panel=>{
+
+                    panel.style.maxHeight =
+                        `${panel.scrollHeight}px`;
+
+                });
+
+        },
+        {
+            passive:true
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   FAQ HELPERS
+   ========================================================== */
+
+function openFaqItem(
+    item,
+    button,
+    answer
+){
+
+    item.classList.add(
+        "active"
+    );
+
+    button.setAttribute(
+        "aria-expanded",
+        "true"
+    );
+
+    answer.setAttribute(
+        "aria-hidden",
+        "false"
+    );
+
+    answer.style.maxHeight =
+        `${answer.scrollHeight}px`;
+
+}
+
+
+function closeFaqItem(item){
+
+    const button =
+        item.querySelector(
+            ".angel-faq-question"
+        );
+
+    const answer =
+        item.querySelector(
+            ".angel-faq-answer"
+        );
+
+    const plus =
+        item.querySelector(
+            ".angel-faq-plus"
+        );
+
+
+    item.classList.remove(
+        "active"
+    );
+
+
+    if(button){
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+    }
+
+
+    if(answer){
+
+        answer.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        answer.style.maxHeight =
+            "0px";
+
+    }
+
+
+    if(plus){
+
+        plus.textContent =
+            "+";
+
+    }
+
+}
+
+
+function openFaqPlus(item){
+
+    const plus =
+        item.querySelector(
+            ".angel-faq-plus"
+        );
+
+    if(plus){
+
+        plus.textContent =
+            "−";
+
+    }
+
+}
+
+
+/* ==========================================================
+   WHATSAPP
+   ========================================================== */
+
+function openWhatsApp(message){
+
+    const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+    window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+    );
+
 }
