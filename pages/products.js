@@ -2,6 +2,7 @@
    AD LIFESTYLE V2
    PRODUCTS.JS
    Premium Product Universe
+   Master Pattern: EVENTS PAGE
    Editorial / Immersive / Luxury
    ========================================================== */
 
@@ -9,22 +10,13 @@ import { applyTheme } from "../js/theme.js";
 import { navigate } from "../js/router.js";
 import { ripple, stagger } from "../js/animations.js";
 
-/* ==========================================================
-   ESTADO
-   ========================================================== */
+const WHATSAPP_NUMBER = "244924964666";
+const SLIDE_DURATION = 6500;
 
 let currentSlide = 0;
 let slideTimer = null;
 let isAnimating = false;
 let keyboardBound = false;
-
-const SLIDE_DURATION = 6500;
-
-/* ==========================================================
-   WHATSAPP
-   ========================================================== */
-
-const WHATSAPP_NUMBER = "244924964666";
 
 /* ==========================================================
    PRODUTOS
@@ -33,183 +25,133 @@ const WHATSAPP_NUMBER = "244924964666";
 const PRODUCTS = [
 
     {
-        id: "angel",
-        name: "Angel Moon",
-        category: "CUIDADO FEMININO",
-        universe: "WELLNESS",
-        label: "Cuidado feminino",
-        image: "./assets/products/angel.png",
-        description:
-            "Uma experiência de cuidado feminino pensada para conforto, confiança e bem-estar.",
-        tags: [
-            "Conforto",
-            "Premium",
-            "Feminino"
-        ],
-        tone: "#8B5CF6",
-        atmosphere: "#E9D5FF"
+        id:"angel",
+        name:"Angel Moon",
+        category:"CUIDADO FEMININO",
+        universe:"WELLNESS",
+        label:"Cuidado feminino",
+        image:"./assets/products/angel.png",
+        description:"Uma experiência de cuidado feminino pensada para acompanhar a rotina com conforto, confiança e atenção ao bem-estar.",
+        tags:["Conforto","Premium","Feminino"],
+        tone:"#8B5CF6",
+        atmosphere:"#E9D5FF"
     },
 
     {
-        id: "ezeno",
-        name: "EZENO",
-        category: "SAÚDE ORAL",
-        universe: "WELLNESS",
-        label: "Saúde oral",
-        image: "./assets/products/ezeno.png",
-        description:
-            "Uma solução de higiene oral concebida para integrar qualidade e cuidado na rotina diária.",
-        tags: [
-            "Saúde",
-            "Oral",
-            "Daily"
-        ],
-        tone: "#D8A62A",
-        atmosphere: "#FFF3D5"
+        id:"ezeno",
+        name:"EZENO",
+        category:"SAÚDE ORAL",
+        universe:"WELLNESS",
+        label:"Saúde oral",
+        image:"./assets/products/ezeno.png",
+        description:"Uma proposta de higiene oral concebida para integrar qualidade, cuidado e presença na rotina diária.",
+        tags:["Saúde","Oral","Daily"],
+        tone:"#D8A62A",
+        atmosphere:"#FFF3D5"
     },
 
     {
-        id: "zenbru",
-        name: "Zenbru",
-        category: "CAFÉ FUNCIONAL",
-        universe: "LIFESTYLE",
-        label: "Café & lifestyle",
-        image: "./assets/products/zenbru.png",
-        description:
-            "Uma experiência de café pensada para acompanhar energia, sabor e equilíbrio no quotidiano.",
-        tags: [
-            "Café",
-            "Energia",
-            "Lifestyle"
-        ],
-        tone: "#F7C51E",
-        atmosphere: "#FFE7B2"
+        id:"zenbru",
+        name:"Zenbru",
+        category:"CAFÉ FUNCIONAL",
+        universe:"LIFESTYLE",
+        label:"Café & lifestyle",
+        image:"./assets/products/zenbru.png",
+        description:"Uma experiência de café pensada para acompanhar diferentes momentos, hábitos e ritmos do quotidiano.",
+        tags:["Café","Energia","Lifestyle"],
+        tone:"#F7C51E",
+        atmosphere:"#FFE7B2"
     },
 
     {
-        id: "alpha",
-        name: "Alpha Vmax",
-        category: "PERFORMANCE",
-        universe: "PERFORMANCE",
-        label: "Performance",
-        image: "./assets/products/alpha.png",
-        description:
-            "Uma solução orientada para homens que valorizam vitalidade, confiança e performance.",
-        tags: [
-            "Performance",
-            "Homem",
-            "Elite"
-        ],
-        tone: "#D8A74D",
-        atmosphere: "#D8E6FF"
+        id:"alpha",
+        name:"Alpha Vmax",
+        category:"PERFORMANCE",
+        universe:"PERFORMANCE",
+        label:"Performance",
+        image:"./assets/products/alpha.png",
+        description:"Uma proposta orientada para homens que valorizam presença, confiança e uma experiência de performance.",
+        tags:["Performance","Homem","Elite"],
+        tone:"#D8A74D",
+        atmosphere:"#D8E6FF"
     },
 
     {
-        id: "alphameta",
-        name: "AlphaMeta",
-        category: "NUTRIÇÃO",
-        universe: "WELLNESS",
-        label: "Nutrição",
-        image: "./assets/products/alphameta.png",
-        description:
-            "Uma proposta de nutrição baseada em cereais Oryza para acompanhar diferentes momentos do dia.",
-        tags: [
-            "Nutrição",
-            "Oryza",
-            "Premium"
-        ],
-        tone: "#FCC20C",
-        atmosphere: "#FFE0C2"
+        id:"alphameta",
+        name:"AlphaMeta",
+        category:"NUTRIÇÃO",
+        universe:"WELLNESS",
+        label:"Nutrição",
+        image:"./assets/products/alphameta.png",
+        description:"Uma proposta de nutrição baseada em cereais Oryza, apresentada para diferentes momentos da rotina.",
+        tags:["Nutrição","Oryza","Premium"],
+        tone:"#FCC20C",
+        atmosphere:"#FFE0C2"
     },
 
     {
-        id: "minoseed",
-        name: "Minoseed",
-        category: "BELEZA & BEM-ESTAR",
-        universe: "WELLNESS",
-        label: "Beleza & bem-estar",
-        image: "./assets/products/minoseed.png",
-        description:
-            "Uma solução orientada para beleza, cuidado pessoal e bem-estar no dia a dia.",
-        tags: [
-            "Beleza",
-            "Cuidado",
-            "Lifestyle"
-        ],
-        tone: "#D8A62A",
-        atmosphere: "#FFF3D5"
+        id:"minoseed",
+        name:"Minoseed",
+        category:"BELEZA & BEM-ESTAR",
+        universe:"WELLNESS",
+        label:"Beleza & bem-estar",
+        image:"./assets/products/minoseed.png",
+        description:"Uma solução orientada para beleza, cuidado pessoal e bem-estar no dia a dia.",
+        tags:["Beleza","Cuidado","Lifestyle"],
+        tone:"#D8A62A",
+        atmosphere:"#FFF3D5"
     },
 
     {
-        id: "evador",
-        name: "Evador",
-        category: "CUIDADOS PREMIUM",
-        universe: "LIFESTYLE",
-        label: "Cuidados premium",
-        image: "./assets/products/evador.png",
-        description:
-            "Uma experiência premium de cuidado pessoal marcada por elegância e sofisticação.",
-        tags: [
-            "Elegância",
-            "Premium",
-            "Daily"
-        ],
-        tone: "#D4AF37",
-        atmosphere: "#EEE7D7"
+        id:"evador",
+        name:"Evador",
+        category:"CUIDADOS PREMIUM",
+        universe:"LIFESTYLE",
+        label:"Cuidados premium",
+        image:"./assets/products/evador.png",
+        description:"Uma experiência premium de cuidado pessoal marcada por elegância, simplicidade e sofisticação.",
+        tags:["Elegância","Premium","Daily"],
+        tone:"#D4AF37",
+        atmosphere:"#EEE7D7"
     },
 
     {
-        id: "alphaspin-ultra",
-        name: "AlphaSpin Ultra",
-        category: "SMART LIVING",
-        universe: "SMART LIVING",
-        label: "Tecnologia",
-        image: "./assets/products/alphaspin-ultra.png",
-        description:
-            "Tecnologia, inovação e uma abordagem contemporânea ao universo do smart living.",
-        tags: [
-            "Smart",
-            "Tecnologia",
-            "Inovação"
-        ],
-        tone: "#A57BCF",
-        atmosphere: "#E9D9F7"
+        id:"alphaspin-ultra",
+        name:"AlphaSpin Ultra",
+        category:"SMART LIVING",
+        universe:"SMART LIVING",
+        label:"Tecnologia",
+        image:"./assets/products/alphaspin-ultra.png",
+        description:"Tecnologia, inovação e uma abordagem contemporânea ao universo do smart living.",
+        tags:["Smart","Tecnologia","Inovação"],
+        tone:"#A57BCF",
+        atmosphere:"#E9D9F7"
     },
 
     {
-        id: "alpha-spin-straw",
-        name: "Alpha Spin Straw",
-        category: "SMART LIVING",
-        universe: "SMART LIVING",
-        label: "Água & experiência",
-        image: "./assets/products/straw.png",
-        description:
-            "Um canudo de vidro integrado ao universo Alpha Spin, apresentado como uma experiência premium para água e outras bebidas.",
-        tags: [
-            "Vidro",
-            "Smart",
-            "Água"
-        ],
-        tone: "#C6A04D",
-        atmosphere: "#DDEBE4"
+        id:"alpha-spin-straw",
+        name:"Alpha Spin Straw",
+        category:"SMART LIVING",
+        universe:"SMART LIVING",
+        label:"Água & experiência",
+        image:"./assets/products/straw.png",
+        description:"Um canudo de vidro integrado ao universo Alpha Spin, apresentado como um detalhe premium para a experiência de beber.",
+        tags:["Vidro","Smart","Água"],
+        tone:"#C6A04D",
+        atmosphere:"#DDEBE4"
     },
 
     {
-        id: "ismarts3",
-        name: "iSMART S3",
-        category: "SMART LIVING",
-        universe: "SMART LIVING",
-        label: "Smart living",
-        image: "./assets/products/ismarts3.png",
-        description:
-            "Uma experiência de smart living criada para integrar inovação, tecnologia e conforto ao quotidiano.",
-        tags: [
-            "Smart",
-            "Lifestyle",
-            "Inovação"
-        ],
-        tone: "#39D353",
-        atmosphere: "#DCEBFA"
+        id:"ismarts3",
+        name:"iSMART S3",
+        category:"SMART LIVING",
+        universe:"SMART LIVING",
+        label:"Smart living",
+        image:"./assets/products/ismarts3.png",
+        description:"Uma experiência de smart living criada para aproximar inovação, tecnologia e conforto do quotidiano.",
+        tags:["Smart","Lifestyle","Inovação"],
+        tone:"#39D353",
+        atmosphere:"#DCEBFA"
     }
 
 ];
@@ -220,94 +162,84 @@ const PRODUCTS = [
 
 const HERO_STORIES = {
 
-    angel: {
-        eyebrow: "WELLNESS",
-        kicker: "CUIDADO · CONFORTO · CONFIANÇA",
-        title: "Comece pelo",
-        accent: "cuidado.",
-        copy:
-            "Uma experiência criada para transformar pequenos momentos de cuidado em parte do seu lifestyle."
+    angel:{
+        eyebrow:"WELLNESS",
+        kicker:"CUIDADO · CONFORTO · CONFIANÇA",
+        title:"Comece pelo",
+        accent:"cuidado.",
+        copy:"Uma experiência criada para transformar pequenos momentos de cuidado em parte do seu lifestyle."
     },
 
-    ezeno: {
-        eyebrow: "WELLNESS",
-        kicker: "PUREZA · ROTINA · CUIDADO",
-        title: "O cuidado",
-        accent: "começa todos os dias.",
-        copy:
-            "Uma abordagem contemporânea à higiene oral, pensada para acompanhar a rotina com elegância."
+    ezeno:{
+        eyebrow:"WELLNESS",
+        kicker:"PUREZA · ROTINA · CUIDADO",
+        title:"O cuidado",
+        accent:"começa todos os dias.",
+        copy:"Uma abordagem contemporânea à higiene oral, pensada para acompanhar a rotina com simplicidade e elegância."
     },
 
-    zenbru: {
-        eyebrow: "LIFESTYLE",
-        kicker: "SABOR · RITUAL · ENERGIA",
-        title: "Crie o seu",
-        accent: "próprio ritmo.",
-        copy:
-            "Uma experiência de café pensada para acompanhar momentos, hábitos e o ritmo de cada dia."
+    zenbru:{
+        eyebrow:"LIFESTYLE",
+        kicker:"SABOR · RITUAL · ENERGIA",
+        title:"Crie o seu",
+        accent:"próprio ritmo.",
+        copy:"Uma experiência de café pensada para acompanhar momentos, hábitos e o ritmo de cada dia."
     },
 
-    alpha: {
-        eyebrow: "PERFORMANCE",
-        kicker: "VITALIDADE · CONFIANÇA · PERFORMANCE",
-        title: "Eleve o seu",
-        accent: "potencial.",
-        copy:
-            "Uma proposta orientada para quem valoriza performance, presença e confiança."
+    alpha:{
+        eyebrow:"PERFORMANCE",
+        kicker:"VITALIDADE · CONFIANÇA · PRESENÇA",
+        title:"Eleve o seu",
+        accent:"potencial.",
+        copy:"Uma proposta orientada para quem valoriza performance, presença e confiança."
     },
 
-    alphameta: {
-        eyebrow: "WELLNESS",
-        kicker: "NUTRIÇÃO · EQUILÍBRIO · ROTINA",
-        title: "Nutrição com",
-        accent: "uma nova perspectiva.",
-        copy:
-            "Uma proposta que aproxima nutrição, conveniência e uma experiência contemporânea."
+    alphameta:{
+        eyebrow:"WELLNESS",
+        kicker:"NUTRIÇÃO · EQUILÍBRIO · ROTINA",
+        title:"Nutrição com",
+        accent:"uma nova perspectiva.",
+        copy:"Uma proposta que aproxima nutrição, conveniência e uma experiência contemporânea."
     },
 
-    minoseed: {
-        eyebrow: "WELLNESS",
-        kicker: "BELEZA · CUIDADO · LIFESTYLE",
-        title: "Cuide de si",
-        accent: "todos os dias.",
-        copy:
-            "Uma experiência orientada para beleza, cuidado pessoal e bem-estar."
+    minoseed:{
+        eyebrow:"WELLNESS",
+        kicker:"BELEZA · CUIDADO · LIFESTYLE",
+        title:"Cuide de si",
+        accent:"todos os dias.",
+        copy:"Uma experiência orientada para beleza, cuidado pessoal e bem-estar."
     },
 
-    evador: {
-        eyebrow: "PREMIUM CARE",
-        kicker: "ELEGÂNCIA · CUIDADO · PRESENÇA",
-        title: "O detalhe",
-        accent: "faz a diferença.",
-        copy:
-            "Uma abordagem premium ao cuidado pessoal, marcada por elegância e sofisticação."
+    evador:{
+        eyebrow:"PREMIUM CARE",
+        kicker:"ELEGÂNCIA · CUIDADO · PRESENÇA",
+        title:"O detalhe",
+        accent:"faz a diferença.",
+        copy:"Uma abordagem premium ao cuidado pessoal, marcada por elegância e sofisticação."
     },
 
-    "alphaspin-ultra": {
-        eyebrow: "SMART LIVING",
-        kicker: "TECNOLOGIA · INOVAÇÃO · EXPERIÊNCIA",
-        title: "A inovação",
-        accent: "entrou no quotidiano.",
-        copy:
-            "Tecnologia e design unem-se numa experiência pensada para o lifestyle contemporâneo."
+    "alphaspin-ultra":{
+        eyebrow:"SMART LIVING",
+        kicker:"TECNOLOGIA · INOVAÇÃO · EXPERIÊNCIA",
+        title:"A inovação",
+        accent:"entrou no quotidiano.",
+        copy:"Tecnologia e design unem-se numa experiência pensada para o lifestyle contemporâneo."
     },
 
-    "alpha-spin-straw": {
-        eyebrow: "SMART LIVING",
-        kicker: "VIDRO · ÁGUA · EXPERIÊNCIA",
-        title: "Mude a forma",
-        accent: "como bebe.",
-        copy:
-            "Um novo olhar sobre a experiência de beber, dentro do universo Alpha Spin."
+    "alpha-spin-straw":{
+        eyebrow:"SMART LIVING",
+        kicker:"VIDRO · ÁGUA · EXPERIÊNCIA",
+        title:"Mude a forma",
+        accent:"como bebe.",
+        copy:"Um novo olhar sobre a experiência de beber, dentro do universo Alpha Spin."
     },
 
-    ismarts3: {
-        eyebrow: "SMART LIVING",
-        kicker: "TECNOLOGIA · CONFORTO · INOVAÇÃO",
-        title: "O futuro",
-        accent: "já entrou em casa.",
-        copy:
-            "Uma experiência de smart living criada para aproximar tecnologia, inovação e conforto."
+    ismarts3:{
+        eyebrow:"SMART LIVING",
+        kicker:"TECNOLOGIA · CONFORTO · INOVAÇÃO",
+        title:"O futuro",
+        accent:"já entrou em casa.",
+        copy:"Uma experiência de smart living criada para aproximar tecnologia, inovação e conforto."
     }
 
 };
@@ -318,52 +250,31 @@ const HERO_STORIES = {
 
 const ICONS = {
 
-    arrow: `
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true">
+    arrow:`
+        <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h13"></path>
             <path d="M13 6l6 6-6 6"></path>
         </svg>
     `,
 
-    prev: `
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true">
+    prev:`
+        <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19 12H5"></path>
             <path d="M11 6l-6 6 6 6"></path>
         </svg>
     `,
 
-    next: `
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true">
+    next:`
+        <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M5 12h14"></path>
             <path d="M13 6l6 6-6 6"></path>
         </svg>
     `,
 
-    search: `
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true">
-            <circle
-                cx="11"
-                cy="11"
-                r="7">
-            </circle>
+    search:`
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle>
             <path d="m16.5 16.5 4 4"></path>
-        </svg>
-    `,
-
-    plus: `
-        <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true">
-            <path d="M12 5v14"></path>
-            <path d="M5 12h14"></path>
         </svg>
     `
 
@@ -383,7 +294,7 @@ export function loadProducts(){
     if(!app){
 
         console.error(
-            "AD LIFESTYLE: elemento #app não encontrado."
+            "AD LIFESTYLE Products: elemento #app não encontrado."
         );
 
         return;
@@ -438,31 +349,33 @@ function renderHero(){
             class="products-hero"
             id="products-top"
             data-theme="${product.id}"
+            style="
+                --hero-tone:${product.tone};
+                --hero-atmosphere:${product.atmosphere};
+            "
         >
 
             <div
                 class="products-hero-background"
-                style="
-                    --hero-tone:${product.tone};
-                    --hero-atmosphere:${product.atmosphere};
-                "
+                aria-hidden="true"
+            ></div>
+
+            <div
+                class="products-hero-overlay"
+                aria-hidden="true"
             ></div>
 
             <div
                 class="products-hero-glow"
-                style="
-                    --hero-tone:${product.tone};
-                "
+                aria-hidden="true"
             ></div>
 
             <div
-                class="products-container
-                       products-hero-container"
+                class="
+                    products-container
+                    products-hero-container
+                "
             >
-
-                <!-- =========================================
-                     TOP
-                     ========================================= -->
 
                 <div class="products-hero-top">
 
@@ -501,15 +414,19 @@ function renderHero(){
 
                 </div>
 
-                <!-- =========================================
-                     MAIN
-                     ========================================= -->
-
                 <div class="products-hero-main">
 
-                    <div class="products-hero-content">
+                    <div
+                        class="
+                            products-hero-content
+                            products-reveal
+                        "
+                    >
 
-                        <div class="products-eyebrow">
+                        <div
+                            class="products-eyebrow"
+                            id="productsHeroEyebrow"
+                        >
                             ${story.eyebrow}
                         </div>
 
@@ -527,7 +444,9 @@ function renderHero(){
                             ${story.kicker}
                         </div>
 
-                        <h1 id="productsHeroTitle">
+                        <h1
+                            id="productsHeroTitle"
+                        >
 
                             ${story.title}
 
@@ -593,54 +512,17 @@ function renderHero(){
                             class="products-hero-meta"
                             id="productsHeroMeta"
                         >
-
-                            <div>
-
-                                <strong>
-                                    ${product.universe}
-                                </strong>
-
-                                <span>
-                                    Universo
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    ${String(
-                                        currentSlide + 1
-                                    ).padStart(2,"0")}
-                                </strong>
-
-                                <span>
-                                    Posição
-                                </span>
-
-                            </div>
-
-                            <div>
-
-                                <strong>
-                                    ${PRODUCTS.length}
-                                </strong>
-
-                                <span>
-                                    Produtos
-                                </span>
-
-                            </div>
-
+                            ${renderHeroMeta(product)}
                         </div>
 
                     </div>
 
-                    <!-- =====================================
-                         PRODUCT VISUAL
-                         ===================================== -->
-
-                    <div class="products-hero-product">
+                    <div
+                        class="
+                            products-hero-product
+                            products-reveal
+                        "
+                    >
 
                         <div
                             class="
@@ -678,7 +560,11 @@ function renderHero(){
                             aria-hidden="true"
                         ></div>
 
-                        <div class="products-hero-label">
+                        <div
+                            class="
+                                products-hero-label
+                            "
+                        >
 
                             <span>
                                 FEATURED PRODUCT
@@ -695,10 +581,6 @@ function renderHero(){
                     </div>
 
                 </div>
-
-                <!-- =========================================
-                     CONTROLS
-                     ========================================= -->
 
                 <div class="products-hero-controls">
 
@@ -739,10 +621,6 @@ function renderHero(){
 
                 </div>
 
-                <!-- =========================================
-                     THUMBNAILS
-                     ========================================= -->
-
                 <div
                     class="products-thumbs"
                     aria-label="
@@ -752,7 +630,7 @@ function renderHero(){
 
                     ${PRODUCTS
                         .map(
-                            (item,index) => `
+                            (item,index)=>`
 
                                 <button
                                     type="button"
@@ -804,14 +682,15 @@ function renderHero(){
         </section>
 
     `;
-
 }
 
 /* ==========================================================
-   HERO TAGS
+   HERO HELPERS
    ========================================================== */
 
-function renderHeroTags(product){
+function renderHeroTags(
+    product
+){
 
     return product.tags
         .map(
@@ -825,22 +704,72 @@ function renderHeroTags(product){
 
 }
 
-/* ==========================================================
-   HERO SLIDE NUMBER
-   ========================================================== */
-
-function formatSlideNumber(index){
+function renderHeroMeta(
+    product
+){
 
     return `
-        ${String(index + 1).padStart(2,"0")}
+
+        <div>
+
+            <strong>
+                ${product.universe}
+            </strong>
+
+            <span>
+                Universo
+            </span>
+
+        </div>
+
+        <div>
+
+            <strong>
+                ${String(
+                    currentSlide + 1
+                ).padStart(2,"0")}
+            </strong>
+
+            <span>
+                Posição
+            </span>
+
+        </div>
+
+        <div>
+
+            <strong>
+                ${PRODUCTS.length}
+            </strong>
+
+            <span>
+                Produtos
+            </span>
+
+        </div>
+
+    `;
+
+}
+
+function formatSlideNumber(
+    index
+){
+
+    return `
+        ${String(
+            index + 1
+        ).padStart(2,"0")}
         /
-        ${String(PRODUCTS.length).padStart(2,"0")}
+        ${String(
+            PRODUCTS.length
+        ).padStart(2,"0")}
     `;
 
 }
 
 /* ==========================================================
-   INTRO
+   INTRODUÇÃO
    ========================================================== */
 
 function renderIntroduction(){
@@ -848,7 +777,10 @@ function renderIntroduction(){
     return `
 
         <section
-            class="products-introduction"
+            class="
+                section
+                products-introduction
+            "
             id="products-introduction"
         >
 
@@ -863,15 +795,20 @@ function renderIntroduction(){
 
                     <div>
 
-                        <div class="products-eyebrow">
-                            AD LIFESTYLE
-                        </div>
+                        <span
+                            class="products-eyebrow"
+                        >
+                            Universo AD Lifestyle
+                        </span>
 
                         <h2>
-                            Mais do que um catálogo.
+
+                            Mais do que produtos.
+
                             <span>
-                                Um universo de experiências.
+                                Experiências com identidade.
                             </span>
+
                         </h2>
 
                     </div>
@@ -881,13 +818,13 @@ function renderIntroduction(){
                         <p>
                             Wellness, lifestyle, performance,
                             beleza, nutrição e smart living
-                            encontram-se numa única experiência.
+                            encontram-se numa única collection.
                         </p>
 
                         <p>
                             Explore cada produto individualmente
-                            e descubra aquilo que melhor se
-                            enquadra no seu momento.
+                            e descubra diferentes universos
+                            dentro da mesma visão AD Lifestyle.
                         </p>
 
                     </div>
@@ -903,15 +840,52 @@ function renderIntroduction(){
 }
 
 /* ==========================================================
-   CATEGORIES
+   UNIVERSOS
    ========================================================== */
 
 function renderCategories(){
 
+    const categories = [
+
+        [
+            "01",
+            "WELLNESS",
+            "Cuidado, equilíbrio e bem-estar."
+        ],
+
+        [
+            "02",
+            "NUTRITION",
+            "Nutrição, energia e rotina."
+        ],
+
+        [
+            "03",
+            "PERFORMANCE",
+            "Vitalidade, confiança e presença."
+        ],
+
+        [
+            "04",
+            "BEAUTY",
+            "Beleza e cuidado pessoal."
+        ],
+
+        [
+            "05",
+            "SMART LIVING",
+            "Tecnologia aplicada ao quotidiano."
+        ]
+
+    ];
+
     return `
 
         <section
-            class="products-categories"
+            class="
+                section
+                products-categories
+            "
             id="products-categories"
         >
 
@@ -926,57 +900,54 @@ function renderCategories(){
 
                     <div>
 
-                        <div class="products-eyebrow">
-                            UNIVERSOS
-                        </div>
+                        <span
+                            class="products-eyebrow"
+                        >
+                            Universos
+                        </span>
 
                         <h2>
+
                             Diferentes mundos.
+
                             <span>
                                 A mesma visão.
                             </span>
+
                         </h2>
 
                     </div>
 
                     <p>
-                        Navegue pelos universos que
-                        compõem o catálogo AD Lifestyle.
+                        Uma collection construída a partir
+                        de diferentes momentos do lifestyle
+                        contemporâneo.
                     </p>
 
                 </div>
 
-                <div class="products-category-grid">
+                <div
+                    class="
+                        products-category-grid
+                    "
+                >
 
-                    ${categoryCard(
-                        "01",
-                        "WELLNESS",
-                        "Cuidado, equilíbrio e bem-estar."
-                    )}
-
-                    ${categoryCard(
-                        "02",
-                        "NUTRITION",
-                        "Nutrição, energia e rotina."
-                    )}
-
-                    ${categoryCard(
-                        "03",
-                        "PERFORMANCE",
-                        "Vitalidade, confiança e performance."
-                    )}
-
-                    ${categoryCard(
-                        "04",
-                        "BEAUTY",
-                        "Beleza e cuidado pessoal."
-                    )}
-
-                    ${categoryCard(
-                        "05",
-                        "SMART LIVING",
-                        "Tecnologia aplicada ao quotidiano."
-                    )}
+                    ${
+                        categories
+                            .map(
+                                ([
+                                    number,
+                                    title,
+                                    description
+                                ]) =>
+                                    categoryCard(
+                                        number,
+                                        title,
+                                        description
+                                    )
+                            )
+                            .join("")
+                    }
 
                 </div>
 
@@ -988,10 +959,6 @@ function renderCategories(){
 
 }
 
-/* ==========================================================
-   CATEGORY CARD
-   ========================================================== */
-
 function categoryCard(
     number,
     title,
@@ -1001,7 +968,10 @@ function categoryCard(
     return `
 
         <article
-            class="products-category-card"
+            class="
+                products-category-card
+                products-reveal
+            "
             data-category-card="${title}"
         >
 
@@ -1020,7 +990,7 @@ function categoryCard(
             >
 
                 <span>
-                    0${number}
+                    ${number}
                 </span>
 
                 <h3>
@@ -1048,7 +1018,7 @@ function categoryCard(
 }
 
 /* ==========================================================
-   CATALOGUE
+   CATÁLOGO
    ========================================================== */
 
 function renderCatalogue(){
@@ -1056,7 +1026,10 @@ function renderCatalogue(){
     return `
 
         <section
-            class="products-catalogue"
+            class="
+                section
+                products-catalogue
+            "
             id="catalogue"
         >
 
@@ -1071,15 +1044,20 @@ function renderCatalogue(){
 
                     <div>
 
-                        <div class="products-eyebrow">
-                            CATALOGUE
-                        </div>
+                        <span
+                            class="products-eyebrow"
+                        >
+                            Collection 2026
+                        </span>
 
                         <h2>
+
                             Explore toda a
+
                             <span>
                                 collection.
                             </span>
+
                         </h2>
 
                     </div>
@@ -1092,8 +1070,10 @@ function renderCatalogue(){
                 </div>
 
                 <div
-                    class="products-catalogue-tools
-                           products-reveal"
+                    class="
+                        products-catalogue-tools
+                        products-reveal
+                    "
                 >
 
                     <div class="products-search">
@@ -1182,18 +1162,24 @@ function renderCatalogue(){
                 </div>
 
                 <div
-                    class="products-results-bar
-                           products-reveal"
+                    class="
+                        products-results-bar
+                        products-reveal
+                    "
                 >
 
                     <div
-                        class="products-results-info"
+                        class="
+                            products-results-info
+                        "
                         id="productsResultsInfo"
                     >
+
                         <span>
                             ${PRODUCTS.length}
                             produtos
                         </span>
+
                     </div>
 
                     <button
@@ -1233,9 +1219,11 @@ function renderCatalogue(){
                     id="productsEmpty"
                 >
 
-                    <div class="
-                        products-empty-icon
-                    ">
+                    <div
+                        class="
+                            products-empty-icon
+                        "
+                    >
                         ${ICONS.search}
                     </div>
 
@@ -1268,10 +1256,6 @@ function renderCatalogue(){
     `;
 
 }
-
-/* ==========================================================
-   FILTER BUTTON
-   ========================================================== */
 
 function filterButton(
     value,
@@ -1311,7 +1295,10 @@ function productCard(
     return `
 
         <article
-            class="products-card"
+            class="
+                products-card
+                products-reveal
+            "
             data-product="${product.id}"
             data-category="${product.category}"
             data-universe="${product.universe}"
@@ -1324,7 +1311,11 @@ function productCard(
             "
         >
 
-            <div class="products-card-image">
+            <div
+                class="
+                    products-card-image
+                "
+            >
 
                 <span
                     class="
@@ -1366,7 +1357,11 @@ function productCard(
 
             </div>
 
-            <div class="products-card-content">
+            <div
+                class="
+                    products-card-content
+                "
+            >
 
                 <div
                     class="
@@ -1402,9 +1397,11 @@ function productCard(
                     ${product.description}
                 </p>
 
-                <div class="
-                    products-card-tags
-                ">
+                <div
+                    class="
+                        products-card-tags
+                    "
+                >
 
                     ${product.tags
                         .map(
@@ -1423,9 +1420,7 @@ function productCard(
                     class="
                         products-card-button
                     "
-                    data-product-action="
-                        ${product.id}
-                    "
+                    data-product-action="${product.id}"
                     aria-label="
                         Descobrir ${product.name}
                     "
@@ -1448,24 +1443,83 @@ function productCard(
 }
 
 /* ==========================================================
-   FEATURED / STRAW
+   DESTAQUE — ALPHA SPIN STRAW
    ========================================================== */
 
 function renderFeatured(){
 
+    const product =
+        PRODUCTS.find(
+            item =>
+                item.id ===
+                "alpha-spin-straw"
+        );
+
+    if(!product){
+        return "";
+    }
+
     return `
 
         <section
-            class="products-featured"
+            class="
+                section
+                products-featured
+            "
             id="products-featured"
         >
 
             <div class="products-container">
 
-                <div class="
-                    products-featured-box
-                    products-reveal
-                ">
+                <div
+                    class="
+                        products-featured-header
+                        products-reveal
+                    "
+                >
+
+                    <div>
+
+                        <span
+                            class="
+                                products-eyebrow
+                            "
+                        >
+                            Destaque da collection
+                        </span>
+
+                        <h2>
+
+                            Um detalhe que merece
+
+                            <span>
+                                ser descoberto.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+                    <span
+                        class="
+                            products-featured-badge
+                        "
+                    >
+                        SMART LIVING · NOVO
+                    </span>
+
+                </div>
+
+                <div
+                    class="
+                        products-featured-box
+                        products-reveal
+                    "
+                    style="
+                        --featured-tone:${product.tone};
+                        --featured-atmosphere:${product.atmosphere};
+                    "
+                >
 
                     <div
                         class="
@@ -1481,8 +1535,8 @@ function renderFeatured(){
                         ></div>
 
                         <img
-                            src="./assets/products/straw.png"
-                            alt="Alpha Spin Straw"
+                            src="${product.image}"
+                            alt="${product.name}"
                             loading="lazy"
                         >
 
@@ -1494,30 +1548,27 @@ function renderFeatured(){
                         "
                     >
 
-                        <div class="products-eyebrow">
-                            NEW · SMART LIVING
-                        </div>
-
                         <span
                             class="
                                 products-featured-label
                             "
                         >
-                            ALPHA SPIN STRAW
+                            ${product.category}
                         </span>
 
                         <h2>
-                            A experiência
+
+                            ${product.name}
+
                             <span>
-                                começa num detalhe.
+                                A experiência começa
+                                num detalhe.
                             </span>
+
                         </h2>
 
                         <p>
-                            O novo Alpha Spin Straw junta-se
-                            ao universo AD Lifestyle como
-                            uma proposta de smart living
-                            centrada na experiência de beber.
+                            ${product.description}
                         </p>
 
                         <div
@@ -1526,17 +1577,15 @@ function renderFeatured(){
                             "
                         >
 
-                            <span>
-                                VIDRO
-                            </span>
-
-                            <span>
-                                SMART LIVING
-                            </span>
-
-                            <span>
-                                ALPHA SPIN
-                            </span>
+                            ${product.tags
+                                .map(
+                                    tag => `
+                                        <span>
+                                            ${tag}
+                                        </span>
+                                    `
+                                )
+                                .join("")}
 
                         </div>
 
@@ -1547,12 +1596,13 @@ function renderFeatured(){
                                 products-button-dark
                             "
                             data-product-action="
-                                alpha-spin-straw
+                                ${product.id}
                             "
                         >
 
                             <span>
-                                Descobrir Alpha Spin Straw
+                                Descobrir
+                                ${product.name}
                             </span>
 
                             ${ICONS.arrow}
@@ -1572,16 +1622,47 @@ function renderFeatured(){
 }
 
 /* ==========================================================
-   PHILOSOPHY
+   FILOSOFIA
    ========================================================== */
 
 function renderPhilosophy(){
 
+    const items = [
+
+        [
+            "01",
+            "Wellness",
+            "Cuidado e bem-estar como parte do estilo de vida."
+        ],
+
+        [
+            "02",
+            "Lifestyle",
+            "Produtos pensados para acompanhar diferentes momentos."
+        ],
+
+        [
+            "03",
+            "Inovação",
+            "Novas experiências para um quotidiano em evolução."
+        ],
+
+        [
+            "04",
+            "Experiência",
+            "Cada produto possui uma identidade própria."
+        ]
+
+    ];
+
     return `
 
-        <section class="
-            products-philosophy
-        ">
+        <section
+            class="
+                section
+                products-philosophy
+            "
+        >
 
             <div class="products-container">
 
@@ -1592,16 +1673,29 @@ function renderPhilosophy(){
                     "
                 >
 
-                    <div class="products-eyebrow">
-                        FILOSOFIA
-                    </div>
+                    <span
+                        class="
+                            products-eyebrow
+                        "
+                    >
+                        Filosofia
+                    </span>
 
                     <h2>
+
                         Produtos que fazem parte
+
                         <span>
                             de uma visão maior.
                         </span>
+
                     </h2>
+
+                    <p>
+                        A collection AD Lifestyle nasce
+                        da ligação entre produto, experiência,
+                        estética e lifestyle.
+                    </p>
 
                 </div>
 
@@ -1611,29 +1705,20 @@ function renderPhilosophy(){
                     "
                 >
 
-                    ${philosophyCard(
-                        "01",
-                        "Wellness",
-                        "Cuidado e bem-estar como parte do estilo de vida."
-                    )}
-
-                    ${philosophyCard(
-                        "02",
-                        "Lifestyle",
-                        "Produtos pensados para acompanhar diferentes momentos."
-                    )}
-
-                    ${philosophyCard(
-                        "03",
-                        "Inovação",
-                        "Novas experiências para um quotidiano em evolução."
-                    )}
-
-                    ${philosophyCard(
-                        "04",
-                        "Experiência",
-                        "Cada produto possui uma identidade própria."
-                    )}
+                    ${items
+                        .map(
+                            ([
+                                number,
+                                title,
+                                text
+                            ]) =>
+                                philosophyCard(
+                                    number,
+                                    title,
+                                    text
+                                )
+                        )
+                        .join("")}
 
                 </div>
 
@@ -1645,10 +1730,6 @@ function renderPhilosophy(){
 
 }
 
-/* ==========================================================
-   PHILOSOPHY CARD
-   ========================================================== */
-
 function philosophyCard(
     number,
     title,
@@ -1657,10 +1738,12 @@ function philosophyCard(
 
     return `
 
-        <article class="
-            products-philosophy-card
-            products-reveal
-        ">
+        <article
+            class="
+                products-philosophy-card
+                products-reveal
+            "
+        >
 
             <span>
                 ${number}
@@ -1689,7 +1772,10 @@ function renderCTA(){
     return `
 
         <section
-            class="products-cta"
+            class="
+                section
+                products-cta
+            "
             id="products-cta"
         >
 
@@ -1702,9 +1788,11 @@ function renderCTA(){
                     "
                 >
 
-                    <div class="
-                        products-cta-logo
-                    ">
+                    <div
+                        class="
+                            products-cta-logo
+                        "
+                    >
 
                         <img
                             src="./assets/logo/logo.png"
@@ -1719,21 +1807,29 @@ function renderCTA(){
                         "
                     >
 
-                        <div class="products-eyebrow">
+                        <span
+                            class="
+                                products-eyebrow
+                            "
+                        >
                             AD LIFESTYLE
-                        </div>
+                        </span>
 
                         <h2>
+
                             Descubra o seu
+
                             <span>
                                 próximo universo.
                             </span>
+
                         </h2>
 
                         <p>
-                            Explore os produtos, conheça cada
-                            universo ou fale connosco para
-                            encontrar a experiência certa para si.
+                            Explore os produtos, conheça
+                            cada universo ou fale connosco
+                            para encontrar a experiência
+                            certa para si.
                         </p>
 
                     </div>
@@ -1807,11 +1903,13 @@ function initialiseProducts(){
 
         root
             .querySelectorAll(
-                ".products-button," +
-                ".products-filter," +
-                ".products-thumb," +
-                ".products-card-button," +
-                ".products-category-card"
+                `
+                    .products-button,
+                    .products-filter,
+                    .products-thumb,
+                    .products-card-button,
+                    .products-category-card
+                `
             )
             .forEach(
                 element => {
@@ -1821,7 +1919,9 @@ function initialiseProducts(){
                         "function"
                     ){
 
-                        ripple(element);
+                        ripple(
+                            element
+                        );
 
                     }
 
@@ -1843,12 +1943,12 @@ function initialiseProducts(){
 
     try{
 
-        const staggerItems =
+        const items =
             root.querySelectorAll(
                 `
-                .products-category-card,
-                .products-card,
-                .products-philosophy-card
+                    .products-category-card,
+                    .products-card,
+                    .products-philosophy-card
                 `
             );
 
@@ -1858,7 +1958,7 @@ function initialiseProducts(){
         ){
 
             stagger(
-                staggerItems
+                items
             );
 
         }
@@ -1873,7 +1973,7 @@ function initialiseProducts(){
     }
 
     /* ------------------------------------------------------
-       HERO
+       HERO CONTROLS
        ------------------------------------------------------ */
 
     root
@@ -1882,7 +1982,7 @@ function initialiseProducts(){
         )
         ?.addEventListener(
             "click",
-            function(){
+            ()=>{
 
                 pauseSlideshow();
 
@@ -1901,7 +2001,7 @@ function initialiseProducts(){
         )
         ?.addEventListener(
             "click",
-            function(){
+            ()=>{
 
                 pauseSlideshow();
 
@@ -1927,7 +2027,7 @@ function initialiseProducts(){
 
                 button.addEventListener(
                     "click",
-                    function(){
+                    ()=>{
 
                         pauseSlideshow();
 
@@ -1946,7 +2046,7 @@ function initialiseProducts(){
         );
 
     /* ------------------------------------------------------
-       DISCOVER HERO
+       DISCOVER
        ------------------------------------------------------ */
 
     root
@@ -1955,7 +2055,7 @@ function initialiseProducts(){
         )
         ?.addEventListener(
             "click",
-            function(){
+            ()=>{
 
                 openProduct(
                     PRODUCTS[
@@ -1980,7 +2080,7 @@ function initialiseProducts(){
         );
 
     /* ------------------------------------------------------
-       PRODUCT CARDS
+       PRODUCT ACTIONS
        ------------------------------------------------------ */
 
     root
@@ -1992,7 +2092,7 @@ function initialiseProducts(){
 
                 button.addEventListener(
                     "click",
-                    function(event){
+                    event => {
 
                         event.stopPropagation();
 
@@ -2008,7 +2108,7 @@ function initialiseProducts(){
         );
 
     /* ------------------------------------------------------
-       PRODUCT CARD CLICK
+       PRODUCT CARD
        ------------------------------------------------------ */
 
     root
@@ -2020,7 +2120,17 @@ function initialiseProducts(){
 
                 card.addEventListener(
                     "click",
-                    function(){
+                    event => {
+
+                        if(
+                            event.target.closest(
+                                "button"
+                            )
+                        ){
+
+                            return;
+
+                        }
 
                         openProduct(
                             card.dataset.product
@@ -2056,10 +2166,12 @@ function initialiseProducts(){
         )
         ?.addEventListener(
             "click",
-            function(){
+            ()=>{
 
                 if(search){
+
                     search.value = "";
+
                 }
 
                 applyProductFilters();
@@ -2082,7 +2194,7 @@ function initialiseProducts(){
 
                 button.addEventListener(
                     "click",
-                    function(){
+                    ()=>{
 
                         root
                             .querySelectorAll(
@@ -2091,9 +2203,10 @@ function initialiseProducts(){
                             .forEach(
                                 filter => {
 
-                                    filter.classList.remove(
-                                        "active"
-                                    );
+                                    filter.classList
+                                        .remove(
+                                            "active"
+                                        );
 
                                     filter.setAttribute(
                                         "aria-pressed",
@@ -2155,13 +2268,11 @@ function initialiseProducts(){
 
                 card.addEventListener(
                     "click",
-                    function(){
-
-                        const label =
-                            card.dataset.categoryCard;
-
+                    ()=>{
+                        
                         mapCategoryToFilter(
-                            label
+                            card.dataset
+                                .categoryCard
                         );
 
                     }
@@ -2171,15 +2282,7 @@ function initialiseProducts(){
         );
 
     /* ------------------------------------------------------
-       FEATURED STRAW
-       ------------------------------------------------------ */
-
-    /* handled through
-       [data-product-action]
-    */
-
-    /* ------------------------------------------------------
-       WHATSAPP
+       CTA WHATSAPP
        ------------------------------------------------------ */
 
     root
@@ -2201,9 +2304,11 @@ function initialiseProducts(){
         )
         ?.addEventListener(
             "click",
-            function(){
-
-                navigate("/");
+            ()=>{
+                
+                navigate(
+                    "/"
+                );
 
             }
         );
@@ -2218,35 +2323,45 @@ function initialiseProducts(){
        SWIPE
        ------------------------------------------------------ */
 
-    initialiseSwipe(root);
+    initialiseSwipe(
+        root
+    );
 
     /* ------------------------------------------------------
-       AUTO SLIDESHOW
+       HERO HOVER
        ------------------------------------------------------ */
 
-    initialiseHeroHover(root);
-
-    startSlideshow();
+    initialiseHeroHover(
+        root
+    );
 
     /* ------------------------------------------------------
        REVEAL
        ------------------------------------------------------ */
 
-    initialiseReveal(root);
+    initialiseReveal(
+        root
+    );
 
     /* ------------------------------------------------------
-       FILTERS INITIAL
+       INITIAL STATE
        ------------------------------------------------------ */
 
     applyProductFilters();
 
+    updateHeroBackground();
+
+    startSlideshow();
+
 }
 
 /* ==========================================================
-   CHANGE SLIDE
+   SLIDE
    ========================================================== */
 
-function changeSlide(index){
+function changeSlide(
+    index
+){
 
     if(isAnimating){
         return;
@@ -2256,11 +2371,16 @@ function changeSlide(index){
         PRODUCTS.length;
 
     if(index < 0){
-        index = total - 1;
+
+        index =
+            total - 1;
+
     }
 
     if(index >= total){
+
         index = 0;
+
     }
 
     currentSlide =
@@ -2286,7 +2406,8 @@ function changeSlide(index){
             ".products-hero"
         );
 
-    isAnimating = true;
+    isAnimating =
+        true;
 
     /* ------------------------------------------------------
        HERO STATE
@@ -2320,7 +2441,7 @@ function changeSlide(index){
         );
 
         setTimeout(
-            function(){
+            ()=>{
 
                 imageWrap.innerHTML = `
 
@@ -2355,10 +2476,16 @@ function changeSlide(index){
     );
 
     /* ------------------------------------------------------
-       THUMBS
+       THUMBNAILS
        ------------------------------------------------------ */
 
     updateThumbnails();
+
+    /* ------------------------------------------------------
+       BACKGROUND
+       ------------------------------------------------------ */
+
+    updateHeroBackground();
 
     /* ------------------------------------------------------
        PROGRESS
@@ -2367,21 +2494,18 @@ function changeSlide(index){
     resetProgress();
 
     /* ------------------------------------------------------
-       END ANIMATION
+       END
        ------------------------------------------------------ */
 
     setTimeout(
-        function(){
+        ()=>{
 
-            if(imageWrap){
+            imageWrap?.classList.remove(
+                "is-changing"
+            );
 
-                imageWrap.classList.remove(
-                    "is-changing"
-                );
-
-            }
-
-            isAnimating = false;
+            isAnimating =
+                false;
 
         },
         560
@@ -2390,13 +2514,18 @@ function changeSlide(index){
 }
 
 /* ==========================================================
-   UPDATE HERO
+   HERO UPDATE
    ========================================================== */
 
 function updateHero(
     product,
     story
 ){
+
+    const eyebrow =
+        document.getElementById(
+            "productsHeroEyebrow"
+        );
 
     const title =
         document.getElementById(
@@ -2411,6 +2540,11 @@ function updateHero(
     const description =
         document.getElementById(
             "productsHeroDescription"
+        );
+
+    const kicker =
+        document.getElementById(
+            "productsHeroKicker"
         );
 
     const tags =
@@ -2433,15 +2567,21 @@ function updateHero(
             "productsHeroLabel"
         );
 
-    const kicker =
-        document.getElementById(
-            "productsHeroKicker"
-        );
-
     const meta =
         document.getElementById(
             "productsHeroMeta"
         );
+
+    /* ------------------------------------------------------
+       EYEBROW
+       ------------------------------------------------------ */
+
+    if(eyebrow){
+
+        eyebrow.textContent =
+            story.eyebrow;
+
+    }
 
     /* ------------------------------------------------------
        TITLE
@@ -2483,7 +2623,7 @@ function updateHero(
     }
 
     /* ------------------------------------------------------
-       COPY
+       DESCRIPTION
        ------------------------------------------------------ */
 
     if(description){
@@ -2518,7 +2658,7 @@ function updateHero(
     }
 
     /* ------------------------------------------------------
-       SLIDE NUMBER
+       NUMBER
        ------------------------------------------------------ */
 
     if(number){
@@ -2558,54 +2698,54 @@ function updateHero(
 
     if(meta){
 
-        meta.innerHTML = `
-
-            <div>
-
-                <strong>
-                    ${product.universe}
-                </strong>
-
-                <span>
-                    Universo
-                </span>
-
-            </div>
-
-            <div>
-
-                <strong>
-                    ${String(
-                        currentSlide + 1
-                    ).padStart(2,"0")}
-                </strong>
-
-                <span>
-                    Posição
-                </span>
-
-            </div>
-
-            <div>
-
-                <strong>
-                    ${PRODUCTS.length}
-                </strong>
-
-                <span>
-                    Produtos
-                </span>
-
-            </div>
-
-        `;
+        meta.innerHTML =
+            renderHeroMeta(
+                product
+            );
 
     }
 
 }
 
 /* ==========================================================
-   UPDATE THUMBNAILS
+   HERO BACKGROUND
+   ========================================================== */
+
+function updateHeroBackground(){
+
+    const hero =
+        document.querySelector(
+            ".products-hero"
+        );
+
+    const product =
+        PRODUCTS[
+            currentSlide
+        ];
+
+    if(
+        !hero ||
+        !product
+    ){
+
+        return;
+
+    }
+
+    hero.style.setProperty(
+        "--hero-tone",
+        product.tone
+    );
+
+    hero.style.setProperty(
+        "--hero-atmosphere",
+        product.atmosphere
+    );
+
+}
+
+/* ==========================================================
+   THUMBNAILS
    ========================================================== */
 
 function updateThumbnails(){
@@ -2615,7 +2755,10 @@ function updateThumbnails(){
             ".products-thumb"
         )
         .forEach(
-            (button,index) => {
+            (
+                button,
+                index
+            )=>{
 
                 const active =
                     index ===
@@ -2650,7 +2793,9 @@ function resetProgress(){
         );
 
     if(!progress){
+
         return;
+
     }
 
     progress.style.animation =
@@ -2659,7 +2804,9 @@ function resetProgress(){
     void progress.offsetWidth;
 
     progress.style.animation =
-        `productsProgress ${SLIDE_DURATION / 1000}s linear forwards`;
+        `productsProgress ${
+            SLIDE_DURATION / 1000
+        }s linear forwards`;
 
 }
 
@@ -2675,8 +2822,8 @@ function startSlideshow(){
 
     slideTimer =
         setInterval(
-            function(){
-
+            ()=>{
+                
                 changeSlide(
                     currentSlide + 1
                 );
@@ -2712,7 +2859,9 @@ function pauseSlideshow(){
    HERO HOVER
    ========================================================== */
 
-function initialiseHeroHover(root){
+function initialiseHeroHover(
+    root
+){
 
     const hero =
         root.querySelector(
@@ -2720,7 +2869,9 @@ function initialiseHeroHover(root){
         );
 
     if(!hero){
+
         return;
+
     }
 
     hero.addEventListener(
@@ -2736,13 +2887,17 @@ function initialiseHeroHover(root){
 }
 
 /* ==========================================================
-   OPEN PRODUCT
+   NAVEGAÇÃO
    ========================================================== */
 
-function openProduct(id){
+function openProduct(
+    id
+){
 
     if(!id){
+
         return;
+
     }
 
     navigate(
@@ -2750,10 +2905,6 @@ function openProduct(id){
     );
 
 }
-
-/* ==========================================================
-   SCROLL CATALOGUE
-   ========================================================== */
 
 function scrollToCatalogue(){
 
@@ -2763,7 +2914,9 @@ function scrollToCatalogue(){
         );
 
     if(!catalogue){
+
         return;
+
     }
 
     catalogue.scrollIntoView({
@@ -2777,7 +2930,7 @@ function scrollToCatalogue(){
 }
 
 /* ==========================================================
-   FILTERS
+   FILTROS
    ========================================================== */
 
 function applyProductFilters(){
@@ -2788,7 +2941,9 @@ function applyProductFilters(){
         );
 
     if(!root){
+
         return;
+
     }
 
     const input =
@@ -2797,11 +2952,10 @@ function applyProductFilters(){
         );
 
     const searchTerm =
-        input
-            ? input.value
-                .trim()
-                .toLowerCase()
-            : "";
+        input?.value
+            .trim()
+            .toLowerCase()
+        || "";
 
     const activeFilter =
         root.querySelector(
@@ -2810,52 +2964,40 @@ function applyProductFilters(){
 
     const selectedCategory =
         activeFilter
-            ? activeFilter.dataset.category
-            : "all";
+            ?.dataset.category
+        || "all";
 
     const cards =
         root.querySelectorAll(
             ".products-card"
         );
 
-    let visibleCount = 0;
+    let visibleCount =
+        0;
 
     cards.forEach(
         card => {
 
-            const name =
-                card.dataset.name || "";
+            const searchableText = [
 
-            const category =
-                (
-                    card.dataset.category ||
-                    ""
-                ).toLowerCase();
+                card.dataset.name
+                    || "",
 
-            const universe =
-                (
-                    card.dataset.universe ||
-                    ""
-                ).toLowerCase();
+                card.dataset.category
+                    || "",
 
-            const description =
-                card.dataset.description ||
-                "";
+                card.dataset.universe
+                    || "",
 
-            const tags =
-                card.dataset.tags ||
-                "";
+                card.dataset.description
+                    || "",
 
-            const searchableText =
-                [
-                    name,
-                    category,
-                    universe,
-                    description,
-                    tags
-                ]
-                    .join(" ")
-                    .toLowerCase();
+                card.dataset.tags
+                    || ""
+
+            ]
+                .join(" ")
+                .toLowerCase();
 
             const matchesSearch =
                 !searchTerm ||
@@ -2865,9 +3007,16 @@ function applyProductFilters(){
 
             const matchesCategory =
                 selectedCategory ===
-                    "all" ||
-                category ===
-                    selectedCategory.toLowerCase();
+                    "all"
+                ||
+                (
+                    card.dataset.category
+                    || ""
+                )
+                    .toLowerCase()
+                    ===
+                    selectedCategory
+                        .toLowerCase();
 
             const visible =
                 matchesSearch &&
@@ -2911,7 +3060,9 @@ function updateResultsCount(
         );
 
     if(!info){
+
         return;
+
     }
 
     const label =
@@ -2922,7 +3073,8 @@ function updateResultsCount(
     info.innerHTML = `
 
         <span>
-            ${count} ${label}
+            ${count}
+            ${label}
         </span>
 
     `;
@@ -2930,7 +3082,7 @@ function updateResultsCount(
 }
 
 /* ==========================================================
-   EMPTY
+   EMPTY STATE
    ========================================================== */
 
 function updateEmptyState(
@@ -2943,7 +3095,9 @@ function updateEmptyState(
         );
 
     if(!element){
+
         return;
+
     }
 
     element.classList.toggle(
@@ -2954,7 +3108,7 @@ function updateEmptyState(
 }
 
 /* ==========================================================
-   RESET
+   RESET FILTERS
    ========================================================== */
 
 function resetProductFilters(){
@@ -2965,7 +3119,9 @@ function resetProductFilters(){
         );
 
     if(!root){
+
         return;
+
     }
 
     const input =
@@ -2975,7 +3131,8 @@ function resetProductFilters(){
 
     if(input){
 
-        input.value = "";
+        input.value =
+            "";
 
     }
 
@@ -3040,7 +3197,9 @@ function mapCategoryToFilter(
         map[label];
 
     if(!target){
+
         return;
+
     }
 
     const filter =
@@ -3068,7 +3227,9 @@ function openWhatsApp(){
         "Olá AD Lifestyle! Gostaria de receber informações sobre os produtos disponíveis.";
 
     const url =
-        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
+            message
+        )}`;
 
     window.open(
         url,
@@ -3079,27 +3240,32 @@ function openWhatsApp(){
 }
 
 /* ==========================================================
-   KEYBOARD
+   TECLADO
    ========================================================== */
 
 function bindKeyboard(){
 
     if(keyboardBound){
+
         return;
+
     }
 
-    keyboardBound = true;
+    keyboardBound =
+        true;
 
     document.addEventListener(
         "keydown",
-        function(event){
+        event => {
 
             if(
                 !document.querySelector(
                     ".products-page"
                 )
             ){
+
                 return;
+
             }
 
             const activeTag =
@@ -3107,11 +3273,17 @@ function bindKeyboard(){
                     ?.tagName;
 
             if(
-                activeTag === "INPUT" ||
-                activeTag === "TEXTAREA" ||
-                activeTag === "SELECT"
+                [
+                    "INPUT",
+                    "TEXTAREA",
+                    "SELECT"
+                ].includes(
+                    activeTag
+                )
             ){
+
                 return;
+
             }
 
             if(
@@ -3163,15 +3335,20 @@ function initialiseSwipe(
         );
 
     if(!hero){
+
         return;
+
     }
 
-    let startX = 0;
-    let startY = 0;
+    let startX =
+        0;
+
+    let startY =
+        0;
 
     hero.addEventListener(
         "touchstart",
-        function(event){
+        event => {
 
             const touch =
                 event.changedTouches[0];
@@ -3190,7 +3367,7 @@ function initialiseSwipe(
 
     hero.addEventListener(
         "touchend",
-        function(event){
+        event => {
 
             const touch =
                 event.changedTouches[0];
@@ -3204,22 +3381,34 @@ function initialiseSwipe(
                 startY;
 
             if(
-                Math.abs(distanceX) <
-                55
+                Math.abs(
+                    distanceX
+                ) < 55
             ){
+
                 return;
+
             }
 
             if(
-                Math.abs(distanceY) >
-                Math.abs(distanceX)
+                Math.abs(
+                    distanceY
+                )
+                >
+                Math.abs(
+                    distanceX
+                )
             ){
+
                 return;
+
             }
 
             pauseSlideshow();
 
-            if(distanceX < 0){
+            if(
+                distanceX < 0
+            ){
 
                 changeSlide(
                     currentSlide + 1
@@ -3254,15 +3443,18 @@ function initialiseReveal(
     const elements =
         root.querySelectorAll(
             `
-            .products-reveal,
-            .products-card,
-            .products-category-card,
-            .products-philosophy-card
+                .products-reveal,
+                .products-card,
+                .products-category-card,
+                .products-philosophy-card
             `
         );
 
     if(
-        !("IntersectionObserver" in window)
+        !(
+            "IntersectionObserver"
+            in window
+        )
     ){
 
         elements.forEach(
@@ -3276,11 +3468,12 @@ function initialiseReveal(
         );
 
         return;
+
     }
 
     const observer =
         new IntersectionObserver(
-            function(entries){
+            entries => {
 
                 entries.forEach(
                     entry => {
@@ -3288,7 +3481,9 @@ function initialiseReveal(
                         if(
                             !entry.isIntersecting
                         ){
+
                             return;
+
                         }
 
                         entry.target.classList.add(
@@ -3311,13 +3506,90 @@ function initialiseReveal(
         );
 
     elements.forEach(
-        element => {
-
+        element =>
             observer.observe(
                 element
-            );
-
-        }
+            )
     );
 
 }
+
+/* ==========================================================
+   API
+   ========================================================== */
+
+export function getProducts(){
+
+    return PRODUCTS.map(
+        product => ({
+            ...product,
+            tags:[
+                ...product.tags
+            ]
+        })
+    );
+
+}
+
+export function getProductById(
+    id
+){
+
+    return (
+        PRODUCTS.find(
+            product =>
+                product.id ===
+                id
+        )
+        ||
+        null
+    );
+
+}
+
+export function addProduct(
+    product
+){
+
+    if(
+        !product ||
+        !product.id ||
+        !product.name ||
+        !product.image
+    ){
+
+        console.warn(
+            "AD LIFESTYLE Products: produto inválido."
+        );
+
+        return false;
+
+    }
+
+    if(
+        PRODUCTS.some(
+            item =>
+                item.id ===
+                product.id
+        )
+    ){
+
+        console.warn(
+            `AD LIFESTYLE Products: "${product.id}" já existe.`
+        );
+
+        return false;
+
+    }
+
+    PRODUCTS.push(
+        product
+    );
+
+    return true;
+
+}
+
+/* ==========================================================
+   FIM
+   ========================================================== */
