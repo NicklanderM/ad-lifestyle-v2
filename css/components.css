@@ -76291,8 +76291,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-
-
 /* ==========================================================
    AD LIFESTYLE V2
    ANGEL.CSS
@@ -76851,13 +76849,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     grid-template-columns:
         minmax(0,.84fr)
-        minmax(450px,1.16fr);
+        minmax(500px,1.16fr);
 
     align-items:
         center;
 
     gap:
-        32px;
+        22px;
 }
 
 .page-angel .angel-hero-copy {
@@ -77009,6 +77007,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:
         center;
+
+    overflow:
+        visible;
 }
 
 .page-angel .angel-product-aura {
@@ -77035,6 +77036,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     animation:
         angelAura 8s ease-in-out infinite;
+
+    pointer-events:
+        none;
 }
 
 .page-angel .angel-product-ring {
@@ -77060,15 +77064,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     animation:
         angelRing 18s linear infinite;
+
+    pointer-events:
+        none;
 }
 
 .page-angel .angel-product-grid {
 
     width:
-        min(100%,515px);
+        min(100%,540px);
 
-    min-height:
-        580px;
+    height:
+        600px;
 
     position:
         relative;
@@ -77084,6 +77091,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:
         center;
+
+    overflow:
+        visible;
 }
 
 .page-angel .angel-product-grid::before {
@@ -77099,6 +77109,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     height:
         430px;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    transform:
+        translate(-50%,-50%);
 
     border-radius:
         50%;
@@ -77125,9 +77144,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             black 8%,
             transparent 70%
         );
+
+    z-index:
+        0;
+
+    pointer-events:
+        none;
 }
 
-.page-angel .angel-product-image {
+/*
+   Imagem real do Hero.
+   Sem filtro, sem blur, sem rotação e sem animação sobre a imagem.
+   Mantém a proporção original do ficheiro e fica centrada como
+   nos restantes Heroes de produto.
+*/
+.page-angel .angel-product-grid .angel-product-image {
 
     position:
         relative;
@@ -77135,23 +77166,68 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:
         3;
 
+    display:
+        block;
+
     width:
-        min(100%,490px);
+        auto;
+
+    height:
+        auto;
+
+    max-width:
+        100%;
 
     max-height:
-        580px;
+        560px;
+
+    margin:
+        0 auto;
+
+    padding:
+        0;
 
     object-fit:
         contain;
 
+    object-position:
+        center center;
+
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+
     filter:
-        drop-shadow(
-            0 35px 35px
-            rgba(66,43,46,.18)
-        );
+        none !important;
+
+    -webkit-filter:
+        none !important;
+
+    mix-blend-mode:
+        normal !important;
+
+    transform:
+        none !important;
+
+    -webkit-transform:
+        none !important;
 
     animation:
-        angelFloat 7s ease-in-out infinite;
+        none !important;
+
+    -webkit-animation:
+        none !important;
+
+    backface-visibility:
+        visible;
+
+    -webkit-backface-visibility:
+        visible;
+
+    image-rendering:
+        auto;
 }
 
 .page-angel .angel-product-caption {
@@ -80698,32 +80774,37 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 /* ==========================================================
    01 — HERO
-   Corrige imagem esbranquiçada / desfocada
+   Correcção final da imagem principal do Hero
    ========================================================== */
 
-.page-angel .angel-hero-product-image {
+.page-angel .angel-product-grid .angel-product-image {
 
-    opacity: 1 !important;
+    opacity:
+        1 !important;
 
-    mix-blend-mode: normal !important;
+    visibility:
+        visible !important;
 
     filter:
-        drop-shadow(
-            0 26px 28px
-            rgba(55, 35, 39, .16)
-        ) !important;
+        none !important;
+
+    -webkit-filter:
+        none !important;
+
+    mix-blend-mode:
+        normal !important;
 
     transform:
-        translateZ(0);
+        none !important;
 
-    backface-visibility:
-        hidden;
+    -webkit-transform:
+        none !important;
 
-    -webkit-backface-visibility:
-        hidden;
+    animation:
+        none !important;
 
-    image-rendering:
-        auto;
+    -webkit-animation:
+        none !important;
 }
 
 .page-angel .angel-product-grid::before {
@@ -80735,10 +80816,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         none;
 }
 
-.page-angel .angel-product-image {
+.page-angel .angel-product-grid .angel-product-image {
 
     z-index:
-        2;
+        3;
 }
 
 
