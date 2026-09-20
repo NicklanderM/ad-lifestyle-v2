@@ -90359,12 +90359,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
    CONTACT.CSS
    Premium Contact & Concierge Experience
    Master Pattern: EVENTS PAGE
-   Editorial / Immersive / Luxury
-   Scope: .contact-page
-   ========================================================== */
-
-/* ==========================================================
-   ROOT
+   ----------------------------------------------------------
+   IMPORTANTE:
+   Os elementos permanecem visíveis mesmo sem JavaScript,
+   IntersectionObserver ou animações.
    ========================================================== */
 
 .contact-page{
@@ -90373,19 +90371,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     --contact-black-soft:#252B31;
 
     --contact-gold:#C6A15B;
+    --contact-gold-dark:#8F713C;
     --contact-gold-light:#E9D7A9;
-    --contact-gold-soft:#F2ECE0;
+    --contact-gold-soft:#F3EBDD;
 
     --contact-white:#FFFFFF;
     --contact-ivory:#F8F7F3;
 
     --contact-gray:#69747E;
-    --contact-gray-light:#8B959D;
+    --contact-gray-light:#8A959D;
+
+    --contact-green:#4BA66A;
 
     --contact-border:
         rgba(23,27,31,.09);
-
-    --contact-green:#4BA66A;
 
     color:
         var(--contact-black);
@@ -90415,6 +90414,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 .contact-page .contact-section-heading{
+
     display:flex;
 
     align-items:flex-end;
@@ -90446,18 +90446,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     color:
         #747F87;
 
-    font-size:
-        .88rem;
+    font-size:.88rem;
 
-    line-height:
-        1.75;
+    line-height:1.75;
 
 }
 
 .contact-page .contact-section-heading-center > p{
 
-    margin-top:
-        17px;
+    margin-top:17px;
 
 }
 
@@ -90485,17 +90482,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     color:
         #A1814B;
 
-    font-size:
-        .66rem;
+    font-size:.67rem;
 
-    font-weight:
-        900;
+    font-weight:900;
 
-    letter-spacing:
-        .18em;
+    letter-spacing:.18em;
 
-    text-transform:
-        uppercase;
+    text-transform:uppercase;
 
 }
 
@@ -90505,8 +90498,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-digital-copy h2,
 .contact-page .contact-form-intro h2{
 
-    margin-top:
-        13px;
+    margin-top:13px;
 
     color:
         var(--contact-black);
@@ -90514,11 +90506,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     font-size:
         clamp(2.25rem,4.6vw,4.7rem);
 
-    line-height:
-        .98;
+    line-height:.98;
 
-    letter-spacing:
-        -.045em;
+    letter-spacing:-.045em;
 
 }
 
@@ -90537,8 +90527,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .lead{
 
-    max-width:
-        760px;
+    max-width:760px;
 
     margin:
         18px auto 0;
@@ -90546,11 +90535,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     color:
         #717C84;
 
-    font-size:
-        .96rem;
+    font-size:.96rem;
 
-    line-height:
-        1.82;
+    line-height:1.82;
 
 }
 
@@ -90560,8 +90547,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-button{
 
-    min-height:
-        50px;
+    position:relative;
+
+    min-height:50px;
 
     display:inline-flex;
 
@@ -90569,8 +90557,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:center;
 
-    gap:
-        10px;
+    gap:10px;
 
     padding:
         0 19px;
@@ -90578,32 +90565,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border:
         1px solid transparent;
 
-    border-radius:
-        999px;
+    border-radius:999px;
 
-    font-family:
-        inherit;
+    font-family:inherit;
 
-    font-size:
-        .69rem;
+    font-size:.69rem;
 
-    font-weight:
-        900;
+    font-weight:900;
 
-    letter-spacing:
-        .08em;
+    letter-spacing:.08em;
 
-    text-transform:
-        uppercase;
+    text-transform:uppercase;
 
     cursor:pointer;
+
+    overflow:hidden;
 
     transition:
         transform .25s ease,
         box-shadow .25s ease,
         background .25s ease,
-        border-color .25s ease,
-        color .25s ease;
+        border-color .25s ease;
 
 }
 
@@ -90616,27 +90598,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-button svg{
 
-    width:
-        17px;
+    width:17px;
+    height:17px;
 
-    height:
-        17px;
+    flex:none;
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.7;
+    stroke-width:1.6;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
-
-    flex:none;
+    stroke-linejoin:round;
 
 }
 
@@ -90646,22 +90621,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             135deg,
             var(--contact-gold),
-            #8F713C
+            var(--contact-gold-dark)
         );
 
-    color:
-        #FFFFFF;
+    color:#FFFFFF;
 
     box-shadow:
         0 15px 35px
-        rgba(198,161,91,.19);
+        rgba(198,161,91,.18);
 
 }
 
 .contact-page .contact-button-gold:hover{
 
     box-shadow:
-        0 20px 42px
+        0 20px 44px
         rgba(198,161,91,.27);
 
 }
@@ -90681,11 +90655,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-button-outline:hover{
 
-    border-color:
-        rgba(198,161,91,.50);
-
     background:
-        rgba(198,161,91,.05);
+        rgba(198,161,91,.055);
+
+    border-color:
+        rgba(198,161,91,.45);
 
 }
 
@@ -90703,7 +90677,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     overflow:hidden;
 
     background:
-        var(--contact-black);
+        #171B1F;
 
     isolation:isolate;
 
@@ -90720,21 +90694,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
 
         radial-gradient(
-            circle at 78% 42%,
-            rgba(198,161,91,.15),
+            circle at 78% 40%,
+            rgba(198,161,91,.17),
             transparent 34%
         ),
 
         radial-gradient(
-            circle at 60% 75%,
+            circle at 55% 75%,
             rgba(255,255,255,.045),
-            transparent 26%
+            transparent 28%
         ),
 
         linear-gradient(
             135deg,
             #111518 0%,
-            #1C2226 52%,
+            #1B2125 48%,
             #30383F 100%
         );
 
@@ -90752,15 +90726,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         linear-gradient(
             90deg,
-            rgba(13,17,20,.96) 0%,
-            rgba(13,17,20,.86) 34%,
-            rgba(13,17,20,.48) 60%,
+            rgba(13,17,20,.95) 0%,
+            rgba(13,17,20,.83) 35%,
+            rgba(13,17,20,.45) 62%,
             rgba(13,17,20,.12) 100%
         ),
 
         linear-gradient(
             0deg,
-            rgba(13,17,20,.55),
+            rgba(13,17,20,.58),
             transparent 48%
         );
 
@@ -90772,36 +90746,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:1;
 
-    width:
-        600px;
+    width:620px;
+    height:620px;
 
-    height:
-        600px;
+    border-radius:50%;
 
-    border-radius:
-        50%;
-
-    pointer-events:
-        none;
+    pointer-events:none;
 
     filter:
-        blur(8px);
+        blur(7px);
 
 }
 
 .contact-page .contact-hero-glow.glow-one{
 
     right:
-        1%;
+        -5%;
 
     top:
-        8%;
+        5%;
 
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.14),
-            transparent 68%
+            rgba(198,161,91,.15),
+            transparent 70%
         );
 
     animation:
@@ -90813,7 +90782,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-hero-glow.glow-two{
 
     left:
-        30%;
+        28%;
 
     bottom:
         -42%;
@@ -90822,7 +90791,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         radial-gradient(
             circle,
             rgba(255,255,255,.045),
-            transparent 68%
+            transparent 70%
         );
 
     animation:
@@ -90835,19 +90804,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     0%,
     100%{
-
         transform:
             translate3d(0,0,0)
             scale(1);
-
     }
 
     50%{
-
         transform:
-            translate3d(-20px,13px,0)
+            translate3d(-18px,12px,0)
             scale(1.06);
-
     }
 
 }
@@ -90856,19 +90821,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     0%,
     100%{
-
         transform:
             translate3d(0,0,0)
             scale(1);
-
     }
 
     50%{
-
         transform:
             translate3d(25px,-18px,0)
             scale(1.08);
-
     }
 
 }
@@ -90877,10 +90838,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:3;
+    z-index:4;
+
+    width:
+        min(
+            calc(100% - 48px),
+            1280px
+        );
 
     min-height:
         min(850px,94vh);
+
+    margin:
+        0 auto;
 
     display:flex;
 
@@ -90895,23 +90865,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        minmax(0,.95fr)
-        minmax(470px,1.05fr);
+        minmax(0,.96fr)
+        minmax(460px,1.04fr);
 
     align-items:center;
 
-    gap:
-        45px;
+    gap:45px;
 
     padding:
-        70px 0 55px;
+        70px 0 62px;
 
 }
 
 .contact-page .contact-hero-content{
 
     max-width:
-        730px;
+        740px;
 
 }
 
@@ -90930,23 +90899,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         15px;
 
     color:
-        #AEB6BC;
+        #B4BCC2;
 
-    font-size:
-        .60rem;
+    font-size:.61rem;
 
-    font-weight:
-        900;
+    font-weight:900;
 
-    letter-spacing:
-        .18em;
+    letter-spacing:.18em;
 
 }
 
 .contact-page .contact-hero h1{
 
     max-width:
-        720px;
+        740px;
 
     margin-top:
         17px;
@@ -90955,13 +90921,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #FFFFFF;
 
     font-size:
-        clamp(3.25rem,6.5vw,6.8rem);
+        clamp(
+            3.25rem,
+            6.5vw,
+            6.8rem
+        );
 
-    line-height:
-        .91;
+    line-height:.91;
 
-    letter-spacing:
-        -.055em;
+    letter-spacing:-.055em;
 
 }
 
@@ -90977,7 +90945,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-hero-content > p{
 
     max-width:
-        650px;
+        655px;
 
     margin-top:
         25px;
@@ -90986,7 +90954,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #CDD3D7;
 
     font-size:
-        clamp(.98rem,1.35vw,1.08rem);
+        clamp(
+            .98rem,
+            1.35vw,
+            1.08rem
+        );
 
     line-height:
         1.82;
@@ -90999,8 +90971,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     flex-wrap:wrap;
 
-    gap:
-        10px;
+    gap:10px;
 
     margin-top:
         27px;
@@ -91010,11 +90981,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-hero-actions
 .contact-button-outline{
 
-    color:
-        #FFFFFF;
+    color:#FFFFFF;
 
     border-color:
-        rgba(255,255,255,.17);
+        rgba(255,255,255,.18);
 
     background:
         rgba(255,255,255,.035);
@@ -91028,7 +90998,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         rgba(255,255,255,.085);
 
     border-color:
-        rgba(198,161,91,.45);
+        rgba(198,161,91,.46);
 
 }
 
@@ -91059,8 +91029,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:
-        10px;
+    gap:10px;
 
     padding:
         0 22px 0 0;
@@ -91094,37 +91063,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-meta-item strong{
 
-    color:
-        #FFFFFF;
+    color:#FFFFFF;
 
-    font-size:
-        .70rem;
+    font-size:.70rem;
 
 }
 
 .contact-page .contact-meta-item small{
 
-    margin-top:
-        5px;
+    margin-top:5px;
 
-    color:
-        #89949B;
+    color:#89949B;
 
-    font-size:
-        .56rem;
+    font-size:.56rem;
 
 }
 
 .contact-page .contact-status-dot{
 
-    width:
-        8px;
+    width:8px;
 
-    height:
-        8px;
+    height:8px;
 
-    border-radius:
-        50%;
+    flex:none;
+
+    border-radius:50%;
 
     background:
         var(--contact-gold);
@@ -91144,7 +91107,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
 }
@@ -91154,7 +91116,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     position:relative;
 
     width:
-        min(570px,44vw);
+        min(
+            570px,
+            44vw
+        );
 
     aspect-ratio:
         1;
@@ -91170,24 +91135,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:
-        70%;
-
-    height:
-        70%;
+    width:73%;
+    height:73%;
 
     border:
         1px solid
         rgba(198,161,91,.23);
 
-    border-radius:
-        50%;
+    border-radius:50%;
 
     box-shadow:
-        0 0 0 32px
+        0 0 0 30px
         rgba(255,255,255,.012),
 
-        0 0 0 75px
+        0 0 0 72px
         rgba(255,255,255,.008);
 
     animation:
@@ -91199,17 +91160,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 @keyframes contactHeroOrbit{
 
     from{
-
         transform:
             rotate(0deg);
-
     }
 
     to{
-
         transform:
             rotate(360deg);
-
     }
 
 }
@@ -91231,24 +91188,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     align-items:center;
     justify-content:center;
 
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    border-radius:
-        30px;
-
-    background:
-        rgba(255,255,255,.04);
-
-    box-shadow:
-        0 25px 75px
-        rgba(0,0,0,.22);
-
     overflow:hidden;
 
+    border:
+        1px solid
+        rgba(255,255,255,.11);
+
+    border-radius:28px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    box-shadow:
+        0 28px 75px
+        rgba(0,0,0,.24);
+
     backdrop-filter:
-        blur(8px);
+        blur(9px);
 
 }
 
@@ -91264,7 +91220,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         radial-gradient(
             circle at center,
             rgba(198,161,91,.13),
-            transparent 66%
+            transparent 68%
         );
 
 }
@@ -91275,21 +91231,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:2;
 
-    width:
-        100%;
+    width:100%;
+    height:100%;
 
-    height:
-        100%;
-
-    object-fit:
-        contain;
-
-    transform:
-        scale(1.02);
+    object-fit:contain;
 
     filter:
         drop-shadow(
-            0 30px 35px
+            0 28px 35px
             rgba(0,0,0,.22)
         );
 
@@ -91301,51 +91250,45 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:6;
 
-    width:
-        92px;
-
-    height:
-        92px;
+    width:92px;
+    height:92px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
+    overflow:hidden;
+
     border:
         1px solid
-        rgba(255,255,255,.12);
+        rgba(255,255,255,.13);
 
-    border-radius:
-        18px;
+    border-radius:18px;
 
     background:
         rgba(255,255,255,.07);
-
-    backdrop-filter:
-        blur(14px);
 
     box-shadow:
         0 18px 45px
         rgba(0,0,0,.18);
 
+    backdrop-filter:
+        blur(13px);
+
 }
 
 .contact-page .contact-hero-floating img{
 
-    width:
-        82%;
+    width:82%;
+    height:82%;
 
-    height:
-        82%;
-
-    object-fit:
-        contain;
+    object-fit:contain;
 
     filter:
         drop-shadow(
             0 10px 15px
-            rgba(0,0,0,.16)
+            rgba(0,0,0,.15)
         );
 
 }
@@ -91356,7 +91299,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         1%;
 
     top:
-        19%;
+        18%;
 
     animation:
         contactFloatOne
@@ -91384,7 +91327,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         10%;
 
     bottom:
-        10%;
+        9%;
 
     animation:
         contactFloatThree
@@ -91450,7 +91393,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:7;
 
     right:
-        3%;
+        2%;
 
     bottom:
         6%;
@@ -91466,7 +91409,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-hero-visual-label span{
 
     color:
-        #8C979E;
+        #8D989F;
 
     font-size:
         .52rem;
@@ -91475,7 +91418,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         900;
 
     letter-spacing:
-        .14em;
+        .15em;
 
 }
 
@@ -91484,11 +91427,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin-top:
         4px;
 
-    color:
-        #FFFFFF;
+    color:#FFFFFF;
 
     font-size:
-        .68rem;
+        .67rem;
 
     letter-spacing:
         .08em;
@@ -91499,13 +91441,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    left:
-        50%;
+    left:50%;
 
     bottom:
-        27px;
+        25px;
 
-    z-index:5;
+    z-index:6;
 
     transform:
         translateX(-50%);
@@ -91518,32 +91459,25 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:
-        9px;
+    gap:9px;
 
-    border:
-        0;
+    border:0;
 
-    background:
-        transparent;
+    background:transparent;
 
     color:
         #8F9AA1;
 
-    font-family:
-        inherit;
+    font-family:inherit;
 
     font-size:
         .58rem;
 
-    font-weight:
-        900;
+    font-weight:900;
 
-    letter-spacing:
-        .11em;
+    letter-spacing:.11em;
 
-    text-transform:
-        uppercase;
+    text-transform:uppercase;
 
     cursor:pointer;
 
@@ -91551,18 +91485,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-hero-scroll span{
 
-    width:
-        7px;
-
-    height:
-        7px;
+    width:7px;
+    height:7px;
 
     border:
         1px solid
         var(--contact-gold);
 
-    border-radius:
-        50%;
+    border-radius:50%;
 
     animation:
         contactScrollDot
@@ -91576,15 +91506,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     100%{
         transform:
             translateY(0);
-        opacity:
-            .55;
+        opacity:.55;
     }
 
     50%{
         transform:
             translateY(5px);
-        opacity:
-            1;
+        opacity:1;
     }
 
 }
@@ -91609,14 +91537,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        minmax(0,1.05fr)
-        minmax(320px,.95fr);
+        minmax(0,1.04fr)
+        minmax(320px,.96fr);
 
-    gap:
-        16px;
+    gap:16px;
 
     margin-top:
-        46px;
+        47px;
 
 }
 
@@ -91639,8 +91566,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         rgba(23,27,31,.07);
 
     transition:
-        transform .35s ease,
-        box-shadow .35s ease;
+        transform .3s ease,
+        box-shadow .3s ease;
 
 }
 
@@ -91694,11 +91621,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:
-        7px;
+    gap:7px;
 
     color:
-        #71807A;
+        #718079;
 
     font-size:
         .55rem;
@@ -91713,14 +91639,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-online i{
 
-    width:
-        7px;
+    width:7px;
+    height:7px;
 
-    height:
-        7px;
-
-    border-radius:
-        50%;
+    border-radius:50%;
 
     background:
         var(--contact-green);
@@ -91748,9 +91670,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
 
         radial-gradient(
-            circle at 88% 12%,
+            circle at 89% 12%,
             rgba(198,161,91,.11),
-            transparent 29%
+            transparent 30%
         ),
 
         #FFFFFF;
@@ -91759,11 +91681,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-hub-icon{
 
-    width:
-        57px;
-
-    height:
-        57px;
+    width:57px;
+    height:57px;
 
     display:flex;
 
@@ -91772,7 +91691,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     border:
         1px solid
-        rgba(198,161,91,.28);
+        rgba(198,161,91,.27);
 
     border-radius:
         18px;
@@ -91781,23 +91700,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #F8F5EC;
 
     color:
-        #927441;
+        #947542;
 
 }
 
 .contact-page .contact-hub-icon svg{
 
-    width:
-        25px;
+    width:25px;
+    height:25px;
 
-    height:
-        25px;
+    fill:currentColor;
 
-    fill:
-        currentColor;
-
-    stroke:
-        none;
+    stroke:none;
 
 }
 
@@ -91833,6 +91747,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:
         clamp(2rem,4vw,3.3rem);
+
+    line-height:
+        1;
 
     letter-spacing:
         -.04em;
@@ -91893,8 +91810,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 .contact-page .contact-hub-mini{
-
-    position:relative;
 
     min-height:
         134px;
@@ -91986,24 +91901,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.6;
+    stroke-width:1.6;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
 .contact-page .contact-hub-mini-content{
 
-    min-width:
-        0;
+    min-width:0;
 
     display:flex;
 
@@ -92058,8 +91968,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-hub-mini-arrow{
 
-    margin-left:
-        auto;
+    margin-left:auto;
 
     color:
         #9A7B47;
@@ -92069,24 +91978,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-hub-mini-arrow svg{
 
     width:
-        18px;
+        17px;
 
     height:
-        18px;
+        17px;
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.6;
+    stroke-width:1.6;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
@@ -92215,14 +92120,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-channel-card[data-channel="whatsapp"]
+.contact-page .contact-channel-card:nth-child(1)
 .contact-channel-icon svg{
 
     fill:
         currentColor;
 
-    stroke:
-        none;
+    stroke:none;
 
 }
 
@@ -92362,22 +92266,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.6;
+    stroke-width:1.6;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
 /* ==========================================================
-   DIGITAL PRESENCE
+   DIGITAL
    ========================================================== */
 
 .contact-page .contact-digital{
@@ -92638,33 +92538,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-social-icon svg path:first-child{
-
-    vector-effect:
-        non-scaling-stroke;
-
-}
-
-.contact-page .contact-social-link:nth-child(1)
-.contact-social-icon svg,
-.contact-page .contact-social-link:nth-child(2)
-.contact-social-icon svg,
-.contact-page .contact-social-link:nth-child(3)
-.contact-social-icon svg{
-
-    stroke:
-        currentColor;
-
-}
-
 .contact-page .contact-social-link:nth-child(4)
 .contact-social-icon svg{
 
     fill:
         currentColor;
 
-    stroke:
-        none;
+    stroke:none;
 
 }
 
@@ -92681,11 +92561,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-social-info strong{
 
-    color:
-        #FFFFFF;
+    color:#FFFFFF;
 
-    font-size:
-        .76rem;
+    font-size:.76rem;
 
 }
 
@@ -92694,11 +92572,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin-top:
         4px;
 
-    color:
-        #98A3A9;
+    color:#98A3A9;
 
-    font-size:
-        .57rem;
+    font-size:.57rem;
 
     overflow:
         hidden;
@@ -92713,8 +92589,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-social-arrow{
 
-    margin-left:
-        auto;
+    margin-left:auto;
 
     color:
         #8F9AA1;
@@ -92731,17 +92606,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.5;
+    stroke-width:1.5;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
@@ -92811,11 +92682,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.6;
+    stroke-width:1.6;
 
 }
 
@@ -92903,24 +92772,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.6;
+    stroke-width:1.6;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
 .contact-page .contact-location-heading > div:last-child{
 
-    min-width:
-        0;
+    min-width:0;
 
 }
 
@@ -92970,7 +92834,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
 }
 
@@ -92995,8 +92860,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-location-item:first-child{
 
-    padding-top:
-        0;
+    padding-top:0;
 
 }
 
@@ -93041,17 +92905,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     fill:none;
 
-    stroke:
-        currentColor;
+    stroke:currentColor;
 
-    stroke-width:
-        1.5;
+    stroke-width:1.5;
 
-    stroke-linecap:
-        round;
+    stroke-linecap:round;
 
-    stroke-linejoin:
-        round;
+    stroke-linejoin:round;
 
 }
 
@@ -93059,7 +92919,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
 }
 
@@ -93160,7 +93021,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:flex;
 
-    flex-direction:column;
+    flex-direction:
+        column;
 
 }
 
@@ -93248,13 +93110,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .contact-page .contact-map-frame iframe{
 
+    display:block;
+
     width:
         100%;
 
     height:
         100%;
-
-    display:block;
 
     border:
         0;
@@ -93287,7 +93149,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     justify-content:center;
 
     transform:
-        translate(-50%,-100%);
+        translate(-50%,-100%)
+        rotate(-45deg);
 
     border:
         2px solid
@@ -93308,9 +93171,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     box-shadow:
         0 12px 30px
         rgba(0,0,0,.22);
-
-    rotate:
-        -45deg;
 
     pointer-events:
         none;
@@ -93397,7 +93257,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 /* ==========================================================
-   MESSAGE FORM
+   MESSAGE / FORM
    ========================================================== */
 
 .contact-page .contact-message{
@@ -93414,9 +93274,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         minmax(0,.82fr)
         minmax(420px,1.18fr);
-
-    gap:
-        0;
 
     overflow:hidden;
 
@@ -93552,6 +93409,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-form-panel-top{
 
     display:flex;
+
+    align-items:center;
 
     justify-content:space-between;
 
@@ -93734,9 +93593,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .contact-page .contact-form-invalid
 .contact-field input:invalid,
 .contact-page .contact-form-invalid
-.contact-field textarea:invalid,
+.contact-field select:invalid,
 .contact-page .contact-form-invalid
-.contact-field select:invalid{
+.contact-field textarea:invalid{
 
     border-color:
         rgba(170,78,67,.45);
@@ -93789,7 +93648,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-form-bottom svg{
+.contact-page .contact-form-bottom > span svg{
 
     width:
         16px;
@@ -93815,12 +93674,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-form-bottom .contact-button{
-
-    flex:none;
-
-}
-
 .contact-page .contact-form-feedback{
 
     min-height:
@@ -93830,7 +93683,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         12px;
 
     color:
-        #738087;
+        #737F86;
 
     font-size:
         .66rem;
@@ -93838,18 +93691,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     line-height:
         1.5;
 
-    opacity:
-        0;
-
-    transition:
-        opacity .25s ease;
-
 }
 
-.contact-page .contact-form-feedback.contact-feedback-visible{
+.contact-page .contact-form-feedback:not(.contact-feedback-visible){
 
-    opacity:
-        1;
+    visibility:
+        hidden;
 
 }
 
@@ -93985,11 +93832,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border-radius:
         50%;
 
-    color:
-        #967744;
-
     background:
         #FBFAF7;
+
+    color:
+        #967744;
 
     transition:
         transform .3s ease,
@@ -94031,7 +93878,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-faq-answer p{
+.contact-page .contact-faq-answer > p{
 
     min-height:
         0;
@@ -94061,7 +93908,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 .contact-page .contact-faq-item.active
-.contact-faq-answer p{
+.contact-faq-answer > p{
 
     padding-bottom:
         23px;
@@ -94184,11 +94031,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:4;
+    z-index:
+        4;
 
     width:
         min(
-            100% - 45px,
+            calc(100% - 45px),
             820px
         );
 
@@ -94254,7 +94102,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #FFFFFF;
 
     font-size:
-        clamp(2.35rem,5vw,4.8rem);
+        clamp(
+            2.35rem,
+            5vw,
+            4.8rem
+        );
 
     line-height:
         .98;
@@ -94295,7 +94147,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-.contact-page .contact-final-content .contact-button{
+.contact-page .contact-final-content
+.contact-button{
 
     margin-top:
         27px;
@@ -94303,114 +94156,120 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 /* ==========================================================
-   REVEAL STATES
+   REVEAL — SEGURO
+   ==========================================================
+   NÃO escondemos os elementos.
+   As classes existem apenas para permitir movimento.
    ========================================================== */
 
-.contact-page .contact-reveal{
-
-    opacity:
-        0;
-
-    transform:
-        translateY(24px);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease;
-
-}
-
-.contact-page .contact-reveal-left{
-
-    opacity:
-        0;
-
-    transform:
-        translateX(-28px);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease;
-
-}
-
+.contact-page .contact-reveal,
+.contact-page .contact-reveal-left,
 .contact-page .contact-reveal-right{
-
-    opacity:
-        0;
-
-    transform:
-        translateX(28px);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease;
-
-}
-
-.contact-page .contact-visible{
 
     opacity:
         1;
 
     transform:
-        translate3d(0,0,0);
+        none;
+
+    visibility:
+        visible;
 
 }
 
-/* ==========================================================
-   IMAGE FALLBACK
-   ========================================================== */
-
-.contact-page .contact-image-error{
-
-    opacity:
-        0;
-
-}
-
-/* ==========================================================
-   RIPPLE
-   ========================================================== */
-
-.contact-page .ripple{
-
-    position:absolute;
-
-    z-index:20;
-
-    pointer-events:none;
-
-    border-radius:
-        50%;
-
-    transform:
-        scale(0);
-
-    background:
-        rgba(255,255,255,.20);
+.contact-page .contact-reveal.contact-visible{
 
     animation:
-        contactRipple .55s linear;
+        contactFadeUp
+        .65s ease both;
 
 }
 
-@keyframes contactRipple{
+.contact-page .contact-reveal-left.contact-visible{
+
+    animation:
+        contactFadeLeft
+        .65s ease both;
+
+}
+
+.contact-page .contact-reveal-right.contact-visible{
+
+    animation:
+        contactFadeRight
+        .65s ease both;
+
+}
+
+@keyframes contactFadeUp{
+
+    from{
+        opacity:.35;
+        transform:
+            translateY(18px);
+    }
 
     to{
-
+        opacity:1;
         transform:
-            scale(3);
+            translateY(0);
+    }
 
-        opacity:
-            0;
+}
 
+@keyframes contactFadeLeft{
+
+    from{
+        opacity:.35;
+        transform:
+            translateX(-20px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateX(0);
+    }
+
+}
+
+@keyframes contactFadeRight{
+
+    from{
+        opacity:.35;
+        transform:
+            translateX(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:
+            translateX(0);
     }
 
 }
 
 /* ==========================================================
-   RESPONSIVE — 1200
+   FOCUS
+   ========================================================== */
+
+.contact-page button:focus-visible,
+.contact-page a:focus-visible,
+.contact-page input:focus-visible,
+.contact-page select:focus-visible,
+.contact-page textarea:focus-visible{
+
+    outline:
+        2px solid
+        rgba(198,161,91,.80);
+
+    outline-offset:
+        3px;
+
+}
+
+/* ==========================================================
+   RESPONSIVE 1200
    ========================================================== */
 
 @media(max-width:1200px){
@@ -94426,21 +94285,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .contact-page .contact-hero-visual{
 
         width:
-            min(510px,42vw);
-
-    }
-
-    .contact-page .contact-channel-grid{
-
-        grid-template-columns:
-            repeat(3,minmax(0,1fr));
+            min(
+                510px,
+                42vw
+            );
 
     }
 
 }
 
 /* ==========================================================
-   RESPONSIVE — 1000
+   RESPONSIVE 1000
    ========================================================== */
 
 @media(max-width:1000px){
@@ -94467,21 +94322,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         gap:
             5px;
 
-        padding-top:
-            55px;
+        padding:
+            55px 0 45px;
 
     }
 
     .contact-page .contact-hero-content{
 
-        max-width:
-            690px;
-
         position:
             relative;
 
         z-index:
-            5;
+            6;
+
+        max-width:
+            700px;
 
     }
 
@@ -94490,13 +94345,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         position:absolute;
 
         right:
-            -2%;
+            -4%;
 
         bottom:
-            -2%;
+            -1%;
 
         width:
-            48%;
+            52%;
 
         opacity:
             .78;
@@ -94510,31 +94365,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-    .contact-page .contact-location-grid{
+    .contact-page .contact-hub-grid{
 
         grid-template-columns:
             1fr;
 
     }
 
-    .contact-page .contact-map-frame{
-
-        height:
-            400px;
-
-    }
-
-    .contact-page .contact-form-shell{
+    .contact-page .contact-channel-grid{
 
         grid-template-columns:
-            1fr;
-
-    }
-
-    .contact-page .contact-form-intro{
-
-        padding:
-            39px;
+            repeat(3,minmax(0,1fr));
 
     }
 
@@ -94545,10 +94386,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
+    .contact-page .contact-location-grid{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .contact-page .contact-form-shell{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
 }
 
 /* ==========================================================
-   RESPONSIVE — 800
+   RESPONSIVE 800
    ========================================================== */
 
 @media(max-width:800px){
@@ -94607,17 +94462,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .contact-page .contact-hero-main{
 
         padding:
-            48px 0 40px;
-
-    }
-
-    .contact-page .contact-hero .contact-hero-kicker{
-
-        font-size:
-            .56rem;
-
-        letter-spacing:
-            .13em;
+            45px 0 40px;
 
     }
 
@@ -94627,7 +94472,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             clamp(
                 2.95rem,
                 10vw,
-                5.25rem
+                5.2rem
             );
 
     }
@@ -94637,27 +94482,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         font-size:
             .91rem;
 
-        line-height:
-            1.73;
-
-    }
-
-    .contact-page .contact-hero-meta{
-
-        margin-top:
-            28px;
-
-    }
-
-    .contact-page .contact-hero-meta
-    .contact-meta-item{
-
-        min-width:
-            0;
-
-        flex:
-            1;
-
     }
 
     .contact-page .contact-hero-visual-area{
@@ -94665,18 +94489,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         position:
             relative;
 
-        right:auto;
+        right:
+            auto;
 
-        bottom:auto;
+        bottom:
+            auto;
 
         width:
             100%;
 
         margin-top:
-            -25px;
+            -20px;
 
         opacity:
-            .88;
+            .92;
 
     }
 
@@ -94684,26 +94510,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:
             min(
-                455px,
+                450px,
                 82vw
             );
 
         margin:
             0 auto;
-
-    }
-
-    .contact-page .contact-hero-bottom{
-
-        bottom:
-            21px;
-
-    }
-
-    .contact-page .contact-hub-grid{
-
-        grid-template-columns:
-            1fr;
 
     }
 
@@ -94744,7 +94556,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 /* ==========================================================
-   RESPONSIVE — 600
+   RESPONSIVE 600
    ========================================================== */
 
 @media(max-width:600px){
@@ -94785,25 +94597,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .contact-page .contact-hero{
 
         min-height:
-            820px;
+            835px;
 
     }
 
     .contact-page .contact-hero-container{
 
         min-height:
-            820px;
+            835px;
 
     }
 
     .contact-page .contact-hero-main{
 
         padding:
-            35px 0 34px;
+            34px 0 30px;
+
+    }
+
+    .contact-page .contact-hero-kicker{
+
+        font-size:
+            .55rem;
+
+        letter-spacing:
+            .12em;
 
     }
 
     .contact-page .contact-hero h1{
+
+        margin-top:
+            13px;
 
         font-size:
             clamp(
@@ -94821,6 +94646,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             .88rem;
+
+        line-height:
+            1.70;
 
     }
 
@@ -94849,21 +94677,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-template-columns:
             1fr 1fr;
 
-        gap:
-            0;
-
     }
 
     .contact-page .contact-meta-item{
-
-        width:
-            100%;
 
         min-width:
             0;
 
         padding:
-            10px 10px 10px 0;
+            9px 10px 9px 0;
 
         margin:
             0;
@@ -94889,8 +94711,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-column:
             1 / -1;
 
+        margin-top:
+            4px;
+
         padding-left:
             0;
+
+        padding-top:
+            13px;
 
         border-top:
             1px solid
@@ -94899,45 +94727,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         border-right:
             0;
 
-        margin-top:
-            5px;
-
-    }
-
-    .contact-page .contact-hero-visual-area{
-
-        margin-top:
-            -6px;
-
     }
 
     .contact-page .contact-hero-visual{
 
         width:
             min(
-                360px,
+                350px,
                 90vw
             );
 
     }
 
-    .contact-page .contact-hero-frame{
-
-        width:
-            72%;
-
-        height:
-            72%;
-
-    }
-
     .contact-page .contact-hero-image-main{
-
-        width:
-            75%;
-
-        height:
-            75%;
 
         border-radius:
             23px;
@@ -94957,34 +94759,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-    .contact-page .contact-hero-floating.floating-one{
-
-        left:
-            0;
-
-    }
-
-    .contact-page .contact-hero-floating.floating-two{
-
-        right:
-            0;
-
-    }
-
-    .contact-page .contact-hero-floating.floating-three{
-
-        left:
-            6%;
-
-    }
-
     .contact-page .contact-hero-visual-label{
 
         right:
             0;
 
         bottom:
-            2%;
+            1%;
 
     }
 
@@ -94992,6 +94773,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             .57rem;
+
+    }
+
+    .contact-page .contact-hero-bottom{
+
+        bottom:
+            18px;
 
     }
 
@@ -95014,13 +94802,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-    .contact-page .contact-hub-side{
-
-        gap:
-            9px;
-
-    }
-
     .contact-page .contact-hub-mini{
 
         min-height:
@@ -95031,12 +94812,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-    /* DIRECT */
+    /* CHANNELS */
 
     .contact-page .contact-channel-card{
 
         min-height:
-            250px;
+            245px;
 
         padding:
             23px;
@@ -95106,9 +94887,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-template-columns:
             1fr;
 
-        gap:
-            0;
-
     }
 
     .contact-page .contact-form-row
@@ -95116,13 +94894,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         margin-top:
             15px;
-
-    }
-
-    .contact-page .contact-form-panel-top{
-
-        padding-bottom:
-            13px;
 
     }
 
@@ -95163,7 +94934,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-    .contact-page .contact-faq-answer p{
+    .contact-page .contact-faq-answer > p{
 
         padding-right:
             35px;
@@ -95188,7 +94959,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .contact-page .contact-final-content{
 
         width:
-            calc(100% - 25px);
+            calc(
+                100% - 24px
+            );
 
         padding:
             50px 10px;
@@ -95230,26 +95003,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             100%;
 
     }
-
-}
-
-/* ==========================================================
-   ACCESSIBILITY
-   ========================================================== */
-
-.contact-page [role="button"]:focus-visible,
-.contact-page button:focus-visible,
-.contact-page a:focus-visible,
-.contact-page input:focus-visible,
-.contact-page select:focus-visible,
-.contact-page textarea:focus-visible{
-
-    outline:
-        2px solid
-        rgba(198,161,91,.80);
-
-    outline-offset:
-        3px;
 
 }
 
