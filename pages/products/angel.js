@@ -180,17 +180,14 @@ function hero(){
 
     return `
 
-    <section
-        class="hero angel-hero">
+    <section class="hero angel-hero">
 
         <div class="angel-hero-atmosphere">
 
             <div class="angel-orb angel-orb-1"></div>
-
             <div class="angel-orb angel-orb-2"></div>
 
             <div class="angel-orbit angel-orbit-1"></div>
-
             <div class="angel-orbit angel-orbit-2"></div>
 
         </div>
@@ -324,8 +321,7 @@ function overview(){
 
         <div class="container">
 
-            <div
-                class="section-center angel-section-heading reveal">
+            <div class="section-center angel-section-heading reveal">
 
                 <span class="label">
                     VISÃO GERAL
@@ -371,7 +367,7 @@ function overview(){
                 ${overviewCard(
                     "04",
                     "Tecnologia",
-                    "Integra elementos tecnológicos apresentados para a linha Angel Moon."
+                    "Elementos tecnológicos apresentados para a linha Angel Moon."
                 )}
 
             </div>
@@ -586,7 +582,7 @@ function technology(){
                                 ${layerCard(
                                     "02",
                                     "Distribuição",
-                                    "Encaminhamento do líquido dentro da estrutura."
+                                    "Encaminhamento do líquido."
                                 )}
 
                                 ${layerCard(
@@ -598,19 +594,19 @@ function technology(){
                                 ${layerCard(
                                     "04",
                                     "Negative Ion Core",
-                                    "Elemento tecnológico comunicado para o produto."
+                                    "Elemento tecnológico comunicado."
                                 )}
 
                                 ${layerCard(
                                     "05",
                                     "Nano Silver",
-                                    "Elemento tecnológico apresentado na estrutura."
+                                    "Elemento tecnológico apresentado."
                                 )}
 
                                 ${layerCard(
                                     "06",
                                     "Protecção",
-                                    "Camada destinada a ajudar a limitar a passagem de humidade."
+                                    "Camada de protecção da estrutura."
                                 )}
 
                                 ${layerCard(
@@ -629,11 +625,11 @@ function technology(){
                                 </strong>
 
                                 <p>
-                                    A comunicação do produto também menciona
+                                    A comunicação promocional também menciona
                                     biomagnetismo, infravermelho longínquo,
-                                    acção antibacteriana e propriedades
-                                    desodorizantes. Estas alegações devem ser
-                                    confirmadas na documentação oficial do produto.
+                                    propriedades antibacterianas e desodorizantes.
+                                    Estas alegações devem ser confirmadas através
+                                    da documentação oficial.
                                 </p>
 
                             </div>
@@ -781,15 +777,10 @@ function identity(){
                     <div class="angel-benefit-checks">
 
                         ${benefitCheck("Fino")}
-
                         ${benefitCheck("Flexível")}
-
                         ${benefitCheck("Super absorvente")}
-
                         ${benefitCheck("Respirável")}
-
                         ${benefitCheck("Discreto")}
-
                         ${benefitCheck("Versátil")}
 
                     </div>
@@ -875,7 +866,7 @@ function benefits(){
                 ${benefitCard(
                     "COM",
                     "Conforto",
-                    "Uma construção fina e flexível pensada para utilização diária."
+                    "Construção fina e flexível pensada para utilização diária."
                 )}
 
                 ${benefitCard(
@@ -893,7 +884,7 @@ function benefits(){
                 ${benefitCard(
                     "TEC",
                     "Tecnologia",
-                    "Elementos tecnológicos integrados na construção do produto."
+                    "Elementos tecnológicos integrados na construção."
                 )}
 
             </div>
@@ -910,11 +901,10 @@ function benefits(){
                 </h3>
 
                 <p>
-                    A descrição comercial do produto inclui referências
-                    a Negative Ion Core, Nano Silver, biomagnetismo,
-                    infravermelho longínquo, propriedades antibacterianas
-                    e desodorizantes. Estas alegações requerem confirmação
-                    através da documentação oficial correspondente.
+                    A comunicação promocional fornecida menciona
+                    Negative Ion Core, Nano Silver, biomagnetismo,
+                    infravermelho longínquo e propriedades
+                    antibacterianas e desodorizantes.
                 </p>
 
             </div>
@@ -982,15 +972,13 @@ function productDetail(){
 
                 <p>
                     A linha é apresentada através de uma construção
-                    multicamada e de diferentes formatos para diferentes
-                    momentos de utilização.
+                    multicamada e diferentes formatos de utilização.
                 </p>
 
             </div>
 
 
             <article class="angel-product-card reveal">
-
 
                 <div class="angel-product-card-visual">
 
@@ -1094,33 +1082,19 @@ function productDetail(){
 
                             <div class="angel-detail-list">
 
-                                ${detailItem(
-                                    "Fino e flexível."
-                                )}
+                                ${detailItem("Fino e flexível.")}
 
-                                ${detailItem(
-                                    "Super absorvente."
-                                )}
+                                ${detailItem("Super absorvente.")}
 
-                                ${detailItem(
-                                    "Ventilação apresentada como óptima."
-                                )}
+                                ${detailItem("Ventilação apresentada como óptima.")}
 
-                                ${detailItem(
-                                    "Tecnologia Negative Ion Core."
-                                )}
+                                ${detailItem("Tecnologia Negative Ion Core.")}
 
-                                ${detailItem(
-                                    "Nano Silver."
-                                )}
+                                ${detailItem("Nano Silver.")}
 
-                                ${detailItem(
-                                    "Biomagnetismo e infravermelho longínquo mencionados na comunicação promocional."
-                                )}
+                                ${detailItem("Biomagnetismo e infravermelho longínquo mencionados na comunicação promocional.")}
 
-                                ${detailItem(
-                                    "Propriedades antibacterianas e desodorizantes mencionadas na apresentação do produto."
-                                )}
+                                ${detailItem("Propriedades antibacterianas e desodorizantes mencionadas na apresentação do produto.")}
 
                             </div>
 
@@ -1198,7 +1172,7 @@ function detailItem(text){
 
 
 /* ==========================================================
-   ROUTINE / USAGE
+   ROUTINE
    ========================================================== */
 
 function routine(){
@@ -1362,13 +1336,13 @@ function experience(){
                 ${experienceCard(
                     "♡",
                     "Conforto",
-                    "Construção fina e flexível apresentada para utilização diária."
+                    "Construção fina e flexível."
                 )}
 
                 ${experienceCard(
                     "◉",
                     "Protecção",
-                    "Estrutura orientada para absorção e retenção."
+                    "Estrutura orientada para absorção."
                 )}
 
                 ${experienceCard(
@@ -1380,7 +1354,7 @@ function experience(){
                 ${experienceCard(
                     "✦",
                     "Tecnologia",
-                    "Elementos tecnológicos integrados na construção."
+                    "Elementos tecnológicos integrados."
                 )}
 
                 ${experienceCard(
@@ -1547,8 +1521,8 @@ function certifications(){
                 </h2>
 
                 <p class="lead">
-                    Área preparada para receber as imagens das certificações,
-                    relatórios e outros documentos oficiais do produto.
+                    Área preparada para receber as imagens das
+                    certificações, relatórios e documentos oficiais.
                 </p>
 
             </div>
@@ -1558,7 +1532,8 @@ function certifications(){
 
                 ${ANGEL_CERTIFICATIONS
                     .map(
-                        (cert, index) => `
+                        cert => `
+
                             <article
                                 class="angel-certification-card reveal">
 
@@ -1613,6 +1588,7 @@ function certifications(){
                                 </div>
 
                             </article>
+
                         `
                     )
                     .join("")
@@ -1648,12 +1624,12 @@ function faq(){
 
         [
             "O que são as sete camadas?",
-            "A apresentação do produto descreve uma estrutura composta por sete camadas, desde a superfície de contacto até à base respirável."
+            "A apresentação do produto descreve uma estrutura composta por sete camadas."
         ],
 
         [
             "O que significa Negative Ion Core?",
-            "É uma designação tecnológica apresentada na comunicação do produto. As características e efeitos associados devem ser confirmados na documentação oficial."
+            "É uma designação tecnológica apresentada na comunicação do produto. As características associadas devem ser confirmadas através da documentação oficial."
         ],
 
         [
@@ -1673,7 +1649,7 @@ function faq(){
 
         [
             "Estas propriedades estão oficialmente certificadas?",
-            "A confirmação deve ser feita através dos documentos, certificações e informações oficiais correspondentes. Esta página dispõe de uma área específica para essa documentação."
+            "A confirmação deve ser feita através dos documentos, certificações e informações oficiais correspondentes."
         ],
 
         [
@@ -1704,8 +1680,8 @@ function faq(){
                 </h2>
 
                 <p>
-                    As respostas abrem individualmente para manter
-                    a informação simples e organizada.
+                    Consulte apenas a informação necessária,
+                    abrindo cada resposta individualmente.
                 </p>
 
             </div>
@@ -1825,8 +1801,8 @@ function information(){
                         As informações desta página foram organizadas
                         a partir do material disponibilizado para o Angel Moon.
                         Características específicas, composição, tecnologias
-                        e alegações associadas ao produto devem ser confirmadas
-                        através da documentação oficial correspondente.
+                        e alegações associadas devem ser confirmadas através
+                        da documentação oficial.
                     </p>
 
                     <p>
@@ -1932,10 +1908,6 @@ function initialiseAngel(){
     }
 
 
-    /* ------------------------------------------------------
-       RIPPLE
-       ------------------------------------------------------ */
-
     try{
 
         root
@@ -1951,10 +1923,6 @@ function initialiseAngel(){
 
     }
 
-
-    /* ------------------------------------------------------
-       STAGGER
-       ------------------------------------------------------ */
 
     try{
 
@@ -1981,10 +1949,6 @@ function initialiseAngel(){
     }
 
 
-    /* ------------------------------------------------------
-       SCROLL
-       ------------------------------------------------------ */
-
     root.addEventListener(
         "click",
         function(event){
@@ -2003,10 +1967,6 @@ function initialiseAngel(){
                     "data-scroll"
                 );
 
-            if(!selector){
-                return;
-            }
-
             const target =
                 root.querySelector(
                     selector
@@ -2024,10 +1984,6 @@ function initialiseAngel(){
         }
     );
 
-
-    /* ------------------------------------------------------
-       MORE / DETAILS
-       ------------------------------------------------------ */
 
     root.addEventListener(
         "click",
@@ -2070,18 +2026,15 @@ function initialiseAngel(){
                 String(nextState)
             );
 
-
             button.classList.toggle(
                 "active",
                 nextState
             );
 
-
             panel.classList.toggle(
                 "active",
                 nextState
             );
-
 
             panel.setAttribute(
                 "aria-hidden",
@@ -2128,10 +2081,6 @@ function initialiseAngel(){
     );
 
 
-    /* ------------------------------------------------------
-       FAQ
-       ------------------------------------------------------ */
-
     root.addEventListener(
         "click",
         function(event){
@@ -2145,23 +2094,17 @@ function initialiseAngel(){
                 return;
             }
 
-
             const item =
                 button.closest(
                     ".angel-faq-item"
                 );
 
-            if(!item){
-                return;
-            }
-
-
             const answer =
-                item.querySelector(
+                item?.querySelector(
                     ".angel-faq-answer"
                 );
 
-            if(!answer){
+            if(!item || !answer){
                 return;
             }
 
@@ -2176,21 +2119,17 @@ function initialiseAngel(){
                 .querySelectorAll(
                     ".angel-faq-item.active"
                 )
-                .forEach(
-                    otherItem=>{
+                .forEach(otherItem=>{
 
-                        if(
-                            otherItem !== item
-                        ){
+                    if(otherItem !== item){
 
-                            closeFaqItem(
-                                otherItem
-                            );
-
-                        }
+                        closeFaqItem(
+                            otherItem
+                        );
 
                     }
-                );
+
+                });
 
 
             if(isOpen){
@@ -2212,10 +2151,6 @@ function initialiseAngel(){
         }
     );
 
-
-    /* ------------------------------------------------------
-       CERTIFICATION IMAGE FALLBACK
-       ------------------------------------------------------ */
 
     root
         .querySelectorAll(
@@ -2310,10 +2245,6 @@ function initialiseAngel(){
         });
 
 
-    /* ------------------------------------------------------
-       BUY / WHATSAPP
-       ------------------------------------------------------ */
-
     root.addEventListener(
         "click",
         function(event){
@@ -2332,22 +2263,9 @@ function initialiseAngel(){
                 "Olá AD Lifestyle! Tenho interesse no Angel Moon e gostaria de receber mais informações.";
 
 
-            const type =
-                button.getAttribute(
-                    "data-buy"
-                );
-
-
-            if(type === "product"){
-
-                message =
-                    "Olá AD Lifestyle! Gostaria de adquirir o Angel Moon.";
-
-            }
-
-
             if(
-                button.id === "buyAngel"
+                button.id === "buyAngel" ||
+                button.getAttribute("data-buy") === "product"
             ){
 
                 message =
@@ -2362,10 +2280,6 @@ function initialiseAngel(){
     );
 
 
-    /* ------------------------------------------------------
-       HOME
-       ------------------------------------------------------ */
-
     const backHome =
         root.querySelector(
             "#backHome"
@@ -2375,19 +2289,11 @@ function initialiseAngel(){
 
         backHome.addEventListener(
             "click",
-            function(){
-
-                navigate("/");
-
-            }
+            ()=>navigate("/")
         );
 
     }
 
-
-    /* ------------------------------------------------------
-       RESIZE
-       ------------------------------------------------------ */
 
     window.addEventListener(
         "resize",
