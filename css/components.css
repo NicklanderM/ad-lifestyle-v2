@@ -76299,7 +76299,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   ROOT
+   01 — ROOT
    ========================================================== */
 
 .page-angel {
@@ -76307,43 +76307,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     --angel-white: #fffdfd;
     --angel-cream: #fbf5f3;
     --angel-soft: #f5e9e7;
-    --angel-blush: #eed9d7;
+    --angel-blush: #eedbd9;
 
-    --angel-rose: #b47c82;
-    --angel-rose-light: #d6aaad;
-    --angel-rose-dark: #7f4e56;
-    --angel-rose-deep: #663e45;
+    --angel-rose: #b77d82;
+    --angel-rose-light: #d7adaf;
+    --angel-rose-dark: #824f57;
+    --angel-rose-deep: #683f46;
 
-    --angel-gold: #c3a06a;
-    --angel-gold-light: #dbc393;
-    --angel-gold-dark: #8b6a38;
+    --angel-gold: #c4a06a;
+    --angel-gold-light: #dbc18f;
+    --angel-gold-dark: #8d6b39;
 
-    --angel-cocoa: #302527;
+    --angel-cocoa: #302426;
     --angel-brown: #594648;
-    --angel-text: #665658;
-    --angel-muted: #89797a;
+    --angel-text: #675658;
+    --angel-muted: #8c7a7b;
 
-    --angel-line: rgba(91,65,68,.12);
-    --angel-line-strong: rgba(91,65,68,.20);
+    --angel-line: rgba(82,59,62,.12);
+    --angel-line-strong: rgba(82,59,62,.19);
 
     --angel-shadow:
-        0 24px 75px rgba(70,42,46,.09);
+        0 24px 78px rgba(70,43,47,.09);
 
     --angel-shadow-soft:
-        0 12px 35px rgba(70,42,46,.06);
+        0 12px 35px rgba(70,43,47,.06);
 
     --angel-shadow-heavy:
-        0 32px 90px rgba(56,33,37,.22);
+        0 32px 90px rgba(50,30,34,.21);
 
     --angel-radius: 30px;
     --angel-radius-sm: 21px;
+    --angel-radius-xs: 15px;
 
     --angel-ease:
         cubic-bezier(.22,1,.36,1);
 
     min-height: 100vh;
 
-    color: var(--angel-text);
+    position: relative;
+
+    color:
+        var(--angel-text);
 
     background:
         var(--angel-white);
@@ -76357,40 +76361,68 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         Arial,
         sans-serif;
 
-    isolation: isolate;
+    line-height:
+        1.65;
 
-    overflow: hidden;
+    isolation:
+        isolate;
+
+    overflow:
+        hidden;
 }
 
 
 /* ==========================================================
-   BASE
+   02 — RESET
    ========================================================== */
 
 .page-angel *,
 .page-angel *::before,
 .page-angel *::after {
-    box-sizing: border-box;
+
+    box-sizing:
+        border-box;
 }
 
 .page-angel img {
-    display: block;
-    max-width: 100%;
+
+    display:
+        block;
+
+    max-width:
+        100%;
 }
 
 .page-angel button {
-    font: inherit;
+
+    font:
+        inherit;
 }
 
 .page-angel a {
-    color: inherit;
-    text-decoration: none;
+
+    color:
+        inherit;
+
+    text-decoration:
+        none;
 }
 
-.page-angel .container,
-.page-angel .container-sm {
+.page-angel section {
 
-    position: relative;
+    position:
+        relative;
+}
+
+
+/* ==========================================================
+   03 — CONTAINERS
+   ========================================================== */
+
+.page-angel .container {
+
+    position:
+        relative;
 
     width:
         min(
@@ -76398,76 +76430,128 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             calc(100% - 48px)
         );
 
-    margin-inline: auto;
+    margin-inline:
+        auto;
+
+    z-index:
+        2;
 }
 
 .page-angel .container-sm {
-    max-width: 880px;
-}
 
-.page-angel .section {
-    position: relative;
-    padding: 105px 0;
+    position:
+        relative;
+
+    width:
+        min(
+            880px,
+            calc(100% - 48px)
+        );
+
+    margin-inline:
+        auto;
 }
 
 
 /* ==========================================================
-   TYPOGRAPHY
+   04 — SECTIONS
+   ========================================================== */
+
+.page-angel .section {
+
+    position:
+        relative;
+
+    padding:
+        108px 0;
+}
+
+
+/* ==========================================================
+   05 — TYPOGRAPHY
    ========================================================== */
 
 .page-angel .label,
 .page-angel .eyebrow {
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 9px;
+    gap:
+        9px;
 
     color:
         var(--angel-gold-dark);
 
-    font-size: .68rem;
+    font-size:
+        .68rem;
 
-    font-weight: 850;
+    font-weight:
+        850;
 
-    line-height: 1;
+    line-height:
+        1;
 
-    letter-spacing: .16em;
+    letter-spacing:
+        .16em;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 }
 
 .page-angel .eyebrow::before {
 
-    content: "";
+    content:
+        "";
 
-    width: 29px;
-    height: 1px;
+    width:
+        29px;
+
+    height:
+        1px;
 
     background:
         currentColor;
 
-    opacity: .75;
+    opacity:
+        .72;
+}
+
+.page-angel .section-center {
+
+    text-align:
+        center;
 }
 
 .page-angel .section-title {
 
-    max-width: 780px;
+    max-width:
+        790px;
 
-    margin: 13px auto 0;
+    margin:
+        13px auto 0;
 
     color:
         var(--angel-cocoa);
 
     font-size:
-        clamp(2.2rem,4vw,3.55rem);
+        clamp(
+            2.2rem,
+            4vw,
+            3.55rem
+        );
 
-    line-height: 1.02;
+    line-height:
+        1.01;
 
-    letter-spacing: -.055em;
+    letter-spacing:
+        -.055em;
 
-    font-weight: 780;
+    font-weight:
+        780;
 }
 
 .page-angel .section-title span,
@@ -76480,69 +76564,151 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .lead {
 
-    max-width: 700px;
+    max-width:
+        700px;
 
-    margin: 18px auto 0;
+    margin:
+        18px auto 0;
 
     color:
         var(--angel-text);
 
-    font-size: .96rem;
+    font-size:
+        .95rem;
 
-    line-height: 1.82;
+    line-height:
+        1.82;
 }
 
-.page-angel .section-center {
-    text-align: center;
+.page-angel .angel-section-heading {
+
+    width:
+        100%;
+
+    margin:
+        0 auto 50px;
+
+    text-align:
+        left;
+}
+
+.page-angel .angel-section-heading > h2 {
+
+    max-width:
+        780px;
+
+    margin:
+        13px 0 0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        clamp(
+            2.2rem,
+            4vw,
+            3.55rem
+        );
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -.055em;
+}
+
+.page-angel .angel-section-heading > p {
+
+    max-width:
+        690px;
+
+    margin:
+        18px 0 0;
+
+    color:
+        var(--angel-text);
+
+    font-size:
+        .95rem;
+
+    line-height:
+        1.82;
+}
+
+.page-angel .angel-section-heading.section-center > h2,
+.page-angel .angel-section-heading.section-center > p {
+
+    margin-inline:
+        auto;
+
+    text-align:
+        center;
 }
 
 
 /* ==========================================================
-   BUTTONS
+   06 — BUTTONS
    ========================================================== */
 
 .page-angel .btn {
 
-    position: relative;
+    min-height:
+        50px;
 
-    display: inline-flex;
+    display:
+        inline-flex;
 
-    align-items: center;
-    justify-content: center;
+    align-items:
+        center;
 
-    min-height: 50px;
+    justify-content:
+        center;
 
-    padding: 0 22px;
+    gap:
+        9px;
+
+    padding:
+        0 22px;
 
     border:
         1px solid transparent;
 
-    border-radius: 999px;
+    border-radius:
+        999px;
 
-    cursor: pointer;
+    cursor:
+        pointer;
 
-    overflow: hidden;
+    position:
+        relative;
 
-    font-size: .81rem;
+    overflow:
+        hidden;
 
-    font-weight: 780;
+    font-size:
+        .81rem;
+
+    font-weight:
+        780;
 
     transition:
         transform .45s var(--angel-ease),
-        box-shadow .45s var(--angel-ease),
-        background .45s var(--angel-ease),
-        color .45s var(--angel-ease),
-        border-color .45s var(--angel-ease);
+        background .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease,
+        color .45s ease;
 }
 
 .page-angel .btn:hover {
+
     transform:
         translateY(-3px);
 }
 
 .page-angel .btn-primary {
 
-    color: #fff;
+    color:
+        #fff;
 
     background:
         linear-gradient(
@@ -76552,13 +76718,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         );
 
     box-shadow:
-        0 15px 34px rgba(127,78,86,.22);
+        0 15px 34px
+        rgba(130,79,87,.22);
 }
 
 .page-angel .btn-primary:hover {
 
     box-shadow:
-        0 20px 43px rgba(127,78,86,.29);
+        0 20px 43px
+        rgba(130,79,87,.29);
 }
 
 .page-angel .btn-glass {
@@ -76585,7 +76753,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     border-color:
-        rgba(180,124,130,.34);
+        rgba(183,125,130,.35);
 
     background:
         #fff;
@@ -76593,36 +76761,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   HERO
+   07 — HERO
    ========================================================== */
 
 .page-angel .angel-hero {
 
-    min-height: 760px;
+    min-height:
+        755px;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
-
-    position: relative;
-
-    overflow: hidden;
+    align-items:
+        center;
 
     padding:
-        70px 0 88px;
+        72px 0 88px;
+
+    overflow:
+        hidden;
 
     background:
 
         radial-gradient(
-            circle at 9% 16%,
-            rgba(238,217,215,.78),
+            circle at 9% 18%,
+            rgba(239,218,216,.78),
             transparent 29%
         ),
 
         radial-gradient(
             circle at 87% 18%,
-            rgba(195,160,106,.10),
-            transparent 23%
+            rgba(196,160,106,.09),
+            transparent 24%
         ),
 
         linear-gradient(
@@ -76635,177 +76805,105 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-hero::after {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    inset: 0;
-
-    pointer-events: none;
+    inset:
+        0;
 
     background-image:
 
         linear-gradient(
-            rgba(96,69,72,.025) 1px,
+            rgba(93,67,70,.024) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(96,69,72,.025) 1px,
+            rgba(93,67,70,.024) 1px,
             transparent 1px
         );
 
-    background-size: 58px 58px;
+    background-size:
+        58px 58px;
 
     mask-image:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.7),
+            rgba(0,0,0,.65),
             transparent 92%
         );
+
+    pointer-events:
+        none;
 }
 
 .page-angel .angel-hero-grid {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
-        minmax(0,.86fr)
-        minmax(430px,1.14fr);
+        minmax(0,.84fr)
+        minmax(450px,1.16fr);
 
-    align-items: center;
+    align-items:
+        center;
 
-    gap: 35px;
+    gap:
+        32px;
 }
-
-
-/* ==========================================================
-   HERO ATMOSPHERE
-   ========================================================== */
-
-.page-angel .angel-hero-atmosphere {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    overflow: hidden;
-}
-
-.page-angel .angel-orb {
-
-    position: absolute;
-
-    border-radius: 50%;
-}
-
-.page-angel .angel-orb-1 {
-
-    width: 430px;
-    height: 430px;
-
-    left: -180px;
-    top: -175px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(180,124,130,.18),
-            transparent 72%
-        );
-}
-
-.page-angel .angel-orb-2 {
-
-    width: 550px;
-    height: 550px;
-
-    right: -250px;
-    bottom: -275px;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(195,160,106,.11),
-            transparent 72%
-        );
-}
-
-.page-angel .angel-orbit {
-
-    position: absolute;
-
-    border:
-        1px solid rgba(180,124,130,.11);
-
-    border-radius: 50%;
-}
-
-.page-angel .angel-orbit-1 {
-
-    width: 620px;
-    height: 300px;
-
-    right: -170px;
-    top: 14%;
-
-    transform:
-        rotate(-24deg);
-}
-
-.page-angel .angel-orbit-2 {
-
-    width: 520px;
-    height: 250px;
-
-    right: -110px;
-    top: 23%;
-
-    transform:
-        rotate(-24deg);
-}
-
-
-/* ==========================================================
-   HERO COPY
-   ========================================================== */
 
 .page-angel .angel-hero-copy {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 3;
+    z-index:
+        3;
 
-    max-width: 580px;
+    max-width:
+        590px;
 }
 
 .page-angel .angel-eyebrow {
-    margin-bottom: 23px;
+
+    margin-bottom:
+        23px;
 }
 
 .page-angel .angel-hero-copy h1 {
 
-    margin: 0;
+    margin:
+        0;
 
     color:
         var(--angel-cocoa);
 
     font-size:
-        clamp(3.45rem,6vw,5.8rem);
+        clamp(
+            3.5rem,
+            6vw,
+            5.8rem
+        );
 
-    line-height: .91;
+    line-height:
+        .90;
 
-    letter-spacing: -.075em;
+    letter-spacing:
+        -.075em;
 
-    font-weight: 800;
+    font-weight:
+        800;
 }
 
 .page-angel .angel-hero-copy h1 span {
 
-    display: block;
+    display:
+        block;
 
     color:
         var(--angel-rose-dark);
@@ -76813,28 +76911,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-hero-description {
 
-    max-width: 550px;
+    max-width:
+        550px;
 
-    margin: 28px 0 0;
+    margin:
+        28px 0 0;
 
     color:
         var(--angel-text);
 
     font-size:
-        clamp(.98rem,1.4vw,1.08rem);
+        clamp(
+            .98rem,
+            1.35vw,
+            1.08rem
+        );
 
-    line-height: 1.80;
+    line-height:
+        1.82;
 }
 
 .page-angel .angel-hero-pills {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 8px;
+    gap:
+        8px;
 
-    margin-top: 25px;
+    margin-top:
+        24px;
 }
 
 .page-angel .angel-hero-pill {
@@ -76855,61 +76964,69 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         rgba(255,255,255,.64);
 
     font-size:
-        .66rem;
+        .65rem;
 
     font-weight:
         760;
-
-    backdrop-filter:
-        blur(10px);
-
-    -webkit-backdrop-filter:
-        blur(10px);
 }
 
 .page-angel .angel-hero-actions {
 
-    display: flex;
+    display:
+        flex;
 
-    flex-wrap: wrap;
+    flex-wrap:
+        wrap;
 
-    gap: 10px;
+    gap:
+        10px;
 
-    margin-top: 30px;
+    margin-top:
+        30px;
 }
 
 
 /* ==========================================================
-   HERO PRODUCT
+   08 — HERO PRODUCT
    ========================================================== */
 
 .page-angel .angel-hero-product {
 
-    position: relative;
+    min-height:
+        600px;
 
-    min-height: 600px;
+    position:
+        relative;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 }
 
 .page-angel .angel-product-aura {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 575px;
-    height: 575px;
+    width:
+        580px;
 
-    border-radius: 50%;
+    height:
+        580px;
+
+    border-radius:
+        50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(238,217,215,.85) 0%,
-            rgba(238,217,215,.31) 40%,
+            rgba(239,218,216,.87),
+            rgba(239,218,216,.30) 42%,
             transparent 70%
         );
 
@@ -76919,19 +77036,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-ring {
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 505px;
-    height: 505px;
+    width:
+        505px;
+
+    height:
+        505px;
 
     border:
-        1px solid rgba(180,124,130,.18);
+        1px solid rgba(183,125,130,.17);
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     box-shadow:
-        0 0 0 35px rgba(180,124,130,.028),
-        0 0 0 75px rgba(180,124,130,.016);
+        0 0 0 35px rgba(183,125,130,.025),
+        0 0 0 75px rgba(183,125,130,.015);
 
     animation:
         angelRing 18s linear infinite;
@@ -76939,62 +77061,76 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-grid {
 
-    position: relative;
+    width:
+        min(100%,515px);
 
-    z-index: 2;
+    min-height:
+        580px;
 
-    width: min(100%,515px);
+    position:
+        relative;
 
-    min-height: 580px;
+    z-index:
+        2;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 }
 
 .page-angel .angel-product-grid::before {
 
-    content: "";
+    content:
+        "";
 
-    position: absolute;
+    position:
+        absolute;
 
-    width: 430px;
-    height: 430px;
+    width:
+        430px;
 
-    border-radius: 50%;
+    height:
+        430px;
 
-    opacity: .72;
+    border-radius:
+        50%;
 
     background-image:
 
         linear-gradient(
-            rgba(130,79,86,.043) 1px,
+            rgba(130,79,86,.042) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(130,79,86,.043) 1px,
+            rgba(130,79,86,.042) 1px,
             transparent 1px
         );
 
-    background-size: 29px 29px;
+    background-size:
+        29px 29px;
 
     mask-image:
         radial-gradient(
             circle,
-            black 10%,
+            black 8%,
             transparent 70%
         );
 }
 
 .page-angel .angel-product-image {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 3;
+    z-index:
+        3;
 
     width:
         min(100%,490px);
@@ -77007,8 +77143,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     filter:
         drop-shadow(
-            0 34px 34px
-            rgba(66,43,46,.17)
+            0 35px 35px
+            rgba(66,43,46,.18)
         );
 
     animation:
@@ -77017,33 +77153,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-caption {
 
-    position: absolute;
+    position:
+        absolute;
 
-    right: 6%;
+    z-index:
+        5;
 
-    bottom: 35px;
+    right:
+        5%;
 
-    z-index: 5;
+    bottom:
+        32px;
 
-    display: flex;
+    display:
+        flex;
 
-    flex-direction: column;
+    flex-direction:
+        column;
 
-    gap: 2px;
+    gap:
+        2px;
 
     padding:
-        10px 13px;
+        9px 13px;
 
     border:
         1px solid rgba(255,255,255,.75);
 
-    border-radius: 15px;
+    border-radius:
+        14px;
 
     background:
         rgba(255,255,255,.70);
 
     box-shadow:
-        0 12px 30px rgba(65,42,45,.08);
+        0 12px 28px rgba(65,42,45,.08);
 
     backdrop-filter:
         blur(13px);
@@ -77058,7 +77202,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .62rem;
+        .58rem;
 
     letter-spacing:
         .13em;
@@ -77070,31 +77214,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .53rem;
+        .50rem;
 
     letter-spacing:
-        .12em;
+        .11em;
 }
 
 
 /* ==========================================================
-   OVERVIEW
+   09 — OVERVIEW
    ========================================================== */
 
 .page-angel .angel-overview-section {
+
     background:
         #fff;
-}
-
-.page-angel .angel-section-heading {
-
-    max-width: 780px;
-
-    margin:
-        0 auto 48px;
-
-    text-align:
-        center;
 }
 
 .page-angel .angel-overview-grid {
@@ -77105,16 +77239,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         repeat(4,minmax(0,1fr));
 
-    gap: 15px;
+    gap:
+        15px;
 }
 
 .page-angel .angel-overview-card {
 
-    min-height: 220px;
+    min-height:
+        220px;
 
-    padding: 25px;
+    padding:
+        26px 24px;
 
-    position: relative;
+    position:
+        relative;
 
     border:
         1px solid var(--angel-line);
@@ -77134,7 +77272,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     transition:
         transform .45s var(--angel-ease),
-        box-shadow .45s var(--angel-ease),
+        box-shadow .45s ease,
         border-color .45s ease;
 }
 
@@ -77144,7 +77282,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-7px);
 
     border-color:
-        rgba(180,124,130,.28);
+        rgba(183,125,130,.28);
 
     box-shadow:
         var(--angel-shadow);
@@ -77152,33 +77290,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-card-number {
 
-    position: absolute;
+    position:
+        absolute;
 
-    top: 18px;
-    right: 18px;
+    right:
+        19px;
+
+    top:
+        18px;
 
     color:
         var(--angel-gold-dark);
 
-    font-size: .58rem;
+    font-size:
+        .56rem;
 
-    font-weight: 850;
+    font-weight:
+        850;
 
-    letter-spacing: .14em;
+    letter-spacing:
+        .12em;
 }
 
 .page-angel .angel-card-icon {
 
-    width: 45px;
-    height: 45px;
+    width:
+        45px;
 
-    display: grid;
+    height:
+        45px;
 
-    place-items: center;
+    display:
+        grid;
 
-    margin-bottom: 28px;
+    place-items:
+        center;
 
-    border-radius: 13px;
+    margin-bottom:
+        28px;
+
+    border-radius:
+        13px;
 
     color:
         var(--angel-rose-dark);
@@ -77186,40 +77338,50 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         #f4e3e1;
 
-    font-size: 1.15rem;
+    font-size:
+        1.08rem;
 }
 
 .page-angel .angel-overview-card h3 {
 
-    margin: 0;
+    margin:
+        0;
 
     color:
         var(--angel-cocoa);
 
-    font-size: .98rem;
+    font-size:
+        .98rem;
+
+    font-weight:
+        800;
 }
 
 .page-angel .angel-overview-card p {
 
-    margin: 8px 0 0;
+    margin:
+        8px 0 0;
 
     color:
         var(--angel-muted);
 
-    font-size: .77rem;
+    font-size:
+        .75rem;
 
-    line-height: 1.72;
+    line-height:
+        1.72;
 }
 
 .page-angel .angel-overview-note {
 
-    max-width: 850px;
+    max-width:
+        900px;
 
     margin:
-        30px auto 0;
+        28px auto 0;
 
     padding:
-        21px 24px;
+        21px 25px;
 
     border:
         1px solid var(--angel-line);
@@ -77234,12 +77396,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             #fcf7f5
         );
 
-    text-align: center;
+    text-align:
+        center;
 }
 
 .page-angel .angel-overview-note strong {
 
-    display: block;
+    display:
+        block;
 
     color:
         var(--angel-cocoa);
@@ -77250,7 +77414,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-overview-note p {
 
-    max-width: 670px;
+    max-width:
+        700px;
 
     margin:
         6px auto 0;
@@ -77259,14 +77424,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .72rem;
+        .70rem;
 
-    line-height: 1.7;
+    line-height:
+        1.72;
 }
 
 
 /* ==========================================================
-   TECHNOLOGY
+   10 — TECHNOLOGY
    ========================================================== */
 
 .page-angel .angel-technology {
@@ -77279,79 +77445,29 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         );
 }
 
-.page-angel .angel-technology .angel-section-heading {
-
-    max-width:
-        780px;
-
-    margin:
-        0 0 50px;
-
-    text-align:
-        left;
-}
-
-.page-angel .angel-technology .angel-section-heading h2 {
-
-    max-width: 700px;
-
-    margin:
-        13px 0 0;
-
-    color:
-        var(--angel-cocoa);
-
-    font-size:
-        clamp(2.2rem,4vw,3.55rem);
-
-    line-height: 1.02;
-
-    letter-spacing: -.055em;
-}
-
-.page-angel .angel-technology .angel-section-heading p {
-
-    max-width:
-        680px;
-
-    margin:
-        18px 0 0;
-
-    color:
-        var(--angel-text);
-
-    font-size:
-        .96rem;
-
-    line-height:
-        1.80;
-}
-
 .page-angel .angel-technology-grid {
 
     display:
         grid;
 
     grid-template-columns:
-        minmax(390px,.88fr)
+        minmax(410px,.88fr)
         minmax(0,1.12fr);
 
     align-items:
         center;
 
     gap:
-        68px;
+        65px;
 }
-
-
-/* Technology image = SAME hero image */
 
 .page-angel .angel-technology-visual {
 
-    position: relative;
-
     min-height:
-        540px;
+        535px;
+
+    position:
+        relative;
 
     display:
         flex;
@@ -77363,7 +77479,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         center;
 
     border:
-        1px solid rgba(180,124,130,.12);
+        1px solid rgba(183,125,130,.13);
 
     border-radius:
         var(--angel-radius);
@@ -77372,7 +77488,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         radial-gradient(
             circle,
             #fff 0%,
-            #f4e1de 100%
+            #f3dfdc 100%
         );
 
     overflow:
@@ -77384,13 +77500,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-tech-aura {
 
-    position: absolute;
+    position:
+        absolute;
 
     width:
-        370px;
+        380px;
 
     height:
-        370px;
+        380px;
 
     border-radius:
         50%;
@@ -77398,14 +77515,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(180,124,130,.17),
+            rgba(183,125,130,.15),
             transparent 70%
         );
 }
 
 .page-angel .angel-tech-ring {
 
-    position: absolute;
+    position:
+        absolute;
 
     width:
         410px;
@@ -77414,7 +77532,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         410px;
 
     border:
-        1px solid rgba(180,124,130,.15);
+        1px solid rgba(183,125,130,.14);
 
     border-radius:
         50%;
@@ -77457,7 +77575,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     filter:
         drop-shadow(
-            0 28px 31px
+            0 27px 30px
             rgba(65,42,45,.16)
         );
 }
@@ -77468,13 +77586,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         absolute;
 
     left:
-        28px;
+        26px;
 
     bottom:
-        25px;
+        24px;
 
     z-index:
-        4;
+        3;
 
     display:
         flex;
@@ -77492,15 +77610,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         1px solid rgba(255,255,255,.75);
 
     border-radius:
-        13px;
+        12px;
 
     background:
         rgba(255,255,255,.70);
 
     backdrop-filter:
-        blur(12px);
-
-    -webkit-backdrop-filter:
         blur(12px);
 }
 
@@ -77510,7 +77625,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .58rem;
+        .57rem;
 
     letter-spacing:
         .12em;
@@ -77522,14 +77637,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .50rem;
+        .49rem;
 
     letter-spacing:
-        .10em;
+        .09em;
 }
-
-
-/* Technology cards */
 
 .page-angel .angel-technology-copy {
 
@@ -77545,20 +77657,26 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         33px minmax(0,1fr);
 
+    align-items:
+        start;
+
     gap:
         14px;
 
+    min-height:
+        78px;
+
     padding:
-        19px;
+        17px 19px;
 
     margin-bottom:
-        10px;
+        9px;
 
     border:
         1px solid var(--angel-line);
 
     border-radius:
-        17px;
+        16px;
 
     background:
         rgba(255,255,255,.68);
@@ -77575,7 +77693,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateX(4px);
 
     border-color:
-        rgba(180,124,130,.27);
+        rgba(183,125,130,.27);
 
     box-shadow:
         var(--angel-shadow-soft);
@@ -77605,7 +77723,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .57rem;
+        .55rem;
 
     font-weight:
         850;
@@ -77620,7 +77738,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        .87rem;
+        .85rem;
 }
 
 .page-angel .angel-technology-card p {
@@ -77632,7 +77750,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .72rem;
+        .70rem;
 
     line-height:
         1.65;
@@ -77640,15 +77758,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   MORE PANELS
+   11 — MORE PANELS
    ========================================================== */
 
 .page-angel .angel-more-wrap {
+
     margin-top:
-        18px;
+        16px;
 }
 
 .page-angel .angel-more-toggle {
+
+    min-height:
+        43px;
 
     display:
         inline-flex;
@@ -77657,10 +77779,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         center;
 
     gap:
-        9px;
-
-    min-height:
-        43px;
+        8px;
 
     padding:
         0 15px;
@@ -77681,16 +77800,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         pointer;
 
     font-size:
-        .70rem;
+        .69rem;
 
     font-weight:
         790;
 
     transition:
         transform .35s var(--angel-ease),
+        border-color .35s ease,
         color .35s ease,
-        background .35s ease,
-        border-color .35s ease;
+        background .35s ease;
 }
 
 .page-angel .angel-more-toggle:hover {
@@ -77702,7 +77821,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     border-color:
-        rgba(180,124,130,.34);
+        rgba(183,125,130,.34);
 
     background:
         #fff;
@@ -77714,16 +77833,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         normal;
 
     font-size:
-        .92rem;
-
-    line-height:
-        1;
+        .90rem;
 
     transition:
         transform .35s ease;
 }
 
 .page-angel .angel-more-toggle.active i {
+
     transform:
         rotate(45deg);
 }
@@ -77750,9 +77867,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         1;
 }
 
-
-/* layers */
-
 .page-angel .angel-layer-grid {
 
     display:
@@ -77765,7 +77879,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         8px;
 
     margin-top:
-        15px;
+        13px;
 }
 
 .page-angel .angel-layer-card {
@@ -77776,20 +77890,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         29px minmax(0,1fr);
 
-    gap:
-        10px;
-
     align-items:
         center;
 
+    gap:
+        9px;
+
     padding:
-        11px;
+        10px;
 
     border:
         1px solid var(--angel-line);
 
     border-radius:
-        12px;
+        11px;
 
     background:
         rgba(255,255,255,.60);
@@ -77819,7 +77933,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .53rem;
+        .51rem;
 
     font-weight:
         850;
@@ -77834,7 +77948,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        .67rem;
+        .65rem;
 }
 
 .page-angel .angel-layer-card small {
@@ -77849,7 +77963,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .59rem;
+        .57rem;
 
     line-height:
         1.45;
@@ -77858,16 +77972,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-technology-note {
 
     margin-top:
-        13px;
+        12px;
 
     padding:
-        14px 16px;
+        13px 15px;
 
     border:
         1px solid var(--angel-line);
 
     border-radius:
-        13px;
+        12px;
 
     background:
         rgba(255,255,255,.60);
@@ -77875,26 +77989,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-technology-note strong {
 
-    display:
-        block;
-
     color:
         var(--angel-cocoa);
 
     font-size:
-        .70rem;
+        .67rem;
 }
 
 .page-angel .angel-technology-note p {
 
     margin:
-        5px 0 0;
+        4px 0 0;
 
     color:
         var(--angel-muted);
 
     font-size:
-        .65rem;
+        .62rem;
 
     line-height:
         1.68;
@@ -77902,7 +78013,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   IDENTITY
+   12 — IDENTITY
    ========================================================== */
 
 .page-angel .angel-identity {
@@ -77924,22 +78035,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         center;
 
     gap:
-        78px;
-}
-
-.page-angel .angel-identity-visual {
-
-    position:
-        relative;
+        76px;
 }
 
 .page-angel .angel-identity-frame {
 
+    min-height:
+        535px;
+
     position:
         relative;
-
-    min-height:
-        540px;
 
     display:
         grid;
@@ -77957,7 +78062,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         radial-gradient(
             circle,
             #fff,
-            #f5e7e4
+            #f4e4e1
         );
 
     overflow:
@@ -77981,7 +78086,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(180,124,130,.15),
+            rgba(183,125,130,.15),
             transparent 70%
         );
 }
@@ -77998,7 +78103,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         410px;
 
     border:
-        1px solid rgba(180,124,130,.13);
+        1px solid rgba(183,125,130,.13);
 
     border-radius:
         50%;
@@ -78031,7 +78136,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-identity-copy {
 
     max-width:
-        550px;
+        560px;
 }
 
 .page-angel .angel-identity-copy .section-title {
@@ -78061,10 +78166,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         repeat(2,minmax(0,1fr));
 
     gap:
-        9px 22px;
+        9px 24px;
 
     margin-top:
-        26px;
+        25px;
 }
 
 .page-angel .angel-benefit-check {
@@ -78080,6 +78185,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 .page-angel .angel-benefit-check span {
+
+    flex:
+        0 0 auto;
 
     width:
         20px;
@@ -78103,7 +78211,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose);
 
     font-size:
-        .62rem;
+        .60rem;
 }
 
 .page-angel .angel-benefit-check p {
@@ -78115,7 +78223,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-brown);
 
     font-size:
-        .73rem;
+        .72rem;
 
     font-weight:
         720;
@@ -78139,18 +78247,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         block;
 
     margin-top:
-        8px;
+        7px;
 
     color:
         var(--angel-cocoa);
 
     font-size:
-        .88rem;
+        .85rem;
 }
 
 
 /* ==========================================================
-   BENEFITS
+   13 — BENEFITS
    ========================================================== */
 
 .page-angel .angel-benefits {
@@ -78161,51 +78269,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             #fbf5f3,
             #f6eae8
         );
-}
-
-.page-angel .angel-benefits .angel-section-heading {
-
-    max-width:
-        730px;
-
-    margin:
-        0 0 48px;
-
-    text-align:
-        left;
-}
-
-.page-angel .angel-benefits .angel-section-heading h2 {
-
-    margin:
-        13px 0 0;
-
-    color:
-        var(--angel-cocoa);
-
-    font-size:
-        clamp(2.2rem,4vw,3.5rem);
-
-    line-height:
-        1.02;
-
-    letter-spacing:
-        -.055em;
-}
-
-.page-angel .angel-benefits .angel-section-heading p {
-
-    max-width:
-        680px;
-
-    margin:
-        18px 0 0;
-
-    font-size:
-        .96rem;
-
-    line-height:
-        1.80;
 }
 
 .page-angel .angel-benefits-grid {
@@ -78223,10 +78286,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-benefit-card {
 
     min-height:
-        210px;
+        205px;
 
     padding:
-        27px;
+        26px;
 
     border:
         1px solid var(--angel-line);
@@ -78256,7 +78319,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-7px);
 
     border-color:
-        rgba(180,124,130,.28);
+        rgba(183,125,130,.27);
 
     box-shadow:
         var(--angel-shadow);
@@ -78265,19 +78328,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-benefit-code {
 
     margin-bottom:
-        32px;
+        33px;
 
     color:
         var(--angel-gold-dark);
 
     font-size:
-        .58rem;
+        .57rem;
 
     font-weight:
         850;
 
     letter-spacing:
-        .15em;
+        .14em;
 }
 
 .page-angel .angel-benefit-card h3 {
@@ -78301,10 +78364,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .75rem;
+        .74rem;
 
     line-height:
-        1.72;
+        1.70;
 }
 
 .page-angel .angel-benefits-note {
@@ -78316,7 +78379,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         28px auto 0;
 
     padding:
-        23px 26px;
+        23px 27px;
 
     border:
         1px solid var(--angel-line);
@@ -78334,13 +78397,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-benefits-note h3 {
 
     margin:
-        10px 0 0;
+        9px 0 0;
 
     color:
         var(--angel-cocoa);
 
     font-size:
-        .93rem;
+        .89rem;
 }
 
 .page-angel .angel-benefits-note p {
@@ -78355,65 +78418,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .71rem;
+        .70rem;
 
     line-height:
-        1.75;
+        1.74;
 }
 
 
 /* ==========================================================
-   PRODUCT DETAIL
+   14 — PRODUCT CARD
    ========================================================== */
 
 .page-angel .angel-product-section {
+
     background:
         #fff;
-}
-
-.page-angel .angel-product-section .angel-section-heading {
-
-    max-width:
-        760px;
-
-    margin:
-        0 0 48px;
-
-    text-align:
-        left;
-}
-
-.page-angel .angel-product-section .angel-section-heading h2 {
-
-    margin:
-        13px 0 0;
-
-    color:
-        var(--angel-cocoa);
-
-    font-size:
-        clamp(2.2rem,4vw,3.5rem);
-
-    line-height:
-        1.02;
-
-    letter-spacing:
-        -.055em;
-}
-
-.page-angel .angel-product-section .angel-section-heading p {
-
-    max-width:
-        670px;
-
-    margin:
-        18px 0 0;
-
-    font-size:
-        .95rem;
-
-    line-height:
-        1.8;
 }
 
 .page-angel .angel-product-card {
@@ -78422,7 +78441,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid;
 
     grid-template-columns:
-        minmax(420px,1fr)
+        minmax(430px,1fr)
         minmax(0,.90fr);
 
     border:
@@ -78447,11 +78466,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-card-visual {
 
-    position:
-        relative;
-
     min-height:
         580px;
+
+    position:
+        relative;
 
     display:
         grid;
@@ -78465,9 +78484,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             #fff,
             #f2dfdc
         );
-
-    overflow:
-        hidden;
 }
 
 .page-angel .angel-detail-aura {
@@ -78487,7 +78503,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(180,124,130,.16),
+            rgba(183,125,130,.16),
             transparent 70%
         );
 }
@@ -78504,7 +78520,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         420px;
 
     border:
-        1px solid rgba(180,124,130,.13);
+        1px solid rgba(183,125,130,.13);
 
     border-radius:
         50%;
@@ -78512,14 +78528,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-detail-grid {
 
+    min-height:
+        540px;
+
     position:
         relative;
 
     z-index:
         2;
-
-    min-height:
-        540px;
 
     display:
         flex;
@@ -78555,10 +78571,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         absolute;
 
     left:
-        28px;
+        27px;
 
     bottom:
-        25px;
+        24px;
 
     z-index:
         3;
@@ -78572,14 +78588,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border-radius:
         12px;
 
-    background:
-        rgba(255,255,255,.68);
-
     color:
         var(--angel-rose-dark);
 
+    background:
+        rgba(255,255,255,.70);
+
     font-size:
-        .58rem;
+        .57rem;
 
     font-weight:
         820;
@@ -78591,10 +78607,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-product-card-copy {
 
     padding:
-        58px 52px;
+        58px 50px;
+
+    align-self:
+        center;
 }
 
 .page-angel .angel-product-card-copy h3 {
+
+    max-width:
+        450px;
 
     margin:
         14px 0 0;
@@ -78603,7 +78625,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        clamp(1.8rem,3vw,2.65rem);
+        clamp(
+            1.85rem,
+            3vw,
+            2.65rem
+        );
 
     line-height:
         1.03;
@@ -78614,6 +78640,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-product-card-copy > p {
 
+    max-width:
+        475px;
+
     margin:
         18px 0 0;
 
@@ -78621,10 +78650,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-text);
 
     font-size:
-        .84rem;
+        .83rem;
 
     line-height:
-        1.8;
+        1.80;
 }
 
 .page-angel .angel-product-spec-list {
@@ -78639,7 +78668,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         9px;
 
     margin-top:
-        25px;
+        24px;
 }
 
 .page-angel .angel-product-spec {
@@ -78690,74 +78719,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        .71rem;
-}
-
-.page-angel .angel-detail-list {
-
-    display:
-        grid;
-
-    gap:
-        8px;
-
-    padding:
-        17px;
-
-    margin-top:
-        13px;
-
-    border:
-        1px solid var(--angel-line);
-
-    border-radius:
-        16px;
-
-    background:
-        rgba(255,255,255,.62);
-}
-
-.page-angel .angel-detail-item {
-
-    display:
-        flex;
-
-    align-items:
-        flex-start;
-
-    gap:
-        8px;
-
-    color:
-        var(--angel-muted);
-
-    font-size:
-        .69rem;
-
-    line-height:
-        1.6;
-}
-
-.page-angel .angel-check {
-
-    flex:
-        0 0 auto;
-
-    color:
-        var(--angel-rose-dark);
-
-    font-weight:
-        850;
+        .70rem;
 }
 
 .page-angel .angel-card-buy {
     margin-top:
-        20px;
+        19px;
 }
 
 
 /* ==========================================================
-   ROUTINE
+   15 — ROUTINE
    ========================================================== */
 
 .page-angel .angel-routine {
@@ -78773,43 +78745,28 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-routine .angel-section-heading {
 
     max-width:
-        680px;
+        700px;
 
     margin:
-        0 0 44px;
+        0 auto 44px;
 
     text-align:
-        left;
+        center;
 }
 
 .page-angel .angel-routine .angel-section-heading h2 {
 
     margin:
-        13px 0 0;
+        13px auto 0;
 
     color:
         var(--angel-cocoa);
-
-    font-size:
-        clamp(2.1rem,4vw,3.35rem);
-
-    line-height:
-        1.03;
-
-    letter-spacing:
-        -.055em;
 }
 
 .page-angel .angel-routine .angel-section-heading p {
 
     margin:
-        17px 0 0;
-
-    font-size:
-        .91rem;
-
-    line-height:
-        1.8;
+        17px auto 0;
 }
 
 .page-angel .angel-routine-list {
@@ -78872,7 +78829,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .65rem;
+        .64rem;
 
     font-weight:
         850;
@@ -78887,7 +78844,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        .88rem;
+        .87rem;
 }
 
 .page-angel .angel-routine-step p {
@@ -78899,20 +78856,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .72rem;
+        .71rem;
 
     line-height:
         1.65;
 }
 
-.page-angel .angel-routine > .container-sm > .angel-more-toggle {
+.page-angel .angel-routine-list
+.angel-more-panel {
+
     margin-top:
-        17px;
+        0;
 }
 
 
 /* ==========================================================
-   EXPERIENCE
+   16 — EXPERIENCE
    ========================================================== */
 
 .page-angel .angel-experience {
@@ -78939,7 +78898,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-experience-card {
 
     min-height:
-        215px;
+        212px;
 
     padding:
         25px;
@@ -78995,7 +78954,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     background:
-        #f4e2e0;
+        #f4e3e1;
 
     font-size:
         1rem;
@@ -79007,13 +78966,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         block;
 
     margin-top:
-        23px;
+        22px;
 
     color:
         var(--angel-gold-dark);
 
     font-size:
-        .55rem;
+        .54rem;
 
     font-weight:
         850;
@@ -79031,7 +78990,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        .93rem;
+        .92rem;
 }
 
 .page-angel .angel-experience-card p {
@@ -79043,15 +79002,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .72rem;
+        .71rem;
 
     line-height:
-        1.7;
+        1.69;
 }
 
 
 /* ==========================================================
-   VARIANTS
+   17 — VARIANTS
    ========================================================== */
 
 .page-angel .angel-variants {
@@ -79105,7 +79064,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-7px);
 
     border-color:
-        rgba(180,124,130,.28);
+        rgba(183,125,130,.28);
 
     box-shadow:
         var(--angel-shadow);
@@ -79146,7 +79105,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     filter:
         drop-shadow(
-            0 20px 22px rgba(66,43,46,.11)
+            0 20px 22px
+            rgba(66,43,46,.11)
         );
 
     transition:
@@ -79185,7 +79145,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-blush);
 
     font-size:
-        .57rem;
+        .56rem;
 
     font-weight:
         850;
@@ -79218,7 +79178,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .73rem;
+        .72rem;
 
     line-height:
         1.65;
@@ -79226,7 +79186,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   CERTIFICATIONS
+   18 — CERTIFICATIONS
    ========================================================== */
 
 .page-angel .angel-certifications {
@@ -79259,7 +79219,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         1px solid var(--angel-line);
 
     border-radius:
-        22px;
+        21px;
 
     background:
         linear-gradient(
@@ -79283,7 +79243,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-6px);
 
     border-color:
-        rgba(180,124,130,.28);
+        rgba(183,125,130,.28);
 
     box-shadow:
         var(--angel-shadow);
@@ -79291,11 +79251,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .page-angel .angel-certification-image-wrap {
 
-    position:
-        relative;
-
     min-height:
         300px;
+
+    position:
+        relative;
 
     display:
         grid;
@@ -79392,7 +79352,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .63rem;
+        .62rem;
 }
 
 .page-angel .angel-certification-content {
@@ -79413,7 +79373,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-gold-dark);
 
     font-size:
-        .55rem;
+        .54rem;
 
     font-weight:
         850;
@@ -79446,7 +79406,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        .64rem;
+        .63rem;
 
     font-weight:
         820;
@@ -79458,6 +79418,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 .page-angel .angel-certification-link.is-disabled {
+
     opacity:
         .38;
 
@@ -79467,7 +79428,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   FAQ
+   19 — FAQ
    ========================================================== */
 
 .page-angel .angel-faq-section {
@@ -79478,6 +79439,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             #fbf5f3,
             #f6ebe8
         );
+}
+
+.page-angel .angel-faq-section
+.angel-section-heading {
+
+    max-width:
+        680px;
+
+    margin:
+        0 0 43px;
 }
 
 .page-angel .angel-faq-list {
@@ -79511,7 +79482,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-faq-item.active {
 
     border-color:
-        rgba(180,124,130,.28);
+        rgba(183,125,130,.29);
 
     box-shadow:
         var(--angel-shadow-soft);
@@ -79532,7 +79503,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         center;
 
     gap:
-        14px;
+        13px;
 
     padding:
         19px 20px;
@@ -79559,7 +79530,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-gold-dark);
 
     font-size:
-        .57rem;
+        .56rem;
 
     font-weight:
         850;
@@ -79571,7 +79542,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-faq-text {
 
     font-size:
-        .80rem;
+        .79rem;
 
     font-weight:
         780;
@@ -79583,7 +79554,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-rose-dark);
 
     font-size:
-        1.15rem;
+        1.12rem;
 
     text-align:
         center;
@@ -79617,29 +79588,36 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         0;
 
     padding:
-        0 20px 21px 72px;
+        0 20px 21px 71px;
 
     color:
         var(--angel-muted);
 
     font-size:
-        .72rem;
+        .71rem;
 
     line-height:
-        1.78;
+        1.77;
 }
 
 
 /* ==========================================================
-   INFORMATION
+   20 — INFORMATION
    ========================================================== */
 
 .page-angel .angel-information-section {
+
     background:
         #fff;
 }
 
 .page-angel .angel-information-box {
+
+    max-width:
+        940px;
+
+    margin:
+        auto;
 
     display:
         grid;
@@ -79649,12 +79627,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:
         18px;
-
-    max-width:
-        940px;
-
-    margin:
-        auto;
 
     padding:
         30px;
@@ -79710,7 +79682,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .page-angel .angel-information-box h2 {
 
     max-width:
-        650px;
+        700px;
 
     margin:
         11px 0 0;
@@ -79719,7 +79691,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-cocoa);
 
     font-size:
-        clamp(1.7rem,3vw,2.5rem);
+        clamp(
+            1.7rem,
+            3vw,
+            2.45rem
+        );
 
     line-height:
         1.07;
@@ -79728,10 +79704,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         -.04em;
 }
 
+.page-angel .angel-information-box h2 span {
+    color:
+        var(--angel-rose-dark);
+}
+
 .page-angel .angel-information-box p {
 
     max-width:
-        760px;
+        770px;
 
     margin:
         14px 0 0;
@@ -79740,7 +79721,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         var(--angel-muted);
 
     font-size:
-        .74rem;
+        .73rem;
 
     line-height:
         1.76;
@@ -79748,7 +79729,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   CTA
+   21 — CTA
    ========================================================== */
 
 .page-angel .angel-cta-section {
@@ -79775,19 +79756,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #fff;
 
     background:
-
         linear-gradient(
             135deg,
             #794b53,
-            #a86e74 50%,
-            #86633d
+            #a86e74 51%,
+            #87643e
         );
-
-    text-align:
-        center;
 
     box-shadow:
         var(--angel-shadow-heavy);
+
+    text-align:
+        center;
 }
 
 .page-angel .angel-cta-box::before {
@@ -79811,7 +79791,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         -290px;
 
     border:
-        1px solid rgba(255,255,255,.13);
+        1px solid rgba(255,255,255,.12);
 
     border-radius:
         50%;
@@ -79839,7 +79819,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         rgba(255,255,255,.72);
 
     font-size:
-        .63rem;
+        .62rem;
 
     font-weight:
         850;
@@ -79866,7 +79846,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         #fff;
 
     font-size:
-        clamp(2.45rem,5vw,4.35rem);
+        clamp(
+            2.5rem,
+            5vw,
+            4.3rem
+        );
 
     line-height:
         .97;
@@ -79895,10 +79879,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         19px auto 0;
 
     color:
-        rgba(255,255,255,.80);
+        rgba(255,255,255,.79);
 
     font-size:
-        .86rem;
+        .85rem;
 
     line-height:
         1.75;
@@ -79958,147 +79942,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         2;
 
     margin-top:
-        22px !important;
+        21px !important;
 
     color:
-        rgba(255,255,255,.58) !important;
+        rgba(255,255,255,.56) !important;
 
     font-size:
-        .60rem !important;
+        .59rem !important;
 }
 
 
 /* ==========================================================
-   REVEALS
-   ========================================================== */
-
-.page-angel .reveal,
-.page-angel .reveal-left,
-.page-angel .reveal-right {
-
-    will-change:
-        transform,
-        opacity;
-}
-
-
-/* ==========================================================
-   DARK MODE
-   ========================================================== */
-
-body.dark .page-angel,
-body[data-theme="dark"] .page-angel,
-[data-theme="dark"] .page-angel {
-
-    --angel-white: #171314;
-    --angel-cream: #1d1718;
-    --angel-soft: #231a1c;
-    --angel-blush: #362628;
-
-    --angel-cocoa: #f7eeee;
-    --angel-brown: #decacb;
-    --angel-text: #d5c6c6;
-    --angel-muted: #a99697;
-
-    --angel-line:
-        rgba(255,255,255,.08);
-
-    --angel-line-strong:
-        rgba(255,255,255,.14);
-
-    background:
-        #171314;
-}
-
-body.dark .page-angel .angel-overview-section,
-body.dark .page-angel .angel-identity,
-body.dark .page-angel .angel-product-section,
-body.dark .page-angel .angel-experience,
-body.dark .page-angel .angel-certifications,
-body.dark .page-angel .angel-information-section,
-
-body[data-theme="dark"] .page-angel .angel-overview-section,
-body[data-theme="dark"] .page-angel .angel-identity,
-body[data-theme="dark"] .page-angel .angel-product-section,
-body[data-theme="dark"] .page-angel .angel-experience,
-body[data-theme="dark"] .page-angel .angel-certifications,
-body[data-theme="dark"] .page-angel .angel-information-section,
-
-[data-theme="dark"] .page-angel .angel-overview-section,
-[data-theme="dark"] .page-angel .angel-identity,
-[data-theme="dark"] .page-angel .angel-product-section,
-[data-theme="dark"] .page-angel .angel-experience,
-[data-theme="dark"] .page-angel .angel-certifications,
-[data-theme="dark"] .page-angel .angel-information-section {
-
-    background:
-        #171314;
-}
-
-body.dark .page-angel .angel-technology,
-body.dark .page-angel .angel-benefits,
-body.dark .page-angel .angel-routine,
-body.dark .page-angel .angel-variants,
-body.dark .page-angel .angel-faq-section,
-
-body[data-theme="dark"] .page-angel .angel-technology,
-body[data-theme="dark"] .page-angel .angel-benefits,
-body[data-theme="dark"] .page-angel .angel-routine,
-body[data-theme="dark"] .page-angel .angel-variants,
-body[data-theme="dark"] .page-angel .angel-faq-section,
-
-[data-theme="dark"] .page-angel .angel-technology,
-[data-theme="dark"] .page-angel .angel-benefits,
-[data-theme="dark"] .page-angel .angel-routine,
-[data-theme="dark"] .page-angel .angel-variants,
-[data-theme="dark"] .page-angel .angel-faq-section {
-
-    background:
-        linear-gradient(
-            180deg,
-            #1e1819,
-            #241b1d
-        );
-}
-
-body.dark .page-angel .angel-overview-card,
-body.dark .page-angel .angel-technology-card,
-body.dark .page-angel .angel-benefit-card,
-body.dark .page-angel .angel-experience-card,
-body.dark .page-angel .angel-variant-card,
-body.dark .page-angel .angel-certification-card,
-body.dark .page-angel .angel-product-card,
-body.dark .page-angel .angel-information-box,
-
-body[data-theme="dark"] .page-angel .angel-overview-card,
-body[data-theme="dark"] .page-angel .angel-technology-card,
-body[data-theme="dark"] .page-angel .angel-benefit-card,
-body[data-theme="dark"] .page-angel .angel-experience-card,
-body[data-theme="dark"] .page-angel .angel-variant-card,
-body[data-theme="dark"] .page-angel .angel-certification-card,
-body[data-theme="dark"] .page-angel .angel-product-card,
-body[data-theme="dark"] .page-angel .angel-information-box,
-
-[data-theme="dark"] .page-angel .angel-overview-card,
-[data-theme="dark"] .page-angel .angel-technology-card,
-[data-theme="dark"] .page-angel .angel-benefit-card,
-[data-theme="dark"] .page-angel .angel-experience-card,
-[data-theme="dark"] .page-angel .angel-variant-card,
-[data-theme="dark"] .page-angel .angel-certification-card,
-[data-theme="dark"] .page-angel .angel-product-card,
-[data-theme="dark"] .page-angel .angel-information-box {
-
-    background:
-        linear-gradient(
-            145deg,
-            #21191a,
-            #1b1617
-        );
-}
-
-
-/* ==========================================================
-   1120PX
+   22 — RESPONSIVE 1120
    ========================================================== */
 
 @media (max-width:1120px){
@@ -80114,10 +79969,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
         grid-template-columns:
             minmax(0,.92fr)
-            minmax(370px,1.08fr);
-
-        gap:
-            18px;
+            minmax(390px,1.08fr);
     }
 
     .page-angel .angel-overview-grid,
@@ -80136,7 +79988,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-card {
 
         grid-template-columns:
-            minmax(370px,1fr)
+            minmax(390px,1fr)
             minmax(0,.95fr);
     }
 
@@ -80144,13 +79996,12 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
 
 /* ==========================================================
-   900PX
+   23 — RESPONSIVE 900
    ========================================================== */
 
 @media (max-width:900px){
 
     .page-angel .section {
-
         padding:
             84px 0;
     }
@@ -80161,7 +80012,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
             auto;
 
         padding:
-            65px 0 75px;
+            67px 0 75px;
     }
 
     .page-angel .angel-hero-grid,
@@ -80185,22 +80036,19 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     }
 
     .page-angel .angel-hero-description {
-
         margin-inline:
             auto;
     }
 
     .page-angel .angel-hero-pills,
     .page-angel .angel-hero-actions {
-
         justify-content:
             center;
     }
 
     .page-angel .angel-hero-product {
-
         min-height:
-            510px;
+            500px;
     }
 
     .page-angel .angel-technology .angel-section-heading,
@@ -80208,11 +80056,14 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-section .angel-section-heading,
     .page-angel .angel-routine .angel-section-heading {
 
-        text-align:
-            center;
+        max-width:
+            700px;
 
         margin-inline:
             auto;
+
+        text-align:
+            center;
     }
 
     .page-angel .angel-technology .angel-section-heading h2,
@@ -80265,6 +80116,9 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
         text-align:
             center;
+
+        margin-inline:
+            auto;
     }
 
     .page-angel .angel-benefit-checks {
@@ -80277,7 +80131,6 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     }
 
     .page-angel .angel-identity-note {
-
         text-align:
             center;
     }
@@ -80291,10 +80144,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-card-copy {
 
         padding:
-            45px 38px;
-    }
-
-    .page-angel .angel-product-card-copy {
+            43px 38px;
 
         max-width:
             700px;
@@ -80331,7 +80181,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
 
 /* ==========================================================
-   680PX
+   24 — RESPONSIVE 680
    ========================================================== */
 
 @media (max-width:680px){
@@ -80349,28 +80199,34 @@ body[data-theme="dark"] .page-angel .angel-information-box,
             68px 0;
     }
 
-    .page-angel .section-title {
+    .page-angel .section-title,
+    .page-angel .angel-section-heading > h2 {
 
         font-size:
             2.20rem;
     }
 
-    .page-angel .lead {
+    .page-angel .lead,
+    .page-angel .angel-section-heading > p {
 
         font-size:
-            .88rem;
+            .87rem;
     }
 
     .page-angel .angel-hero {
 
         padding:
-            54px 0 60px;
+            53px 0 59px;
     }
 
     .page-angel .angel-hero-copy h1 {
 
         font-size:
-            clamp(2.85rem,13vw,4rem);
+            clamp(
+                2.85rem,
+                13vw,
+                4rem
+            );
     }
 
     .page-angel .angel-hero-description {
@@ -80400,7 +80256,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-hero-product {
 
         min-height:
-            400px;
+            395px;
     }
 
     .page-angel .angel-product-aura {
@@ -80424,16 +80280,16 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-grid {
 
         min-height:
-            390px;
+            385px;
     }
 
     .page-angel .angel-product-grid::before {
 
         width:
-            280px;
+            275px;
 
         height:
-            280px;
+            275px;
     }
 
     .page-angel .angel-product-image {
@@ -80451,7 +80307,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
             50%;
 
         bottom:
-            8px;
+            5px;
 
         transform:
             translateX(50%);
@@ -80460,7 +80316,8 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-overview-grid,
     .page-angel .angel-benefits-grid,
     .page-angel .angel-experience-grid,
-    .page-angel .angel-variants-grid {
+    .page-angel .angel-variants-grid,
+    .page-angel .angel-certifications-grid {
 
         grid-template-columns:
             1fr;
@@ -80468,7 +80325,9 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
     .page-angel .angel-overview-card,
     .page-angel .angel-benefit-card,
-    .page-angel .angel-experience-card {
+    .page-angel .angel-experience-card,
+    .page-angel .angel-variant-card,
+    .page-angel .angel-certification-card {
 
         width:
             min(100%,430px);
@@ -80492,7 +80351,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-tech-product-image {
 
         max-height:
-            365px;
+            360px;
     }
 
     .page-angel .angel-layer-grid {
@@ -80539,11 +80398,8 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
     .page-angel .angel-product-detail-image {
 
-        width:
-            min(100%,340px);
-
         max-height:
-            380px;
+            375px;
     }
 
     .page-angel .angel-product-card-copy {
@@ -80558,30 +80414,6 @@ body[data-theme="dark"] .page-angel .angel-information-box,
             1fr;
     }
 
-    .page-angel .angel-variant-card:last-child {
-
-        grid-column:
-            auto;
-
-        width:
-            min(100%,430px);
-    }
-
-    .page-angel .angel-certifications-grid {
-
-        grid-template-columns:
-            1fr;
-    }
-
-    .page-angel .angel-certification-card {
-
-        width:
-            min(100%,430px);
-
-        margin-inline:
-            auto;
-    }
-
     .page-angel .angel-faq-question {
 
         grid-template-columns:
@@ -80594,7 +80426,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-faq-answer p {
 
         padding:
-            0 15px 19px 60px;
+            0 15px 19px 58px;
     }
 
     .page-angel .angel-information-box {
@@ -80606,7 +80438,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-cta-box {
 
         padding:
-            68px 23px 74px;
+            68px 23px 73px;
     }
 
     .page-angel .angel-cta-actions {
@@ -80631,7 +80463,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
 
 /* ==========================================================
-   430PX
+   25 — RESPONSIVE 430
    ========================================================== */
 
 @media (max-width:430px){
@@ -80649,7 +80481,8 @@ body[data-theme="dark"] .page-angel .angel-information-box,
             58px 0;
     }
 
-    .page-angel .section-title {
+    .page-angel .section-title,
+    .page-angel .angel-section-heading > h2 {
 
         font-size:
             2rem;
@@ -80664,7 +80497,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-hero-product {
 
         min-height:
-            340px;
+            335px;
     }
 
     .page-angel .angel-product-aura {
@@ -80688,7 +80521,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-grid {
 
         min-height:
-            335px;
+            330px;
     }
 
     .page-angel .angel-product-grid::before {
@@ -80711,14 +80544,11 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
     .page-angel .angel-product-caption {
 
-        font-size:
-            .55rem;
-    }
-
-    .page-angel .angel-product-caption span {
+        bottom:
+            2px;
 
         font-size:
-            .47rem;
+            .54rem;
     }
 
     .page-angel .angel-technology-visual,
@@ -80738,7 +80568,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-tech-product-image {
 
         max-height:
-            315px;
+            310px;
     }
 
     .page-angel .angel-identity-frame img {
@@ -80750,31 +80580,32 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     .page-angel .angel-product-detail-grid {
 
         min-height:
-            320px;
+            315px;
     }
 
     .page-angel .angel-product-detail-image {
 
         max-height:
-            315px;
+            310px;
     }
 
-    .page-angel .angel-information-box {
+    .page-angel .angel-certification-image-wrap {
 
-        padding:
-            23px;
+        min-height:
+            270px;
     }
 
-    .page-angel .angel-cta-box h2 {
+    .page-angel .angel-certification-image-wrap img {
 
-        font-size:
-            2.15rem;
+        height:
+            260px;
     }
+
 }
 
 
 /* ==========================================================
-   REDUCED MOTION
+   26 — REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion: reduce){
@@ -80797,7 +80628,7 @@ body[data-theme="dark"] .page-angel .angel-information-box,
 
 
 /* ==========================================================
-   ANIMATIONS
+   27 — ANIMATIONS
    ========================================================== */
 
 @keyframes angelAura {
@@ -80820,8 +80651,8 @@ body[data-theme="dark"] .page-angel .angel-information-box,
         opacity:
             1;
     }
-}
 
+}
 
 @keyframes angelRing {
 
@@ -80838,7 +80669,6 @@ body[data-theme="dark"] .page-angel .angel-information-box,
     }
 
 }
-
 
 @keyframes angelFloat {
 
