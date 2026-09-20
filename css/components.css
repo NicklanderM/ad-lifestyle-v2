@@ -78936,3 +78936,4068 @@ body[data-theme="dark"] .page-angel .angel-faq-item,
         opacity: 0;
     }
 }
+
+
+
+
+
+
+/* ==========================================================
+   AD LIFESTYLE — ANGEL MOON
+   PREMIUM PRODUCT PAGE
+   Base visual: EVADOR / iSMART S3
+   Personalidade: Rose / Pearl / Champagne / Cocoa
+   Namespace totalmente isolado: .page-angel
+   ========================================================== */
+
+.page-angel {
+
+    /* ======================================================
+       PALETA ANGEL MOON
+       ====================================================== */
+
+    --angel-white: #fffdfc;
+    --angel-pearl: #faf4f2;
+    --angel-blush: #f1dedc;
+
+    --angel-rose: #b77d82;
+    --angel-rose-dark: #824f56;
+
+    --angel-champagne: #c9a66b;
+    --angel-champagne-dark: #8f6b38;
+
+    --angel-cocoa: #302527;
+    --angel-brown: #5b4748;
+
+    --angel-text: #675758;
+    --angel-muted: #8d7b7b;
+
+    --angel-line: rgba(92, 67, 69, .13);
+    --angel-line-strong: rgba(92, 67, 69, .22);
+
+    --angel-shadow:
+        0 25px 80px rgba(65, 42, 45, .11);
+
+    --angel-shadow-soft:
+        0 14px 42px rgba(65, 42, 45, .075);
+
+    --angel-shadow-heavy:
+        0 34px 90px rgba(54, 33, 36, .24);
+
+    --angel-radius: 30px;
+    --angel-radius-sm: 20px;
+    --angel-radius-xs: 14px;
+
+    --angel-ease:
+        cubic-bezier(.22, 1, .36, 1);
+
+    --angel-speed: .48s;
+
+    position: relative;
+    isolation: isolate;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    color: var(--angel-text);
+
+    background:
+        var(--angel-white);
+
+    font-family:
+        Inter,
+        "Avenir Next",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
+    line-height: 1.65;
+}
+
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+.page-angel *,
+.page-angel *::before,
+.page-angel *::after {
+    box-sizing: border-box;
+}
+
+.page-angel img {
+    display: block;
+    max-width: 100%;
+}
+
+.page-angel a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.page-angel button {
+    font: inherit;
+}
+
+.page-angel section {
+    position: relative;
+}
+
+.page-angel ::selection {
+    color: #fff;
+    background: var(--angel-rose-dark);
+}
+
+
+/* ==========================================================
+   CONTAINER
+   ========================================================== */
+
+.page-angel .angel-container {
+    width:
+        min(1160px, calc(100% - 48px));
+
+    margin-inline: auto;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* ==========================================================
+   TYPOGRAPHY
+   ========================================================== */
+
+.page-angel .label,
+.page-angel .eyebrow {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color:
+        var(--angel-champagne-dark);
+
+    font-size: .69rem;
+
+    font-weight: 850;
+
+    letter-spacing: .16em;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+}
+
+.page-angel .eyebrow::before {
+
+    content: "";
+
+    width: 30px;
+
+    height: 1px;
+
+    background:
+        currentColor;
+
+    opacity: .75;
+}
+
+.page-angel .section-title {
+
+    max-width: 800px;
+
+    margin: 13px 0 0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        clamp(2.15rem, 4vw, 3.55rem);
+
+    font-weight: 780;
+
+    line-height: 1.02;
+
+    letter-spacing: -.055em;
+}
+
+.page-angel .section-title span {
+    color:
+        var(--angel-rose-dark);
+}
+
+.page-angel .lead {
+
+    max-width: 710px;
+
+    margin: 18px 0 0;
+
+    color:
+        var(--angel-text);
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+.page-angel .section-center {
+    text-align: center;
+}
+
+.page-angel .section-center .lead {
+    margin-inline: auto;
+}
+
+.page-angel .angel-section {
+    padding:
+        104px 0;
+}
+
+.page-angel .angel-section-heading {
+    margin-bottom:
+        48px;
+}
+
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+
+.page-angel .btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    min-height: 50px;
+
+    padding:
+        0 22px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        999px;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    font-size: .83rem;
+
+    font-weight: 780;
+
+    letter-spacing: -.01em;
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease),
+        background var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease),
+        color var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .btn:hover {
+    transform:
+        translateY(-3px);
+}
+
+.page-angel .btn:active {
+    transform:
+        translateY(-1px);
+}
+
+.page-angel .btn-primary {
+
+    color: #fff;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--angel-rose),
+            var(--angel-rose-dark)
+        );
+
+    box-shadow:
+        0 15px 35px
+        rgba(130, 79, 86, .23);
+}
+
+.page-angel .btn-primary:hover {
+
+    box-shadow:
+        0 20px 44px
+        rgba(130, 79, 86, .30);
+}
+
+.page-angel .btn-glass {
+
+    color:
+        var(--angel-brown);
+
+    border-color:
+        var(--angel-line-strong);
+
+    background:
+        rgba(255, 255, 255, .68);
+
+    backdrop-filter:
+        blur(14px);
+
+    -webkit-backdrop-filter:
+        blur(14px);
+}
+
+.page-angel .btn-glass:hover {
+
+    color:
+        var(--angel-rose-dark);
+
+    border-color:
+        rgba(183, 125, 130, .38);
+
+    background:
+        #fff;
+}
+
+.page-angel .btn svg,
+.page-angel .angel-certification-link svg,
+.page-angel .angel-more-toggle svg,
+.page-angel .angel-faq-question svg {
+
+    width: 17px;
+    height: 17px;
+
+    flex:
+        0 0 auto;
+}
+
+
+/* ==========================================================
+   HERO
+   ========================================================== */
+
+.page-angel .angel-hero {
+
+    min-height:
+        760px;
+
+    padding:
+        72px 0 88px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    overflow:
+        hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 11% 16%,
+            rgba(241, 222, 220, .72),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 84% 18%,
+            rgba(201, 166, 107, .12),
+            transparent 24%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fffdfc 0%,
+            #fbf5f3 57%,
+            #f2e3e0 100%
+        );
+}
+
+.page-angel .angel-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            rgba(96, 71, 73, .028) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(96, 71, 73, .028) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        56px 56px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,.9),
+            transparent 92%
+        );
+}
+
+.page-angel .angel-hero-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, .88fr)
+        minmax(430px, 1.12fr);
+
+    align-items:
+        center;
+
+    gap:
+        34px;
+}
+
+
+/* ==========================================================
+   HERO ATMOSPHERE
+   ========================================================== */
+
+.page-angel .angel-hero-atmosphere {
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    pointer-events:
+        none;
+
+    overflow:
+        hidden;
+}
+
+.page-angel .angel-orb {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+}
+
+.page-angel .angel-orb-one {
+
+    width:
+        420px;
+
+    height:
+        420px;
+
+    left:
+        -180px;
+
+    top:
+        -170px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,125,130,.20),
+            transparent 72%
+        );
+}
+
+.page-angel .angel-orb-two {
+
+    width:
+        540px;
+
+    height:
+        540px;
+
+    right:
+        -230px;
+
+    bottom:
+        -270px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(201,166,107,.13),
+            transparent 72%
+        );
+}
+
+.page-angel .angel-orb-three {
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+    right:
+        31%;
+
+    top:
+        19%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,125,130,.08),
+            transparent 70%
+        );
+}
+
+.page-angel .angel-hero-line {
+
+    position:
+        absolute;
+
+    border:
+        1px solid rgba(183,125,130,.11);
+
+    border-radius:
+        50%;
+}
+
+.page-angel .angel-hero-line-one {
+
+    width:
+        620px;
+
+    height:
+        300px;
+
+    right:
+        -170px;
+
+    top:
+        14%;
+
+    transform:
+        rotate(-24deg);
+}
+
+.page-angel .angel-hero-line-two {
+
+    width:
+        530px;
+
+    height:
+        250px;
+
+    right:
+        -95px;
+
+    top:
+        22%;
+
+    transform:
+        rotate(-24deg);
+}
+
+
+/* ==========================================================
+   HERO COPY
+   ========================================================== */
+
+.page-angel .angel-hero-copy {
+
+    max-width:
+        600px;
+
+    position:
+        relative;
+
+    z-index:
+        4;
+}
+
+.page-angel .angel-eyebrow {
+    margin-bottom:
+        23px;
+}
+
+.page-angel .angel-hero-title {
+
+    max-width:
+        630px;
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        clamp(3.35rem, 6vw, 5.85rem);
+
+    font-weight:
+        800;
+
+    line-height:
+        .91;
+
+    letter-spacing:
+        -.072em;
+}
+
+.page-angel .angel-hero-title span {
+
+    display:
+        block;
+
+    color:
+        var(--angel-rose-dark);
+}
+
+.page-angel .angel-hero-description {
+
+    max-width:
+        555px;
+
+    margin:
+        28px 0 0;
+
+    color:
+        var(--angel-text);
+
+    font-size:
+        clamp(1rem, 1.4vw, 1.10rem);
+
+    line-height:
+        1.8;
+}
+
+.page-angel .angel-hero-actions {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        11px;
+
+    margin-top:
+        31px;
+}
+
+.page-angel .angel-hero-signature {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        11px;
+
+    margin-top:
+        27px;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .68rem;
+
+    font-weight:
+        780;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+}
+
+.page-angel .angel-signature-line {
+
+    width:
+        34px;
+
+    height:
+        1px;
+
+    background:
+        var(--angel-champagne);
+}
+
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
+
+.page-angel .angel-hero-product {
+
+    min-height:
+        600px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    isolation:
+        isolate;
+}
+
+.page-angel .angel-hero-product-aura {
+
+    position:
+        absolute;
+
+    width:
+        570px;
+
+    height:
+        570px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(241,222,220,.82) 0%,
+            rgba(241,222,220,.30) 39%,
+            transparent 70%
+        );
+
+    filter:
+        blur(2px);
+
+    animation:
+        angelAura 8s ease-in-out infinite;
+}
+
+.page-angel .angel-hero-product-rings {
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border:
+        1px solid rgba(183,125,130,.18);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+
+        0 0 0 35px
+        rgba(183,125,130,.030),
+
+        0 0 0 76px
+        rgba(183,125,130,.020);
+
+    animation:
+        angelRing 18s linear infinite;
+}
+
+.page-angel .angel-hero-product-grid {
+
+    position:
+        absolute;
+
+    width:
+        430px;
+
+    height:
+        430px;
+
+    border-radius:
+        50%;
+
+    background-image:
+
+        linear-gradient(
+            rgba(130,79,86,.045) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(130,79,86,.045) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        28px 28px;
+
+    mask-image:
+        radial-gradient(
+            circle,
+            black 15%,
+            transparent 71%
+        );
+}
+
+.page-angel .angel-hero-product-frame {
+
+    position:
+        relative;
+
+    z-index:
+        3;
+
+    width:
+        min(100%, 510px);
+
+    min-height:
+        570px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+}
+
+.page-angel .angel-product-badge {
+
+    position:
+        absolute;
+
+    top:
+        37px;
+
+    right:
+        11px;
+
+    z-index:
+        5;
+
+    padding:
+        8px 12px;
+
+    border:
+        1px solid rgba(255,255,255,.74);
+
+    border-radius:
+        999px;
+
+    color:
+        var(--angel-rose-dark);
+
+    background:
+        rgba(255,255,255,.69);
+
+    box-shadow:
+        0 12px 30px
+        rgba(70,43,46,.08);
+
+    backdrop-filter:
+        blur(13px);
+
+    -webkit-backdrop-filter:
+        blur(13px);
+
+    font-size:
+        .61rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .14em;
+}
+
+.page-angel .angel-hero-product-image {
+
+    position:
+        relative;
+
+    z-index:
+        4;
+
+    width:
+        min(100%, 485px);
+
+    max-height:
+        570px;
+
+    object-fit:
+        contain;
+
+    object-position:
+        center;
+
+    filter:
+        drop-shadow(
+            0 35px 34px
+            rgba(65,42,45,.19)
+        );
+
+    animation:
+        angelProductFloat 7s ease-in-out infinite;
+}
+
+
+/* ==========================================================
+   FALLBACK IMAGENS
+   ========================================================== */
+
+.page-angel .angel-image-fallback {
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        min(100%, 430px);
+
+    min-height:
+        280px;
+
+    padding:
+        30px;
+
+    border:
+        1px dashed var(--angel-line-strong);
+
+    border-radius:
+        22px;
+
+    color:
+        var(--angel-muted);
+
+    background:
+        rgba(255,255,255,.60);
+
+    text-align:
+        center;
+}
+
+.page-angel .angel-image-fallback.is-visible {
+    display:
+        flex;
+}
+
+.page-angel .angel-image-fallback strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--angel-brown);
+
+    font-size:
+        .84rem;
+}
+
+.page-angel .angel-image-fallback span {
+
+    display:
+        block;
+
+    font-size:
+        .69rem;
+
+    line-height:
+        1.6;
+}
+
+
+/* ==========================================================
+   INTRO
+   ========================================================== */
+
+.page-angel .angel-intro {
+    background:
+        #fff;
+}
+
+.page-angel .angel-overview-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        15px;
+}
+
+.page-angel .angel-overview-card {
+
+    min-height:
+        205px;
+
+    padding:
+        26px 23px 25px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        var(--angel-radius-sm);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fcf6f4
+        );
+
+    box-shadow:
+        var(--angel-shadow-soft);
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-overview-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(183,125,130,.30);
+
+    box-shadow:
+        var(--angel-shadow);
+}
+
+.page-angel .angel-overview-icon {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    margin-bottom:
+        24px;
+
+    border:
+        1px solid rgba(183,125,130,.16);
+
+    border-radius:
+        14px;
+
+    color:
+        var(--angel-rose-dark);
+
+    background:
+        linear-gradient(
+            145deg,
+            #f5e5e3,
+            #fff7f5
+        );
+}
+
+.page-angel .angel-overview-icon svg {
+    width:
+        20px;
+
+    height:
+        20px;
+}
+
+.page-angel .angel-overview-card h3 {
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        .99rem;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        800;
+}
+
+.page-angel .angel-overview-card p {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .81rem;
+
+    line-height:
+        1.72;
+}
+
+
+/* ==========================================================
+   TECHNOLOGY
+   ========================================================== */
+
+.page-angel .angel-technology {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbf5f3 0%,
+            #f7ecea 100%
+        );
+}
+
+.page-angel .technology-heading {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(0, .78fr)
+        minmax(280px, .62fr);
+
+    gap:
+        50px;
+
+    align-items:
+        end;
+}
+
+.page-angel .technology-heading .lead {
+
+    margin-top:
+        0;
+
+    justify-self:
+        end;
+}
+
+.page-angel .angel-layer-showcase {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(290px, .72fr)
+        minmax(0, 1.28fr);
+
+    gap:
+        58px;
+
+    align-items:
+        center;
+}
+
+.page-angel .angel-layer-visual {
+
+    min-height:
+        540px;
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid rgba(183,125,130,.12);
+
+    border-radius:
+        var(--angel-radius);
+
+    background:
+
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.92),
+            rgba(242,224,221,.70) 58%,
+            rgba(238,215,212,.45)
+        );
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-layer-orbit {
+
+    position:
+        absolute;
+
+    width:
+        390px;
+
+    height:
+        390px;
+
+    border:
+        1px solid rgba(183,125,130,.17);
+
+    border-radius:
+        50%;
+
+    box-shadow:
+        0 0 0 34px rgba(183,125,130,.025),
+        0 0 0 72px rgba(183,125,130,.018);
+
+    animation:
+        angelRing 21s linear infinite reverse;
+}
+
+.page-angel .angel-layer-core {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        218px;
+
+    height:
+        218px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    border:
+        1px solid rgba(183,125,130,.22);
+
+    border-radius:
+        50%;
+
+    color:
+        var(--angel-rose-dark);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.96),
+            rgba(248,236,233,.90)
+        );
+
+    box-shadow:
+        0 25px 55px
+        rgba(73,45,48,.13),
+
+        inset 0 0 0 10px
+        rgba(255,255,255,.40);
+
+    text-align:
+        center;
+}
+
+.page-angel .angel-layer-core span {
+
+    font-size:
+        .61rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .24em;
+}
+
+.page-angel .angel-layer-core strong {
+
+    margin-top:
+        2px;
+
+    color:
+        var(--angel-cocoa);
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-size:
+        2.35rem;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        -.04em;
+}
+
+.page-angel .angel-layer-core small {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--angel-champagne-dark);
+
+    font-size:
+        .54rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .18em;
+}
+
+.page-angel .angel-technology-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        12px;
+}
+
+.page-angel .angel-tech-card {
+
+    padding:
+        22px 21px 21px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        18px;
+
+    background:
+        rgba(255,255,255,.70);
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-tech-card:last-child {
+    grid-column:
+        1 / -1;
+}
+
+.page-angel .angel-tech-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(183,125,130,.28);
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-tech-number {
+
+    color:
+        var(--angel-champagne-dark);
+
+    font-size:
+        .61rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .16em;
+}
+
+.page-angel .angel-tech-card h3 {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        .99rem;
+
+    line-height:
+        1.25;
+
+    font-weight:
+        800;
+}
+
+.page-angel .angel-tech-card p {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .80rem;
+
+    line-height:
+        1.72;
+}
+
+
+/* ==========================================================
+   VER MAIS
+   ========================================================== */
+
+.page-angel .angel-more-wrap {
+    margin-top:
+        24px;
+}
+
+.page-angel .angel-more-toggle {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    min-height:
+        43px;
+
+    padding:
+        0 15px;
+
+    border:
+        1px solid var(--angel-line-strong);
+
+    border-radius:
+        999px;
+
+    color:
+        var(--angel-brown);
+
+    background:
+        rgba(255,255,255,.72);
+
+    cursor:
+        pointer;
+
+    font-size:
+        .73rem;
+
+    font-weight:
+        780;
+
+    transition:
+        transform .35s var(--angel-ease),
+        border-color .35s var(--angel-ease),
+        color .35s var(--angel-ease),
+        background .35s var(--angel-ease);
+}
+
+.page-angel .angel-more-toggle:hover {
+
+    transform:
+        translateY(-2px);
+
+    color:
+        var(--angel-rose-dark);
+
+    border-color:
+        rgba(183,125,130,.34);
+
+    background:
+        #fff;
+}
+
+.page-angel .angel-more-toggle svg {
+
+    transition:
+        transform .35s ease;
+}
+
+.page-angel .angel-more-toggle[aria-expanded="true"] svg {
+
+    transform:
+        rotate(180deg);
+}
+
+.page-angel .angel-more-panel {
+
+    display:
+        grid;
+
+    grid-template-rows:
+        0fr;
+
+    margin-top:
+        0;
+
+    opacity:
+        0;
+
+    transition:
+        grid-template-rows .45s var(--angel-ease),
+        opacity .35s ease,
+        margin-top .45s var(--angel-ease);
+}
+
+.page-angel .angel-more-panel > div {
+    overflow:
+        hidden;
+}
+
+.page-angel .angel-more-panel.is-open {
+
+    grid-template-rows:
+        1fr;
+
+    margin-top:
+        16px;
+
+    opacity:
+        1;
+}
+
+.page-angel .angel-more-content {
+
+    padding:
+        22px 24px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        17px;
+
+    color:
+        var(--angel-muted);
+
+    background:
+        rgba(255,255,255,.62);
+
+    font-size:
+        .80rem;
+
+    line-height:
+        1.75;
+}
+
+.page-angel .angel-more-content p {
+    margin:
+        0;
+}
+
+.page-angel .angel-more-content ul {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        10px 24px;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+}
+
+.page-angel .angel-more-content li {
+
+    position:
+        relative;
+
+    padding-left:
+        17px;
+}
+
+.page-angel .angel-more-content li::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        0;
+
+    top:
+        .68em;
+
+    width:
+        6px;
+
+    height:
+        6px;
+
+    border-radius:
+        50%;
+
+    background:
+        var(--angel-rose);
+}
+
+
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-angel .angel-benefits {
+    background:
+        #fff;
+}
+
+.page-angel .angel-benefits-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        16px;
+}
+
+.page-angel .angel-benefit-card {
+
+    position:
+        relative;
+
+    min-height:
+        218px;
+
+    padding:
+        28px 27px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        var(--angel-radius-sm);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fcf6f4
+        );
+
+    box-shadow:
+        var(--angel-shadow-soft);
+
+    overflow:
+        hidden;
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-benefit-card::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        150px;
+
+    height:
+        150px;
+
+    right:
+        -85px;
+
+    bottom:
+        -85px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,125,130,.13),
+            transparent 70%
+        );
+}
+
+.page-angel .angel-benefit-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(183,125,130,.29);
+
+    box-shadow:
+        var(--angel-shadow);
+}
+
+.page-angel .angel-benefit-index {
+
+    display:
+        block;
+
+    margin-bottom:
+        29px;
+
+    color:
+        var(--angel-champagne-dark);
+
+    font-size:
+        .61rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .16em;
+}
+
+.page-angel .angel-benefit-card h3 {
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        1rem;
+
+    font-weight:
+        800;
+}
+
+.page-angel .angel-benefit-card p {
+
+    margin:
+        8px 0 0;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .80rem;
+
+    line-height:
+        1.72;
+}
+
+
+/* ==========================================================
+   PRODUCT DETAIL
+   ========================================================== */
+
+.page-angel .angel-product-detail {
+
+    background:
+        linear-gradient(
+            135deg,
+            #f9efed 0%,
+            #f6e6e3 100%
+        );
+}
+
+.page-angel .angel-product-detail-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        minmax(390px, .92fr)
+        minmax(0, 1.08fr);
+
+    gap:
+        76px;
+
+    align-items:
+        center;
+}
+
+.page-angel .angel-product-detail-visual {
+
+    min-height:
+        540px;
+
+    position:
+        relative;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border:
+        1px solid rgba(183,125,130,.13);
+
+    border-radius:
+        var(--angel-radius);
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255,255,255,.96),
+            rgba(244,227,223,.77)
+        );
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-product-detail-halo {
+
+    position:
+        absolute;
+
+    width:
+        360px;
+
+    height:
+        360px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(183,125,130,.16),
+            transparent 70%
+        );
+}
+
+.page-angel .angel-product-detail-image {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        min(82%, 430px);
+
+    max-height:
+        505px;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 28px 32px
+            rgba(64,41,44,.17)
+        );
+}
+
+.page-angel .angel-product-detail-copy .eyebrow {
+    margin-bottom:
+        17px;
+}
+
+.page-angel .angel-product-detail-copy h2 {
+
+    max-width:
+        650px;
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        clamp(2rem, 4vw, 3.45rem);
+
+    font-weight:
+        780;
+
+    line-height:
+        1.02;
+
+    letter-spacing:
+        -.055em;
+}
+
+.page-angel .angel-product-detail-copy h2 span {
+
+    color:
+        var(--angel-rose-dark);
+}
+
+.page-angel .angel-product-detail-copy > p {
+
+    max-width:
+        670px;
+
+    margin:
+        21px 0 0;
+
+    color:
+        var(--angel-text);
+
+    font-size:
+        .96rem;
+
+    line-height:
+        1.82;
+}
+
+.page-angel .angel-spec-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        11px;
+
+    margin-top:
+        26px;
+}
+
+.page-angel .angel-spec {
+
+    padding:
+        16px 17px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        16px;
+
+    background:
+        rgba(255,255,255,.62);
+}
+
+.page-angel .angel-spec span {
+
+    display:
+        block;
+
+    margin-bottom:
+        4px;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .60rem;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        .10em;
+
+    text-transform:
+        uppercase;
+}
+
+.page-angel .angel-spec strong {
+
+    display:
+        block;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        .80rem;
+
+    font-weight:
+        800;
+
+    line-height:
+        1.4;
+}
+
+
+/* ==========================================================
+   COMPOSITION
+   ========================================================== */
+
+.page-angel .angel-composition {
+    background:
+        #fff;
+}
+
+.page-angel .angel-composition-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        15px;
+}
+
+.page-angel .angel-composition-card {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        34px minmax(0, 1fr);
+
+    gap:
+        15px;
+
+    padding:
+        22px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fcf7f5
+        );
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-composition-card:hover {
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-composition-mark {
+
+    width:
+        34px;
+
+    height:
+        34px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        11px;
+
+    color:
+        #fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--angel-rose),
+            var(--angel-rose-dark)
+        );
+
+    font-size:
+        .63rem;
+
+    font-weight:
+        850;
+}
+
+
+/* ==========================================================
+   CERTIFICATIONS
+   ========================================================== */
+
+.page-angel .angel-certifications {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbf4f2 0%,
+            #f7ebe8 100%
+        );
+}
+
+.page-angel .angel-certifications-intro {
+
+    max-width:
+        800px;
+
+    margin:
+        0 auto 45px;
+
+    text-align:
+        center;
+}
+
+.page-angel .angel-certifications-intro .lead {
+    margin-inline:
+        auto;
+}
+
+.page-angel .angel-certifications-note {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    max-width:
+        100%;
+
+    margin-top:
+        18px;
+
+    padding:
+        9px 13px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        999px;
+
+    color:
+        var(--angel-muted);
+
+    background:
+        rgba(255,255,255,.67);
+
+    font-size:
+        .67rem;
+}
+
+.page-angel .angel-certifications-note code {
+
+    color:
+        var(--angel-rose-dark);
+
+    font-size:
+        .64rem;
+}
+
+.page-angel .angel-certifications-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap:
+        17px;
+}
+
+.page-angel .angel-certification-card {
+
+    padding:
+        11px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        23px;
+
+    background:
+        rgba(255,255,255,.86);
+
+    box-shadow:
+        var(--angel-shadow-soft);
+
+    overflow:
+        hidden;
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-certification-card:hover {
+
+    transform:
+        translateY(-7px);
+
+    border-color:
+        rgba(183,125,130,.29);
+
+    box-shadow:
+        var(--angel-shadow);
+}
+
+.page-angel .angel-certification-image-wrap {
+
+    position:
+        relative;
+
+    min-height:
+        300px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    padding:
+        13px;
+
+    border-radius:
+        16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #f5e9e6
+        );
+
+    overflow:
+        hidden;
+}
+
+.page-angel .angel-certification-image {
+
+    width:
+        100%;
+
+    height:
+        292px;
+
+    object-fit:
+        contain;
+
+    border-radius:
+        9px;
+
+    transition:
+        transform .65s var(--angel-ease);
+}
+
+.page-angel .angel-certification-card:hover
+.angel-certification-image {
+
+    transform:
+        scale(1.025);
+}
+
+.page-angel .angel-certification-placeholder {
+
+    position:
+        absolute;
+
+    inset:
+        13px;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px dashed var(--angel-line-strong);
+
+    border-radius:
+        10px;
+
+    color:
+        var(--angel-muted);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.85),
+            rgba(246,234,231,.72)
+        );
+
+    text-align:
+        center;
+}
+
+.page-angel .angel-certification-placeholder.is-visible {
+    display:
+        flex;
+}
+
+.page-angel .angel-certification-placeholder strong {
+
+    display:
+        block;
+
+    margin-bottom:
+        5px;
+
+    color:
+        var(--angel-brown);
+
+    font-size:
+        .78rem;
+}
+
+.page-angel .angel-certification-placeholder span {
+
+    display:
+        block;
+
+    font-size:
+        .66rem;
+}
+
+.page-angel .angel-certification-content {
+
+    padding:
+        17px 7px 8px;
+}
+
+.page-angel .angel-certification-type {
+
+    display:
+        block;
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--angel-champagne-dark);
+
+    font-size:
+        .59rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .12em;
+
+    text-transform:
+        uppercase;
+}
+
+.page-angel .angel-certification-content h3 {
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        .87rem;
+
+    line-height:
+        1.4;
+}
+
+.page-angel .angel-certification-link {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    margin-top:
+        11px;
+
+    color:
+        var(--angel-rose-dark);
+
+    font-size:
+        .68rem;
+
+    font-weight:
+        820;
+}
+
+.page-angel .angel-certification-link:hover {
+    text-decoration:
+        underline;
+}
+
+.page-angel .angel-certification-link.is-disabled {
+
+    opacity:
+        .42;
+
+    pointer-events:
+        none;
+}
+
+
+/* ==========================================================
+   VARIANTS
+   ========================================================== */
+
+.page-angel .angel-variants {
+    background:
+        #fff;
+}
+
+.page-angel .angel-variants-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap:
+        19px;
+}
+
+.page-angel .angel-variant-card {
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        var(--angel-radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fbf5f3
+        );
+
+    box-shadow:
+        var(--angel-shadow-soft);
+
+    overflow:
+        hidden;
+
+    transition:
+        transform var(--angel-speed) var(--angel-ease),
+        box-shadow var(--angel-speed) var(--angel-ease),
+        border-color var(--angel-speed) var(--angel-ease);
+}
+
+.page-angel .angel-variant-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(183,125,130,.28);
+
+    box-shadow:
+        var(--angel-shadow);
+}
+
+.page-angel .angel-variant-image-wrap {
+
+    min-height:
+        340px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    padding:
+        30px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(241,222,220,.54),
+            transparent 70%
+        );
+}
+
+.page-angel .angel-variant-image {
+
+    width:
+        min(100%,255px);
+
+    height:
+        290px;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 22px 25px
+            rgba(66,43,46,.12)
+        );
+
+    transition:
+        transform .65s var(--angel-ease);
+}
+
+.page-angel .angel-variant-card:hover
+.angel-variant-image {
+
+    transform:
+        translateY(-5px)
+        scale(1.025);
+}
+
+.page-angel .angel-variant-content {
+
+    padding:
+        21px 23px 26px;
+}
+
+.page-angel .angel-variant-tag {
+
+    display:
+        inline-flex;
+
+    margin-bottom:
+        10px;
+
+    padding:
+        6px 9px;
+
+    border-radius:
+        999px;
+
+    color:
+        var(--angel-rose-dark);
+
+    background:
+        var(--angel-blush);
+
+    font-size:
+        .60rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        .08em;
+
+    text-transform:
+        uppercase;
+}
+
+.page-angel .angel-variant-content h3 {
+
+    margin:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        1.06rem;
+
+    font-weight:
+        800;
+}
+
+.page-angel .angel-variant-content p {
+
+    margin:
+        6px 0 0;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .79rem;
+
+    line-height:
+        1.65;
+}
+
+
+/* ==========================================================
+   FAQ
+   ========================================================== */
+
+.page-angel .angel-faq {
+
+    background:
+        linear-gradient(
+            180deg,
+            #fbf5f3,
+            #f8edeb
+        );
+}
+
+.page-angel .angel-faq-list {
+
+    max-width:
+        880px;
+
+    margin-inline:
+        auto;
+
+    display:
+        grid;
+
+    gap:
+        10px;
+}
+
+.page-angel .angel-faq-item {
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        19px;
+
+    background:
+        rgba(255,255,255,.72);
+
+    overflow:
+        hidden;
+
+    transition:
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.page-angel .angel-faq-item.is-open {
+
+    border-color:
+        rgba(183,125,130,.29);
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-faq-question {
+
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    padding:
+        20px 22px;
+
+    border:
+        0;
+
+    color:
+        var(--angel-cocoa);
+
+    background:
+        transparent;
+
+    cursor:
+        pointer;
+
+    text-align:
+        left;
+
+    font-size:
+        .87rem;
+
+    font-weight:
+        790;
+}
+
+.page-angel .angel-faq-question svg {
+
+    color:
+        var(--angel-rose);
+
+    transition:
+        transform .35s ease;
+}
+
+.page-angel .angel-faq-question[aria-expanded="true"]
+svg {
+
+    transform:
+        rotate(180deg);
+}
+
+.page-angel .angel-faq-answer {
+
+    display:
+        grid;
+
+    grid-template-rows:
+        0fr;
+
+    opacity:
+        0;
+
+    transition:
+        grid-template-rows .42s var(--angel-ease),
+        opacity .32s ease;
+}
+
+.page-angel .angel-faq-answer > div {
+    overflow:
+        hidden;
+}
+
+.page-angel .angel-faq-answer.is-open {
+
+    grid-template-rows:
+        1fr;
+
+    opacity:
+        1;
+}
+
+.page-angel .angel-faq-answer-content {
+
+    padding:
+        0 22px 20px;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .78rem;
+
+    line-height:
+        1.78;
+}
+
+
+/* ==========================================================
+   INFORMATION
+   ========================================================== */
+
+.page-angel .angel-information {
+    background:
+        #fff;
+}
+
+.page-angel .angel-information-box {
+
+    max-width:
+        920px;
+
+    margin-inline:
+        auto;
+
+    display:
+        grid;
+
+    grid-template-columns:
+        52px minmax(0,1fr);
+
+    gap:
+        18px;
+
+    padding:
+        29px;
+
+    border:
+        1px solid var(--angel-line);
+
+    border-radius:
+        var(--angel-radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff,
+            #fcf7f5
+        );
+
+    box-shadow:
+        var(--angel-shadow-soft);
+}
+
+.page-angel .angel-information-icon {
+
+    width:
+        52px;
+
+    height:
+        52px;
+
+    display:
+        grid;
+
+    place-items:
+        center;
+
+    border-radius:
+        16px;
+
+    color:
+        #fff;
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--angel-champagne),
+            var(--angel-champagne-dark)
+        );
+}
+
+.page-angel .angel-information-icon svg {
+
+    width:
+        22px;
+
+    height:
+        22px;
+}
+
+.page-angel .angel-information-box h3 {
+
+    margin:
+        10px 0 8px;
+
+    color:
+        var(--angel-cocoa);
+
+    font-size:
+        1.03rem;
+}
+
+.page-angel .angel-information-box p {
+
+    margin:
+        0 0 9px;
+
+    color:
+        var(--angel-muted);
+
+    font-size:
+        .79rem;
+
+    line-height:
+        1.75;
+}
+
+.page-angel .angel-information-box p:last-child {
+    margin-bottom:
+        0;
+}
+
+
+/* ==========================================================
+   CTA
+   ========================================================== */
+
+.page-angel .angel-cta {
+
+    padding:
+        92px 0 104px;
+
+    color:
+        #fff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7d4e55 0%,
+            #a56d72 50%,
+            #86663d 100%
+        );
+
+    overflow:
+        hidden;
+}
+
+.page-angel .angel-cta::before,
+.page-angel .angel-cta::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    border:
+        1px solid rgba(255,255,255,.13);
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+}
+
+.page-angel .angel-cta::before {
+
+    width:
+        530px;
+
+    height:
+        530px;
+
+    right:
+        -220px;
+
+    top:
+        -285px;
+
+    box-shadow:
+        0 0 0 55px rgba(255,255,255,.025),
+        0 0 0 105px rgba(255,255,255,.018);
+}
+
+.page-angel .angel-cta::after {
+
+    width:
+        280px;
+
+    height:
+        280px;
+
+    left:
+        -160px;
+
+    bottom:
+        -155px;
+}
+
+.page-angel .angel-cta-inner {
+
+    max-width:
+        790px;
+
+    margin-inline:
+        auto;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    text-align:
+        center;
+}
+
+.page-angel .angel-cta .eyebrow {
+
+    color:
+        rgba(255,255,255,.74);
+}
+
+.page-angel .angel-cta .eyebrow::before {
+
+    background:
+        rgba(255,255,255,.55);
+}
+
+.page-angel .angel-cta h2 {
+
+    margin:
+        18px 0 0;
+
+    color:
+        #fff;
+
+    font-size:
+        clamp(2.45rem, 5vw, 4.25rem);
+
+    font-weight:
+        790;
+
+    line-height:
+        .98;
+
+    letter-spacing:
+        -.055em;
+}
+
+.page-angel .angel-cta p {
+
+    max-width:
+        650px;
+
+    margin:
+        19px auto 0;
+
+    color:
+        rgba(255,255,255,.79);
+
+    font-size:
+        .91rem;
+
+    line-height:
+        1.75;
+}
+
+.page-angel .angel-cta-actions {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        11px;
+
+    margin-top:
+        30px;
+}
+
+.page-angel .angel-cta .btn-primary {
+
+    color:
+        var(--angel-rose-dark);
+
+    background:
+        #fff;
+
+    box-shadow:
+        0 18px 40px
+        rgba(54,30,34,.18);
+}
+
+.page-angel .angel-cta .btn-glass {
+
+    color:
+        #fff;
+
+    border-color:
+        rgba(255,255,255,.28);
+
+    background:
+        rgba(255,255,255,.10);
+}
+
+.page-angel .angel-cta .btn-glass:hover {
+
+    color:
+        #fff;
+
+    border-color:
+        rgba(255,255,255,.40);
+
+    background:
+        rgba(255,255,255,.16);
+}
+
+
+/* ==========================================================
+   REVEAL
+   ========================================================== */
+
+.page-angel [data-animate] {
+
+    opacity:
+        0;
+
+    transform:
+        translateY(22px);
+
+    transition:
+        opacity .72s var(--angel-ease),
+        transform .72s var(--angel-ease);
+}
+
+.page-angel [data-animate].is-visible {
+
+    opacity:
+        1;
+
+    transform:
+        none;
+}
+
+
+/* ==========================================================
+   RIPPLE
+   ========================================================== */
+
+.page-angel .ripple-effect {
+
+    position:
+        absolute;
+
+    width:
+        10px;
+
+    height:
+        10px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(255,255,255,.42);
+
+    transform:
+        translate(-50%, -50%) scale(0);
+
+    pointer-events:
+        none;
+
+    animation:
+        angelRipple .65s ease-out forwards;
+}
+
+
+/* ==========================================================
+   DARK MODE
+   ========================================================== */
+
+body.dark .page-angel,
+body[data-theme="dark"] .page-angel,
+[data-theme="dark"] .page-angel {
+
+    --angel-white: #171214;
+    --angel-pearl: #1d1718;
+    --angel-blush: #352526;
+
+    --angel-cocoa: #f7eeed;
+    --angel-brown: #d9c7c5;
+    --angel-text: #d5c5c3;
+    --angel-muted: #a99897;
+
+    --angel-line:
+        rgba(255,255,255,.09);
+
+    --angel-line-strong:
+        rgba(255,255,255,.15);
+
+    background:
+        #171214;
+}
+
+body.dark .page-angel .angel-hero,
+body[data-theme="dark"] .page-angel .angel-hero,
+[data-theme="dark"] .page-angel .angel-hero {
+
+    background:
+
+        radial-gradient(
+            circle at 12% 18%,
+            rgba(183,125,130,.13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #171214,
+            #21191a 58%,
+            #271d1e
+        );
+}
+
+body.dark .page-angel .angel-overview-card,
+body.dark .page-angel .angel-tech-card,
+body.dark .page-angel .angel-benefit-card,
+body.dark .page-angel .angel-composition-card,
+body.dark .page-angel .angel-certification-card,
+body.dark .page-angel .angel-variant-card,
+body.dark .page-angel .angel-information-box,
+
+body[data-theme="dark"] .page-angel .angel-overview-card,
+body[data-theme="dark"] .page-angel .angel-tech-card,
+body[data-theme="dark"] .page-angel .angel-benefit-card,
+body[data-theme="dark"] .page-angel .angel-composition-card,
+body[data-theme="dark"] .page-angel .angel-certification-card,
+body[data-theme="dark"] .page-angel .angel-variant-card,
+body[data-theme="dark"] .page-angel .angel-information-box,
+
+[data-theme="dark"] .page-angel .angel-overview-card,
+[data-theme="dark"] .page-angel .angel-tech-card,
+[data-theme="dark"] .page-angel .angel-benefit-card,
+[data-theme="dark"] .page-angel .angel-composition-card,
+[data-theme="dark"] .page-angel .angel-certification-card,
+[data-theme="dark"] .page-angel .angel-variant-card,
+[data-theme="dark"] .page-angel .angel-information-box {
+
+    background:
+        linear-gradient(
+            145deg,
+            #21191a,
+            #1b1617
+        );
+}
+
+body.dark .page-angel .angel-intro,
+body.dark .page-angel .angel-benefits,
+body.dark .page-angel .angel-composition,
+body.dark .page-angel .angel-variants,
+body.dark .page-angel .angel-information,
+
+body[data-theme="dark"] .page-angel .angel-intro,
+body[data-theme="dark"] .page-angel .angel-benefits,
+body[data-theme="dark"] .page-angel .angel-composition,
+body[data-theme="dark"] .page-angel .angel-variants,
+body[data-theme="dark"] .page-angel .angel-information,
+
+[data-theme="dark"] .page-angel .angel-intro,
+[data-theme="dark"] .page-angel .angel-benefits,
+[data-theme="dark"] .page-angel .angel-composition,
+[data-theme="dark"] .page-angel .angel-variants,
+[data-theme="dark"] .page-angel .angel-information {
+
+    background:
+        #171214;
+}
+
+body.dark .page-angel .angel-technology,
+body.dark .page-angel .angel-certifications,
+body.dark .page-angel .angel-faq,
+
+body[data-theme="dark"] .page-angel .angel-technology,
+body[data-theme="dark"] .page-angel .angel-certifications,
+body[data-theme="dark"] .page-angel .angel-faq,
+
+[data-theme="dark"] .page-angel .angel-technology,
+[data-theme="dark"] .page-angel .angel-certifications,
+[data-theme="dark"] .page-angel .angel-faq {
+
+    background:
+        linear-gradient(
+            180deg,
+            #1d1718,
+            #21191a
+        );
+}
+
+body.dark .page-angel .angel-product-detail,
+body[data-theme="dark"] .page-angel .angel-product-detail,
+[data-theme="dark"] .page-angel .angel-product-detail {
+
+    background:
+        linear-gradient(
+            135deg,
+            #21191a,
+            #281d1f
+        );
+}
+
+body.dark .page-angel .btn-glass,
+body.dark .page-angel .angel-more-toggle,
+body.dark .page-angel .angel-certifications-note,
+body.dark .page-angel .angel-faq-item,
+
+body[data-theme="dark"] .page-angel .btn-glass,
+body[data-theme="dark"] .page-angel .angel-more-toggle,
+body[data-theme="dark"] .page-angel .angel-certifications-note,
+body[data-theme="dark"] .page-angel .angel-faq-item,
+
+[data-theme="dark"] .page-angel .btn-glass,
+[data-theme="dark"] .page-angel .angel-more-toggle,
+[data-theme="dark"] .page-angel .angel-certifications-note,
+[data-theme="dark"] .page-angel .angel-faq-item {
+
+    background:
+        rgba(255,255,255,.045);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 1120
+   ========================================================== */
+
+@media (max-width: 1120px) {
+
+    .page-angel .angel-container {
+        width:
+            min(100% - 38px, 1050px);
+    }
+
+    .page-angel .angel-hero-grid {
+
+        grid-template-columns:
+            minmax(0, .93fr)
+            minmax(370px, 1.07fr);
+
+        gap:
+            20px;
+    }
+
+    .page-angel .angel-hero-product {
+        min-height:
+            540px;
+    }
+
+    .page-angel .angel-hero-product-aura {
+
+        width:
+            490px;
+
+        height:
+            490px;
+    }
+
+    .page-angel .angel-hero-product-rings {
+
+        width:
+            450px;
+
+        height:
+            450px;
+    }
+
+    .page-angel .angel-hero-product-grid {
+
+        width:
+            380px;
+
+        height:
+            380px;
+    }
+
+    .page-angel .angel-hero-product-frame {
+
+        min-height:
+            530px;
+    }
+
+    .page-angel .angel-hero-product-image {
+
+        max-width:
+            440px;
+
+        max-height:
+            525px;
+    }
+
+    .page-angel .angel-overview-grid {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+    .page-angel .angel-certifications-grid {
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 900
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .page-angel .angel-section {
+        padding:
+            82px 0;
+    }
+
+    .page-angel .angel-hero {
+
+        min-height:
+            auto;
+
+        padding:
+            68px 0 75px;
+    }
+
+    .page-angel .angel-hero-grid,
+    .page-angel .angel-layer-showcase,
+    .page-angel .angel-product-detail-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .page-angel .angel-hero-grid {
+
+        gap:
+            22px;
+    }
+
+    .page-angel .angel-hero-copy {
+
+        max-width:
+            720px;
+
+        margin-inline:
+            auto;
+
+        text-align:
+            center;
+    }
+
+    .page-angel .angel-eyebrow {
+        justify-content:
+            center;
+    }
+
+    .page-angel .angel-hero-description {
+        margin-inline:
+            auto;
+    }
+
+    .page-angel .angel-hero-actions,
+    .page-angel .angel-hero-signature {
+
+        justify-content:
+            center;
+    }
+
+    .page-angel .angel-hero-product {
+        min-height:
+            500px;
+    }
+
+    .page-angel .technology-heading {
+
+        grid-template-columns:
+            1fr;
+
+        gap:
+            15px;
+    }
+
+    .page-angel .technology-heading .lead {
+
+        justify-self:
+            auto;
+
+        margin-top:
+            0;
+    }
+
+    .page-angel .angel-layer-showcase {
+        gap:
+            34px;
+    }
+
+    .page-angel .angel-layer-visual {
+
+        min-height:
+            430px;
+    }
+
+    .page-angel .angel-benefits-grid,
+    .page-angel .angel-variants-grid,
+    .page-angel .angel-composition-grid {
+
+        grid-template-columns:
+            repeat(2, minmax(0,1fr));
+    }
+
+    .page-angel .angel-variant-card:last-child {
+
+        grid-column:
+            1 / -1;
+
+        width:
+            min(100%,390px);
+
+        margin-inline:
+            auto;
+    }
+
+    .page-angel .angel-product-detail-grid {
+
+        gap:
+            42px;
+    }
+
+    .page-angel .angel-product-detail-visual {
+
+        min-height:
+            470px;
+    }
+
+    .page-angel .angel-product-detail-copy {
+
+        max-width:
+            720px;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 680
+   ========================================================== */
+
+@media (max-width: 680px) {
+
+    .page-angel .angel-container {
+
+        width:
+            min(100% - 28px, 620px);
+    }
+
+    .page-angel .angel-section {
+
+        padding:
+            68px 0;
+    }
+
+    .page-angel .section-title {
+
+        font-size:
+            2.25rem;
+    }
+
+    .page-angel .lead {
+
+        font-size:
+            .91rem;
+    }
+
+    .page-angel .angel-hero {
+
+        padding:
+            52px 0 58px;
+    }
+
+    .page-angel .angel-hero-title {
+
+        font-size:
+            clamp(2.75rem, 13vw, 4rem);
+    }
+
+    .page-angel .angel-hero-description {
+
+        font-size:
+            .92rem;
+    }
+
+    .page-angel .angel-hero-actions {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        max-width:
+            330px;
+
+        margin-inline:
+            auto;
+    }
+
+    .page-angel .angel-hero-actions .btn {
+        width:
+            100%;
+    }
+
+    .page-angel .angel-hero-product {
+
+        min-height:
+            400px;
+    }
+
+    .page-angel .angel-hero-product-aura {
+
+        width:
+            360px;
+
+        height:
+            360px;
+    }
+
+    .page-angel .angel-hero-product-rings {
+
+        width:
+            330px;
+
+        height:
+            330px;
+    }
+
+    .page-angel .angel-hero-product-grid {
+
+        width:
+            280px;
+
+        height:
+            280px;
+    }
+
+    .page-angel .angel-hero-product-frame {
+
+        min-height:
+            400px;
+    }
+
+    .page-angel .angel-hero-product-image {
+
+        width:
+            min(100%,335px);
+
+        max-height:
+            400px;
+    }
+
+    .page-angel .angel-product-badge {
+
+        top:
+            18px;
+
+        right:
+            14px;
+    }
+
+    .page-angel .angel-overview-grid,
+    .page-angel .angel-benefits-grid,
+    .page-angel .angel-technology-grid,
+    .page-angel .angel-composition-grid,
+    .page-angel .angel-variants-grid,
+    .page-angel .angel-certifications-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .page-angel .angel-tech-card:last-child,
+    .page-angel .angel-variant-card:last-child {
+
+        grid-column:
+            auto;
+    }
+
+    .page-angel .angel-more-content ul {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .page-angel .angel-layer-visual {
+
+        min-height:
+            360px;
+    }
+
+    .page-angel .angel-layer-orbit {
+
+        width:
+            290px;
+
+        height:
+            290px;
+    }
+
+    .page-angel .angel-layer-core {
+
+        width:
+            175px;
+
+        height:
+            175px;
+    }
+
+    .page-angel .angel-layer-core strong {
+
+        font-size:
+            1.95rem;
+    }
+
+    .page-angel .angel-product-detail-visual {
+
+        min-height:
+            390px;
+    }
+
+    .page-angel .angel-product-detail-image {
+
+        width:
+            min(84%,340px);
+
+        max-height:
+            390px;
+    }
+
+    .page-angel .angel-spec-grid {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .page-angel .angel-certification-card {
+
+        width:
+            min(100%,430px);
+
+        margin-inline:
+            auto;
+    }
+
+    .page-angel .angel-certification-image-wrap {
+
+        min-height:
+            280px;
+    }
+
+    .page-angel .angel-certification-image {
+
+        height:
+            275px;
+    }
+
+    .page-angel .angel-information-box {
+
+        grid-template-columns:
+            1fr;
+    }
+
+    .page-angel .angel-cta-actions {
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+        max-width:
+            330px;
+
+        margin-inline:
+            auto;
+    }
+
+    .page-angel .angel-cta-actions .btn {
+        width:
+            100%;
+    }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — 430
+   ========================================================== */
+
+@media (max-width: 430px) {
+
+    .page-angel .angel-container {
+
+        width:
+            min(100% - 22px,390px);
+    }
+
+    .page-angel .angel-section {
+
+        padding:
+            58px 0;
+    }
+
+    .page-angel .angel-hero-title {
+
+        font-size:
+            2.56rem;
+    }
+
+    .page-angel .angel-hero-product {
+
+        min-height:
+            340px;
+    }
+
+    .page-angel .angel-hero-product-aura {
+
+        width:
+            290px;
+
+        height:
+            290px;
+    }
+
+    .page-angel .angel-hero-product-rings {
+
+        width:
+            270px;
+
+        height:
+            270px;
+    }
+
+    .page-angel .angel-hero-product-grid {
+
+        width:
+            225px;
+
+        height:
+            225px;
+    }
+
+    .page-angel .angel-hero-product-frame {
+
+        min-height:
+            340px;
+    }
+
+    .page-angel .angel-hero-product-image {
+
+        max-width:
+            285px;
+
+        max-height:
+            340px;
+    }
+
+    .page-angel .angel-product-badge {
+
+        top:
+            7px;
+
+        right:
+            3px;
+
+        font-size:
+            .56rem;
+    }
+
+    .page-angel .angel-overview-card,
+    .page-angel .angel-benefit-card,
+    .page-angel .angel-tech-card {
+
+        padding:
+            22px;
+    }
+
+    .page-angel .angel-product-detail-visual {
+
+        min-height:
+            330px;
+    }
+
+    .page-angel .angel-product-detail-image {
+
+        max-height:
+            330px;
+    }
+
+    .page-angel .angel-certifications-note {
+
+        border-radius:
+            15px;
+
+        line-height:
+            1.5;
+    }
+
+    .page-angel .angel-cta {
+
+        padding:
+            68px 0 78px;
+    }
+
+    .page-angel .angel-cta h2 {
+
+        font-size:
+            2.15rem;
+    }
+}
+
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .page-angel *,
+    .page-angel *::before,
+    .page-angel *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            .01ms !important;
+    }
+
+    .page-angel [data-animate] {
+
+        opacity:
+            1;
+
+        transform:
+            none;
+    }
+}
+
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+
+@keyframes angelAura {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .84;
+    }
+
+    50% {
+
+        transform:
+            scale(1.055);
+
+        opacity:
+            1;
+    }
+}
+
+@keyframes angelRing {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+@keyframes angelProductFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translate3d(5px,0,0);
+    }
+
+    50% {
+
+        transform:
+            translate3d(5px,-9px,0);
+    }
+}
+
+@keyframes angelRipple {
+
+    to {
+
+        transform:
+            translate(-50%,-50%)
+            scale(19);
+
+        opacity:
+            0;
+    }
+}
