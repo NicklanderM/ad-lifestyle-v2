@@ -70564,13 +70564,12 @@ body.dark
 
 /* ==========================================================
    AD LIFESTYLE V2
-   ALPHA VMAX — PREMIUM PRODUCT PAGE
-   Modelo visual: iSMART S3 / AlphaMeta
-   Escala tipográfica e espaçamentos harmonizados
-   Namespace isolado: .page-alpha
+   ISMART S3 — PREMIUM PRODUCT PAGE
+   Modelo visual inspirado na página AlphaMeta
    ========================================================== */
 
 .page-alpha{
+
     --alpha-white:#FFFFFF;
     --alpha-ice:#D6E5F0;
     --alpha-mist:#EFF5F9;
@@ -70579,6 +70578,9 @@ body.dark
     --alpha-steel:#7894B0;
     --alpha-deep:#1A2C3B;
     --alpha-graphite:#202B34;
+    --alpha-green:#C6A15B;
+    --alpha-green-light:#E3CD98;
+    --alpha-green-dark:#8C6B33;
     --alpha-gold:#C6A15B;
     --alpha-gold-light:#E3CD98;
     --alpha-gold-dark:#8C6B33;
@@ -70586,45 +70588,44 @@ body.dark
     --alpha-muted:#6C7C89;
     --alpha-line:rgba(57,91,119,.13);
     --alpha-shadow:0 24px 78px rgba(24,42,58,.10);
-    --alpha-shadow-heavy:0 32px 90px rgba(11,24,34,.22);
+    --alpha-shadow-heavy:0 32px 90px rgba(11,24,34,.24);
     --alpha-radius:32px;
     --alpha-radius-sm:21px;
-    --alpha-ease:cubic-bezier(.22,.61,.36,1);
+
     color:var(--alpha-text);
     background:var(--alpha-white);
-    font-family:Inter,"Avenir Next","Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+
+    font-family:
+        Inter,
+        "Avenir Next",
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
 }
 
-.page-alpha *{box-sizing:border-box;}
-.page-alpha button,.page-alpha input,.page-alpha textarea,.page-alpha select{font:inherit;}
-.page-alpha img{display:block;max-width:100%;}
-.page-alpha p{margin:0;}
-.page-alpha h1,.page-alpha h2,.page-alpha h3{margin:0;}
-
-.page-alpha .section{
-    position:relative;
-    padding:112px 0;
-    overflow:hidden;
+.page-alpha *{
+    box-sizing:border-box;
 }
 
-.page-alpha .container{
-    width:min(1220px,calc(100% - 96px));
-    margin-inline:auto;
-    position:relative;
-    z-index:2;
+.page-alpha button,
+.page-alpha input,
+.page-alpha textarea,
+.page-alpha select{
+    font:inherit;
 }
 
-.page-alpha .container-sm{
-    width:min(900px,calc(100% - 96px));
-    margin-inline:auto;
-    position:relative;
-    z-index:2;
+.page-alpha img{
+    display:block;
+    max-width:100%;
 }
 
-.page-alpha .alpha-section-heading-center{
-    text-align:center;
+.page-alpha p{
+    margin:0;
 }
 
 /* ==========================================================
@@ -70632,24 +70633,30 @@ body.dark
    ========================================================== */
 
 .page-alpha .section-title{
+
     max-width:920px;
+    margin:0;
+
     font-size:clamp(2.25rem,4.9vw,4.65rem);
     line-height:.98;
     letter-spacing:-.055em;
     font-weight:900;
-    color:var(--alpha-deep);
+
+    color:var(--alpha-deep) !important;
 }
 
 .page-alpha .section-title span{
     display:block;
     margin-top:.08em;
-    color:var(--alpha-steel);
+    color:var(--alpha-steel) !important;
 }
 
 .page-alpha .lead{
+
     max-width:760px;
     margin-top:22px;
-    color:#647584;
+
+    color:#647584 !important;
     font-size:1.04rem;
     line-height:1.82;
 }
@@ -70662,7 +70669,9 @@ body.dark
 
 .page-alpha .label,
 .page-alpha .eyebrow{
-    color:var(--alpha-blue);
+
+    color:var(--alpha-green-dark) !important;
+
     font-size:.69rem;
     font-weight:900;
     letter-spacing:.20em;
@@ -70686,13 +70695,13 @@ body.dark
 
 .page-alpha .alpha-section-heading{
     max-width:900px;
-    margin:0 auto 42px;
+    margin:0 auto;
 }
 
-.page-alpha .alpha-section-heading-center{text-align:center;}
-
 .page-alpha .alpha-section-heading h2{
+
     margin:0;
+
     color:var(--alpha-deep);
     font-size:clamp(2.3rem,4.9vw,4.7rem);
     line-height:.98;
@@ -70706,8 +70715,10 @@ body.dark
 }
 
 .page-alpha .alpha-section-heading p{
+
     max-width:760px;
     margin-top:20px;
+
     color:#697B89;
     font-size:1rem;
     line-height:1.82;
@@ -70718,35 +70729,126 @@ body.dark
    ========================================================== */
 
 .page-alpha .btn{
-    width:auto!important;
+
+    width:auto !important;
     min-height:49px;
-    padding:0 20px!important;
-    border-radius:14px!important;
-    font-size:.82rem!important;
-    font-weight:850!important;
-    transition:transform .25s ease,box-shadow .25s ease,background .25s ease,border-color .25s ease;
+
+    padding:0 20px !important;
+
+    border-radius:14px !important;
+
+    font-size:.82rem !important;
+    font-weight:850 !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
 }
 
-.page-alpha .btn:hover{transform:translateY(-2px);}
+.page-alpha .btn:hover{
+    transform:translateY(-2px);
+}
 
 .page-alpha .btn-primary{
-    border:1px solid transparent!important;
-    background:linear-gradient(135deg,var(--alpha-deep),var(--alpha-blue))!important;
-    color:#FFFFFF!important;
-    box-shadow:0 14px 30px rgba(24,42,58,.20);
+
+    border:1px solid transparent !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--alpha-deep),
+            var(--alpha-blue)
+        ) !important;
+
+    color:#FFFFFF !important;
+
+    box-shadow:
+        0 14px 30px rgba(24,42,58,.20);
 }
 
 .page-alpha .btn-glass{
-    border:1px solid rgba(24,42,58,.14)!important;
-    background:rgba(255,255,255,.55)!important;
-    color:var(--alpha-deep)!important;
+
+    border:1px solid rgba(24,42,58,.14) !important;
+
+    background:rgba(255,255,255,.55) !important;
+
+    color:var(--alpha-deep) !important;
 }
 
-.page-alpha .btn:focus-visible,
-.page-alpha .alpha-more-toggle:focus-visible,
-.page-alpha .alpha-faq-question:focus-visible{
-    outline:3px solid rgba(120,148,176,.42);
-    outline-offset:3px;
+/* ==========================================================
+   COMPACT VER MAIS
+   ========================================================== */
+
+.page-alpha .alpha-more-wrap{
+    margin-top:21px;
+}
+
+.page-alpha .alpha-more-toggle{
+
+    display:inline-flex;
+    width:max-content !important;
+    max-width:100%;
+    min-height:40px;
+
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+
+    padding:0 14px !important;
+
+    border:1px solid rgba(57,91,119,.15) !important;
+    border-radius:999px !important;
+
+    background:rgba(255,255,255,.68) !important;
+    color:var(--alpha-blue) !important;
+
+    box-shadow:none !important;
+
+    font-size:.70rem !important;
+    font-weight:900 !important;
+}
+
+.page-alpha .alpha-more-toggle:hover{
+    background:#FFFFFF !important;
+}
+
+.page-alpha .alpha-more-toggle i{
+
+    font-style:normal;
+    font-size:1rem;
+    line-height:1;
+
+    transition:transform .25s ease;
+}
+
+.page-alpha .alpha-more-toggle.active i{
+    transform:rotate(45deg);
+}
+
+.page-alpha .alpha-more-panel{
+
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+
+    transition:
+        max-height .55s cubic-bezier(.22,.61,.36,1),
+        opacity .30s ease,
+        visibility 0s linear .55s;
+}
+
+.page-alpha .alpha-more-panel.active{
+
+    opacity:1;
+    visibility:visible;
+
+    transition:
+        max-height .58s cubic-bezier(.22,.61,.36,1),
+        opacity .35s ease,
+        visibility 0s linear 0s;
 }
 
 /* ==========================================================
@@ -70754,272 +70856,386 @@ body.dark
    ========================================================== */
 
 .page-alpha .alpha-hero{
+
     position:relative;
     min-height:min(860px,92vh);
+
     display:flex;
     align-items:center;
+
     overflow:hidden;
     isolation:isolate;
+
     background:
-        radial-gradient(circle at 18% 18%,rgba(201,217,233,.78),transparent 33%),
-        radial-gradient(circle at 82% 32%,rgba(198,161,91,.08),transparent 26%),
-        linear-gradient(135deg,#FFFFFF,#F1F7FA 54%,#DBE9F2);
+        radial-gradient(
+            circle at 18% 18%,
+            rgba(201,217,233,.78),
+            transparent 33%
+        ),
+        radial-gradient(
+            circle at 82% 32%,
+            rgba(198,161,91,.11),
+            transparent 26%
+        ),
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #F1F7FA 54%,
+            #DBE9F2
+        );
 }
 
 .page-alpha .alpha-hero::before{
+
     content:"";
     position:absolute;
     inset:0;
     z-index:-2;
+
     background:
-        linear-gradient(rgba(57,91,119,.027) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(57,91,119,.027) 1px,transparent 1px);
+        linear-gradient(
+            rgba(57,91,119,.027) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(57,91,119,.027) 1px,
+            transparent 1px
+        );
+
     background-size:52px 52px;
-    mask-image:linear-gradient(to bottom,#000,transparent 88%);
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000,
+            transparent 88%
+        );
+}
+
+.page-alpha .alpha-hero-atmosphere{
+    position:absolute;
+    inset:0;
+    z-index:-1;
+    pointer-events:none;
+}
+
+.page-alpha .alpha-orb{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(70px);
+}
+
+.page-alpha .alpha-orb-1{
+
+    width:460px;
+    height:460px;
+    left:-190px;
+    top:-170px;
+
+    background:rgba(120,148,176,.18);
+
+    animation:
+        ismartsFloatOne
+        14s
+        ease-in-out
+        infinite;
+}
+
+.page-alpha .alpha-orb-2{
+
+    width:390px;
+    height:390px;
+    right:-100px;
+    top:10%;
+
+    background:rgba(198,161,91,.10);
+
+    animation:
+        ismartsFloatTwo
+        17s
+        ease-in-out
+        infinite;
+}
+
+.page-alpha .alpha-orbit{
+
+    position:absolute;
+    border-radius:50%;
+    border:1px solid rgba(57,91,119,.10);
+}
+
+.page-alpha .alpha-orbit-1{
+
+    width:500px;
+    height:500px;
+    right:4%;
+    top:7%;
+
+    transform:rotate(20deg) scaleY(.58);
+
+    animation:
+        ismartsOrbit
+        28s
+        linear
+        infinite;
+}
+
+.page-alpha .alpha-orbit-2{
+
+    width:640px;
+    height:640px;
+    right:-5%;
+    top:-7%;
+
+    transform:rotate(-15deg) scaleY(.58);
+
+    border-color:rgba(198,161,91,.10);
+
+    animation:
+        ismartsOrbit
+        38s
+        linear
+        infinite reverse;
 }
 
 .page-alpha .alpha-hero-grid{
-    width:min(1220px,calc(100% - 96px));
-    margin-inline:auto;
-    display:grid;
-    grid-template-columns:minmax(0,1fr) minmax(420px,.88fr);
-    gap:72px;
-    align-items:center;
-    padding-block:82px 72px;
+
     position:relative;
     z-index:2;
+
+    width:100%;
+
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(420px,.95fr);
+    gap:48px;
+    align-items:center;
+
+    padding-block:82px 72px;
 }
 
 .page-alpha .alpha-hero-copy{
-    grid-column:1;
-    grid-row:1;
     max-width:680px;
-    padding-left:0;
-    min-width:0;
 }
 
-.page-alpha .alpha-hero-copy .alpha-eyebrow{margin-bottom:18px;}
+.page-alpha .alpha-hero-copy .alpha-eyebrow{
+    margin-bottom:18px;
+}
 
-.page-alpha .alpha-hero-title{
+.page-alpha .alpha-hero-copy h1{
+
     margin:0;
+
     color:var(--alpha-deep);
-    font-size:clamp(4rem,8vw,7.8rem);
+
+    font-size:
+        clamp(
+            4rem,
+            8vw,
+            7.8rem
+        );
+
     line-height:.82;
     letter-spacing:-.075em;
     font-weight:900;
 }
 
-.page-alpha .alpha-hero-title span{
+.page-alpha .alpha-hero-copy h1 span{
+
     display:block;
-    background:linear-gradient(100deg,var(--alpha-deep),var(--alpha-steel) 58%,var(--alpha-gold));
+
+    background:
+        linear-gradient(
+            100deg,
+            var(--alpha-deep),
+            var(--alpha-steel) 50%,
+            var(--alpha-green-dark)
+        );
+
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .page-alpha .alpha-hero-description{
+
     max-width:620px;
-    margin-top:32px;
+    margin-top:26px;
+
     color:#5F7180;
     font-size:1.08rem;
-    line-height:1.90;
+    line-height:1.82;
 }
 
 .page-alpha .alpha-hero-pills{
+
     display:flex;
     flex-wrap:wrap;
     gap:8px;
-    margin-top:28px;
+    margin-top:23px;
 }
 
 .page-alpha .alpha-hero-pill{
+
     min-height:34px;
     display:inline-flex;
     align-items:center;
+
     padding:0 12px;
+
     border:1px solid rgba(57,91,119,.11);
     border-radius:999px;
+
     background:rgba(255,255,255,.62);
     color:var(--alpha-blue);
+
     font-size:.65rem;
     font-weight:850;
 }
 
-.page-alpha .alpha-hero-pill::before{
-    content:"";
-    width:6px;
-    height:6px;
-    margin-right:8px;
-    border-radius:50%;
-    background:var(--alpha-gold);
-}
-
 .page-alpha .alpha-hero-actions{
+
     display:flex;
     flex-wrap:wrap;
     gap:12px;
     margin-top:30px;
 }
 
-.page-alpha .alpha-hero-meta{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
-    margin-top:31px;
-    max-width:640px;
-}
-
-.page-alpha .alpha-hero-meta > div{
-    padding:12px 14px;
-    border-top:1px solid rgba(57,91,119,.11);
-}
-
-.page-alpha .alpha-hero-meta strong{
-    display:block;
-    color:var(--alpha-deep);
-    font-size:.75rem;
-    font-weight:900;
-}
-
-.page-alpha .alpha-hero-meta span{
-    display:block;
-    margin-top:4px;
-    color:#7B8995;
-    font-size:.62rem;
-    line-height:1.50;
-}
-
-/* ==========================================================
-   HERO ATMOSPHERE
-   ========================================================== */
-
-.page-alpha .alpha-hero-atmosphere{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
-    z-index:-1;
-}
-
-.page-alpha .alpha-orb{
-    position:absolute;
-    border-radius:50%;
-    filter:blur(60px);
-}
-
-.page-alpha .alpha-orb-1{
-    width:460px;
-    height:460px;
-    left:-190px;
-    top:-170px;
-    background:rgba(120,148,176,.16);
-}
-
-.page-alpha .alpha-orb-2{
-    width:360px;
-    height:360px;
-    right:-80px;
-    top:12%;
-    background:rgba(198,161,91,.08);
-}
-
-.page-alpha .alpha-orbit{
-    position:absolute;
-    border-radius:50%;
-    border:1px solid rgba(57,91,119,.09);
-}
-
-.page-alpha .alpha-orbit-1{
-    width:520px;
-    height:250px;
-    right:-90px;
-    top:23%;
-    transform:rotate(18deg);
-}
-
-.page-alpha .alpha-orbit-2{
-    width:680px;
-    height:310px;
-    right:-170px;
-    top:13%;
-    transform:rotate(-16deg);
-    border-color:rgba(198,161,91,.10);
-}
-
-/* ==========================================================
-   HERO PRODUCT
-   ========================================================== */
-
 .page-alpha .alpha-hero-product{
-    grid-column:2;
-    grid-row:1;
+
     position:relative;
     min-height:610px;
+
     display:grid;
     place-items:center;
 }
 
 .page-alpha .alpha-product-aura{
+
     position:absolute;
     width:70%;
     aspect-ratio:1;
     border-radius:50%;
-    background:radial-gradient(circle,rgba(61,96,124,.14),rgba(120,148,176,.08) 34%,transparent 70%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.14),
+            rgba(120,148,176,.08) 32%,
+            transparent 70%
+        );
+
     filter:blur(10px);
-    animation:alphaPulse 5.8s ease-in-out infinite;
+
+    animation:
+        ismartsPulse
+        5.8s
+        ease-in-out
+        infinite;
 }
 
 .page-alpha .alpha-product-ring{
+
     position:absolute;
     width:78%;
     aspect-ratio:1;
     border-radius:50%;
-    border:1px solid rgba(120,148,176,.18);
-    box-shadow:0 0 0 32px rgba(201,217,233,.08),0 0 0 66px rgba(201,217,233,.045);
-}
 
-.page-alpha .alpha-product-ring-2{
-    width:91%;
-    border-style:dashed;
-    border-color:rgba(198,161,91,.17);
-    animation:alphaOrbit 28s linear infinite;
+    border:1px solid rgba(120,148,176,.18);
+
+    box-shadow:
+        0 0 0 32px rgba(201,217,233,.08),
+        0 0 0 66px rgba(201,217,233,.045);
 }
 
 .page-alpha .alpha-product-grid{
-    position:absolute;
+
+    position:relative;
+    z-index:5;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
     width:100%;
-    aspect-ratio:1;
-    background:
-        linear-gradient(rgba(57,91,119,.027) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(57,91,119,.027) 1px,transparent 1px);
-    background-size:28px 28px;
-    transform:rotate(45deg);
-    mask-image:radial-gradient(circle,#000,transparent 68%);
+    min-height:540px;
 }
 
-.page-alpha .alpha-hero-product-image{
+/* ==========================================================
+   IMAGE RULE — MESMO PRINCÍPIO DA ALPHAMETA
+   ========================================================== */
+
+.page-alpha .alpha-product-grid img {
+
     position:relative;
     z-index:5;
     display:block;
+
     width:auto;
     height:auto;
+
     max-width:430px;
     max-height:550px;
+
     object-fit:contain;
     object-position:center;
-    opacity:1!important;
-    filter:drop-shadow(0 26px 38px rgba(0,0,0,.17))!important;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        ) !important;
+
+    transform:translate3d(0,0,0);
+
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-alpha .alpha-product-grid.image-error::after{
+
+    content:
+        "Imagem não encontrada — verificar caminho do ficheiro";
+
+    position:absolute;
+    left:50%;
+    bottom:28px;
+    transform:translateX(-50%);
+
+    width:max-content;
+    max-width:84%;
+
+    padding:8px 11px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.88);
+    border:1px solid rgba(57,91,119,.11);
+
+    color:#71818D;
+    font-size:.59rem;
+    font-weight:800;
+    text-align:center;
 }
 
 .page-alpha .alpha-product-caption{
+
     position:absolute;
     right:4%;
     bottom:6%;
     z-index:7;
+
     display:flex;
     flex-direction:column;
     gap:2px;
+
     padding:9px 12px;
+
     border:1px solid rgba(24,42,58,.10);
     border-radius:999px;
+
     background:rgba(255,255,255,.52);
     backdrop-filter:blur(12px);
 }
@@ -71037,36 +71253,6 @@ body.dark
     letter-spacing:.13em;
 }
 
-.page-alpha .alpha-hero-product.image-error::after,
-.page-alpha .alpha-product-detail-frame.image-error::after,
-.page-alpha .alpha-benefits-frame.image-error::after{
-    content:"Imagem não encontrada — verificar caminho do ficheiro";
-    position:absolute;
-    left:50%;
-    bottom:28px;
-    transform:translateX(-50%);
-    width:max-content;
-    max-width:84%;
-    padding:8px 11px;
-    border-radius:999px;
-    background:rgba(255,255,255,.88);
-    border:1px solid rgba(57,91,119,.11);
-    color:#71818D;
-    font-size:.59rem;
-    font-weight:800;
-    text-align:center;
-}
-
-@keyframes alphaPulse{
-    0%,100%{transform:scale(.96);opacity:.72;}
-    50%{transform:scale(1.04);opacity:1;}
-}
-
-@keyframes alphaOrbit{
-    from{rotate:0deg;}
-    to{rotate:360deg;}
-}
-
 /* ==========================================================
    OVERVIEW
    ========================================================== */
@@ -71076,6 +71262,7 @@ body.dark
 }
 
 .page-alpha .alpha-overview-grid{
+
     display:grid;
     grid-template-columns:repeat(4,minmax(0,1fr));
     gap:14px;
@@ -71083,61 +71270,68 @@ body.dark
 }
 
 .page-alpha .alpha-overview-card{
+
     min-height:240px;
     padding:24px;
+
     border:1px solid var(--alpha-line);
     border-radius:24px;
+
     background:#FFFFFF;
     box-shadow:0 14px 42px rgba(24,42,58,.06);
-    transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
-}
-
-.page-alpha .alpha-overview-card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 21px 46px rgba(24,42,58,.10);
-    border-color:rgba(57,91,119,.20);
 }
 
 .page-alpha .alpha-card-number{
+
     display:block;
-    color:rgba(57,91,119,.18);
+    color:rgba(57,91,119,.19);
     font-size:.67rem;
     font-weight:900;
     letter-spacing:.14em;
 }
 
 .page-alpha .alpha-card-icon{
+
     width:40px;
     height:40px;
+
     display:grid;
     place-items:center;
+
     margin-top:19px;
+
     border-radius:13px;
     background:#EDF4F8;
-    color:var(--alpha-gold-dark);
-    font-size:1rem;
+
+    color:var(--alpha-blue);
     font-weight:900;
 }
 
 .page-alpha .alpha-overview-card h3{
+
     margin-top:21px;
     color:var(--alpha-deep);
     font-size:1.15rem;
     line-height:1.15;
+    letter-spacing:-.02em;
 }
 
 .page-alpha .alpha-overview-card p{
+
     margin-top:9px;
     color:#74828F;
     font-size:.81rem;
-    line-height:1.70;
+    line-height:1.7;
 }
 
 .page-alpha .alpha-overview-note{
+
     margin-top:19px;
     padding:18px 20px;
+
     border:1px solid var(--alpha-line);
     border-radius:18px;
+
     background:rgba(255,255,255,.75);
 }
 
@@ -71157,45 +71351,69 @@ body.dark
    COMPOSITION
    ========================================================== */
 
-.page-alpha .alpha-composition{background:#FFFFFF;}
+.page-alpha .alpha-composition{
+    background:#FFFFFF;
+}
 
 .page-alpha .alpha-composition-grid{
+
     display:grid;
     grid-template-columns:repeat(4,minmax(0,1fr));
     gap:15px;
+    margin-top:46px;
 }
 
 .page-alpha .alpha-composition-card{
+
     min-height:290px;
     padding:25px;
+
     border:1px solid var(--alpha-line);
     border-radius:24px;
-    background:linear-gradient(145deg,#FFFFFF,#F2F7FA);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F2F7FA
+        );
+
     box-shadow:0 18px 50px rgba(24,42,58,.07);
 }
 
-.page-alpha .alpha-card-top{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.page-alpha .alpha-composition-number{
+
+    color:rgba(57,91,119,.16);
+    font-size:.65rem;
+    font-weight:900;
+    letter-spacing:.17em;
 }
 
-.page-alpha .alpha-card-symbol{
+.page-alpha .alpha-composition-symbol{
+
     width:46px;
     height:46px;
+
     display:grid;
     place-items:center;
+
+    margin-top:24px;
+
     border-radius:15px;
+
     background:#EAF2F7;
     color:var(--alpha-blue);
-    font-style:normal;
-    font-size:1.05rem;
+
+    font-size:1.12rem;
+    font-weight:900;
 }
 
 .page-alpha .alpha-composition-label{
+
     display:block;
     margin-top:27px;
-    color:var(--alpha-blue);
+
+    color:var(--alpha-green-dark);
     font-size:.61rem;
     font-weight:900;
     letter-spacing:.12em;
@@ -71203,6 +71421,7 @@ body.dark
 }
 
 .page-alpha .alpha-composition-card h3{
+
     margin-top:7px;
     color:var(--alpha-deep);
     font-size:1.18rem;
@@ -71210,63 +71429,15 @@ body.dark
 }
 
 .page-alpha .alpha-composition-card p{
+
     margin-top:9px;
     color:#778692;
     font-size:.80rem;
     line-height:1.69;
 }
 
-/* ==========================================================
-   MORE / DETAILS
-   ========================================================== */
-
-.page-alpha .alpha-more-wrap{
-    margin-top:21px;
-}
-
-.page-alpha .alpha-more-toggle{
-    display:inline-flex;
-    width:max-content!important;
-    min-height:40px;
-    align-items:center;
-    justify-content:center;
-    gap:9px;
-    padding:0 14px!important;
-    border:1px solid rgba(57,91,119,.15)!important;
-    border-radius:999px!important;
-    background:rgba(255,255,255,.68)!important;
-    color:var(--alpha-blue)!important;
-    box-shadow:none!important;
-    font-size:.70rem!important;
-    font-weight:900!important;
-}
-
-.page-alpha .alpha-more-toggle i{
-    font-style:normal;
-    font-size:1rem;
-    line-height:1;
-    transition:transform .25s ease;
-}
-
-.page-alpha .alpha-more-toggle.active i{
-    transform:rotate(45deg);
-}
-
-.page-alpha .alpha-more-panel{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    visibility:hidden;
-    transition:max-height .55s var(--alpha-ease),opacity .30s ease,visibility 0s linear .55s;
-}
-
-.page-alpha .alpha-more-panel.active{
-    opacity:1;
-    visibility:visible;
-    transition:max-height .58s var(--alpha-ease),opacity .35s ease,visibility 0s linear 0s;
-}
-
 .page-alpha .alpha-detail-grid{
+
     display:grid;
     grid-template-columns:repeat(3,minmax(0,1fr));
     gap:14px;
@@ -71274,32 +71445,337 @@ body.dark
 }
 
 .page-alpha .alpha-detail-card{
+
     padding:23px;
+
     border:1px solid var(--alpha-line);
     border-radius:21px;
     background:#F7FAFC;
 }
 
 .page-alpha .alpha-detail-card h3{
+
     margin-top:11px;
     color:var(--alpha-deep);
     font-size:1.12rem;
 }
 
 .page-alpha .alpha-detail-card p{
+
     margin-top:7px;
     color:#768591;
     font-size:.82rem;
     line-height:1.68;
 }
 
-.page-alpha .alpha-detail-card:nth-child(5){grid-column:1/-1;}
+/* ==========================================================
+   BENEFITS
+   ========================================================== */
+
+.page-alpha .alpha-benefits{
+    background:#F6F9FB;
+}
+
+.page-alpha .alpha-benefits-grid{
+
+    display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    gap:64px;
+    align-items:center;
+}
+
+.page-alpha .alpha-benefits-frame{
+
+    position:relative;
+    min-height:560px;
+
+    display:grid;
+    place-items:center;
+
+    overflow:hidden;
+    border-radius:34px;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(198,161,91,.10),
+            rgba(201,217,233,.24) 36%,
+            transparent 70%
+        ),
+        linear-gradient(145deg,#FFFFFF,#E9F1F5);
+
+    box-shadow:var(--alpha-shadow);
+}
+
+.page-alpha .alpha-benefits-aura{
+
+    position:absolute;
+    width:76%;
+    aspect-ratio:1;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.96),
+            transparent 68%
+        );
+}
+
+.page-alpha .alpha-benefits-ring{
+
+    position:absolute;
+    width:64%;
+    aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(120,148,176,.17);
+}
+
+.page-alpha .alpha-benefits-frame img{
+
+    position:relative;
+    z-index:3;
+
+    width:auto;
+    max-width:430px;
+    max-height:500px;
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        );
+}
+
+.page-alpha .alpha-benefit-checks{
+
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:28px;
+}
+
+.page-alpha .alpha-benefit-check{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.page-alpha .alpha-benefit-check > span{
+
+    width:27px;
+    height:27px;
+    flex:0 0 27px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+    background:rgba(198,161,91,.12);
+    color:var(--alpha-green-dark);
+
+    font-size:.74rem;
+    font-weight:900;
+}
+
+.page-alpha .alpha-benefit-check p{
+
+    color:#516777;
+    font-size:.86rem;
+    line-height:1.5;
+}
+
+/* ==========================================================
+   PRODUCTS
+   ========================================================== */
+
+.page-alpha .alpha-product-section{
+    background:#FFFFFF;
+}
+
+.page-alpha .alpha-product-detail-grid{
+
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:22px;
+    margin-top:46px;
+}
+
+.page-alpha .alpha-product-card{
+
+    overflow:hidden;
+
+    border:1px solid var(--alpha-line);
+    border-radius:31px;
+    background:#FFFFFF;
+    box-shadow:var(--alpha-shadow);
+}
+
+.page-alpha .alpha-product-card.is-reverse{
+    background:linear-gradient(145deg,#FFFFFF,#EEF7F1);
+}
+
+.page-alpha .alpha-product-card-visual{
+
+    position:relative;
+    min-height:460px;
+
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(201,217,233,.55),
+            transparent 48%
+        ),
+        linear-gradient(145deg,#F7FBFD,#E7F0F5);
+}
+
+.page-alpha .alpha-product-card.is-reverse .alpha-product-card-visual{
+
+    background:
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(198,161,91,.10),
+            transparent 48%
+        ),
+        linear-gradient(145deg,#F7FCF9,#E7F1EA);
+}
+
+.page-alpha .alpha-detail-aura{
+
+    position:absolute;
+    width:76%;
+    aspect-ratio:1;
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.76),
+            transparent 66%
+        );
+}
+
+.page-alpha .alpha-detail-ring{
+
+    position:absolute;
+    width:68%;
+    aspect-ratio:1;
+    border-radius:50%;
+
+    border:1px solid rgba(120,148,176,.14);
+
+    box-shadow:
+        0 0 0 28px rgba(201,217,233,.065);
+}
+
+.page-alpha .alpha-product-card-visual .alpha-product-grid{
+    min-height:420px;
+}
+
+.page-alpha .alpha-product-card-visual .alpha-product-grid img{
+
+    max-width:430px;
+    max-height:440px;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        ) !important;
+}
+
+.page-alpha .alpha-detail-caption{
+
+    position:absolute;
+    right:20px;
+    bottom:18px;
+    z-index:7;
+
+    color:rgba(57,91,119,.56);
+    font-size:.61rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.page-alpha .alpha-product-card-copy{
+    padding:36px 34px 38px;
+}
+
+.page-alpha .alpha-product-card-copy h3{
+
+    margin-top:12px;
+
+    color:var(--alpha-deep);
+    font-size:2rem;
+    line-height:1;
+    letter-spacing:-.04em;
+    font-weight:900;
+}
+
+.page-alpha .alpha-product-card-copy h3 span{
+    display:block;
+    margin-top:6px;
+    color:var(--alpha-steel);
+}
+
+.page-alpha .alpha-product-card-copy > p{
+
+    margin-top:18px;
+    color:#687987;
+    font-size:.91rem;
+    line-height:1.76;
+}
+
+.page-alpha .alpha-product-spec-list{
+
+    display:flex;
+    flex-direction:column;
+    gap:11px;
+    margin-top:25px;
+}
+
+.page-alpha .alpha-product-spec{
+
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:15px;
+
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(57,91,119,.09);
+}
+
+.page-alpha .alpha-product-spec span{
+    color:#8897A2;
+    font-size:.65rem;
+    font-weight:800;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+}
+
+.page-alpha .alpha-product-spec strong{
+    color:var(--alpha-deep);
+    font-size:.78rem;
+    text-align:right;
+}
 
 .page-alpha .alpha-detail-list{
+
     display:flex;
     flex-direction:column;
     gap:10px;
     margin-top:15px;
+    padding:16px;
+
+    border:1px solid rgba(57,91,119,.09);
+    border-radius:16px;
+    background:#F6FAFC;
 }
 
 .page-alpha .alpha-detail-item{
@@ -71308,15 +71784,18 @@ body.dark
     align-items:flex-start;
 }
 
-.page-alpha .alpha-detail-check{
+.page-alpha .alpha-check{
     flex:0 0 22px;
     width:22px;
     height:22px;
+
     display:grid;
     place-items:center;
+
     border-radius:50%;
-    background:rgba(61,96,124,.10);
-    color:var(--alpha-blue);
+    background:rgba(198,161,91,.11);
+    color:var(--alpha-green-dark);
+
     font-size:.62rem;
     font-weight:900;
 }
@@ -71327,520 +71806,733 @@ body.dark
     line-height:1.58;
 }
 
+.page-alpha .alpha-card-buy{
+    margin-top:22px;
+}
+
 /* ==========================================================
-   BENEFITS
+   SLEEP
    ========================================================== */
 
-.page-alpha .alpha-benefits{background:#F6F9FB;}
+.page-alpha .alpha-sleep-section{
 
-.page-alpha .alpha-benefits-grid{
+    background:
+        radial-gradient(
+            circle at 88% 18%,
+            rgba(198,161,91,.08),
+            transparent 25%
+        ),
+        linear-gradient(135deg,#12202A,#1E3547);
+}
+
+.page-alpha .alpha-sleep-section .alpha-section-heading h2,
+.page-alpha .alpha-sleep-section .alpha-section-heading p{
+    color:#FFFFFF;
+}
+
+.page-alpha .alpha-sleep-section .alpha-section-heading h2 span{
+    color:var(--alpha-ice);
+}
+
+.page-alpha .alpha-sleep-section .eyebrow{
+    color:var(--alpha-green-light) !important;
+}
+
+.page-alpha .alpha-sleep-section .alpha-section-heading p{
+    color:#C8D5DE;
+}
+
+.page-alpha .alpha-sleep-grid{
+
     display:grid;
-    grid-template-columns:minmax(420px,.88fr) minmax(0,1fr);
-    gap:72px;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:18px;
+    margin-top:44px;
+}
+
+.page-alpha .alpha-sleep-card{
+
+    min-height:320px;
+    padding:30px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:27px;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(15px);
+}
+
+.page-alpha .alpha-sleep-label{
+
+    display:inline-flex;
+    min-height:30px;
     align-items:center;
+    padding:0 10px;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:999px;
+
+    color:#DDE8EF;
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.13em;
 }
 
-.page-alpha .alpha-benefits-intro{
-    max-width:650px;
-    margin-top:22px;
-    color:#6B7D8B;
-    font-size:1rem;
-    line-height:1.82;
+.page-alpha .alpha-sleep-card h3{
+
+    margin-top:38px;
+    color:#FFFFFF;
+    font-size:1.95rem;
+    line-height:1;
+    letter-spacing:-.035em;
 }
 
-.page-alpha .alpha-benefit-checks{
+.page-alpha .alpha-check-list{
     display:flex;
     flex-direction:column;
-    gap:12px;
-    margin-top:28px;
+    gap:13px;
+    margin-top:26px;
 }
 
-.page-alpha .alpha-benefit-check{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.page-alpha .alpha-sleep-card .alpha-check-item{
+    color:#E5EDF2;
 }
 
-.page-alpha .alpha-benefit-check > span{
-    width:27px;
-    height:27px;
-    flex:0 0 27px;
-    display:grid;
-    place-items:center;
-    border-radius:50%;
-    background:rgba(61,135,74,.10);
-    color:#286736;
-    font-size:.74rem;
-    font-weight:900;
-}
-
-.page-alpha .alpha-benefit-check p{
-    color:#516777;
-    font-size:.86rem;
-    line-height:1.5;
-}
-
-.page-alpha .alpha-benefits-visual{
-    grid-column:1;
-    grid-row:1;
-}
-
-.page-alpha .alpha-benefits-copy{
-    grid-column:2;
-    grid-row:1;
-    min-width:0;
-}
-
-.page-alpha .alpha-benefits-frame{
-    position:relative;
-    min-height:560px;
-    display:grid;
-    place-items:center;
-    overflow:hidden;
-    border-radius:34px;
-    background:
-        radial-gradient(circle at 50% 44%,rgba(57,91,119,.10),rgba(201,217,233,.24) 36%,transparent 70%),
-        linear-gradient(145deg,#FFFFFF,#E9F1F5);
-    box-shadow:var(--alpha-shadow);
-}
-
-.page-alpha .alpha-benefits-aura{
-    position:absolute;
-    width:76%;
-    aspect-ratio:1;
-    border-radius:50%;
-    background:radial-gradient(circle,rgba(255,255,255,.96),transparent 68%);
-}
-
-.page-alpha .alpha-benefits-ring{
-    position:absolute;
-    width:64%;
-    aspect-ratio:1;
-    border-radius:50%;
-    border:1px solid rgba(120,148,176,.17);
-}
-
-.page-alpha .alpha-benefits-grid-decoration{
-    position:absolute;
-    width:82%;
-    aspect-ratio:1;
-    background:
-        linear-gradient(rgba(57,91,119,.027) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(57,91,119,.027) 1px,transparent 1px);
-    background-size:25px 25px;
-    transform:rotate(45deg);
-    mask-image:radial-gradient(circle,#000,transparent 68%);
-}
-
-.page-alpha .alpha-benefits-frame img{
-    position:relative;
-    z-index:3;
-    max-width:430px;
-    max-height:500px;
-    object-fit:contain;
-    filter:drop-shadow(0 26px 38px rgba(0,0,0,.17));
+.page-alpha .alpha-sleep-card .alpha-check-item strong{
+    color:inherit;
+    font-size:.84rem;
 }
 
 /* ==========================================================
-   PRODUCT DETAIL
+   CIRCULATION
    ========================================================== */
 
-.page-alpha .alpha-product-section{background:#FFFFFF;}
+.page-alpha .alpha-circulation{
+    background:#FFFFFF;
+}
 
-.page-alpha .alpha-product-detail-grid{
+.page-alpha .alpha-circulation-grid{
+
     display:grid;
     grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
     gap:64px;
     align-items:center;
 }
 
-.page-alpha .alpha-product-detail-frame{
+.page-alpha .alpha-circulation-visual{
+
     position:relative;
     min-height:500px;
+
     display:grid;
     place-items:center;
+
     overflow:hidden;
     border-radius:34px;
+
     background:
-        radial-gradient(circle at 50% 44%,rgba(201,217,233,.50),transparent 46%),
-        linear-gradient(145deg,#F7FBFD,#E7F0F5);
+        radial-gradient(
+            circle at 50% 44%,
+            #FFFFFF,
+            #E8F1F6 57%,
+            #DCE9F1
+        );
+
     box-shadow:var(--alpha-shadow);
 }
 
-.page-alpha .alpha-detail-aura{
-    position:absolute;
-    width:74%;
+.page-alpha .alpha-circulation-orbit{
+
+    width:62%;
     aspect-ratio:1;
     border-radius:50%;
-    background:radial-gradient(circle,rgba(255,255,255,.95),transparent 68%);
+    border:1px solid rgba(120,148,176,.22);
+
+    box-shadow:
+        0 0 0 27px rgba(201,217,233,.09),
+        0 0 0 56px rgba(201,217,233,.05);
 }
 
-.page-alpha .alpha-detail-ring{
+.page-alpha .alpha-circulation-icon{
     position:absolute;
-    width:65%;
-    aspect-ratio:1;
-    border-radius:50%;
-    border:1px solid rgba(120,148,176,.18);
-}
-
-.page-alpha .alpha-detail-ring-secondary{
-    width:84%;
-    border-style:dashed;
-    border-color:rgba(198,161,91,.17);
-    animation:alphaOrbit 30s linear infinite reverse;
-}
-
-.page-alpha .alpha-detail-grid-decoration{
-    position:absolute;
-    width:85%;
-    aspect-ratio:1;
-    background:
-        linear-gradient(rgba(57,91,119,.027) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(57,91,119,.027) 1px,transparent 1px);
-    background-size:25px 25px;
-    transform:rotate(45deg);
-    mask-image:radial-gradient(circle,#000,transparent 68%);
-}
-
-.page-alpha .alpha-product-detail-image{
-    position:relative;
-    z-index:4;
-    width:auto;
-    max-width:400px;
-    max-height:460px;
-    object-fit:contain;
-    filter:drop-shadow(0 25px 36px rgba(0,0,0,.16));
-}
-
-.page-alpha .alpha-detail-caption{
-    position:absolute;
-    right:20px;
-    bottom:18px;
-    z-index:7;
-    display:flex;
-    flex-direction:column;
-    gap:2px;
-    padding:9px 12px;
-    border:1px solid rgba(24,42,58,.10);
-    border-radius:999px;
-    background:rgba(255,255,255,.52);
-    backdrop-filter:blur(12px);
-}
-
-.page-alpha .alpha-detail-caption strong{
-    color:var(--alpha-deep);
-    font-size:.61rem;
-    letter-spacing:.14em;
-}
-
-.page-alpha .alpha-detail-caption span{
+    font-size:7rem;
     color:var(--alpha-steel);
-    font-size:.52rem;
-    font-weight:850;
-    letter-spacing:.12em;
+    text-shadow:0 12px 32px rgba(120,148,176,.18);
 }
 
-.page-alpha .alpha-product-detail-copy h3{
-    margin-top:16px;
-    color:var(--alpha-deep);
-    font-size:2rem;
-    line-height:1;
-    letter-spacing:-.04em;
-    font-weight:900;
-}
-
-.page-alpha .alpha-product-spec-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:12px;
-    margin-top:29px;
-}
-
-.page-alpha .alpha-product-spec{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    padding:15px;
-    border:1px solid var(--alpha-line);
-    border-radius:16px;
-    background:#F7FAFC;
-}
-
-.page-alpha .alpha-product-spec > span{
-    width:30px;
-    height:30px;
-    flex:0 0 30px;
-    display:grid;
-    place-items:center;
-    border-radius:9px;
-    background:var(--alpha-blue);
-    color:#FFFFFF;
-    font-size:.63rem;
-    font-weight:900;
-}
-
-.page-alpha .alpha-product-spec strong{
-    display:block;
-    color:var(--alpha-deep);
-    font-size:.80rem;
-}
-
-.page-alpha .alpha-product-spec small{
-    display:block;
-    margin-top:3px;
-    color:#788894;
-    font-size:.71rem;
-    line-height:1.45;
-}
-
-/* ==========================================================
-   INGREDIENT FEATURES
-   ========================================================== */
-
-.page-alpha .alpha-ingredients{
-    background:linear-gradient(180deg,#F6F9FB,#FFFFFF);
-}
-
-.page-alpha .alpha-ingredients-grid{
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
-}
-
-.page-alpha .alpha-ingredient-feature{
-    min-height:260px;
-    padding:28px;
-    position:relative;
-    overflow:hidden;
-    border:1px solid var(--alpha-line);
-    border-radius:27px;
-    background:#FFFFFF;
-    box-shadow:0 15px 40px rgba(24,42,58,.06);
-}
-
-.page-alpha .alpha-ingredient-feature.large{
-    min-height:330px;
-    grid-row:span 2;
-    background:
-        radial-gradient(circle at 85% 12%,rgba(61,96,124,.10),transparent 29%),
-        linear-gradient(145deg,#FFFFFF,#EEF5FA);
-}
-
-.page-alpha .alpha-ingredient-feature.wide{
-    grid-column:1/-1;
-    min-height:230px;
-    background:linear-gradient(145deg,#FFFFFF,#F8F3E8);
-}
-
-.page-alpha .alpha-feature-number{
+.page-alpha .alpha-circulation-visual > span,
+.page-alpha .alpha-circulation-visual > small{
     position:absolute;
-    right:25px;
-    top:24px;
-    color:rgba(57,91,119,.18);
-    font-size:.67rem;
-    font-weight:900;
-    letter-spacing:.14em;
+    left:28px;
 }
 
-.page-alpha .alpha-feature-symbol{
-    width:66px;
-    height:66px;
-    display:grid;
-    place-items:center;
-    margin-bottom:26px;
-    border-radius:20px;
-    background:#EAF2F7;
-    color:var(--alpha-blue);
-    font-size:1.20rem;
-    font-weight:900;
-}
-
-.page-alpha .alpha-ingredient-feature .label{font-size:.61rem;}
-
-.page-alpha .alpha-ingredient-feature h3{
-    margin-top:8px;
+.page-alpha .alpha-circulation-visual > span{
+    bottom:40px;
     color:var(--alpha-deep);
-    font-size:1.45rem;
-    line-height:1.1;
-}
-
-.page-alpha .alpha-ingredient-feature p{
-    max-width:560px;
-    margin-top:10px;
-    color:#758592;
-    font-size:.86rem;
-    line-height:1.76;
-}
-
-.page-alpha .alpha-ingredient-note{
-    margin-top:18px;
-    padding:19px 21px;
-    display:flex;
-    align-items:flex-start;
-    gap:15px;
-    border:1px solid var(--alpha-line);
-    border-radius:18px;
-    background:rgba(255,255,255,.82);
-}
-
-.page-alpha .alpha-ingredient-note > span{
-    flex:none;
-    padding:8px 10px;
-    border-radius:9px;
-    background:rgba(198,161,91,.10);
-    color:var(--alpha-gold-dark);
-    font-size:.60rem;
-    font-weight:900;
-    letter-spacing:.12em;
-}
-
-.page-alpha .alpha-ingredient-note p{
-    color:#778692;
-    font-size:.78rem;
-    line-height:1.63;
-}
-
-/* ==========================================================
-   USAGE
-   ========================================================== */
-
-.page-alpha .alpha-usage{background:#FFFFFF;}
-
-.page-alpha .alpha-usage-grid{
-    display:grid;
-    grid-template-columns:repeat(4,minmax(0,1fr));
-    gap:14px;
-}
-
-.page-alpha .alpha-usage-step{
-    min-height:240px;
-    padding:24px;
-    border:1px solid var(--alpha-line);
-    border-radius:23px;
-    background:linear-gradient(145deg,#FFFFFF,#F4F8FB);
-    box-shadow:0 12px 34px rgba(24,42,58,.055);
-}
-
-.page-alpha .alpha-usage-number{
-    width:42px;
-    height:42px;
-    display:grid;
-    place-items:center;
-    border-radius:13px;
-    background:var(--alpha-blue);
-    color:#FFFFFF;
     font-size:.68rem;
     font-weight:900;
+    letter-spacing:.22em;
 }
 
-.page-alpha .alpha-usage-step h3{
-    margin-top:24px;
-    color:var(--alpha-deep);
-    font-size:1.04rem;
+.page-alpha .alpha-circulation-visual > small{
+    bottom:20px;
+    color:#8998A4;
+    font-size:.58rem;
+    font-weight:800;
+    letter-spacing:.15em;
 }
 
-.page-alpha .alpha-usage-step p{
-    margin-top:8px;
-    color:#74838F;
-    font-size:.80rem;
-    line-height:1.68;
-}
-
-.page-alpha .alpha-usage-note{
-    margin-top:18px;
-    padding:20px 22px;
-    border-left:3px solid var(--alpha-gold);
-    border-radius:0 16px 16px 0;
-    background:#F8FAFC;
-}
-
-.page-alpha .alpha-usage-note .label{font-size:.61rem;}
-.page-alpha .alpha-usage-note p{margin-top:9px;color:#74838F;font-size:.78rem;line-height:1.68;}
-
-/* ==========================================================
-   PERFORMANCE
-   ========================================================== */
-
-.page-alpha .alpha-performance{
-    background:
-        radial-gradient(circle at 14% 20%,rgba(120,148,176,.12),transparent 28%),
-        linear-gradient(180deg,#EFF5F9,#EAF2F7);
-}
-
-.page-alpha .alpha-performance-grid{
-    display:grid;
-    grid-template-columns:repeat(3,minmax(0,1fr));
+.page-alpha .alpha-info-stack{
+    display:flex;
+    flex-direction:column;
     gap:16px;
+    margin-top:28px;
 }
 
-.page-alpha .alpha-performance-card{
-    min-height:245px;
-    padding:28px;
-    border:1px solid rgba(57,91,119,.10);
-    border-radius:27px;
-    background:rgba(255,255,255,.78);
-    box-shadow:0 18px 42px rgba(24,42,58,.08);
-    backdrop-filter:blur(13px);
+.page-alpha .alpha-info-line{
+
+    display:grid;
+    grid-template-columns:39px minmax(0,1fr);
+    gap:12px;
+    align-items:start;
 }
 
-.page-alpha .alpha-performance-letter{
-    width:67px;
-    height:67px;
+.page-alpha .alpha-info-line > span{
+
+    width:34px;
+    height:34px;
+
     display:grid;
     place-items:center;
-    border-radius:20px;
-    background:linear-gradient(145deg,var(--alpha-deep),var(--alpha-blue));
-    color:#FFFFFF;
-    font-size:1.40rem;
+
+    border-radius:50%;
+    background:#EFF4F8;
+    color:var(--alpha-blue);
+
+    font-size:.64rem;
     font-weight:900;
 }
 
-.page-alpha .alpha-performance-card h3{
-    margin-top:25px;
+.page-alpha .alpha-info-line strong{
     color:var(--alpha-deep);
-    font-size:1.18rem;
+    font-size:.87rem;
 }
 
-.page-alpha .alpha-performance-card p{
-    margin-top:9px;
-    color:#728391;
-    font-size:.83rem;
+.page-alpha .alpha-info-line p{
+
+    margin-top:3px;
+    color:#788793;
+    font-size:.78rem;
+    line-height:1.64;
+}
+
+/* ==========================================================
+   IMPACT
+   ========================================================== */
+
+.page-alpha .alpha-impact-section{
+    background:#F6F9FB;
+}
+
+.page-alpha .alpha-impact-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:13px;
+    margin-top:44px;
+}
+
+.page-alpha .alpha-impact-card{
+
+    min-height:150px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:20px;
+
+    border:1px solid rgba(57,91,119,.11);
+    border-radius:20px;
+
+    background:#FFFFFF;
+    box-shadow:0 13px 36px rgba(24,42,58,.05);
+}
+
+.page-alpha .alpha-impact-card span{
+    color:var(--alpha-steel);
+    font-size:.64rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.page-alpha .alpha-impact-card strong{
+    color:var(--alpha-deep);
+    font-size:.91rem;
+    line-height:1.42;
+}
+
+.page-alpha .alpha-impact-grid-more{
+    margin-top:15px;
+}
+
+/* ==========================================================
+   TECHNOLOGY
+   ========================================================== */
+
+.page-alpha .alpha-technology{
+
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(
+            circle at 87% 12%,
+            rgba(198,161,91,.09),
+            transparent 25%
+        ),
+        linear-gradient(140deg,#172732,#203A4D);
+}
+
+.page-alpha .alpha-technology::before{
+
+    content:"S3";
+
+    position:absolute;
+    right:3vw;
+    top:-55px;
+
+    color:rgba(255,255,255,.025);
+    font-size:18rem;
+    line-height:1;
+    font-weight:900;
+}
+
+.page-alpha .alpha-heading-dark h2{
+    color:#FFFFFF !important;
+}
+
+.page-alpha .alpha-heading-dark h2 span{
+    color:var(--alpha-ice) !important;
+}
+
+.page-alpha .alpha-heading-dark p{
+    color:#C5D2DB;
+}
+
+.page-alpha .alpha-heading-dark .eyebrow{
+    color:var(--alpha-green-light) !important;
+}
+
+.page-alpha .alpha-technology-feature{
+
+    display:grid;
+    grid-template-columns:minmax(200px,.33fr) minmax(0,.67fr);
+    gap:28px;
+    align-items:center;
+
+    margin-top:43px;
+    padding:29px 30px;
+
+    border:1px solid rgba(255,255,255,.09);
+    border-radius:27px;
+
+    background:rgba(255,255,255,.045);
+    backdrop-filter:blur(14px);
+}
+
+.page-alpha .alpha-technology-number{
+
+    color:#FFFFFF;
+    font-size:3.7rem;
+    line-height:.9;
+    letter-spacing:-.06em;
+    font-weight:900;
+}
+
+.page-alpha .alpha-technology-feature > div:last-child > span{
+    color:var(--alpha-green-light);
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+.page-alpha .alpha-technology-feature p{
+    margin-top:7px;
+    color:#C4D1DA;
+    font-size:.82rem;
     line-height:1.70;
 }
 
-.page-alpha .alpha-performance-feature{
-    margin-top:18px;
-    padding:28px;
-    border-radius:27px;
-    background:
-        radial-gradient(circle at 89% 16%,rgba(198,161,91,.18),transparent 24%),
-        linear-gradient(135deg,#123148,#1F4969);
-    box-shadow:0 25px 55px rgba(13,34,50,.18);
+.page-alpha .alpha-technology-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:14px;
+    margin-top:15px;
 }
 
-.page-alpha .alpha-performance-feature .label{color:#78AC82;}
+.page-alpha .alpha-technology-card{
 
-.page-alpha .alpha-performance-feature h3{
-    margin-top:13px;
+    min-height:205px;
+    padding:23px;
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:22px;
+
+    background:rgba(255,255,255,.045);
+}
+
+.page-alpha .alpha-technology-card > span{
+    color:#8FA8B9;
+    font-size:.64rem;
+    font-weight:900;
+    letter-spacing:.15em;
+}
+
+.page-alpha .alpha-technology-card h3{
+    margin-top:28px;
     color:#FFFFFF;
-    font-size:1.50rem;
+    font-size:1.12rem;
+    line-height:1.1;
 }
 
-.page-alpha .alpha-performance-feature p{
-    max-width:900px;
-    margin-top:9px;
-    color:#C8D6DF;
-    font-size:.88rem;
-    line-height:1.76;
+.page-alpha .alpha-technology-card p{
+    margin-top:8px;
+    color:#BFCED8;
+    font-size:.76rem;
+    line-height:1.67;
+}
+
+/* ==========================================================
+   PILLOW
+   ========================================================== */
+
+.page-alpha .alpha-pillow-section{
+    background:#FFFFFF;
+}
+
+.page-alpha .alpha-pillow-grid{
+
+    display:grid;
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+    gap:60px;
+    align-items:center;
+}
+
+.page-alpha .alpha-pillow-frame{
+
+    position:relative;
+    min-height:530px;
+
+    display:grid;
+    place-items:center;
+
+    overflow:hidden;
+    border-radius:34px;
+
+    background:
+        radial-gradient(
+            circle at 50% 44%,
+            rgba(198,161,91,.10),
+            transparent 44%
+        ),
+        linear-gradient(145deg,#F8FCF9,#E8F2EB);
+
+    box-shadow:var(--alpha-shadow);
+}
+
+.page-alpha .alpha-pillow-aura{
+
+    position:absolute;
+    width:70%;
+    aspect-ratio:1;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.90),transparent 68%);
+}
+
+.page-alpha .alpha-pillow-grid{
+
+    position:relative;
+    z-index:4;
+
+    width:100%;
+    min-height:470px;
+
+    display:grid;
+    place-items:center;
+}
+
+.page-alpha .alpha-pillow-image-grid img{
+
+    position:relative;
+    z-index:5;
+    display:block;
+
+    width:auto;
+    height:auto;
+
+    max-width:430px;
+    max-height:500px;
+
+    object-fit:contain;
+    object-position:center;
+
+    opacity:1 !important;
+
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        ) !important;
+
+    transform:translate3d(0,0,0);
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-alpha .alpha-pillow-frame > span{
+
+    position:absolute;
+    left:24px;
+    bottom:22px;
+    z-index:7;
+
+    color:rgba(57,91,119,.53);
+    font-size:.61rem;
+    font-weight:900;
+    letter-spacing:.16em;
+}
+
+/* ==========================================================
+   CERTIFICATIONS
+   ========================================================== */
+
+.page-alpha .alpha-certifications{
+    background:#F6F9FB;
+}
+
+.page-alpha .alpha-certification-grid{
+
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,1fr));
+    gap:15px;
+    margin-top:44px;
+}
+
+.page-alpha .alpha-certificate{
+
+    overflow:hidden;
+
+    border:1px solid var(--alpha-line);
+    border-radius:24px;
+
+    background:#FFFFFF;
+    box-shadow:0 15px 43px rgba(24,42,58,.06);
+}
+
+.page-alpha .alpha-certificate-image{
+
+    position:relative;
+    min-height:235px;
+
+    display:grid;
+    place-items:center;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(145deg,#F9FCFD,#E8F0F5);
+}
+
+.page-alpha .alpha-certificate-image::before{
+
+    content:"";
+    position:absolute;
+    inset:14px;
+
+    border:1px dashed rgba(57,91,119,.20);
+    border-radius:17px;
+}
+
+.page-alpha .alpha-certificate-image img{
+
+    position:relative;
+    z-index:2;
+
+    width:100%;
+    height:100%;
+    min-height:235px;
+
+    object-fit:cover;
+}
+
+.page-alpha .alpha-certificate-placeholder{
+
+    position:absolute;
+    inset:0;
+    z-index:1;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+
+    padding:18px;
+    text-align:center;
+}
+
+.page-alpha .alpha-certificate-placeholder span{
+    color:rgba(57,91,119,.12);
+    font-size:4.3rem;
+    line-height:.8;
+    font-weight:900;
+}
+
+.page-alpha .alpha-certificate-placeholder strong{
+    color:var(--alpha-deep);
+    font-size:.72rem;
+    letter-spacing:.06em;
+}
+
+.page-alpha .alpha-certificate-placeholder small{
+
+    max-width:88%;
+    color:#8A99A5;
+    font-size:.57rem;
+    line-height:1.45;
+    overflow-wrap:anywhere;
+}
+
+.page-alpha .alpha-certificate-content{
+
+    display:grid;
+    grid-template-columns:auto minmax(0,1fr);
+    gap:9px;
+    align-items:center;
+
+    padding:15px 16px 17px;
+}
+
+.page-alpha .alpha-certificate-content > span{
+    color:var(--alpha-green-dark);
+    font-size:.62rem;
+    font-weight:900;
+    letter-spacing:.13em;
+}
+
+.page-alpha .alpha-certificate-content strong{
+    display:block;
+    color:var(--alpha-deep);
+    font-size:.76rem;
+    line-height:1.3;
+}
+
+.page-alpha .alpha-certificate-content small{
+    display:block;
+    margin-top:2px;
+    color:#8D9AA5;
+    font-size:.58rem;
+}
+
+.page-alpha .alpha-certification-note{
+
+    margin-top:18px;
+    padding:17px 18px;
+
+    border:1px solid var(--alpha-line);
+    border-radius:18px;
+
+    background:rgba(255,255,255,.68);
+}
+
+.page-alpha .alpha-certification-note p{
+    margin-top:7px;
+    color:#798792;
+    font-size:.75rem;
+    line-height:1.65;
+}
+
+/* ==========================================================
+   ROUTINE
+   ========================================================== */
+
+.page-alpha .alpha-routine{
+    background:#FFFFFF;
+}
+
+.page-alpha .alpha-routine-list{
+
+    position:relative;
+    margin-top:43px;
+}
+
+.page-alpha .alpha-routine-list::before{
+
+    content:"";
+    position:absolute;
+    left:21px;
+    top:0;
+    bottom:0;
+
+    width:1px;
+    background:linear-gradient(var(--alpha-line),transparent);
+}
+
+.page-alpha .alpha-routine-step{
+
+    position:relative;
+    display:grid;
+    grid-template-columns:44px minmax(0,1fr);
+    gap:18px;
+
+    padding-bottom:25px;
+}
+
+.page-alpha .alpha-routine-number{
+
+    position:relative;
+    z-index:2;
+
+    width:44px;
+    height:44px;
+
+    display:grid;
+    place-items:center;
+
+    border:1px solid rgba(57,91,119,.14);
+    border-radius:50%;
+    background:#FFFFFF;
+
+    color:var(--alpha-blue);
+    font-size:.68rem;
+    font-weight:900;
+
+    box-shadow:0 8px 23px rgba(24,42,58,.06);
+}
+
+.page-alpha .alpha-routine-step h3{
+    color:var(--alpha-deep);
+    font-size:1.06rem;
+}
+
+.page-alpha .alpha-routine-step p{
+    margin-top:5px;
+    color:#74838F;
+    font-size:.81rem;
+    line-height:1.68;
 }
 
 /* ==========================================================
    FAQ
    ========================================================== */
 
-.page-alpha .alpha-faq{background:#F6F9FB;}
+.page-alpha .alpha-faq-section{
+    background:#F6F9FB;
+}
 
 .page-alpha .alpha-faq-list{
+
     display:flex;
     flex-direction:column;
     gap:9px;
@@ -71848,48 +72540,68 @@ body.dark
 }
 
 .page-alpha .alpha-faq-item{
+
     overflow:hidden;
+
     border:1px solid rgba(57,91,119,.12);
     border-radius:19px;
     background:#FFFFFF;
-    transition:box-shadow .28s ease,border-color .28s ease;
+
+    transition:
+        box-shadow .28s ease,
+        border-color .28s ease;
 }
 
 .page-alpha .alpha-faq-item.active{
-    border-color:rgba(61,96,124,.24);
-    box-shadow:0 16px 43px rgba(24,42,58,.075);
+
+    border-color:rgba(198,161,91,.24);
+
+    box-shadow:
+        0 16px 43px
+        rgba(24,42,58,.075);
 }
 
 .page-alpha .alpha-faq-question{
+
     width:100%;
     min-height:72px;
+
     display:grid;
     grid-template-columns:38px minmax(0,1fr) 32px;
     gap:12px;
     align-items:center;
+
     padding:12px 15px;
+
     border:0;
     background:transparent;
+
     color:var(--alpha-deep);
     text-align:left;
-    cursor:pointer;
 }
 
-.page-alpha .alpha-faq-question:hover{background:#F8FBFD;}
+.page-alpha .alpha-faq-question:hover{
+    background:#F8FBFD;
+}
 
 .page-alpha .alpha-faq-number{
+
     width:31px;
     height:31px;
+
     display:grid;
     place-items:center;
+
     border-radius:10px;
     background:#EEF4F8;
     color:var(--alpha-blue);
+
     font-size:.60rem;
     font-weight:900;
 }
 
 .page-alpha .alpha-faq-text{
+
     color:var(--alpha-deep);
     font-size:.88rem;
     line-height:1.45;
@@ -71897,15 +72609,18 @@ body.dark
 }
 
 .page-alpha .alpha-faq-plus{
+
     width:29px;
     height:29px;
+
     display:grid;
     place-items:center;
+
     border:1px solid rgba(57,91,119,.12);
     border-radius:50%;
+
     color:var(--alpha-blue);
     font-size:.96rem;
-    transition:transform .25s ease,background .25s ease,color .25s ease;
 }
 
 .page-alpha .alpha-faq-item.active .alpha-faq-plus{
@@ -71914,29 +72629,22 @@ body.dark
 }
 
 .page-alpha .alpha-faq-answer{
+
     max-height:0;
     overflow:hidden;
-    opacity:0;
-    visibility:hidden;
-    transition:max-height .44s cubic-bezier(.22,.61,.36,1),opacity .25s ease,visibility 0s linear .44s;
-}
 
-.page-alpha .alpha-faq-item.active .alpha-faq-answer{
-    max-height:900px;
-    opacity:1;
-    visibility:visible;
-    transition:max-height .52s cubic-bezier(.22,.61,.36,1),opacity .28s ease,visibility 0s linear 0s;
+    transition:
+        max-height .44s
+        cubic-bezier(.22,.61,.36,1);
 }
 
 .page-alpha .alpha-faq-answer p{
-    padding:0 17px 20px 66px;
-    color:#526A79;
-    font-size:.84rem;
-    line-height:1.82;
-}
 
-.page-alpha .alpha-faq-item.active .alpha-faq-answer p{
-    color:#405968;
+    padding:0 17px 19px 66px;
+
+    color:#73828E;
+    font-size:.82rem;
+    line-height:1.72;
 }
 
 /* ==========================================================
@@ -71949,28 +72657,43 @@ body.dark
 }
 
 .page-alpha .alpha-information-box{
+
     display:grid;
     grid-template-columns:40px minmax(0,1fr);
     gap:14px;
+
     padding:22px 23px;
+
     border:1px solid rgba(57,91,119,.12);
     border-radius:22px;
-    background:linear-gradient(135deg,#FFFFFF,#EEF4F8);
+
+    background:
+        linear-gradient(
+            135deg,
+            #FFFFFF,
+            #EEF4F8
+        );
 }
 
 .page-alpha .alpha-information-icon{
+
     width:37px;
     height:37px;
+
     display:grid;
     place-items:center;
+
     border-radius:50%;
     background:#EAF1F5;
+
     color:var(--alpha-deep);
     font-weight:900;
 }
 
 .page-alpha .alpha-information-box h2{
+
     margin-top:9px;
+
     color:var(--alpha-deep);
     font-size:1.38rem;
     line-height:1.1;
@@ -71978,6 +72701,7 @@ body.dark
 }
 
 .page-alpha .alpha-information-box p{
+
     margin-top:8px;
     color:#778691;
     font-size:.76rem;
@@ -71988,32 +72712,43 @@ body.dark
    CTA
    ========================================================== */
 
-.page-alpha .alpha-cta{
+.page-alpha .alpha-cta-section{
+
     position:relative;
     overflow:hidden;
+
     background:
-        radial-gradient(circle at 50% -15%,rgba(198,161,91,.09),transparent 28%),
+        radial-gradient(
+            circle at 50% -15%,
+            rgba(198,161,91,.11),
+            transparent 28%
+        ),
         linear-gradient(140deg,#0E1921,#1B3447);
 }
 
 .page-alpha .alpha-cta-box{
+
     position:relative;
     z-index:2;
+
     max-width:920px;
     margin-inline:auto;
-    padding:70px 30px 74px;
+
+    padding:78px 30px 82px;
     text-align:center;
 }
 
 .page-alpha .alpha-label-light{
-    color:var(--alpha-gold-light);
+    color:var(--alpha-green-light);
     font-size:.63rem;
     font-weight:900;
     letter-spacing:.19em;
 }
 
 .page-alpha .alpha-cta-box h2{
+
     margin-top:17px;
+
     color:#FFFFFF;
     font-size:clamp(2.6rem,5vw,5rem);
     line-height:.96;
@@ -72027,15 +72762,18 @@ body.dark
     color:var(--alpha-ice);
 }
 
-.page-alpha .alpha-cta-box p{
+.page-alpha .alpha-cta-box > p{
+
     max-width:650px;
     margin:21px auto 0;
+
     color:#C3D1DA;
     font-size:.96rem;
     line-height:1.78;
 }
 
 .page-alpha .alpha-cta-actions{
+
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
@@ -72043,10 +72781,10 @@ body.dark
     margin-top:29px;
 }
 
-.page-alpha .alpha-cta-actions .alpha-btn-dark{
-    border-color:rgba(255,255,255,.16)!important;
-    background:rgba(255,255,255,.045)!important;
-    color:#FFFFFF!important;
+.page-alpha .alpha-cta-actions .btn-glass{
+    border-color:rgba(255,255,255,.16) !important;
+    background:rgba(255,255,255,.045) !important;
+    color:#FFFFFF !important;
 }
 
 /* ==========================================================
@@ -72057,16 +72795,14 @@ body.dark .page-alpha,
 body[data-theme="dark"] .page-alpha,
 [data-theme="dark"] .page-alpha,
 .dark .page-alpha{
+
     --alpha-white:#0F1921;
-    --alpha-ice:#C6D7E5;
-    --alpha-mist:#111D26;
     --alpha-soft:#111D26;
-    --alpha-blue:#6F9FC6;
-    --alpha-steel:#91AABD;
     --alpha-deep:#F1F6F9;
     --alpha-text:#DCE7EE;
     --alpha-muted:#AFBEC9;
     --alpha-line:rgba(218,231,240,.10);
+
     background:#0F1921;
     color:#DCE7EE;
 }
@@ -72075,98 +72811,33 @@ body.dark .page-alpha .alpha-hero,
 body[data-theme="dark"] .page-alpha .alpha-hero,
 [data-theme="dark"] .page-alpha .alpha-hero,
 .dark .page-alpha .alpha-hero{
+
     background:
-        radial-gradient(circle at 16% 17%,rgba(120,148,176,.16),transparent 31%),
-        radial-gradient(circle at 82% 28%,rgba(198,161,91,.05),transparent 24%),
+        radial-gradient(
+            circle at 16% 17%,
+            rgba(120,148,176,.16),
+            transparent 31%
+        ),
+        radial-gradient(
+            circle at 82% 28%,
+            rgba(198,161,91,.07),
+            transparent 24%
+        ),
         linear-gradient(135deg,#0F1921,#14252F 58%,#17313B);
+}
+
+body.dark .page-alpha .alpha-hero-copy h1,
+body[data-theme="dark"] .page-alpha .alpha-hero-copy h1,
+[data-theme="dark"] .page-alpha .alpha-hero-copy h1,
+.dark .page-alpha .alpha-hero-copy h1{
+    color:#F4F8FA;
 }
 
 body.dark .page-alpha .alpha-hero-description,
 body[data-theme="dark"] .page-alpha .alpha-hero-description,
 [data-theme="dark"] .page-alpha .alpha-hero-description,
-.dark .page-alpha .alpha-hero-description,
-body.dark .page-alpha .alpha-section-heading p,
-body[data-theme="dark"] .page-alpha .alpha-section-heading p,
-[data-theme="dark"] .page-alpha .alpha-section-heading p,
-.dark .page-alpha .alpha-section-heading p,
-body.dark .page-alpha .lead,
-body[data-theme="dark"] .page-alpha .lead,
-[data-theme="dark"] .page-alpha .lead,
-.dark .page-alpha .lead{
+.dark .page-alpha .alpha-hero-description{
     color:#B7C6D0;
-}
-
-body.dark .page-alpha .alpha-overview-section,
-body[data-theme="dark"] .page-alpha .alpha-overview-section,
-[data-theme="dark"] .page-alpha .alpha-overview-section,
-.dark .page-alpha .alpha-overview-section,
-body.dark .page-alpha .alpha-composition,
-body[data-theme="dark"] .page-alpha .alpha-composition,
-[data-theme="dark"] .page-alpha .alpha-composition,
-.dark .page-alpha .alpha-composition,
-body.dark .page-alpha .alpha-product-section,
-body[data-theme="dark"] .page-alpha .alpha-product-section,
-[data-theme="dark"] .page-alpha .alpha-product-section,
-.dark .page-alpha .alpha-product-section,
-body.dark .page-alpha .alpha-usage,
-body[data-theme="dark"] .page-alpha .alpha-usage,
-[data-theme="dark"] .page-alpha .alpha-usage,
-.dark .page-alpha .alpha-usage{
-    background:#0F1921;
-}
-
-body.dark .page-alpha .alpha-benefits,
-body[data-theme="dark"] .page-alpha .alpha-benefits,
-[data-theme="dark"] .page-alpha .alpha-benefits,
-.dark .page-alpha .alpha-benefits,
-body.dark .page-alpha .alpha-ingredients,
-body[data-theme="dark"] .page-alpha .alpha-ingredients,
-[data-theme="dark"] .page-alpha .alpha-ingredients,
-.dark .page-alpha .alpha-ingredients,
-body.dark .page-alpha .alpha-faq,
-body[data-theme="dark"] .page-alpha .alpha-faq,
-[data-theme="dark"] .page-alpha .alpha-faq,
-.dark .page-alpha .alpha-faq{
-    background:#101A23;
-}
-
-body.dark .page-alpha .alpha-overview-card,
-body[data-theme="dark"] .page-alpha .alpha-overview-card,
-[data-theme="dark"] .page-alpha .alpha-overview-card,
-.dark .page-alpha .alpha-overview-card,
-body.dark .page-alpha .alpha-composition-card,
-body[data-theme="dark"] .page-alpha .alpha-composition-card,
-[data-theme="dark"] .page-alpha .alpha-composition-card,
-.dark .page-alpha .alpha-composition-card,
-body.dark .page-alpha .alpha-detail-card,
-body[data-theme="dark"] .page-alpha .alpha-detail-card,
-[data-theme="dark"] .page-alpha .alpha-detail-card,
-.dark .page-alpha .alpha-detail-card,
-body.dark .page-alpha .alpha-usage-step,
-body[data-theme="dark"] .page-alpha .alpha-usage-step,
-[data-theme="dark"] .page-alpha .alpha-usage-step,
-.dark .page-alpha .alpha-usage-step,
-body.dark .page-alpha .alpha-faq-item,
-body[data-theme="dark"] .page-alpha .alpha-faq-item,
-[data-theme="dark"] .page-alpha .alpha-faq-item,
-.dark .page-alpha .alpha-faq-item{
-    background:#16242E;
-    border-color:rgba(217,231,242,.09);
-}
-
-body.dark .page-alpha .alpha-detail-card,
-body[data-theme="dark"] .page-alpha .alpha-detail-card,
-[data-theme="dark"] .page-alpha .alpha-detail-card,
-.dark .page-alpha .alpha-detail-card{
-    background:#182833;
-}
-
-body.dark .page-alpha .alpha-product-spec,
-body[data-theme="dark"] .page-alpha .alpha-product-spec,
-[data-theme="dark"] .page-alpha .alpha-product-spec,
-.dark .page-alpha .alpha-product-spec{
-    background:#14232D;
-    border-color:rgba(218,231,240,.08);
 }
 
 body.dark .page-alpha .alpha-hero-pill,
@@ -72178,99 +72849,59 @@ body[data-theme="dark"] .page-alpha .alpha-hero-pill,
     color:#D7E5EC;
 }
 
-body.dark .page-alpha .alpha-product-caption,
-body[data-theme="dark"] .page-alpha .alpha-product-caption,
-[data-theme="dark"] .page-alpha .alpha-product-caption,
-.dark .page-alpha .alpha-product-caption,
-body.dark .page-alpha .alpha-detail-caption,
-body[data-theme="dark"] .page-alpha .alpha-detail-caption,
-[data-theme="dark"] .page-alpha .alpha-detail-caption,
-.dark .page-alpha .alpha-detail-caption{
-    background:rgba(9,23,35,.76);
-    border-color:rgba(218,231,240,.09);
+body.dark .page-alpha .alpha-hero-product,
+body[data-theme="dark"] .page-alpha .alpha-hero-product,
+[data-theme="dark"] .page-alpha .alpha-hero-product,
+.dark .page-alpha .alpha-hero-product{
+    filter:none;
 }
 
-body.dark .page-alpha .alpha-product-detail-frame,
-body[data-theme="dark"] .page-alpha .alpha-product-detail-frame,
-[data-theme="dark"] .page-alpha .alpha-product-detail-frame,
-.dark .page-alpha .alpha-product-detail-frame,
-body.dark .page-alpha .alpha-benefits-frame,
-body[data-theme="dark"] .page-alpha .alpha-benefits-frame,
-[data-theme="dark"] .page-alpha .alpha-benefits-frame,
-.dark .page-alpha .alpha-benefits-frame{
-    background:
-        radial-gradient(circle at 50% 44%,rgba(120,148,176,.10),transparent 48%),
-        linear-gradient(145deg,#14232D,#19303B);
+body.dark .page-alpha .alpha-overview-section,
+body[data-theme="dark"] .page-alpha .alpha-overview-section,
+[data-theme="dark"] .page-alpha .alpha-overview-section,
+.dark .page-alpha .alpha-overview-section,
+body.dark .page-alpha .alpha-overview-card,
+body[data-theme="dark"] .page-alpha .alpha-overview-card,
+[data-theme="dark"] .page-alpha .alpha-overview-card,
+.dark .page-alpha .alpha-overview-card{
+    background:#101C25;
 }
 
-body.dark .page-alpha .alpha-performance-card,
-body[data-theme="dark"] .page-alpha .alpha-performance-card,
-[data-theme="dark"] .page-alpha .alpha-performance-card,
-.dark .page-alpha .alpha-performance-card{
-    background:rgba(18,35,47,.80);
-    border-color:rgba(218,231,240,.09);
+body.dark .page-alpha .alpha-composition,
+body[data-theme="dark"] .page-alpha .alpha-composition,
+[data-theme="dark"] .page-alpha .alpha-composition,
+.dark .page-alpha .alpha-composition,
+body.dark .page-alpha .alpha-product-section,
+body[data-theme="dark"] .page-alpha .alpha-product-section,
+[data-theme="dark"] .page-alpha .alpha-product-section,
+.dark .page-alpha .alpha-product-section,
+body.dark .page-alpha .alpha-pillow-section,
+body[data-theme="dark"] .page-alpha .alpha-pillow-section,
+[data-theme="dark"] .page-alpha .alpha-pillow-section,
+.dark .page-alpha .alpha-pillow-section,
+body.dark .page-alpha .alpha-routine,
+body[data-theme="dark"] .page-alpha .alpha-routine,
+[data-theme="dark"] .page-alpha .alpha-routine,
+.dark .page-alpha .alpha-routine{
+    background:#0F1921;
 }
 
-body.dark .page-alpha .alpha-faq-question:hover,
-body[data-theme="dark"] .page-alpha .alpha-faq-question:hover,
-[data-theme="dark"] .page-alpha .alpha-faq-question:hover,
-.dark .page-alpha .alpha-faq-question:hover{
-    background:#182A35;
-}
-
-body.dark .page-alpha .alpha-faq-answer p,
-body[data-theme="dark"] .page-alpha .alpha-faq-answer p,
-[data-theme="dark"] .page-alpha .alpha-faq-answer p,
-.dark .page-alpha .alpha-faq-answer p{
-    color:#D3E0E7;
-}
-
-body.dark .page-alpha .alpha-overview-card p,
-body[data-theme="dark"] .page-alpha .alpha-overview-card p,
-[data-theme="dark"] .page-alpha .alpha-overview-card p,
-.dark .page-alpha .alpha-overview-card p,
-body.dark .page-alpha .alpha-composition-card p,
-body[data-theme="dark"] .page-alpha .alpha-composition-card p,
-[data-theme="dark"] .page-alpha .alpha-composition-card p,
-.dark .page-alpha .alpha-composition-card p,
-body.dark .page-alpha .alpha-detail-card p,
-body[data-theme="dark"] .page-alpha .alpha-detail-card p,
-[data-theme="dark"] .page-alpha .alpha-detail-card p,
-.dark .page-alpha .alpha-detail-card p,
-body.dark .page-alpha .alpha-ingredient-feature p,
-body[data-theme="dark"] .page-alpha .alpha-ingredient-feature p,
-[data-theme="dark"] .page-alpha .alpha-ingredient-feature p,
-.dark .page-alpha .alpha-ingredient-feature p,
-body.dark .page-alpha .alpha-ingredient-note p,
-body[data-theme="dark"] .page-alpha .alpha-ingredient-note p,
-[data-theme="dark"] .page-alpha .alpha-ingredient-note p,
-.dark .page-alpha .alpha-ingredient-note p,
-body.dark .page-alpha .alpha-usage-step p,
-body[data-theme="dark"] .page-alpha .alpha-usage-step p,
-[data-theme="dark"] .page-alpha .alpha-usage-step p,
-.dark .page-alpha .alpha-usage-step p,
-body.dark .page-alpha .alpha-performance-card p,
-body[data-theme="dark"] .page-alpha .alpha-performance-card p,
-[data-theme="dark"] .page-alpha .alpha-performance-card p,
-.dark .page-alpha .alpha-performance-card p,
-body.dark .page-alpha .alpha-product-spec p,
-body[data-theme="dark"] .page-alpha .alpha-product-spec p,
-[data-theme="dark"] .page-alpha .alpha-product-spec p,
-.dark .page-alpha .alpha-product-spec p{
-    color:#C7D4DD;
-}
-
-body.dark .page-alpha .alpha-overview-note p,
-body[data-theme="dark"] .page-alpha .alpha-overview-note p,
-[data-theme="dark"] .page-alpha .alpha-overview-note p,
-.dark .page-alpha .alpha-overview-note p,
-body.dark .page-alpha .alpha-information-box p,
-body[data-theme="dark"] .page-alpha .alpha-information-box p,
-[data-theme="dark"] .page-alpha .alpha-information-box p,
-.dark .page-alpha .alpha-information-box p{
-    color:#B9C9D3;
-}
-
+body.dark .page-alpha .alpha-benefits,
+body[data-theme="dark"] .page-alpha .alpha-benefits,
+[data-theme="dark"] .page-alpha .alpha-benefits,
+.dark .page-alpha .alpha-benefits,
+body.dark .page-alpha .alpha-impact-section,
+body[data-theme="dark"] .page-alpha .alpha-impact-section,
+[data-theme="dark"] .page-alpha .alpha-impact-section,
+.dark .page-alpha .alpha-impact-section,
+body.dark .page-alpha .alpha-faq-section,
+body[data-theme="dark"] .page-alpha .alpha-faq-section,
+[data-theme="dark"] .page-alpha .alpha-faq-section,
+.dark .page-alpha .alpha-faq-section,
+body.dark .page-alpha .alpha-certifications,
+body[data-theme="dark"] .page-alpha .alpha-certifications,
+[data-theme="dark"] .page-alpha .alpha-certifications,
+.dark .page-alpha .alpha-certifications,
 body.dark .page-alpha .alpha-information-section,
 body[data-theme="dark"] .page-alpha .alpha-information-section,
 [data-theme="dark"] .page-alpha .alpha-information-section,
@@ -72278,104 +72909,265 @@ body[data-theme="dark"] .page-alpha .alpha-information-section,
     background:#101A23;
 }
 
+body.dark .page-alpha .alpha-section-heading h2,
+body.dark .page-alpha .section-title,
+body.dark .page-alpha .alpha-overview-card h3,
+body.dark .page-alpha .alpha-composition-card h3,
+body.dark .page-alpha .alpha-product-card-copy h3,
+body.dark .page-alpha .alpha-overview-note strong,
+body.dark .page-alpha .alpha-product-spec strong,
+body.dark .page-alpha .alpha-info-line strong,
+body.dark .page-alpha .alpha-routine-step h3,
+body.dark .page-alpha .alpha-faq-text,
+body.dark .page-alpha .alpha-information-box h2,
+body[data-theme="dark"] .page-alpha .alpha-section-heading h2,
+body[data-theme="dark"] .page-alpha .section-title,
+body[data-theme="dark"] .page-alpha .alpha-overview-card h3,
+body[data-theme="dark"] .page-alpha .alpha-composition-card h3,
+body[data-theme="dark"] .page-alpha .alpha-product-card-copy h3,
+body[data-theme="dark"] .page-alpha .alpha-overview-note strong,
+body[data-theme="dark"] .page-alpha .alpha-product-spec strong,
+body[data-theme="dark"] .page-alpha .alpha-info-line strong,
+body[data-theme="dark"] .page-alpha .alpha-routine-step h3,
+body[data-theme="dark"] .page-alpha .alpha-faq-text,
+body[data-theme="dark"] .page-alpha .alpha-information-box h2,
+[data-theme="dark"] .page-alpha .alpha-section-heading h2,
+[data-theme="dark"] .page-alpha .section-title,
+[data-theme="dark"] .page-alpha .alpha-overview-card h3,
+[data-theme="dark"] .page-alpha .alpha-composition-card h3,
+[data-theme="dark"] .page-alpha .alpha-product-card-copy h3,
+[data-theme="dark"] .page-alpha .alpha-overview-note strong,
+[data-theme="dark"] .page-alpha .alpha-product-spec strong,
+[data-theme="dark"] .page-alpha .alpha-info-line strong,
+[data-theme="dark"] .page-alpha .alpha-routine-step h3,
+[data-theme="dark"] .page-alpha .alpha-faq-text,
+[data-theme="dark"] .page-alpha .alpha-information-box h2,
+.dark .page-alpha .alpha-section-heading h2,
+.dark .page-alpha .section-title,
+.dark .page-alpha .alpha-overview-card h3,
+.dark .page-alpha .alpha-composition-card h3,
+.dark .page-alpha .alpha-product-card-copy h3,
+.dark .page-alpha .alpha-overview-note strong,
+.dark .page-alpha .alpha-product-spec strong,
+.dark .page-alpha .alpha-info-line strong,
+.dark .page-alpha .alpha-routine-step h3,
+.dark .page-alpha .alpha-faq-text,
+.dark .page-alpha .alpha-information-box h2{
+    color:#F2F6F9 !important;
+}
+
+body.dark .page-alpha .alpha-section-heading p,
+body.dark .page-alpha .lead,
+body.dark .page-alpha .alpha-hero-description,
+body.dark .page-alpha .alpha-overview-card p,
+body.dark .page-alpha .alpha-composition-card p,
+body.dark .page-alpha .alpha-product-card-copy > p,
+body.dark .page-alpha .alpha-benefit-check p,
+body.dark .page-alpha .alpha-product-spec span,
+body.dark .page-alpha .alpha-info-line p,
+body.dark .page-alpha .alpha-routine-step p,
+body.dark .page-alpha .alpha-faq-answer p,
+body.dark .page-alpha .alpha-information-box p,
+body[data-theme="dark"] .page-alpha .alpha-section-heading p,
+body[data-theme="dark"] .page-alpha .lead,
+body[data-theme="dark"] .page-alpha .alpha-hero-description,
+body[data-theme="dark"] .page-alpha .alpha-overview-card p,
+body[data-theme="dark"] .page-alpha .alpha-composition-card p,
+body[data-theme="dark"] .page-alpha .alpha-product-card-copy > p,
+body[data-theme="dark"] .page-alpha .alpha-benefit-check p,
+body[data-theme="dark"] .page-alpha .alpha-product-spec span,
+body[data-theme="dark"] .page-alpha .alpha-info-line p,
+body[data-theme="dark"] .page-alpha .alpha-routine-step p,
+body[data-theme="dark"] .page-alpha .alpha-faq-answer p,
+body[data-theme="dark"] .page-alpha .alpha-information-box p,
+[data-theme="dark"] .page-alpha .alpha-section-heading p,
+[data-theme="dark"] .page-alpha .lead,
+[data-theme="dark"] .page-alpha .alpha-hero-description,
+[data-theme="dark"] .page-alpha .alpha-overview-card p,
+[data-theme="dark"] .page-alpha .alpha-composition-card p,
+[data-theme="dark"] .page-alpha .alpha-product-card-copy > p,
+[data-theme="dark"] .page-alpha .alpha-benefit-check p,
+[data-theme="dark"] .page-alpha .alpha-product-spec span,
+[data-theme="dark"] .page-alpha .alpha-info-line p,
+[data-theme="dark"] .page-alpha .alpha-routine-step p,
+[data-theme="dark"] .page-alpha .alpha-faq-answer p,
+[data-theme="dark"] .page-alpha .alpha-information-box p,
+.dark .page-alpha .alpha-section-heading p,
+.dark .page-alpha .lead,
+.dark .page-alpha .alpha-hero-description,
+.dark .page-alpha .alpha-overview-card p,
+.dark .page-alpha .alpha-composition-card p,
+.dark .page-alpha .alpha-product-card-copy > p,
+.dark .page-alpha .alpha-benefit-check p,
+.dark .page-alpha .alpha-product-spec span,
+.dark .page-alpha .alpha-info-line p,
+.dark .page-alpha .alpha-routine-step p,
+.dark .page-alpha .alpha-faq-answer p,
+.dark .page-alpha .alpha-information-box p{
+    color:#B7C5CF !important;
+}
+
+body.dark .page-alpha .alpha-overview-note,
+body[data-theme="dark"] .page-alpha .alpha-overview-note,
+[data-theme="dark"] .page-alpha .alpha-overview-note,
+.dark .page-alpha .alpha-overview-note,
+body.dark .page-alpha .alpha-detail-card,
+body[data-theme="dark"] .page-alpha .alpha-detail-card,
+[data-theme="dark"] .page-alpha .alpha-detail-card,
+.dark .page-alpha .alpha-detail-card,
+body.dark .page-alpha .alpha-detail-list,
+body[data-theme="dark"] .page-alpha .alpha-detail-list,
+[data-theme="dark"] .page-alpha .alpha-detail-list,
+.dark .page-alpha .alpha-detail-list,
+body.dark .page-alpha .alpha-information-box,
+body[data-theme="dark"] .page-alpha .alpha-information-box,
+[data-theme="dark"] .page-alpha .alpha-information-box,
+.dark .page-alpha .alpha-information-box,
+body.dark .page-alpha .alpha-faq-item,
+body[data-theme="dark"] .page-alpha .alpha-faq-item,
+[data-theme="dark"] .page-alpha .alpha-faq-item,
+.dark .page-alpha .alpha-faq-item{
+    background:#16242E;
+    border-color:rgba(217,231,242,.09);
+}
+
+body.dark .page-alpha .alpha-product-card,
+body[data-theme="dark"] .page-alpha .alpha-product-card,
+[data-theme="dark"] .page-alpha .alpha-product-card,
+.dark .page-alpha .alpha-product-card{
+    background:#16242E;
+    border-color:rgba(217,231,242,.09);
+}
+
+body.dark .page-alpha .alpha-product-card-visual,
+body[data-theme="dark"] .page-alpha .alpha-product-card-visual,
+[data-theme="dark"] .page-alpha .alpha-product-card-visual,
+.dark .page-alpha .alpha-product-card-visual{
+    background:
+        radial-gradient(circle at 50% 44%,rgba(120,148,176,.10),transparent 48%),
+        linear-gradient(145deg,#14232D,#1A2D39);
+}
+
+body.dark .page-alpha .alpha-pillow-frame,
+body[data-theme="dark"] .page-alpha .alpha-pillow-frame,
+[data-theme="dark"] .page-alpha .alpha-pillow-frame,
+.dark .page-alpha .alpha-pillow-frame{
+    background:
+        radial-gradient(circle at 50% 44%,rgba(198,161,91,.06),transparent 45%),
+        linear-gradient(145deg,#12231B,#193126);
+}
+
+body.dark .page-alpha .alpha-certification-image,
+body[data-theme="dark"] .page-alpha .alpha-certification-image,
+[data-theme="dark"] .page-alpha .alpha-certification-image,
+.dark .page-alpha .alpha-certification-image{
+    background:linear-gradient(145deg,#182833,#12212B);
+}
+
+body.dark .page-alpha .alpha-certificate-content strong,
+body[data-theme="dark"] .page-alpha .alpha-certificate-content strong,
+[data-theme="dark"] .page-alpha .alpha-certificate-content strong,
+.dark .page-alpha .alpha-certificate-content strong{
+    color:#F2F6F9;
+}
+
 /* ==========================================================
-   RESPONSIVE — 1120
+   RESPONSIVE
    ========================================================== */
 
 @media(max-width:1120px){
 
-    .page-alpha .container,
-    .page-alpha .container-sm,
-    .page-alpha .alpha-hero-grid{
-        width:min(1120px,calc(100% - 64px));
-        margin-inline:auto;
-    }
-
     .page-alpha .alpha-hero-grid{
         grid-template-columns:minmax(0,1fr) minmax(360px,.85fr);
-        gap:28px;
+        gap:26px;
     }
 
     .page-alpha .alpha-overview-grid,
+    .page-alpha .alpha-certification-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
+
     .page-alpha .alpha-composition-grid{
         grid-template-columns:repeat(2,minmax(0,1fr));
     }
 
-    .page-alpha .alpha-usage-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+    .page-alpha .alpha-product-detail-grid{
+        grid-template-columns:1fr;
     }
 
-    .page-alpha .alpha-detail-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
+    .page-alpha .alpha-product-card{
+        display:grid;
+        grid-template-columns:minmax(0,1fr) minmax(0,.85fr);
     }
 
-    .page-alpha .alpha-detail-card:nth-child(5){grid-column:1/-1;}
+    .page-alpha .alpha-product-card.is-reverse{
+        grid-template-columns:minmax(0,.85fr) minmax(0,1fr);
+    }
+
+    .page-alpha .alpha-product-card.is-reverse .alpha-product-card-visual{
+        order:2;
+    }
+
+    .page-alpha .alpha-product-card.is-reverse .alpha-product-card-copy{
+        order:1;
+    }
+
+    .page-alpha .alpha-product-card-visual{
+        min-height:100%;
+    }
+
+    .page-alpha .alpha-benefits-grid,
+    .page-alpha .alpha-circulation-grid,
+    .page-alpha .alpha-pillow-grid{
+        gap:40px;
+    }
+
+    .page-alpha .alpha-technology-grid,
+    .page-alpha .alpha-impact-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+    }
 }
-
-/* ==========================================================
-   RESPONSIVE — 900
-   ========================================================== */
 
 @media(max-width:900px){
 
-    .page-alpha .section{padding:92px 0;}
-
-    .page-alpha .alpha-hero{min-height:auto;}
+    .page-alpha .alpha-hero{
+        min-height:auto;
+    }
 
     .page-alpha .alpha-hero-grid{
-        width:min(760px,calc(100% - 48px));
-        margin-inline:auto;
         grid-template-columns:1fr;
-        gap:34px;
         padding-block:66px 58px;
     }
 
     .page-alpha .alpha-hero-copy{
-        grid-column:1;
-        grid-row:2;
         max-width:760px;
-        padding-left:0;
         margin-inline:auto;
         text-align:center;
     }
 
-    .page-alpha .alpha-eyebrow{justify-content:center;}
-    .page-alpha .alpha-hero-description{margin-inline:auto;}
-    .page-alpha .alpha-hero-pills,.page-alpha .alpha-hero-actions{justify-content:center;}
+    .page-alpha .alpha-hero-copy .alpha-eyebrow{
+        justify-content:center;
+    }
+
+    .page-alpha .alpha-hero-description{
+        margin-inline:auto;
+    }
+
+    .page-alpha .alpha-hero-pills,
+    .page-alpha .alpha-hero-actions{
+        justify-content:center;
+    }
 
     .page-alpha .alpha-hero-product{
-        grid-column:1;
-        grid-row:1;
         width:min(720px,100%);
         min-height:500px;
         margin-inline:auto;
     }
 
-    .page-alpha .alpha-section-heading{
-        max-width:760px;
-    }
-
     .page-alpha .alpha-benefits-grid,
-    .page-alpha .alpha-product-detail-grid{
+    .page-alpha .alpha-circulation-grid,
+    .page-alpha .alpha-pillow-grid{
         grid-template-columns:1fr;
-        gap:40px;
-    }
-
-    .page-alpha .alpha-benefits-visual{
-        grid-column:1;
-        grid-row:1;
-    }
-
-    .page-alpha .alpha-benefits-copy{
-        grid-column:1;
-        grid-row:2;
-        max-width:760px;
-        margin-inline:auto;
-        text-align:center;
-    }
-
-    .page-alpha .alpha-benefit-checks{
-        text-align:left;
     }
 
     .page-alpha .alpha-benefits-visual{
@@ -72384,168 +73176,132 @@ body[data-theme="dark"] .page-alpha .alpha-information-section,
         margin-inline:auto;
     }
 
-    .page-alpha .alpha-product-detail-copy{text-align:center;}
-    .page-alpha .alpha-product-detail-copy .label{justify-content:center;}
-
-    .page-alpha .alpha-performance-grid{
-        grid-template-columns:repeat(3,minmax(0,1fr));
+    .page-alpha .alpha-technology-feature{
+        grid-template-columns:1fr;
     }
 
-    .page-alpha .alpha-cta-box{
-        padding-inline:20px;
+    .page-alpha .alpha-detail-grid{
+        grid-template-columns:1fr 1fr;
     }
 }
 
-/* ==========================================================
-   RESPONSIVE — 680
-   ========================================================== */
-
 @media(max-width:680px){
-
-    .page-alpha .container,
-    .page-alpha .container-sm,
-    .page-alpha .alpha-hero-grid{
-        width:min(calc(100% - 32px),560px);
-        margin-inline:auto;
-    }
-
-    .page-alpha .section{padding:78px 0;}
 
     .page-alpha .section-title,
     .page-alpha .alpha-section-heading h2{
         font-size:clamp(2.05rem,9vw,3.4rem);
     }
 
-    .page-alpha .lead{font-size:.95rem;line-height:1.76;}
-
-    .page-alpha .alpha-hero-grid{
-        padding-block:51px 48px;
+    .page-alpha .lead{
+        font-size:.95rem;
+        line-height:1.76;
     }
 
-    .page-alpha .alpha-hero-title{
+    .page-alpha .alpha-hero-grid{
+        padding:51px 18px 48px;
+    }
+
+    .page-alpha .alpha-hero-copy h1{
         font-size:clamp(3.35rem,16vw,5.4rem);
     }
 
-    .page-alpha .alpha-hero-description{font-size:.98rem;}
+    .page-alpha .alpha-hero-description{
+        font-size:.98rem;
+    }
 
     .page-alpha .alpha-hero-actions{
         flex-direction:column;
         align-items:stretch;
     }
 
-    .page-alpha .alpha-hero-actions .btn{width:100%!important;}
-
-    .page-alpha .alpha-hero-meta{
-        grid-template-columns:1fr;
-        text-align:left;
-        max-width:600px;
-        margin-inline:auto;
+    .page-alpha .alpha-hero-actions .btn{
+        width:100% !important;
     }
 
-    .page-alpha .alpha-hero-meta > div{
-        display:grid;
-        grid-template-columns:110px minmax(0,1fr);
-        gap:12px;
-        padding:11px 0;
+    .page-alpha .alpha-hero-product{
+        min-height:390px;
     }
 
-    .page-alpha .alpha-hero-product{min-height:390px;}
+    .page-alpha .alpha-product-grid,
+    .page-alpha .alpha-product-card-visual .alpha-product-grid{
+        min-height:340px;
+    }
 
-    .page-alpha .alpha-hero-product-image{
+    .page-alpha .alpha-product-grid img{
         max-width:310px;
         max-height:390px;
     }
 
-    .page-alpha .alpha-product-caption{display:none;}
+    .page-alpha .alpha-product-caption{
+        display:none;
+    }
 
     .page-alpha .alpha-overview-grid,
     .page-alpha .alpha-composition-grid,
-    .page-alpha .alpha-detail-grid,
-    .page-alpha .alpha-ingredients-grid,
-    .page-alpha .alpha-usage-grid,
-    .page-alpha .alpha-performance-grid{
+    .page-alpha .alpha-certification-grid,
+    .page-alpha .alpha-technology-grid,
+    .page-alpha .alpha-impact-grid{
         grid-template-columns:1fr;
     }
 
-    .page-alpha .alpha-detail-card:nth-child(5){grid-column:auto;}
-
-    .page-alpha .alpha-ingredient-feature.large{
-        grid-row:auto;
-        min-height:285px;
+    .page-alpha .alpha-detail-grid{
+        grid-template-columns:1fr;
     }
 
-    .page-alpha .alpha-ingredient-feature.wide{grid-column:auto;}
+    .page-alpha .alpha-product-card,
+    .page-alpha .alpha-product-card.is-reverse{
+        display:block;
+    }
 
-    .page-alpha .alpha-product-detail-frame,
-    .page-alpha .alpha-benefits-frame{
+    .page-alpha .alpha-product-card.is-reverse .alpha-product-card-visual,
+    .page-alpha .alpha-product-card.is-reverse .alpha-product-card-copy{
+        order:initial;
+    }
+
+    .page-alpha .alpha-product-card-visual{
+        min-height:350px;
+    }
+
+    .page-alpha .alpha-product-card-visual .alpha-product-grid img{
+        max-width:300px;
+        max-height:350px;
+    }
+
+    .page-alpha .alpha-product-card-copy{
+        padding:29px 23px 31px;
+    }
+
+    .page-alpha .alpha-benefits-frame,
+    .page-alpha .alpha-circulation-visual,
+    .page-alpha .alpha-pillow-frame{
         min-height:390px;
     }
 
-    .page-alpha .alpha-product-detail-image,
     .page-alpha .alpha-benefits-frame img{
         max-width:310px;
-        max-height:370px;
+        max-height:350px;
     }
 
-    .page-alpha .alpha-product-spec-grid{
-        grid-template-columns:1fr;
-        text-align:left;
-    }
-
-    .page-alpha .alpha-cta-box{
-        padding:58px 18px 63px;
-    }
-
-    .page-alpha .alpha-cta-box h2{
-        font-size:clamp(2.45rem,10vw,3.7rem);
-    }
-
-    .page-alpha .alpha-cta-actions{
-        flex-direction:column;
-        align-items:stretch;
-    }
-
-    .page-alpha .alpha-cta-actions .btn{width:100%;}
-
-    .page-alpha .alpha-disclaimer{padding-bottom:78px;}
-}
-
-/* ==========================================================
-   RESPONSIVE — 430
-   ========================================================== */
-
-@media(max-width:430px){
-
-    .page-alpha .container,
-    .page-alpha .container-sm,
-    .page-alpha .alpha-hero-grid{
-        width:calc(100% - 24px);
-        margin-inline:auto;
-    }
-
-    .page-alpha .alpha-hero-title{font-size:3.05rem;}
-
-    .page-alpha .alpha-eyebrow{
-        font-size:.60rem;
-        letter-spacing:.13em;
-    }
-
-    .page-alpha .alpha-hero-product{min-height:330px;}
-
-    .page-alpha .alpha-hero-product-image{
-        max-width:270px;
-        max-height:310px;
-    }
-
-    .page-alpha .alpha-product-detail-frame,
-    .page-alpha .alpha-benefits-frame{
+    .page-alpha .alpha-pillow-grid{
         min-height:340px;
     }
 
-    .page-alpha .alpha-product-detail-image,
-    .page-alpha .alpha-benefits-frame img{
-        max-width:270px;
-        max-height:315px;
+    .page-alpha .alpha-pillow-image-grid img{
+        max-width:310px;
+        max-height:350px;
+    }
+
+    .page-alpha .alpha-sleep-grid{
+        grid-template-columns:1fr;
+    }
+
+    .page-alpha .alpha-sleep-card{
+        min-height:auto;
+        padding:26px;
+    }
+
+    .page-alpha .alpha-information-box{
+        grid-template-columns:34px minmax(0,1fr);
     }
 
     .page-alpha .alpha-faq-question{
@@ -72555,26 +73311,538 @@ body[data-theme="dark"] .page-alpha .alpha-information-section,
         padding:10px 11px;
     }
 
-    .page-alpha .alpha-faq-text{font-size:.81rem;}
+    .page-alpha .alpha-faq-text{
+        font-size:.82rem;
+    }
 
     .page-alpha .alpha-faq-answer p{
         padding-left:54px;
         padding-right:13px;
-        font-size:.76rem;
+        font-size:.77rem;
     }
 
-    .page-alpha .alpha-ingredient-note{flex-direction:column;}
+    .page-alpha .alpha-cta-box{
+        padding:58px 18px 63px;
+    }
+}
+
+@media(max-width:430px){
+
+    .page-alpha .alpha-hero-copy h1{
+        font-size:3.05rem;
+    }
+
+    .page-alpha .alpha-hero-product{
+        min-height:330px;
+    }
+
+    .page-alpha .alpha-product-grid,
+    .page-alpha .alpha-product-card-visual .alpha-product-grid{
+        min-height:300px;
+    }
+
+    .page-alpha .alpha-product-grid img,
+    .page-alpha .alpha-pillow-image-grid img{
+        max-width:270px;
+        max-height:310px;
+    }
+
+    .page-alpha .alpha-more-toggle{
+        max-width:calc(100vw - 44px);
+    }
+
+    .page-alpha .alpha-product-card-copy h3{
+        font-size:1.82rem;
+    }
 }
 
 /* ==========================================================
-   REDUCED MOTION
+   MOTION
    ========================================================== */
 
-@media(prefers-reduced-motion:reduce){
-    .page-alpha *{
-        animation-duration:.001ms!important;
-        animation-iteration-count:1!important;
-        transition-duration:.001ms!important;
-        scroll-behavior:auto!important;
+@keyframes ismartsFloatOne{
+
+    0%,100%{
+        transform:translate3d(0,0,0);
+    }
+
+    50%{
+        transform:translate3d(15px,-11px,0);
     }
 }
+
+@keyframes ismartsFloatTwo{
+
+    0%,100%{
+        transform:translate3d(0,0,0);
+    }
+
+    50%{
+        transform:translate3d(-18px,17px,0);
+    }
+}
+
+@keyframes ismartsOrbit{
+
+    from{
+        rotate:0deg;
+    }
+
+    to{
+        rotate:360deg;
+    }
+}
+
+@keyframes ismartsPulse{
+
+    0%,100%{
+        transform:scale(.96);
+        opacity:.72;
+    }
+
+    50%{
+        transform:scale(1.04);
+        opacity:1;
+    }
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .page-alpha *{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+    }
+}
+
+/* ==========================================================
+   REFINED SPACING / POSITIONING PASS
+   Mantém a linguagem AlphaMeta, com mais respiro visual.
+   ========================================================== */
+
+.page-alpha .alpha-section-heading{
+    margin-bottom:42px;
+}
+
+.page-alpha .alpha-section-heading p{
+    margin-top:24px;
+    line-height:1.92;
+}
+
+.page-alpha .section-title{
+    line-height:1.01;
+}
+
+.page-alpha .alpha-hero-description{
+    margin-top:32px;
+    line-height:1.9;
+}
+
+.page-alpha .alpha-hero-pills{
+    margin-top:28px;
+    gap:10px;
+}
+
+.page-alpha .alpha-hero-actions{
+    margin-top:38px;
+    gap:15px;
+}
+
+.page-alpha .alpha-hero-copy{
+    padding-right:20px;
+}
+
+.page-alpha .alpha-overview-grid,
+.page-alpha .alpha-composition-grid,
+.page-alpha .alpha-certification-grid,
+.page-alpha .alpha-technology-grid{
+    row-gap:22px;
+}
+
+.page-alpha .alpha-overview-card h3,
+.page-alpha .alpha-composition-card h3,
+.page-alpha .alpha-technology-card h3{
+    margin-top:20px;
+}
+
+.page-alpha .alpha-overview-card p,
+.page-alpha .alpha-composition-card p,
+.page-alpha .alpha-technology-card p{
+    margin-top:12px;
+    line-height:1.78;
+}
+
+.page-alpha .alpha-benefits-copy .section-title{
+    margin-bottom:4px;
+}
+
+.page-alpha .alpha-benefits-copy .lead{
+    margin-top:26px;
+    line-height:1.9;
+}
+
+.page-alpha .alpha-benefit-checks{
+    gap:16px;
+    margin-top:32px;
+}
+
+.page-alpha .alpha-benefit-check{
+    min-height:34px;
+    gap:12px;
+}
+
+.page-alpha .alpha-benefit-check p{
+    font-size:.9rem;
+    line-height:1.62;
+}
+
+.page-alpha .alpha-benefits-copy .alpha-more-wrap{
+    margin-top:30px;
+}
+
+.page-alpha .alpha-product-detail-grid{
+    gap:64px;
+}
+
+.page-alpha .alpha-product-card-copy{
+    padding:48px 48px 52px;
+}
+
+.page-alpha .alpha-product-card-copy h3{
+    margin-top:17px;
+    line-height:1.05;
+}
+
+.page-alpha .alpha-product-card-copy > p{
+    margin-top:24px;
+    line-height:1.86;
+}
+
+.page-alpha .alpha-product-spec-list{
+    gap:14px;
+    margin-top:30px;
+}
+
+.page-alpha .alpha-product-spec{
+    padding-bottom:12px;
+}
+
+.page-alpha .alpha-product-card-copy .alpha-more-wrap{
+    margin-top:27px;
+}
+
+.page-alpha .alpha-card-buy{
+    margin-top:30px;
+}
+
+.page-alpha .alpha-circulation-grid{
+    gap:78px;
+}
+
+.page-alpha .alpha-circulation-copy .lead{
+    margin-top:28px;
+    line-height:1.9;
+}
+
+.page-alpha .alpha-info-stack{
+    gap:21px;
+    margin-top:34px;
+}
+
+.page-alpha .alpha-circulation-copy .alpha-more-toggle{
+    margin-top:28px;
+}
+
+/* Imagem real na secção de circulação */
+.page-alpha .alpha-circulation-image-wrap{
+    position:relative;
+    z-index:4;
+    width:86%;
+    min-height:390px;
+    display:grid;
+    place-items:center;
+}
+
+.page-alpha .alpha-circulation-image-wrap img{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:430px;
+    max-height:470px;
+    object-fit:contain;
+    object-position:center;
+    opacity:1 !important;
+    filter:
+        drop-shadow(
+            0 26px 38px
+            rgba(0,0,0,.17)
+        ) !important;
+    transform:translate3d(0,0,0);
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-alpha .alpha-circulation-aura{
+    position:absolute;
+    z-index:1;
+    width:68%;
+    aspect-ratio:1;
+    border-radius:50%;
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.13),
+            rgba(120,148,176,.08) 36%,
+            transparent 71%
+        );
+    filter:blur(9px);
+}
+
+.page-alpha .alpha-circulation-orbit{
+    position:absolute;
+    z-index:2;
+    width:70%;
+    aspect-ratio:1;
+    border-radius:50%;
+    border:1px solid rgba(120,148,176,.18);
+    box-shadow:
+        0 0 0 28px rgba(201,217,233,.08),
+        0 0 0 56px rgba(201,217,233,.04);
+}
+
+/* Almofada: enquadramento mais controlado */
+.page-alpha .alpha-pillow-frame{
+    min-height:570px;
+}
+
+.page-alpha .alpha-pillow-image-grid{
+    position:relative;
+    z-index:4;
+    width:100%;
+    min-height:520px;
+    display:grid;
+    place-items:center;
+    padding:28px 18px 42px;
+}
+
+.page-alpha .alpha-pillow-image-grid img{
+    position:relative;
+    z-index:5;
+    display:block;
+    width:auto;
+    height:auto;
+    max-width:460px;
+    max-height:500px;
+    object-fit:contain;
+    object-position:center 48%;
+    opacity:1 !important;
+    filter:
+        drop-shadow(
+            0 28px 40px
+            rgba(0,0,0,.17)
+        ) !important;
+    transform:translate3d(0,-8px,0);
+    backface-visibility:hidden;
+    image-rendering:auto;
+}
+
+.page-alpha .alpha-pillow-frame > span{
+    left:28px;
+    bottom:24px;
+}
+
+/* Evita que os botões fiquem colados ao bloco de informação. */
+.page-alpha .alpha-more-wrap + .btn,
+.page-alpha .alpha-product-card-copy > .btn,
+.page-alpha .alpha-pillow-copy > .btn{
+    margin-top:34px;
+}
+
+/* Nos cartões, o botão é uma acção final, não parte da descrição. */
+.page-alpha .alpha-product-card-copy .alpha-card-buy{
+    margin-top:34px;
+}
+
+@media(max-width:900px){
+
+    .page-alpha .alpha-section-heading{
+        margin-bottom:34px;
+    }
+
+    .page-alpha .alpha-product-card-copy{
+        padding:42px 38px 46px;
+    }
+
+    .page-alpha .alpha-circulation-grid{
+        gap:48px;
+    }
+
+    .page-alpha .alpha-circulation-image-wrap{
+        min-height:340px;
+    }
+
+    .page-alpha .alpha-circulation-image-wrap img{
+        max-height:390px;
+    }
+
+    .page-alpha .alpha-pillow-frame{
+        min-height:500px;
+    }
+
+    .page-alpha .alpha-pillow-image-grid{
+        min-height:440px;
+    }
+}
+
+@media(max-width:680px){
+
+    .page-alpha .alpha-section-heading{
+        margin-bottom:28px;
+    }
+
+    .page-alpha .alpha-section-heading p{
+        margin-top:18px;
+        line-height:1.8;
+    }
+
+    .page-alpha .alpha-hero-description{
+        margin-top:25px;
+    }
+
+    .page-alpha .alpha-hero-pills{
+        margin-top:25px;
+    }
+
+    .page-alpha .alpha-hero-actions{
+        margin-top:31px;
+        gap:11px;
+    }
+
+    .page-alpha .alpha-product-card-copy{
+        padding:34px 25px 38px;
+    }
+
+    .page-alpha .alpha-product-card-copy > p{
+        margin-top:20px;
+        line-height:1.78;
+    }
+
+    .page-alpha .alpha-benefit-checks{
+        margin-top:27px;
+        gap:13px;
+    }
+
+    .page-alpha .alpha-product-card-copy .alpha-more-wrap{
+        margin-top:24px;
+    }
+
+    .page-alpha .alpha-card-buy{
+        margin-top:27px;
+    }
+
+    .page-alpha .alpha-circulation-image-wrap{
+        width:92%;
+        min-height:330px;
+    }
+
+    .page-alpha .alpha-circulation-image-wrap img{
+        max-width:330px;
+        max-height:350px;
+    }
+
+    .page-alpha .alpha-circulation-copy .alpha-more-toggle{
+        margin-top:24px;
+    }
+
+    .page-alpha .alpha-pillow-frame{
+        min-height:420px;
+    }
+
+    .page-alpha .alpha-pillow-image-grid{
+        min-height:365px;
+        padding:18px 8px 40px;
+    }
+
+    .page-alpha .alpha-pillow-image-grid img{
+        max-width:330px;
+        max-height:350px;
+        transform:translate3d(0,-4px,0);
+    }
+
+}
+
+
+
+/* ==========================================================
+   ALPHA VMAX — FINAL CONTRAST / VISIBILITY PASS
+   Mantém a geometria do iSMART S3.
+   ========================================================== */
+
+.page-alpha .alpha-faq-answer{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    visibility:hidden;
+    transition:max-height .42s cubic-bezier(.22,.61,.36,1),opacity .28s ease,visibility 0s linear .42s;
+}
+
+.page-alpha .alpha-faq-item.active .alpha-faq-answer{
+    opacity:1;
+    visibility:visible;
+    transition:max-height .48s cubic-bezier(.22,.61,.36,1),opacity .30s ease,visibility 0s linear 0s;
+}
+
+.page-alpha .alpha-faq-answer p{
+    color:#4E6473 !important;
+}
+
+.page-alpha .alpha-dark-copy{
+    color:#EAF1F5 !important;
+}
+
+.page-alpha .alpha-technology-card h3,
+.page-alpha .alpha-technology-card p,
+.page-alpha .alpha-technology-card > span{
+    text-shadow:0 0 0 transparent;
+}
+
+.page-alpha .alpha-product-card-copy h3,
+.page-alpha .alpha-product-card-copy > p,
+.page-alpha .alpha-product-card-copy .alpha-product-spec strong,
+.page-alpha .alpha-product-card-copy .alpha-product-spec span,
+.page-alpha .alpha-detail-item > span:last-child,
+.page-alpha .alpha-benefit-check p,
+.page-alpha .alpha-info-line p,
+.page-alpha .alpha-routine-step p{
+    color:inherit;
+}
+
+.page-alpha .alpha-hero-copy h1 span{
+    background:linear-gradient(100deg,var(--alpha-deep),var(--alpha-steel) 50%,var(--alpha-gold-dark));
+    -webkit-background-clip:text;
+    background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.page-alpha .alpha-hero-product img,
+.page-alpha .alpha-product-grid img,
+.page-alpha .alpha-circulation-image-wrap img,
+.page-alpha .alpha-pillow-image-grid img{
+    filter:drop-shadow(0 26px 38px rgba(0,0,0,.17)) !important;
+}
+
+@media(max-width:900px){
+    .page-alpha .alpha-hero-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:680px){
+    .page-alpha .alpha-faq-question{
+        min-height:72px;
+    }
+}
+
