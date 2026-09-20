@@ -70566,54 +70566,64 @@ body.dark
    AD LIFESTYLE V2
    ALPHA VMAX — PREMIUM PRODUCT PAGE
    Modelo visual: iSMART S3 / AlphaMeta
+   Escala tipográfica harmonizada
+   Paleta: azul / steel / dourado discreto
    Namespace isolado: .page-alpha
    ========================================================== */
 
 
 /* ==========================================================
-   01. DESIGN TOKENS
+   01. TOKENS
    ========================================================== */
 
 .page-alpha{
 
     --alpha-white:#FFFFFF;
 
-    --alpha-ice:#D9E7F3;
-    --alpha-mist:#EEF5FA;
-    --alpha-soft:#F7FAFC;
+    --alpha-ice:#D6E5F0;
 
-    --alpha-blue:#3D6F9F;
-    --alpha-blue-light:#6F9FC9;
-    --alpha-blue-deep:#16364F;
+    --alpha-mist:#EFF5F9;
 
-    --alpha-steel:#7895AE;
+    --alpha-soft:#F6F9FB;
 
-    --alpha-gold:#C8A15A;
-    --alpha-gold-light:#E3CB93;
-    --alpha-gold-dark:#93702F;
+    --alpha-blue:#3D607C;
 
-    --alpha-text:#344B5D;
-    --alpha-muted:#70818F;
+    --alpha-steel:#7894B0;
 
-    --alpha-green:#3D874A;
-    --alpha-green-light:#71B17B;
-    --alpha-green-dark:#286736;
+    --alpha-deep:#1A2C3B;
 
-    --alpha-line:rgba(43,77,103,.13);
+    --alpha-graphite:#202B34;
+
+    --alpha-gold:#C6A15B;
+
+    --alpha-gold-light:#E3CD98;
+
+    --alpha-gold-dark:#8C6B33;
+
+    --alpha-text:#344757;
+
+    --alpha-muted:#6C7C89;
+
+    --alpha-line:
+        rgba(57,91,119,.13);
 
     --alpha-shadow:
-        0 24px 78px rgba(24,42,58,.10);
+        0 24px 78px
+        rgba(24,42,58,.10);
 
     --alpha-shadow-heavy:
-        0 32px 90px rgba(11,24,34,.22);
+        0 32px 90px
+        rgba(11,24,34,.22);
 
     --alpha-radius:32px;
+
     --alpha-radius-sm:21px;
 
     --alpha-ease:
         cubic-bezier(.22,.61,.36,1);
 
-    color:var(--alpha-text);
+    color:
+        var(--alpha-text);
 
     background:
         var(--alpha-white);
@@ -70627,20 +70637,20 @@ body.dark
         Arial,
         sans-serif;
 
-    -webkit-font-smoothing:antialiased;
+    -webkit-font-smoothing:
+        antialiased;
 
-    text-rendering:optimizeLegibility;
+    text-rendering:
+        optimizeLegibility;
 
 }
 
 
 /* ==========================================================
-   02. ISOLATION
+   02. ISOLATION / BASE
    ========================================================== */
 
-.page-alpha *,
-.page-alpha *::before,
-.page-alpha *::after{
+.page-alpha *{
     box-sizing:border-box;
 }
 
@@ -70666,10 +70676,16 @@ body.dark
     margin:0;
 }
 
+.page-alpha .section{
 
-/* ==========================================================
-   03. LAYOUT
-   ========================================================== */
+    position:relative;
+
+    padding:
+        112px 0;
+
+    overflow:hidden;
+
+}
 
 .page-alpha .container{
 
@@ -70703,93 +70719,11 @@ body.dark
 
 }
 
-.page-alpha .section{
-
-    padding:
-        112px 0;
-
-    position:relative;
-
-    overflow:hidden;
-
-}
-
-.page-alpha .alpha-section-heading{
-
-    max-width:920px;
-
-    margin:
-        0 auto 42px;
-
-}
-
-.page-alpha .alpha-section-heading-center{
-
-    text-align:center;
-
-}
-
-.page-alpha .alpha-section-heading-center p{
-
-    margin-inline:auto;
-
-}
-
-.page-alpha .alpha-section-heading p{
-
-    max-width:760px;
-
-    margin-top:22px;
-
-    color:#697B89;
-
-    font-size:1.02rem;
-
-    line-height:1.88;
-
-}
-
 
 /* ==========================================================
-   04. TYPOGRAPHY
+   03. TYPOGRAPHY
+   Igual à linguagem tipográfica das restantes pages
    ========================================================== */
-
-.page-alpha .label,
-.page-alpha .eyebrow{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:9px;
-
-    color:
-        var(--alpha-green-dark);
-
-    font-size:.69rem;
-
-    font-weight:900;
-
-    letter-spacing:.20em;
-
-    text-transform:uppercase;
-
-}
-
-.page-alpha .eyebrow::before{
-
-    content:"";
-
-    width:28px;
-
-    height:1px;
-
-    background:
-        currentColor;
-
-    opacity:.65;
-
-}
 
 .page-alpha .section-title{
 
@@ -70797,19 +70731,19 @@ body.dark
 
     font-size:
         clamp(
-            2.35rem,
+            2.25rem,
             4.9vw,
-            4.7rem
+            4.65rem
         );
 
-    line-height:.99;
+    line-height:.98;
 
     letter-spacing:-.055em;
 
     font-weight:900;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
 }
 
@@ -70820,17 +70754,7 @@ body.dark
     margin-top:.08em;
 
     color:
-        var(--alpha-blue-light);
-
-}
-
-.page-alpha .section-center{
-
-    max-width:920px;
-
-    margin-inline:auto;
-
-    text-align:center;
+        var(--alpha-steel);
 
 }
 
@@ -70849,38 +70773,141 @@ body.dark
 
 }
 
+.page-alpha .section-center{
 
-/* ==========================================================
-   05. BUTTONS
-   ========================================================== */
+    max-width:940px;
 
-.page-alpha .btn{
+    margin-inline:auto;
 
-    width:auto;
+    text-align:center;
 
-    min-height:49px;
+}
+
+.page-alpha .label,
+.page-alpha .eyebrow{
+
+    color:
+        var(--alpha-blue);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+
+}
+
+.page-alpha .eyebrow{
 
     display:inline-flex;
 
     align-items:center;
 
-    justify-content:center;
+    gap:9px;
 
-    gap:10px;
+    margin-bottom:17px;
+
+}
+
+.page-alpha .eyebrow::before{
+
+    content:"";
+
+    width:28px;
+
+    height:1px;
+
+    background:
+        currentColor;
+
+    opacity:.65;
+
+}
+
+.page-alpha .alpha-section-heading{
+
+    max-width:900px;
+
+    margin:
+        0 auto 42px;
+
+}
+
+.page-alpha .alpha-section-heading-center{
+
+    text-align:center;
+
+}
+
+.page-alpha .alpha-section-heading h2{
+
+    margin:0;
+
+    color:
+        var(--alpha-deep);
+
+    font-size:
+        clamp(
+            2.3rem,
+            4.9vw,
+            4.7rem
+        );
+
+    line-height:.98;
+
+    letter-spacing:-.055em;
+
+    font-weight:900;
+
+}
+
+.page-alpha .alpha-section-heading h2 span{
+
+    display:block;
+
+    color:
+        var(--alpha-steel);
+
+}
+
+.page-alpha .alpha-section-heading p{
+
+    max-width:760px;
+
+    margin-top:20px;
+
+    color:#697B89;
+
+    font-size:1rem;
+
+    line-height:1.82;
+
+}
+
+
+/* ==========================================================
+   04. BUTTONS
+   ========================================================== */
+
+.page-alpha .btn{
+
+    width:auto !important;
+
+    min-height:49px;
 
     padding:
-        0 20px;
+        0 20px !important;
 
-    border-radius:14px;
+    border-radius:
+        14px !important;
 
-    border:
-        1px solid transparent;
+    font-size:
+        .82rem !important;
 
-    cursor:pointer;
-
-    font-size:.82rem;
-
-    font-weight:850;
+    font-weight:
+        850 !important;
 
     transition:
         transform .25s ease,
@@ -70899,50 +70926,54 @@ body.dark
 
 .page-alpha .btn-primary{
 
-    color:#FFFFFF;
+    border:
+        1px solid transparent !important;
 
     background:
         linear-gradient(
             135deg,
-            var(--alpha-blue-deep),
+            var(--alpha-deep),
             var(--alpha-blue)
-        );
+        ) !important;
+
+    color:
+        #FFFFFF !important;
 
     box-shadow:
-        0 14px 30px rgba(24,42,58,.20);
+        0 14px 30px
+        rgba(24,42,58,.20);
 
 }
 
 .page-alpha .btn-primary:hover{
 
     box-shadow:
-        0 19px 37px rgba(24,42,58,.27);
+        0 19px 37px
+        rgba(24,42,58,.27);
 
 }
 
 .page-alpha .btn-glass{
 
-    color:
-        var(--alpha-blue-deep);
+    border:
+        1px solid
+        rgba(24,42,58,.14) !important;
 
     background:
-        rgba(255,255,255,.60);
+        rgba(255,255,255,.55) !important;
 
-    border-color:
-        rgba(24,42,58,.14);
-
-    backdrop-filter:
-        blur(12px);
+    color:
+        var(--alpha-deep) !important;
 
 }
 
 .page-alpha .btn-glass:hover{
 
     background:
-        #FFFFFF;
+        #FFFFFF !important;
 
     border-color:
-        rgba(61,111,159,.28);
+        rgba(61,111,159,.28) !important;
 
 }
 
@@ -70951,15 +70982,17 @@ body.dark
 .page-alpha .alpha-faq-question:focus-visible{
 
     outline:
-        3px solid rgba(111,159,201,.42);
+        3px solid
+        rgba(120,148,176,.42);
 
-    outline-offset:3px;
+    outline-offset:
+        3px;
 
 }
 
 
 /* ==========================================================
-   06. HERO
+   05. HERO
    ========================================================== */
 
 .page-alpha .alpha-hero{
@@ -70983,22 +71016,22 @@ body.dark
     background:
 
         radial-gradient(
-            circle at 19% 17%,
-            rgba(200,219,235,.78),
+            circle at 18% 18%,
+            rgba(201,217,233,.78),
             transparent 33%
         ),
 
         radial-gradient(
-            circle at 83% 31%,
-            rgba(200,161,90,.09),
-            transparent 25%
+            circle at 82% 32%,
+            rgba(198,161,91,.08),
+            transparent 26%
         ),
 
         linear-gradient(
             135deg,
             #FFFFFF,
             #F1F7FA 55%,
-            #DDEAF2
+            #DBE9F2
         );
 
 }
@@ -71016,13 +71049,13 @@ body.dark
     background:
 
         linear-gradient(
-            rgba(43,77,103,.027) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(43,77,103,.027) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         );
 
@@ -71040,13 +71073,7 @@ body.dark
 
 .page-alpha .alpha-hero-grid{
 
-    width:
-        min(
-            1220px,
-            calc(100% - 96px)
-        );
-
-    margin-inline:auto;
+    width:100%;
 
     display:grid;
 
@@ -71054,12 +71081,12 @@ body.dark
         minmax(0,1fr)
         minmax(420px,.95fr);
 
-    gap:72px;
+    gap:48px;
 
     align-items:center;
 
-    padding:
-        82px 0 72px;
+    padding-block:
+        82px 72px;
 
     position:relative;
 
@@ -71071,16 +71098,49 @@ body.dark
 
     max-width:680px;
 
-    padding-left:16px;
+    padding-left:8px;
 
 }
 
 .page-alpha .alpha-eyebrow{
 
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:9px;
+
     margin-bottom:18px;
 
     color:
         var(--alpha-gold-dark);
+
+    font-size:.69rem;
+
+    font-weight:900;
+
+    letter-spacing:.20em;
+
+    text-transform:uppercase;
+
+}
+
+.page-alpha .alpha-eyebrow::before{
+
+    content:"";
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:
+        var(--alpha-gold);
+
+    box-shadow:
+        0 0 0 5px
+        rgba(198,161,91,.11);
 
 }
 
@@ -71089,7 +71149,7 @@ body.dark
     margin:0;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:
         clamp(
@@ -71114,8 +71174,8 @@ body.dark
 
         linear-gradient(
             100deg,
-            var(--alpha-blue-deep),
-            var(--alpha-blue-light) 54%,
+            var(--alpha-deep),
+            var(--alpha-steel) 58%,
             var(--alpha-gold)
         );
 
@@ -71123,7 +71183,8 @@ body.dark
 
     background-clip:text;
 
-    -webkit-text-fill-color:transparent;
+    -webkit-text-fill-color:
+        transparent;
 
 }
 
@@ -71131,15 +71192,14 @@ body.dark
 
     max-width:620px;
 
-    margin-top:28px;
+    margin-top:32px;
 
     color:
         #5F7180;
 
-    font-size:
-        1.08rem;
+    font-size:1.08rem;
 
-    line-height:1.88;
+    line-height:1.90;
 
 }
 
@@ -71149,15 +71209,15 @@ body.dark
 
     flex-wrap:wrap;
 
-    gap:9px;
+    gap:8px;
 
-    margin-top:27px;
+    margin-top:28px;
 
 }
 
 .page-alpha .alpha-hero-pill{
 
-    min-height:35px;
+    min-height:34px;
 
     display:inline-flex;
 
@@ -71167,7 +71227,8 @@ body.dark
         0 12px;
 
     border:
-        1px solid rgba(43,77,103,.11);
+        1px solid
+        rgba(57,91,119,.11);
 
     border-radius:999px;
 
@@ -71208,7 +71269,7 @@ body.dark
 
     gap:12px;
 
-    margin-top:34px;
+    margin-top:30px;
 
 }
 
@@ -71222,22 +71283,20 @@ body.dark
             minmax(0,1fr)
         );
 
-    gap:0;
-
     max-width:640px;
 
-    margin-top:34px;
+    margin-top:31px;
 
 }
 
 .page-alpha .alpha-hero-meta > div{
 
     padding:
-        14px 16px;
+        12px 14px;
 
     border-top:
         1px solid
-        rgba(43,77,103,.12);
+        rgba(57,91,119,.11);
 
 }
 
@@ -71246,9 +71305,9 @@ body.dark
     display:block;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:.79rem;
+    font-size:.75rem;
 
     font-weight:900;
 
@@ -71261,11 +71320,11 @@ body.dark
     margin-top:4px;
 
     color:
-        #7A8994;
+        #7B8995;
 
-    font-size:.64rem;
+    font-size:.62rem;
 
-    line-height:1.5;
+    line-height:1.50;
 
 }
 
@@ -71299,16 +71358,16 @@ body.dark
 
 .page-alpha .alpha-orb-1{
 
-    width:430px;
+    width:460px;
 
-    height:430px;
+    height:460px;
 
-    left:-160px;
+    left:-190px;
 
-    top:-145px;
+    top:-170px;
 
     background:
-        rgba(111,159,201,.15);
+        rgba(120,148,176,.16);
 
 }
 
@@ -71318,27 +71377,12 @@ body.dark
 
     height:360px;
 
-    right:-90px;
+    right:-80px;
 
-    top:14%;
-
-    background:
-        rgba(200,161,90,.10);
-
-}
-
-.page-alpha .alpha-orb-3{
-
-    width:240px;
-
-    height:240px;
-
-    right:31%;
-
-    bottom:8%;
+    top:12%;
 
     background:
-        rgba(61,111,159,.08);
+        rgba(198,161,91,.08);
 
 }
 
@@ -71349,42 +71393,41 @@ body.dark
     border-radius:50%;
 
     border:
-        1px solid rgba(43,77,103,.10);
+        1px solid
+        rgba(57,91,119,.09);
 
 }
 
 .page-alpha .alpha-orbit-1{
 
-    width:510px;
+    width:520px;
 
-    height:510px;
+    height:250px;
 
-    right:3%;
+    right:-90px;
 
-    top:10%;
+    top:23%;
 
     transform:
-        rotate(21deg)
-        scaleY(.57);
+        rotate(18deg);
 
 }
 
 .page-alpha .alpha-orbit-2{
 
-    width:650px;
+    width:680px;
 
-    height:650px;
+    height:310px;
 
-    right:-4%;
+    right:-170px;
 
-    top:-4%;
+    top:13%;
 
     transform:
-        rotate(-16deg)
-        scaleY(.55);
+        rotate(-16deg);
 
     border-color:
-        rgba(200,161,90,.11);
+        rgba(198,161,91,.10);
 
 }
 
@@ -71395,15 +71438,13 @@ body.dark
 
 .page-alpha .alpha-hero-product{
 
-    min-height:610px;
+    position:relative;
 
-    width:100%;
+    min-height:610px;
 
     display:grid;
 
     place-items:center;
-
-    position:relative;
 
 }
 
@@ -71411,7 +71452,7 @@ body.dark
 
     position:absolute;
 
-    width:72%;
+    width:70%;
 
     aspect-ratio:1;
 
@@ -71421,13 +71462,13 @@ body.dark
 
         radial-gradient(
             circle,
-            rgba(61,111,159,.14),
-            rgba(200,161,90,.08) 35%,
+            rgba(61,96,124,.14),
+            rgba(120,148,176,.08) 34%,
             transparent 70%
         );
 
     filter:
-        blur(9px);
+        blur(10px);
 
     animation:
         alphaPulse
@@ -71441,7 +71482,7 @@ body.dark
 
     position:absolute;
 
-    width:80%;
+    width:78%;
 
     aspect-ratio:1;
 
@@ -71449,29 +71490,30 @@ body.dark
 
     border:
         1px solid
-        rgba(120,149,174,.18);
+        rgba(120,148,176,.18);
 
     box-shadow:
-        0 0 0 30px
-        rgba(200,219,235,.08),
 
-        0 0 0 62px
-        rgba(200,219,235,.04);
+        0 0 0 32px
+        rgba(201,217,233,.08),
+
+        0 0 0 66px
+        rgba(201,217,233,.045);
 
 }
 
 .page-alpha .alpha-product-ring-2{
 
-    width:92%;
+    width:91%;
 
     border-style:dashed;
 
     border-color:
-        rgba(200,161,90,.20);
+        rgba(198,161,91,.17);
 
     animation:
         alphaOrbit
-        27s
+        28s
         linear
         infinite;
 
@@ -71481,25 +71523,25 @@ body.dark
 
     position:absolute;
 
-    width:95%;
+    width:100%;
 
     aspect-ratio:1;
 
     background:
 
         linear-gradient(
-            rgba(43,77,103,.045) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(43,77,103,.045) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         );
 
     background-size:
-        29px 29px;
+        28px 28px;
 
     transform:
         rotate(45deg);
@@ -71508,10 +71550,8 @@ body.dark
         radial-gradient(
             circle,
             #000,
-            transparent 69%
+            transparent 68%
         );
-
-    opacity:.35;
 
 }
 
@@ -71520,6 +71560,8 @@ body.dark
     position:relative;
 
     z-index:5;
+
+    display:block;
 
     width:auto;
 
@@ -71533,13 +71575,14 @@ body.dark
 
     object-position:center;
 
-    opacity:1;
+    opacity:
+        1 !important;
 
     filter:
         drop-shadow(
             0 26px 38px
             rgba(0,0,0,.17)
-        );
+        ) !important;
 
 }
 
@@ -71549,7 +71592,7 @@ body.dark
 
     right:4%;
 
-    bottom:5%;
+    bottom:6%;
 
     z-index:7;
 
@@ -71557,19 +71600,19 @@ body.dark
 
     flex-direction:column;
 
-    gap:3px;
+    gap:2px;
 
     padding:
         9px 12px;
 
     border:
         1px solid
-        rgba(43,77,103,.10);
+        rgba(24,42,58,.10);
 
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.58);
+        rgba(255,255,255,.52);
 
     backdrop-filter:
         blur(12px);
@@ -71579,7 +71622,7 @@ body.dark
 .page-alpha .alpha-product-caption strong{
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:.66rem;
 
@@ -71592,20 +71635,17 @@ body.dark
     color:
         var(--alpha-steel);
 
-    font-size:.52rem;
+    font-size:.54rem;
 
     font-weight:850;
 
-    letter-spacing:.12em;
+    letter-spacing:.13em;
 
 }
 
-
-/* ==========================================================
-   HERO ERROR
-   ========================================================== */
-
-.page-alpha .image-error::after{
+.page-alpha .alpha-hero-product.image-error::after,
+.page-alpha .alpha-product-detail-frame.image-error::after,
+.page-alpha .alpha-benefits-frame.image-error::after{
 
     content:
         "Imagem não encontrada — verificar caminho do ficheiro";
@@ -71614,7 +71654,7 @@ body.dark
 
     left:50%;
 
-    bottom:25px;
+    bottom:28px;
 
     transform:
         translateX(-50%);
@@ -71629,13 +71669,13 @@ body.dark
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.90);
+        rgba(255,255,255,.88);
 
     border:
-        1px solid rgba(43,77,103,.10);
+        1px solid
+        rgba(57,91,119,.11);
 
-    color:
-        #74838E;
+    color:#71818D;
 
     font-size:.59rem;
 
@@ -71645,11 +71685,6 @@ body.dark
 
 }
 
-
-/* ==========================================================
-   HERO MOTION
-   ========================================================== */
-
 @keyframes alphaPulse{
 
     0%,
@@ -71657,7 +71692,7 @@ body.dark
 
         transform:scale(.96);
 
-        opacity:.70;
+        opacity:.72;
 
     }
 
@@ -71689,7 +71724,7 @@ body.dark
 
 
 /* ==========================================================
-   07. OVERVIEW
+   OVERVIEW
    ========================================================== */
 
 .page-alpha .alpha-overview-section{
@@ -71698,7 +71733,7 @@ body.dark
         linear-gradient(
             180deg,
             #FFFFFF,
-            #F6FAFC
+            #F7FAFC
         );
 
 }
@@ -71715,21 +71750,21 @@ body.dark
 
     gap:14px;
 
+    margin-top:46px;
+
 }
 
 .page-alpha .alpha-overview-card{
 
     min-height:240px;
 
-    padding:
-        24px;
+    padding:24px;
 
     border:
         1px solid
         var(--alpha-line);
 
-    border-radius:
-        24px;
+    border-radius:24px;
 
     background:#FFFFFF;
 
@@ -71754,7 +71789,7 @@ body.dark
         rgba(24,42,58,.10);
 
     border-color:
-        rgba(61,111,159,.21);
+        rgba(57,91,119,.20);
 
 }
 
@@ -71763,7 +71798,7 @@ body.dark
     display:block;
 
     color:
-        rgba(43,77,103,.18);
+        rgba(57,91,119,.18);
 
     font-size:.67rem;
 
@@ -71775,9 +71810,9 @@ body.dark
 
 .page-alpha .alpha-card-icon{
 
-    width:42px;
+    width:40px;
 
-    height:42px;
+    height:40px;
 
     display:grid;
 
@@ -71787,8 +71822,7 @@ body.dark
 
     border-radius:13px;
 
-    background:
-        #EDF4F8;
+    background:#EDF4F8;
 
     color:
         var(--alpha-gold-dark);
@@ -71804,7 +71838,7 @@ body.dark
     margin-top:21px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:1.15rem;
 
@@ -71816,12 +71850,11 @@ body.dark
 
     margin-top:9px;
 
-    color:
-        #74828F;
+    color:#74828F;
 
     font-size:.81rem;
 
-    line-height:1.7;
+    line-height:1.70;
 
 }
 
@@ -71830,7 +71863,7 @@ body.dark
     margin-top:19px;
 
     padding:
-        20px;
+        18px 20px;
 
     border:
         1px solid
@@ -71839,27 +71872,26 @@ body.dark
     border-radius:18px;
 
     background:
-        rgba(255,255,255,.78);
+        rgba(255,255,255,.75);
 
 }
 
 .page-alpha .alpha-overview-note strong{
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:.85rem;
+    font-size:.83rem;
 
 }
 
 .page-alpha .alpha-overview-note p{
 
-    margin-top:5px;
+    margin-top:4px;
 
-    color:
-        #778692;
+    color:#778692;
 
-    font-size:.75rem;
+    font-size:.74rem;
 
     line-height:1.65;
 
@@ -71867,7 +71899,7 @@ body.dark
 
 
 /* ==========================================================
-   08. COMPOSITION
+   COMPOSITION
    ========================================================== */
 
 .page-alpha .alpha-composition{
@@ -71888,14 +71920,15 @@ body.dark
 
     gap:15px;
 
+    margin-top:46px;
+
 }
 
 .page-alpha .alpha-composition-card{
 
-    min-height:285px;
+    min-height:290px;
 
-    padding:
-        25px;
+    padding:25px;
 
     border:
         1px solid
@@ -71907,31 +71940,12 @@ body.dark
         linear-gradient(
             145deg,
             #FFFFFF,
-            #F3F8FB
+            #F2F7FA
         );
 
     box-shadow:
-        0 16px 45px
-        rgba(24,42,58,.06);
-
-    transition:
-        transform .28s ease,
-        box-shadow .28s ease,
-        border-color .28s ease;
-
-}
-
-.page-alpha .alpha-composition-card:hover{
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 22px 48px
-        rgba(24,42,58,.10);
-
-    border-color:
-        rgba(61,111,159,.19);
+        0 18px 50px
+        rgba(24,42,58,.07);
 
 }
 
@@ -71947,25 +71961,24 @@ body.dark
 
 .page-alpha .alpha-card-symbol{
 
-    width:44px;
+    width:46px;
 
-    height:44px;
+    height:46px;
 
     display:grid;
 
     place-items:center;
 
-    border-radius:14px;
+    border-radius:15px;
 
-    background:
-        #EAF2F7;
+    background:#EAF2F7;
 
     color:
         var(--alpha-blue);
 
     font-style:normal;
 
-    font-size:1rem;
+    font-size:1.05rem;
 
 }
 
@@ -71973,10 +71986,10 @@ body.dark
 
     display:block;
 
-    margin-top:26px;
+    margin-top:27px;
 
     color:
-        var(--alpha-green-dark);
+        var(--alpha-blue);
 
     font-size:.61rem;
 
@@ -71984,14 +71997,16 @@ body.dark
 
     letter-spacing:.12em;
 
+    text-transform:uppercase;
+
 }
 
 .page-alpha .alpha-composition-card h3{
 
-    margin-top:8px;
+    margin-top:7px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:1.18rem;
 
@@ -72003,8 +72018,7 @@ body.dark
 
     margin-top:9px;
 
-    color:
-        #778692;
+    color:#778692;
 
     font-size:.80rem;
 
@@ -72014,7 +72028,7 @@ body.dark
 
 
 /* ==========================================================
-   09. MORE / VER MAIS
+   MORE
    ========================================================== */
 
 .page-alpha .alpha-more-wrap{
@@ -72027,7 +72041,7 @@ body.dark
 
     display:inline-flex;
 
-    width:auto;
+    width:max-content !important;
 
     min-height:40px;
 
@@ -72038,39 +72052,37 @@ body.dark
     gap:9px;
 
     padding:
-        0 14px;
+        0 14px !important;
 
     border:
         1px solid
-        rgba(43,77,103,.14);
+        rgba(57,91,119,.15) !important;
 
-    border-radius:999px;
+    border-radius:999px !important;
 
     background:
-        rgba(255,255,255,.68);
+        rgba(255,255,255,.68) !important;
 
     color:
-        var(--alpha-blue);
+        var(--alpha-blue) !important;
+
+    box-shadow:none !important;
+
+    font-size:.70rem !important;
+
+    font-weight:900 !important;
 
     cursor:pointer;
-
-    font-size:.70rem;
-
-    font-weight:900;
-
-    transition:
-        background .25s ease,
-        border-color .25s ease;
 
 }
 
 .page-alpha .alpha-more-toggle:hover{
 
     background:
-        #FFFFFF;
+        #FFFFFF !important;
 
     border-color:
-        rgba(61,111,159,.27);
+        rgba(61,111,159,.25) !important;
 
 }
 
@@ -72105,10 +72117,19 @@ body.dark
     visibility:hidden;
 
     transition:
-        max-height .56s
-        cubic-bezier(.22,.61,.36,1),
-        opacity .30s ease,
-        visibility 0s linear .56s;
+
+        max-height
+        .55s
+        var(--alpha-ease),
+
+        opacity
+        .30s
+        ease,
+
+        visibility
+        0s
+        linear
+        .55s;
 
 }
 
@@ -72119,10 +72140,19 @@ body.dark
     visibility:visible;
 
     transition:
-        max-height .58s
-        cubic-bezier(.22,.61,.36,1),
-        opacity .35s ease,
-        visibility 0s linear 0s;
+
+        max-height
+        .58s
+        var(--alpha-ease),
+
+        opacity
+        .35s
+        ease,
+
+        visibility
+        0s
+        linear
+        0s;
 
 }
 
@@ -72132,7 +72162,7 @@ body.dark
 
     grid-template-columns:
         repeat(
-            2,
+            3,
             minmax(0,1fr)
         );
 
@@ -72144,8 +72174,7 @@ body.dark
 
 .page-alpha .alpha-detail-card{
 
-    padding:
-        23px;
+    padding:23px;
 
     border:
         1px solid
@@ -72153,8 +72182,14 @@ body.dark
 
     border-radius:21px;
 
-    background:
-        #F7FAFC;
+    background:#F7FAFC;
+
+}
+
+.page-alpha .alpha-detail-card:nth-child(5){
+
+    grid-column:
+        1 / -1;
 
 }
 
@@ -72163,7 +72198,7 @@ body.dark
     margin-top:11px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:1.12rem;
 
@@ -72171,14 +72206,13 @@ body.dark
 
 .page-alpha .alpha-detail-card p{
 
-    margin-top:8px;
+    margin-top:7px;
 
-    color:
-        #74838F;
+    color:#768591;
 
     font-size:.82rem;
 
-    line-height:1.72;
+    line-height:1.68;
 
 }
 
@@ -72188,9 +72222,9 @@ body.dark
 
     flex-direction:column;
 
-    gap:9px;
+    gap:10px;
 
-    margin-top:16px;
+    margin-top:15px;
 
 }
 
@@ -72198,26 +72232,20 @@ body.dark
 
     display:flex;
 
-    align-items:flex-start;
-
     gap:9px;
 
-    color:
-        #74838F;
-
-    font-size:.78rem;
-
-    line-height:1.55;
+    align-items:flex-start;
 
 }
 
 .page-alpha .alpha-detail-check{
 
-    width:21px;
+    flex:
+        0 0 22px;
 
-    height:21px;
+    width:22px;
 
-    flex:0 0 21px;
+    height:22px;
 
     display:grid;
 
@@ -72226,7 +72254,7 @@ body.dark
     border-radius:50%;
 
     background:
-        rgba(61,111,159,.10);
+        rgba(61,96,124,.10);
 
     color:
         var(--alpha-blue);
@@ -72237,15 +72265,24 @@ body.dark
 
 }
 
+.page-alpha .alpha-detail-item > span:last-child{
+
+    color:#73828E;
+
+    font-size:.76rem;
+
+    line-height:1.58;
+
+}
+
 
 /* ==========================================================
-   10. BENEFITS
+   BENEFITS
    ========================================================== */
 
 .page-alpha .alpha-benefits{
 
-    background:
-        #F6F9FB;
+    background:#F6F9FB;
 
 }
 
@@ -72257,15 +72294,9 @@ body.dark
         minmax(0,1fr)
         minmax(0,1fr);
 
-    gap:62px;
+    gap:64px;
 
     align-items:center;
-
-}
-
-.page-alpha .alpha-benefits-copy{
-
-    max-width:620px;
 
 }
 
@@ -72275,8 +72306,7 @@ body.dark
 
     margin-top:22px;
 
-    color:
-        #6B7D8B;
+    color:#6B7D8B;
 
     font-size:1rem;
 
@@ -72312,7 +72342,8 @@ body.dark
 
     height:27px;
 
-    flex:0 0 27px;
+    flex:
+        0 0 27px;
 
     display:grid;
 
@@ -72323,10 +72354,9 @@ body.dark
     background:
         rgba(61,135,74,.10);
 
-    color:
-        var(--alpha-green-dark);
+    color:#286736;
 
-    font-size:.71rem;
+    font-size:.74rem;
 
     font-weight:900;
 
@@ -72334,8 +72364,7 @@ body.dark
 
 .page-alpha .alpha-benefit-check p{
 
-    color:
-        #536978;
+    color:#516777;
 
     font-size:.86rem;
 
@@ -72351,13 +72380,13 @@ body.dark
 
 .page-alpha .alpha-benefits-frame{
 
-    min-height:540px;
+    position:relative;
+
+    min-height:560px;
 
     display:grid;
 
     place-items:center;
-
-    position:relative;
 
     overflow:hidden;
 
@@ -72366,9 +72395,9 @@ body.dark
     background:
 
         radial-gradient(
-            circle at 50% 45%,
-            rgba(61,111,159,.10),
-            rgba(217,231,243,.27) 38%,
+            circle at 50% 44%,
+            rgba(57,91,119,.10),
+            rgba(201,217,233,.24) 36%,
             transparent 70%
         ),
 
@@ -72387,7 +72416,7 @@ body.dark
 
     position:absolute;
 
-    width:72%;
+    width:76%;
 
     aspect-ratio:1;
 
@@ -72396,7 +72425,7 @@ body.dark
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.95),
+            rgba(255,255,255,.96),
             transparent 68%
         );
 
@@ -72406,7 +72435,7 @@ body.dark
 
     position:absolute;
 
-    width:65%;
+    width:64%;
 
     aspect-ratio:1;
 
@@ -72414,7 +72443,7 @@ body.dark
 
     border:
         1px solid
-        rgba(120,149,174,.18);
+        rgba(120,148,176,.17);
 
 }
 
@@ -72422,25 +72451,25 @@ body.dark
 
     position:absolute;
 
-    width:80%;
+    width:82%;
 
     aspect-ratio:1;
 
     background:
 
         linear-gradient(
-            rgba(43,77,103,.04) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(43,77,103,.04) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         );
 
     background-size:
-        26px 26px;
+        25px 25px;
 
     transform:
         rotate(45deg);
@@ -72449,7 +72478,7 @@ body.dark
         radial-gradient(
             circle,
             #000,
-            transparent 67%
+            transparent 68%
         );
 
 }
@@ -72458,11 +72487,9 @@ body.dark
 
     position:relative;
 
-    z-index:4;
+    z-index:3;
 
-    width:auto;
-
-    max-width:410px;
+    max-width:430px;
 
     max-height:500px;
 
@@ -72478,13 +72505,12 @@ body.dark
 
 
 /* ==========================================================
-   11. PRODUCT DETAIL
+   PRODUCT DETAIL
    ========================================================== */
 
 .page-alpha .alpha-product-section{
 
-    background:
-        #FFFFFF;
+    background:#FFFFFF;
 
 }
 
@@ -72493,10 +72519,10 @@ body.dark
     display:grid;
 
     grid-template-columns:
-        minmax(0,.95fr)
-        minmax(0,1.05fr);
+        minmax(0,.90fr)
+        minmax(0,1.10fr);
 
-    gap:68px;
+    gap:64px;
 
     align-items:center;
 
@@ -72504,30 +72530,30 @@ body.dark
 
 .page-alpha .alpha-product-detail-frame{
 
-    min-height:550px;
+    position:relative;
+
+    min-height:500px;
 
     display:grid;
 
     place-items:center;
 
-    position:relative;
-
     overflow:hidden;
 
-    border-radius:32px;
+    border-radius:34px;
 
     background:
 
         radial-gradient(
-            circle at 50% 46%,
-            rgba(61,111,159,.10),
-            transparent 49%
+            circle at 50% 44%,
+            rgba(201,217,233,.50),
+            transparent 46%
         ),
 
         linear-gradient(
             145deg,
             #F7FBFD,
-            #E9F1F5
+            #E7F0F5
         );
 
     box-shadow:
@@ -72548,8 +72574,8 @@ body.dark
     background:
         radial-gradient(
             circle,
-            rgba(255,255,255,.90),
-            transparent 69%
+            rgba(255,255,255,.95),
+            transparent 68%
         );
 
 }
@@ -72566,7 +72592,7 @@ body.dark
 
     border:
         1px solid
-        rgba(120,149,174,.18);
+        rgba(120,148,176,.18);
 
 }
 
@@ -72577,7 +72603,7 @@ body.dark
     border-style:dashed;
 
     border-color:
-        rgba(200,161,90,.18);
+        rgba(198,161,91,.17);
 
     animation:
         alphaOrbit
@@ -72599,13 +72625,13 @@ body.dark
     background:
 
         linear-gradient(
-            rgba(43,77,103,.04) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(43,77,103,.04) 1px,
+            rgba(57,91,119,.027) 1px,
             transparent 1px
         );
 
@@ -72619,7 +72645,7 @@ body.dark
         radial-gradient(
             circle,
             #000,
-            transparent 69%
+            transparent 68%
         );
 
 }
@@ -72634,7 +72660,7 @@ body.dark
 
     max-width:400px;
 
-    max-height:470px;
+    max-height:460px;
 
     object-fit:contain;
 
@@ -72667,12 +72693,12 @@ body.dark
 
     border:
         1px solid
-        rgba(43,77,103,.10);
+        rgba(24,42,58,.10);
 
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.56);
+        rgba(255,255,255,.52);
 
     backdrop-filter:
         blur(12px);
@@ -72682,7 +72708,7 @@ body.dark
 .page-alpha .alpha-detail-caption strong{
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:.61rem;
 
@@ -72695,11 +72721,11 @@ body.dark
     color:
         var(--alpha-steel);
 
-    font-size:.51rem;
+    font-size:.52rem;
 
     font-weight:850;
 
-    letter-spacing:.10em;
+    letter-spacing:.12em;
 
 }
 
@@ -72708,26 +72734,15 @@ body.dark
     margin-top:16px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:
-        clamp(
-            2rem,
-            3vw,
-            3rem
-        );
+    font-size:2rem;
 
     line-height:1;
 
     letter-spacing:-.04em;
 
-}
-
-.page-alpha .alpha-product-detail-copy .lead{
-
-    max-width:650px;
-
-    margin-top:22px;
+    font-weight:900;
 
 }
 
@@ -72751,9 +72766,9 @@ body.dark
 
     display:flex;
 
-    gap:12px;
+    align-items:center;
 
-    align-items:flex-start;
+    gap:12px;
 
     padding:
         15px;
@@ -72775,7 +72790,8 @@ body.dark
 
     height:30px;
 
-    flex:0 0 30px;
+    flex:
+        0 0 30px;
 
     display:grid;
 
@@ -72799,7 +72815,7 @@ body.dark
     display:block;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:.80rem;
 
@@ -72811,8 +72827,7 @@ body.dark
 
     margin-top:3px;
 
-    color:
-        #788894;
+    color:#788894;
 
     font-size:.71rem;
 
@@ -72822,7 +72837,7 @@ body.dark
 
 
 /* ==========================================================
-   12. INGREDIENTS
+   INGREDIENT FEATURES
    ========================================================== */
 
 .page-alpha .alpha-ingredients{
@@ -72852,10 +72867,9 @@ body.dark
 
 .page-alpha .alpha-ingredient-feature{
 
-    min-height:255px;
+    min-height:260px;
 
-    padding:
-        28px;
+    padding:28px;
 
     position:relative;
 
@@ -72885,15 +72899,15 @@ body.dark
     background:
 
         radial-gradient(
-            circle at 84% 14%,
-            rgba(61,111,159,.10),
-            transparent 30%
+            circle at 85% 12%,
+            rgba(61,96,124,.10),
+            transparent 29%
         ),
 
         linear-gradient(
             145deg,
             #FFFFFF,
-            #EDF5FA
+            #EEF5FA
         );
 
 }
@@ -72903,7 +72917,7 @@ body.dark
     grid-column:
         1 / -1;
 
-    min-height:225px;
+    min-height:230px;
 
     background:
         linear-gradient(
@@ -72920,10 +72934,10 @@ body.dark
 
     right:25px;
 
-    top:23px;
+    top:24px;
 
     color:
-        rgba(43,77,103,.18);
+        rgba(57,91,119,.18);
 
     font-size:.67rem;
 
@@ -72935,25 +72949,25 @@ body.dark
 
 .page-alpha .alpha-feature-symbol{
 
-    width:64px;
+    width:66px;
 
-    height:64px;
+    height:66px;
 
     display:grid;
 
     place-items:center;
 
-    margin-bottom:25px;
+    margin-bottom:26px;
 
-    border-radius:19px;
+    border-radius:20px;
 
     background:
-        #ECF3F8;
+        #EAF2F7;
 
     color:
         var(--alpha-blue);
 
-    font-size:1.15rem;
+    font-size:1.20rem;
 
     font-weight:900;
 
@@ -72961,33 +72975,32 @@ body.dark
 
 .page-alpha .alpha-ingredient-feature .label{
 
-    font-size:.60rem;
+    font-size:.61rem;
 
 }
 
 .page-alpha .alpha-ingredient-feature h3{
 
-    margin-top:9px;
+    margin-top:8px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:1.42rem;
+    font-size:1.45rem;
 
-    line-height:1.1;
+    line-height:1.10;
 
 }
 
 .page-alpha .alpha-ingredient-feature p{
 
-    max-width:570px;
+    max-width:560px;
 
-    margin-top:11px;
+    margin-top:10px;
 
-    color:
-        #758592;
+    color:#758592;
 
-    font-size:.88rem;
+    font-size:.86rem;
 
     line-height:1.76;
 
@@ -73017,7 +73030,7 @@ body.dark
 
 }
 
-.page-alpha .alpha-ingredient-note strong{
+.page-alpha .alpha-ingredient-note > span{
 
     flex:none;
 
@@ -73027,12 +73040,14 @@ body.dark
     border-radius:9px;
 
     background:
-        rgba(200,161,90,.11);
+        rgba(198,161,91,.10);
 
     color:
         var(--alpha-gold-dark);
 
     font-size:.60rem;
+
+    font-weight:900;
 
     letter-spacing:.12em;
 
@@ -73040,8 +73055,7 @@ body.dark
 
 .page-alpha .alpha-ingredient-note p{
 
-    color:
-        #778692;
+    color:#778692;
 
     font-size:.78rem;
 
@@ -73051,13 +73065,12 @@ body.dark
 
 
 /* ==========================================================
-   13. USAGE
+   USAGE
    ========================================================== */
 
 .page-alpha .alpha-usage{
 
-    background:
-        #FFFFFF;
+    background:#FFFFFF;
 
 }
 
@@ -73077,10 +73090,10 @@ body.dark
 
 .page-alpha .alpha-usage-step{
 
-    min-height:250px;
+    min-height:240px;
 
     padding:
-        25px 22px;
+        24px;
 
     border:
         1px solid
@@ -73129,7 +73142,7 @@ body.dark
     margin-top:24px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:1.04rem;
 
@@ -73139,8 +73152,7 @@ body.dark
 
     margin-top:8px;
 
-    color:
-        #74838F;
+    color:#74838F;
 
     font-size:.80rem;
 
@@ -73177,8 +73189,7 @@ body.dark
 
     margin-top:9px;
 
-    color:
-        #74838F;
+    color:#74838F;
 
     font-size:.78rem;
 
@@ -73188,7 +73199,7 @@ body.dark
 
 
 /* ==========================================================
-   14. PERFORMANCE
+   PERFORMANCE
    ========================================================== */
 
 .page-alpha .alpha-performance{
@@ -73197,8 +73208,8 @@ body.dark
 
         radial-gradient(
             circle at 14% 20%,
-            rgba(61,111,159,.10),
-            transparent 27%
+            rgba(120,148,176,.12),
+            transparent 28%
         ),
 
         linear-gradient(
@@ -73225,26 +73236,25 @@ body.dark
 
 .page-alpha .alpha-performance-card{
 
-    min-height:255px;
+    min-height:245px;
 
-    padding:
-        28px;
+    padding:28px;
 
     border:
         1px solid
-        rgba(43,77,103,.10);
+        rgba(57,91,119,.10);
 
     border-radius:27px;
 
     background:
-        rgba(255,255,255,.76);
+        rgba(255,255,255,.78);
 
     box-shadow:
         0 18px 42px
-        rgba(24,42,58,.07);
+        rgba(24,42,58,.08);
 
     backdrop-filter:
-        blur(12px);
+        blur(13px);
 
 }
 
@@ -73261,15 +73271,16 @@ body.dark
     border-radius:20px;
 
     background:
+
         linear-gradient(
             145deg,
-            var(--alpha-blue-deep),
+            var(--alpha-deep),
             var(--alpha-blue)
         );
 
     color:#FFFFFF;
 
-    font-size:1.4rem;
+    font-size:1.40rem;
 
     font-weight:900;
 
@@ -73280,9 +73291,9 @@ body.dark
     margin-top:25px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:1.20rem;
+    font-size:1.18rem;
 
 }
 
@@ -73290,8 +73301,7 @@ body.dark
 
     margin-top:9px;
 
-    color:
-        #728391;
+    color:#728391;
 
     font-size:.83rem;
 
@@ -73303,16 +73313,15 @@ body.dark
 
     margin-top:18px;
 
-    padding:
-        29px;
+    padding:28px;
 
     border-radius:27px;
 
     background:
 
         radial-gradient(
-            circle at 88% 18%,
-            rgba(200,161,90,.18),
+            circle at 89% 16%,
+            rgba(198,161,91,.18),
             transparent 24%
         ),
 
@@ -73331,7 +73340,7 @@ body.dark
 .page-alpha .alpha-performance-feature .label{
 
     color:
-        var(--alpha-green-light);
+        #78AC82;
 
 }
 
@@ -73351,8 +73360,7 @@ body.dark
 
     margin-top:9px;
 
-    color:
-        #C8D6DF;
+    color:#C8D6DF;
 
     font-size:.88rem;
 
@@ -73362,7 +73370,7 @@ body.dark
 
 
 /* ==========================================================
-   15. FAQ
+   FAQ
    ========================================================== */
 
 .page-alpha .alpha-faq{
@@ -73390,7 +73398,7 @@ body.dark
 
     border:
         1px solid
-        rgba(43,77,103,.12);
+        rgba(57,91,119,.12);
 
     border-radius:19px;
 
@@ -73406,7 +73414,7 @@ body.dark
 .page-alpha .alpha-faq-item.active{
 
     border-color:
-        rgba(61,111,159,.23);
+        rgba(61,96,124,.24);
 
     box-shadow:
         0 16px 43px
@@ -73439,7 +73447,7 @@ body.dark
     background:transparent;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     text-align:left;
 
@@ -73481,7 +73489,7 @@ body.dark
 .page-alpha .alpha-faq-text{
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     font-size:.88rem;
 
@@ -73503,7 +73511,7 @@ body.dark
 
     border:
         1px solid
-        rgba(43,77,103,.12);
+        rgba(57,91,119,.12);
 
     border-radius:50%;
 
@@ -73513,8 +73521,9 @@ body.dark
     font-size:.96rem;
 
     transition:
-        transform .28s ease,
-        background .28s ease;
+        transform .25s ease,
+        background .25s ease,
+        color .25s ease;
 
 }
 
@@ -73522,7 +73531,7 @@ body.dark
 .alpha-faq-plus{
 
     background:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
     color:#FFFFFF;
 
@@ -73546,30 +73555,29 @@ body.dark
         0 17px 19px 66px;
 
     color:
-        #73828E;
+        #526A79;
 
     font-size:.82rem;
 
-    line-height:1.72;
+    line-height:1.78;
 
 }
 
 
 /* ==========================================================
-   16. DISCLAIMER
+   INFORMATION
    ========================================================== */
 
-.page-alpha .alpha-disclaimer{
+.page-alpha .alpha-information-section{
 
-    padding:
-        0 0 110px;
+    padding-top:0;
 
     background:
         #F6F9FB;
 
 }
 
-.page-alpha .alpha-disclaimer-box{
+.page-alpha .alpha-information-box{
 
     display:grid;
 
@@ -73584,11 +73592,12 @@ body.dark
 
     border:
         1px solid
-        rgba(43,77,103,.12);
+        rgba(57,91,119,.12);
 
     border-radius:22px;
 
     background:
+
         linear-gradient(
             135deg,
             #FFFFFF,
@@ -73597,7 +73606,7 @@ body.dark
 
 }
 
-.page-alpha .alpha-disclaimer-icon{
+.page-alpha .alpha-information-icon{
 
     width:37px;
 
@@ -73610,34 +73619,35 @@ body.dark
     border-radius:50%;
 
     background:
-        rgba(200,161,90,.12);
+        #EAF1F5;
 
     color:
-        var(--alpha-gold-dark);
+        var(--alpha-deep);
 
     font-weight:900;
 
 }
 
-.page-alpha .alpha-disclaimer-box h3{
+.page-alpha .alpha-information-box h2{
 
     margin-top:9px;
 
     color:
-        var(--alpha-blue-deep);
+        var(--alpha-deep);
 
-    font-size:1.32rem;
+    font-size:1.38rem;
 
-    line-height:1.1;
+    line-height:1.10;
+
+    letter-spacing:-.025em;
 
 }
 
-.page-alpha .alpha-disclaimer-box p{
+.page-alpha .alpha-information-box p{
 
     margin-top:8px;
 
-    color:
-        #778691;
+    color:#778691;
 
     font-size:.76rem;
 
@@ -73645,23 +73655,30 @@ body.dark
 
 }
 
-.page-alpha .alpha-disclaimer-box p + p{
-
-    margin-top:9px;
-
-}
-
 
 /* ==========================================================
-   17. CTA
+   CTA
    ========================================================== */
 
 .page-alpha .alpha-cta{
 
-    padding-top:0;
+    position:relative;
+
+    overflow:hidden;
 
     background:
-        #F6F9FB;
+
+        radial-gradient(
+            circle at 50% -15%,
+            rgba(198,161,91,.09),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            140deg,
+            #0E1921,
+            #1B3447
+        );
 
 }
 
@@ -73669,67 +73686,23 @@ body.dark
 
     position:relative;
 
-    display:flex;
+    z-index:2;
 
-    align-items:center;
+    max-width:920px;
 
-    justify-content:space-between;
-
-    gap:40px;
-
-    max-width:100%;
+    margin-inline:auto;
 
     padding:
-        62px 46px;
+        70px 30px 74px;
 
-    border-radius:33px;
-
-    overflow:hidden;
-
-    background:
-
-        radial-gradient(
-            circle at 89% 16%,
-            rgba(200,161,90,.20),
-            transparent 24%
-        ),
-
-        linear-gradient(
-            135deg,
-            #0E1E2A,
-            #1B374D
-        );
-
-    box-shadow:
-        0 27px 64px
-        rgba(13,34,50,.20);
-
-}
-
-.page-alpha .alpha-cta-box::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:17px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    border-radius:24px;
-
-    pointer-events:none;
+    text-align:center;
 
 }
 
 .page-alpha .alpha-label-light{
 
-    position:relative;
-
     color:
-        var(--alpha-green-light);
+        var(--alpha-gold-light);
 
     font-size:.63rem;
 
@@ -73741,11 +73714,7 @@ body.dark
 
 .page-alpha .alpha-cta-box h2{
 
-    position:relative;
-
-    max-width:760px;
-
-    margin-top:15px;
+    margin-top:17px;
 
     color:#FFFFFF;
 
@@ -73777,16 +73746,15 @@ body.dark
 
 .page-alpha .alpha-cta-box p{
 
-    position:relative;
-
     max-width:650px;
 
-    margin-top:20px;
+    margin:
+        21px auto 0;
 
     color:
         #C3D1DA;
 
-    font-size:.90rem;
+    font-size:.96rem;
 
     line-height:1.78;
 
@@ -73794,40 +73762,35 @@ body.dark
 
 .page-alpha .alpha-cta-actions{
 
-    width:
-        min(
-            245px,
-            100%
-        );
-
     display:flex;
 
-    flex-direction:column;
+    justify-content:center;
 
-    gap:10px;
+    flex-wrap:wrap;
 
-    position:relative;
+    gap:12px;
 
-    z-index:2;
+    margin-top:29px;
 
 }
 
 .page-alpha .alpha-cta-actions
 .alpha-btn-dark{
 
-    color:#FFFFFF;
+    border-color:
+        rgba(255,255,255,.16) !important;
 
     background:
-        rgba(255,255,255,.045);
+        rgba(255,255,255,.045) !important;
 
-    border-color:
-        rgba(255,255,255,.16);
+    color:
+        #FFFFFF !important;
 
 }
 
 
 /* ==========================================================
-   18. DARK MODE
+   DARK MODE
    ========================================================== */
 
 body.dark .page-alpha,
@@ -73838,21 +73801,20 @@ body[data-theme="dark"] .page-alpha,
     --alpha-white:#0F1921;
 
     --alpha-ice:#C6D7E5;
+
     --alpha-mist:#111D26;
+
     --alpha-soft:#111D26;
 
-    --alpha-blue:#6D9FC9;
-    --alpha-blue-light:#8CB8D8;
-    --alpha-blue-deep:#EDF5F9;
+    --alpha-blue:#6F9FC6;
 
     --alpha-steel:#91AABD;
 
-    --alpha-gold:#DDB866;
-    --alpha-gold-light:#F0D596;
-    --alpha-gold-dark:#C9A457;
+    --alpha-deep:#F1F6F9;
 
     --alpha-text:#DCE7EE;
-    --alpha-muted:#AFC0CC;
+
+    --alpha-muted:#AFBEC9;
 
     --alpha-line:
         rgba(218,231,240,.10);
@@ -73873,23 +73835,41 @@ body[data-theme="dark"] .page-alpha .alpha-hero,
     background:
 
         radial-gradient(
-            circle at 18% 17%,
-            rgba(111,159,201,.13),
+            circle at 16% 17%,
+            rgba(120,148,176,.16),
             transparent 31%
         ),
 
         radial-gradient(
-            circle at 83% 31%,
-            rgba(200,161,90,.06),
-            transparent 25%
+            circle at 82% 28%,
+            rgba(198,161,91,.05),
+            transparent 24%
         ),
 
         linear-gradient(
             135deg,
             #0F1921,
-            #142630 55%,
-            #17323E
+            #14252F 58%,
+            #17313B
         );
+
+}
+
+body.dark .page-alpha .alpha-hero-description,
+body[data-theme="dark"] .page-alpha .alpha-hero-description,
+[data-theme="dark"] .page-alpha .alpha-hero-description,
+.dark .page-alpha .alpha-hero-description,
+body.dark .page-alpha .alpha-section-heading p,
+body[data-theme="dark"] .page-alpha .alpha-section-heading p,
+[data-theme="dark"] .page-alpha .alpha-section-heading p,
+.dark .page-alpha .alpha-section-heading p,
+body.dark .page-alpha .lead,
+body[data-theme="dark"] .page-alpha .lead,
+[data-theme="dark"] .page-alpha .lead,
+.dark .page-alpha .lead{
+
+    color:
+        #B7C6D0;
 
 }
 
@@ -73929,7 +73909,7 @@ body[data-theme="dark"] .page-alpha .alpha-faq,
 .dark .page-alpha .alpha-faq{
 
     background:
-        #101B24;
+        #101A23;
 
 }
 
@@ -73962,94 +73942,13 @@ body[data-theme="dark"] .page-alpha .alpha-faq-item,
 
 }
 
-body.dark .page-alpha .alpha-overview-note,
-body[data-theme="dark"] .page-alpha .alpha-overview-note,
-[data-theme="dark"] .page-alpha .alpha-overview-note,
-.dark .page-alpha .alpha-overview-note,
-body.dark .page-alpha .alpha-ingredient-note,
-body[data-theme="dark"] .page-alpha .alpha-ingredient-note,
-[data-theme="dark"] .page-alpha .alpha-ingredient-note,
-.dark .page-alpha .alpha-ingredient-note,
-body.dark .page-alpha .alpha-usage-note,
-body[data-theme="dark"] .page-alpha .alpha-usage-note,
-[data-theme="dark"] .page-alpha .alpha-usage-note,
-.dark .page-alpha .alpha-usage-note{
+body.dark .page-alpha .alpha-detail-card,
+body[data-theme="dark"] .page-alpha .alpha-detail-card,
+[data-theme="dark"] .page-alpha .alpha-detail-card,
+.dark .page-alpha .alpha-detail-card{
 
     background:
-        #16242E;
-
-    border-color:
-        rgba(218,231,240,.09);
-
-}
-
-body.dark .page-alpha .alpha-hero-description,
-body[data-theme="dark"] .page-alpha .alpha-hero-description,
-[data-theme="dark"] .page-alpha .alpha-hero-description,
-.dark .page-alpha .alpha-hero-description,
-body.dark .page-alpha .alpha-section-heading p,
-body[data-theme="dark"] .page-alpha .alpha-section-heading p,
-[data-theme="dark"] .page-alpha .alpha-section-heading p,
-.dark .page-alpha .alpha-section-heading p,
-body.dark .page-alpha .lead,
-body[data-theme="dark"] .page-alpha .lead,
-[data-theme="dark"] .page-alpha .lead,
-.dark .page-alpha .lead{
-
-    color:
-        #B7C6D0;
-
-}
-
-body.dark .page-alpha .alpha-overview-card p,
-body[data-theme="dark"] .page-alpha .alpha-overview-card p,
-[data-theme="dark"] .page-alpha .alpha-overview-card p,
-.dark .page-alpha .alpha-overview-card p,
-body.dark .page-alpha .alpha-composition-card p,
-body[data-theme="dark"] .page-alpha .alpha-composition-card p,
-[data-theme="dark"] .page-alpha .alpha-composition-card p,
-.dark .page-alpha .alpha-composition-card p,
-body.dark .page-alpha .alpha-detail-card p,
-body[data-theme="dark"] .page-alpha .alpha-detail-card p,
-[data-theme="dark"] .page-alpha .alpha-detail-card p,
-.dark .page-alpha .alpha-detail-card p,
-body.dark .page-alpha .alpha-usage-step p,
-body[data-theme="dark"] .page-alpha .alpha-usage-step p,
-[data-theme="dark"] .page-alpha .alpha-usage-step p,
-.dark .page-alpha .alpha-usage-step p,
-body.dark .page-alpha .alpha-faq-answer p,
-body[data-theme="dark"] .page-alpha .alpha-faq-answer p,
-[data-theme="dark"] .page-alpha .alpha-faq-answer p,
-.dark .page-alpha .alpha-faq-answer p{
-
-    color:
-        #AABCC8;
-
-}
-
-body.dark .page-alpha .alpha-hero-product,
-body[data-theme="dark"] .page-alpha .alpha-hero-product,
-[data-theme="dark"] .page-alpha .alpha-hero-product,
-.dark .page-alpha .alpha-hero-product{
-
-    filter:none;
-
-}
-
-body.dark .page-alpha .alpha-product-caption,
-body[data-theme="dark"] .page-alpha .alpha-product-caption,
-[data-theme="dark"] .page-alpha .alpha-product-caption,
-.dark .page-alpha .alpha-product-caption,
-body.dark .page-alpha .alpha-detail-caption,
-body[data-theme="dark"] .page-alpha .alpha-detail-caption,
-[data-theme="dark"] .page-alpha .alpha-detail-caption,
-.dark .page-alpha .alpha-detail-caption{
-
-    background:
-        rgba(9,23,35,.74);
-
-    border-color:
-        rgba(218,231,240,.09);
+        #182833;
 
 }
 
@@ -74066,6 +73965,39 @@ body[data-theme="dark"] .page-alpha .alpha-product-spec,
 
 }
 
+body.dark .page-alpha .alpha-hero-pill,
+body[data-theme="dark"] .page-alpha .alpha-hero-pill,
+[data-theme="dark"] .page-alpha .alpha-hero-pill,
+.dark .page-alpha .alpha-hero-pill{
+
+    border-color:
+        rgba(255,255,255,.09);
+
+    background:
+        rgba(255,255,255,.05);
+
+    color:
+        #D7E5EC;
+
+}
+
+body.dark .page-alpha .alpha-product-caption,
+body[data-theme="dark"] .page-alpha .alpha-product-caption,
+[data-theme="dark"] .page-alpha .alpha-product-caption,
+.dark .page-alpha .alpha-product-caption,
+body.dark .page-alpha .alpha-detail-caption,
+body[data-theme="dark"] .page-alpha .alpha-detail-caption,
+[data-theme="dark"] .page-alpha .alpha-detail-caption,
+.dark .page-alpha .alpha-detail-caption{
+
+    background:
+        rgba(9,23,35,.76);
+
+    border-color:
+        rgba(218,231,240,.09);
+
+}
+
 body.dark .page-alpha .alpha-product-detail-frame,
 body[data-theme="dark"] .page-alpha .alpha-product-detail-frame,
 [data-theme="dark"] .page-alpha .alpha-product-detail-frame,
@@ -74078,16 +74010,29 @@ body[data-theme="dark"] .page-alpha .alpha-benefits-frame,
     background:
 
         radial-gradient(
-            circle at 50% 46%,
-            rgba(61,111,159,.11),
-            transparent 49%
+            circle at 50% 44%,
+            rgba(120,148,176,.10),
+            transparent 48%
         ),
 
         linear-gradient(
             145deg,
-            #12212B,
+            #14232D,
             #19303B
         );
+
+}
+
+body.dark .page-alpha .alpha-performance-card,
+body[data-theme="dark"] .page-alpha .alpha-performance-card,
+[data-theme="dark"] .page-alpha .alpha-performance-card,
+.dark .page-alpha .alpha-performance-card{
+
+    background:
+        rgba(18,35,47,.80);
+
+    border-color:
+        rgba(218,231,240,.09);
 
 }
 
@@ -74101,44 +74046,36 @@ body[data-theme="dark"] .page-alpha .alpha-faq-question:hover,
 
 }
 
-body.dark .page-alpha .btn-glass,
-body[data-theme="dark"] .page-alpha .btn-glass,
-[data-theme="dark"] .page-alpha .btn-glass,
-.dark .page-alpha .btn-glass{
-
-    background:
-        rgba(255,255,255,.045);
+body.dark .page-alpha .alpha-faq-answer p,
+body[data-theme="dark"] .page-alpha .alpha-faq-answer p,
+[data-theme="dark"] .page-alpha .alpha-faq-answer p,
+.dark .page-alpha .alpha-faq-answer p{
 
     color:
-        #E9F2F7;
-
-    border-color:
-        rgba(218,231,240,.12);
+        #B6C6D0;
 
 }
 
-body.dark .page-alpha .alpha-performance-card,
-body[data-theme="dark"] .page-alpha .alpha-performance-card,
-[data-theme="dark"] .page-alpha .alpha-performance-card,
-.dark .page-alpha .alpha-performance-card{
+body.dark .page-alpha .alpha-information-section,
+body[data-theme="dark"] .page-alpha .alpha-information-section,
+[data-theme="dark"] .page-alpha .alpha-information-section,
+.dark .page-alpha .alpha-information-section{
 
     background:
-        rgba(18,35,47,.78);
-
-    border-color:
-        rgba(218,231,240,.09);
+        #101A23;
 
 }
 
 
 /* ==========================================================
-   19. RESPONSIVE — 1120
+   RESPONSIVE — 1120
    ========================================================== */
 
 @media(max-width:1120px){
 
     .page-alpha .container,
-    .page-alpha .container-sm{
+    .page-alpha .container-sm,
+    .page-alpha .alpha-hero-grid{
 
         width:
             min(
@@ -74150,29 +74087,11 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     .page-alpha .alpha-hero-grid{
 
-        width:
-            min(
-                1120px,
-                calc(100% - 64px)
-            );
-
         grid-template-columns:
             minmax(0,1fr)
             minmax(360px,.85fr);
 
-        gap:34px;
-
-    }
-
-    .page-alpha .alpha-hero-copy{
-
-        padding-left:8px;
-
-    }
-
-    .page-alpha .alpha-hero-product{
-
-        min-height:540px;
+        gap:28px;
 
     }
 
@@ -74197,11 +74116,28 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
+    .page-alpha .alpha-detail-grid{
+
+        grid-template-columns:
+            repeat(
+                2,
+                minmax(0,1fr)
+            );
+
+    }
+
+    .page-alpha .alpha-detail-card:nth-child(5){
+
+        grid-column:
+            1 / -1;
+
+    }
+
 }
 
 
 /* ==========================================================
-   20. RESPONSIVE — 900
+   RESPONSIVE — 900
    ========================================================== */
 
 @media(max-width:900px){
@@ -74230,10 +74166,10 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
         grid-template-columns:
             1fr;
 
-        gap:30px;
+        gap:34px;
 
-        padding:
-            66px 0 58px;
+        padding-block:
+            66px 58px;
 
     }
 
@@ -74268,6 +74204,12 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
+    .page-alpha .alpha-hero-meta{
+
+        margin-inline:auto;
+
+    }
+
     .page-alpha .alpha-hero-product{
 
         width:
@@ -74296,21 +74238,23 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
         max-width:760px;
 
-        text-align:center;
-
         margin-inline:auto;
+
+        text-align:center;
 
     }
 
-    .page-alpha .alpha-benefits-copy .eyebrow{
+    .page-alpha .alpha-benefit-checks{
 
-        justify-content:center;
+        text-align:left;
 
     }
 
     .page-alpha .alpha-benefits-visual{
 
         max-width:700px;
+
+        width:100%;
 
         margin-inline:auto;
 
@@ -74328,13 +74272,6 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .alpha-product-detail-copy h3,
-    .page-alpha .alpha-product-detail-copy .lead{
-
-        margin-inline:auto;
-
-    }
-
     .page-alpha .alpha-performance-grid{
 
         grid-template-columns:
@@ -74345,19 +74282,11 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .alpha-cta-box{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-    }
-
 }
 
 
 /* ==========================================================
-   21. RESPONSIVE — 680
+   RESPONSIVE — 680
    ========================================================== */
 
 @media(max-width:680px){
@@ -74381,7 +74310,8 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .section-title{
+    .page-alpha .section-title,
+    .page-alpha .alpha-section-heading h2{
 
         font-size:
             clamp(
@@ -74392,10 +74322,18 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
+    .page-alpha .lead{
+
+        font-size:.95rem;
+
+        line-height:1.76;
+
+    }
+
     .page-alpha .alpha-hero-grid{
 
-        padding:
-            51px 0 48px;
+        padding-block:
+            51px 48px;
 
     }
 
@@ -74414,8 +74352,6 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
         font-size:.98rem;
 
-        line-height:1.76;
-
     }
 
     .page-alpha .alpha-hero-actions{
@@ -74428,7 +74364,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     .page-alpha .alpha-hero-actions .btn{
 
-        width:100%;
+        width:100% !important;
 
     }
 
@@ -74438,6 +74374,10 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
             1fr;
 
         text-align:left;
+
+        max-width:600px;
+
+        margin-inline:auto;
 
     }
 
@@ -74450,6 +74390,9 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
             minmax(0,1fr);
 
         gap:12px;
+
+        padding:
+            11px 0;
 
     }
 
@@ -74475,6 +74418,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     .page-alpha .alpha-overview-grid,
     .page-alpha .alpha-composition-grid,
+    .page-alpha .alpha-detail-grid,
     .page-alpha .alpha-ingredients-grid,
     .page-alpha .alpha-usage-grid,
     .page-alpha .alpha-performance-grid{
@@ -74484,10 +74428,9 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .alpha-detail-grid{
+    .page-alpha .alpha-detail-card:nth-child(5){
 
-        grid-template-columns:
-            1fr;
+        grid-column:auto;
 
     }
 
@@ -74508,23 +74451,16 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
     .page-alpha .alpha-product-detail-frame,
     .page-alpha .alpha-benefits-frame{
 
-        min-height:410px;
+        min-height:390px;
 
     }
 
-    .page-alpha .alpha-product-detail-image{
-
-        max-width:310px;
-
-        max-height:380px;
-
-    }
-
+    .page-alpha .alpha-product-detail-image,
     .page-alpha .alpha-benefits-frame img{
 
         max-width:310px;
 
-        max-height:380px;
+        max-height:370px;
 
     }
 
@@ -74537,37 +74473,56 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .alpha-benefits-copy{
+    .page-alpha .alpha-faq-question{
 
-        text-align:center;
+        grid-template-columns:
+            34px
+            minmax(0,1fr)
+            28px;
+
+        gap:9px;
+
+        min-height:65px;
+
+        padding:
+            10px 11px;
 
     }
 
-    .page-alpha .alpha-benefit-checks{
+    .page-alpha .alpha-faq-text{
 
-        text-align:left;
+        font-size:.82rem;
+
+    }
+
+    .page-alpha .alpha-faq-answer p{
+
+        padding-left:
+            54px;
+
+        padding-right:
+            13px;
+
+        font-size:.76rem;
 
     }
 
     .page-alpha .alpha-cta-box{
 
         padding:
-            58px 20px 62px;
-
-    }
-
-    .page-alpha .alpha-cta-box h2{
-
-        font-size:
-            clamp(
-                2.4rem,
-                10vw,
-                3.6rem
-            );
+            58px 18px 63px;
 
     }
 
     .page-alpha .alpha-cta-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .page-alpha .alpha-cta-actions .btn{
 
         width:100%;
 
@@ -74584,7 +74539,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
 
 /* ==========================================================
-   22. RESPONSIVE — 430
+   RESPONSIVE — 430
    ========================================================== */
 
 @media(max-width:430px){
@@ -74613,12 +74568,6 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     }
 
-    .page-alpha .alpha-hero-pill{
-
-        font-size:.61rem;
-
-    }
-
     .page-alpha .alpha-hero-product{
 
         min-height:330px;
@@ -74636,7 +74585,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
     .page-alpha .alpha-product-detail-frame,
     .page-alpha .alpha-benefits-frame{
 
-        min-height:350px;
+        min-height:340px;
 
     }
 
@@ -74645,7 +74594,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
         max-width:270px;
 
-        max-height:320px;
+        max-height:315px;
 
     }
 
@@ -74673,9 +74622,11 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
     .page-alpha .alpha-faq-answer p{
 
-        padding-left:54px;
+        padding-left:
+            54px;
 
-        padding-right:13px;
+        padding-right:
+            13px;
 
         font-size:.76rem;
 
@@ -74691,7 +74642,7 @@ body[data-theme="dark"] .page-alpha .alpha-performance-card,
 
 
 /* ==========================================================
-   23. REDUCED MOTION
+   REDUCED MOTION
    ========================================================== */
 
 @media(prefers-reduced-motion:reduce){
