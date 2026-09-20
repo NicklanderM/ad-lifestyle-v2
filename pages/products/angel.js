@@ -2450,3 +2450,4 @@ function openWhatsApp(message){
     );
 
 }
+
