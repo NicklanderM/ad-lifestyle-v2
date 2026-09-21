@@ -90,13 +90,13 @@ const EVENTS_DATA = [
             "Experiência AD Lifestyle",
 
         image:
-            "assets/IMAGES/skyna1.png",
+            "assets/images/skyna1.png",
 
         gallery: [
 
-            "assets/IMAGES/skyna1.png",
+            "assets/images/skyna1.png",
 
-            "assets/IMAGES/skyna2.png"
+            "assets/images/skyna2.png"
 
         ],
 
@@ -176,9 +176,9 @@ const EVENTS_DATA = [
 
             "assets/hotel/fly.png",
 
-            "assets/IMAGES/fly1.png",
+            "assets/images/fly1.png",
 
-            "assets/IMAGES/fly2.png"
+            "assets/images/fly2.png"
 
         ],
 
@@ -257,13 +257,13 @@ const EVENTS_DATA = [
 
         gallery: [
 
-            "assets/IMAGES/independente.png",
+            "assets/images/independente.png",
 
-            "assets/IMAGES/idependente 1.png",
+            "assets/images/independente1.png",
 
-            "assets/IMAGES/idependente 2.png",
+            "assets/images/independente2.png",
 
-            "assets/IMAGES/idependente 3.png"
+            "assets/images/independente3.png"
 
         ],
 
@@ -1703,8 +1703,8 @@ function speakerCard(
 
     const images = [
 
-        "assets/images/2.png",
-        "assets/images/1.png",
+        "assets/images/abdoulahi.png",
+        "assets/images/abdoulahi.png",
         "assets/images/a21.png"
 
     ];
