@@ -106797,8 +106797,835 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     }
 
 }
-```
 
+
+/* ==========================================================
+   EVENT GALLERIES / INTERNAL SLIDESHOW
+   ========================================================== */
+
+.page-events .events-gallery{
+
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    background:#171B1F;
+
+}
+
+.page-events .events-gallery-track{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.page-events .events-gallery-slide{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:0;
+    visibility:hidden;
+
+    transform:scale(1.025);
+
+    transition:
+        opacity .85s ease,
+        visibility .85s ease,
+        transform 5.6s ease;
+
+}
+
+.page-events .events-gallery-slide.active{
+
+    opacity:1;
+    visibility:visible;
+
+    transform:scale(1);
+
+}
+
+.page-events .events-gallery-slide img{
+
+    display:block;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.page-events .events-gallery-single{
+
+    cursor:default;
+
+}
+
+
+/* ==========================================================
+   GALLERY ARROWS
+   ========================================================== */
+
+.page-events .events-gallery-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    z-index:8;
+
+    width:40px;
+    height:40px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    transform:translateY(-50%);
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    border-radius:50%;
+
+    background:
+        rgba(23,27,31,.55);
+
+    backdrop-filter:blur(8px);
+
+    color:#FFFFFF;
+
+    font-size:.95rem;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    transition:
+        opacity .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        transform .25s ease;
+
+}
+
+.page-events .events-gallery:hover
+.events-gallery-arrow{
+
+    opacity:1;
+
+}
+
+.page-events .events-gallery-prev{
+
+    left:16px;
+
+}
+
+.page-events .events-gallery-next{
+
+    right:16px;
+
+}
+
+.page-events .events-gallery-arrow:hover{
+
+    background:
+        rgba(23,27,31,.78);
+
+    border-color:
+        rgba(198,161,91,.55);
+
+}
+
+
+/* ==========================================================
+   GALLERY DOTS
+   ========================================================== */
+
+.page-events .events-gallery-dots{
+
+    position:absolute;
+
+    left:50%;
+    bottom:15px;
+
+    z-index:8;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:5px;
+
+    transform:translateX(-50%);
+
+    padding:
+        7px 9px;
+
+    border-radius:999px;
+
+    background:
+        rgba(23,27,31,.48);
+
+    backdrop-filter:blur(9px);
+
+}
+
+.page-events .events-gallery-dots button{
+
+    width:7px;
+    height:7px;
+
+    padding:0;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.38);
+
+    cursor:pointer;
+
+    transition:
+        width .3s ease,
+        background .3s ease;
+
+}
+
+.page-events .events-gallery-dots button.active{
+
+    width:22px;
+
+    border-radius:999px;
+
+    background:
+        var(--events-gold);
+
+}
+
+
+/* ==========================================================
+   NEXT EVENT GALLERY
+   ========================================================== */
+
+.page-events .events-next-image{
+
+    overflow:hidden;
+
+}
+
+.page-events .events-next-image
+.events-gallery{
+
+    min-height:500px;
+
+}
+
+
+.page-events .events-next-date{
+
+    z-index:10;
+
+}
+
+
+/* ==========================================================
+   TICKET NOTE
+   ========================================================== */
+
+.page-events .events-ticket-note{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin-top:20px;
+
+    padding:
+        10px 14px;
+
+    border:
+        1px solid
+        rgba(198,161,91,.20);
+
+    border-radius:999px;
+
+    background:
+        #F5F0E5;
+
+    color:#806637;
+
+    font-size:.70rem;
+
+    font-weight:900;
+
+    letter-spacing:.04em;
+
+}
+
+.page-events .venue-ticket-note{
+
+    margin-top:23px;
+
+}
+
+
+/* ==========================================================
+   NEXT EVENT — TWO DAYS
+   ========================================================== */
+
+.page-events .events-next-days{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:12px;
+
+    margin-top:22px;
+
+}
+
+.page-events .events-next-day{
+
+    padding:
+        16px 17px;
+
+    border:
+        1px solid
+        rgba(23,27,31,.08);
+
+    border-radius:17px;
+
+    background:
+        #FAFAF8;
+
+}
+
+.page-events .events-next-day > span{
+
+    display:block;
+
+    color:#A1814B;
+
+    font-size:.60rem;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
+
+}
+
+.page-events .events-next-day strong{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:
+        var(--events-black);
+
+    font-size:.82rem;
+
+    line-height:1.35;
+
+}
+
+.page-events .events-next-day em{
+
+    display:block;
+
+    margin-top:4px;
+
+    color:#967541;
+
+    font-style:normal;
+
+    font-size:.69rem;
+
+    font-weight:800;
+
+}
+
+.page-events .events-next-day p{
+
+    margin-top:7px;
+
+    color:#737D84;
+
+    font-size:.76rem;
+
+    line-height:1.5;
+
+}
+
+
+/* ==========================================================
+   TIMELINE GALLERY
+   ========================================================== */
+
+.page-events .events-timeline-image{
+
+    overflow:hidden;
+
+}
+
+.page-events .events-timeline-image
+.events-gallery{
+
+    min-height:250px;
+
+}
+
+.page-events .events-timeline-image
+.events-status-badge{
+
+    z-index:10;
+
+}
+
+
+/* ==========================================================
+   VENUE GALLERY
+   ========================================================== */
+
+.page-events .events-venue-image{
+
+    overflow:hidden;
+
+}
+
+.page-events .events-venue-image
+.events-gallery{
+
+    min-height:480px;
+
+}
+
+
+/* ==========================================================
+   PROGRAM — TWO DAYS
+   ========================================================== */
+
+.page-events .events-program-list{
+
+    margin-top:38px;
+
+    border-top:
+        1px solid
+        rgba(23,27,31,.09);
+
+}
+
+.page-events .events-program-row{
+
+    display:grid;
+
+    grid-template-columns:
+        55px
+        185px
+        125px
+        1fr;
+
+    gap:18px;
+
+    align-items:center;
+
+    min-height:82px;
+
+    border-bottom:
+        1px solid
+        rgba(23,27,31,.08);
+
+}
+
+.page-events .events-program-row > strong{
+
+    color:
+        var(--events-black);
+
+    font-size:.82rem;
+
+    line-height:1.4;
+
+}
+
+.page-events .events-program-hour{
+
+    color:#8C7041;
+
+    font-size:.73rem;
+
+    font-weight:900;
+
+    white-space:nowrap;
+
+}
+
+.page-events .events-program-title{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    color:#59656E;
+
+    font-size:.84rem;
+
+    line-height:1.45;
+
+}
+
+.page-events .events-program-title small{
+
+    color:#929BA2;
+
+    font-size:.70rem;
+
+    line-height:1.4;
+
+}
+
+
+/* ==========================================================
+   MODAL GALLERY
+   ========================================================== */
+
+.page-events .events-modal-image{
+
+    overflow:hidden;
+
+}
+
+.page-events .events-modal-image
+.events-gallery{
+
+    height:330px;
+
+}
+
+.page-events .events-modal-image
+.events-status-badge{
+
+    z-index:10;
+
+}
+
+
+/* ==========================================================
+   MODAL TWO-DAY PROGRAM
+   ========================================================== */
+
+.page-events .events-modal-days{
+
+    margin-top:28px;
+
+}
+
+.page-events .events-modal-days h3{
+
+    color:
+        var(--events-black);
+
+}
+
+.page-events .events-modal-day{
+
+    display:grid;
+
+    grid-template-columns:
+        55px
+        1fr
+        auto;
+
+    gap:
+        6px
+        15px;
+
+    align-items:center;
+
+    margin-top:10px;
+
+    padding:
+        15px 16px;
+
+    border:
+        1px solid
+        rgba(23,27,31,.07);
+
+    border-radius:15px;
+
+    background:#FAFAF8;
+
+}
+
+.page-events .events-modal-day > span{
+
+    grid-row:
+        span 2;
+
+    color:#A1814B;
+
+    font-size:.61rem;
+
+    font-weight:900;
+
+    letter-spacing:.12em;
+
+}
+
+.page-events .events-modal-day strong{
+
+    color:
+        var(--events-black);
+
+    font-size:.78rem;
+
+}
+
+.page-events .events-modal-day em{
+
+    color:#967541;
+
+    font-size:.68rem;
+
+    font-style:normal;
+
+    font-weight:900;
+
+}
+
+.page-events .events-modal-day p{
+
+    grid-column:
+        2 / 4;
+
+    color:#66727A;
+
+    font-size:.80rem;
+
+    line-height:1.45;
+
+}
+
+.page-events .events-modal-day small{
+
+    grid-column:
+        2 / 4;
+
+    color:#929BA2;
+
+    font-size:.68rem;
+
+    line-height:1.45;
+
+}
+
+
+/* ==========================================================
+   MOBILE GALLERY CONTROLS
+   ========================================================== */
+
+@media(max-width:800px){
+
+    .page-events .events-gallery-arrow{
+
+        opacity:1;
+
+        width:36px;
+        height:36px;
+
+    }
+
+    .page-events .events-next-image
+    .events-gallery{
+
+        min-height:380px;
+
+    }
+
+    .page-events .events-venue-image
+    .events-gallery{
+
+        min-height:340px;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    .page-events .events-gallery-prev{
+
+        left:10px;
+
+    }
+
+    .page-events .events-gallery-next{
+
+        right:10px;
+
+    }
+
+    .page-events .events-gallery-dots{
+
+        bottom:11px;
+
+        gap:4px;
+
+    }
+
+    .page-events .events-gallery-dots button{
+
+        width:6px;
+        height:6px;
+
+    }
+
+    .page-events .events-gallery-dots button.active{
+
+        width:18px;
+
+    }
+
+
+    .page-events .events-next-days{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .page-events .events-program-row{
+
+        grid-template-columns:
+            38px
+            1fr;
+
+        gap:5px 12px;
+
+        padding:
+            15px 0;
+
+        min-height:auto;
+
+    }
+
+    .page-events .events-program-row > strong{
+
+        grid-column:2;
+
+    }
+
+    .page-events .events-program-hour{
+
+        grid-column:2;
+
+    }
+
+    .page-events .events-program-title{
+
+        grid-column:2;
+
+    }
+
+
+    .page-events .events-modal-image
+    .events-gallery{
+
+        height:230px;
+
+    }
+
+
+    .page-events .events-modal-day{
+
+        grid-template-columns:
+            45px
+            1fr;
+
+    }
+
+    .page-events .events-modal-day > span{
+
+        grid-row:
+            span 3;
+
+    }
+
+    .page-events .events-modal-day em{
+
+        grid-column:2;
+
+    }
+
+    .page-events .events-modal-day p,
+    .page-events .events-modal-day small{
+
+        grid-column:2;
+
+    }
+
+}
+
+
+/* ==========================================================
+   HERO — MANY SLIDES / MOBILE
+   ========================================================== */
+
+@media(max-width:600px){
+
+    .page-events .events-slider-controls{
+
+        gap:8px;
+
+    }
+
+    .page-events .events-slider-arrow{
+
+        width:36px;
+        height:36px;
+
+    }
+
+    .page-events .events-slider-dots{
+
+        gap:4px;
+
+    }
+
+    .page-events .events-slider-dots button{
+
+        width:15px;
+
+    }
+
+    .page-events .events-slider-dots button.active{
+
+        width:29px;
+
+    }
+
+}
 
 
 
