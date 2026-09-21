@@ -101611,15 +101611,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-```css
+```css id="k4o3ua"
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.CSS
-   Immersive Brand Experience
-   Premium Editorial Master
-   Base visual: EVENTS
+   IMPACT EDITION
+   Premium Editorial / Luxury Brand Opening
 
-   WHITE-FIRST EDITION
+   PRINCÍPIO:
+   WHITE FIRST
+   GRAPHITE FOR CONTRAST
+   GOLD FOR IDENTITY
+
+   Estrutura compatível com o home.js fornecido.
+   Tudo isolado em .home-page.
    ========================================================== */
 
 
@@ -101629,23 +101634,30 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page{
 
-    --home-black:#171B1F;
-    --home-graphite:#252B31;
-    --home-black-soft:#30373D;
-
     --home-white:#FFFFFF;
     --home-ivory:#F8F7F3;
-    --home-surface:#F3F1EC;
+    --home-ivory-2:#F1EEE7;
 
-    --home-line:rgba(23,27,31,.09);
-    --home-line-strong:rgba(23,27,31,.14);
+    --home-black:#15191C;
+    --home-graphite:#20262A;
+    --home-graphite-soft:#2A3136;
+
+    --home-text:#20252A;
+    --home-text-soft:#68727A;
+    --home-text-muted:#949BA1;
 
     --home-gold:#C6A15B;
+    --home-gold-dark:#9D7938;
     --home-gold-light:#E9D7A9;
 
-    --home-text:#252A2E;
-    --home-text-soft:#68717A;
-    --home-text-muted:#8A929A;
+    --home-line:rgba(21,25,28,.09);
+    --home-line-strong:rgba(21,25,28,.15);
+
+    --home-shadow:
+        0 25px 70px rgba(21,25,28,.08);
+
+    --home-shadow-heavy:
+        0 35px 95px rgba(21,25,28,.13);
 
     --home-hero-tone:#C6A15B;
     --home-hero-atmosphere:#EFE3C8;
@@ -101656,7 +101668,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     width:100%;
 
-    overflow:clip;
+    display:block;
+
+    overflow:hidden;
 
     background:
         #FFFFFF !important;
@@ -101696,35 +101710,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     width:
         min(
             1280px,
-            calc(100% - 48px)
+            calc(100% - 52px)
         );
 
-    margin-inline:auto;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 
 /* ==========================================================
-   03. SHARED OVERLINE
+   03. OVERLINE
    ========================================================== */
 
 .home-page .home-overline{
 
     display:inline-flex;
+
     align-items:center;
 
-    gap:10px;
+    gap:11px;
 
-    margin-bottom:17px;
+    margin-bottom:19px;
 
     color:
         var(--home-gold) !important;
 
     font-size:10px;
+
     font-weight:900;
 
-    line-height:1.4;
-
     letter-spacing:.18em;
+
+    line-height:1.3;
 
     text-transform:uppercase;
 }
@@ -101734,18 +101751,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     content:"";
 
-    width:27px;
+    width:30px;
     height:1px;
 
+    flex:none;
+
     background:
-        currentColor;
+        currentColor !important;
 }
 
 
 /* ==========================================================
    04. REVEAL
-   IMPORTANTE:
-   O CONTEÚDO NUNCA FICA INVISÍVEL
+   IMPORTANT:
+   O conteúdo nunca fica escondido.
    ========================================================== */
 
 .home-page .reveal{
@@ -101761,21 +101780,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .reveal.is-visible{
 
     animation:
-        homeFadeUp
-        .72s
-        cubic-bezier(.2,.7,.2,1)
+        homeEditorialReveal
+        .75s
+        cubic-bezier(.2,.75,.2,1)
         both;
 }
 
 
-@keyframes homeFadeUp{
+@keyframes homeEditorialReveal{
 
     from{
 
-        opacity:.82;
+        opacity:.78;
 
         transform:
-            translateY(17px);
+            translateY(18px);
 
     }
 
@@ -101792,7 +101811,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   05. HERO
+   05. HERO — MASTER OPENING
    ========================================================== */
 
 .home-page .home-hero{
@@ -101802,31 +101821,92 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:
-        min(900px,92vh);
-
     height:
-        900px;
+        min(900px,calc(100vh - 72px));
+
+    min-height:780px;
 
     overflow:hidden;
 
     isolation:isolate;
 
-    background:
-        linear-gradient(
-            118deg,
-            #FFFFFF 0%,
-            #FCFBF8 52%,
-            var(--home-hero-surface) 100%
-        ) !important;
-
     color:
         var(--home-text) !important;
 
-    transition:
-        background
-        .9s
-        cubic-bezier(.2,.75,.2,1);
+    background:
+        #FFFFFF !important;
+
+    border-bottom:
+        1px solid rgba(21,25,28,.07);
+}
+
+
+/* ==========================================================
+   HERO TOP HAIRLINE
+   ========================================================== */
+
+.home-page .home-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    top:0;
+
+    height:2px;
+
+    z-index:8;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            var(--home-gold) 18%,
+            var(--home-gold-light) 52%,
+            var(--home-gold) 82%,
+            transparent 100%
+        );
+
+    opacity:.75;
+
+}
+
+
+/* ==========================================================
+   HERO LARGE EDITORIAL CIRCLE
+   ========================================================== */
+
+.home-page .home-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:820px;
+    height:820px;
+
+    right:-290px;
+    top:-260px;
+
+    z-index:-4;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.12);
+
+    box-shadow:
+
+        0 0 0 38px rgba(198,161,91,.028),
+
+        0 0 0 78px rgba(198,161,91,.018),
+
+        0 0 0 125px rgba(198,161,91,.010);
+
+    pointer-events:none;
+
 }
 
 
@@ -101838,30 +101918,32 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:720px;
-    height:720px;
+    width:760px;
+    height:760px;
 
-    right:-185px;
-    top:-205px;
+    right:-190px;
+    top:-220px;
 
     border-radius:50%;
+
+    z-index:-5;
 
     background:
         radial-gradient(
             circle,
             var(--home-hero-atmosphere) 0%,
             rgba(255,255,255,0) 70%
-        );
+        ) !important;
 
-    opacity:.75;
+    opacity:.78;
 
-    filter:blur(10px);
+    filter:
+        blur(5px);
 
     transition:
-        background .9s ease,
+        background .95s ease,
         transform 1s ease;
 
-    z-index:-3;
 }
 
 
@@ -101875,20 +101957,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     inset:0;
 
+    z-index:-2;
+
     pointer-events:none;
 
     background:
         radial-gradient(
-            420px circle
+            460px circle
             at var(--mouse-x) var(--mouse-y),
-            rgba(198,161,91,.10),
-            transparent 70%
+            rgba(198,161,91,.095),
+            transparent 72%
         );
 
     transition:
         background 1s ease;
 
-    z-index:-1;
 }
 
 
@@ -101902,41 +101985,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     inset:0;
 
-    opacity:.42;
+    z-index:-3;
 
     pointer-events:none;
+
+    opacity:.46;
 
     background-image:
 
         linear-gradient(
-            rgba(23,27,31,.035) 1px,
+            rgba(21,25,28,.028) 1px,
             transparent 1px
         ),
 
         linear-gradient(
             90deg,
-            rgba(23,27,31,.035) 1px,
+            rgba(21,25,28,.028) 1px,
             transparent 1px
         );
 
     background-size:
-        90px 90px;
+        92px 92px;
 
     mask-image:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.42),
-            transparent 88%
+            rgba(0,0,0,.36),
+            transparent 78%
         );
 
     -webkit-mask-image:
         linear-gradient(
             90deg,
-            rgba(0,0,0,.42),
-            transparent 88%
+            rgba(0,0,0,.36),
+            transparent 78%
         );
-
-    z-index:-2;
 }
 
 
@@ -101952,26 +102035,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     width:
         min(
-            1320px,
+            1340px,
             calc(100% - 64px)
         );
 
     height:100%;
 
-    margin-inline:auto;
+    margin-left:auto;
+    margin-right:auto;
 
     display:grid;
 
     grid-template-columns:
-        minmax(440px,.88fr)
-        minmax(500px,1.12fr);
+        minmax(470px,.90fr)
+        minmax(500px,1.10fr);
 
     align-items:center;
 
-    gap:35px;
+    gap:20px;
 
     padding:
-        82px 0 100px;
+        55px 0 80px;
 }
 
 
@@ -101983,7 +102067,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:10;
+    z-index:12;
 
     min-width:0;
 }
@@ -101993,7 +102077,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:350px;
+    min-height:390px;
+
 }
 
 
@@ -102016,14 +102101,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     visibility:hidden;
 
     transform:
-        translateY(20px);
+        translateY(18px);
 
     pointer-events:none;
 
     transition:
-        opacity .6s ease,
-        transform .7s cubic-bezier(.2,.75,.2,1),
-        visibility .6s;
+        opacity .55s ease,
+        transform .65s cubic-bezier(.2,.75,.2,1),
+        visibility .55s;
 }
 
 
@@ -102041,12 +102126,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   HERO TEXT
+   HERO EYEBROW
    ========================================================== */
 
 .home-page .home-hero-eyebrow{
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 
     color:
         var(--home-hero-deep) !important;
@@ -102055,7 +102140,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.22em;
+    letter-spacing:.23em;
 
     line-height:1.4;
 
@@ -102066,48 +102151,57 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
+/* ==========================================================
+   HERO PRETITLE
+   ========================================================== */
+
 .home-page .home-hero-pretitle{
 
-    max-width:470px;
+    max-width:500px;
 
-    margin-bottom:23px;
+    margin-bottom:25px;
 
     color:
-        rgba(37,42,46,.42) !important;
+        rgba(32,37,42,.40) !important;
 
-    font-size:10px;
+    font-size:9px;
 
-    font-weight:800;
+    font-weight:900;
 
-    letter-spacing:.15em;
+    letter-spacing:.16em;
 
-    line-height:1.5;
+    line-height:1.55;
 
     text-transform:uppercase;
 }
 
 
+/* ==========================================================
+   HERO TITLE
+   ========================================================== */
+
 .home-page .home-hero-slide h1{
 
-    max-width:730px;
+    max-width:760px;
 
     margin:0;
 
     color:
-        #171B1F !important;
+        #15191C !important;
 
     font-size:
         clamp(
-            4rem,
-            6.25vw,
-            7.15rem
+            4.7rem,
+            7vw,
+            7.6rem
         );
-
-    line-height:.89;
 
     font-weight:650;
 
-    letter-spacing:-.071em;
+    line-height:.84;
+
+    letter-spacing:-.078em;
+
 }
 
 
@@ -102115,27 +102209,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:block;
 
-    margin-top:.07em;
+    margin-top:.08em;
 
     color:
         var(--home-hero-deep) !important;
 
-    font-weight:550;
+    font-weight:540;
 
     transition:
         color .75s ease;
 }
 
 
+/* ==========================================================
+   HERO COPY
+   ========================================================== */
+
 .home-page .home-hero-slide p{
 
-    max-width:535px;
+    max-width:550px;
 
     margin:
-        28px 0 0;
+        31px 0 0;
 
     color:
-        rgba(37,42,46,.63) !important;
+        rgba(32,37,42,.62) !important;
 
     font-size:15px;
 
@@ -102153,22 +102251,28 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:14px;
+    gap:15px;
 
-    margin-top:24px;
+    margin-top:25px;
 
     padding:
-        9px 14px;
+        10px 16px;
 
     border-left:
         2px solid
         var(--home-hero-tone);
 
+    color:
+        var(--home-text);
+
     background:
-        rgba(255,255,255,.72);
+        rgba(255,255,255,.82);
 
     box-shadow:
-        0 8px 20px rgba(23,27,31,.025);
+        0 9px 24px rgba(21,25,28,.035);
+
+    backdrop-filter:
+        blur(12px);
 
     transition:
         border-color .7s ease;
@@ -102178,13 +102282,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-hero-product-tag span{
 
     color:
-        rgba(37,42,46,.42);
+        rgba(32,37,42,.42);
 
-    font-size:9px;
+    font-size:8px;
 
-    font-weight:800;
+    font-weight:900;
 
-    letter-spacing:.11em;
+    letter-spacing:.12em;
 }
 
 
@@ -102209,13 +102313,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:flex;
 
-    align-items:center;
-
     flex-wrap:wrap;
+
+    align-items:center;
 
     gap:11px;
 
-    margin-top:32px;
+    margin-top:34px;
 }
 
 
@@ -102229,31 +102333,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:center;
 
-    gap:11px;
+    gap:12px;
 
-    min-height:52px;
+    min-height:53px;
 
     padding:
-        0 21px;
+        0 23px;
 
     border-radius:999px;
 
-    font-size:11px;
+    font-size:10px;
 
     font-weight:900;
 
-    letter-spacing:.035em;
+    letter-spacing:.055em;
 
     cursor:pointer;
 
     overflow:hidden;
 
     transition:
-        transform .3s ease,
-        background .3s ease,
-        color .3s ease,
-        border-color .3s ease,
-        box-shadow .3s ease;
+        transform .32s ease,
+        background .32s ease,
+        color .32s ease,
+        border-color .32s ease,
+        box-shadow .32s ease;
 }
 
 
@@ -102277,58 +102381,57 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     outline:none;
 
     box-shadow:
-        0 0 0 3px rgba(198,161,91,.18);
+        0 0 0 3px rgba(198,161,91,.20);
 }
 
 
 .home-page .home-action-primary{
 
     border:
-        1px solid #171B1F;
-
-    background:
-        #171B1F;
+        1px solid #15191C !important;
 
     color:
         #FFFFFF !important;
 
+    background:
+        #15191C !important;
+
     box-shadow:
-        0 13px 30px rgba(23,27,31,.12);
+        0 15px 32px rgba(21,25,28,.13);
 }
 
 
 .home-page .home-action-primary:hover{
 
     background:
-        var(--home-hero-deep);
+        var(--home-hero-deep) !important;
 
     border-color:
-        var(--home-hero-deep);
+        var(--home-hero-deep) !important;
 }
 
 
 .home-page .home-action-secondary{
 
     border:
-        1px solid rgba(23,27,31,.14);
-
-    background:
-        rgba(255,255,255,.80);
+        1px solid rgba(21,25,28,.14) !important;
 
     color:
-        #171B1F !important;
+        #15191C !important;
 
-    backdrop-filter:
-        blur(12px);
+    background:
+        rgba(255,255,255,.78) !important;
+
 }
 
 
 .home-page .home-action-secondary:hover{
 
     border-color:
-        var(--home-hero-tone);
+        var(--home-hero-tone) !important;
 
-    background:#FFFFFF;
+    background:
+        #FFFFFF !important;
 }
 
 
@@ -102342,22 +102445,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
     width:
         min(
-            410px,
+            430px,
             100%
         );
 
-    margin-top:30px;
+    margin-top:31px;
 }
 
 
 .home-page .home-hero-controls button{
 
-    width:40px;
-    height:40px;
+    width:41px;
+    height:41px;
 
     display:grid;
 
@@ -102366,22 +102469,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     flex:none;
 
     border:
-        1px solid rgba(23,27,31,.13);
+        1px solid rgba(21,25,28,.13);
 
     border-radius:50%;
 
     background:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.78);
 
     color:
-        #171B1F;
+        #15191C;
 
     cursor:pointer;
 
     transition:
         transform .3s ease,
-        border-color .3s ease,
-        background .3s ease;
+        background .3s ease,
+        border-color .3s ease;
 }
 
 
@@ -102391,18 +102494,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-2px);
 
     border-color:
-        var(--home-hero-tone);
+        var(--home-gold);
 
-    background:#FFFFFF;
-}
-
-
-.home-page .home-hero-controls button:focus-visible{
-
-    outline:none;
-
-    box-shadow:
-        0 0 0 3px rgba(198,161,91,.15);
+    background:
+        #FFFFFF;
 }
 
 
@@ -102417,7 +102512,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     overflow:hidden;
 
     background:
-        rgba(23,27,31,.12);
+        rgba(21,25,28,.11);
 }
 
 
@@ -102456,11 +102551,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     min-width:53px;
 
     color:
-        rgba(37,42,46,.40);
+        rgba(32,37,42,.38);
 
     font-size:9px;
 
-    font-weight:800;
+    font-weight:900;
 }
 
 
@@ -102481,9 +102576,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    height:100%;
+    min-height:680px;
 
-    min-height:650px;
+    height:100%;
 
     display:flex;
 
@@ -102493,27 +102588,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
+/* ==========================================================
+   HERO AURA
+   ========================================================== */
+
 .home-page .home-hero-aura{
 
     position:absolute;
 
-    width:560px;
-    height:560px;
+    width:610px;
+    height:610px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.13),
+            rgba(198,161,91,.16) 0%,
+            rgba(198,161,91,.07) 34%,
             rgba(255,255,255,0) 70%
         );
 
-    filter:blur(4px);
+    filter:
+        blur(3px);
 
     transition:
-        transform .55s ease,
-        background .9s ease;
+        transform .55s ease;
+}
+
+
+.home-page .home-hero-aura::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:11%;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.18);
 }
 
 
@@ -102523,21 +102638,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    inset:13%;
+    inset:20%;
 
     border-radius:50%;
 
     border:
-        1px solid
-        rgba(198,161,91,.21);
+        1px solid rgba(198,161,91,.10);
 
-    box-shadow:
-
-        0 0 0 28px
-        rgba(198,161,91,.045),
-
-        0 0 0 72px
-        rgba(198,161,91,.025);
 }
 
 
@@ -102549,25 +102656,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    border:
-        1px solid
-        rgba(198,161,91,.20);
-
     border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.19);
+
+    pointer-events:none;
 
     transition:
         transform .4s ease,
         border-color .7s ease;
-
-    pointer-events:none;
 }
 
 
 .home-page .orbit-one{
 
-    width:535px;
-
-    height:260px;
+    width:560px;
+    height:275px;
 
     transform:
         rotate(-18deg);
@@ -102576,11 +102681,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .orbit-two{
 
-    width:480px;
+    width:495px;
+    height:495px;
 
-    height:480px;
-
-    opacity:.52;
+    opacity:.48;
 }
 
 
@@ -102592,17 +102696,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:4;
+    z-index:5;
 
     width:
         min(
-            520px,
-            82%
+            540px,
+            84%
         );
 
-    height:610px;
+    height:640px;
 }
 
+
+/* ==========================================================
+   HERO PRODUCT
+   ========================================================== */
 
 .home-page .home-hero-product{
 
@@ -102619,12 +102727,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     visibility:hidden;
 
     transform:
-        translateY(25px)
-        scale(.94);
+        translateY(24px)
+        scale(.92);
 
     transition:
         opacity .6s ease,
-        transform .8s cubic-bezier(.2,.75,.2,1),
+        transform .85s cubic-bezier(.2,.75,.2,1),
         visibility .6s;
 }
 
@@ -102641,6 +102749,36 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
+/* ==========================================================
+   HERO PRODUCT HALO
+   ========================================================== */
+
+.home-page .home-hero-product-halo{
+
+    position:absolute;
+
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.22),
+            rgba(198,161,91,.05) 42%,
+            rgba(255,255,255,0) 70%
+        );
+
+    filter:
+        blur(13px);
+}
+
+
+/* ==========================================================
+   HERO PRODUCT IMAGE
+   ========================================================== */
+
 .home-page .home-hero-product img{
 
     position:relative;
@@ -102649,41 +102787,60 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     width:
         min(
-            445px,
+            470px,
             100%
         );
 
-    height:560px;
+    height:590px;
 
     object-fit:contain;
 
+    object-position:center;
+
     filter:
         drop-shadow(
-            0 34px 46px rgba(0,0,0,.14)
+            0 38px 48px rgba(21,25,28,.14)
         );
 
     transition:
         transform .8s cubic-bezier(.2,.75,.2,1);
+
+    opacity:1 !important;
+
+    visibility:visible !important;
 }
 
 
-.home-page .home-hero-product-halo{
+.home-page .home-hero.is-changing
+.home-hero-product.is-active img{
 
-    position:absolute;
+    animation:
+        homeHeroProductEnter
+        .78s
+        cubic-bezier(.2,.75,.2,1);
+}
 
-    width:330px;
-    height:330px;
 
-    border-radius:50%;
+@keyframes homeHeroProductEnter{
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(198,161,91,.18),
-            rgba(255,255,255,0) 68%
-        );
+    from{
 
-    filter:blur(20px);
+        opacity:.35;
+
+        transform:
+            translateY(32px)
+            scale(.90);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
 }
 
 
@@ -102695,9 +102852,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    right:1%;
+    right:0;
 
-    bottom:16%;
+    bottom:14%;
+
+    z-index:7;
 
     display:flex;
 
@@ -102705,7 +102864,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:flex-end;
 
-    gap:6px;
+    gap:5px;
 
     text-align:right;
 }
@@ -102714,7 +102873,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-hero-product-index span{
 
     color:
-        rgba(37,42,46,.35);
+        rgba(32,37,42,.34);
 
     font-size:8px;
 
@@ -102734,9 +102893,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     font-weight:900;
 
     letter-spacing:.08em;
-
-    transition:
-        color .8s ease;
 }
 
 
@@ -102748,25 +102904,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    right:-1%;
+    right:-2%;
 
-    top:7%;
+    top:4%;
+
+    z-index:2;
 
     color:
         var(--home-hero-tone);
 
-    opacity:.13;
+    opacity:.105;
 
     font-size:
         clamp(
-            6rem,
-            11vw,
-            10rem
+            7rem,
+            12vw,
+            11rem
         );
 
     font-weight:650;
 
-    line-height:.75;
+    line-height:.72;
 
     letter-spacing:-.09em;
 
@@ -102778,74 +102936,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   HERO TRANSITION
-   ========================================================== */
-
-.home-page .home-hero.is-changing
-.home-hero-product.is-active img{
-
-    animation:
-        homeHeroProductEnter
-        .75s
-        cubic-bezier(.2,.75,.2,1);
-}
-
-
-.home-page .home-hero.is-changing
-.home-hero-slide.is-active{
-
-    animation:
-        homeHeroTextEnter
-        .70s
-        cubic-bezier(.2,.75,.2,1);
-}
-
-
-@keyframes homeHeroProductEnter{
-
-    from{
-
-        opacity:.45;
-
-        transform:
-            translateY(30px)
-            scale(.92);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-    }
-
-}
-
-
-@keyframes homeHeroTextEnter{
-
-    from{
-
-        opacity:.30;
-
-        transform:
-            translateY(18px);
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0);
-    }
-
-}
-
-
-/* ==========================================================
    HERO BOTTOM
    ========================================================== */
 
@@ -102853,11 +102943,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    left:3.4%;
-    right:3.4%;
-    bottom:19px;
+    left:3.6%;
 
-    z-index:10;
+    right:3.6%;
+
+    bottom:18px;
+
+    z-index:9;
 
     display:grid;
 
@@ -102868,10 +102960,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:17px;
+    gap:18px;
 
     color:
-        rgba(37,42,46,.34);
+        rgba(32,37,42,.32);
 
     font-size:8px;
 
@@ -102886,7 +102978,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     height:1px;
 
     background:
-        rgba(23,27,31,.10);
+        rgba(21,25,28,.10);
 }
 
 
@@ -102895,6 +102987,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
    ========================================================== */
 
 .home-page .home-identity{
+
+    position:relative;
 
     overflow:hidden;
 
@@ -102917,23 +103011,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:27px;
+    gap:29px;
 
     padding:
-        20px 0;
+        21px 0;
 
     color:
-        rgba(37,42,46,.42);
+        rgba(32,37,42,.42);
 
-    font-size:10px;
+    font-size:9px;
 
     font-weight:900;
 
-    letter-spacing:.19em;
+    letter-spacing:.20em;
 
     animation:
         homeIdentityMove
-        32s
+        31s
         linear
         infinite;
 }
@@ -102968,7 +103062,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-manifesto{
 
     padding:
-        150px 0 155px;
+        165px 0 175px;
 
     background:
         #FFFFFF !important;
@@ -102986,18 +103080,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:15px;
+    gap:16px;
 
-    margin-bottom:45px;
+    margin-bottom:48px;
 
     color:
-        rgba(37,42,46,.34);
+        rgba(32,37,42,.33);
 
     font-size:9px;
 
     font-weight:900;
 
-    letter-spacing:.16em;
+    letter-spacing:.17em;
 }
 
 
@@ -103012,14 +103106,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-manifesto-copy{
 
-    max-width:1040px;
+    max-width:1100px;
 }
 
 
 .home-page .home-manifesto-copy > p{
 
     margin:
-        0 0 23px;
+        0 0 25px;
 
     color:
         var(--home-gold);
@@ -103039,20 +103133,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        #171B1F !important;
+        #15191C !important;
 
     font-size:
         clamp(
-            4.1rem,
-            7vw,
-            8.2rem
+            4.4rem,
+            7.7vw,
+            9rem
         );
 
-    line-height:.87;
+    line-height:.84;
 
     font-weight:600;
 
-    letter-spacing:-.067em;
+    letter-spacing:-.072em;
 }
 
 
@@ -103061,7 +103155,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:block;
 
     color:
-        rgba(37,42,46,.31) !important;
+        rgba(32,37,42,.29) !important;
 
     font-weight:500;
 }
@@ -103074,7 +103168,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         repeat(4,1fr);
 
-    margin-top:68px;
+    margin-top:74px;
 
     border-top:
         1px solid var(--home-line);
@@ -103084,16 +103178,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-manifesto-footer span{
 
     padding:
-        18px 0;
+        19px 0;
 
     color:
-        rgba(37,42,46,.46);
+        rgba(32,37,42,.46);
 
-    font-size:11px;
+    font-size:10px;
 
-    font-weight:700;
+    font-weight:750;
 
-    letter-spacing:.07em;
+    letter-spacing:.08em;
 }
 
 
@@ -103104,7 +103198,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-worlds{
 
     padding:
-        110px 0 155px;
+        115px 0 165px;
 
     background:
         var(--home-ivory) !important;
@@ -103121,7 +103215,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:30px;
 
-    margin-bottom:54px;
+    margin-bottom:58px;
 }
 
 
@@ -103134,20 +103228,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        #171B1F !important;
+        #15191C !important;
 
     font-size:
         clamp(
-            3rem,
-            5vw,
-            5.4rem
+            3.2rem,
+            5.2vw,
+            5.7rem
         );
 
-    line-height:.93;
+    line-height:.91;
 
     font-weight:600;
 
-    letter-spacing:-.045em;
+    letter-spacing:-.052em;
 }
 
 
@@ -103171,11 +103265,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        rgba(37,42,46,.47);
+        rgba(32,37,42,.48);
 
     font-size:12px;
 
-    font-weight:700;
+    font-weight:750;
 }
 
 
@@ -103190,7 +103284,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         repeat(2,minmax(0,1fr));
 
-    gap:18px;
+    gap:19px;
 }
 
 
@@ -103201,20 +103295,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-world{
 
     --world-tone:#C6A15B;
-    --world-soft:#F8F3E9;
+    --world-soft:#FAF5EA;
     --world-deep:#211E1A;
 
     position:relative;
 
-    min-height:600px;
+    min-height:625px;
 
     overflow:hidden;
 
     border:
-        1px solid var(--home-line);
+        1px solid rgba(21,25,28,.08);
 
     border-radius:
-        32px;
+        33px;
 
     color:
         var(--world-deep);
@@ -103227,27 +103321,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         ) !important;
 
     box-shadow:
-        0 18px 48px rgba(23,27,31,.055);
+        0 18px 48px rgba(21,25,28,.055);
 
     isolation:isolate;
 
     transition:
         transform .45s cubic-bezier(.2,.75,.2,1),
-        box-shadow .45s ease,
-        border-color .45s ease;
+        border-color .45s ease,
+        box-shadow .45s ease;
 }
 
 
 .home-page .home-world:hover{
 
     transform:
-        translateY(-7px);
+        translateY(-8px);
 
     border-color:
-        rgba(198,161,91,.34);
+        rgba(198,161,91,.32);
 
     box-shadow:
-        0 30px 65px rgba(23,27,31,.09);
+        0 32px 70px rgba(21,25,28,.105);
 }
 
 
@@ -103262,9 +103356,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-world-a21{
 
-    --world-tone:#8870A8;
+    --world-tone:#8A70A8;
     --world-soft:#F6F1FA;
-    --world-deep:#292230;
+    --world-deep:#2A2331;
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F6F1FA
+        ) !important;
 }
 
 
@@ -103280,7 +103381,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     right:0;
     top:0;
 
-    height:58%;
+    height:59%;
 
     display:flex;
 
@@ -103303,21 +103404,25 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     width:
         min(
             78%,
-            430px
+            450px
         );
 
-    max-height:255px;
+    max-height:270px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 20px 30px rgba(0,0,0,.08)
+            0 22px 32px rgba(21,25,28,.08)
         );
 
     transition:
         transform .75s cubic-bezier(.2,.75,.2,1),
         filter .45s ease;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
 }
 
 
@@ -103325,12 +103430,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-world-image img{
 
     transform:
-        translateY(-7px)
-        scale(1.035);
+        translateY(-8px)
+        scale(1.04);
 
     filter:
         drop-shadow(
-            0 25px 38px rgba(0,0,0,.11)
+            0 29px 40px rgba(21,25,28,.12)
         );
 }
 
@@ -103343,7 +103448,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     background:
         radial-gradient(
-            370px circle at 50% 28%,
+            390px circle at 50% 29%,
             rgba(198,161,91,.13),
             transparent 68%
         );
@@ -103352,20 +103457,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-.home-page .home-world-a21
-.home-world-glow{
+.home-page .home-world-a21 .home-world-glow{
 
     background:
         radial-gradient(
-            370px circle at 50% 28%,
-            rgba(136,112,168,.13),
+            390px circle at 50% 29%,
+            rgba(138,112,168,.13),
             transparent 68%
         );
 }
 
 
 /* ==========================================================
-   WORLD LIGHT GRADIENT
+   WORLD LIGHT
    ========================================================== */
 
 .home-page .home-world::after{
@@ -103384,9 +103488,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             rgba(255,255,255,0) 0%,
-            rgba(255,255,255,.05) 35%,
-            rgba(255,255,255,.78) 66%,
-            rgba(255,255,255,.98) 100%
+            rgba(255,255,255,.04) 34%,
+            rgba(255,255,255,.80) 67%,
+            rgba(255,255,255,.99) 100%
         );
 }
 
@@ -103397,8 +103501,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             rgba(255,255,255,0) 0%,
-            rgba(249,246,252,.08) 35%,
-            rgba(249,246,252,.80) 66%,
+            rgba(249,246,252,.06) 35%,
+            rgba(249,246,252,.82) 67%,
             rgba(249,246,252,.99) 100%
         );
 }
@@ -103418,13 +103522,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:5;
 
     color:
-        rgba(37,42,46,.40);
+        rgba(32,37,42,.39);
 
     font-size:9px;
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.18em;
 }
 
 
@@ -103436,9 +103540,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    left:30px;
-    right:30px;
-    bottom:30px;
+    left:31px;
+    right:31px;
+    bottom:31px;
 
     z-index:5;
 }
@@ -103460,39 +103564,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-world-content h3{
 
     margin:
-        12px 0 14px;
+        13px 0 15px;
 
     color:
         var(--world-deep);
 
     font-size:
         clamp(
-            2.75rem,
-            4vw,
-            4.7rem
+            2.8rem,
+            4.2vw,
+            4.9rem
         );
 
-    line-height:.89;
+    line-height:.88;
 
     font-weight:650;
 
-    letter-spacing:-.045em;
+    letter-spacing:-.047em;
 }
 
 
 .home-page .home-world-content p{
 
-    max-width:430px;
+    max-width:440px;
 
     margin:
-        0 0 22px;
+        0 0 23px;
 
     color:
-        rgba(37,42,46,.58);
+        rgba(32,37,42,.58);
 
     font-size:13px;
 
-    line-height:1.67;
+    line-height:1.68;
 }
 
 
@@ -103532,13 +103636,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   09. UNIVERSES
+   09. UNIVERSes
    ========================================================== */
 
 .home-page .home-universes{
 
     padding:
-        140px 0 155px;
+        150px 0 165px;
 
     background:
         #FFFFFF !important;
@@ -103547,9 +103651,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-universes-head{
 
-    max-width:920px;
+    max-width:940px;
 
-    margin-bottom:60px;
+    margin-bottom:66px;
 }
 
 
@@ -103565,18 +103669,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        .12fr
-        1.2fr
+        .11fr
+        1.20fr
         1fr;
 
-    gap:25px;
+    gap:28px;
 
     align-items:center;
 
-    min-height:165px;
+    min-height:175px;
 
     padding:
-        25px 0;
+        27px 0;
 
     border-bottom:
         1px solid var(--home-line);
@@ -103589,9 +103693,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-universe:hover{
 
-    padding-left:18px;
-
-    padding-right:18px;
+    padding-left:20px;
+    padding-right:20px;
 
     background:
         var(--home-ivory);
@@ -103613,10 +103716,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:block;
 
-    margin-bottom:7px;
+    margin-bottom:8px;
 
     color:
-        rgba(37,42,46,.39);
+        rgba(32,37,42,.38);
 
     font-size:9px;
 
@@ -103631,16 +103734,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:
         clamp(
-            2.2rem,
-            3.3vw,
-            4rem
+            2.35rem,
+            3.4vw,
+            4.1rem
         );
 
-    line-height:.92;
+    line-height:.90;
 
     font-weight:650;
 
@@ -103650,16 +103753,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-universe p{
 
-    max-width:420px;
+    max-width:430px;
 
     margin:0;
 
     color:
-        rgba(37,42,46,.56);
+        rgba(32,37,42,.56);
 
     font-size:13px;
 
-    line-height:1.68;
+    line-height:1.7;
 }
 
 
@@ -103670,7 +103773,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-products{
 
     padding:
-        100px 0 165px;
+        105px 0 170px;
 
     background:
         var(--home-ivory) !important;
@@ -103681,13 +103784,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:flex;
 
-    justify-content:space-between;
-
     align-items:flex-end;
+
+    justify-content:space-between;
 
     gap:30px;
 
-    margin-bottom:57px;
+    margin-bottom:60px;
 }
 
 
@@ -103696,26 +103799,25 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:inline-flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:10px;
 
-    min-height:49px;
+    min-height:50px;
 
     padding:
-        0 18px;
+        0 19px;
 
     border:
-        1px solid rgba(23,27,31,.14);
+        1px solid rgba(21,25,28,.14);
 
     border-radius:999px;
 
+    color:
+        #15191C;
+
     background:
         transparent;
-
-    color:
-        #171B1F;
 
     font-size:10px;
 
@@ -103738,13 +103840,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     transform:
         translateY(-3px);
 
-    background:
-        #171B1F;
-
     color:#FFFFFF;
 
+    background:
+        #15191C;
+
     border-color:
-        #171B1F;
+        #15191C;
 }
 
 
@@ -103757,10 +103859,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        1.25fr
-        .75fr
-        .75fr
-        .75fr;
+        1.28fr
+        .74fr
+        .74fr
+        .74fr;
 
     gap:15px;
 }
@@ -103777,7 +103879,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:560px;
+    min-height:570px;
 
     display:flex;
 
@@ -103788,13 +103890,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     overflow:hidden;
 
     padding:
-        20px;
+        21px;
 
     border:
-        1px solid rgba(23,27,31,.075);
+        1px solid rgba(21,25,28,.075);
 
     border-radius:
-        29px;
+        30px;
 
     background:
         linear-gradient(
@@ -103803,10 +103905,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             var(--card-atmosphere) 100%
         ) !important;
 
-    cursor:pointer;
-
     box-shadow:
-        0 15px 38px rgba(23,27,31,.045);
+        0 14px 35px rgba(21,25,28,.045);
+
+    cursor:pointer;
 
     transition:
         transform .45s cubic-bezier(.2,.75,.2,1),
@@ -103818,13 +103920,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-feature-product:hover{
 
     transform:
-        translateY(-8px);
+        translateY(-9px);
 
     border-color:
-        rgba(198,161,91,.32);
+        rgba(198,161,91,.33);
 
     box-shadow:
-        0 30px 62px rgba(23,27,31,.09);
+        0 30px 64px rgba(21,25,28,.095);
 }
 
 
@@ -103834,13 +103936,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     box-shadow:
         0 0 0 3px rgba(198,161,91,.18),
-        0 30px 62px rgba(23,27,31,.09);
+        0 30px 64px rgba(21,25,28,.095);
 }
 
 
 .home-page .home-feature-large{
 
-    min-height:650px;
+    min-height:660px;
 }
 
 
@@ -103861,13 +103963,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     align-items:center;
 
     color:
-        rgba(37,42,46,.38);
+        rgba(32,37,42,.37);
 
     font-size:8px;
 
     font-weight:900;
 
-    letter-spacing:.14em;
+    letter-spacing:.15em;
 }
 
 
@@ -103888,7 +103990,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     flex:1;
 
-    min-height:300px;
+    min-height:310px;
 
     display:flex;
 
@@ -103902,8 +104004,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:245px;
-    height:245px;
+    width:260px;
+    height:260px;
 
     border-radius:50%;
 
@@ -103911,11 +104013,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         radial-gradient(
             circle,
             rgba(198,161,91,.17),
-            rgba(255,255,255,0) 70%
+            transparent 70%
         );
 
     filter:
-        blur(10px);
+        blur(11px);
 }
 
 
@@ -103925,15 +104027,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:2;
 
-    width:92%;
+    width:94%;
 
-    height:310px;
+    height:320px;
 
     object-fit:contain;
 
+    opacity:1 !important;
+
+    visibility:visible !important;
+
     filter:
         drop-shadow(
-            0 22px 28px rgba(0,0,0,.11)
+            0 24px 30px rgba(21,25,28,.105)
         );
 
     transition:
@@ -103945,7 +104051,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-feature-image img{
 
     transform:
-        translateY(-8px)
+        translateY(-9px)
         scale(1.035);
 }
 
@@ -103965,7 +104071,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-feature-info small{
 
     color:
-        rgba(37,42,46,.41);
+        rgba(32,37,42,.39);
 
     font-size:8px;
 
@@ -103981,12 +104087,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         8px 0 8px;
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:
-        2.08rem;
+        2.15rem;
 
-    line-height:.9;
+    line-height:.90;
 
     font-weight:650;
 
@@ -103999,7 +104105,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        rgba(37,42,46,.55);
+        rgba(32,37,42,.55);
 
     font-size:11px;
 
@@ -104011,7 +104117,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:inline-flex;
 
-    margin-top:17px;
+    margin-top:18px;
 
     color:
         var(--card-tone);
@@ -104031,7 +104137,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-event{
 
     padding:
-        125px 0 160px;
+        125px 0 165px;
 
     background:
         #FFFFFF !important;
@@ -104040,7 +104146,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-event-intro{
 
-    margin-bottom:54px;
+    margin-bottom:58px;
 }
 
 
@@ -104049,24 +104155,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        1.03fr
-        .97fr;
+        1.04fr
+        .96fr;
 
-    min-height:625px;
+    min-height:640px;
 
     overflow:hidden;
 
     border:
-        1px solid rgba(23,27,31,.10);
+        1px solid rgba(21,25,28,.10);
 
     border-radius:
-        34px;
+        35px;
 
     background:
         #F7F3EB !important;
 
     box-shadow:
-        0 28px 65px rgba(23,27,31,.065);
+        0 30px 68px rgba(21,25,28,.06);
 }
 
 
@@ -104074,12 +104180,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:625px;
+    min-height:640px;
 
     overflow:hidden;
 
     background:
-        #EAE4D9;
+        #E9E3D8;
 }
 
 
@@ -104115,7 +104221,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             rgba(0,0,0,.02),
-            rgba(0,0,0,.54)
+            rgba(0,0,0,.56)
         );
 }
 
@@ -104124,8 +104230,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    left:27px;
-    bottom:24px;
+    left:29px;
+    bottom:25px;
 
     z-index:4;
 
@@ -104135,7 +104241,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.18em;
 }
 
 
@@ -104146,7 +104252,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     flex-direction:column;
 
     padding:
-        50px 50px 43px;
+        52px 52px 45px;
+
 }
 
 
@@ -104156,23 +104263,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:baseline;
 
-    gap:7px;
+    gap:8px;
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:
         clamp(
-            4.3rem,
+            4.5rem,
             7vw,
-            6.7rem
+            6.9rem
         );
 
     font-weight:600;
 
-    line-height:.76;
+    line-height:.75;
 
-    letter-spacing:-.07em;
+    letter-spacing:-.075em;
 }
 
 
@@ -104191,52 +104298,52 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:block;
 
-    margin-top:18px;
+    margin-top:19px;
 
     color:
-        rgba(37,42,46,.44);
+        rgba(32,37,42,.43);
 
     font-size:9px;
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.18em;
 }
 
 
 .home-page .home-event-details h3{
 
-    max-width:520px;
+    max-width:530px;
 
     margin:
-        31px 0 15px;
+        32px 0 16px;
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:
         clamp(
-            2.2rem,
-            3.7vw,
-            4rem
+            2.3rem,
+            3.8vw,
+            4.1rem
         );
 
-    line-height:.92;
+    line-height:.91;
 
     font-weight:650;
 
-    letter-spacing:-.045em;
+    letter-spacing:-.047em;
 }
 
 
 .home-page .home-event-details > p{
 
-    max-width:470px;
+    max-width:480px;
 
     margin:0;
 
     color:
-        rgba(37,42,46,.58);
+        rgba(32,37,42,.58);
 
     font-size:13px;
 
@@ -104248,23 +104355,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     display:grid;
 
-    grid-template-columns:
-        1fr;
+    grid-template-columns:1fr;
 
-    margin-top:31px;
+    margin-top:33px;
 
     border-top:
-        1px solid rgba(23,27,31,.11);
+        1px solid rgba(21,25,28,.11);
 }
 
 
 .home-page .home-event-info > div{
 
     padding:
-        17px 0;
+        18px 0;
 
     border-bottom:
-        1px solid rgba(23,27,31,.09);
+        1px solid rgba(21,25,28,.09);
 }
 
 
@@ -104275,13 +104381,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin-bottom:6px;
 
     color:
-        rgba(37,42,46,.37);
+        rgba(32,37,42,.37);
 
     font-size:8px;
 
     font-weight:900;
 
-    letter-spacing:.15em;
+    letter-spacing:.16em;
 }
 
 
@@ -104290,13 +104396,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:block;
 
     color:
-        #24282B;
+        #252A2E;
 
     font-size:11px;
 
     font-weight:800;
 
-    line-height:1.45;
+    line-height:1.48;
 }
 
 
@@ -104310,10 +104416,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-action-dark{
 
     border:
-        1px solid #23282C;
+        1px solid #252B30 !important;
 
     background:
-        #23282C;
+        #252B30 !important;
 
     color:
         #FFFFFF !important;
@@ -104323,13 +104429,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-action-dark:hover{
 
     border-color:
-        var(--home-gold);
+        var(--home-gold) !important;
 
     background:
-        var(--home-gold);
+        var(--home-gold) !important;
 
     color:
-        #171B1F !important;
+        #15191C !important;
 }
 
 
@@ -104340,7 +104446,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-memories{
 
     padding:
-        115px 0 160px;
+        120px 0 165px;
 
     background:
         var(--home-ivory) !important;
@@ -104357,7 +104463,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:30px;
 
-    margin-bottom:54px;
+    margin-bottom:58px;
 }
 
 
@@ -104370,18 +104476,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     gap:5px;
 
     color:
-        rgba(37,42,46,.40);
+        rgba(32,37,42,.40);
 }
 
 
 .home-page .home-memory-count strong{
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:2rem;
-
-    font-weight:650;
 }
 
 
@@ -104389,7 +104493,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:9px;
 
-    font-weight:800;
+    font-weight:900;
 }
 
 
@@ -104398,29 +104502,33 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        1.34fr
-        .66fr;
+        1.35fr
+        .65fr;
 
-    min-height:650px;
+    min-height:660px;
 
     overflow:hidden;
 
     border:
-        1px solid rgba(23,27,31,.08);
+        1px solid rgba(21,25,28,.08);
 
     border-radius:
-        33px;
+        34px;
 
     background:
         #171B1F !important;
 }
 
 
+/* ==========================================================
+   MEMORY STAGE
+   ========================================================== */
+
 .home-page .home-memory-stage{
 
     position:relative;
 
-    min-height:650px;
+    min-height:660px;
 
     overflow:hidden;
 }
@@ -104483,76 +104591,83 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         linear-gradient(
             180deg,
-            rgba(0,0,0,.02),
-            rgba(0,0,0,.72)
+            rgba(0,0,0,.01),
+            rgba(0,0,0,.76)
         );
 }
 
+
+/* ==========================================================
+   MEMORY CAPTION
+   ========================================================== */
 
 .home-page .home-memory-caption{
 
     position:absolute;
 
-    left:30px;
-    right:30px;
-    bottom:30px;
+    left:31px;
+    right:31px;
+    bottom:31px;
 
-    z-index:3;
+    z-index:4;
 
     display:flex;
 
     flex-direction:column;
 
-    gap:8px;
+    gap:9px;
 
-    color:#FFFFFF;
+    color:#FFFFFF !important;
 }
 
 
 .home-page .home-memory-caption span{
 
     color:
-        var(--home-gold-light);
+        var(--home-gold-light) !important;
 
     font-size:8px;
 
     font-weight:900;
 
-    letter-spacing:.16em;
+    letter-spacing:.17em;
 }
 
 
 .home-page .home-memory-caption strong{
 
-    max-width:630px;
+    max-width:650px;
+
+    color:
+        #FFFFFF !important;
 
     font-size:
         clamp(
-            2.3rem,
+            2.4rem,
             4vw,
-            4.2rem
+            4.3rem
         );
 
     line-height:.90;
 
     font-weight:650;
 
-    letter-spacing:-.04em;
+    letter-spacing:-.045em;
 }
 
 
 /* ==========================================================
-   MEMORY NAV
+   MEMORY NAVIGATION
    ========================================================== */
 
 .home-page .home-memory-nav{
 
     position:absolute;
 
-    right:25px;
-    top:25px;
+    right:26px;
+    top:26px;
 
-    z-index:5;
+    z-index:8;
 
     display:flex;
 
@@ -104562,8 +104677,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-memory-nav button{
 
-    width:42px;
-    height:42px;
+    width:43px;
+    height:43px;
 
     display:grid;
 
@@ -104575,9 +104690,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border-radius:50%;
 
     background:
-        rgba(0,0,0,.15);
+        rgba(0,0,0,.17);
 
-    color:#FFFFFF;
+    color:
+        #FFFFFF;
 
     backdrop-filter:
         blur(10px);
@@ -104585,9 +104701,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     cursor:pointer;
 
     transition:
+        transform .3s ease,
         background .3s ease,
-        border-color .3s ease,
-        transform .3s ease;
+        border-color .3s ease;
 }
 
 
@@ -104597,7 +104713,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-2px);
 
     border-color:
-        rgba(198,161,91,.60);
+        rgba(198,161,91,.62);
 
     background:
         rgba(198,161,91,.13);
@@ -104617,7 +104733,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     justify-content:flex-end;
 
     padding:
-        42px;
+        45px;
 
     color:
         #FFFFFF !important;
@@ -104629,7 +104745,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-memory-side > span{
 
-    margin-bottom:15px;
+    margin-bottom:16px;
 
     color:
         var(--home-gold-light) !important;
@@ -104638,45 +104754,45 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.18em;
 }
 
 
 .home-page .home-memory-side strong{
 
-    max-width:360px;
+    max-width:370px;
 
     color:
         #FFFFFF !important;
 
     font-size:
         clamp(
-            2.1rem,
-            3.2vw,
-            3.7rem
+            2.2rem,
+            3.3vw,
+            3.9rem
         );
 
-    line-height:.95;
+    line-height:.94;
 
     font-weight:650;
 
-    letter-spacing:-.04em;
+    letter-spacing:-.045em;
 }
 
 
 .home-page .home-memory-side p{
 
-    max-width:350px;
+    max-width:360px;
 
     margin:
-        24px 0 0;
+        25px 0 0;
 
     color:
         rgba(255,255,255,.58) !important;
 
     font-size:11px;
 
-    line-height:1.7;
+    line-height:1.72;
 }
 
 
@@ -104687,7 +104803,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-testimonial{
 
     padding:
-        145px 0 175px;
+        150px 0 180px;
 
     background:
         #FFFFFF !important;
@@ -104699,10 +104815,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:grid;
 
     grid-template-columns:
-        .15fr
+        .13fr
         1fr;
 
-    gap:40px;
+    gap:42px;
 }
 
 
@@ -104711,9 +104827,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     color:
         var(--home-gold);
 
-    font-size:7.5rem;
+    font-size:
+        7.8rem;
 
-    line-height:.5;
+    line-height:.45;
 
     font-weight:500;
 }
@@ -104721,7 +104838,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-testimonial-main{
 
-    max-width:1000px;
+    max-width:1040px;
 }
 
 
@@ -104730,18 +104847,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:
         clamp(
-            3rem,
-            5.5vw,
-            6.2rem
+            3.2rem,
+            5.7vw,
+            6.5rem
         );
 
-    line-height:.92;
+    line-height:.91;
 
-    letter-spacing:-.055em;
+    letter-spacing:-.058em;
 
     font-weight:600;
 }
@@ -104750,7 +104867,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-testimonial-main blockquote em{
 
     color:
-        rgba(37,42,46,.35);
+        rgba(32,37,42,.34);
 
     font-style:normal;
 
@@ -104758,15 +104875,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
+/* ==========================================================
+   TESTIMONIAL PERSON
+   ========================================================== */
+
 .home-page .home-testimonial-person{
 
     display:flex;
 
     align-items:center;
 
-    gap:17px;
+    gap:18px;
 
-    margin-top:52px;
+    margin-top:54px;
 }
 
 
@@ -104774,20 +104895,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    width:86px;
-    height:102px;
+    width:88px;
+    height:104px;
 
     overflow:hidden;
 
-    border-radius:22px;
-
     flex:none;
+
+    border-radius:23px;
 
     background:
         var(--home-ivory);
 
     box-shadow:
-        0 15px 30px rgba(23,27,31,.09);
+        0 17px 32px rgba(21,25,28,.10);
 }
 
 
@@ -104819,7 +104940,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-testimonial-person strong{
 
     color:
-        #171B1F;
+        #15191C;
 
     font-size:12px;
 
@@ -104830,7 +104951,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-testimonial-person span{
 
     color:
-        rgba(37,42,46,.42);
+        rgba(32,37,42,.42);
 
     font-size:9px;
 
@@ -104846,7 +104967,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:630px;
+    min-height:660px;
 
     display:flex;
 
@@ -104854,16 +104975,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     overflow:hidden;
 
+    color:
+        #FFFFFF !important;
+
     background:
         linear-gradient(
             125deg,
-            #171B1F 0%,
-            #20262A 58%,
-            #262D32 100%
+            #15191C 0%,
+            #20262A 55%,
+            #292F34 100%
         ) !important;
-
-    color:
-        #FFFFFF !important;
 }
 
 
@@ -104876,11 +104997,36 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     inset:0;
 
     background:
-        radial-gradient(
-            circle at 18% 80%,
-            rgba(255,255,255,.035),
-            transparent 27%
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.018),
+            transparent 45%
         );
+
+    pointer-events:none;
+}
+
+
+.home-page .home-final::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:750px;
+    height:750px;
+
+    right:-260px;
+    top:-280px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.12);
+
+    box-shadow:
+        0 0 0 42px rgba(198,161,91,.025),
+        0 0 0 88px rgba(198,161,91,.015);
 
     pointer-events:none;
 }
@@ -104890,10 +105036,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:650px;
-    height:650px;
+    width:680px;
+    height:680px;
 
-    right:-180px;
+    right:-170px;
     top:-220px;
 
     border-radius:50%;
@@ -104901,12 +105047,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.20),
+            rgba(198,161,91,.23),
             rgba(198,161,91,0) 68%
         );
 
     filter:
-        blur(5px);
+        blur(4px);
 }
 
 
@@ -104918,12 +105064,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
-    max-width:980px;
+    max-width:1000px;
 
     padding:
-        120px 0 70px;
+        125px 0 75px;
 
     color:
         #FFFFFF !important;
@@ -104946,16 +105092,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:
         clamp(
-            4rem,
-            7.7vw,
-            8rem
+            4.2rem,
+            7.8vw,
+            8.4rem
         );
 
-    line-height:.87;
+    line-height:.85;
 
     font-weight:600;
 
-    letter-spacing:-.067em;
+    letter-spacing:-.07em;
 }
 
 
@@ -104964,7 +105110,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:block;
 
     color:
-        rgba(255,255,255,.49) !important;
+        rgba(255,255,255,.48) !important;
 
     font-weight:500;
 }
@@ -104972,7 +105118,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-final-content p{
 
-    max-width:610px;
+    max-width:620px;
 
     margin:
         30px 0 0;
@@ -104982,7 +105128,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:14px;
 
-    line-height:1.75;
+    line-height:1.76;
 }
 
 
@@ -104994,30 +105140,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:11px;
 
-    margin-top:35px;
+    margin-top:36px;
 }
 
 
-.home-page .home-final .home-action-primary{
-
-    background:
-        var(--home-gold);
-
-    border-color:
-        var(--home-gold);
+.home-page .home-final
+.home-action-primary{
 
     color:
-        #171B1F !important;
+        #15191C !important;
+
+    background:
+        var(--home-gold) !important;
+
+    border-color:
+        var(--home-gold) !important;
+
+    box-shadow:
+        0 14px 35px rgba(198,161,91,.20);
 }
 
 
-.home-page .home-final .home-action-primary:hover{
+.home-page .home-final
+.home-action-primary:hover{
+
+    color:
+        #15191C !important;
 
     background:
-        #D6B977;
+        #D7BC7A !important;
 
     border-color:
-        #D6B977;
+        #D7BC7A !important;
 }
 
 
@@ -105029,7 +105183,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:3;
+    z-index:5;
 
     display:grid;
 
@@ -105039,19 +105193,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     gap:15px;
 
     padding:
-        21px 0;
+        22px 0;
 
     border-top:
         1px solid rgba(255,255,255,.10);
 
     color:
-        rgba(255,255,255,.43);
+        rgba(255,255,255,.42);
 
     font-size:8px;
 
     font-weight:800;
 
-    letter-spacing:.13em;
+    letter-spacing:.14em;
 }
 
 
@@ -105062,7 +105216,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   15. TABLET
+   15. HARD VISIBILITY
+   ========================================================== */
+
+.home-page .home-hero,
+.home-page .home-identity,
+.home-page .home-manifesto,
+.home-page .home-worlds,
+.home-page .home-universes,
+.home-page .home-products,
+.home-page .home-event,
+.home-page .home-memories,
+.home-page .home-testimonial,
+.home-page .home-final{
+
+    opacity:1 !important;
+
+    visibility:visible !important;
+}
+
+
+.home-page .home-hero-product,
+.home-page .home-hero-product img,
+.home-page .home-world-image img,
+.home-page .home-feature-image img{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+
+/* ==========================================================
+   16. TABLET — 1100
    ========================================================== */
 
 @media (max-width:1100px){
@@ -105070,10 +105256,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .home-page .home-hero-container{
 
         grid-template-columns:
-            minmax(400px,.9fr)
-            minmax(420px,1.1fr);
+            minmax(390px,.90fr)
+            minmax(400px,1.10fr);
 
-        gap:20px;
+        gap:10px;
+
     }
 
 
@@ -105081,22 +105268,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3.6rem,
-                6vw,
+                3.8rem,
+                6.3vw,
                 5.8rem
             );
+
     }
 
 
     .home-page .home-hero-product-stage{
 
-        height:550px;
+        height:570px;
+
     }
 
 
     .home-page .home-hero-product img{
 
-        height:510px;
+        height:520px;
+
+    }
+
+
+    .home-page .home-worlds-header h2,
+    .home-page .home-universes-head h2,
+    .home-page .home-products-head h2,
+    .home-page .home-event-intro h2,
+    .home-page .home-memory-head h2{
+
+        font-size:
+            clamp(
+                2.8rem,
+                4.8vw,
+                5rem
+            );
+
     }
 
 
@@ -105104,6 +105310,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             repeat(2,minmax(0,1fr));
+
     }
 
 
@@ -105111,22 +105318,37 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-row:
             span 2;
+
     }
+
 
 }
 
 
 /* ==========================================================
-   16. SMALL TABLET
+   17. TABLET — 850
    ========================================================== */
 
 @media (max-width:850px){
+
+    .home-page .home-container{
+
+        width:
+            min(
+                700px,
+                calc(100% - 38px)
+            );
+
+    }
+
 
     .home-page .home-hero{
 
         height:auto;
 
-        min-height:930px;
+        min-height:
+            980px;
+
     }
 
 
@@ -105138,30 +105360,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
                 calc(100% - 38px)
             );
 
-        min-height:930px;
+        min-height:
+            980px;
 
         height:auto;
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
 
-        gap:20px;
+        gap:18px;
 
         padding:
-            75px 0 100px;
+            70px 0 95px;
+
     }
 
 
     .home-page .home-hero-content{
 
-        min-height:330px;
+        min-height:
+            340px;
+
     }
 
 
     .home-page .home-hero-visual{
 
-        min-height:470px;
+        min-height:
+            500px;
 
-        height:470px;
+        height:
+            500px;
+
     }
 
 
@@ -105169,38 +105399,51 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:
             min(
-                430px,
-                82%
+                440px,
+                80%
             );
 
-        height:460px;
+        height:
+            475px;
+
     }
 
 
     .home-page .home-hero-product img{
 
-        width:390px;
+        width:
+            400px;
 
-        height:430px;
+        height:
+            440px;
+
     }
 
 
     .home-page .home-hero-aura{
 
-        width:430px;
-        height:430px;
+        width:
+            440px;
+
+        height:
+            440px;
+
     }
 
 
     .home-page .home-world-grid{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .home-page .home-world{
 
-        min-height:560px;
+        min-height:
+            570px;
+
     }
 
 
@@ -105209,48 +105452,63 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-template-columns:
             .12fr
             1fr;
+
     }
 
 
     .home-page .home-universe p{
 
-        grid-column:2;
+        grid-column:
+            2;
+
     }
 
 
     .home-page .home-event-card{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .home-page .home-event-poster{
 
-        min-height:470px;
+        min-height:
+            480px;
+
     }
 
 
     .home-page .home-memory-wrap{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .home-page .home-memory-side{
 
-        min-height:290px;
+        min-height:
+            310px;
+
     }
 
 
     .home-page .home-testimonial .home-container{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .home-page .home-testimonial-mark{
 
-        font-size:5rem;
+        font-size:
+            5rem;
+
     }
 
 
@@ -105258,13 +105516,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             repeat(3,1fr);
+
     }
 
 }
 
 
 /* ==========================================================
-   17. MOBILE
+   18. MOBILE — 600
    ========================================================== */
 
 @media (max-width:600px){
@@ -105273,12 +105532,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:
             calc(100% - 30px);
+
     }
 
 
+    /* ------------------------------------------------------
+       HERO
+       ------------------------------------------------------ */
+
     .home-page .home-hero{
 
-        min-height:885px;
+        min-height:
+            900px;
+
     }
 
 
@@ -105287,10 +105553,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         width:
             calc(100% - 28px);
 
-        min-height:885px;
+        min-height:
+            900px;
 
         padding:
-            68px 0 92px;
+            58px 0 88px;
+
+    }
+
+
+    .home-page .home-hero-content{
+
+        min-height:
+            330px;
+
     }
 
 
@@ -105298,155 +105574,232 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3rem,
-                13.5vw,
-                4.65rem
+                3.15rem,
+                14vw,
+                4.8rem
             );
 
-        line-height:.91;
+        line-height:
+            .89;
+
+    }
+
+
+    .home-page .home-hero-pretitle{
+
+        max-width:
+            320px;
+
+        margin-bottom:
+            20px;
+
     }
 
 
     .home-page .home-hero-slide p{
 
-        font-size:13px;
+        max-width:
+            100%;
 
-        line-height:1.72;
+        margin-top:
+            22px;
 
-        margin-top:22px;
+        font-size:
+            13px;
+
+        line-height:
+            1.7;
+
     }
 
 
     .home-page .home-hero-actions{
 
-        flex-direction:column;
+        flex-direction:
+            column;
 
-        align-items:stretch;
+        align-items:
+            stretch;
 
-        margin-top:27px;
+        margin-top:
+            27px;
+
     }
 
 
     .home-page .home-action{
 
-        width:100%;
+        width:
+            100%;
 
-        min-height:49px;
+        min-height:
+            50px;
 
-        font-size:9px;
     }
 
 
     .home-page .home-hero-controls{
 
-        width:100%;
+        width:
+            100%;
 
-        margin-top:24px;
+        margin-top:
+            24px;
+
     }
 
 
     .home-page .home-hero-visual{
 
-        min-height:350px;
+        min-height:
+            350px;
 
-        height:350px;
+        height:
+            350px;
+
     }
 
 
     .home-page .home-hero-product-stage{
 
-        width:315px;
+        width:
+            315px;
 
-        height:340px;
+        height:
+            345px;
+
     }
 
 
     .home-page .home-hero-product img{
 
-        width:290px;
+        width:
+            290px;
 
-        height:315px;
+        height:
+            320px;
+
     }
 
 
     .home-page .home-hero-product-halo{
 
-        width:220px;
-        height:220px;
+        width:
+            220px;
+
+        height:
+            220px;
+
     }
 
 
     .home-page .home-hero-aura{
 
-        width:325px;
-        height:325px;
+        width:
+            325px;
+
+        height:
+            325px;
+
     }
 
 
     .home-page .home-hero-orbit{
 
-        opacity:.62;
+        opacity:
+            .58;
+
     }
 
 
     .home-page .orbit-one{
 
-        width:310px;
+        width:
+            310px;
 
-        height:145px;
+        height:
+            145px;
+
     }
 
 
     .home-page .orbit-two{
 
-        width:290px;
+        width:
+            290px;
 
-        height:290px;
+        height:
+            290px;
+
     }
 
 
     .home-page .home-hero-product-index{
 
-        right:0;
+        right:
+            0;
 
-        bottom:3%;
+        bottom:
+            3%;
+
     }
 
 
     .home-page .home-hero-visual-index{
 
-        right:1%;
+        right:
+            1%;
 
-        top:2%;
+        top:
+            2%;
 
-        font-size:5.5rem;
+        font-size:
+            5.7rem;
+
     }
 
 
     .home-page .home-hero-bottom{
 
-        left:15px;
+        left:
+            13px;
 
-        right:15px;
+        right:
+            13px;
 
-        bottom:12px;
+        bottom:
+            12px;
 
-        font-size:7px;
+        font-size:
+            7px;
 
-        letter-spacing:.10em;
+        letter-spacing:
+            .09em;
+
     }
 
 
+    /* ------------------------------------------------------
+       IDENTITY
+       ------------------------------------------------------ */
+
     .home-page .home-identity-word{
 
-        gap:19px;
+        gap:
+            19px;
 
         padding:
             16px 0;
 
-        font-size:8px;
+        font-size:
+            8px;
+
     }
 
+
+    /* ------------------------------------------------------
+       SECTIONS
+       ------------------------------------------------------ */
 
     .home-page .home-manifesto,
     .home-page .home-worlds,
@@ -105457,21 +105810,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .home-page .home-testimonial{
 
         padding-top:
-            80px;
+            82px;
 
         padding-bottom:
-            100px;
+            105px;
+
     }
 
+
+    /* ------------------------------------------------------
+       MANIFESTO
+       ------------------------------------------------------ */
 
     .home-page .home-manifesto-copy h2{
 
         font-size:
             clamp(
-                3.1rem,
-                13.5vw,
-                4.8rem
+                3.2rem,
+                14vw,
+                4.9rem
             );
+
     }
 
 
@@ -105479,6 +105838,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             1fr 1fr;
+
+        margin-top:
+            48px;
+
     }
 
 
@@ -105486,223 +105849,318 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         border-bottom:
             1px solid var(--home-line);
+
+        padding:
+            14px 0;
+
     }
 
+
+    /* ------------------------------------------------------
+       WORLD HEAD
+       ------------------------------------------------------ */
 
     .home-page .home-worlds-header,
     .home-page .home-products-head,
     .home-page .home-memory-head{
 
-        display:block;
+        display:
+            block;
+
     }
 
 
     .home-page .home-worlds-header p{
 
-        margin-top:18px;
+        margin-top:
+            18px;
+
     }
 
 
+    /* ------------------------------------------------------
+       WORLD CARD
+       ------------------------------------------------------ */
+
     .home-page .home-world{
 
-        min-height:500px;
+        min-height:
+            505px;
 
-        border-radius:26px;
+        border-radius:
+            27px;
+
     }
 
 
     .home-page .home-world-image{
 
-        height:55%;
+        height:
+            55%;
+
     }
 
 
     .home-page .home-world-image img{
 
-        width:76%;
+        width:
+            76%;
 
-        max-height:210px;
+        max-height:
+            215px;
+
     }
 
 
     .home-page .home-world-content{
 
-        left:23px;
+        left:
+            23px;
 
-        right:23px;
+        right:
+            23px;
 
-        bottom:23px;
+        bottom:
+            23px;
+
     }
 
 
     .home-page .home-world-content h3{
 
-        font-size:2.6rem;
+        font-size:
+            2.6rem;
+
     }
 
 
     .home-page .home-world-content p{
 
-        font-size:11px;
+        font-size:
+            11px;
 
-        line-height:1.62;
     }
 
 
     .home-page .home-world-number{
 
-        top:22px;
+        top:
+            22px;
 
-        left:22px;
+        left:
+            22px;
+
     }
 
 
+    /* ------------------------------------------------------
+       UNIVERSes
+       ------------------------------------------------------ */
+
     .home-page .home-universe{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
 
-        gap:10px;
+        gap:
+            9px;
+
+        min-height:
+            auto;
 
         padding:
-            23px 0;
+            24px 0;
+
     }
 
 
     .home-page .home-universe > span{
 
         display:none;
+
     }
 
 
     .home-page .home-universe h3{
 
-        font-size:2.1rem;
+        font-size:
+            2.15rem;
+
     }
 
 
     .home-page .home-universe p{
 
-        grid-column:auto;
+        grid-column:
+            auto;
 
-        margin-top:4px;
+        margin-top:
+            3px;
+
     }
 
 
+    /* ------------------------------------------------------
+       PRODUCTS
+       ------------------------------------------------------ */
+
     .home-page .home-product-gallery{
 
-        grid-template-columns:1fr;
+        grid-template-columns:
+            1fr;
+
     }
 
 
     .home-page .home-feature-product,
     .home-page .home-feature-large{
 
-        min-height:540px;
+        min-height:
+            545px;
 
-        grid-row:auto;
+        grid-row:
+            auto;
+
     }
 
 
     .home-page .home-feature-large{
 
-        min-height:600px;
+        min-height:
+            610px;
+
     }
 
 
     .home-page .home-feature-image img{
 
-        height:295px;
+        height:
+            300px;
+
     }
 
 
+    /* ------------------------------------------------------
+       EVENT
+       ------------------------------------------------------ */
+
     .home-page .home-event-card{
 
-        border-radius:26px;
+        border-radius:
+            27px;
+
     }
 
 
     .home-page .home-event-poster{
 
-        min-height:360px;
+        min-height:
+            365px;
+
     }
 
 
     .home-page .home-event-details{
 
         padding:
-            34px 24px 28px;
+            35px 24px 29px;
+
     }
 
 
     .home-page .home-event-number{
 
-        font-size:4.2rem;
-    }
+        font-size:
+            4.25rem;
 
-
-    .home-page .home-event-month{
-
-        font-size:8px;
     }
 
 
     .home-page .home-event-details h3{
 
-        font-size:2.25rem;
+        font-size:
+            2.3rem;
 
-        margin-top:26px;
     }
 
 
+    /* ------------------------------------------------------
+       MEMORIES
+       ------------------------------------------------------ */
+
     .home-page .home-memory-stage{
 
-        min-height:430px;
+        min-height:
+            430px;
+
     }
 
 
     .home-page .home-memory-side{
 
-        min-height:275px;
+        min-height:
+            275px;
 
         padding:
             31px 24px;
+
     }
 
 
     .home-page .home-memory-caption{
 
-        left:22px;
+        left:
+            22px;
 
-        right:22px;
+        right:
+            22px;
 
-        bottom:22px;
+        bottom:
+            22px;
+
     }
 
 
+    /* ------------------------------------------------------
+       TESTIMONIAL
+       ------------------------------------------------------ */
+
     .home-page .home-testimonial-main blockquote{
 
-        font-size:2.7rem;
+        font-size:
+            2.75rem;
+
     }
 
 
     .home-page .home-testimonial-photo{
 
-        width:82px;
+        width:
+            82px;
 
-        height:98px;
+        height:
+            98px;
+
     }
 
 
+    /* ------------------------------------------------------
+       FINAL
+       ------------------------------------------------------ */
+
     .home-page .home-final{
 
-        min-height:565px;
+        min-height:
+            575px;
+
     }
 
 
     .home-page .home-final-content{
 
         padding:
-            95px 0 50px;
+            96px 0 52px;
+
     }
 
 
@@ -105710,16 +106168,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3.35rem,
-                13.5vw,
-                5rem
+                3.45rem,
+                14vw,
+                5.1rem
             );
+
     }
 
 
     .home-page .home-final-content p{
 
-        font-size:12px;
+        font-size:
+            12px;
+
+    }
+
+
+    .home-page .home-final-actions{
+
+        flex-direction:
+            column;
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .home-page .home-final-actions
+    .home-action{
+
+        width:
+            100%;
+
     }
 
 
@@ -105728,59 +106209,80 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-template-columns:
             repeat(2,1fr);
 
-        gap:13px;
+        gap:
+            13px;
+
     }
 
 
     .home-page .home-final-footer span:last-child{
 
-        text-align:left;
+        text-align:
+            left;
+
     }
 
 }
 
 
 /* ==========================================================
-   18. VERY SMALL
+   19. VERY SMALL
    ========================================================== */
 
 @media (max-width:390px){
+
+    .home-page .home-hero{
+
+        min-height:
+            870px;
+
+    }
+
 
     .home-page .home-hero-slide h1{
 
         font-size:
             2.9rem;
+
     }
 
 
     .home-page .home-hero-product-stage{
 
-        width:285px;
+        width:
+            285px;
+
     }
 
 
     .home-page .home-world-content h3{
 
-        font-size:2.35rem;
+        font-size:
+            2.35rem;
+
     }
 
 
     .home-page .home-event-number{
 
-        font-size:3.8rem;
+        font-size:
+            3.8rem;
+
     }
 
 
     .home-page .home-testimonial-main blockquote{
 
-        font-size:2.4rem;
+        font-size:
+            2.4rem;
+
     }
 
 }
 
 
 /* ==========================================================
-   19. REDUCED MOTION
+   20. REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion:reduce){
@@ -105798,73 +106300,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         transition-duration:
             .01ms !important;
 
+        scroll-behavior:
+            auto !important;
+
     }
 
 
     .home-page .home-identity-word{
 
-        animation:none;
+        animation:
+            none;
+
     }
 
 }
-
-
-/* ==========================================================
-   20. VISIBILITY SAFETY
-   ========================================================== */
-
-.home-page .home-world,
-.home-page .home-feature-product,
-.home-page .home-event-card,
-.home-page .home-memory-wrap,
-.home-page .home-testimonial-main,
-.home-page .home-final-content{
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-.home-page .home-final,
-.home-page .home-memory-side{
-
-    color:#FFFFFF !important;
-}
-
-
-.home-page .home-final h2,
-.home-page .home-final p{
-
-    visibility:visible;
-}
-
-
-.home-page .home-hero-product img,
-.home-page .home-world-image img,
-.home-page .home-feature-image img{
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-/* ==========================================================
-   21. FOCUS ACCESSIBILITY
-   ========================================================== */
-
-.home-page .home-action:focus-visible,
-.home-page .home-minimal-button:focus-visible,
-.home-page .home-hero-controls button:focus-visible,
-.home-page .home-memory-nav button:focus-visible{
-
-    outline:none;
-
-    box-shadow:
-        0 0 0 3px rgba(198,161,91,.22);
-}
 ```
+
 
 
 
