@@ -101612,19 +101612,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 ```css id="k4o3ua"
+
+
+```css id="qkqk1t"
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.CSS
-   IMPACT EDITION
-   Premium Editorial / Luxury Brand Opening
+   SIGNATURE EDITION
 
-   PRINCÍPIO:
-   WHITE FIRST
-   GRAPHITE FOR CONTRAST
-   GOLD FOR IDENTITY
+   Premium Editorial / Immersive Brand Opening
+   Visual Master: EVENTS
 
-   Estrutura compatível com o home.js fornecido.
-   Tudo isolado em .home-page.
+   WHITE-FIRST
+   GRAPHITE-CONTRAST
+   GOLD-SIGNATURE
    ========================================================== */
 
 
@@ -101636,28 +101637,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     --home-white:#FFFFFF;
     --home-ivory:#F8F7F3;
-    --home-ivory-2:#F1EEE7;
+    --home-ivory-deep:#F0ECE4;
 
     --home-black:#15191C;
     --home-graphite:#20262A;
-    --home-graphite-soft:#2A3136;
+    --home-graphite-soft:#2B3237;
 
     --home-text:#20252A;
     --home-text-soft:#68727A;
-    --home-text-muted:#949BA1;
+    --home-text-muted:#9299A0;
 
     --home-gold:#C6A15B;
-    --home-gold-dark:#9D7938;
     --home-gold-light:#E9D7A9;
+    --home-gold-dark:#9C7737;
 
-    --home-line:rgba(21,25,28,.09);
-    --home-line-strong:rgba(21,25,28,.15);
-
-    --home-shadow:
-        0 25px 70px rgba(21,25,28,.08);
-
-    --home-shadow-heavy:
-        0 35px 95px rgba(21,25,28,.13);
+    --home-line:rgba(21,25,28,.085);
+    --home-line-strong:rgba(21,25,28,.14);
 
     --home-hero-tone:#C6A15B;
     --home-hero-atmosphere:#EFE3C8;
@@ -101668,9 +101663,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     width:100%;
 
-    display:block;
-
-    overflow:hidden;
+    overflow:clip;
 
     background:
         #FFFFFF !important;
@@ -101695,8 +101688,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-.home-page a,
-.home-page button{
+.home-page button,
+.home-page a{
     -webkit-tap-highlight-color:transparent;
 }
 
@@ -101713,8 +101706,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             calc(100% - 52px)
         );
 
-    margin-left:auto;
-    margin-right:auto;
+    margin-inline:auto;
 }
 
 
@@ -101728,9 +101720,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
-    margin-bottom:19px;
+    margin-bottom:18px;
 
     color:
         var(--home-gold) !important;
@@ -101751,7 +101743,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     content:"";
 
-    width:30px;
+    width:29px;
     height:1px;
 
     flex:none;
@@ -101763,8 +101755,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 /* ==========================================================
    04. REVEAL
-   IMPORTANT:
-   O conteúdo nunca fica escondido.
+   Never hide page content.
    ========================================================== */
 
 .home-page .reveal{
@@ -101780,21 +101771,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .reveal.is-visible{
 
     animation:
-        homeEditorialReveal
-        .75s
+        homeSignatureReveal
+        .72s
         cubic-bezier(.2,.75,.2,1)
         both;
 }
 
 
-@keyframes homeEditorialReveal{
+@keyframes homeSignatureReveal{
 
     from{
 
-        opacity:.78;
+        opacity:.84;
 
         transform:
-            translateY(18px);
+            translateY(17px);
 
     }
 
@@ -101811,517 +101802,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   05. HERO — MASTER OPENING
+   05. GENERIC ACTIONS
    ========================================================== */
-
-.home-page .home-hero{
-
-    --mouse-x:50%;
-    --mouse-y:50%;
-
-    position:relative;
-
-    height:
-        min(900px,calc(100vh - 72px));
-
-    min-height:780px;
-
-    overflow:hidden;
-
-    isolation:isolate;
-
-    color:
-        var(--home-text) !important;
-
-    background:
-        #FFFFFF !important;
-
-    border-bottom:
-        1px solid rgba(21,25,28,.07);
-}
-
-
-/* ==========================================================
-   HERO TOP HAIRLINE
-   ========================================================== */
-
-.home-page .home-hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-    right:0;
-    top:0;
-
-    height:2px;
-
-    z-index:8;
-
-    background:
-        linear-gradient(
-            90deg,
-            transparent 0%,
-            var(--home-gold) 18%,
-            var(--home-gold-light) 52%,
-            var(--home-gold) 82%,
-            transparent 100%
-        );
-
-    opacity:.75;
-
-}
-
-
-/* ==========================================================
-   HERO LARGE EDITORIAL CIRCLE
-   ========================================================== */
-
-.home-page .home-hero::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:820px;
-    height:820px;
-
-    right:-290px;
-    top:-260px;
-
-    z-index:-4;
-
-    border-radius:50%;
-
-    border:
-        1px solid rgba(198,161,91,.12);
-
-    box-shadow:
-
-        0 0 0 38px rgba(198,161,91,.028),
-
-        0 0 0 78px rgba(198,161,91,.018),
-
-        0 0 0 125px rgba(198,161,91,.010);
-
-    pointer-events:none;
-
-}
-
-
-/* ==========================================================
-   HERO BACKDROP
-   ========================================================== */
-
-.home-page .home-hero-backdrop{
-
-    position:absolute;
-
-    width:760px;
-    height:760px;
-
-    right:-190px;
-    top:-220px;
-
-    border-radius:50%;
-
-    z-index:-5;
-
-    background:
-        radial-gradient(
-            circle,
-            var(--home-hero-atmosphere) 0%,
-            rgba(255,255,255,0) 70%
-        ) !important;
-
-    opacity:.78;
-
-    filter:
-        blur(5px);
-
-    transition:
-        background .95s ease,
-        transform 1s ease;
-
-}
-
-
-/* ==========================================================
-   HERO ATMOSPHERE
-   ========================================================== */
-
-.home-page .home-hero-atmosphere{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:-2;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(
-            460px circle
-            at var(--mouse-x) var(--mouse-y),
-            rgba(198,161,91,.095),
-            transparent 72%
-        );
-
-    transition:
-        background 1s ease;
-
-}
-
-
-/* ==========================================================
-   HERO GRID
-   ========================================================== */
-
-.home-page .home-hero-grid{
-
-    position:absolute;
-
-    inset:0;
-
-    z-index:-3;
-
-    pointer-events:none;
-
-    opacity:.46;
-
-    background-image:
-
-        linear-gradient(
-            rgba(21,25,28,.028) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(21,25,28,.028) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        92px 92px;
-
-    mask-image:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.36),
-            transparent 78%
-        );
-
-    -webkit-mask-image:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.36),
-            transparent 78%
-        );
-}
-
-
-/* ==========================================================
-   HERO CONTAINER
-   ========================================================== */
-
-.home-page .home-hero-container{
-
-    position:relative;
-
-    z-index:5;
-
-    width:
-        min(
-            1340px,
-            calc(100% - 64px)
-        );
-
-    height:100%;
-
-    margin-left:auto;
-    margin-right:auto;
-
-    display:grid;
-
-    grid-template-columns:
-        minmax(470px,.90fr)
-        minmax(500px,1.10fr);
-
-    align-items:center;
-
-    gap:20px;
-
-    padding:
-        55px 0 80px;
-}
-
-
-/* ==========================================================
-   HERO COPY
-   ========================================================== */
-
-.home-page .home-hero-copy{
-
-    position:relative;
-
-    z-index:12;
-
-    min-width:0;
-}
-
-
-.home-page .home-hero-content{
-
-    position:relative;
-
-    min-height:390px;
-
-}
-
-
-.home-page .home-hero-slide{
-
-    position:absolute;
-
-    inset:0;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:
-        translateY(18px);
-
-    pointer-events:none;
-
-    transition:
-        opacity .55s ease,
-        transform .65s cubic-bezier(.2,.75,.2,1),
-        visibility .55s;
-}
-
-
-.home-page .home-hero-slide.is-active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:
-        translateY(0);
-
-    pointer-events:auto;
-}
-
-
-/* ==========================================================
-   HERO EYEBROW
-   ========================================================== */
-
-.home-page .home-hero-eyebrow{
-
-    margin-bottom:10px;
-
-    color:
-        var(--home-hero-deep) !important;
-
-    font-size:10px;
-
-    font-weight:900;
-
-    letter-spacing:.23em;
-
-    line-height:1.4;
-
-    text-transform:uppercase;
-
-    transition:
-        color .7s ease;
-}
-
-
-/* ==========================================================
-   HERO PRETITLE
-   ========================================================== */
-
-.home-page .home-hero-pretitle{
-
-    max-width:500px;
-
-    margin-bottom:25px;
-
-    color:
-        rgba(32,37,42,.40) !important;
-
-    font-size:9px;
-
-    font-weight:900;
-
-    letter-spacing:.16em;
-
-    line-height:1.55;
-
-    text-transform:uppercase;
-}
-
-
-/* ==========================================================
-   HERO TITLE
-   ========================================================== */
-
-.home-page .home-hero-slide h1{
-
-    max-width:760px;
-
-    margin:0;
-
-    color:
-        #15191C !important;
-
-    font-size:
-        clamp(
-            4.7rem,
-            7vw,
-            7.6rem
-        );
-
-    font-weight:650;
-
-    line-height:.84;
-
-    letter-spacing:-.078em;
-
-}
-
-
-.home-page .home-hero-slide h1 span{
-
-    display:block;
-
-    margin-top:.08em;
-
-    color:
-        var(--home-hero-deep) !important;
-
-    font-weight:540;
-
-    transition:
-        color .75s ease;
-}
-
-
-/* ==========================================================
-   HERO COPY
-   ========================================================== */
-
-.home-page .home-hero-slide p{
-
-    max-width:550px;
-
-    margin:
-        31px 0 0;
-
-    color:
-        rgba(32,37,42,.62) !important;
-
-    font-size:15px;
-
-    line-height:1.78;
-}
-
-
-/* ==========================================================
-   HERO PRODUCT TAG
-   ========================================================== */
-
-.home-page .home-hero-product-tag{
-
-    display:inline-flex;
-
-    align-items:center;
-
-    gap:15px;
-
-    margin-top:25px;
-
-    padding:
-        10px 16px;
-
-    border-left:
-        2px solid
-        var(--home-hero-tone);
-
-    color:
-        var(--home-text);
-
-    background:
-        rgba(255,255,255,.82);
-
-    box-shadow:
-        0 9px 24px rgba(21,25,28,.035);
-
-    backdrop-filter:
-        blur(12px);
-
-    transition:
-        border-color .7s ease;
-}
-
-
-.home-page .home-hero-product-tag span{
-
-    color:
-        rgba(32,37,42,.42);
-
-    font-size:8px;
-
-    font-weight:900;
-
-    letter-spacing:.12em;
-}
-
-
-.home-page .home-hero-product-tag strong{
-
-    color:
-        var(--home-hero-deep);
-
-    font-size:10px;
-
-    font-weight:900;
-
-    letter-spacing:.04em;
-}
-
-
-/* ==========================================================
-   HERO ACTIONS
-   ========================================================== */
-
-.home-page .home-hero-actions{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    align-items:center;
-
-    gap:11px;
-
-    margin-top:34px;
-}
-
 
 .home-page .home-action{
 
@@ -102346,7 +101828,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.055em;
+    letter-spacing:.045em;
+
+    line-height:1;
 
     cursor:pointer;
 
@@ -102390,11 +101874,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border:
         1px solid #15191C !important;
 
-    color:
-        #FFFFFF !important;
-
     background:
         #15191C !important;
+
+    color:
+        #FFFFFF !important;
 
     box-shadow:
         0 15px 32px rgba(21,25,28,.13);
@@ -102414,24 +101898,752 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-action-secondary{
 
     border:
-        1px solid rgba(21,25,28,.14) !important;
+        1px solid rgba(21,25,28,.15) !important;
+
+    background:
+        rgba(255,255,255,.86) !important;
 
     color:
         #15191C !important;
 
-    background:
-        rgba(255,255,255,.78) !important;
-
+    backdrop-filter:
+        blur(10px);
 }
 
 
 .home-page .home-action-secondary:hover{
 
-    border-color:
-        var(--home-hero-tone) !important;
-
     background:
         #FFFFFF !important;
+
+    border-color:
+        var(--home-gold) !important;
+}
+
+
+.home-page .home-action-dark{
+
+    border:
+        1px solid #252B30 !important;
+
+    background:
+        #252B30 !important;
+
+    color:
+        #FFFFFF !important;
+}
+
+
+.home-page .home-action-dark:hover{
+
+    border-color:
+        var(--home-gold) !important;
+
+    background:
+        var(--home-gold) !important;
+
+    color:
+        #15191C !important;
+}
+
+
+/* ==========================================================
+   06. HERO
+   ========================================================== */
+
+.home-page .home-hero{
+
+    --mouse-x:50%;
+    --mouse-y:50%;
+
+    position:relative;
+
+    min-height:
+        min(
+            900px,
+            calc(100vh - 72px)
+        );
+
+    height:
+        900px;
+
+    overflow:hidden;
+
+    isolation:isolate;
+
+    background:
+        linear-gradient(
+            120deg,
+            #FFFFFF 0%,
+            #FCFBF8 48%,
+            var(--home-hero-surface) 100%
+        ) !important;
+
+    color:
+        var(--home-text) !important;
+
+    border-bottom:
+        1px solid rgba(21,25,28,.065);
+
+    transition:
+        background 1s cubic-bezier(.2,.75,.2,1);
+}
+
+
+/* ==========================================================
+   HERO TOP LINE
+   ========================================================== */
+
+.home-page .home-hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+    right:0;
+
+    height:2px;
+
+    z-index:20;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(198,161,91,.65) 18%,
+            #C6A15B 50%,
+            rgba(198,161,91,.65) 82%,
+            transparent 100%
+        );
+}
+
+
+/* ==========================================================
+   HERO GIANT CIRCLE
+   ========================================================== */
+
+.home-page .home-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:830px;
+    height:830px;
+
+    right:-280px;
+    top:-275px;
+
+    z-index:-6;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.11);
+
+    box-shadow:
+
+        0 0 0 38px rgba(198,161,91,.028),
+
+        0 0 0 78px rgba(198,161,91,.016),
+
+        0 0 0 125px rgba(198,161,91,.010);
+
+    pointer-events:none;
+}
+
+
+/* ==========================================================
+   HERO BACKGROUND
+   ========================================================== */
+
+.home-page .home-hero-background{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-8;
+
+    background:
+        radial-gradient(
+            520px circle at var(--mouse-x) var(--mouse-y),
+            rgba(198,161,91,.075),
+            transparent 72%
+        );
+
+    transition:
+        background .8s ease;
+}
+
+
+.home-page .home-hero-backdrop{
+
+    position:absolute;
+
+    width:760px;
+    height:760px;
+
+    right:-180px;
+    top:-180px;
+
+    z-index:-7;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            var(--home-hero-atmosphere),
+            rgba(255,255,255,0) 69%
+        );
+
+    opacity:.74;
+
+    filter:
+        blur(8px);
+
+    transition:
+        background .9s ease,
+        transform 1s ease;
+}
+
+
+.home-page .home-hero-atmosphere{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-3;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(
+            500px circle at var(--mouse-x) var(--mouse-y),
+            rgba(198,161,91,.075),
+            transparent 72%
+        );
+
+    transition:
+        background 1s ease;
+}
+
+
+/* ==========================================================
+   HERO GRID
+   ========================================================== */
+
+.home-page .home-hero-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:-5;
+
+    opacity:.35;
+
+    pointer-events:none;
+
+    background-image:
+
+        linear-gradient(
+            rgba(21,25,28,.030) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(21,25,28,.030) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        92px 92px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.35),
+            transparent 82%
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.35),
+            transparent 82%
+        );
+}
+
+
+.home-page .home-hero-light-streak{
+
+    position:absolute;
+
+    width:620px;
+
+    height:1px;
+
+    right:-50px;
+
+    top:45%;
+
+    z-index:-2;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(198,161,91,.16),
+            transparent
+        );
+
+    transform:
+        rotate(-20deg);
+
+    filter:
+        blur(.3px);
+}
+
+
+.home-page .home-hero-corner-mark{
+
+    position:absolute;
+
+    left:1.8%;
+
+    bottom:11%;
+
+    z-index:-1;
+
+    color:
+        rgba(198,161,91,.08);
+
+    font-size:
+        clamp(
+            7rem,
+            14vw,
+            13rem
+        );
+
+    font-weight:650;
+
+    line-height:.7;
+
+    letter-spacing:-.09em;
+
+    pointer-events:none;
+}
+
+
+/* ==========================================================
+   HERO CONTAINER
+   ========================================================== */
+
+.home-page .home-hero-container{
+
+    position:relative;
+
+    z-index:5;
+
+    width:
+        min(
+            1340px,
+            calc(100% - 64px)
+        );
+
+    height:100%;
+
+    margin-inline:auto;
+
+    display:flex;
+
+    flex-direction:column;
+}
+
+
+/* ==========================================================
+   HERO TOPLINE
+   ========================================================== */
+
+.home-page .home-hero-topline{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:30px;
+
+    min-height:78px;
+
+    padding:
+        18px 0;
+
+    border-bottom:
+        1px solid rgba(21,25,28,.075);
+
+    color:
+        rgba(32,37,42,.39);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+
+.home-page .home-hero-topline > div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+}
+
+
+.home-page .home-hero-topline i{
+
+    width:24px;
+    height:1px;
+
+    background:
+        var(--home-gold);
+}
+
+
+/* ==========================================================
+   HERO MAIN
+   ========================================================== */
+
+.home-page .home-hero-main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(460px,.84fr)
+        minmax(520px,1.16fr);
+
+    align-items:center;
+
+    gap:25px;
+
+    padding:
+        20px 0 38px;
+}
+
+
+/* ==========================================================
+   HERO COPY
+   ========================================================== */
+
+.home-page .home-hero-copy{
+
+    position:relative;
+
+    z-index:12;
+
+    min-width:0;
+
+    padding-top:2px;
+}
+
+
+.home-page .home-hero-copy-index{
+
+    display:grid;
+
+    grid-template-columns:
+        auto
+        minmax(50px,1fr)
+        auto;
+
+    align-items:center;
+
+    gap:12px;
+
+    width:
+        min(
+            430px,
+            100%
+        );
+
+    margin-bottom:22px;
+
+    color:
+        rgba(32,37,42,.32);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.17em;
+}
+
+
+.home-page .home-hero-copy-index div{
+
+    height:1px;
+
+    background:
+        rgba(21,25,28,.10);
+}
+
+
+.home-page .home-hero-content{
+
+    position:relative;
+
+    min-height:405px;
+}
+
+
+.home-page .home-hero-slide{
+
+    position:absolute;
+
+    inset:0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:
+        translateY(22px);
+
+    pointer-events:none;
+
+    transition:
+        opacity .55s ease,
+        transform .7s cubic-bezier(.2,.75,.2,1),
+        visibility .55s;
+}
+
+
+.home-page .home-hero-slide.is-active{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:
+        translateY(0);
+
+    pointer-events:auto;
+}
+
+
+/* ==========================================================
+   HERO TYPOGRAPHY
+   ========================================================== */
+
+.home-page .home-hero-eyebrow{
+
+    margin-bottom:10px;
+
+    color:
+        var(--home-hero-deep) !important;
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.23em;
+
+    line-height:1.4;
+
+    text-transform:uppercase;
+}
+
+
+.home-page .home-hero-pretitle{
+
+    max-width:500px;
+
+    margin-bottom:25px;
+
+    color:
+        rgba(32,37,42,.39);
+
+    font-size:9px;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+
+    line-height:1.55;
+
+    text-transform:uppercase;
+}
+
+
+.home-page .home-hero-slide h1{
+
+    max-width:760px;
+
+    margin:0;
+
+    color:
+        #15191C !important;
+
+    font-size:
+        clamp(
+            4.6rem,
+            7.2vw,
+            7.8rem
+        );
+
+    font-weight:650;
+
+    line-height:.83;
+
+    letter-spacing:-.078em;
+}
+
+
+.home-page .home-hero-slide h1 span{
+
+    display:block;
+
+    margin-top:.08em;
+
+    color:
+        var(--home-hero-deep) !important;
+
+    font-weight:540;
+
+    transition:
+        color .75s ease;
+}
+
+
+.home-page .home-hero-slide p{
+
+    max-width:555px;
+
+    margin:
+        30px 0 0;
+
+    color:
+        rgba(32,37,42,.63);
+
+    font-size:15px;
+
+    line-height:1.78;
+}
+
+
+/* ==========================================================
+   HERO PRODUCT TAG
+   ========================================================== */
+
+.home-page .home-hero-product-tag{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:25px;
+
+    padding:
+        10px 15px;
+
+    border-left:
+        2px solid
+        var(--home-hero-tone);
+
+    background:
+        rgba(255,255,255,.79);
+
+    box-shadow:
+        0 10px 25px rgba(21,25,28,.035);
+
+    backdrop-filter:
+        blur(12px);
+
+    transition:
+        border-color .75s ease;
+}
+
+
+.home-page .home-hero-product-tag span{
+
+    color:
+        rgba(32,37,42,.42);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.11em;
+}
+
+
+.home-page .home-hero-product-tag strong{
+
+    color:
+        var(--home-hero-deep);
+
+    font-size:10px;
+
+    font-weight:900;
+
+    letter-spacing:.04em;
+}
+
+
+.home-page .home-hero-phrase{
+
+    margin-top:16px;
+
+    color:
+        rgba(32,37,42,.38);
+
+    font-size:10px;
+
+    font-weight:700;
+
+    letter-spacing:.06em;
+}
+
+
+/* ==========================================================
+   HERO ACTIONS
+   ========================================================== */
+
+.home-page .home-hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    align-items:center;
+
+    gap:11px;
+
+    margin-top:29px;
 }
 
 
@@ -102453,7 +102665,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             100%
         );
 
-    margin-top:31px;
+    margin-top:29px;
 }
 
 
@@ -102474,7 +102686,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border-radius:50%;
 
     background:
-        rgba(255,255,255,.78);
+        rgba(255,255,255,.82);
 
     color:
         #15191C;
@@ -102483,8 +102695,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     transition:
         transform .3s ease,
-        background .3s ease,
-        border-color .3s ease;
+        border-color .3s ease,
+        background .3s ease;
 }
 
 
@@ -102548,10 +102760,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:4px;
 
-    min-width:53px;
+    min-width:55px;
 
     color:
-        rgba(32,37,42,.38);
+        rgba(32,37,42,.36);
 
     font-size:9px;
 
@@ -102576,7 +102788,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    min-height:680px;
+    min-width:0;
+
+    min-height:700px;
 
     height:100%;
 
@@ -102585,6 +102799,56 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     align-items:center;
 
     justify-content:center;
+
+    transition:
+        transform .45s cubic-bezier(.2,.75,.2,1);
+}
+
+
+/* ==========================================================
+   HERO VISUAL RINGS
+   ========================================================== */
+
+.home-page .home-hero-visual-ring{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    transition:
+        border-color .75s ease;
+}
+
+
+.home-page .ring-one{
+
+    width:630px;
+    height:630px;
+
+    border:
+        1px solid rgba(198,161,91,.12);
+}
+
+
+.home-page .ring-two{
+
+    width:500px;
+    height:500px;
+
+    border:
+        1px solid rgba(198,161,91,.18);
+}
+
+
+.home-page .ring-three{
+
+    width:365px;
+    height:365px;
+
+    border:
+        1px dashed rgba(198,161,91,.18);
 }
 
 
@@ -102596,16 +102860,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:610px;
-    height:610px;
+    width:590px;
+    height:590px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.16) 0%,
-            rgba(198,161,91,.07) 34%,
+            rgba(198,161,91,.17) 0%,
+            rgba(198,161,91,.06) 38%,
             rgba(255,255,255,0) 70%
         );
 
@@ -102613,22 +102877,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         blur(3px);
 
     transition:
-        transform .55s ease;
-}
+        transform .55s ease,
+        background .9s ease;
 
-
-.home-page .home-hero-aura::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:11%;
-
-    border-radius:50%;
-
-    border:
-        1px solid rgba(198,161,91,.18);
+    pointer-events:none;
 }
 
 
@@ -102638,13 +102890,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    inset:20%;
+    inset:18%;
 
     border-radius:50%;
 
-    border:
-        1px solid rgba(198,161,91,.10);
-
+    box-shadow:
+        inset 0 0 70px rgba(198,161,91,.05);
 }
 
 
@@ -102656,23 +102907,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    border-radius:50%;
-
     border:
-        1px solid rgba(198,161,91,.19);
+        1px solid rgba(198,161,91,.20);
+
+    border-radius:50%;
 
     pointer-events:none;
 
     transition:
-        transform .4s ease,
-        border-color .7s ease;
+        transform .4s ease;
 }
 
 
 .home-page .orbit-one{
 
     width:560px;
-    height:275px;
+    height:260px;
 
     transform:
         rotate(-18deg);
@@ -102681,8 +102931,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .orbit-two{
 
-    width:495px;
-    height:495px;
+    width:485px;
+    height:485px;
 
     opacity:.48;
 }
@@ -102696,20 +102946,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:5;
+    z-index:6;
 
     width:
         min(
             540px,
-            84%
+            82%
         );
 
-    height:640px;
+    height:650px;
+
 }
 
 
 /* ==========================================================
-   HERO PRODUCT
+   PRODUCT LAYERS
    ========================================================== */
 
 .home-page .home-hero-product{
@@ -102727,13 +102978,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     visibility:hidden;
 
     transform:
-        translateY(24px)
-        scale(.92);
+        translateY(28px)
+        scale(.90);
 
     transition:
-        opacity .6s ease,
-        transform .85s cubic-bezier(.2,.75,.2,1),
-        visibility .6s;
+        opacity .58s ease,
+        transform .82s cubic-bezier(.2,.75,.2,1),
+        visibility .58s;
 }
 
 
@@ -102750,40 +103001,68 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   HERO PRODUCT HALO
+   PRODUCT HALO
    ========================================================== */
 
 .home-page .home-hero-product-halo{
 
     position:absolute;
 
-    width:350px;
-    height:350px;
+    width:360px;
+    height:360px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.22),
-            rgba(198,161,91,.05) 42%,
+            rgba(198,161,91,.23) 0%,
+            rgba(198,161,91,.07) 43%,
             rgba(255,255,255,0) 70%
         );
 
     filter:
-        blur(13px);
+        blur(16px);
 }
 
 
 /* ==========================================================
-   HERO PRODUCT IMAGE
+   PRODUCT SHADOW / FLOOR
+   ========================================================== */
+
+.home-page .home-hero-product-shadow{
+
+    position:absolute;
+
+    width:240px;
+    height:45px;
+
+    bottom:
+        75px;
+
+    border-radius:50%;
+
+    background:
+        rgba(21,25,28,.12);
+
+    filter:
+        blur(17px);
+
+    transform:
+        scaleX(1.05);
+
+}
+
+
+/* ==========================================================
+   PRODUCT IMAGE
    ========================================================== */
 
 .home-page .home-hero-product img{
 
     position:relative;
 
-    z-index:3;
+    z-index:4;
 
     width:
         min(
@@ -102795,7 +103074,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     object-fit:contain;
 
-    object-position:center;
+    object-position:
+        center center;
+
+    opacity:1 !important;
+
+    visibility:visible !important;
 
     filter:
         drop-shadow(
@@ -102804,10 +103088,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     transition:
         transform .8s cubic-bezier(.2,.75,.2,1);
-
-    opacity:1 !important;
-
-    visibility:visible !important;
 }
 
 
@@ -102816,7 +103096,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     animation:
         homeHeroProductEnter
-        .78s
+        .82s
         cubic-bezier(.2,.75,.2,1);
 }
 
@@ -102828,8 +103108,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         opacity:.35;
 
         transform:
-            translateY(32px)
+            translateY(34px)
             scale(.90);
+
     }
 
     to{
@@ -102839,8 +103120,60 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         transform:
             translateY(0)
             scale(1);
+
     }
 
+}
+
+
+/* ==========================================================
+   HERO OBJECT LINE
+   ========================================================== */
+
+.home-page .home-hero-object-line{
+
+    position:absolute;
+
+    left:3%;
+    right:3%;
+
+    bottom:14%;
+
+    z-index:5;
+
+    display:grid;
+
+    grid-template-columns:
+        auto
+        1fr
+        auto;
+
+    align-items:center;
+
+    gap:10px;
+
+    pointer-events:none;
+}
+
+
+.home-page .home-hero-object-line span{
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:
+        var(--home-hero-tone);
+}
+
+
+.home-page .home-hero-object-line div{
+
+    height:1px;
+
+    background:
+        rgba(198,161,91,.17);
 }
 
 
@@ -102854,9 +103187,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     right:0;
 
-    bottom:14%;
+    bottom:11%;
 
-    z-index:7;
+    z-index:9;
 
     display:flex;
 
@@ -102864,7 +103197,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:flex-end;
 
-    gap:5px;
+    gap:6px;
 
     text-align:right;
 }
@@ -102873,13 +103206,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-hero-product-index span{
 
     color:
-        rgba(32,37,42,.34);
+        rgba(32,37,42,.33);
 
     font-size:8px;
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.18em;
 }
 
 
@@ -102892,19 +103225,32 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.08em;
+    letter-spacing:.09em;
+}
+
+
+.home-page .home-hero-product-index small{
+
+    color:
+        rgba(32,37,42,.39);
+
+    font-size:8px;
+
+    font-weight:800;
+
+    letter-spacing:.07em;
 }
 
 
 /* ==========================================================
-   VISUAL INDEX
+   GIANT INDEX
    ========================================================== */
 
 .home-page .home-hero-visual-index{
 
     position:absolute;
 
-    right:-2%;
+    right:-3%;
 
     top:4%;
 
@@ -102913,18 +103259,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     color:
         var(--home-hero-tone);
 
-    opacity:.105;
+    opacity:.095;
 
     font-size:
         clamp(
             7rem,
-            12vw,
-            11rem
+            13vw,
+            12rem
         );
 
     font-weight:650;
 
-    line-height:.72;
+    line-height:.70;
 
     letter-spacing:-.09em;
 
@@ -102936,40 +103282,72 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
+   VERTICAL LABEL
+   ========================================================== */
+
+.home-page .home-hero-vertical-label{
+
+    position:absolute;
+
+    right:-2px;
+
+    top:30%;
+
+    z-index:7;
+
+    writing-mode:
+        vertical-rl;
+
+    transform:
+        rotate(180deg);
+
+    color:
+        rgba(32,37,42,.27);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.19em;
+
+    text-transform:uppercase;
+}
+
+
+/* ==========================================================
    HERO BOTTOM
    ========================================================== */
 
 .home-page .home-hero-bottom{
-
-    position:absolute;
-
-    left:3.6%;
-
-    right:3.6%;
-
-    bottom:18px;
-
-    z-index:9;
 
     display:grid;
 
     grid-template-columns:
         auto
         1fr
+        auto
+        1fr
+        auto
+        1fr
         auto;
 
     align-items:center;
 
-    gap:18px;
+    gap:13px;
+
+    min-height:54px;
+
+    border-top:
+        1px solid rgba(21,25,28,.075);
 
     color:
-        rgba(32,37,42,.32);
+        rgba(32,37,42,.29);
 
     font-size:8px;
 
     font-weight:900;
 
-    letter-spacing:.17em;
+    letter-spacing:.16em;
 }
 
 
@@ -102978,22 +103356,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     height:1px;
 
     background:
-        rgba(21,25,28,.10);
+        rgba(21,25,28,.085);
 }
 
 
 /* ==========================================================
-   06. IDENTITY STRIP
+   07. IDENTITY STRIP
    ========================================================== */
 
 .home-page .home-identity{
 
-    position:relative;
-
     overflow:hidden;
-
-    border-top:
-        1px solid var(--home-line);
 
     border-bottom:
         1px solid var(--home-line);
@@ -103017,7 +103390,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         21px 0;
 
     color:
-        rgba(32,37,42,.42);
+        rgba(32,37,42,.40);
 
     font-size:9px;
 
@@ -103056,7 +103429,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   07. MANIFESTO
+   08. MANIFESTO
    ========================================================== */
 
 .home-page .home-manifesto{
@@ -103137,16 +103510,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:
         clamp(
-            4.4rem,
-            7.7vw,
-            9rem
+            4.3rem,
+            7.5vw,
+            8.8rem
         );
 
     line-height:.84;
 
     font-weight:600;
 
-    letter-spacing:-.072em;
+    letter-spacing:-.071em;
 }
 
 
@@ -103155,9 +103528,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:block;
 
     color:
-        rgba(32,37,42,.29) !important;
+        rgba(32,37,42,.28);
 
     font-weight:500;
+}
+
+
+.home-page .home-manifesto-subline{
+
+    margin-top:28px;
+
+    color:
+        rgba(32,37,42,.50);
+
+    font-size:13px;
+
+    line-height:1.7;
+
+    letter-spacing:.02em;
 }
 
 
@@ -103181,7 +103569,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         19px 0;
 
     color:
-        rgba(32,37,42,.46);
+        rgba(32,37,42,.45);
 
     font-size:10px;
 
@@ -103192,7 +103580,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   08. WORLDS
+   09. WORLDS
    ========================================================== */
 
 .home-page .home-worlds{
@@ -103232,7 +103620,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-size:
         clamp(
-            3.2rem,
+            3.15rem,
             5.2vw,
             5.7rem
         );
@@ -103265,7 +103653,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     margin:0;
 
     color:
-        rgba(32,37,42,.48);
+        rgba(32,37,42,.47);
 
     font-size:12px;
 
@@ -103341,12 +103729,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         rgba(198,161,91,.32);
 
     box-shadow:
-        0 32px 70px rgba(21,25,28,.105);
+        0 32px 70px rgba(21,25,28,.10);
 }
 
 
-.home-page .home-world-bzz,
-.home-page .home-world-bzzworld{
+.home-page .home-world-bzz{
 
     --world-tone:#C6A15B;
     --world-soft:#FAF5EA;
@@ -103356,16 +103743,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-world-a21{
 
-    --world-tone:#8A70A8;
+    --world-tone:#8870A8;
     --world-soft:#F6F1FA;
     --world-deep:#2A2331;
-
-    background:
-        linear-gradient(
-            145deg,
-            #FFFFFF,
-            #F6F1FA
-        ) !important;
 }
 
 
@@ -103399,7 +103779,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:relative;
 
-    z-index:2;
+    z-index:3;
 
     width:
         min(
@@ -103419,10 +103799,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     transition:
         transform .75s cubic-bezier(.2,.75,.2,1),
         filter .45s ease;
-
-    opacity:1 !important;
-
-    visibility:visible !important;
 }
 
 
@@ -103448,12 +103824,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     background:
         radial-gradient(
-            390px circle at 50% 29%,
-            rgba(198,161,91,.13),
+            390px circle at 50% 30%,
+            rgba(198,161,91,.14),
             transparent 68%
         );
-
-    pointer-events:none;
 }
 
 
@@ -103461,16 +103835,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     background:
         radial-gradient(
-            390px circle at 50% 29%,
-            rgba(138,112,168,.13),
+            390px circle at 50% 30%,
+            rgba(136,112,168,.14),
             transparent 68%
         );
 }
 
 
-/* ==========================================================
-   WORLD LIGHT
-   ========================================================== */
+.home-page .home-world-orbit{
+
+    position:absolute;
+
+    width:300px;
+    height:150px;
+
+    border:
+        1px solid rgba(198,161,91,.14);
+
+    border-radius:50%;
+
+    transform:
+        rotate(-14deg);
+
+    z-index:1;
+}
+
 
 .home-page .home-world::after{
 
@@ -103488,7 +103877,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             rgba(255,255,255,0) 0%,
-            rgba(255,255,255,.04) 34%,
+            rgba(255,255,255,.035) 34%,
             rgba(255,255,255,.80) 67%,
             rgba(255,255,255,.99) 100%
         );
@@ -103501,7 +103890,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             rgba(255,255,255,0) 0%,
-            rgba(249,246,252,.06) 35%,
+            rgba(249,246,252,.05) 35%,
             rgba(249,246,252,.82) 67%,
             rgba(249,246,252,.99) 100%
         );
@@ -103509,7 +103898,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   WORLD NUMBER
+   WORLD CONTENT
    ========================================================== */
 
 .home-page .home-world-number{
@@ -103522,7 +103911,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:5;
 
     color:
-        rgba(32,37,42,.39);
+        rgba(32,37,42,.38);
 
     font-size:9px;
 
@@ -103531,10 +103920,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     letter-spacing:.18em;
 }
 
-
-/* ==========================================================
-   WORLD CONTENT
-   ========================================================== */
 
 .home-page .home-world-content{
 
@@ -103636,7 +104021,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   09. UNIVERSes
+   10. UNIVERSes
    ========================================================== */
 
 .home-page .home-universes{
@@ -103767,7 +104152,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   10. PRODUCTS
+   11. PRODUCTS
    ========================================================== */
 
 .home-page .home-products{
@@ -103799,6 +104184,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:inline-flex;
 
     align-items:center;
+
     justify-content:center;
 
     gap:10px;
@@ -103813,11 +104199,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     border-radius:999px;
 
-    color:
-        #15191C;
-
     background:
         transparent;
+
+    color:
+        #15191C;
 
     font-size:10px;
 
@@ -103840,10 +104226,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     transform:
         translateY(-3px);
 
-    color:#FFFFFF;
-
     background:
         #15191C;
+
+    color:
+        #FFFFFF;
 
     border-color:
         #15191C;
@@ -104021,6 +104408,33 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
+.home-page .home-feature-number{
+
+    position:absolute;
+
+    top:15px;
+    right:5px;
+
+    z-index:1;
+
+    color:
+        rgba(32,37,42,.055);
+
+    font-size:
+        clamp(
+            5rem,
+            8vw,
+            7rem
+        );
+
+    font-weight:650;
+
+    line-height:.7;
+
+    letter-spacing:-.08em;
+}
+
+
 .home-page .home-feature-image img{
 
     position:relative;
@@ -104131,7 +104545,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   11. EVENT
+   12. EVENT
    ========================================================== */
 
 .home-page .home-event{
@@ -104192,6 +104606,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 .home-page .home-event-poster img{
 
     width:100%;
+
     height:100%;
 
     object-fit:cover;
@@ -104253,7 +104668,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     padding:
         52px 52px 45px;
-
 }
 
 
@@ -104387,7 +104801,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     font-weight:900;
 
-    letter-spacing:.16em;
+    letter-spacing:.15em;
 }
 
 
@@ -104413,34 +104827,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-.home-page .home-action-dark{
-
-    border:
-        1px solid #252B30 !important;
-
-    background:
-        #252B30 !important;
-
-    color:
-        #FFFFFF !important;
-}
-
-
-.home-page .home-action-dark:hover{
-
-    border-color:
-        var(--home-gold) !important;
-
-    background:
-        var(--home-gold) !important;
-
-    color:
-        #15191C !important;
-}
-
-
 /* ==========================================================
-   12. MEMORIES
+   13. MEMORIES
    ========================================================== */
 
 .home-page .home-memories{
@@ -104520,10 +104908,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-/* ==========================================================
-   MEMORY STAGE
-   ========================================================== */
-
 .home-page .home-memory-stage{
 
     position:relative;
@@ -104597,10 +104981,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-/* ==========================================================
-   MEMORY CAPTION
-   ========================================================== */
-
 .home-page .home-memory-caption{
 
     position:absolute;
@@ -104617,14 +104997,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:9px;
 
-    color:#FFFFFF !important;
+    color:
+        #FFFFFF !important;
 }
 
 
 .home-page .home-memory-caption span{
 
     color:
-        var(--home-gold-light) !important;
+        var(--home-gold-light);
 
     font-size:8px;
 
@@ -104638,8 +105019,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     max-width:650px;
 
-    color:
-        #FFFFFF !important;
+    color:#FFFFFF;
 
     font-size:
         clamp(
@@ -104655,10 +105035,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     letter-spacing:-.045em;
 }
 
-
-/* ==========================================================
-   MEMORY NAVIGATION
-   ========================================================== */
 
 .home-page .home-memory-nav{
 
@@ -104726,6 +105102,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 .home-page .home-memory-side{
 
+    position:relative;
+
     display:flex;
 
     flex-direction:column;
@@ -104740,6 +105118,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     background:
         #1B2024 !important;
+}
+
+
+.home-page .home-memory-side-index{
+
+    position:absolute;
+
+    top:27px;
+    right:29px;
+
+    color:
+        rgba(255,255,255,.18);
+
+    font-size:8px;
+
+    font-weight:900;
+
+    letter-spacing:.14em;
 }
 
 
@@ -104797,7 +105193,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   13. TESTIMONIAL
+   14. TESTIMONIAL
    ========================================================== */
 
 .home-page .home-testimonial{
@@ -104874,10 +105270,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     font-weight:500;
 }
 
-
-/* ==========================================================
-   TESTIMONIAL PERSON
-   ========================================================== */
 
 .home-page .home-testimonial-person{
 
@@ -104960,7 +105352,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   14. FINAL CTA
+   15. FINAL
    ========================================================== */
 
 .home-page .home-final{
@@ -104983,7 +105375,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             125deg,
             #15191C 0%,
             #20262A 55%,
-            #292F34 100%
+            #2A3035 100%
         ) !important;
 }
 
@@ -104997,36 +105389,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     inset:0;
 
     background:
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.018),
-            transparent 45%
+        radial-gradient(
+            circle at 17% 83%,
+            rgba(255,255,255,.035),
+            transparent 28%
         );
-
-    pointer-events:none;
-}
-
-
-.home-page .home-final::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:750px;
-    height:750px;
-
-    right:-260px;
-    top:-280px;
-
-    border-radius:50%;
-
-    border:
-        1px solid rgba(198,161,91,.12);
-
-    box-shadow:
-        0 0 0 42px rgba(198,161,91,.025),
-        0 0 0 88px rgba(198,161,91,.015);
 
     pointer-events:none;
 }
@@ -105036,10 +105403,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    width:680px;
-    height:680px;
+    width:720px;
+    height:720px;
 
-    right:-170px;
+    right:-220px;
     top:-220px;
 
     border-radius:50%;
@@ -105047,12 +105414,56 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.23),
+            rgba(198,161,91,.22),
             rgba(198,161,91,0) 68%
         );
 
     filter:
-        blur(4px);
+        blur(5px);
+
+    pointer-events:none;
+}
+
+
+.home-page .home-final-grid{
+
+    position:absolute;
+
+    inset:0;
+
+    opacity:.12;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.05) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        85px 85px;
+
+    mask-image:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,0,0,.7)
+        );
+
+    -webkit-mask-image:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(0,0,0,.7)
+        );
+
+    pointer-events:none;
 }
 
 
@@ -105144,8 +105555,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 }
 
 
-.home-page .home-final
-.home-action-primary{
+.home-page .home-final .home-action-primary{
 
     color:
         #15191C !important;
@@ -105155,23 +105565,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     border-color:
         var(--home-gold) !important;
+}
 
-    box-shadow:
-        0 14px 35px rgba(198,161,91,.20);
+
+.home-page .home-final .home-action-primary:hover{
+
+    color:
+        #15191C !important;
+
+    background:
+        #D7BC7A !important;
+
+    border-color:
+        #D7BC7A !important;
 }
 
 
 .home-page .home-final
-.home-action-primary:hover{
+.home-action-secondary{
 
     color:
-        #15191C !important;
+        #FFFFFF !important;
 
     background:
-        #D7BC7A !important;
+        rgba(255,255,255,.06) !important;
 
     border-color:
-        #D7BC7A !important;
+        rgba(255,255,255,.18) !important;
+}
+
+
+.home-page .home-final
+.home-action-secondary:hover{
+
+    color:
+        #FFFFFF !important;
+
+    background:
+        rgba(255,255,255,.10) !important;
+
+    border-color:
+        var(--home-gold) !important;
 }
 
 
@@ -105216,38 +105650,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 /* ==========================================================
-   15. HARD VISIBILITY
-   ========================================================== */
-
-.home-page .home-hero,
-.home-page .home-identity,
-.home-page .home-manifesto,
-.home-page .home-worlds,
-.home-page .home-universes,
-.home-page .home-products,
-.home-page .home-event,
-.home-page .home-memories,
-.home-page .home-testimonial,
-.home-page .home-final{
-
-    opacity:1 !important;
-
-    visibility:visible !important;
-}
-
-
-.home-page .home-hero-product,
-.home-page .home-hero-product img,
-.home-page .home-world-image img,
-.home-page .home-feature-image img{
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-/* ==========================================================
    16. TABLET — 1100
    ========================================================== */
 
@@ -105255,11 +105657,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     .home-page .home-hero-container{
 
-        grid-template-columns:
-            minmax(390px,.90fr)
-            minmax(400px,1.10fr);
+        width:
+            min(
+                1280px,
+                calc(100% - 42px)
+            );
 
-        gap:10px;
+    }
+
+
+    .home-page .home-hero-main{
+
+        grid-template-columns:
+            minmax(390px,.88fr)
+            minmax(390px,1.12fr);
 
     }
 
@@ -105268,41 +105679,35 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3.8rem,
-                6.3vw,
-                5.8rem
+                3.9rem,
+                6.1vw,
+                6rem
             );
 
+    }
+
+
+    .home-page .ring-one{
+
+        width:
+            570px;
+
+        height:
+            570px;
     }
 
 
     .home-page .home-hero-product-stage{
 
-        height:570px;
-
+        height:
+            570px;
     }
 
 
     .home-page .home-hero-product img{
 
-        height:520px;
-
-    }
-
-
-    .home-page .home-worlds-header h2,
-    .home-page .home-universes-head h2,
-    .home-page .home-products-head h2,
-    .home-page .home-event-intro h2,
-    .home-page .home-memory-head h2{
-
-        font-size:
-            clamp(
-                2.8rem,
-                4.8vw,
-                5rem
-            );
-
+        height:
+            520px;
     }
 
 
@@ -105321,7 +105726,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-
 }
 
 
@@ -105338,7 +105742,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
                 700px,
                 calc(100% - 38px)
             );
-
     }
 
 
@@ -105347,8 +105750,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         height:auto;
 
         min-height:
-            980px;
-
+            1030px;
     }
 
 
@@ -105361,9 +105763,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             );
 
         min-height:
-            980px;
+            1030px;
 
         height:auto;
+    }
+
+
+    .home-page .home-hero-topline{
+
+        min-height:66px;
+    }
+
+
+    .home-page .home-hero-main{
 
         grid-template-columns:
             1fr;
@@ -105371,27 +105783,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         gap:18px;
 
         padding:
-            70px 0 95px;
+            30px 0 35px;
+    }
 
+
+    .home-page .home-hero-copy{
+
+        max-width:
+            700px;
     }
 
 
     .home-page .home-hero-content{
 
         min-height:
-            340px;
-
+            345px;
     }
 
 
     .home-page .home-hero-visual{
 
         min-height:
-            500px;
+            535px;
 
         height:
-            500px;
-
+            535px;
     }
 
 
@@ -105404,19 +105820,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             );
 
         height:
-            475px;
-
+            490px;
     }
 
 
     .home-page .home-hero-product img{
 
         width:
-            400px;
+            395px;
 
         height:
-            440px;
-
+            450px;
     }
 
 
@@ -105427,7 +105841,36 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             440px;
+    }
 
+
+    .home-page .ring-one{
+
+        width:
+            460px;
+
+        height:
+            460px;
+    }
+
+
+    .home-page .ring-two{
+
+        width:
+            370px;
+
+        height:
+            370px;
+    }
+
+
+    .home-page .ring-three{
+
+        width:
+            270px;
+
+        height:
+            270px;
     }
 
 
@@ -105435,15 +105878,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             1fr;
-
     }
 
 
     .home-page .home-world{
 
         min-height:
-            570px;
-
+            575px;
     }
 
 
@@ -105452,7 +105893,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         grid-template-columns:
             .12fr
             1fr;
-
     }
 
 
@@ -105460,7 +105900,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-column:
             2;
-
     }
 
 
@@ -105468,7 +105907,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             1fr;
-
     }
 
 
@@ -105476,7 +105914,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         min-height:
             480px;
-
     }
 
 
@@ -105484,23 +105921,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             1fr;
-
     }
 
 
     .home-page .home-memory-side{
 
         min-height:
-            310px;
-
+            315px;
     }
 
 
-    .home-page .home-testimonial .home-container{
+    .home-page .home-testimonial
+    .home-container{
 
         grid-template-columns:
             1fr;
-
     }
 
 
@@ -105508,7 +105943,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             5rem;
-
     }
 
 
@@ -105516,7 +105950,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             repeat(3,1fr);
-
     }
 
 }
@@ -105532,7 +105965,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:
             calc(100% - 30px);
-
     }
 
 
@@ -105543,8 +105975,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .home-page .home-hero{
 
         min-height:
-            900px;
-
+            910px;
     }
 
 
@@ -105554,19 +105985,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             calc(100% - 28px);
 
         min-height:
-            900px;
+            910px;
+    }
+
+
+    .home-page .home-hero-topline{
+
+        font-size:
+            7px;
+    }
+
+
+    .home-page .home-hero-topline > div:last-child span:first-child{
+
+        display:none;
+    }
+
+
+    .home-page .home-hero-main{
+
+        gap:
+            10px;
 
         padding:
-            58px 0 88px;
+            34px 0 30px;
+    }
 
+
+    .home-page .home-hero-copy-index{
+
+        margin-bottom:
+            17px;
+
+        width:
+            100%;
     }
 
 
     .home-page .home-hero-content{
 
         min-height:
-            330px;
-
+            315px;
     }
 
 
@@ -105574,32 +106033,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3.15rem,
-                14vw,
+                3.05rem,
+                13.5vw,
                 4.8rem
             );
 
         line-height:
-            .89;
-
+            .90;
     }
 
 
     .home-page .home-hero-pretitle{
 
         max-width:
-            320px;
+            325px;
 
         margin-bottom:
             20px;
-
     }
 
 
     .home-page .home-hero-slide p{
-
-        max-width:
-            100%;
 
         margin-top:
             22px;
@@ -105608,8 +106062,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             13px;
 
         line-height:
-            1.7;
+            1.70;
+    }
 
+
+    .home-page .home-hero-product-tag{
+
+        margin-top:
+            20px;
+    }
+
+
+    .home-page .home-hero-phrase{
+
+        margin-top:
+            12px;
+
+        font-size:
+            9px;
     }
 
 
@@ -105622,8 +106092,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             stretch;
 
         margin-top:
-            27px;
-
+            23px;
     }
 
 
@@ -105633,8 +106102,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             100%;
 
         min-height:
-            50px;
-
+            49px;
     }
 
 
@@ -105644,19 +106112,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             100%;
 
         margin-top:
-            24px;
-
+            20px;
     }
 
 
     .home-page .home-hero-visual{
 
         min-height:
-            350px;
+            355px;
 
         height:
-            350px;
-
+            355px;
     }
 
 
@@ -105667,7 +106133,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             345px;
-
     }
 
 
@@ -105678,7 +106143,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             320px;
+    }
 
+
+    .home-page .home-hero-aura{
+
+        width:
+            320px;
+
+        height:
+            320px;
     }
 
 
@@ -105689,48 +106163,56 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             220px;
-
     }
 
 
-    .home-page .home-hero-aura{
+    .home-page .ring-one{
 
         width:
-            325px;
+            315px;
 
         height:
-            325px;
-
+            315px;
     }
 
 
-    .home-page .home-hero-orbit{
+    .home-page .ring-two{
 
-        opacity:
-            .58;
+        width:
+            255px;
 
+        height:
+            255px;
+    }
+
+
+    .home-page .ring-three{
+
+        width:
+            190px;
+
+        height:
+            190px;
     }
 
 
     .home-page .orbit-one{
 
         width:
-            310px;
+            300px;
 
         height:
-            145px;
-
+            135px;
     }
 
 
     .home-page .orbit-two{
 
         width:
-            290px;
+            270px;
 
         height:
-            290px;
-
+            270px;
     }
 
 
@@ -105740,8 +106222,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             0;
 
         bottom:
-            3%;
-
+            2%;
     }
 
 
@@ -105754,28 +106235,47 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             2%;
 
         font-size:
-            5.7rem;
+            5.4rem;
+    }
 
+
+    .home-page .home-hero-vertical-label{
+
+        display:none;
+    }
+
+
+    .home-page .home-hero-object-line{
+
+        bottom:
+            10%;
     }
 
 
     .home-page .home-hero-bottom{
 
-        left:
-            13px;
+        grid-template-columns:
+            auto
+            1fr
+            auto;
 
-        right:
-            13px;
-
-        bottom:
-            12px;
+        min-height:
+            45px;
 
         font-size:
             7px;
 
         letter-spacing:
-            .09em;
+            .10em;
+    }
 
+
+    .home-page .home-hero-bottom
+    span:nth-of-type(3),
+    .home-page .home-hero-bottom
+    div:nth-of-type(2){
+
+        display:none;
     }
 
 
@@ -105793,7 +106293,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             8px;
-
     }
 
 
@@ -105814,7 +106313,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding-bottom:
             105px;
-
     }
 
 
@@ -105826,11 +106324,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             clamp(
-                3.2rem,
-                14vw,
+                3.1rem,
+                13.5vw,
                 4.9rem
             );
-
     }
 
 
@@ -105841,7 +106338,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         margin-top:
             48px;
-
     }
 
 
@@ -105852,21 +106348,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding:
             14px 0;
-
     }
 
 
     /* ------------------------------------------------------
-       WORLD HEAD
+       HEADERS
        ------------------------------------------------------ */
 
     .home-page .home-worlds-header,
     .home-page .home-products-head,
     .home-page .home-memory-head{
 
-        display:
-            block;
-
+        display:block;
     }
 
 
@@ -105874,22 +106367,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         margin-top:
             18px;
-
     }
 
 
     /* ------------------------------------------------------
-       WORLD CARD
+       WORLDS
        ------------------------------------------------------ */
 
     .home-page .home-world{
 
         min-height:
-            505px;
+            510px;
 
         border-radius:
             27px;
-
     }
 
 
@@ -105897,7 +106388,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             55%;
-
     }
 
 
@@ -105908,7 +106398,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         max-height:
             215px;
-
     }
 
 
@@ -105922,7 +106411,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         bottom:
             23px;
-
     }
 
 
@@ -105930,7 +106418,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.6rem;
-
     }
 
 
@@ -105939,6 +106426,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         font-size:
             11px;
 
+        line-height:
+            1.62;
     }
 
 
@@ -105949,12 +106438,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         left:
             22px;
-
     }
 
 
     /* ------------------------------------------------------
-       UNIVERSes
+       UNIVERSOS
        ------------------------------------------------------ */
 
     .home-page .home-universe{
@@ -105970,14 +106458,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding:
             24px 0;
-
     }
 
 
     .home-page .home-universe > span{
 
         display:none;
-
     }
 
 
@@ -105985,7 +106471,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.15rem;
-
     }
 
 
@@ -105996,7 +106481,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         margin-top:
             3px;
-
     }
 
 
@@ -106008,7 +106492,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-template-columns:
             1fr;
-
     }
 
 
@@ -106020,7 +106503,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         grid-row:
             auto;
-
     }
 
 
@@ -106028,7 +106510,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         min-height:
             610px;
-
     }
 
 
@@ -106036,7 +106517,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             300px;
-
     }
 
 
@@ -106048,7 +106528,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         border-radius:
             27px;
-
     }
 
 
@@ -106056,7 +106535,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         min-height:
             365px;
-
     }
 
 
@@ -106064,7 +106542,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding:
             35px 24px 29px;
-
     }
 
 
@@ -106072,15 +106549,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             4.25rem;
-
     }
 
 
     .home-page .home-event-details h3{
 
         font-size:
-            2.3rem;
-
+            2.30rem;
     }
 
 
@@ -106092,7 +106567,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         min-height:
             430px;
-
     }
 
 
@@ -106103,7 +106577,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding:
             31px 24px;
-
     }
 
 
@@ -106117,7 +106590,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         bottom:
             22px;
-
     }
 
 
@@ -106129,7 +106601,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.75rem;
-
     }
 
 
@@ -106140,7 +106611,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         height:
             98px;
-
     }
 
 
@@ -106152,7 +106622,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         min-height:
             575px;
-
     }
 
 
@@ -106160,7 +106629,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         padding:
             96px 0 52px;
-
     }
 
 
@@ -106172,15 +106640,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
                 14vw,
                 5.1rem
             );
-
-    }
-
-
-    .home-page .home-final-content p{
-
-        font-size:
-            12px;
-
     }
 
 
@@ -106191,7 +106650,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         align-items:
             stretch;
-
     }
 
 
@@ -106200,7 +106658,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:
             100%;
-
     }
 
 
@@ -106211,7 +106668,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         gap:
             13px;
-
     }
 
 
@@ -106219,7 +106675,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         text-align:
             left;
-
     }
 
 }
@@ -106234,8 +106689,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .home-page .home-hero{
 
         min-height:
-            870px;
-
+            880px;
     }
 
 
@@ -106243,15 +106697,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.9rem;
-
     }
 
 
     .home-page .home-hero-product-stage{
 
         width:
-            285px;
-
+            280px;
     }
 
 
@@ -106259,7 +106711,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.35rem;
-
     }
 
 
@@ -106267,7 +106718,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             3.8rem;
-
     }
 
 
@@ -106275,14 +106725,49 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         font-size:
             2.4rem;
-
     }
 
 }
 
 
 /* ==========================================================
-   20. REDUCED MOTION
+   20. VISIBILITY SAFETY
+   ========================================================== */
+
+.home-page .home-hero,
+.home-page .home-identity,
+.home-page .home-manifesto,
+.home-page .home-worlds,
+.home-page .home-universes,
+.home-page .home-products,
+.home-page .home-event,
+.home-page .home-memories,
+.home-page .home-testimonial,
+.home-page .home-final{
+
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+}
+
+
+.home-page .home-hero-product.is-active,
+.home-page .home-hero-product.is-active img,
+.home-page .home-world-image img,
+.home-page .home-feature-image img{
+
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+}
+
+
+/* ==========================================================
+   21. REDUCED MOTION
    ========================================================== */
 
 @media (prefers-reduced-motion:reduce){
@@ -106302,7 +106787,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         scroll-behavior:
             auto !important;
-
     }
 
 
@@ -106310,11 +106794,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         animation:
             none;
-
     }
 
 }
 ```
+
 
 
 
