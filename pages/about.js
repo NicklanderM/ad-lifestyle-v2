@@ -723,7 +723,9 @@ function renderLeadership(){
                     </small>
 
                     <h2>
-                        Abdoulahi
+                                 <span>
+                            Abdoulahi
+                        </span>
                         <span>
                             Doucoure
                         </span>
