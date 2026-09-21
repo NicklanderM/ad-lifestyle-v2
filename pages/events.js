@@ -4,19 +4,22 @@
    Premium Events Experience
    ----------------------------------------------------------
    Sistema:
-   - Hero slideshow
+   - Hero slideshow global de eventos / imagens
+   - Galerias slideshow por evento
    - Próximo evento em destaque
-   - Timeline cronológica alternada
+   - Evento principal com 2 dias
+   - Timeline cronológica
    - Eventos passados / actuais / futuros
    - Detalhes sob pedido
    - Memórias Instagram
    - Modal inteligente
    - Reserva WhatsApp
    - Partilha
-   - Preparado para galerias por evento
+   - Preparado para expansão de galerias
    ========================================================== */
 
 import { applyTheme } from "../js/theme.js";
+
 
 /* ==========================================================
    CONFIGURAÇÃO
@@ -45,7 +48,87 @@ const SOCIALS = {
 const EVENTS_DATA = [
 
     /* ======================================================
-       EVENTO PASSADO
+       EVENTO REALIZADO — HOTEL SKYNA
+       ====================================================== */
+
+    {
+
+        id:
+            "grande-evento-skyna-julho-2026",
+
+        title:
+            "Grande Evento — Hotel Skyna",
+
+        shortTitle:
+            "Grande Evento — Hotel Skyna",
+
+        subtitle:
+            "Uma experiência AD Lifestyle realizada com sucesso.",
+
+        description:
+            "Um encontro presencial realizado no Hotel Skyna, dedicado à apresentação de novas perspectivas, conexão entre pessoas e experiências AD Lifestyle.",
+
+        dateLabel:
+            "21 de Julho de 2026",
+
+        start:
+            "2026-07-21T16:00:00",
+
+        end:
+            "2026-07-21T18:00:00",
+
+        timeLabel:
+            "16h00–18h00",
+
+        location:
+            "Hotel Skyna — Luanda",
+
+        venue:
+            "Hotel Skyna",
+
+        category:
+            "Experiência AD Lifestyle",
+
+        image:
+            "assets/IMAGES/skyna1.png",
+
+        gallery: [
+
+            "assets/IMAGES/skyna1.png",
+
+            "assets/IMAGES/skyna2.png"
+
+        ],
+
+        price:
+            "Concluído",
+
+        ticketLabel:
+            "Evento realizado",
+
+        status:
+            "past",
+
+        memoryUrl:
+            "",
+
+        descriptionShort:
+            "Um grande encontro realizado no Hotel Skyna.",
+
+        highlights: [
+
+            "Experiência presencial",
+            "Conhecimento",
+            "Conexão",
+            "Networking"
+
+        ]
+
+    },
+
+
+    /* ======================================================
+       EVENTO REALIZADO — HOTEL FLY
        ====================================================== */
 
     {
@@ -75,7 +158,7 @@ const EVENTS_DATA = [
             "2026-08-08T19:00:00",
 
         timeLabel:
-            "15h00",
+            "15h00–19h00",
 
         location:
             "Fly Hotel — Luanda",
@@ -91,12 +174,19 @@ const EVENTS_DATA = [
 
         gallery: [
 
-            "assets/hotel/fly.png"
+            "assets/hotel/fly.png",
+
+            "assets/IMAGES/fly1.png",
+
+            "assets/IMAGES/fly2.png"
 
         ],
 
         price:
-            "2.500 Kz",
+            "Concluído",
+
+        ticketLabel:
+            "Evento realizado",
 
         status:
             "past",
@@ -120,58 +210,68 @@ const EVENTS_DATA = [
 
 
     /* ======================================================
-       PRÓXIMO EVENTO
+       GRANDE EVENTO DESTAQUE — UNIVERSIDADE INDEPENDENTE
+       2 DIAS
        ====================================================== */
 
     {
 
         id:
-            "grande-apresentacao-setembro-2026",
+            "grande-apresentacao-outubro-2026",
 
         title:
             "Grande Apresentação de Dupla Oportunidade",
 
         shortTitle:
-            "Grande Apresentação de Dupla Oportunidade",
+            "Dupla Oportunidade — 2 Dias",
 
         subtitle:
-            "Saúde, Bem-estar, Longevidade e Negócios Internacionais.",
+            "Apresentação, saúde, negócios e treinamento.",
 
         description:
-            "Uma apresentação especial da BZZWORLD e Academy 21, criada para apresentar novas perspectivas sobre saúde, desenvolvimento humano, liderança e oportunidades de negócio.",
+            "Uma experiência especial de dois dias, concebida para apresentar a Dupla Oportunidade, explorar perspectivas sobre saúde e negócios e proporcionar um momento dedicado ao treinamento.",
 
         dateLabel:
-            "20 de Setembro de 2026",
+            "04 e 05 de Outubro de 2026",
 
         start:
-            "2026-09-20T15:00:00",
+            "2026-10-04T16:00:00",
 
         end:
-            "2026-09-20T19:00:00",
+            "2026-10-05T19:00:00",
 
         timeLabel:
-            "15h00",
+            "04 OUT · 16h00–18h00 | 05 OUT · 17h00–19h00",
 
         location:
-            "Fly Hotel — Luanda",
+            "Universidade Independente — Luanda",
 
         venue:
-            "Sala de Conferências do Fly Hotel",
+            "Universidade Independente",
 
         category:
-            "Evento Oficial AD Lifestyle",
+            "Grande Evento · 2 dias",
 
         image:
-            "assets/hotel/fly.png",
+            "assets/IMAGES/independente.png",
 
         gallery: [
 
-            "assets/hotel/fly.png"
+            "assets/IMAGES/independente.png",
+
+            "assets/IMAGES/idependente 1.png",
+
+            "assets/IMAGES/idependente 2.png",
+
+            "assets/IMAGES/idependente 3.png"
 
         ],
 
         price:
-            "2.500 Kz",
+            "8.000 Kz",
+
+        ticketLabel:
+            "8.000 Kz · acesso aos 2 dias",
 
         status:
             "upcoming",
@@ -180,22 +280,56 @@ const EVENTS_DATA = [
             "",
 
         descriptionShort:
-            "Saúde, bem-estar, longevidade, liderança e negócios internacionais.",
+            "Dois dias de apresentação e treinamento numa única experiência.",
 
         highlights: [
 
-            "Saúde",
-            "Bem-estar",
-            "Longevidade",
-            "Negócios internacionais"
+            "Apresentação da Dupla Oportunidade",
+            "Saúde e negócios",
+            "Treinamento",
+            "Experiência de 2 dias"
 
         ],
 
-        speakers: [
+        days: [
 
-            "Dr. Mike Mahindo",
-            "A. Abdoulahi",
-            "Academy 21"
+            {
+
+                number:
+                    "01",
+
+                dateLabel:
+                    "Domingo · 04 de Outubro",
+
+                time:
+                    "16h00–18h00",
+
+                title:
+                    "Apresentação da Dupla Oportunidade",
+
+                description:
+                    "Saúde e negócios."
+
+            },
+
+            {
+
+                number:
+                    "02",
+
+                dateLabel:
+                    "Segunda-feira · 05 de Outubro",
+
+                time:
+                    "17h00–19h00",
+
+                title:
+                    "Treinamento",
+
+                description:
+                    "Sessão de treinamento dedicada à continuidade da experiência."
+
+            }
 
         ]
 
@@ -211,6 +345,7 @@ const EVENTS_DATA = [
 export function loadEvents(){
 
     applyTheme("default");
+
 
     const app =
         document.getElementById("app");
@@ -338,7 +473,9 @@ function getStateClass(state){
 function getSortedEvents(){
 
     return [
+
         ...EVENTS_DATA
+
     ]
     .sort(
         (a,b)=>
@@ -384,7 +521,8 @@ function getNearestEvent(){
         EVENTS_DATA
         .filter(
             event =>
-                new Date(event.start) > now
+                new Date(event.start) >
+                now
         )
         .sort(
             (a,b)=>
@@ -422,28 +560,62 @@ function hero(){
 
 
     const slides =
-        events.length
-            ? events
+        [];
+
+
+    events.forEach(
+        event=>{
+
+            const gallery =
+                event.gallery?.length
+                    ? event.gallery
+                    : [event.image];
+
+
+            gallery.forEach(
+                image=>{
+
+                    slides.push({
+
+                        event,
+                        image
+
+                    });
+
+                }
+            );
+
+        }
+    );
+
+
+    const finalSlides =
+        slides.length
+            ? slides
             : [
 
                 {
 
-                    id:"default",
+                    event: {
 
-                    title:
-                        "Experiências que conectam",
+                        id:"default",
 
-                    subtitle:
-                        "Pessoas, conhecimento e oportunidades.",
+                        title:
+                            "Experiências que conectam",
+
+                        subtitle:
+                            "Pessoas, conhecimento e oportunidades.",
+
+                        dateLabel:
+                            "",
+
+                        location:
+                            "AD Lifestyle"
+
+                    },
 
                     image:
-                        "assets/hotel/fly.png",
-
-                    dateLabel:
-                        "",
-
-                    location:
-                        "AD Lifestyle"
+                        "assets/hotel/fly.png"
 
                 }
 
@@ -456,11 +628,12 @@ function hero(){
 
     <div class="events-hero-slides">
 
-        ${slides
+        ${finalSlides
             .map(
-                (event,index)=>
+                (slide,index)=>
                     heroSlide(
-                        event,
+                        slide.event,
+                        slide.image,
                         index
                     )
             )
@@ -473,7 +646,6 @@ function hero(){
 
 
     <div class="container events-hero-inner">
-
 
         <div class="events-hero-copy reveal">
 
@@ -541,7 +713,9 @@ function hero(){
                 <span>/</span>
 
                 <span id="eventSlideTotal">
-                    ${String(slides.length).padStart(2,"0")}
+                    ${String(
+                        finalSlides.length
+                    ).padStart(2,"0")}
                 </span>
 
             </div>
@@ -567,7 +741,7 @@ function hero(){
             class="events-slider-dots"
             id="eventSlideDots">
 
-            ${slides
+            ${finalSlides
                 .map(
                     (_,index)=>
                         `
@@ -601,7 +775,11 @@ function hero(){
 }
 
 
-function heroSlide(event,index){
+function heroSlide(
+    event,
+    image,
+    index
+){
 
     const state =
         getEventState(event);
@@ -614,9 +792,10 @@ function heroSlide(event,index){
     data-slide-index="${index}">
 
     <img
-        src="${event.image}"
+        src="${image}"
         alt="${event.title}"
         loading="${index === 0 ? "eager" : "lazy"}">
+
 
     <div class="events-hero-slide-label">
 
@@ -629,6 +808,114 @@ function heroSlide(event,index){
         </strong>
 
     </div>
+
+</div>
+
+`;
+
+}
+
+
+/* ==========================================================
+   GALLERY COMPONENT
+   ========================================================== */
+
+function galleryHtml(
+    event,
+    galleryKey,
+    showControls = true
+){
+
+    const images =
+        event.gallery?.length
+            ? event.gallery
+            : [event.image];
+
+
+    const single =
+        images.length <= 1;
+
+
+    return `
+
+<div
+    class="
+        events-gallery
+        ${single ? "events-gallery-single" : ""}
+    "
+    data-gallery-id="${galleryKey}">
+
+    <div class="events-gallery-track">
+
+        ${images
+            .map(
+                (image,index)=>
+                    `
+                    <div
+                        class="
+                            events-gallery-slide
+                            ${index === 0 ? "active" : ""}
+                        "
+                        data-gallery-index="${index}">
+
+                        <img
+                            src="${image}"
+                            alt="${event.title} — imagem ${index + 1}"
+                            loading="${index === 0 ? "eager" : "lazy"}">
+
+                    </div>
+                    `
+            )
+            .join("")}
+
+    </div>
+
+
+    ${
+        showControls && !single
+            ? `
+
+                <button
+                    class="events-gallery-arrow events-gallery-prev"
+                    data-gallery-prev
+                    aria-label="Imagem anterior">
+
+                    ←
+
+                </button>
+
+
+                <button
+                    class="events-gallery-arrow events-gallery-next"
+                    data-gallery-next
+                    aria-label="Próxima imagem">
+
+                    →
+
+                </button>
+
+
+                <div
+                    class="events-gallery-dots">
+
+                    ${images
+                        .map(
+                            (_,index)=>
+                                `
+                                <button
+                                    class="${index === 0 ? "active" : ""}"
+                                    data-gallery-dot="${index}"
+                                    aria-label="Imagem ${index + 1}">
+                                </button>
+                                `
+                        )
+                        .join("")}
+
+                </div>
+
+            `
+            : ""
+    }
 
 </div>
 
@@ -678,9 +965,23 @@ function nextEvent(){
                     O que vem a seguir
                 </span>
 
+
                 <h2 class="section-title">
-                    O próximo capítulo
-                    <span>da nossa jornada.</span>
+
+                    ${
+                        event.days?.length > 1
+                            ? "Dois dias."
+                            : "O próximo capítulo"
+                    }
+
+                    <span>
+                        ${
+                            event.days?.length > 1
+                                ? "Uma experiência."
+                                : "da nossa jornada."
+                        }
+                    </span>
+
                 </h2>
 
             </div>
@@ -697,18 +998,28 @@ function nextEvent(){
 
             <div class="events-next-image">
 
-                <img
-                    src="${event.image}"
-                    alt="${event.title}">
+                ${galleryHtml(
+                    event,
+                    `next-${event.id}`
+                )}
+
 
                 <div class="events-next-date">
 
                     <strong>
-                        ${formatDay(event.start)}
+                        ${
+                            event.days?.length > 1
+                                ? "04"
+                                : formatDay(event.start)
+                        }
                     </strong>
 
                     <span>
-                        ${formatMonth(event.start)}
+                        ${
+                            event.days?.length > 1
+                                ? "OUT"
+                                : formatMonth(event.start)
+                        }
                     </span>
 
                 </div>
@@ -733,6 +1044,17 @@ function nextEvent(){
                 </p>
 
 
+                ${
+                    event.ticketLabel
+                        ? `
+                            <div class="events-ticket-note">
+                                ${event.ticketLabel}
+                            </div>
+                        `
+                        : ""
+                }
+
+
                 <div class="events-next-details">
 
                     <div>
@@ -751,7 +1073,7 @@ function nextEvent(){
                     <div>
 
                         <span>
-                            HORA
+                            HORÁRIO
                         </span>
 
                         <strong>
@@ -789,16 +1111,64 @@ function nextEvent(){
                 </div>
 
 
+                ${
+                    event.days?.length
+                        ? `
+
+                            <div class="events-next-days">
+
+                                ${event.days
+                                    .map(
+                                        day=>
+                                            `
+                                            <div class="events-next-day">
+
+                                                <span>
+                                                    DIA ${day.number}
+                                                </span>
+
+                                                <strong>
+                                                    ${day.dateLabel}
+                                                </strong>
+
+                                                <em>
+                                                    ${day.time}
+                                                </em>
+
+                                                <p>
+                                                    ${day.title}
+                                                </p>
+
+                                            </div>
+                                            `
+                                    )
+                                    .join("")}
+
+                            </div>
+
+                        `
+                        : ""
+                }
+
+
                 <div class="events-next-actions">
 
-                    <button
-                        class="btn btn-primary"
-                        data-action="ticket"
-                        data-event-id="${event.id}">
+                    ${
+                        state !== "past"
+                            ? `
 
-                        Reservar Lugar
+                                <button
+                                    class="btn btn-primary"
+                                    data-action="ticket"
+                                    data-event-id="${event.id}">
 
-                    </button>
+                                    Reservar Lugar
+
+                                </button>
+
+                            `
+                            : ""
+                    }
 
 
                     <button
@@ -807,6 +1177,16 @@ function nextEvent(){
                         data-event-id="${event.id}">
 
                         Ver detalhes
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-glass"
+                        data-action="memory"
+                        data-event-id="${event.id}">
+
+                        ✦ Ver memórias
 
                     </button>
 
@@ -850,10 +1230,12 @@ function timeline(){
                 Memória AD Lifestyle
             </span>
 
+
             <h2 class="section-title">
                 Uma história
                 <span>em movimento.</span>
             </h2>
+
 
             <p class="lead">
                 Dos encontros que já aconteceram às experiências
@@ -891,7 +1273,10 @@ function timeline(){
 }
 
 
-function timelineItem(event,index){
+function timelineItem(
+    event,
+    index
+){
 
     const state =
         getEventState(event);
@@ -945,13 +1330,12 @@ function timelineItem(event,index){
 
     <div class="events-timeline-card">
 
-
         <div class="events-timeline-image">
 
-            <img
-                src="${event.image}"
-                alt="${event.title}"
-                loading="lazy">
+            ${galleryHtml(
+                event,
+                `timeline-${event.id}`
+            )}
 
 
             <span class="events-status-badge ${stateClass}">
@@ -984,6 +1368,7 @@ function timelineItem(event,index){
                     🕒 ${event.timeLabel}
                 </span>
 
+
                 <span>
                     📍 ${event.location}
                 </span>
@@ -1004,18 +1389,8 @@ function timelineItem(event,index){
 
 
                 ${
-                    state === "past"
+                    state !== "past"
                         ? `
-                            <button
-                                class="btn btn-primary btn-small"
-                                data-action="memory"
-                                data-event-id="${event.id}">
-
-                                ✦ Ver memórias
-
-                            </button>
-                        `
-                        : `
                             <button
                                 class="btn btn-primary btn-small"
                                 data-action="ticket"
@@ -1025,7 +1400,18 @@ function timelineItem(event,index){
 
                             </button>
                         `
+                        : ""
                 }
+
+
+                <button
+                    class="btn btn-glass btn-small"
+                    data-action="memory"
+                    data-event-id="${event.id}">
+
+                    ✦ Ver memórias
+
+                </button>
 
             </div>
 
@@ -1046,7 +1432,7 @@ function timelineItem(event,index){
 
 function eventExperience(){
 
-return `
+    return `
 
 <section class="section-sm events-experience">
 
@@ -1057,6 +1443,7 @@ return `
             <span class="label">
                 Para além do palco
             </span>
+
 
             <h2 class="section-title">
                 Cada encontro tem
@@ -1106,9 +1493,13 @@ return `
 }
 
 
-function experienceCard(number,title,text){
+function experienceCard(
+    number,
+    title,
+    text
+){
 
-return `
+    return `
 
 <div class="events-experience-card reveal">
 
@@ -1116,9 +1507,11 @@ return `
         ${number}
     </span>
 
+
     <h3>
         ${title}
     </h3>
+
 
     <p>
         ${text}
@@ -1143,24 +1536,13 @@ function schedule(){
 
     if(
         !event ||
+        !event.days?.length ||
         getEventState(event) === "past"
     ){
 
         return "";
 
     }
-
-
-    const agenda = [
-
-        ["15h00","Recepção & Credenciamento"],
-        ["15h30","Abertura Oficial"],
-        ["16h00","Saúde & Medicina Holística"],
-        ["16h45","Apresentação BZZWORLD"],
-        ["17h30","Academy 21 & Liderança"],
-        ["18h00","Networking & Encerramento"]
-
-    ];
 
 
     return `
@@ -1177,12 +1559,14 @@ function schedule(){
                     Programa
                 </span>
 
+
                 <h2 class="section-title">
-                    Uma tarde desenhada
-                    <span>para descobrir.</span>
+                    Dois momentos.
+                    <span>Uma experiência.</span>
                 </h2>
 
             </div>
+
 
             <span class="events-program-date">
                 ${event.dateLabel}
@@ -1194,9 +1578,9 @@ function schedule(){
         <div class="events-program-list">
 
             ${
-                agenda
+                event.days
                     .map(
-                        ([hour,title],index)=>
+                        (day,index)=>
                             `
                             <div
                                 class="events-program-row reveal">
@@ -1205,12 +1589,28 @@ function schedule(){
                                     ${String(index + 1).padStart(2,"0")}
                                 </span>
 
+
                                 <strong>
-                                    ${hour}
+                                    ${day.dateLabel}
                                 </strong>
 
-                                <span>
-                                    ${title}
+
+                                <span class="events-program-hour">
+                                    ${day.time}
+                                </span>
+
+
+                                <span class="events-program-title">
+                                    ${day.title}
+                                    ${
+                                        day.description
+                                            ? `
+                                                <small>
+                                                    ${day.description}
+                                                </small>
+                                            `
+                                            : ""
+                                    }
                                 </span>
 
                             </div>
@@ -1262,6 +1662,7 @@ function speakers(){
                 Participação especial
             </span>
 
+
             <h2 class="section-title">
                 Pessoas que dão
                 <span>voz à experiência.</span>
@@ -1295,7 +1696,10 @@ function speakers(){
 }
 
 
-function speakerCard(name,index){
+function speakerCard(
+    name,
+    index
+){
 
     const images = [
 
@@ -1326,6 +1730,7 @@ function speakerCard(name,index){
         <span>
             PARTICIPAÇÃO ${String(index + 1).padStart(2,"0")}
         </span>
+
 
         <h3>
             ${name}
@@ -1367,10 +1772,10 @@ function venue(){
 
             <div class="events-venue-image reveal-left">
 
-                <img
-                    src="assets/hotel/fly.png"
-                    alt="Fly Hotel"
-                    loading="lazy">
+                ${galleryHtml(
+                    event,
+                    `venue-${event.id}`
+                )}
 
             </div>
 
@@ -1395,6 +1800,7 @@ function venue(){
                 <div class="events-venue-details">
 
                     <div>
+
                         <span>
                             DATA
                         </span>
@@ -1402,21 +1808,25 @@ function venue(){
                         <strong>
                             ${event.dateLabel}
                         </strong>
+
                     </div>
 
 
                     <div>
+
                         <span>
-                            HORA
+                            HORÁRIO
                         </span>
 
                         <strong>
                             ${event.timeLabel}
                         </strong>
+
                     </div>
 
 
                     <div>
+
                         <span>
                             INGRESSO
                         </span>
@@ -1424,19 +1834,51 @@ function venue(){
                         <strong>
                             ${event.price}
                         </strong>
+
                     </div>
 
                 </div>
 
 
-                <button
-                    class="btn btn-primary mt-4"
-                    data-action="ticket"
-                    data-event-id="${event.id}">
+                ${
+                    event.ticketLabel
+                        ? `
+                            <div class="events-ticket-note venue-ticket-note">
+                                ${event.ticketLabel}
+                            </div>
+                        `
+                        : ""
+                }
 
-                    Reservar Lugar
 
-                </button>
+                <div class="events-next-actions mt-4">
+
+                    ${
+                        getEventState(event) !== "past"
+                            ? `
+                                <button
+                                    class="btn btn-primary"
+                                    data-action="ticket"
+                                    data-event-id="${event.id}">
+
+                                    Reservar Lugar
+
+                                </button>
+                            `
+                            : ""
+                    }
+
+
+                    <button
+                        class="btn btn-glass"
+                        data-action="memory"
+                        data-event-id="${event.id}">
+
+                        ✦ Ver memórias
+
+                    </button>
+
+                </div>
 
             </div>
 
@@ -1457,7 +1899,7 @@ function venue(){
 
 function eventModal(){
 
-return `
+    return `
 
 <div
     class="events-modal"
@@ -1525,43 +1967,44 @@ function buildModal(event){
         || "";
 
 
-    const action =
-        state === "past"
+    const actionButtons = `
 
-            ? `
+        ${
+            state !== "past"
+                ? `
+                    <button
+                        class="btn btn-primary"
+                        data-action="ticket"
+                        data-event-id="${event.id}">
 
-                <button
-                    class="btn btn-primary"
-                    data-action="memory"
-                    data-event-id="${event.id}">
+                        Reservar Lugar
 
-                    ✦ Ver memórias no Instagram
+                    </button>
+                `
+                : ""
+        }
 
-                </button>
 
-            `
+        <button
+            class="btn btn-glass"
+            data-action="memory"
+            data-event-id="${event.id}">
 
-            : `
+            ✦ Ver memórias no Instagram
 
-                <button
-                    class="btn btn-primary"
-                    data-action="ticket"
-                    data-event-id="${event.id}">
+        </button>
 
-                    Reservar Lugar
-
-                </button>
-
-            `;
+    `;
 
 
     return `
 
 <div class="events-modal-image">
 
-    <img
-        src="${event.image}"
-        alt="${event.title}">
+    ${galleryHtml(
+        event,
+        `modal-${event.id}`
+    )}
 
 
     <span class="events-status-badge ${getStateClass(state)}">
@@ -1588,6 +2031,17 @@ function buildModal(event){
     </p>
 
 
+    ${
+        event.ticketLabel
+            ? `
+                <div class="events-ticket-note">
+                    ${event.ticketLabel}
+                </div>
+            `
+            : ""
+    }
+
+
     <div class="events-modal-grid">
 
         <div>
@@ -1595,15 +2049,18 @@ function buildModal(event){
             <strong>${event.dateLabel}</strong>
         </div>
 
+
         <div>
             <span>Horário</span>
             <strong>${event.timeLabel}</strong>
         </div>
 
+
         <div>
             <span>Local</span>
             <strong>${event.venue}</strong>
         </div>
+
 
         <div>
             <span>Ingresso</span>
@@ -1611,6 +2068,67 @@ function buildModal(event){
         </div>
 
     </div>
+
+
+    ${
+        event.days?.length
+            ? `
+
+                <div class="events-modal-days">
+
+                    <h3>
+                        Programa dos dois dias
+                    </h3>
+
+
+                    ${
+                        event.days
+                            .map(
+                                day =>
+                                    `
+                                    <div class="events-modal-day">
+
+                                        <span>
+                                            DIA ${day.number}
+                                        </span>
+
+
+                                        <strong>
+                                            ${day.dateLabel}
+                                        </strong>
+
+
+                                        <em>
+                                            ${day.time}
+                                        </em>
+
+
+                                        <p>
+                                            ${day.title}
+                                        </p>
+
+
+                                        ${
+                                            day.description
+                                                ? `
+                                                    <small>
+                                                        ${day.description}
+                                                    </small>
+                                                `
+                                                : ""
+                                        }
+
+                                    </div>
+                                    `
+                            )
+                            .join("")
+                    }
+
+                </div>
+
+            `
+            : ""
+    }
 
 
     ${
@@ -1622,6 +2140,7 @@ function buildModal(event){
                     <h3>
                         Destaques
                     </h3>
+
 
                     <ul>
                         ${highlights}
@@ -1636,7 +2155,7 @@ function buildModal(event){
 
     <div class="events-modal-actions">
 
-        ${action}
+        ${actionButtons}
 
     </div>
 
@@ -1653,7 +2172,7 @@ function buildModal(event){
 
 function cta(){
 
-return `
+    return `
 
 <section class="section events-cta">
 
@@ -1662,6 +2181,7 @@ return `
         <div class="events-cta-panel">
 
             <div class="events-cta-glow"></div>
+
 
             <div class="events-cta-content reveal">
 
@@ -1809,6 +2329,10 @@ function initialiseEvents(){
 
     initialiseSlider();
 
+    initialiseGalleries(
+        document.querySelector(".page-events")
+    );
+
     initialiseNavigation();
 
     initialiseDetails();
@@ -1827,7 +2351,7 @@ function initialiseEvents(){
 
 
 /* ==========================================================
-   SLIDESHOW
+   SLIDESHOW HERO
    ========================================================== */
 
 function initialiseSlider(){
@@ -1852,7 +2376,7 @@ function initialiseSlider(){
     const dots =
         [
             ...root.querySelectorAll(
-                "[data-slide]"
+                ".events-slider-dots button"
             )
         ];
 
@@ -1948,6 +2472,19 @@ function initialiseSlider(){
     };
 
 
+    const stop = ()=>{
+
+        if(timer){
+
+            clearInterval(timer);
+
+            timer = null;
+
+        }
+
+    };
+
+
     const start = ()=>{
 
         stop();
@@ -1963,7 +2500,11 @@ function initialiseSlider(){
         timer =
             setInterval(
                 ()=>{
-                    render(index + 1);
+
+                    render(
+                        index + 1
+                    );
+
                 },
                 6500
             );
@@ -1971,24 +2512,16 @@ function initialiseSlider(){
     };
 
 
-    const stop = ()=>{
-
-        if(timer){
-
-            clearInterval(timer);
-
-            timer = null;
-
-        }
-
-    };
-
-
     prev?.addEventListener(
         "click",
         ()=>{
-            render(index - 1);
+
+            render(
+                index - 1
+            );
+
             start();
+
         }
     );
 
@@ -1996,8 +2529,13 @@ function initialiseSlider(){
     next?.addEventListener(
         "click",
         ()=>{
-            render(index + 1);
+
+            render(
+                index + 1
+            );
+
             start();
+
         }
     );
 
@@ -2052,6 +2590,284 @@ function initialiseSlider(){
 
 
 /* ==========================================================
+   GALLERY SLIDESHOWS
+   ========================================================== */
+
+function initialiseGalleries(scope){
+
+    if(!scope){
+
+        return;
+
+    }
+
+
+    const galleries =
+        scope.matches?.(".events-gallery")
+            ? [scope]
+            : [
+                ...scope.querySelectorAll(
+                    ".events-gallery"
+                )
+            ];
+
+
+    galleries.forEach(
+        gallery=>{
+
+            if(
+                gallery.dataset.initialised ===
+                "true"
+            ){
+
+                return;
+
+            }
+
+
+            gallery.dataset.initialised =
+                "true";
+
+
+            const slides =
+                [
+                    ...gallery.querySelectorAll(
+                        ".events-gallery-slide"
+                    )
+                ];
+
+
+            const dots =
+                [
+                    ...gallery.querySelectorAll(
+                        "[data-gallery-dot]"
+                    )
+                ];
+
+
+            const prev =
+                gallery.querySelector(
+                    "[data-gallery-prev]"
+                );
+
+
+            const next =
+                gallery.querySelector(
+                    "[data-gallery-next]"
+                );
+
+
+            if(slides.length <= 1){
+
+                return;
+
+            }
+
+
+            let index = 0;
+
+            let timer = null;
+
+
+            const render =
+                newIndex=>{
+
+                    index =
+                        (
+                            newIndex +
+                            slides.length
+                        )
+                        %
+                        slides.length;
+
+
+                    slides.forEach(
+                        (slide,i)=>{
+
+                            slide.classList.toggle(
+                                "active",
+                                i === index
+                            );
+
+                        }
+                    );
+
+
+                    dots.forEach(
+                        (dot,i)=>{
+
+                            dot.classList.toggle(
+                                "active",
+                                i === index
+                            );
+
+                        }
+
+                    );
+
+                };
+
+
+            const stop = ()=>{
+
+                if(timer){
+
+                    clearInterval(
+                        timer
+                    );
+
+                    timer = null;
+
+                }
+
+            };
+
+
+            const start = ()=>{
+
+                stop();
+
+
+                timer =
+                    setInterval(
+                        ()=>{
+
+                            render(
+                                index + 1
+                            );
+
+                        },
+                        5600
+                    );
+
+            };
+
+
+            prev?.addEventListener(
+                "click",
+                event=>{
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    render(
+                        index - 1
+                    );
+
+                    start();
+
+                }
+            );
+
+
+            next?.addEventListener(
+                "click",
+                event=>{
+
+                    event.preventDefault();
+
+                    event.stopPropagation();
+
+                    render(
+                        index + 1
+                    );
+
+                    start();
+
+                }
+            );
+
+
+            dots.forEach(
+                dot=>{
+
+                    dot.addEventListener(
+                        "click",
+                        event=>{
+
+                            event.preventDefault();
+
+                            event.stopPropagation();
+
+                            render(
+                                Number(
+                                    dot.dataset.galleryDot
+                                )
+                            );
+
+                            start();
+
+                        }
+                    );
+
+                }
+            );
+
+
+            gallery.addEventListener(
+                "mouseenter",
+                stop
+            );
+
+
+            gallery.addEventListener(
+                "mouseleave",
+                start
+            );
+
+
+            render(0);
+
+            start();
+
+
+            gallery.__stopAuto =
+                stop;
+
+        }
+    );
+
+}
+
+
+function destroyGalleries(scope){
+
+    if(!scope){
+
+        return;
+
+    }
+
+
+    const galleries = [
+
+        ...scope.querySelectorAll(
+            ".events-gallery"
+        )
+
+    ];
+
+
+    galleries.forEach(
+        gallery=>{
+
+            if(
+                typeof gallery.__stopAuto ===
+                "function"
+            ){
+
+                gallery.__stopAuto();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
    NAVIGATION
    ========================================================== */
 
@@ -2061,56 +2877,64 @@ function initialiseNavigation(){
         .querySelectorAll(
             '[data-action="next-event"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    document
-                        .getElementById(
-                            "next-event"
-                        )
-                        ?.scrollIntoView({
+                        document
+                            .getElementById(
+                                "next-event"
+                            )
+                            ?.scrollIntoView({
 
-                            behavior:"smooth",
+                                behavior:
+                                    "smooth",
 
-                            block:"start"
+                                block:
+                                    "start"
 
-                        });
+                            });
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 
     document
         .querySelectorAll(
             '[data-action="timeline"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    document
-                        .getElementById(
-                            "events-history"
-                        )
-                        ?.scrollIntoView({
+                        document
+                            .getElementById(
+                                "events-history"
+                            )
+                            ?.scrollIntoView({
 
-                            behavior:"smooth",
+                                behavior:
+                                    "smooth",
 
-                            block:"start"
+                                block:
+                                    "start"
 
-                        });
+                            });
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 }
 
@@ -2125,32 +2949,34 @@ function initialiseDetails(){
         .querySelectorAll(
             '[data-action="details"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    const event =
-                        EVENTS_DATA.find(
-                            item =>
-                                item.id ===
-                                button.dataset.eventId
-                        );
+                        const event =
+                            EVENTS_DATA.find(
+                                item =>
+                                    item.id ===
+                                    button.dataset.eventId
+                            );
 
 
-                    if(event){
+                        if(event){
 
-                        openModal(
-                            event
-                        );
+                            openModal(
+                                event
+                            );
+
+                        }
 
                     }
+                );
 
-                }
-            );
-
-        });
+            }
+        );
 
 }
 
@@ -2165,46 +2991,42 @@ function initialiseMemory(){
         .querySelectorAll(
             '[data-action="memory"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    const event =
-                        EVENTS_DATA.find(
-                            item =>
-                                item.id ===
-                                button.dataset.eventId
-                        );
+                        const event =
+                            EVENTS_DATA.find(
+                                item =>
+                                    item.id ===
+                                    button.dataset.eventId
+                            );
 
 
-                    if(event){
+                        if(event){
 
-                        openMemory(
-                            event
-                        );
+                            openMemory(
+                                event
+                            );
+
+                        }
 
                     }
+                );
 
-                }
-            );
-
-        });
+            }
+        );
 
 }
 
 
 function openMemory(event){
 
-    /*
-     * Nunca inventamos um URL específico.
-     * Se ainda não tiver sido configurado,
-     * direccionamos para o perfil oficial.
-     */
-
     const url =
-        event.memoryUrl ||
+        event?.memoryUrl ||
         SOCIALS.instagram;
 
 
@@ -2227,42 +3049,46 @@ function initialiseTickets(){
         .querySelectorAll(
             '[data-action="ticket"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    const event =
-                        EVENTS_DATA.find(
-                            item =>
-                                item.id ===
-                                button.dataset.eventId
-                        )
-                        ||
-                        getNearestEvent();
+                        const event =
+                            EVENTS_DATA.find(
+                                item =>
+                                    item.id ===
+                                    button.dataset.eventId
+                            )
+                            ||
+                            getNearestEvent();
 
 
-                    if(!event){
+                        if(!event){
 
-                        return;
+                            return;
+
+                        }
+
+
+                        const message =
+                            event.days?.length
+                                ? `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}", nos dias ${event.dateLabel}. O bilhete tem o custo de ${event.price} e é válido para os dois dias.`
+                                : `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}" (${event.dateLabel}).`;
+
+
+                        window.open(
+                            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+                            "_blank"
+                        );
 
                     }
+                );
 
-
-                    const message =
-                        `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}" (${event.dateLabel}).`;
-
-
-                    window.open(
-                        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-                        "_blank"
-                    );
-
-                }
-            );
-
-        });
+            }
+        );
 
 }
 
@@ -2277,75 +3103,77 @@ function initialiseShare(){
         .querySelectorAll(
             '[data-action="share"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                async ()=>{
+                button.addEventListener(
+                    "click",
+                    async ()=>{
 
-                    const event =
-                        getNearestEvent();
-
-
-                    const text =
-                        event
-                            ? `${event.title} — ${event.dateLabel}, ${event.location}.`
-                            : "Experiências AD Lifestyle.";
+                        const event =
+                            getNearestEvent();
 
 
-                    const url =
-                        window.location.href;
+                        const text =
+                            event
+                                ? `${event.title} — ${event.dateLabel}, ${event.location}.`
+                                : "Experiências AD Lifestyle.";
 
 
-                    if(
-                        navigator.share
-                    ){
+                        const url =
+                            window.location.href;
 
-                        try{
 
-                            await navigator.share({
+                        if(
+                            navigator.share
+                        ){
 
-                                title:
-                                    event?.title ||
-                                    "AD Lifestyle Events",
+                            try{
 
-                                text,
+                                await navigator.share({
 
-                                url
+                                    title:
+                                        event?.title ||
+                                        "AD Lifestyle Events",
 
-                            });
-
-                        }
-                        catch(error){
-
-                            if(
-                                error?.name !==
-                                "AbortError"
-                            ){
-
-                                whatsappShare(
                                     text,
+
                                     url
-                                );
+
+                                });
+
+                            }
+                            catch(error){
+
+                                if(
+                                    error?.name !==
+                                    "AbortError"
+                                ){
+
+                                    whatsappShare(
+                                        text,
+                                        url
+                                    );
+
+                                }
 
                             }
 
+                            return;
+
                         }
 
-                        return;
+
+                        whatsappShare(
+                            text,
+                            url
+                        );
 
                     }
+                );
 
-
-                    whatsappShare(
-                        text,
-                        url
-                    );
-
-                }
-            );
-
-        });
+            }
+        );
 
 }
 
@@ -2378,14 +3206,16 @@ function initialiseModal(){
         .querySelectorAll(
             '[data-action="close-modal"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                closeModal
-            );
+                button.addEventListener(
+                    "click",
+                    closeModal
+                );
 
-        });
+            }
+        );
 
 
     if(
@@ -2397,7 +3227,8 @@ function initialiseModal(){
             event=>{
 
                 if(
-                    event.key === "Escape"
+                    event.key ===
+                    "Escape"
                 ){
 
                     closeModal();
@@ -2440,6 +3271,11 @@ function openModal(event){
     }
 
 
+    destroyGalleries(
+        body
+    );
+
+
     body.innerHTML =
         buildModal(event);
 
@@ -2460,49 +3296,60 @@ function openModal(event){
     );
 
 
+    initialiseGalleries(
+        body
+    );
+
+
     body
         .querySelectorAll(
             '[data-action="memory"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    openMemory(
-                        event
-                    );
+                        openMemory(
+                            event
+                        );
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 
     body
         .querySelectorAll(
             '[data-action="ticket"]'
         )
-        .forEach(button=>{
+        .forEach(
+            button=>{
 
-            button.addEventListener(
-                "click",
-                ()=>{
+                button.addEventListener(
+                    "click",
+                    ()=>{
 
-                    const message =
-                        `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}" (${event.dateLabel}).`;
+                        const message =
+                            event.days?.length
+                                ? `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}", nos dias ${event.dateLabel}. O bilhete tem o custo de ${event.price} e é válido para os dois dias.`
+                                : `Olá AD Lifestyle! Gostaria de reservar um lugar para o evento "${event.title}" (${event.dateLabel}).`;
 
 
-                    window.open(
-                        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
-                        "_blank"
-                    );
+                        window.open(
+                            `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+                            "_blank"
+                        );
 
-                }
-            );
+                    }
+                );
 
-        });
+            }
+        );
 
 }
 
@@ -2515,11 +3362,22 @@ function closeModal(){
         );
 
 
+    const body =
+        document.getElementById(
+            "events-modal-body"
+        );
+
+
     if(!modal){
 
         return;
 
     }
+
+
+    destroyGalleries(
+        body
+    );
 
 
     modal.classList.remove(
@@ -2598,7 +3456,9 @@ function initialiseReveal(){
             },
 
             {
+
                 threshold:.10
+
             }
 
         );
@@ -2639,7 +3499,8 @@ export function addEvent(event){
     if(
         EVENTS_DATA.some(
             item =>
-                item.id === event.id
+                item.id ===
+                event.id
         )
     ){
 
@@ -2674,7 +3535,8 @@ export function updateEventMemory(
     const event =
         EVENTS_DATA.find(
             item =>
-                item.id === eventId
+                item.id ===
+                eventId
         );
 
 
@@ -2696,6 +3558,7 @@ export function updateEventMemory(
     return true;
 
 }
+
 
 /* ==========================================================
    FIM
