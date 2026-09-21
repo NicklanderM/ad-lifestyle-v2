@@ -95032,4 +95032,3233 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
+/* ==========================================================
+   AD LIFESTYLE V2
+   ABOUT PAGE
+   Premium / Editorial / Institutional
+   Visual system aligned with EVENTS master
+   IMPORTANT:
+   Tudo está isolado dentro de .about-page
+   ========================================================== */
+
+
+/* ==========================================================
+   01. ROOT
+   ========================================================== */
+
+.about-page{
+
+    --about-black:#171B1F;
+    --about-black-soft:#252B31;
+
+    --about-gold:#C6A15B;
+    --about-gold-light:#E9D7A9;
+
+    --about-white:#FFFFFF;
+    --about-ivory:#F8F7F3;
+
+    --about-gray:#69747E;
+    --about-gray-soft:#87909A;
+
+    --about-text:#252A2E;
+    --about-text-soft:#68717A;
+
+    --about-border:rgba(23,27,31,.09);
+    --about-border-strong:rgba(23,27,31,.15);
+
+    --about-gold-border:rgba(198,161,91,.30);
+    --about-gold-soft:rgba(198,161,91,.10);
+
+    --about-radius-sm:14px;
+    --about-radius-md:20px;
+    --about-radius-lg:28px;
+    --about-radius-xl:34px;
+
+    --about-shadow-sm:
+        0 10px 30px rgba(18,22,25,.055);
+
+    --about-shadow-md:
+        0 18px 48px rgba(18,22,25,.085);
+
+    --about-shadow-lg:
+        0 30px 80px rgba(18,22,25,.14);
+
+    --about-transition:
+        .35s cubic-bezier(.2,.7,.2,1);
+
+    color:var(--about-text);
+    background:var(--about-ivory);
+
+    overflow:clip;
+
+    font-synthesis:none;
+}
+
+.about-page *,
+.about-page *::before,
+.about-page *::after{
+    box-sizing:border-box;
+}
+
+.about-page img{
+    max-width:100%;
+}
+
+.about-page a{
+    color:inherit;
+}
+
+.about-page button{
+    font:inherit;
+}
+
+.about-page section{
+    position:relative;
+    scroll-margin-top:90px;
+}
+
+.about-page .about-container{
+
+    width:min(
+        calc(100% - 48px),
+        1280px
+    );
+
+    margin:0 auto;
+}
+
+
+/* ==========================================================
+   02. MICRO TYPOGRAPHY
+   ========================================================== */
+
+.about-page .about-eyebrow{
+
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+
+    margin-bottom:18px;
+
+    color:var(--about-gold);
+
+    font-size:11px;
+    font-weight:800;
+
+    letter-spacing:.18em;
+    line-height:1.4;
+
+    text-transform:uppercase;
+}
+
+.about-page .about-eyebrow::before{
+
+    content:"";
+
+    width:26px;
+    height:1px;
+
+    background:currentColor;
+}
+
+.about-page .about-section-label{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding-top:7px;
+}
+
+.about-page .about-section-label strong{
+
+    font-size:11px;
+    font-weight:800;
+
+    color:var(--about-gold);
+
+    letter-spacing:.10em;
+}
+
+.about-page .about-section-label span{
+
+    color:var(--about-gray);
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   03. BUTTON SYSTEM
+   Same language as EVENTS
+   ========================================================== */
+
+.about-page .about-button{
+
+    position:relative;
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:12px;
+
+    min-height:52px;
+
+    padding:0 22px;
+
+    border-radius:999px;
+
+    border:1px solid transparent;
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:.07em;
+    text-transform:uppercase;
+
+    text-decoration:none;
+
+    cursor:pointer;
+
+    overflow:hidden;
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition),
+        background var(--about-transition),
+        color var(--about-transition);
+}
+
+.about-page .about-button span{
+    position:relative;
+    z-index:2;
+}
+
+.about-page .about-button svg{
+
+    position:relative;
+    z-index:2;
+
+    width:18px;
+    height:18px;
+
+    flex:none;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.8;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+
+    transition:
+        transform var(--about-transition);
+}
+
+.about-page .about-button:hover{
+    transform:translateY(-2px);
+}
+
+.about-page .about-button:hover svg{
+    transform:translateX(3px);
+}
+
+.about-page .about-button-gold{
+
+    color:#171B1F;
+
+    background:
+        linear-gradient(
+            135deg,
+            #E3CA91 0%,
+            var(--about-gold) 100%
+        );
+
+    box-shadow:
+        0 10px 24px rgba(198,161,91,.20);
+}
+
+.about-page .about-button-gold:hover{
+
+    box-shadow:
+        0 15px 34px rgba(198,161,91,.27);
+}
+
+.about-page .about-button-outline{
+
+    color:#FFFFFF;
+
+    border-color:
+        rgba(255,255,255,.28);
+
+    background:
+        rgba(255,255,255,.045);
+
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+}
+
+.about-page .about-button-outline:hover{
+
+    border-color:
+        rgba(255,255,255,.55);
+
+    background:
+        rgba(255,255,255,.10);
+}
+
+.about-page .about-button-dark{
+
+    color:#FFFFFF;
+
+    border-color:
+        rgba(23,27,31,.85);
+
+    background:var(--about-black);
+
+    box-shadow:
+        0 12px 26px rgba(23,27,31,.14);
+}
+
+.about-page .about-button-dark:hover{
+
+    background:
+        var(--about-black-soft);
+
+    box-shadow:
+        0 16px 34px rgba(23,27,31,.20);
+}
+
+
+/* ==========================================================
+   04. HERO
+   ========================================================== */
+
+.about-page .about-hero{
+
+    min-height:
+        min(860px, 92vh);
+
+    color:#FFFFFF;
+
+    background:
+        var(--about-black);
+
+    isolation:isolate;
+
+    overflow:hidden;
+}
+
+.about-page .about-hero-bg{
+
+    position:absolute;
+    inset:0;
+
+    z-index:-2;
+
+    background:
+
+        radial-gradient(
+            circle at 76% 40%,
+            rgba(198,161,91,.17),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 18% 75%,
+            rgba(255,255,255,.035),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            120deg,
+            #13171A 0%,
+            #171B1F 48%,
+            #20272D 100%
+        );
+}
+
+.about-page .about-hero-bg::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    opacity:.22;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        72px 72px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent 90%
+        );
+
+    pointer-events:none;
+}
+
+.about-page .about-hero-container{
+
+    min-height:
+        min(860px, 92vh);
+
+    display:flex;
+    flex-direction:column;
+}
+
+.about-page .about-hero-top{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:24px;
+
+    padding-top:24px;
+
+    color:
+        rgba(255,255,255,.64);
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.16em;
+
+    text-transform:uppercase;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.09);
+
+    padding-bottom:18px;
+}
+
+.about-page .about-hero-main{
+
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1.04fr)
+        minmax(420px, .96fr);
+
+    align-items:center;
+
+    gap:70px;
+
+    padding:
+        76px 0 72px;
+}
+
+.about-page .about-hero-copy{
+
+    max-width:760px;
+}
+
+.about-page .about-hero-copy h1{
+
+    max-width:730px;
+
+    margin:0;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            3.2rem,
+            6.8vw,
+            7rem
+        );
+
+    font-weight:650;
+
+    line-height:.94;
+
+    letter-spacing:-.055em;
+}
+
+.about-page .about-hero-copy h1 span{
+
+    display:block;
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-hero-copy p{
+
+    max-width:650px;
+
+    margin:
+        30px 0 0;
+
+    color:
+        rgba(255,255,255,.68);
+
+    font-size:
+        clamp(15px, 1.5vw, 18px);
+
+    line-height:1.78;
+}
+
+.about-page .about-hero-actions{
+
+    display:flex;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:12px;
+
+    margin-top:34px;
+}
+
+
+/* ==========================================================
+   05. HERO VISUAL
+   ========================================================== */
+
+.about-page .about-hero-visual{
+
+    position:relative;
+
+    min-height:620px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+}
+
+.about-page .about-hero-image-wrap{
+
+    position:relative;
+
+    width:min(
+        100%,
+        510px
+    );
+
+    min-height:620px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+}
+
+.about-page .about-hero-image{
+
+    position:relative;
+
+    width:100%;
+    height:620px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    border:
+        1px solid rgba(198,161,91,.25);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.97),
+            rgba(243,238,229,.91)
+        );
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--about-shadow-lg);
+
+    transition:
+        transform .45s cubic-bezier(.2,.7,.2,1);
+}
+
+.about-page .about-hero-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    top:50px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.20),
+            transparent 70%
+        );
+
+    filter:blur(3px);
+
+    pointer-events:none;
+}
+
+.about-page .about-hero-image::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(18,20,22,.14),
+            transparent 36%
+        );
+
+    pointer-events:none;
+}
+
+.about-page .about-hero-image img{
+
+    position:relative;
+    z-index:2;
+
+    display:block;
+
+    width:100%;
+    height:620px;
+
+    object-fit:contain;
+    object-position:center bottom;
+
+    filter:
+        drop-shadow(
+            0 24px 34px rgba(0,0,0,.16)
+        );
+}
+
+.about-page .about-hero-image-accent{
+
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    right:-55px;
+    bottom:-70px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.22),
+            transparent 68%
+        );
+
+    filter:blur(8px);
+
+    pointer-events:none;
+}
+
+
+/* ==========================================================
+   06. HERO BRAND CARD
+   ========================================================== */
+
+.about-page .about-hero-brand-card{
+
+    position:absolute;
+
+    left:0;
+    bottom:72px;
+
+    z-index:4;
+
+    width:260px;
+
+    display:grid;
+
+    grid-template-columns:auto 1fr auto;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:14px 15px;
+
+    border-radius:18px;
+
+    background:
+        rgba(255,255,255,.94);
+
+    border:
+        1px solid rgba(198,161,91,.26);
+
+    box-shadow:
+        0 18px 42px rgba(0,0,0,.22);
+
+    color:var(--about-black);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+}
+
+.about-page .about-hero-logo{
+
+    width:38px;
+    height:38px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:11px;
+
+    overflow:hidden;
+
+    background:#FFFFFF;
+}
+
+.about-page .about-hero-logo img{
+
+    display:block;
+
+    width:30px;
+    height:30px;
+
+    object-fit:contain;
+}
+
+.about-page .about-hero-brand-copy{
+
+    min-width:0;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.about-page .about-hero-brand-copy span{
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.10em;
+}
+
+.about-page .about-hero-brand-copy small{
+
+    margin-top:2px;
+
+    color:var(--about-gray);
+
+    font-size:9px;
+    font-weight:700;
+
+    letter-spacing:.08em;
+}
+
+.about-page .about-hero-brand-card > strong{
+
+    color:var(--about-gold);
+
+    font-size:12px;
+    font-weight:900;
+
+    letter-spacing:.08em;
+}
+
+
+/* ==========================================================
+   07. HERO CAPTION
+   ========================================================== */
+
+.about-page .about-hero-caption{
+
+    position:absolute;
+
+    right:0;
+    bottom:0;
+
+    z-index:4;
+
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+
+    max-width:230px;
+
+    padding:14px 16px;
+
+    border-left:
+        1px solid rgba(198,161,91,.55);
+
+    color:
+        rgba(255,255,255,.75);
+}
+
+.about-page .about-hero-caption > span{
+
+    width:28px;
+    height:1px;
+
+    flex:none;
+
+    background:
+        var(--about-gold);
+}
+
+.about-page .about-hero-caption p{
+
+    margin:0;
+
+    font-size:10px;
+    font-weight:700;
+
+    line-height:1.45;
+
+    letter-spacing:.10em;
+
+    text-transform:uppercase;
+}
+
+.about-page .about-hero-bottom{
+
+    display:grid;
+
+    grid-template-columns:1fr auto 1fr;
+
+    align-items:center;
+
+    gap:24px;
+
+    padding:
+        0 0 24px;
+
+    color:
+        rgba(255,255,255,.43);
+
+    font-size:9px;
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.about-page .about-hero-bottom > :last-child{
+    text-align:right;
+}
+
+.about-page .about-hero-scroll{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:10px;
+
+    color:
+        rgba(255,255,255,.60);
+}
+
+.about-page .about-hero-scroll i{
+
+    position:relative;
+
+    display:block;
+
+    width:1px;
+    height:24px;
+
+    background:
+        var(--about-gold);
+}
+
+.about-page .about-hero-scroll i::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-2px;
+    bottom:0;
+
+    width:5px;
+    height:5px;
+
+    border-right:1px solid var(--about-gold);
+    border-bottom:1px solid var(--about-gold);
+
+    transform:
+        rotate(45deg);
+}
+
+
+/* ==========================================================
+   08. MANIFESTO
+   ========================================================== */
+
+.about-page .about-manifesto{
+
+    padding:115px 0 110px;
+
+    background:
+        var(--about-white);
+
+    border-bottom:
+        1px solid var(--about-border);
+}
+
+.about-page .about-manifesto-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        160px
+        minmax(0, 1fr);
+
+    gap:60px;
+}
+
+.about-page .about-manifesto-content{
+
+    max-width:950px;
+}
+
+.about-page .about-manifesto-content h2{
+
+    max-width:920px;
+
+    margin:0;
+
+    color:var(--about-black);
+
+    font-size:
+        clamp(
+            2.7rem,
+            6vw,
+            6.2rem
+        );
+
+    font-weight:600;
+
+    line-height:1.01;
+
+    letter-spacing:-.055em;
+}
+
+.about-page .about-manifesto-content h2 em{
+
+    color:var(--about-gold);
+
+    font-style:normal;
+}
+
+.about-page .about-manifesto-content h2 strong{
+
+    font-weight:650;
+}
+
+.about-page .about-manifesto-content p{
+
+    max-width:690px;
+
+    margin:
+        30px 0 0;
+
+    color:var(--about-text-soft);
+
+    font-size:17px;
+
+    line-height:1.78;
+}
+
+
+/* ==========================================================
+   09. SECTION HEADINGS
+   ========================================================== */
+
+.about-page .about-section-heading{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0, 1.05fr)
+        minmax(300px, .75fr);
+
+    align-items:end;
+
+    gap:60px;
+
+    margin-bottom:50px;
+}
+
+.about-page .about-section-heading h2,
+.about-page .about-direction-heading h2,
+.about-page .about-journey-heading h2{
+
+    margin:0;
+
+    color:var(--about-black);
+
+    font-size:
+        clamp(
+            2.6rem,
+            5vw,
+            5.25rem
+        );
+
+    font-weight:600;
+
+    line-height:1.02;
+
+    letter-spacing:-.045em;
+}
+
+.about-page .about-section-heading h2 span,
+.about-page .about-direction-heading h2 span,
+.about-page .about-journey-heading h2 span{
+
+    display:block;
+
+    color:var(--about-gold);
+}
+
+.about-page .about-section-heading > p{
+
+    margin:0;
+
+    color:var(--about-text-soft);
+
+    font-size:16px;
+
+    line-height:1.75;
+}
+
+
+/* ==========================================================
+   10. WHO WE ARE
+   ========================================================== */
+
+.about-page .about-who{
+
+    padding:115px 0;
+
+    background:
+        var(--about-ivory);
+}
+
+.about-page .about-who-card{
+
+    display:grid;
+
+    grid-template-columns:
+        80px
+        minmax(190px, .7fr)
+        minmax(0, 1.1fr);
+
+    align-items:start;
+
+    gap:34px;
+
+    padding:38px 42px;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    border:
+        1px solid var(--about-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F7F5F0
+        );
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .about-who-card-number{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:52px;
+    height:52px;
+
+    border-radius:16px;
+
+    color:var(--about-gold);
+
+    background:
+        var(--about-gold-soft);
+
+    border:
+        1px solid var(--about-gold-border);
+
+    font-size:12px;
+    font-weight:900;
+}
+
+.about-page .about-who-card-title small{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    color:var(--about-gold);
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.15em;
+
+    text-transform:uppercase;
+}
+
+.about-page .about-who-card-title h3{
+
+    margin:0;
+
+    color:var(--about-black);
+
+    font-size:clamp(2rem,3.2vw,3.4rem);
+
+    font-weight:650;
+
+    letter-spacing:-.04em;
+}
+
+.about-page .about-who-card-text{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:15px;
+}
+
+.about-page .about-who-card-text p{
+
+    margin:0;
+
+    color:var(--about-text-soft);
+
+    font-size:15px;
+
+    line-height:1.72;
+}
+
+
+/* ==========================================================
+   11. ECOSYSTEM
+   ========================================================== */
+
+.about-page .about-ecosystem-intro{
+
+    padding:115px 0 125px;
+
+    background:
+        var(--about-white);
+}
+
+.about-page .about-ecosystem-map{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(130px,1fr)
+        minmax(60px,110px)
+        110px
+        minmax(60px,110px)
+        minmax(130px,1fr);
+
+    align-items:center;
+
+    gap:16px;
+
+    min-height:170px;
+
+    padding:28px 24px;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F6F2EA
+        );
+
+    border:
+        1px solid var(--about-border);
+
+    box-shadow:
+        var(--about-shadow-sm);
+}
+
+.about-page .about-ecosystem-side{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:8px;
+}
+
+.about-page .about-ecosystem-side-right{
+    text-align:right;
+    align-items:flex-end;
+}
+
+.about-page .about-ecosystem-side small{
+
+    color:var(--about-gold);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+.about-page .about-ecosystem-side strong{
+
+    color:var(--about-black);
+
+    font-size:14px;
+    font-weight:900;
+
+    letter-spacing:.18em;
+}
+
+.about-page .about-ecosystem-line{
+
+    height:1px;
+
+    background:
+        var(--about-gold-border);
+}
+
+.about-page .about-ecosystem-core{
+
+    position:relative;
+
+    width:94px;
+    height:94px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:
+        var(--about-black);
+
+    border:
+        1px solid rgba(198,161,91,.42);
+
+    box-shadow:
+        0 12px 30px rgba(23,27,31,.18);
+}
+
+.about-page .about-ecosystem-core::before{
+
+    content:"";
+
+    position:absolute;
+    inset:-7px;
+
+    border-radius:50%;
+
+    border:
+        1px solid rgba(198,161,91,.14);
+}
+
+.about-page .about-ecosystem-core img{
+
+    width:56px;
+    height:56px;
+
+    object-fit:contain;
+
+    filter:
+        brightness(0)
+        invert(1);
+}
+
+
+/* ==========================================================
+   12. BRAND SECTIONS
+   ========================================================== */
+
+.about-page .about-brand{
+
+    padding:120px 0;
+
+    border-top:
+        1px solid var(--about-border);
+}
+
+.about-page .about-brand-bzzworld{
+
+    background:
+        var(--about-ivory);
+}
+
+.about-page .about-brand-academy{
+
+    background:
+        var(--about-white);
+}
+
+.about-page .about-brand-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,1fr)
+        minmax(0,1fr);
+
+    align-items:center;
+
+    gap:90px;
+}
+
+.about-page .about-brand-grid-reverse > .about-brand-content{
+    order:1;
+}
+
+.about-page .about-brand-grid-reverse > .about-brand-visual{
+    order:2;
+}
+
+.about-page .about-brand-visual{
+
+    position:relative;
+
+    min-height:510px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    border:
+        1px solid var(--about-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #F5F1E9
+        );
+
+    box-shadow:
+        var(--about-shadow-md);
+
+    overflow:hidden;
+}
+
+.about-page .about-brand-visual::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.16),
+            transparent 70%
+        );
+}
+
+.about-page .about-brand-number{
+
+    position:absolute;
+
+    top:23px;
+    left:26px;
+
+    z-index:3;
+
+    color:var(--about-gold);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.15em;
+}
+
+.about-page .about-brand-category{
+
+    position:absolute;
+
+    right:26px;
+    bottom:24px;
+
+    z-index:3;
+
+    color:var(--about-gray);
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.15em;
+}
+
+.about-page .about-brand-image{
+
+    position:relative;
+
+    z-index:2;
+
+    width:86%;
+    height:420px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:25px;
+}
+
+.about-page .about-brand-image img{
+
+    display:block;
+
+    width:auto;
+    max-width:100%;
+
+    height:auto;
+    max-height:390px;
+
+    object-fit:contain;
+
+    filter:
+        drop-shadow(
+            0 20px 30px rgba(0,0,0,.13)
+        );
+
+    transition:
+        transform var(--about-transition);
+}
+
+.about-page .about-brand-visual:hover
+.about-brand-image img{
+
+    transform:
+        translateY(-5px)
+        scale(1.015);
+}
+
+.about-page .about-brand-content{
+
+    max-width:680px;
+}
+
+.about-page .about-brand-title{
+
+    margin-bottom:11px;
+
+    color:var(--about-gold);
+
+    font-size:13px;
+    font-weight:900;
+
+    letter-spacing:.20em;
+}
+
+.about-page .about-brand-content h2{
+
+    margin:0;
+
+    color:var(--about-black);
+
+    font-size:
+        clamp(
+            2.6rem,
+            4.6vw,
+            5rem
+        );
+
+    font-weight:600;
+
+    line-height:1.02;
+
+    letter-spacing:-.05em;
+}
+
+.about-page .about-brand-content > p{
+
+    max-width:620px;
+
+    margin:
+        24px 0 0;
+
+    color:var(--about-text-soft);
+
+    font-size:16px;
+
+    line-height:1.78;
+}
+
+.about-page .about-brand-list{
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:10px 24px;
+
+    margin-top:28px;
+}
+
+.about-page .about-brand-list span{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:8px;
+
+    color:var(--about-black);
+
+    font-size:12px;
+    font-weight:800;
+
+    letter-spacing:.05em;
+}
+
+.about-page .about-brand-list svg{
+
+    width:16px;
+    height:16px;
+
+    fill:none;
+
+    stroke:var(--about-gold);
+
+    stroke-width:1.9;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.about-page .about-brand-link{
+
+    display:inline-flex;
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:32px;
+
+    padding-bottom:7px;
+
+    color:var(--about-black);
+
+    border-bottom:
+        1px solid var(--about-gold-border);
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:.10em;
+
+    text-decoration:none;
+    text-transform:uppercase;
+
+    transition:
+        color var(--about-transition),
+        gap var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .about-brand-link svg{
+
+    width:17px;
+    height:17px;
+
+    fill:none;
+
+    stroke:currentColor;
+
+    stroke-width:1.7;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.about-page .about-brand-link:hover{
+
+    color:var(--about-gold);
+
+    gap:16px;
+
+    border-color:
+        var(--about-gold);
+}
+
+
+/* ==========================================================
+   13. LEADERSHIP
+   ========================================================== */
+
+.about-page .about-leadership{
+
+    padding:125px 0;
+
+    color:#FFFFFF;
+
+    background:
+        var(--about-black);
+
+    overflow:hidden;
+}
+
+.about-page .about-leadership::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:540px;
+    height:540px;
+
+    right:-180px;
+    top:-180px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.14),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+.about-page .about-leadership-grid{
+
+    position:relative;
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        minmax(0,.92fr)
+        minmax(0,1.08fr);
+
+    align-items:center;
+
+    gap:90px;
+}
+
+.about-page .about-leadership-image{
+
+    position:relative;
+
+    min-height:590px;
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    background:
+        linear-gradient(
+            145deg,
+            #F8F7F3,
+            #EAE4D8
+        );
+
+    border:
+        1px solid rgba(198,161,91,.26);
+
+    overflow:hidden;
+
+    box-shadow:
+        var(--about-shadow-lg);
+}
+
+.about-page .about-leadership-image::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(15,17,19,.16),
+            transparent 44%
+        );
+}
+
+.about-page .about-leadership-image img{
+
+    position:relative;
+    z-index:1;
+
+    width:100%;
+    height:590px;
+
+    object-fit:contain;
+    object-position:center bottom;
+}
+
+.about-page .about-leadership-image-info{
+
+    position:absolute;
+
+    left:24px;
+    right:24px;
+    bottom:24px;
+
+    z-index:3;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:4px;
+
+    padding:15px 17px;
+
+    border-radius:16px;
+
+    background:
+        rgba(23,27,31,.82);
+
+    border:
+        1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+}
+
+.about-page .about-leadership-image-info span{
+
+    color:var(--about-gold-light);
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:.14em;
+}
+
+.about-page .about-leadership-image-info strong{
+
+    color:#FFFFFF;
+
+    font-size:14px;
+    font-weight:800;
+
+    letter-spacing:.05em;
+}
+
+.about-page .about-leadership-content{
+
+    max-width:680px;
+}
+
+.about-page .about-leadership-content .about-eyebrow{
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-leadership-content > small{
+
+    display:block;
+
+    color:
+        rgba(255,255,255,.43);
+
+    font-size:10px;
+    font-weight:800;
+
+    letter-spacing:.13em;
+}
+
+.about-page .about-leadership-content h2{
+
+    margin:
+        20px 0 0;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6.5rem
+        );
+
+    line-height:.94;
+
+    letter-spacing:-.055em;
+}
+
+.about-page .about-leadership-content h2 span{
+
+    display:block;
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-leadership-line{
+
+    width:70px;
+    height:1px;
+
+    margin:
+        28px 0 28px;
+
+    background:
+        var(--about-gold);
+}
+
+.about-page .about-leadership-content p{
+
+    max-width:620px;
+
+    margin:0 0 17px;
+
+    color:
+        rgba(255,255,255,.66);
+
+    font-size:16px;
+
+    line-height:1.78;
+}
+
+.about-page .about-leadership-signature{
+
+    margin-top:34px;
+
+    color:
+        rgba(255,255,255,.40);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+
+/* ==========================================================
+   14. DIRECTION
+   ========================================================== */
+
+.about-page .about-direction{
+
+    padding:120px 0;
+
+    background:
+        var(--about-ivory);
+}
+
+.about-page .about-direction-heading{
+
+    max-width:800px;
+
+    margin-bottom:50px;
+}
+
+.about-page .about-direction-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,minmax(0,1fr));
+
+    gap:16px;
+}
+
+.about-page .about-direction-grid article{
+
+    position:relative;
+
+    min-height:320px;
+
+    display:flex;
+    flex-direction:column;
+
+    padding:30px;
+
+    border-radius:
+        var(--about-radius-lg);
+
+    border:
+        1px solid var(--about-border);
+
+    background:
+        linear-gradient(
+            145deg,
+            #FFFFFF,
+            #FAF8F3
+        );
+
+    box-shadow:
+        var(--about-shadow-sm);
+
+    transition:
+        transform var(--about-transition),
+        box-shadow var(--about-transition),
+        border-color var(--about-transition);
+}
+
+.about-page .about-direction-grid article:hover{
+
+    transform:translateY(-5px);
+
+    border-color:
+        var(--about-gold-border);
+
+    box-shadow:
+        var(--about-shadow-md);
+}
+
+.about-page .about-direction-grid article > span{
+
+    color:var(--about-gold);
+
+    font-size:10px;
+    font-weight:900;
+
+    letter-spacing:.16em;
+}
+
+.about-page .about-direction-grid h3{
+
+    margin:
+        22px 0 14px;
+
+    color:var(--about-black);
+
+    font-size:28px;
+    font-weight:650;
+
+    letter-spacing:-.035em;
+}
+
+.about-page .about-direction-grid p{
+
+    margin:0;
+
+    color:var(--about-text-soft);
+
+    font-size:14px;
+
+    line-height:1.72;
+}
+
+.about-page .about-direction-main{
+
+    background:
+        linear-gradient(
+            145deg,
+            #1A2024,
+            #252C32
+        ) !important;
+
+    border-color:
+        rgba(198,161,91,.28) !important;
+}
+
+.about-page .about-direction-main h3{
+    color:#FFFFFF;
+}
+
+.about-page .about-direction-main p{
+
+    color:
+        rgba(255,255,255,.66);
+}
+
+.about-page .about-direction-grid ul{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:11px;
+
+    margin:0;
+    padding:0;
+
+    list-style:none;
+}
+
+.about-page .about-direction-grid li{
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    color:var(--about-text-soft);
+
+    font-size:13px;
+    font-weight:700;
+}
+
+.about-page .about-direction-grid li svg{
+
+    width:16px;
+    height:16px;
+
+    flex:none;
+
+    fill:none;
+
+    stroke:var(--about-gold);
+
+    stroke-width:1.8;
+
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+
+/* ==========================================================
+   15. JOURNEY
+   ========================================================== */
+
+.about-page .about-journey{
+
+    padding:120px 0;
+
+    background:
+        var(--about-white);
+}
+
+.about-page .about-journey-heading{
+
+    max-width:780px;
+
+    margin-bottom:52px;
+}
+
+.about-page .about-journey-list{
+
+    position:relative;
+
+    border-top:
+        1px solid var(--about-border-strong);
+}
+
+.about-page .about-journey-item{
+
+    display:grid;
+
+    grid-template-columns:
+        90px
+        minmax(170px,.45fr)
+        minmax(0,1fr);
+
+    align-items:center;
+
+    gap:30px;
+
+    min-height:145px;
+
+    padding:
+        25px 0;
+
+    border-bottom:
+        1px solid var(--about-border);
+
+    transition:
+        padding var(--about-transition),
+        background var(--about-transition);
+}
+
+.about-page .about-journey-item:hover{
+
+    padding-left:14px;
+    padding-right:14px;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(198,161,91,.045),
+            transparent
+        );
+}
+
+.about-page .about-journey-number{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    color:var(--about-gold);
+
+    background:
+        var(--about-white);
+
+    border:
+        1px solid var(--about-gold-border);
+
+    font-size:11px;
+    font-weight:900;
+}
+
+.about-page .about-journey-title small{
+
+    display:block;
+
+    color:var(--about-gold);
+
+    font-size:9px;
+    font-weight:900;
+
+    letter-spacing:.14em;
+}
+
+.about-page .about-journey-title h3{
+
+    margin:
+        6px 0 0;
+
+    color:var(--about-black);
+
+    font-size:24px;
+    font-weight:650;
+
+    letter-spacing:-.03em;
+}
+
+.about-page .about-journey-text p{
+
+    max-width:700px;
+
+    margin:0;
+
+    color:var(--about-text-soft);
+
+    font-size:14px;
+
+    line-height:1.72;
+}
+
+
+/* ==========================================================
+   16. FUTURE
+   ========================================================== */
+
+.about-page .about-future{
+
+    min-height:580px;
+
+    display:flex;
+    align-items:center;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            120deg,
+            #121619,
+            #171B1F 58%,
+            #22292E
+        );
+
+    overflow:hidden;
+}
+
+.about-page .about-future::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:600px;
+    height:600px;
+
+    right:-180px;
+    top:-150px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.16),
+            transparent 70%
+        );
+}
+
+.about-page .about-future-mark{
+
+    position:absolute;
+
+    right:4vw;
+    bottom:-70px;
+
+    color:
+        rgba(255,255,255,.025);
+
+    font-size:
+        clamp(
+            14rem,
+            28vw,
+            32rem
+        );
+
+    font-weight:900;
+
+    line-height:.8;
+
+    letter-spacing:-.08em;
+
+    pointer-events:none;
+
+    user-select:none;
+}
+
+.about-page .about-future-content{
+
+    position:relative;
+    z-index:2;
+
+    max-width:980px;
+
+    padding:
+        110px 0;
+}
+
+.about-page .about-future-content .about-eyebrow{
+    color:var(--about-gold-light);
+}
+
+.about-page .about-future-content h2{
+
+    margin:0;
+
+    max-width:960px;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            3rem,
+            6vw,
+            6.4rem
+        );
+
+    font-weight:600;
+
+    line-height:.98;
+
+    letter-spacing:-.055em;
+}
+
+.about-page .about-future-content h2 span{
+
+    display:block;
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-future-content p{
+
+    margin:
+        30px 0 0;
+
+    color:
+        rgba(255,255,255,.57);
+
+    font-size:15px;
+    font-weight:700;
+
+    line-height:1.9;
+
+    letter-spacing:.10em;
+    text-transform:uppercase;
+}
+
+
+/* ==========================================================
+   17. CTA
+   ========================================================== */
+
+.about-page .about-cta{
+
+    padding:105px 0;
+
+    background:
+        var(--about-ivory);
+}
+
+.about-page .about-cta-box{
+
+    position:relative;
+
+    display:grid;
+
+    grid-template-columns:
+        auto
+        minmax(0,1fr)
+        auto;
+
+    align-items:center;
+
+    gap:38px;
+
+    padding:
+        52px 54px;
+
+    border-radius:
+        var(--about-radius-xl);
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #181D21 0%,
+            #252C32 100%
+        );
+
+    border:
+        1px solid rgba(198,161,91,.28);
+
+    box-shadow:
+        var(--about-shadow-lg);
+
+    overflow:hidden;
+}
+
+.about-page .about-cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    right:-100px;
+    top:-120px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(198,161,91,.18),
+            transparent 70%
+        );
+}
+
+.about-page .about-cta-brand{
+
+    position:relative;
+    z-index:2;
+
+    width:82px;
+    height:82px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:22px;
+
+    background:
+        rgba(255,255,255,.95);
+
+    border:
+        1px solid rgba(198,161,91,.30);
+}
+
+.about-page .about-cta-brand img{
+
+    width:58px;
+    height:58px;
+
+    object-fit:contain;
+}
+
+.about-page .about-cta-content{
+
+    position:relative;
+    z-index:2;
+
+    max-width:650px;
+}
+
+.about-page .about-cta-content .about-eyebrow{
+    margin-bottom:12px;
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-cta-content h2{
+
+    margin:0;
+
+    font-size:
+        clamp(
+            2.2rem,
+            4vw,
+            4.6rem
+        );
+
+    font-weight:600;
+
+    line-height:1.01;
+
+    letter-spacing:-.045em;
+}
+
+.about-page .about-cta-content h2 span{
+
+    color:var(--about-gold-light);
+}
+
+.about-page .about-cta-content p{
+
+    margin:
+        18px 0 0;
+
+    color:
+        rgba(255,255,255,.60);
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.about-page .about-cta-actions{
+
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:10px;
+
+    min-width:210px;
+}
+
+.about-page .about-cta-actions .about-button{
+    width:100%;
+}
+
+
+/* ==========================================================
+   18. REVEAL
+   IMPORTANT:
+   Conteúdo permanece visível mesmo sem JS
+   ========================================================== */
+
+.about-page .about-manifesto-content,
+.about-page .about-section-heading,
+.about-page .about-who-card,
+.about-page .about-ecosystem-map,
+.about-page .about-brand,
+.about-page .about-leadership-grid,
+.about-page .about-direction-heading,
+.about-page .about-direction-grid,
+.about-page .about-journey-heading,
+.about-page .about-journey-item,
+.about-page .about-future-content,
+.about-page .about-cta-box{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:none;
+}
+
+.about-page .about-is-visible{
+
+    animation:
+        aboutFadeUp .72s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes aboutFadeUp{
+
+    from{
+        opacity:.72;
+        transform:translateY(18px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+
+/* ==========================================================
+   19. DESKTOP INTERACTION
+   ========================================================== */
+
+@media (hover:hover) and (pointer:fine){
+
+    .about-page .about-brand-image img{
+
+        transition:
+            transform .45s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .about-page .about-brand-visual:hover
+    .about-brand-image img{
+
+        transform:
+            translateY(-5px)
+            scale(1.015);
+    }
+
+}
+
+
+/* ==========================================================
+   20. TABLET
+   ========================================================== */
+
+@media (max-width:1100px){
+
+    .about-page .about-hero-main{
+
+        grid-template-columns:
+            minmax(0,1fr)
+            minmax(360px,.78fr);
+
+        gap:45px;
+    }
+
+    .about-page .about-hero-visual{
+        min-height:540px;
+    }
+
+    .about-page .about-hero-image-wrap,
+    .about-page .about-hero-image{
+        height:540px;
+        min-height:540px;
+    }
+
+    .about-page .about-hero-image img{
+        height:540px;
+    }
+
+    .about-page .about-brand-grid,
+    .about-page .about-leadership-grid{
+
+        gap:55px;
+    }
+
+    .about-page .about-who-card{
+
+        grid-template-columns:
+            70px
+            minmax(170px,.65fr)
+            minmax(0,1fr);
+
+        gap:25px;
+    }
+
+    .about-page .about-cta-box{
+
+        grid-template-columns:
+            auto
+            minmax(0,1fr);
+
+        gap:28px;
+    }
+
+    .about-page .about-cta-actions{
+
+        grid-column:1 / -1;
+
+        flex-direction:row;
+        align-items:stretch;
+    }
+
+    .about-page .about-cta-actions .about-button{
+        width:auto;
+        flex:1;
+    }
+
+}
+
+
+/* ==========================================================
+   21. TABLET / SMALL
+   ========================================================== */
+
+@media (max-width:900px){
+
+    .about-page .about-container{
+        width:min(
+            calc(100% - 38px),
+            1280px
+        );
+    }
+
+    .about-page .about-hero{
+        min-height:auto;
+    }
+
+    .about-page .about-hero-container{
+        min-height:auto;
+    }
+
+    .about-page .about-hero-main{
+
+        grid-template-columns:1fr;
+
+        padding:
+            65px 0 70px;
+    }
+
+    .about-page .about-hero-copy{
+        max-width:780px;
+    }
+
+    .about-page .about-hero-visual{
+
+        max-width:650px;
+
+        width:100%;
+
+        min-height:560px;
+
+        margin:0 auto;
+    }
+
+    .about-page .about-brand-grid,
+    .about-page .about-leadership-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .about-page .about-brand-grid-reverse > .about-brand-content{
+        order:1;
+    }
+
+    .about-page .about-brand-grid-reverse > .about-brand-visual{
+        order:2;
+    }
+
+    .about-page .about-brand-content{
+        max-width:none;
+    }
+
+    .about-page .about-brand-visual{
+        min-height:500px;
+    }
+
+    .about-page .about-leadership-content{
+        max-width:none;
+    }
+
+    .about-page .about-direction-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-page .about-direction-grid article{
+        min-height:auto;
+    }
+
+    .about-page .about-ecosystem-map{
+        grid-template-columns:
+            1fr
+            80px
+            90px
+            80px
+            1fr;
+    }
+
+}
+
+
+/* ==========================================================
+   22. MOBILE
+   ========================================================== */
+
+@media (max-width:720px){
+
+    .about-page .about-container{
+
+        width:
+            calc(100% - 28px);
+    }
+
+    .about-page .about-hero-top{
+
+        padding-top:18px;
+        padding-bottom:14px;
+
+        font-size:8px;
+    }
+
+    .about-page .about-hero-main{
+
+        padding:
+            48px 0 52px;
+
+        gap:40px;
+    }
+
+    .about-page .about-hero-copy h1{
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                5rem
+            );
+
+        line-height:.93;
+    }
+
+    .about-page .about-hero-copy p{
+
+        margin-top:22px;
+
+        font-size:14px;
+
+        line-height:1.68;
+    }
+
+    .about-page .about-hero-actions{
+
+        align-items:stretch;
+        flex-direction:column;
+
+        margin-top:26px;
+    }
+
+    .about-page .about-button{
+
+        width:100%;
+
+        min-height:50px;
+
+        padding:
+            0 18px;
+
+        font-size:10px;
+    }
+
+    .about-page .about-hero-visual{
+
+        min-height:430px;
+
+        padding:0;
+    }
+
+    .about-page .about-hero-image-wrap,
+    .about-page .about-hero-image{
+
+        width:100%;
+
+        height:430px;
+        min-height:430px;
+    }
+
+    .about-page .about-hero-image img{
+        height:430px;
+    }
+
+    .about-page .about-hero-brand-card{
+
+        left:8px;
+        bottom:48px;
+
+        width:
+            calc(100% - 16px);
+
+        grid-template-columns:
+            auto
+            1fr
+            auto;
+
+        padding:12px;
+    }
+
+    .about-page .about-hero-caption{
+
+        display:none;
+    }
+
+    .about-page .about-hero-bottom{
+
+        grid-template-columns:1fr auto 1fr;
+
+        gap:10px;
+
+        padding-bottom:18px;
+
+        font-size:7px;
+
+        letter-spacing:.10em;
+    }
+
+    .about-page .about-hero-bottom > :nth-child(3){
+        text-align:right;
+    }
+
+    .about-page .about-manifesto,
+    .about-page .about-who,
+    .about-page .about-ecosystem-intro,
+    .about-page .about-brand,
+    .about-page .about-leadership,
+    .about-page .about-direction,
+    .about-page .about-journey{
+
+        padding:
+            78px 0;
+    }
+
+    .about-page .about-manifesto-grid{
+
+        grid-template-columns:1fr;
+
+        gap:26px;
+    }
+
+    .about-page .about-manifesto-content h2,
+    .about-page .about-section-heading h2,
+    .about-page .about-direction-heading h2,
+    .about-page .about-journey-heading h2{
+
+        font-size:
+            clamp(
+                2.35rem,
+                11vw,
+                4rem
+            );
+    }
+
+    .about-page .about-manifesto-content p{
+
+        font-size:14px;
+    }
+
+    .about-page .about-section-heading{
+
+        grid-template-columns:1fr;
+
+        gap:20px;
+
+        margin-bottom:34px;
+    }
+
+    .about-page .about-section-heading > p{
+        font-size:14px;
+    }
+
+    .about-page .about-who-card{
+
+        grid-template-columns:1fr;
+
+        gap:22px;
+
+        padding:28px 24px;
+    }
+
+    .about-page .about-ecosystem-map{
+
+        grid-template-columns:1fr;
+
+        gap:16px;
+
+        min-height:0;
+
+        padding:28px 22px;
+    }
+
+    .about-page .about-ecosystem-line{
+
+        width:100%;
+    }
+
+    .about-page .about-ecosystem-core{
+
+        width:86px;
+        height:86px;
+    }
+
+    .about-page .about-ecosystem-side-right{
+
+        text-align:left;
+        align-items:flex-start;
+    }
+
+    .about-page .about-brand-grid{
+        gap:42px;
+    }
+
+    .about-page .about-brand-visual{
+
+        min-height:360px;
+
+        padding:25px;
+    }
+
+    .about-page .about-brand-image{
+
+        height:310px;
+    }
+
+    .about-page .about-brand-image img{
+
+        max-height:290px;
+    }
+
+    .about-page .about-brand-content h2{
+
+        font-size:
+            clamp(
+                2.4rem,
+                11vw,
+                4rem
+            );
+    }
+
+    .about-page .about-brand-content > p{
+
+        font-size:14px;
+    }
+
+    .about-page .about-brand-list{
+
+        flex-direction:column;
+
+        gap:11px;
+    }
+
+    .about-page .about-brand-link{
+
+        font-size:9px;
+    }
+
+    .about-page .about-leadership-image{
+
+        min-height:420px;
+    }
+
+    .about-page .about-leadership-image img{
+
+        height:420px;
+    }
+
+    .about-page .about-leadership-content h2{
+
+        font-size:
+            clamp(
+                3rem,
+                14vw,
+                5rem
+            );
+    }
+
+    .about-page .about-leadership-content p{
+
+        font-size:14px;
+    }
+
+    .about-page .about-direction-grid article{
+
+        padding:25px;
+
+        min-height:0;
+    }
+
+    .about-page .about-direction-grid h3{
+        font-size:24px;
+    }
+
+    .about-page .about-journey-item{
+
+        grid-template-columns:
+            58px
+            1fr;
+
+        gap:18px;
+
+        min-height:0;
+
+        padding:22px 0;
+    }
+
+    .about-page .about-journey-number{
+
+        width:52px;
+        height:52px;
+    }
+
+    .about-page .about-journey-title h3{
+        font-size:21px;
+    }
+
+    .about-page .about-journey-text{
+
+        grid-column:2;
+
+        margin-top:-4px;
+    }
+
+    .about-page .about-journey-text p{
+        font-size:13px;
+    }
+
+    .about-page .about-future{
+        min-height:480px;
+    }
+
+    .about-page .about-future-content{
+
+        padding:
+            82px 0;
+    }
+
+    .about-page .about-future-content h2{
+
+        font-size:
+            clamp(
+                2.7rem,
+                12vw,
+                4.4rem
+            );
+    }
+
+    .about-page .about-future-content p{
+
+        font-size:10px;
+    }
+
+    .about-page .about-cta{
+
+        padding:
+            70px 0;
+    }
+
+    .about-page .about-cta-box{
+
+        grid-template-columns:1fr;
+
+        gap:24px;
+
+        padding:
+            34px 24px;
+    }
+
+    .about-page .about-cta-actions{
+
+        grid-column:auto;
+
+        flex-direction:column;
+    }
+
+    .about-page .about-cta-actions .about-button{
+
+        width:100%;
+    }
+
+    .about-page .about-cta-brand{
+
+        width:68px;
+        height:68px;
+
+        border-radius:18px;
+    }
+
+    .about-page .about-cta-brand img{
+
+        width:48px;
+        height:48px;
+    }
+
+}
+
+
+/* ==========================================================
+   23. VERY SMALL MOBILE
+   ========================================================== */
+
+@media (max-width:430px){
+
+    .about-page .about-hero-top span:last-child{
+        display:none;
+    }
+
+    .about-page .about-hero-top{
+        justify-content:flex-start;
+    }
+
+    .about-page .about-hero-copy h1{
+        font-size:
+            2.95rem;
+    }
+
+    .about-page .about-hero-bottom{
+        grid-template-columns:1fr auto;
+    }
+
+    .about-page .about-hero-bottom > :last-child{
+        display:none;
+    }
+
+    .about-page .about-hero-visual{
+        min-height:390px;
+    }
+
+    .about-page .about-hero-image-wrap,
+    .about-page .about-hero-image{
+        height:390px;
+        min-height:390px;
+    }
+
+    .about-page .about-hero-image img{
+        height:390px;
+    }
+
+    .about-page .about-hero-brand-card{
+        bottom:38px;
+    }
+
+    .about-page .about-brand-visual{
+        min-height:320px;
+    }
+
+    .about-page .about-brand-image{
+        height:270px;
+    }
+
+    .about-page .about-brand-image img{
+        max-height:250px;
+    }
+}
+
+
+/* ==========================================================
+   24. REDUÇÃO DE MOVIMENTO
+   ========================================================== */
+
+@media (prefers-reduced-motion:reduce){
+
+    .about-page *,
+    .about-page *::before,
+    .about-page *::after{
+
+        scroll-behavior:auto !important;
+
+        animation-duration:.01ms !important;
+        animation-iteration-count:1 !important;
+
+        transition-duration:.01ms !important;
+    }
+
+    .about-page .about-hero-image{
+        transform:none !important;
+    }
+
+}
+
+
+/* ==========================================================
+   25. FALLBACK / SAFE IMAGE BEHAVIOUR
+   ========================================================== */
+
+.about-page img{
+
+    background:transparent;
+}
+
+.about-page .about-hero-image img,
+.about-page .about-brand-image img,
+.about-page .about-leadership-image img{
+
+    opacity:1;
+    visibility:visible;
+}
+
+
+/* ==========================================================
+   26. PRINT
+   ========================================================== */
+
+@media print{
+
+    .about-page .about-hero,
+    .about-page .about-leadership,
+    .about-page .about-future{
+        color:#000;
+        background:#FFFFFF;
+    }
+
+    .about-page .about-hero-bg,
+    .about-page .about-future-mark,
+    .about-page .about-hero-caption{
+        display:none;
+    }
+
+}
+
 
