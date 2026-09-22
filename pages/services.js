@@ -21,7 +21,7 @@
    ----------------------------------------------------------
    Assets:
    ./assets/logo/logo.png
-   ./assets/logo/a21.png
+   ./assets/images/a21.png"
    ./assets/products/angel.png
    ./assets/products/ezeno.png
    ./assets/products/zenbru.png
@@ -225,7 +225,7 @@ function hero(){
             </span>
 
             <span class="services-eyebrow">
-                WELLNESS · EDUCATION · OPPORTUNITY
+                BEM-ESTAR · EDUCAÇÃO · OPORTUNIDADE
             </span>
 
             <h1 class="hero-title">
@@ -362,11 +362,11 @@ function hero(){
                     </strong>
 
                     <span>
-                        CREATING BRIDGES
+                        CRIANDO PONTES
                     </span>
 
                     <small>
-                        Wellness · Education · Opportunity
+                        Bem-Estar · Educação · Oportunidade
                     </small>
 
                 </div>
@@ -383,7 +383,7 @@ function hero(){
                     </span>
 
                     <strong>
-                        Wellness
+                        Bem-Estar
                     </strong>
 
                 </div>
@@ -641,7 +641,7 @@ function focusCardWellness(){
         </span>
 
         <strong>
-            WELLNESS
+            Bem-Estar
         </strong>
 
     </div>
@@ -698,7 +698,7 @@ function focusCardWellness(){
                 </span>
 
                 <span>
-                    Wellness
+                    Bem-Estar
                 </span>
 
                 <span>
@@ -756,7 +756,7 @@ function focusCardAcademy(){
         </span>
 
         <strong>
-            EVOLUTION
+            EVOLUÇÃO
         </strong>
 
     </div>
@@ -766,7 +766,7 @@ function focusCardAcademy(){
         <div class="services-focus-image academy-image">
 
             <img
-                src="./assets/logo/a21.png"
+                 src="./assets/images/a21.png"
                 alt="Academy Twenty One"
                 loading="lazy"
             >
@@ -883,7 +883,7 @@ function wellness(){
             >
 
                 <span class="label">
-                    Wellness Experience
+                    Experiência em Bem-Estar
                 </span>
 
                 <h2 class="section-title">
@@ -977,7 +977,7 @@ function wellness(){
                         >
 
                         <span>
-                            WELLNESS
+                            BEM-ESTAR 
                         </span>
 
                     </div>
@@ -1110,9 +1110,10 @@ function academy(){
                 </span>
 
                 <h2 class="section-title">
-
-                    Crescimento começa
-
+                
+                    <span>
+                       Crescimento começa
+                    </span>
                     <span>
                         com conhecimento.
                     </span>
@@ -1193,7 +1194,7 @@ function academy(){
                 >
 
                     <img
-                        src="./assets/logo/a21.png"
+                        src="./assets/images/a21.png"
                         alt="Academy Twenty One"
                         loading="lazy"
                     >
@@ -1206,7 +1207,7 @@ function academy(){
                         line-one
                     "
                 >
-                    LEARN
+                    APRENDER
                 </span>
 
                 <span
@@ -1215,7 +1216,7 @@ function academy(){
                         line-two
                     "
                 >
-                    LEAD
+                    LIDERAR
                 </span>
 
                 <span
@@ -1224,7 +1225,7 @@ function academy(){
                         line-three
                     "
                 >
-                    EVOLVE
+                    EVOLUIR
                 </span>
 
             </div>
@@ -1588,7 +1589,7 @@ function international(){
             >
 
                 <span class="label">
-                    Beyond Borders
+                    Para além de fronteiras
                 </span>
 
                 <h2 class="section-title">
@@ -1796,16 +1797,16 @@ function opportunity(){
 
             ${opportunityCard(
                 "BZZWORLD",
-                "Wellness",
+                "Bem-estar",
                 "Conheça o universo de produtos, a proposta de bem-estar e o modelo de distribuição.",
                 "./assets/products/alphameta.png"
             )}
 
             ${opportunityCard(
                 "ACADEMY 21",
-                "Evolution",
+                "Evolução",
                 "Conheça a dimensão de aprendizagem, liderança, desenvolvimento e empreendedorismo.",
-                "./assets/logo/a21.png"
+                "./assets/images/a21.png"
             )}
 
         </div>
