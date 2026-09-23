@@ -69,7 +69,7 @@ const SOCIALS = {
 const ASSETS = {
 
     hero:
-        "./assets/images/Contacto AD Lifestyle com Elegância.png"
+        "./assets/images/contact.png"
 
 };
 
