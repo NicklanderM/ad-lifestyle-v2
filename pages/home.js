@@ -958,7 +958,7 @@ function hero(){
 
 
                         <div class="home-hero-vertical-label">
-                            DISCOVER · EXPERIENCE · EVOLVE
+                            DESCOBRIR · EXPERIÊNCIA · ENVOLVER
                         </div>
 
 
