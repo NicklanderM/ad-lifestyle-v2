@@ -217,7 +217,7 @@ function renderHero(){
                                 </span>
 
                                 <small>
-                                    Wellness · Evolution
+                                    Bem-Estar · Evolução
                                 </small>
 
                             </div>
@@ -255,7 +255,7 @@ function renderHero(){
                     </span>
 
                     <span>
-                        WELLNESS / EVOLUTION
+                        BEM-ESTAR / EVOLUÇÃO
                     </span>
 
                 </div>
@@ -447,7 +447,7 @@ function renderEcosystemIntro(){
                         </small>
 
                         <strong>
-                            WELLNESS
+                            BEM-ESTAR
                         </strong>
 
                     </div>
@@ -473,7 +473,7 @@ function renderEcosystemIntro(){
                         </small>
 
                         <strong>
-                            EVOLUTION
+                            EVOLUÇÃO
                         </strong>
 
                     </div>
@@ -515,7 +515,7 @@ function renderBzzworld(){
                     </div>
 
                     <span class="about-brand-category">
-                        WELLNESS
+                        BEM-ESTAR
                     </span>
 
                 </div>
@@ -546,7 +546,7 @@ function renderBzzworld(){
 
                         <span>
                             ${icons.check}
-                            Wellness
+                            Bem-Estar
                         </span>
 
                         <span>
@@ -667,7 +667,7 @@ function renderAcademy21(){
                     </div>
 
                     <span class="about-brand-category">
-                        EVOLUTION
+                        EVOLUÇÃO
                     </span>
 
                 </div>
@@ -701,7 +701,7 @@ function renderLeadership(){
                     <div class="about-leadership-image-info">
 
                         <span>
-                            VISION
+                            VISÃO
                         </span>
 
                         <strong>
@@ -747,7 +747,7 @@ function renderLeadership(){
                     </p>
 
                     <div class="about-leadership-signature">
-                        VISION · PEOPLE · FUTURE
+                        VISÃO · PESSOAS · FUTURO
                     </div>
 
                 </div>
@@ -979,7 +979,7 @@ function renderFuture(){
                 <div class="about-future-content">
 
                     <div class="about-eyebrow">
-                        THE NEXT CHAPTER
+                        O PRÓXIMO CAPÍTULO
                     </div>
 
                     <h2>
