@@ -232,7 +232,7 @@ function overview(){
                 </h2>
 
                 <p class="lead">
-                    O Evador é apresentado como uma experiência de perfumaria
+                    O Evador é uma experiência de perfumaria
                     que procura ir além do aroma, valorizando frescura, conforto,
                     elegância, presença pessoal e uma identidade olfactiva própria.
                 </p>
@@ -276,9 +276,8 @@ function overview(){
                 </strong>
 
                 <p>
-                    As características apresentadas nesta página reproduzem
-                    a informação promocional disponibilizada para o produto
-                    e a sua linguagem de posicionamento.
+                    As características apresentadas nesta página, referem-se tal como a 
+                    documentação oficial do produto.
                 </p>
 
             </div>
@@ -437,7 +436,7 @@ function fragrance(){
                         ${detailCard(
                             "01 — FRAGRÂNCIA",
                             "Uma assinatura pessoal",
-                            "Segundo a apresentação do produto, a fragrância mistura-se subtilmente com o aroma natural de cada pessoa, contribuindo para uma experiência olfactiva individualizada.",
+                            "A fragrância mistura-se subtilmente com o aroma natural de cada pessoa, contribuindo para uma experiência olfactiva individualizada.",
                             [
                                 "Experiência olfactiva personalizada",
                                 "Interacção com o aroma natural",
@@ -459,7 +458,7 @@ function fragrance(){
                         ${detailCard(
                             "03 — FRESCURA",
                             "Conforto prolongado",
-                            "O material promocional destaca frescura e duração do aroma como elementos da experiência Evador.",
+                            "Frescura e duração do aroma como elementos da experiência Evador.",
                             [
                                 "Sensação de frescura",
                                 "Aroma duradouro",
@@ -470,7 +469,7 @@ function fragrance(){
                         ${detailCard(
                             "04 — IDENTIDADE",
                             "O perfume de cada pessoa",
-                            "A proposta apresentada é que a mesma fragrância possa adquirir uma expressão diferente conforme o aroma natural de quem a utiliza.",
+                            "A fragrância pode adquirir uma expressão diferente conforme o aroma natural de quem a utiliza.",
                             [
                                 "Expressão individual",
                                 "Presença pessoal",
@@ -1323,7 +1322,7 @@ function faq(){
 
         [
             "A fragrância é igual em todas as pessoas?",
-            "Segundo o material promocional fornecido, a fragrância mistura-se com o aroma natural de cada pessoa, podendo assumir uma expressão diferente em diferentes utilizadores."
+            "Não. A fragrância mistura-se com o aroma natural de cada pessoa, podendo assumir uma expressão diferente em diferentes utilizadores."
         ],
 
         [
