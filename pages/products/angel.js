@@ -372,21 +372,6 @@ function overview(){
 
             </div>
 
-
-            <div class="angel-overview-note reveal">
-
-                <strong>
-                    Cuidado íntimo com tecnologia integrada.
-                </strong>
-
-                <p>
-                    As características apresentadas nesta página
-                    reproduzem a informação técnica
-                    respectivamente deste produto.
-                </p>
-
-            </div>
-
         </div>
 
     </section>
