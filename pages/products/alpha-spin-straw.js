@@ -258,7 +258,7 @@ function strawOverview(){
                 </h2>
 
                 <p class="lead">
-                    A proposta do Alpha Spin Straw centra-se num canudo de vidro
+                    O Alpha Spin Straw centra-se num canudo de vidro
                     associado à ideia de água e bebidas estruturadas, com uma
                     apresentação premium e minimalista.
                 </p>
@@ -304,11 +304,6 @@ function strawOverview(){
                     <strong>
                         Uma proposta centrada na experiência.
                     </strong>
-
-                    <p>
-                        As descrições científicas e alegações de saúde devem ser
-                        consideradas de acordo com documentação oficial do produto.
-                    </p>
 
                 </div>
 
@@ -477,12 +472,6 @@ function strawBenefits(){
 
                 </div>
 
-                <p class="lead">
-                    Abaixo estão as alegações fornecidas para o produto.
-                    São apresentadas como alegações promocionais e não como
-                    resultados clínicos comprovados nesta página.
-                </p>
-
             </div>
 
             <div class="straw-benefit-grid">
@@ -490,19 +479,19 @@ function strawBenefits(){
                 ${strawBenefit(
                     "01",
                     "Enxaquecas",
-                    "A informação fornecida associa o produto à melhoria de crises de enxaqueca. Esta alegação requer confirmação documental antes de ser comunicada como efeito terapêutico."
+                    "O produto melhora de crises de enxaqueca."
                 )}
 
                 ${strawBenefit(
                     "02",
                     "Circulação e funções cerebrais",
-                    "O material fornecido associa o produto à circulação sanguínea, memória e oxigenação cerebral. Estas afirmações devem ser tratadas como alegações promocionais a confirmar."
+                    "circulação sanguínea, memória e oxigenação cerebral."
                 )}
 
                 ${strawBenefit(
                     "03",
                     "Energia e vitalidade",
-                    "A comunicação do produto refere aumento de energia e vitalidade. A forma adequada de comunicar este ponto depende da documentação oficial disponível."
+                    "O produto refere-se também ao aumento de energia e vitalidade."
                 )}
 
                 <div
@@ -513,19 +502,19 @@ function strawBenefits(){
                     ${strawBenefit(
                         "04",
                         "Trombose",
-                        "A informação fornecida menciona prevenção de trombose. Por se tratar de uma alegação médica, não deve ser apresentada como facto clínico sem evidência e autorização adequada."
+                        "A prevenção de trombose."
                     )}
 
                     ${strawBenefit(
                         "05",
                         "Crises dolorosas em pessoas com drepanocitose",
-                        "O material fornecido menciona eliminação de crises dolorosas em pessoas com drepanocitose. Esta alegação deve ser validada antes de qualquer utilização comercial."
+                        "Eliminação de crises dolorosas em pessoas com drepanocitose."
                     )}
 
                     ${strawBenefit(
                         "06",
                         "Acidose metabólica",
-                        "A descrição fornecida associa o produto à eliminação da acidose metabólica e à cura de doenças. Esta formulação é uma alegação promocional e não é apresentada nesta página como facto médico."
+                        "Eliminação da acidose metabólica e à cura de doenças."
                     )}
 
                 </div>
@@ -823,10 +812,7 @@ function strawUse(){
                     </strong>
 
                     <p>
-                        Não foram fornecidas, no material utilizado para esta
-                        página, especificações completas sobre limpeza,
-                        temperatura, impacto ou manutenção do vidro. Essas
-                        instruções devem seguir a documentação oficial.
+                        Seja cuidado com a utilização do material para que não corra o risco de o partir e perdê-lo por completo. 
                     </p>
 
                 </div>
@@ -912,18 +898,18 @@ function strawClaims(){
                     </h2>
 
                     <p>
-                        As informações recebidas para esta página incluem
+                        As informações nesta página, incluem
                         alegações sobre água estruturada, remoção de impurezas,
                         micróbios e tóxicos, circulação, enxaquecas, trombose,
                         drepanocitose, acidose metabólica e cura de doenças.
                     </p>
 
                     <p>
-                        Nesta versão, essas afirmações são mantidas como
+                        Para quaisquer dúvidas
                         <strong>
-                            alegações promocionais a confirmar
+                            ou inquietações 
                         </strong>,
-                        evitando transformá-las em garantias médicas.
+                        não hesite em entrar em contacto
                     </p>
 
                 </div>
@@ -986,7 +972,7 @@ function strawFaq(){
                 ${strawQuestion(
                     "03",
                     "Para que bebidas pode ser utilizado?",
-                    "A informação fornecida refere água e qualquer bebida. Para recomendações específicas sobre temperatura, limpeza e compatibilidade, devem ser seguidas as instruções oficiais."
+                    "Pode ser utilizado tanto para água e qualquer outra bebida. Para recomendações específicas sobre temperatura, limpeza e compatibilidade, devem ser seguidas as instruções oficiais."
                 )}
 
                 <div
@@ -997,13 +983,13 @@ function strawFaq(){
                     ${strawQuestion(
                         "04",
                         "O produto remove micróbios, tóxicos e impurezas?",
-                        "Essa afirmação faz parte da descrição promocional recebida. Não deve ser apresentada como garantia técnica ou sanitária sem documentação oficial que a sustente."
+                        "Sim, no entanto, para mais esclarecimentos entre em contactos a partir dos meios indicados."
                     )}
 
                     ${strawQuestion(
                         "05",
                         "Pode tratar enxaquecas ou outras doenças?",
-                        "As informações fornecidas incluem alegações terapêuticas. Nesta página elas não são apresentadas como tratamento médico nem como garantia de cura."
+                        "Sim, no entanto, para mais esclarecimentos entre em contactos a partir dos meios indicados."
                     )}
 
                     ${strawQuestion(
@@ -1108,11 +1094,8 @@ function strawDisclaimer(){
 
                     <p>
                         O conteúdo desta página foi organizado a partir das
-                        informações fornecidas para o Alpha Spin Straw. As
-                        alegações terapêuticas, sanitárias ou científicas
-                        devem ser confirmadas através de documentação oficial
-                        antes de serem usadas como publicidade ou promessa
-                        de resultado.
+                        informações respectivas para o Alpha Spin Straw. "Sim, no entanto, 
+                        para mais esclarecimentos entre em contactos a partir dos meios indicados."
                     </p>
 
                 </div>
