@@ -479,13 +479,13 @@ function strawBenefits(){
                 ${strawBenefit(
                     "01",
                     "Enxaquecas",
-                    "O produto melhora de crises de enxaqueca."
+                    "O produto dá um tratamento diferente e melhor às crises de enxaqueca."
                 )}
 
                 ${strawBenefit(
                     "02",
                     "Circulação e funções cerebrais",
-                    "circulação sanguínea, memória e oxigenação cerebral."
+                    "Circulação sanguínea, memória e oxigenação cerebral."
                 )}
 
                 ${strawBenefit(
@@ -812,7 +812,7 @@ function strawUse(){
                     </strong>
 
                     <p>
-                        Seja cuidado com a utilização do material para que não corra o risco de o partir e perdê-lo por completo. 
+                        Seja cuidadoso com a utilização do material para que não corra o risco de o parti-lo e, consequentemente perdê-lo por completo. 
                     </p>
 
                 </div>
