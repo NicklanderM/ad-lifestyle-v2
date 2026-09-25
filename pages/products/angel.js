@@ -334,7 +334,7 @@ function overview(){
 
                 <p class="lead">
 
-                    Angel Moon é apresentado como uma proposta
+                    Apresentado como uma proposta
                     de cuidado íntimo que combina conforto,
                     protecção, absorção, respirabilidade e tecnologia
                     numa construção pensada para utilização diária.
@@ -381,8 +381,8 @@ function overview(){
 
                 <p>
                     As características apresentadas nesta página
-                    reproduzem a informação promocional e técnica
-                    disponibilizada para o produto.
+                    reproduzem a informação técnica
+                    respectivamente deste produto.
                 </p>
 
             </div>
@@ -625,11 +625,9 @@ function technology(){
                                 </strong>
 
                                 <p>
-                                    A comunicação promocional também menciona
+                                    Tais como:
                                     biomagnetismo, infravermelho longínquo,
                                     propriedades antibacterianas e desodorizantes.
-                                    Estas alegações devem ser confirmadas através
-                                    da documentação oficial.
                                 </p>
 
                             </div>
@@ -901,7 +899,6 @@ function benefits(){
                 </h3>
 
                 <p>
-                    A comunicação promocional fornecida menciona
                     Negative Ion Core, Nano Silver, biomagnetismo,
                     infravermelho longínquo e propriedades
                     antibacterianas e desodorizantes.
@@ -1348,7 +1345,7 @@ function experience(){
                 ${experienceCard(
                     "≈",
                     "Respirabilidade",
-                    "Base apresentada como permeável ao ar."
+                    "Base permeável ao ar."
                 )}
 
                 ${experienceCard(
@@ -1521,8 +1518,7 @@ function certifications(){
                 </h2>
 
                 <p class="lead">
-                    Área preparada para receber as imagens das
-                    certificações, relatórios e documentos oficiais.
+               
                 </p>
 
             </div>
@@ -1619,7 +1615,7 @@ function faq(){
 
         [
             "Quais são os formatos disponíveis?",
-            "A linha apresentada nesta página inclui Angel Moon Dia, Angel Moon Noite e Angel Moon Panty Liner."
+            "Angel Moon Dia, Angel Moon Noite e Angel Moon Panty Liner."
         ],
 
         [
@@ -1629,7 +1625,7 @@ function faq(){
 
         [
             "O que significa Negative Ion Core?",
-            "É uma designação tecnológica apresentada na comunicação do produto. As características associadas devem ser confirmadas através da documentação oficial."
+            "É uma designação tecnológica apresentada que faz parte da composição do produto."
         ],
 
         [
@@ -1644,12 +1640,12 @@ function faq(){
 
         [
             "Que outras tecnologias são mencionadas?",
-            "A comunicação promocional fornecida menciona ainda biomagnetismo, infravermelho longínquo, propriedades antibacterianas e desodorizantes."
+            "Biomagnetismo, infravermelho longínquo, propriedades antibacterianas e desodorizantes."
         ],
 
         [
             "Estas propriedades estão oficialmente certificadas?",
-            "A confirmação deve ser feita através dos documentos, certificações e informações oficiais correspondentes."
+            "Sim, estão disponíveis as devidas certificações e informações oficiais correspondentes, entretanto para quaisquer dúvidas não hesite em contactar-nos a partir do meios indicados."
         ],
 
         [
@@ -1800,14 +1796,11 @@ function information(){
                     <p>
                         As informações desta página foram organizadas
                         a partir do material disponibilizado para o Angel Moon.
-                        Características específicas, composição, tecnologias
-                        e alegações associadas devem ser confirmadas através
-                        da documentação oficial.
                     </p>
 
                     <p>
-                        As certificações e documentos oficiais serão apresentados
-                        na área própria assim que as imagens finais forem integradas.
+                        As certificações e documentos oficiais são apresentados
+                        na área respectiva.
                     </p>
 
                 </div>
