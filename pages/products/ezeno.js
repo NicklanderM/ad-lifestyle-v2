@@ -115,8 +115,8 @@ function hero(){
 
 
                 <p class="ezeno-hero-description">
-                    Dentífrico de inspiração herbal, apresentado
-                    como uma solução de cuidado oral orientada
+                    Dentífrico de inspiração herbal, 
+                    é uma solução de cuidado oral orientada
                     para limpeza, frescura, higiene diária
                     e cuidado das gengivas.
                 </p>
@@ -257,19 +257,19 @@ function overview(){
                 ${overviewCard(
                     "01",
                     "Limpeza profunda",
-                    "A comunicação destaca limpeza da superfície dentária, resíduos, placa e manchas."
+                    "Em destaque a limpeza da superfície dentária, resíduos, placa e manchas."
                 )}
 
                 ${overviewCard(
                     "02",
                     "Ginseng",
-                    "O extracto de Panax Ginseng é apresentado como um dos componentes centrais."
+                    "O extracto de Panax Ginseng é um dos componentes centrais."
                 )}
 
                 ${overviewCard(
                     "03",
                     "Frescura",
-                    "O produto é apresentado com uma proposta de hálito fresco e experiência refrescante."
+                    "Uma proposta de hálito fresco e experiência refrescante."
                 )}
 
                 ${overviewCard(
@@ -290,8 +290,8 @@ function overview(){
 
                 <p>
                     As características, percentagens, tempos e outras especificações
-                    desta página reproduzem o enquadramento do material promocional
-                    fornecido e devem ser confirmados na documentação oficial.
+                    desta página reproduzem o enquadramento da documentação 
+                    oficial do produto em questão.
                 </p>
 
             </div>
@@ -391,7 +391,7 @@ function oralCare(){
                 ${careCard(
                     "01",
                     "Limpeza Profunda",
-                    "A comunicação destaca limpeza da superfície dentária e remoção de resíduos.",
+                    "Limpeza da superfície dentária e remoção de resíduos.",
                     "🦷"
                 )}
 
@@ -412,7 +412,7 @@ function oralCare(){
                 ${careCard(
                     "04",
                     "Hálito Fresco",
-                    "O produto é apresentado com uma proposta de frescura oral prolongada.",
+                    "O produto é uma proposta de frescura oral prolongada.",
                     "✦"
                 )}
 
@@ -452,7 +452,7 @@ function oralCare(){
                         ${detailCard(
                             "01 — GENGIVAS",
                             "Cuidado periodontal",
-                            "O material promocional associa o produto ao cuidado das gengivas, periodonto e higiene da cavidade oral.",
+                            "O cuidado das gengivas, periodonto e higiene da cavidade oral.",
                             [
                                 "Cuidado das gengivas",
                                 "Higiene periodontal",
@@ -463,7 +463,7 @@ function oralCare(){
                         ${detailCard(
                             "02 — FRESCURA",
                             "Hálito mais fresco",
-                            "A apresentação destaca o óleo da árvore do chá e uma proposta de frescura prolongada.",
+                            "Proporcionado pelo óleo da árvore do chá e uma proposta de frescura prolongada.",
                             [
                                 "Sensação refrescante",
                                 "Cuidado do hálito",
@@ -474,7 +474,7 @@ function oralCare(){
                         ${detailCard(
                             "03 — LIMPEZA",
                             "Manchas e placa",
-                            "O material descreve uma acção de limpeza associada a manchas persistentes e resíduos da superfície dentária.",
+                            "Uma acção de limpeza associada a manchas persistentes e resíduos da superfície dentária.",
                             [
                                 "Limpeza da superfície dentária",
                                 "Remoção de manchas",
@@ -485,7 +485,7 @@ function oralCare(){
                         ${detailCard(
                             "04 — FORMULAÇÃO",
                             "Fórmula apresentada",
-                            "A documentação fornecida destaca extracto de Panax Ginseng, óleo da árvore do chá e sílica.",
+                            "Destaca extracto de Panax Ginseng, óleo da árvore do chá e sílica.",
                             [
                                 "Panax Ginseng",
                                 "Óleo da árvore do chá",
@@ -493,17 +493,6 @@ function oralCare(){
                             ]
                         )}
 
-                        ${detailCard(
-                            "INFORMAÇÃO",
-                            "Comunicação responsável",
-                            "O material promocional contém afirmações sobre protecção contra bactérias e cáries, melhoria do periodonto, reparação das gengivas e duração da frescura.",
-                            [
-                                "Conteúdo promocional",
-                                "Não constitui garantia clínica",
-                                "Confirmar documentação oficial"
-                            ],
-                            true
-                        )}
 
                     </div>
 
@@ -673,7 +662,7 @@ function ingredients(){
 
 
                 <p>
-                    A apresentação disponibilizada destaca ingredientes
+                    A apresentação destaca ingredientes
                     específicos associados à identidade herbal e ao
                     conceito de cuidado oral.
                 </p>
@@ -687,28 +676,28 @@ function ingredients(){
                     "01",
                     "G",
                     "Panax Ginseng",
-                    "O extracto de Panax Ginseng é apresentado como um dos principais componentes do dentífrico EZENO."
+                    "O extracto de Panax Ginseng é um dos principais componentes do dentífrico EZENO."
                 )}
 
                 ${ingredientCard(
                     "02",
                     "T",
                     "Óleo da Árvore do Chá",
-                    "Destacado no material promocional em associação com o cuidado do hálito e partículas odoríferas."
+                    "Associado ao cuidado do hálito e partículas odoríferas."
                 )}
 
                 ${ingredientCard(
                     "03",
                     "S",
                     "Sílica",
-                    "Apresentada no material como elemento associado à limpeza das manchas persistentes da superfície dentária."
+                    "Elemento associado à limpeza das manchas persistentes da superfície dentária."
                 )}
 
                 ${ingredientCard(
                     "04",
                     "30",
                     "Saponinas & Ginsenósidos",
-                    "A apresentação destaca cerca de 30 tipos de saponinas e ginsenósidos no extracto de ginseng."
+                    "Cerca de 30 tipos de saponinas e ginsenósidos no extracto de ginseng."
                 )}
 
             </div>
@@ -861,8 +850,8 @@ function benefits(){
 
 
                     <p class="lead">
-                        O material de apresentação do EZENO posiciona
-                        o produto como uma solução de higiene oral
+                        O EZENO posiciona-se como
+                        o produto solução de higiene oral
                         de utilização diária.
                     </p>
 
@@ -929,19 +918,19 @@ function benefits(){
                                 ${detailCard(
                                     "LIMPEZA",
                                     "Superfície dentária",
-                                    "O material apresenta uma proposta de limpeza relacionada com resíduos, manchas e placa dentária."
+                                    "Uma proposta de limpeza relacionada com resíduos, manchas e placa dentária."
                                 )}
 
                                 ${detailCard(
                                     "GENGIVAS",
                                     "Cuidado periodontal",
-                                    "A apresentação relaciona o produto com uma rotina de higiene e cuidado das gengivas."
+                                    "Com uma rotina de higiene e cuidado das gengivas."
                                 )}
 
                                 ${detailCard(
                                     "FRESCURA",
                                     "Experiência refrescante",
-                                    "O óleo da árvore do chá aparece no material promocional associado à experiência de frescura oral.",
+                                    "O óleo da árvore do chá é directamente associado à experiência de frescura oral.",
                                     [],
                                     true
                                 )}
@@ -1129,7 +1118,7 @@ function productDetail(){
                             <div class="ezeno-detail-list">
 
                                 ${detailItem(
-                                    "Produto apresentado para uma rotina diária de higiene oral."
+                                    "Apresentado para uma rotina diária de higiene oral."
                                 )}
 
                                 ${detailItem(
@@ -1235,21 +1224,21 @@ function technology(){
                 ${technologyCard(
                     "01",
                     "Cuidado periodontal",
-                    "O material promocional associa o produto ao cuidado das gengivas e do periodonto.",
+                    "Associado ao cuidado das gengivas e do periodonto.",
                     "🦷"
                 )}
 
                 ${technologyCard(
                     "02",
                     "Protecção",
-                    "A apresentação refere uma proposta de protecção prolongada contra cáries e bactérias.",
+                    "Uma proposta de protecção prolongada contra cáries e bactérias.",
                     "◉"
                 )}
 
                 ${technologyCard(
                     "03",
                     "Frescura",
-                    "A comunicação destaca uma experiência de hálito fresco e duradouro.",
+                    "Uma experiência de hálito fresco e duradouro.",
                     "✦"
                 )}
 
@@ -1263,14 +1252,14 @@ function technology(){
                 ${technologyCard(
                     "05",
                     "Espuma",
-                    "A apresentação destaca uma textura e espuma de alta densidade.",
+                    "Uma textura e espuma de alta densidade.",
                     "◌"
                 )}
 
                 ${technologyCard(
                     "06",
                     "Experiência Premium",
-                    "Uma proposta de higiene oral apresentada com posicionamento premium.",
+                    "Uma proposta de higiene oral com posicionamento premium.",
                     "◇"
                 )}
 
@@ -1293,9 +1282,7 @@ function technology(){
 
                     <p>
                         Percentagem apresentada no material relativamente
-                        à protecção contra bactérias. Este valor deve ser
-                        entendido como alegação do material promocional
-                        e confirmado na documentação oficial.
+                        à protecção contra bactérias.
                     </p>
 
                 </div>
@@ -1553,7 +1540,7 @@ function howToUse(){
 
 
                 <p>
-                    O material do produto recomenda uma escovagem
+                    É recomendada uma escovagem
                     cuidadosa pelo menos duas vezes por dia.
                 </p>
 
@@ -1806,42 +1793,42 @@ function faq(){
 
         [
             "O que é o EZENO?",
-            "O EZENO é apresentado como um dentífrico de base herbal, com destaque para o extracto de Panax Ginseng e uma proposta de higiene oral diária."
+            "O EZENO é um dentífrico de base herbal, com destaque para o extracto de Panax Ginseng e uma proposta de higiene oral diária."
         ],
 
         [
             "Qual é o principal ingrediente?",
-            "O material fornecido destaca o extracto de Panax Ginseng, associado a cerca de 30 tipos de saponinas e ginsenósidos na apresentação comercial."
+            "O extracto de Panax Ginseng, associado a cerca de 30 tipos de saponinas e ginsenósidos na apresentação comercial."
         ],
 
         [
             "O EZENO contém flúor?",
-            "O material promocional fornecido apresenta o EZENO como uma fórmula sem flúor. A composição oficial deve ser sempre confirmada no rótulo e documentação do produto."
+            "O EZENO tem em sua composição uma fórmula sem flúor."
         ],
 
         [
             "O EZENO contém triclosano?",
-            "A apresentação do produto indica “sem triclosano”. A composição oficial deve ser confirmada na embalagem correspondente."
+            "Não. “sem triclosano."
         ],
 
         [
             "O EZENO ajuda a manter o hálito fresco?",
-            "Sim, essa é uma das características destacadas no material promocional, incluindo referência ao óleo da árvore do chá e a uma frescura prolongada."
+            "Sim, essa é uma das características destacadas, incluindo referência ao óleo da árvore do chá e a uma frescura prolongada."
         ],
 
         [
             "Com que frequência devo escovar?",
-            "O material fornecido recomenda escovar cuidadosamente pelo menos duas vezes por dia."
+            "Pelo menos duas vezes por dia."
         ],
 
         [
             "O EZENO protege contra cáries e bactérias?",
-            "A apresentação promocional afirma protecção contra cáries e bactérias. Esses números e efeitos devem ser entendidos como alegações da apresentação do produto e não como garantia clínica."
+            "Sim. A protecção contra cáries e bactérias."
         ],
 
         [
             "O EZENO repara as gengivas?",
-            "O material promocional apresenta uma afirmação de reparação das gengivas em determinado período. Essa afirmação não deve ser interpretada como garantia de tratamento ou resultado para uma condição periodontal."
+            "Sim,garante a reparação das gengivas em determinado período, entretanto, não deve ser interpretada como garantia de tratamento ou resultado para uma condição periodontal."
         ],
 
         [
