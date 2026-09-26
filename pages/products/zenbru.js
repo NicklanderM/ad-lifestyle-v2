@@ -292,13 +292,6 @@ function overview(){
 
                 </div>
 
-
-                <p>
-                    A apresentação do produto destaca café Robusta,
-                    ginseng coreano e gengibre como os principais
-                    elementos da composição.
-                </p>
-
             </div>
 
 
@@ -314,14 +307,14 @@ function overview(){
                 ${overviewCard(
                     "02",
                     "Ginseng Coreano",
-                    "Extracto de ginseng destacado na comunicação do produto.",
+                    "Extracto de ginseng.",
                     "✦"
                 )}
 
                 ${overviewCard(
                     "03",
                     "Gengibre",
-                    "Ingrediente vegetal que complementa o perfil apresentado.",
+                    "Ingrediente vegetal que complementa o perfil do produto.",
                     "⌁"
                 )}
 
@@ -538,13 +531,8 @@ function composition(){
                         ${detailCard(
                             "INFORMAÇÃO ADICIONAL",
                             "Características comunicadas",
-                            "O material fornecido também apresenta referências a ácido clorogénico, actividade antioxidante e outras propriedades associadas aos ingredientes.",
-                            [
-                                "Informação proveniente do material fornecido",
-                                "Alegações promocionais mantidas como alegações",
-                                "Sem garantia clínica",
-                                "Confirmação documental recomendada"
-                            ]
+                            "Referências a ácido clorogénico, actividade antioxidante e outras propriedades associadas aos ingredientes.",
+                            
                         )}
 
                     </div>
@@ -712,36 +700,35 @@ function benefits(){
 
                                 ${detailCard(
                                     "GINSENG",
-                                    "Características comunicadas",
-                                    "O material apresenta referências a protecção celular, actividade antioxidante, regeneração e envelhecimento.",
+                                    "Características",
+                                    " Protecção celular, actividade antioxidante, regeneração e envelhecimento.",
                                     [
-                                        "Protecção celular — alegação apresentada",
-                                        "Actividade antioxidante — alegação apresentada",
-                                        "Regeneração celular — alegação apresentada",
-                                        "Envelhecimento — referência promocional"
+                                        "Protecção celular",
+                                        "Actividade antioxidante",
+                                        "Regeneração celular",
+                                        "Envelhecimento"
                                     ]
                                 )}
 
                                 ${detailCard(
                                     "GENGIBRE",
                                     "Compostos destacados",
-                                    "O material destaca gingerol, curcumina e referências funcionais associadas ao ingrediente.",
+                                    "Gingerol, curcumina e referências funcionais associadas ao ingrediente.",
                                     [
                                         "Gingerol",
                                         "Curcumina",
-                                        "Actividade antioxidante — alegação apresentada",
-                                        "Actividade antibacteriana — alegação apresentada"
+                                        "Actividade antioxidante",
+                                        "Actividade antibacteriana"
                                     ]
                                 )}
 
                                 ${detailCard(
                                     "ÍNDICE GLICÉMICO",
-                                    "Característica comunicada",
-                                    "Uma das apresentações fornecidas descreve o Zenbru como produto de baixo índice glicémico e faz referência a certificação por Temasek Polytechnic.",
+                                    "Característica",
+                                    "O Zenbru é um produto de baixo índice glicémico e, tem por sua vez, a certificação por Temasek Polytechnic.",
                                     [
-                                        "Baixo índice glicémico — conforme material fornecido",
+                                        "Baixo índice glicémico",
                                         "Referência a Temasek Polytechnic",
-                                        "Informação a confirmar na documentação oficial"
                                     ]
                                 )}
 
@@ -842,7 +829,7 @@ function productDetail(){
 
 
                     <p class="lead">
-                        O Zenbru é apresentado como um café funcional
+                        O Zenbru é um café funcional
                         premium que reúne uma base de café Robusta
                         com ginseng coreano e gengibre.
                     </p>
@@ -989,13 +976,13 @@ function ingredients(){
                 ${originCard(
                     "BR",
                     "Brasil",
-                    "A apresentação refere altitudes aproximadas entre 100 e 800 metros e solos argilosos com forte retenção de água."
+                    "Em altitudes aproximadas entre 100 e 800 metros e solos argilosos com forte retenção de água."
                 )}
 
                 ${originCard(
                     "VN",
                     "Vietname",
-                    "O material refere altitudes aproximadas entre 600 e 1000 metros e solos vulcânicos ricos em minerais."
+                    "Em altitudes aproximadas entre 600 e 1000 metros e solos vulcânicos ricos em minerais."
                 )}
 
                 ${originCard(
@@ -1198,11 +1185,6 @@ function experience(){
 
                 </div>
 
-                <p>
-                    Aqui ficam visíveis apenas os eixos principais da
-                    experiência comunicada para o produto.
-                </p>
-
             </div>
 
 
@@ -1277,22 +1259,22 @@ function faq(){
 
         [
             "O que é o Zenbru?",
-            "O Zenbru é apresentado como um café funcional premium que combina café Robusta, ginseng coreano e gengibre."
+            "O Zenbru é um café funcional premium que combina café Robusta, ginseng coreano e gengibre."
         ],
 
         [
             "Quais são os principais ingredientes?",
-            "A apresentação fornecida identifica café Robusta, extracto de ginseng coreano e gengibre."
+            "Café Robusta, extracto de ginseng coreano e gengibre."
         ],
 
         [
             "De onde vem o café Robusta?",
-            "O material disponibilizado faz referência ao Brasil e ao Vietname como origens dos grãos Robusta apresentados."
+            "Propriamente do Brasil, e do Vietname como origens dos grãos Robusta apresentados."
         ],
 
         [
             "O Zenbru contém ginseng?",
-            "Sim. A documentação fornecida destaca extracto de ginseng coreano e refere um teor de ginsenosidos igual ou superior a 7%."
+            "Sim. Tem extracto de ginseng coreano e um teor de ginsenosidos igual ou superior a 7%."
         ],
 
         [
@@ -1302,7 +1284,7 @@ function faq(){
 
         [
             "O Zenbru é apresentado como tendo baixo índice glicémico?",
-            "Sim. Uma das apresentações fornecidas indica baixo índice glicémico e faz referência a certificação por Temasek Polytechnic. Esta referência deve ser confirmada na documentação oficial."
+            "Sim. Indica baixo índice glicémico e faz referência a certificação por Temasek Polytechnic."
         ],
 
         [
@@ -1317,7 +1299,7 @@ function faq(){
 
         [
             "O Zenbru garante benefícios médicos?",
-            "Não. As propriedades e benefícios referidos no material promocional devem ser entendidos como informações de apresentação do produto e não como garantias clínicas."
+            "Sim, entretanto, não substitui diagnóstico, tratamento ou aconselhamento de um profissional de saúde, para mais esclarecimentos deve entrar em contacto a partir dos meios indicados."
         ],
 
         [
