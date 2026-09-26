@@ -230,7 +230,7 @@ function overview(){
                 </h2>
 
                 <p class="lead">
-                    O MinoSeed é apresentado como um produto de cuidado pessoal
+                    O MinoSeed é um produto de cuidado pessoal
                     com foco em limpeza da pele, cuidado diário e ingredientes
                     de origem vegetal, destacando especialmente as raízes de ginseng.
                 </p>
@@ -243,13 +243,13 @@ function overview(){
                 ${overviewCard(
                     "01",
                     "Limpeza profunda",
-                    "A apresentação promocional destaca a limpeza dos poros, resíduos e excesso de oleosidade."
+                    "A limpeza dos poros, resíduos e excesso de oleosidade."
                 )}
 
                 ${overviewCard(
                     "02",
                     "Origem vegetal",
-                    "O produto é apresentado dentro de uma proposta baseada em ingredientes de origem vegetal."
+                    "O produto está dentro de uma proposta baseada em ingredientes de origem vegetal."
                 )}
 
                 ${overviewCard(
@@ -275,8 +275,7 @@ function overview(){
 
                 <p>
                     As características e benefícios apresentados nesta página
-                    reproduzem a informação disponibilizada para o produto.
-                    Alegações específicas devem ser confirmadas na documentação oficial.
+                    reproduzem a informação exlusivamente do produto conforme a documentação oficial.
                 </p>
 
             </div>
@@ -374,7 +373,7 @@ function composition(){
                     "01",
                     "C",
                     "Óleo de Coco",
-                    "Ingrediente vegetal apresentado como parte da proposta suave e hidratante do produto."
+                    "Ingrediente vegetal, como parte da proposta suave e hidratante do produto."
                 )}
 
                 ${compositionCard(
@@ -395,7 +394,7 @@ function composition(){
                     "04",
                     "S",
                     "Sophora flavescens",
-                    "Componente vegetal incluído na lista de componentes apresentada no material promocional."
+                    "Componente vegetal."
                 )}
 
             </div>
@@ -434,7 +433,7 @@ function composition(){
                         ${detailCard(
                             "01 — LIMPEZA",
                             "Limpeza dos poros",
-                            "A apresentação fornecida descreve uma espuma molecular associada a uma penetração mais fácil nos poros e à remoção de resíduos.",
+                            "Uma espuma molecular associada a uma penetração mais fácil nos poros e à remoção de resíduos.",
                             [
                                 "Limpeza profunda",
                                 "Remoção de sujidade",
@@ -445,7 +444,7 @@ function composition(){
                         ${detailCard(
                             "02 — GINSENG",
                             "Raiz de ginseng",
-                            "O material do produto destaca as raízes de ginseng como um dos elementos centrais da proposta MinoSeed.",
+                            "As raízes de ginseng como um dos elementos centrais da proposta MinoSeed.",
                             [
                                 "Ingrediente de origem vegetal",
                                 "Elemento central da fórmula apresentada",
@@ -456,7 +455,7 @@ function composition(){
                         ${detailCard(
                             "03 — CONFORTO",
                             "Suavidade e hidratação",
-                            "A apresentação comercial descreve o MinoSeed como suave, hidratante e respeitador da pele.",
+                            "Suave, hidratante e respeitador da pele.",
                             [
                                 "Cuidado diário",
                                 "Sensação de suavidade",
@@ -467,24 +466,12 @@ function composition(){
                         ${detailCard(
                             "04 — PUREZA",
                             "Cuidado natural",
-                            "O material apresenta o produto dentro de uma abordagem de cuidado pessoal baseada em ingredientes de origem vegetal.",
+                            "Uma abordagem de cuidado pessoal baseada em ingredientes de origem vegetal.",
                             [
                                 "Base vegetal",
                                 "Foco no cuidado da pele",
                                 "Identidade Beauty & Wellness"
                             ]
-                        )}
-
-                        ${detailCard(
-                            "INFORMAÇÃO",
-                            "Comunicação responsável",
-                            "Algumas peças promocionais associam ingredientes do MinoSeed a propriedades antibacterianas, anti-inflamatórias, antioxidantes ou de rejuvenescimento. Essas descrições são apresentadas como conteúdo promocional e não como garantias clínicas.",
-                            [
-                                "Conteúdo promocional",
-                                "Não constitui garantia de tratamento",
-                                "Confirmar documentação oficial"
-                            ],
-                            true
                         )}
 
                     </div>
@@ -674,7 +661,7 @@ function benefits(){
 
 
                     <p class="lead">
-                        O MinoSeed é apresentado como um produto
+                        O MinoSeed é um produto
                         de cuidado pessoal destinado a acompanhar
                         uma rotina de higiene e cuidado da pele.
                     </p>
@@ -742,7 +729,7 @@ function benefits(){
                                 ${detailCard(
                                     "LIMPEZA",
                                     "Pele limpa",
-                                    "A apresentação destaca a remoção de resíduos, oleosidade e sujidade dos poros."
+                                    "Remoção de resíduos, oleosidade e sujidade dos poros."
                                 )}
 
                                 ${detailCard(
@@ -754,7 +741,7 @@ function benefits(){
                                 ${detailCard(
                                     "PELE",
                                     "Adequação e tolerância",
-                                    "O material promocional descreve o produto como adequado para vários tipos de pele. A tolerância individual pode variar.",
+                                    "Adequado para vários tipos de pele. A tolerância individual pode variar.",
                                     [],
                                     true
                                 )}
@@ -944,11 +931,11 @@ function productDetail(){
                                 )}
 
                                 ${detailItem(
-                                    "Composição destacada com ingredientes de origem vegetal."
+                                    "Composição baseada em ingredientes de origem vegetal."
                                 )}
 
                                 ${detailItem(
-                                    "A apresentação promocional destaca ginseng como ingrediente central."
+                                    "O Ginseng como ingrediente central."
                                 )}
 
                                 ${detailItem(
@@ -1274,42 +1261,42 @@ function faq(){
 
         [
             "O que é o MinoSeed?",
-            "O MinoSeed é apresentado como um sabonete de cuidado da pele da linha Smart Lab Beauty, com destaque para raízes de ginseng e outros ingredientes de origem vegetal."
+            "O MinoSeed é um sabonete de cuidado da pele da linha Smart Lab Beauty, com destaque para raízes de ginseng e outros ingredientes de origem vegetal."
         ],
 
         [
             "Quais são os componentes destacados?",
-            "O material fornecido destaca óleo de coco, óleo da árvore do chá, ginseng e Sophora flavescens."
+            "Óleo de coco, óleo da árvore do chá, ginseng e Sophora flavescens."
         ],
 
         [
             "O MinoSeed ajuda na limpeza dos poros?",
-            "A apresentação promocional destaca limpeza profunda dos poros, remoção de sujidade e excesso de oleosidade."
+            "Sim, na limpeza profunda dos poros, remoção de sujidade e excesso de oleosidade."
         ],
 
         [
             "O MinoSeed é adequado para todos os tipos de pele?",
-            "O material promocional apresenta o produto como adequado para vários tipos de pele. A tolerância pode variar de pessoa para pessoa."
+            "Sim, é adequado para vários tipos de pele. A tolerância pode variar de pessoa para pessoa."
         ],
 
         [
             "O MinoSeed é hidratante?",
-            "O material fornecido descreve o produto como suave e hidratante, orientado para o cuidado da pele."
+            "Sim, é suave e hidratante, orientado para o cuidado da pele."
         ],
 
         [
             "O produto irrita os olhos?",
-            "O material promocional afirma que o produto não irrita os olhos. Ainda assim, deve-se evitar o contacto directo com os olhos durante a utilização."
+            "Não, não irrita os olhos. Ainda assim, deve-se evitar o contacto directo com os olhos durante a utilização."
         ],
 
         [
             "O MinoSeed pode ser utilizado por bebés?",
-            "Essa indicação aparece no material promocional fornecido. Para bebés e crianças pequenas, recomenda-se confirmar a adequação e as instruções do produto junto de um profissional de saúde."
+            "Para bebés e crianças pequenas, recomenda-se confirmar a adequação e as instruções do produto junto de um profissional de saúde."
         ],
 
         [
             "O MinoSeed trata acne ou outras condições da pele?",
-            "O material promocional associa o produto a acne, oleosidade, irritação, comichão e odores corporais. Essas associações não devem ser interpretadas como garantia de tratamento ou cura."
+            "Sim, dá um tratamento a acne, oleosidade, irritação, comichão e odores corporais. Essas associações não devem ser interpretadas como garantia de tratamento ou cura."
         ],
 
         [
@@ -1463,11 +1450,7 @@ function information(){
 
                     <p>
                         As informações desta página foram organizadas a partir
-                        do material disponibilizado para o MinoSeed. Alegações
-                        terapêuticas, científicas, sanitárias ou relacionadas com
-                        condições de saúde devem ser confirmadas através da
-                        documentação oficial e não devem ser apresentadas
-                        como garantias de tratamento ou cura.
+                        do material disponibilizado para o MinoSeed. 
                     </p>
 
                 </div>
