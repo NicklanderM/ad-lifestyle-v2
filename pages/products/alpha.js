@@ -183,7 +183,7 @@ function overview(){
                 </h2>
 
                 <p class="lead">
-                    O Alpha Vmax é apresentado como um complemento
+                    O Alpha Vmax é um complemento
                     para uma rotina masculina orientada para bem-estar,
                     disciplina, energia e vitalidade.
                 </p>
@@ -258,10 +258,10 @@ function composition(){
 
             <div class="alpha-composition-grid">
 
-                ${ingredientCard("01","Cordyceps","Ingrediente botânico apresentado no material do produto como associado à energia e vitalidade.","⚡")}
+                ${ingredientCard("01","Cordyceps","Ingrediente botânico associado à energia e vitalidade.","⚡")}
                 ${ingredientCard("02","Bagas de Goji","Ingrediente vegetal apresentado como parte da composição botânica do Alpha Vmax.","◉")}
                 ${ingredientCard("03","Ganoderma","Cogumelo utilizado tradicionalmente em preparações orientadas para bem-estar.","◇")}
-                ${ingredientCard("04","Grainhas de Uva","Ingrediente vegetal apresentado no material em associação com circulação e bem-estar cardiovascular.","✦")}
+                ${ingredientCard("04","Grainhas de Uva","Ingrediente vegetal associado à circulação e bem-estar cardiovascular.","✦")}
 
             </div>
 
@@ -275,7 +275,7 @@ function composition(){
                         ${detailCard(
                             "01 — CORDYCEPS",
                             "Energia e vitalidade",
-                            "O Cordyceps é apresentado no material de comunicação do Alpha Vmax como uma das matérias-primas orgânicas da fórmula.",
+                            "O Cordyceps é uma das matérias-primas orgânicas da fórmula.",
                             ["Matéria-prima de origem botânica","Associado à energia no material do produto","Integra a composição Alpha Vmax"]
                         )}
 
@@ -289,22 +289,21 @@ function composition(){
                         ${detailCard(
                             "03 — GANODERMA",
                             "Cogumelo tradicional",
-                            "O Ganoderma é apresentado como uma das matérias-primas orgânicas utilizadas na formulação.",
+                            "O Ganoderma é uma das matérias-primas orgânicas utilizadas na formulação.",
                             ["Ingrediente de origem natural","Tradicionalmente utilizado em produtos de bem-estar","Integra a fórmula Alpha Vmax"]
                         )}
 
                         ${detailCard(
                             "04 — GRAINHAS DE UVA",
                             "Circulação e bem-estar",
-                            "As grainhas de uva são destacadas no material do produto como uma das matérias-primas orgânicas.",
+                            "As grainhas de uva são destacadas como uma das matérias-primas orgânicas.",
                             ["Ingrediente de origem vegetal","Associado à circulação no material apresentado","Relacionado com protecção cardiovascular na apresentação"]
                         )}
 
                         ${detailCard(
                             "INFORMAÇÃO IMPORTANTE",
                             "Comunicação responsável",
-                            "As características apresentadas nesta página baseiam-se no material de apresentação disponibilizado para o Alpha Vmax. Estas informações não constituem diagnóstico, tratamento ou garantia de resultados médicos.",
-                            []
+                            "As características apresentadas nesta página baseiam-se na documentação oficial referente ao produto para o Alpha Vmax."
                         )}
 
                     </div>
@@ -382,9 +381,9 @@ function benefits(){
                         "Ocultar informações",
                         `
                             <div class="alpha-detail-grid">
-                                ${simpleDetailCard("VITALIDADE","Rotina masculina","O material promocional do Alpha Vmax posiciona o produto dentro de uma proposta de vitalidade e bem-estar masculino.")}
+                                ${simpleDetailCard("VITALIDADE","Rotina masculina","O Alpha Vmax posiciona comoo um produto dentro de uma proposta de vitalidade e bem-estar masculino.")}
                                 ${simpleDetailCard("PERFORMANCE","Energia e disciplina","A proposta da linha combina alimentação, hábitos consistentes, actividade física e desenvolvimento pessoal.")}
-                                ${simpleDetailCard("SAÚDE E BEM-ESTAR","Comunicação responsável","Alegações relativas a hormonas, fertilidade, circulação, função renal ou condições cardiovasculares devem ser confirmadas através da documentação oficial e de um profissional de saúde.")}
+                                ${simpleDetailCard("SAÚDE E BEM-ESTAR","Comunicação responsável","Alegações relativas a hormonas, fertilidade, circulação, função renal ou condições cardiovasculares.")}
                             </div>
                         `
                     )}
@@ -450,7 +449,7 @@ function productDetail(){
                 </h2>
 
                 <p>
-                    O Alpha Vmax é apresentado como um complemento de
+                    O Alpha Vmax é um complemento de
                     bem-estar masculino, reunindo quatro matérias-primas
                     de origem botânica numa proposta de vitalidade,
                     energia e performance.
@@ -558,7 +557,7 @@ function ingredients(){
 
             <div class="alpha-ingredients-grid">
 
-                ${ingredientFeature("01","C","CORDYCEPS","Energia e vitalidade","Apresentado no material do produto como ingrediente associado à energia e vitalidade.","large")}
+                ${ingredientFeature("01","C","CORDYCEPS","Energia e vitalidade","um ingrediente associado à energia e vitalidade.","large")}
                 ${ingredientFeature("02","G","BAGAS DE GOJI","Botânico seleccionado","Uma matéria-prima vegetal integrada na composição botânica apresentada.")}
                 ${ingredientFeature("03","G","GANODERMA","Cogumelo tradicional","Cogumelo tradicionalmente associado a preparações orientadas para bem-estar.")}
                 ${ingredientFeature("04","V","GRAINHAS DE UVA","Circulação e bem-estar","Ingrediente vegetal destacado no material em associação com circulação e bem-estar cardiovascular.","wide")}
@@ -752,9 +751,9 @@ function faq(){
 
             <div class="alpha-faq-list">
 
-                ${faqItem("01","O que é o Alpha Vmax?","O Alpha Vmax é apresentado como um produto de inspiração botânica destinado a integrar uma rotina masculina orientada para vitalidade, energia, desempenho e bem-estar.",true)}
+                ${faqItem("01","O que é o Alpha Vmax?","O Alpha Vmax é um produto de inspiração botânica destinado a integrar uma rotina masculina orientada para vitalidade, energia, desempenho e bem-estar.",true)}
 
-                ${faqItem("02","Quais são os principais ingredientes?","O material apresentado destaca Cordyceps, bagas de Goji, Ganoderma e grainhas de uva como matérias-primas orgânicas.")}
+                ${faqItem("02","Quais são os principais ingredientes?","Cordyceps, bagas de Goji, Ganoderma e grainhas de uva como matérias-primas orgânicas.")}
 
                 ${faqItem("03","Como é apresentado o modo de utilização?","O material fornecido indica 1 saqueta por dia na primeira caixa, 1 saqueta a cada 2 dias na segunda e 1 saqueta a cada 3 dias na terceira. Deve ser sempre confirmada a indicação da embalagem oficial.")}
 
@@ -764,7 +763,7 @@ function faq(){
 
                 ${faqItem("06","O produto pode ser utilizado por qualquer pessoa?","A utilização deve seguir as indicações oficiais do produto. Pessoas com condições de saúde, que utilizem medicamentos ou que tenham dúvidas sobre suplementos devem consultar um profissional de saúde antes da utilização.")}
 
-                ${faqItem("07","O Alpha Vmax garante resultados relacionados com testosterona ou fertilidade?","Não devem ser apresentadas garantias de resultados médicos. Algumas dessas alegações aparecem no material promocional fornecido, mas devem ser tratadas como alegações do material e não como garantia clínica.")}
+                ${faqItem("07","O Alpha Vmax garante resultados relacionados com testosterona ou fertilidade?","Não devem ser apresentadas garantias de resultados médicos.")}
 
                 ${faqItem("08","Onde posso obter mais informações?","Pode falar directamente com a AD Lifestyle através do WhatsApp para receber informações sobre disponibilidade, produto e aquisição.")}
 
