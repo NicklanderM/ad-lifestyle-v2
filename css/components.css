@@ -102448,7 +102448,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 
 
-
 /* ==========================================================
    AD LIFESTYLE V2
    HOME.CSS
@@ -102457,19 +102456,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
    BASE:
    EVENTS.CSS visual language
 
-   Scope: .home-page
+   SCOPE:
+   .home-page
+
+   DESIGN GOALS:
+   - zero accidental overlap
+   - strong typographic hierarchy
+   - highly readable hero
+   - black editorial typography on warm light surface
+   - dark premium visual stage for products
+   - visible controls and dividers
+   - spacious responsive system
+   ========================================================== */
+
+/* ==========================================================
+   00. FOUNDATION
    ========================================================== */
 
 .home-page{
 
     --home-black:#171B1F;
     --home-black-soft:#252B31;
+
     --home-gold:#C6A15B;
-    --home-gold-light:#E9D7A9;
+    --home-gold-deep:#8D6A32;
+    --home-champagne:#E9D7A9;
+
     --home-white:#FFFFFF;
     --home-ivory:#F8F7F3;
+    --home-sand:#F2EEE5;
     --home-gray:#69747E;
-    --home-border:rgba(23,27,31,.09);
+    --home-gray-dark:#4E5961;
+    --home-gray-light:#8E989F;
+
+    --home-border:rgba(23,27,31,.10);
+    --home-border-soft:rgba(23,27,31,.07);
 
     --home-hero-tone:#C6A15B;
     --home-hero-atmosphere:#EFE3C8;
@@ -102483,13 +102504,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
+.home-page,
 .home-page *{
 
     box-sizing:border-box;
 
 }
 
+.home-page img{
+
+    display:block;
+    max-width:100%;
+
+}
 
 .home-page button,
 .home-page input,
@@ -102500,22 +102527,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
-.home-page img{
-
-    display:block;
-    max-width:100%;
-
-}
-
-
-.home-page button,
-.home-page a{
+.home-page button{
 
     -webkit-tap-highlight-color:transparent;
 
 }
-
 
 .home-page a{
 
@@ -102524,18 +102540,12 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-container{
 
-    width:min(
-        1180px,
-        calc(100% - 48px)
-    );
-
+    width:min(1180px,calc(100% - 48px));
     margin:0 auto;
 
 }
-
 
 .home-page .section{
 
@@ -102543,125 +102553,215 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .section-sm{
 
     padding:92px 0;
 
 }
 
+/* ==========================================================
+   01. REVEAL
+   ========================================================== */
+
+.home-page .reveal{
+
+    opacity:0;
+    transform:translateY(22px);
+
+    transition:
+        opacity .72s ease,
+        transform .72s cubic-bezier(.22,.61,.36,1);
+
+}
+
+.home-page .reveal.is-visible{
+
+    opacity:1;
+    transform:none;
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .home-page .reveal{
+
+        opacity:1;
+        transform:none;
+        transition:none;
+
+    }
+
+}
+
+/* ==========================================================
+   02. COMMON LABELS
+   ========================================================== */
 
 .home-page .home-overline{
 
     display:block;
 
-    color:#A1814B;
+    color:#9A7D48;
 
-    font-size:.65rem;
-
+    font-size:.64rem;
     font-weight:900;
-
     line-height:1.2;
 
     letter-spacing:.19em;
-
     text-transform:uppercase;
 
 }
 
+.home-page .home-section-marker{
 
-.home-page .reveal{
+    display:flex;
+    align-items:center;
+    gap:11px;
 
-    opacity:0;
+    color:#8A949B;
 
-    transform:
-        translateY(24px);
-
-    transition:
-        opacity .75s ease,
-        transform .75s cubic-bezier(
-            .22,
-            .61,
-            .36,
-            1
-        );
+    font-size:.57rem;
+    font-weight:900;
+    letter-spacing:.15em;
 
 }
 
+.home-page .home-section-marker span:first-child{
 
-.home-page .reveal.is-visible{
-
-    opacity:1;
-
-    transform:none;
+    color:#9B7B45;
 
 }
 
+.home-page .home-section-marker i{
+
+    display:block;
+
+    width:64px;
+    height:1px;
+
+    background:rgba(23,27,31,.13);
+
+}
+
+.home-page .home-section-head{
+
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:32px;
+
+}
+
+.home-page .home-section-head h2{
+
+    max-width:760px;
+    margin-top:12px;
+
+    color:var(--home-black);
+
+    font-size:clamp(2.6rem,5vw,5.2rem);
+    line-height:.96;
+    letter-spacing:-.052em;
+
+}
+
+.home-page .home-section-head h2 span{
+
+    color:var(--home-gold-deep);
+
+}
+
+.home-page .home-section-head > p{
+
+    max-width:340px;
+
+    color:#707B83;
+
+    font-size:.86rem;
+    line-height:1.75;
+
+}
 
 /* ==========================================================
-   HERO
+   03. HERO — MASTER LAYOUT
    ========================================================== */
 
 .home-page .home-hero{
 
     position:relative;
 
-    min-height:
-        min(900px,96vh);
+    min-height:900px;
 
     overflow:hidden;
 
-    color:#FFFFFF;
-
-    background:#15191D;
+    background:var(--home-ivory);
 
     isolation:isolate;
 
 }
 
+/* warm light editorial base */
 
 .home-page .home-hero-background{
 
     position:absolute;
-
     inset:0;
-
-    z-index:-6;
+    z-index:-8;
 
     background:
-
         radial-gradient(
-            circle at 76% 46%,
-            color-mix(
-                in srgb,
-                var(--home-hero-atmosphere) 72%,
-                transparent
-            ),
-            transparent 22%
+            circle at 72% 50%,
+            var(--home-hero-atmosphere) 0%,
+            rgba(255,255,255,0) 25%
         ),
-
-        radial-gradient(
-            circle at 67% 58%,
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 25%,
-                transparent
-            ),
-            transparent 28%
-        ),
-
         linear-gradient(
-            125deg,
-            #101316 0%,
-            #171B1F 51%,
-            #2A3035 100%
+            90deg,
+            #FBFAF7 0%,
+            #F6F4EE 49%,
+            #EDE9DF 100%
         );
 
-    transition:
-        background 1.1s ease;
+    transition:background 1s ease;
 
 }
 
+/* dark premium visual side */
+
+.home-page .home-hero-background::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    right:0;
+    bottom:0;
+
+    width:47%;
+
+    background:
+        radial-gradient(
+            circle at 46% 48%,
+            rgba(255,255,255,.055),
+            transparent 31%
+        ),
+        linear-gradient(
+            135deg,
+            #20262B 0%,
+            #171B1F 100%
+        );
+
+    clip-path:
+        polygon(
+            13% 0,
+            100% 0,
+            100% 100%,
+            0 100%
+        );
+
+}
+
+/* readable transition line */
 
 .home-page .home-hero-background::after{
 
@@ -102669,32 +102769,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     position:absolute;
 
-    inset:0;
+    top:0;
+    bottom:0;
+    left:53%;
+
+    width:1px;
 
     background:
-
-        radial-gradient(
-            circle at 75% 48%,
-            rgba(255,255,255,.055),
-            transparent 24%
-        ),
-
         linear-gradient(
-            90deg,
-            rgba(10,13,15,.92) 0%,
-            rgba(10,13,15,.76) 35%,
-            rgba(10,13,15,.18) 69%,
-            rgba(10,13,15,.42) 100%
-        ),
-
-        linear-gradient(
-            0deg,
-            rgba(10,13,15,.72),
-            transparent 43%
+            to bottom,
+            transparent,
+            rgba(23,27,31,.11) 14%,
+            rgba(23,27,31,.11) 86%,
+            transparent
         );
 
 }
-
 
 .home-page .home-hero-atmosphere{
 
@@ -102702,29 +102792,20 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     inset:0;
 
-    z-index:-5;
+    z-index:-7;
 
     pointer-events:none;
 
     background:
-
         radial-gradient(
-            480px circle at
+            380px circle at
                 var(--mouse-x,76%)
                 var(--mouse-y,50%),
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 17%,
-                transparent
-            ),
-            transparent 65%
+            rgba(255,255,255,.075),
+            transparent 68%
         );
 
-    transition:
-        background .2s ease;
-
 }
-
 
 .home-page .home-hero-grid{
 
@@ -102732,9 +102813,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     inset:0;
 
-    z-index:-4;
+    z-index:-6;
 
-    opacity:.32;
+    opacity:.25;
 
     background-image:
 
@@ -102749,20 +102830,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             transparent 1px
         );
 
-    background-size:
-        72px 72px;
+    background-size:74px 74px;
 
     mask-image:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.65),
-            transparent 83%
+            rgba(0,0,0,.55),
+            transparent 80%
         );
 
-    pointer-events:none;
-
 }
-
 
 .home-page .home-hero-noise{
 
@@ -102770,9 +102847,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     inset:-50%;
 
-    z-index:-3;
+    z-index:-5;
 
-    opacity:.035;
+    opacity:.018;
 
     background-image:
         url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");
@@ -102781,54 +102858,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-backdrop{
 
     position:absolute;
 
-    right:-6%;
-
+    right:2%;
     top:18%;
 
-    width:54vw;
+    width:44vw;
+    max-width:660px;
+    height:62vh;
 
-    max-width:760px;
-
-    height:64vh;
-
-    z-index:-2;
+    z-index:-4;
 
     border-radius:50%;
 
     background:
-
         radial-gradient(
             circle,
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 15%,
-                transparent
-            ) 0%,
-            transparent 68%
+            rgba(216,172,88,.08),
+            transparent 69%
         );
 
-    filter:
-        blur(4px);
+    filter:blur(4px);
 
     pointer-events:none;
 
-    transition:
-        transform .28s ease;
+    transition:transform .25s ease;
 
 }
-
 
 .home-page .home-hero-container{
 
     position:relative;
 
-    min-height:
-        min(900px,96vh);
+    min-height:900px;
 
     display:flex;
 
@@ -102838,23 +102902,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
-/* ---------- hero top ---------- */
+/* ==========================================================
+   04. HERO — TOP BAR
+   ========================================================== */
 
 .home-page .home-hero-topline{
 
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:30px;
 
-    padding-top:28px;
+    padding-top:27px;
 
 }
-
 
 .home-page .home-brand-lockup{
 
@@ -102866,17 +102929,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-brand-lockup img{
 
-    width:42px;
-
-    height:42px;
+    width:43px;
+    height:43px;
 
     object-fit:contain;
 
 }
-
 
 .home-page .home-brand-lockup div{
 
@@ -102888,30 +102948,26 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-brand-lockup strong{
 
-    color:#FFFFFF;
+    color:var(--home-black);
 
-    font-size:.69rem;
-
-    letter-spacing:.16em;
-
+    font-size:.70rem;
     font-weight:900;
+
+    letter-spacing:.15em;
 
 }
 
-
 .home-page .home-brand-lockup span{
 
-    color:#8F999F;
+    color:#78838A;
 
-    font-size:.58rem;
+    font-size:.56rem;
 
     letter-spacing:.10em;
 
 }
-
 
 .home-page .home-hero-edition{
 
@@ -102919,65 +102975,64 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:9px;
+    gap:10px;
 
-    color:#9BA4AA;
+    color:#7D878D;
 
-    font-size:.59rem;
+    font-size:.58rem;
+    font-weight:900;
 
-    letter-spacing:.15em;
-
+    letter-spacing:.14em;
     text-transform:uppercase;
 
 }
 
-
 .home-page .home-hero-edition strong{
 
-    color:
-        var(--home-hero-gold,var(--home-gold-light));
+    color:var(--home-gold-deep);
 
-    font-size:.75rem;
+    font-size:.76rem;
 
 }
 
-
-/* ---------- hero main ---------- */
+/* ==========================================================
+   05. HERO — MAIN
+   ========================================================== */
 
 .home-page .home-hero-main{
 
     display:grid;
 
     grid-template-columns:
-        minmax(0,1fr)
-        minmax(430px,.92fr);
+        minmax(0,1.02fr)
+        minmax(450px,.98fr);
 
     align-items:center;
 
-    gap:45px;
+    gap:50px;
 
     flex:1;
 
     min-height:0;
 
     padding:
-        30px 0 55px;
+        34px 0 45px;
 
 }
 
+/* ==========================================================
+   06. HERO — COPY
+   ========================================================== */
 
 .home-page .home-hero-copy{
 
     position:relative;
 
-    z-index:3;
+    z-index:8;
 
-    max-width:720px;
-
-    padding-left:9px;
+    max-width:700px;
 
 }
-
 
 .home-page .home-hero-index-label{
 
@@ -102985,9 +103040,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
-    color:#879198;
+    color:#78838A;
 
     font-size:.58rem;
 
@@ -102997,165 +103052,157 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-index-label span:first-child{
 
-    color:#FFFFFF;
+    color:var(--home-gold-deep);
 
 }
 
+.home-page .home-hero-index-label span:last-child{
+
+    color:#626D75;
+
+}
 
 .home-page .home-hero-index-label i{
 
     display:block;
 
-    width:56px;
-
-    height:1px;
+    width:70px;
+    height:2px;
 
     background:
-        rgba(255,255,255,.18);
+        linear-gradient(
+            90deg,
+            var(--home-gold),
+            rgba(23,27,31,.16)
+        );
 
 }
-
 
 .home-page .home-hero-content{
 
     position:relative;
 
-    margin-top:28px;
+    min-height:375px;
 
-    min-height:345px;
+    margin-top:25px;
 
 }
-
 
 .home-page .home-hero-slide{
 
     position:absolute;
 
-    inset:
-        0 auto auto 0;
+    top:0;
+    left:0;
 
     width:100%;
 
     opacity:0;
-
     visibility:hidden;
 
     transform:
-        translateY(18px);
+        translateY(17px);
 
     transition:
-        opacity .65s ease,
-        visibility .65s ease,
-        transform .7s cubic-bezier(
-            .22,
-            .61,
-            .36,
-            1
-        );
+        opacity .58s ease,
+        visibility .58s ease,
+        transform .68s cubic-bezier(.22,.61,.36,1);
 
     pointer-events:none;
 
 }
 
-
 .home-page .home-hero-slide.is-active{
 
     opacity:1;
-
     visibility:visible;
-
     transform:none;
 
 }
-
 
 .home-page .home-hero-eyebrow{
 
     display:block;
 
-    color:var(--home-gold-light);
+    color:var(--home-gold-deep);
 
-    font-size:.64rem;
-
+    font-size:.68rem;
     font-weight:900;
 
-    letter-spacing:.21em;
+    letter-spacing:.22em;
+    text-transform:uppercase;
 
 }
-
 
 .home-page .home-hero-pretitle{
 
     display:block;
 
-    margin-top:14px;
+    margin-top:13px;
 
-    color:#869197;
+    color:#5F6970;
 
-    font-size:.60rem;
+    font-size:.64rem;
+    font-weight:900;
 
-    font-weight:800;
+    letter-spacing:.15em;
 
-    letter-spacing:.13em;
+    line-height:1.4;
 
 }
-
 
 .home-page .home-hero-slide h1{
 
-    max-width:760px;
+    max-width:720px;
 
-    margin:
-        17px 0 0;
+    margin:17px 0 0;
 
-    color:#FFFFFF;
+    color:var(--home-black);
 
     font-size:
-        clamp(4rem,7vw,7.6rem);
+        clamp(
+            4rem,
+            6.1vw,
+            7rem
+        );
 
-    line-height:.90;
+    line-height:.88;
 
-    letter-spacing:-.065em;
+    letter-spacing:-.066em;
 
-    font-weight:800;
+    font-weight:850;
+
+    text-wrap:balance;
 
 }
-
 
 .home-page .home-hero-slide h1 span{
 
     display:block;
 
-    color:var(--home-gold-light);
-
-    text-shadow:
-        0 0 40px
-        color-mix(
-            in srgb,
-            var(--home-gold-light) 12%,
-            transparent
-        );
+    color:var(--home-gold-deep);
 
 }
-
 
 .home-page .home-hero-slide > p{
 
-    max-width:555px;
+    max-width:525px;
 
-    margin-top:24px;
+    margin-top:25px;
 
-    color:#C4CCD0;
+    color:#58636B;
 
-    font-size:1.03rem;
+    font-size:1rem;
 
-    line-height:1.7;
+    line-height:1.74;
 
 }
 
+/* ==========================================================
+   07. HERO — PRODUCT IDENTIFICATION
+   ========================================================== */
 
 .home-page .home-hero-product-tag{
 
@@ -103163,33 +103210,35 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:center;
 
-    gap:9px;
+    gap:10px;
 
-    margin-top:23px;
+    margin-top:20px;
+
+    min-height:42px;
 
     padding:
-        9px 12px;
+        0 14px;
 
     border:
         1px solid
-        rgba(255,255,255,.11);
+        rgba(23,27,31,.11);
 
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.035);
+        rgba(255,255,255,.78);
 
-    backdrop-filter:
-        blur(8px);
+    box-shadow:
+        0 9px 25px
+        rgba(23,27,31,.06);
 
 }
 
-
 .home-page .home-hero-product-tag span{
 
-    color:#87939A;
+    color:#8A7043;
 
-    font-size:.58rem;
+    font-size:.57rem;
 
     font-weight:900;
 
@@ -103197,62 +103246,61 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
+.home-page .home-hero-product-tag span::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:4px;
+    height:4px;
+
+    margin:
+        0 0 2px 10px;
+
+    border-radius:50%;
+
+    background:var(--home-gold);
+
+}
 
 .home-page .home-hero-product-tag strong{
 
-    color:#FFFFFF;
+    color:var(--home-black);
 
-    font-size:.71rem;
-
-}
-
-
-.home-page .home-hero-phrase{
-
-    position:absolute;
-
-    right:0;
-
-    bottom:4px;
-
-    color:#7D888F;
-
-    font-size:.59rem;
+    font-size:.73rem;
 
     font-weight:900;
 
-    letter-spacing:.14em;
+}
 
-    text-transform:uppercase;
+/* secondary phrase deliberately hidden */
+
+.home-page .home-hero-phrase{
+
+    display:none;
 
 }
 
+/* ==========================================================
+   08. HERO — ACTIONS
+   ========================================================== */
 
-/* ---------- hero actions ---------- */
-
-.home-page .home-hero-actions,
-.home-page .home-final-actions,
-.home-page .home-event-actions{
+.home-page .home-hero-actions{
 
     display:flex;
 
-    flex-wrap:wrap;
+    align-items:center;
 
-    gap:10px;
-
-}
-
-
-.home-page .home-hero-actions{
+    gap:13px;
 
     margin-top:27px;
 
 }
 
-
 .home-page .home-action{
 
-    min-height:50px;
+    min-height:58px;
 
     display:inline-flex;
 
@@ -103260,10 +103308,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:space-between;
 
-    gap:20px;
+    gap:24px;
 
     padding:
-        0 17px 0 19px;
+        0 22px;
 
     border:
         1px solid
@@ -103273,11 +103321,143 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     cursor:pointer;
 
-    font-size:.72rem;
-
+    font-size:.74rem;
     font-weight:900;
 
-    letter-spacing:.02em;
+    letter-spacing:.015em;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+
+}
+
+.home-page .home-action:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.home-page .home-action-primary{
+
+    min-width:222px;
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #D5AD62,
+            #A67D39
+        );
+
+    box-shadow:
+        0 18px 38px
+        rgba(166,125,57,.20);
+
+}
+
+.home-page .home-action-primary:hover{
+
+    box-shadow:
+        0 22px 48px
+        rgba(166,125,57,.27);
+
+}
+
+.home-page .home-action-secondary{
+
+    min-width:205px;
+
+    color:var(--home-black);
+
+    background:#FFFFFF;
+
+    border-color:
+        rgba(23,27,31,.15);
+
+    box-shadow:
+        0 9px 22px
+        rgba(23,27,31,.055);
+
+}
+
+.home-page .home-action-secondary:hover{
+
+    border-color:
+        rgba(141,106,50,.42);
+
+    background:#FFFDF8;
+
+}
+
+.home-page .home-action-dark{
+
+    color:#FFFFFF;
+
+    background:var(--home-black);
+
+}
+
+.home-page .home-action-light{
+
+    color:var(--home-black);
+
+    background:#FFFFFF;
+
+    border-color:
+        rgba(23,27,31,.13);
+
+}
+
+/* ==========================================================
+   09. HERO — CONTROLS
+   ========================================================== */
+
+.home-page .home-hero-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:24px;
+
+}
+
+.home-page .home-hero-controls > button{
+
+    width:45px;
+    height:45px;
+
+    flex:0 0 45px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    border:
+        1px solid
+        rgba(23,27,31,.22);
+
+    border-radius:50%;
+
+    background:#FFFFFF;
+
+    color:var(--home-black);
+
+    box-shadow:
+        0 8px 20px
+        rgba(23,27,31,.08);
+
+    font-size:1rem;
+    font-weight:900;
+
+    cursor:pointer;
 
     transition:
         transform .25s ease,
@@ -103287,181 +103467,83 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
-.home-page .home-action:hover{
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.home-page .home-action-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            var(--home-gold),
-            #8F713C
-        );
-
-    color:#FFFFFF;
-
-    box-shadow:
-        0 15px 36px
-        rgba(198,161,91,.18);
-
-}
-
-
-.home-page .home-action-secondary{
-
-    border-color:
-        rgba(255,255,255,.16);
-
-    background:
-        rgba(255,255,255,.045);
-
-    color:#FFFFFF;
-
-}
-
-
-.home-page .home-action-dark{
-
-    background:
-        var(--home-black);
-
-    color:#FFFFFF;
-
-    border-color:
-        transparent;
-
-}
-
-
-.home-page .home-action-light{
-
-    background:
-        #FFFFFF;
-
-    color:
-        var(--home-black);
-
-    border-color:
-        rgba(23,27,31,.10);
-
-}
-
-
-/* ---------- hero controls ---------- */
-
-.home-page .home-hero-controls{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-    margin-top:29px;
-
-}
-
-
-.home-page .home-hero-controls > button{
-
-    width:40px;
-
-    height:40px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    border:
-        1px solid
-        rgba(255,255,255,.15);
-
-    border-radius:50%;
-
-    background:
-        rgba(255,255,255,.035);
-
-    color:#FFFFFF;
-
-    cursor:pointer;
-
-    transition:.25s ease;
-
-}
-
-
 .home-page .home-hero-controls > button:hover{
 
+    transform:translateY(-2px);
+
+    color:#FFFFFF;
+
     border-color:
-        color-mix(
-            in srgb,
-            var(--home-hero-tone) 55%,
-            rgba(255,255,255,.15)
-        );
+        var(--home-gold-deep);
 
     background:
-        rgba(255,255,255,.08);
+        var(--home-gold-deep);
+
+    box-shadow:
+        0 12px 28px
+        rgba(141,106,50,.21);
 
 }
-
 
 .home-page .home-hero-progress{
 
     position:relative;
 
     width:
-        min(230px,26vw);
+        min(250px,27vw);
 
-    height:2px;
+    height:3px;
 
     overflow:hidden;
 
     background:
-        rgba(255,255,255,.13);
+        rgba(23,27,31,.12);
 
 }
 
+.home-page .home-hero-progress::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(23,27,31,.07);
+
+}
 
 .home-page .home-hero-progress div{
+
+    position:relative;
+
+    z-index:2;
 
     width:0;
 
     height:100%;
 
-    transform-origin:
-        left center;
-
     background:
-        var(--home-hero-tone);
+        linear-gradient(
+            90deg,
+            #9B7637,
+            #E2C37E
+        );
 
 }
-
 
 @keyframes homeHeroProgress{
 
     from{
-
         width:0;
-
     }
 
     to{
-
         width:100%;
-
     }
 
 }
-
 
 .home-page .home-hero-number{
 
@@ -103469,125 +103551,94 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:baseline;
 
-    gap:6px;
+    gap:5px;
 
     margin-left:5px;
 
-    color:#7E898F;
+    color:#7A858D;
 
-    font-size:.65rem;
+    font-size:.66rem;
 
 }
-
 
 .home-page .home-hero-number strong{
 
-    color:#FFFFFF;
+    color:var(--home-black);
 
-    font-size:1.18rem;
+    font-size:1.28rem;
 
 }
 
-
-/* ---------- hero visual ---------- */
+/* ==========================================================
+   10. HERO — VISUAL
+   ========================================================== */
 
 .home-page .home-hero-visual{
 
     position:relative;
 
-    min-height:620px;
+    min-height:640px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
+    z-index:3;
+
     transition:
-        transform .3s ease;
+        transform .28s ease;
 
 }
 
+.home-page .home-hero-halo{
 
-.home-page .home-hero-halo,
+    position:absolute;
+
+    width:570px;
+    height:570px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.11),
+            rgba(216,172,88,.07) 38%,
+            transparent 70%
+        );
+
+    filter:blur(3px);
+
+    transition:
+        transform .35s ease;
+
+}
+
 .home-page .home-hero-halo-secondary{
 
     position:absolute;
 
-    width:540px;
-
-    height:540px;
-
-    border-radius:50%;
-
-    pointer-events:none;
-
-    transition:
-        transform .35s ease,
-        background 1s ease;
-
-}
-
-
-.home-page .home-hero-halo{
-
-    background:
-
-        radial-gradient(
-            circle,
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 26%,
-                transparent
-            ) 0%,
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 8%,
-                transparent
-            ) 37%,
-            transparent 72%
-        );
-
-    filter:
-        blur(3px);
-
-}
-
-
-.home-page .home-hero-halo-secondary{
-
-    width:430px;
-
-    height:430px;
+    width:470px;
+    height:470px;
 
     border:
         1px solid
-        color-mix(
-            in srgb,
-            var(--home-hero-tone) 24%,
-            transparent
-        );
+        rgba(216,172,88,.27);
+
+    border-radius:50%;
 
     box-shadow:
+        0 0 80px
+        rgba(216,172,88,.08),
 
-        0 0 90px
-        color-mix(
-            in srgb,
-            var(--home-hero-tone) 9%,
-            transparent
-        ),
+        inset 0 0 70px
+        rgba(255,255,255,.035);
 
-        inset 0 0 60px
-        color-mix(
-            in srgb,
-            var(--home-hero-tone) 6%,
-            transparent
-        );
-
-    opacity:.72;
+    transition:
+        transform .35s ease;
 
 }
-
 
 .home-page .home-hero-orbit{
 
@@ -103595,7 +103646,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     border:
         1px solid
-        rgba(255,255,255,.065);
+        rgba(255,255,255,.11);
 
     border-radius:50%;
 
@@ -103603,11 +103654,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-orbit.orbit-one{
 
-    width:580px;
-
+    width:600px;
     height:190px;
 
     transform:
@@ -103615,39 +103664,32 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-orbit.orbit-two{
 
-    width:480px;
-
-    height:480px;
-
-    opacity:.40;
+    width:500px;
+    height:500px;
 
 }
-
 
 .home-page .home-hero-product-stage{
 
     position:relative;
 
     width:
-        min(520px,44vw);
+        min(570px,45vw);
 
-    height:570px;
+    height:590px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    z-index:3;
+    z-index:5;
 
     touch-action:pan-y;
 
 }
-
 
 .home-page .home-hero-product{
 
@@ -103658,31 +103700,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     opacity:0;
-
     visibility:hidden;
 
     transform:
-        translateY(15px)
-        scale(.975);
+        translateY(16px)
+        scale(.97);
 
     transition:
         opacity .72s ease,
         visibility .72s ease,
-        transform .8s cubic-bezier(
-            .22,
-            .61,
-            .36,
-            1
-        );
+        transform .8s cubic-bezier(.22,.61,.36,1);
 
     pointer-events:none;
 
 }
-
 
 .home-page .home-hero-product.is-active{
 
@@ -103694,7 +103728,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-product img{
 
     position:relative;
@@ -103703,88 +103736,78 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     width:auto;
 
-    max-width:90%;
-
-    max-height:505px;
+    max-width:86%;
+    max-height:515px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 38px 42px
-            rgba(0,0,0,.35)
+            0 35px 34px
+            rgba(0,0,0,.34)
         );
 
 }
-
 
 .home-page .home-hero-product-shadow{
 
     position:absolute;
 
     left:50%;
+    bottom:45px;
 
-    bottom:55px;
-
-    width:250px;
-
+    width:280px;
     height:48px;
 
-    transform:
-        translateX(-50%);
+    transform:translateX(-50%);
 
     border-radius:50%;
 
     background:
-        rgba(0,0,0,.38);
+        rgba(0,0,0,.45);
 
-    filter:
-        blur(22px);
+    filter:blur(22px);
 
 }
-
 
 .home-page .home-hero-product-glow{
 
     position:absolute;
 
-    width:330px;
-
-    height:330px;
+    width:360px;
+    height:360px;
 
     border-radius:50%;
 
     background:
-
         radial-gradient(
             circle,
-            color-mix(
-                in srgb,
-                var(--home-hero-atmosphere) 36%,
-                transparent
-            ),
-            transparent 68%
+            rgba(240,210,138,.18),
+            transparent 69%
         );
 
-    filter:
-        blur(15px);
+    filter:blur(10px);
 
 }
 
+/* ==========================================================
+   11. HERO — OBJECT META
+   ========================================================== */
 
 .home-page .home-hero-object-meta{
 
     position:absolute;
 
-    right:-2px;
+    right:5px;
+    bottom:37px;
 
-    bottom:54px;
-
-    z-index:5;
+    z-index:8;
 
     display:flex;
 
     flex-direction:column;
+
+    align-items:flex-end;
 
     gap:4px;
 
@@ -103792,50 +103815,46 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-hero-object-meta span{
 
-    color:#77828A;
+    color:#AEB7BC;
 
-    font-size:.53rem;
-
+    font-size:.50rem;
     font-weight:900;
 
     letter-spacing:.14em;
 
 }
 
-
 .home-page .home-hero-object-meta strong{
 
     color:#FFFFFF;
 
-    font-size:.79rem;
+    font-size:.78rem;
 
 }
-
 
 .home-page .home-hero-object-meta small{
 
-    color:#919BA2;
+    color:#A0AAB0;
 
-    font-size:.57rem;
+    font-size:.56rem;
 
 }
-
 
 .home-page .home-hero-visual-index{
 
     position:absolute;
 
-    right:-10px;
+    top:8%;
+    right:0;
 
-    top:12%;
+    z-index:3;
 
     color:
-        rgba(255,255,255,.17);
+        rgba(255,255,255,.12);
 
-    font-size:5rem;
+    font-size:5.8rem;
 
     font-weight:900;
 
@@ -103845,51 +103864,25 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
-/* ---------- hero bottom rail ---------- */
+/* ==========================================================
+   12. HERO — BOTTOM RAIL
+   ========================================================== */
 
 .home-page .home-hero-bottom-rail{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:16px;
-
-    padding-bottom:24px;
-
-    color:#717C83;
-
-    font-size:.54rem;
-
-    font-weight:900;
-
-    letter-spacing:.15em;
+    display:none;
 
 }
-
-
-.home-page .home-hero-bottom-rail i{
-
-    width:3px;
-
-    height:3px;
-
-    border-radius:50%;
-
-    background:
-        var(--home-gold);
-
-}
-
 
 /* ==========================================================
-   SIGNATURE RAIL
+   13. SIGNATURE RAIL
    ========================================================== */
 
 .home-page .home-signature-rail{
 
     overflow:hidden;
+
+    min-height:58px;
 
     border-bottom:
         1px solid
@@ -103899,7 +103892,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-signature-track{
 
     min-height:58px;
@@ -103907,135 +103899,31 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     gap:24px;
 
     white-space:nowrap;
 
-    color:#757F87;
+    color:#737E85;
 
-    font-size:.56rem;
-
+    font-size:.55rem;
     font-weight:900;
 
-    letter-spacing:.18em;
+    letter-spacing:.17em;
 
 }
 
-
 .home-page .home-signature-track i{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold);
 
     font-style:normal;
 
 }
 
-
 /* ==========================================================
-   SECTION HEADS
-   ========================================================== */
-
-.home-page .home-section-marker{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:11px;
-
-    color:#8A959B;
-
-    font-size:.57rem;
-
-    font-weight:900;
-
-    letter-spacing:.15em;
-
-}
-
-
-.home-page .home-section-marker span:first-child{
-
-    color:#9A7C48;
-
-}
-
-
-.home-page .home-section-marker i{
-
-    width:64px;
-
-    height:1px;
-
-    background:
-        rgba(23,27,31,.10);
-
-}
-
-
-.home-page .home-section-head{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    justify-content:space-between;
-
-    gap:30px;
-
-}
-
-
-.home-page .home-section-head h2{
-
-    max-width:720px;
-
-    margin-top:12px;
-
-    color:
-        var(--home-black);
-
-    font-size:
-        clamp(
-            2.5rem,
-            5vw,
-            5rem
-        );
-
-    line-height:.98;
-
-    letter-spacing:-.045em;
-
-}
-
-
-.home-page .home-section-head h2 span{
-
-    color:
-        var(--home-gold);
-
-}
-
-
-.home-page .home-section-head > p{
-
-    max-width:330px;
-
-    color:#727D85;
-
-    font-size:.87rem;
-
-    line-height:1.7;
-
-}
-
-
-/* ==========================================================
-   MANIFESTO
+   14. MANIFESTO
    ========================================================== */
 
 .home-page .home-manifesto{
@@ -104044,57 +103932,52 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-manifesto-layout{
 
     display:grid;
 
-    grid-template-columns:.30fr 1fr;
+    grid-template-columns:
+        220px
+        minmax(0,1fr);
 
-    gap:55px;
+    gap:60px;
 
     margin-top:70px;
 
 }
 
-
 .home-page .home-manifesto-lead{
 
-    padding-top:15px;
+    padding-top:14px;
 
 }
 
-
 .home-page .home-manifesto-copy h2{
 
-    max-width:900px;
+    max-width:940px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:
         clamp(
             3rem,
-            6.8vw,
-            7rem
+            6.4vw,
+            6.8rem
         );
 
-    line-height:.92;
+    line-height:.91;
 
-    letter-spacing:-.06em;
+    letter-spacing:-.062em;
 
 }
-
 
 .home-page .home-manifesto-copy h2 span{
 
     display:block;
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
 }
-
 
 .home-page .home-manifesto-copy p{
 
@@ -104102,14 +103985,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     margin-top:28px;
 
-    color:#707B83;
+    color:#6E7981;
 
     font-size:1rem;
 
     line-height:1.8;
 
 }
-
 
 .home-page .home-manifesto-foot{
 
@@ -104130,13 +104012,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-manifesto-foot span{
 
-    color:#818B91;
+    color:#838D94;
 
-    font-size:.62rem;
-
+    font-size:.61rem;
     font-weight:900;
 
     letter-spacing:.12em;
@@ -104145,17 +104025,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-manifesto-foot span:first-child{
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
 }
 
-
 /* ==========================================================
-   PILLARS
+   15. PILLARS
    ========================================================== */
 
 .home-page .home-pillars{
@@ -104163,7 +104040,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:#F6F6F4;
 
 }
-
 
 .home-page .home-pillar-grid{
 
@@ -104174,10 +104050,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     gap:18px;
 
-    margin-top:42px;
+    margin-top:43px;
 
 }
-
 
 .home-page .home-pillar{
 
@@ -104185,12 +104060,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     overflow:hidden;
 
-    min-height:540px;
+    min-height:535px;
 
     display:flex;
 
     flex-direction:column;
-
     justify-content:space-between;
 
     padding:28px;
@@ -104205,46 +104079,53 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     box-shadow:
         0 20px 55px
-        rgba(23,27,31,.06);
+        rgba(23,27,31,.055);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 
 }
 
+.home-page .home-pillar:hover{
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 28px 68px
+        rgba(23,27,31,.10);
+
+}
 
 .home-page .home-pillar-number{
 
     position:absolute;
 
+    top:22px;
     right:25px;
-
-    top:23px;
-
-    z-index:3;
 
     color:#9DA5AA;
 
     font-size:.61rem;
-
     font-weight:900;
 
-    letter-spacing:.15em;
+    letter-spacing:.14em;
 
 }
-
 
 .home-page .home-pillar-visual{
 
     position:relative;
 
-    height:280px;
+    height:285px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
 }
-
 
 .home-page .home-pillar-visual img{
 
@@ -104252,56 +104133,48 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:2;
 
-    max-width:67%;
-
-    max-height:220px;
+    max-width:68%;
+    max-height:225px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 25px 30px
-            rgba(23,27,31,.13)
+            0 24px 29px
+            rgba(23,27,31,.12)
         );
 
     transition:
-        transform .5s ease;
+        transform .45s ease;
 
 }
-
 
 .home-page .home-pillar:hover
 .home-pillar-visual img{
 
     transform:
-        translateY(-7px)
+        translateY(-6px)
         scale(1.025);
 
 }
-
 
 .home-page .home-pillar-aura{
 
     position:absolute;
 
-    width:280px;
-
-    height:280px;
+    width:285px;
+    height:285px;
 
     border-radius:50%;
 
     background:
         radial-gradient(
             circle,
-            #E8E0D0,
+            #EBE4D7,
             transparent 68%
         );
 
-    filter:
-        blur(4px);
-
 }
-
 
 .home-page .home-pillar-bzz
 .home-pillar-aura{
@@ -104309,12 +104182,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            #EFE0C3,
+            #EFE1C6,
             transparent 68%
         );
 
 }
-
 
 .home-page .home-pillar-a21
 .home-pillar-aura{
@@ -104322,39 +104194,28 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            #E5E7E1,
+            #E5E8E3,
             transparent 68%
         );
 
 }
 
-
-.home-page .home-pillar-content{
-
-    padding-top:12px;
-
-}
-
-
 .home-page .home-pillar-content > span{
 
-    color:#A1814B;
+    color:#9A7C48;
 
-    font-size:.60rem;
-
+    font-size:.59rem;
     font-weight:900;
 
     letter-spacing:.16em;
 
 }
 
-
 .home-page .home-pillar-content h3{
 
     margin-top:10px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:2.3rem;
 
@@ -104362,21 +104223,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-pillar-content p{
 
-    max-width:500px;
+    max-width:510px;
 
-    margin-top:9px;
+    margin-top:8px;
 
-    color:#748087;
+    color:#727D85;
+
+    font-size:.84rem;
 
     line-height:1.7;
 
-    font-size:.85rem;
-
 }
-
 
 .home-page .home-pillar-content a{
 
@@ -104388,26 +104247,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     margin-top:20px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
-    font-size:.70rem;
-
+    font-size:.69rem;
     font-weight:900;
 
 }
 
-
 .home-page .home-pillar-content a span{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
 }
 
-
 /* ==========================================================
-   UNIVERSES
+   16. UNIVERSES
    ========================================================== */
 
 .home-page .home-universes{
@@ -104415,7 +104269,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:#FFFFFF;
 
 }
-
 
 .home-page .home-universe-list{
 
@@ -104427,7 +104280,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-universe{
 
     display:grid;
@@ -104435,14 +104287,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     grid-template-columns:
         75px
         minmax(220px,1fr)
-        minmax(260px,.75fr)
-        40px;
+        minmax(260px,.8fr)
+        42px;
 
     align-items:center;
 
     gap:20px;
 
-    min-height:135px;
+    min-height:137px;
 
     border-bottom:
         1px solid
@@ -104454,7 +104306,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-universe:hover{
 
     padding:
@@ -104464,69 +104315,60 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-universe-number{
 
-    color:#A58A58;
+    color:#A1814B;
 
-    font-size:.62rem;
-
+    font-size:.61rem;
     font-weight:900;
 
     letter-spacing:.13em;
 
 }
 
-
 .home-page .home-universe small{
 
     color:#9A7D48;
 
-    font-size:.60rem;
-
+    font-size:.59rem;
     font-weight:900;
 
     letter-spacing:.15em;
 
 }
 
-
 .home-page .home-universe h3{
 
     margin-top:6px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:1.9rem;
 
-    letter-spacing:-.025em;
+    letter-spacing:-.03em;
 
 }
-
 
 .home-page .home-universe p{
 
     color:#747F87;
 
+    font-size:.83rem;
+
     line-height:1.6;
 
-    font-size:.84rem;
-
 }
-
 
 .home-page .home-universe-arrow{
 
     color:#9A7D48;
 
-    font-size:1.15rem;
+    font-size:1.1rem;
 
 }
 
-
 /* ==========================================================
-   PRODUCTS
+   17. PRODUCTS
    ========================================================== */
 
 .home-page .home-products{
@@ -104535,43 +104377,37 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-minimal-button{
 
     display:inline-flex;
 
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
     padding:0;
 
     border:0;
 
-    background:transparent;
+    color:var(--home-black);
 
-    color:
-        var(--home-black);
+    background:transparent;
 
     cursor:pointer;
 
-    font-size:.70rem;
-
+    font-size:.69rem;
     font-weight:900;
 
 }
 
-
 .home-page .home-minimal-button span{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
     transition:
         transform .25s ease;
 
 }
-
 
 .home-page .home-minimal-button:hover span{
 
@@ -104580,27 +104416,25 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-grid{
 
     display:grid;
 
     grid-template-columns:
-        1.32fr
+        1.25fr
         repeat(4,1fr);
 
     gap:14px;
 
-    margin-top:42px;
+    margin-top:43px;
 
 }
-
 
 .home-page .home-product-card{
 
     position:relative;
 
-    min-height:445px;
+    min-height:455px;
 
     overflow:hidden;
 
@@ -104625,7 +104459,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-card:hover,
 .home-page .home-product-card:focus-visible{
 
@@ -104633,25 +104466,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         translateY(-6px);
 
     border-color:
-        color-mix(
-            in srgb,
-            var(--card-tone) 28%,
-            rgba(23,27,31,.08)
-        );
+        rgba(23,27,31,.14);
 
     box-shadow:
-        0 27px 62px
-        rgba(23,27,31,.10);
+        0 28px 64px
+        rgba(23,27,31,.09);
 
     outline:none;
 
 }
 
-
 .home-page .home-product-card-top{
 
     display:flex;
 
+    align-items:center;
     justify-content:space-between;
 
     padding:
@@ -104659,22 +104488,18 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     color:#929BA1;
 
-    font-size:.57rem;
-
+    font-size:.56rem;
     font-weight:900;
 
     letter-spacing:.14em;
 
 }
 
-
 .home-page .home-product-card-top span:first-child{
 
-    color:
-        var(--card-tone);
+    color:var(--card-tone);
 
 }
-
 
 .home-page .home-product-card-image{
 
@@ -104682,25 +104507,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     flex:1;
 
-    min-height:250px;
+    min-height:255px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
-    padding:20px;
+    padding:22px;
 
 }
-
 
 .home-page .home-product-card-aura{
 
     position:absolute;
 
     width:240px;
-
     height:240px;
 
     border-radius:50%;
@@ -104714,7 +104536,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-card img{
 
     position:relative;
@@ -104722,14 +104543,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:2;
 
     max-width:88%;
-
     max-height:235px;
 
     object-fit:contain;
 
     filter:
         drop-shadow(
-            0 22px 25px
+            0 23px 25px
             rgba(23,27,31,.12)
         );
 
@@ -104738,15 +104558,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-card:hover img{
 
     transform:
-        scale(1.035)
-        translateY(-4px);
+        translateY(-4px)
+        scale(1.035);
 
 }
-
 
 .home-page .home-product-card-info{
 
@@ -104754,27 +104572,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-card-info small{
 
-    color:
-        var(--card-tone);
+    color:var(--card-tone);
 
-    font-size:.58rem;
-
+    font-size:.57rem;
     font-weight:900;
 
     letter-spacing:.13em;
 
 }
 
-
 .home-page .home-product-card-info h3{
 
     margin-top:7px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:1.28rem;
 
@@ -104782,24 +104595,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-product-card-info p{
 
     margin-top:4px;
 
-    color:#879198;
+    color:#858F95;
 
-    font-size:.73rem;
+    font-size:.72rem;
 
 }
-
 
 .home-page .home-product-card-info > span{
 
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     margin-top:17px;
@@ -104810,42 +104620,37 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         1px solid
         rgba(23,27,31,.07);
 
-    color:#6F7A82;
+    color:#707B83;
 
-    font-size:.65rem;
+    font-size:.64rem;
 
     font-weight:900;
 
 }
 
-
 .home-page .home-product-card-info > span b{
 
-    color:
-        var(--card-tone);
+    color:var(--card-tone);
 
     font-size:.82rem;
 
 }
 
-
 .home-page .home-product-card.is-featured{
 
-    min-height:445px;
+    min-height:455px;
 
 }
-
 
 .home-page .home-product-card.is-featured
 .home-product-card-info h3{
 
-    font-size:1.6rem;
+    font-size:1.55rem;
 
 }
 
-
 /* ==========================================================
-   EVENT
+   18. EVENT
    ========================================================== */
 
 .home-page .home-event{
@@ -104854,26 +104659,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-intro{
 
-    max-width:760px;
+    max-width:790px;
 
 }
-
 
 .home-page .home-event-intro h2{
 
     margin-top:12px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:
         clamp(
             3rem,
             6vw,
-            6.2rem
+            6.1rem
         );
 
     line-height:.93;
@@ -104882,16 +104684,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-intro h2 span{
 
     display:block;
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
 }
-
 
 .home-page .home-event-card{
 
@@ -104899,11 +104698,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     grid-template-columns:
         minmax(0,1fr)
-        minmax(0,.96fr);
+        minmax(0,.98fr);
 
     overflow:hidden;
 
-    margin-top:45px;
+    margin-top:46px;
 
     border:
         1px solid
@@ -104914,24 +104713,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:#F7F5F0;
 
     box-shadow:
-        0 27px 80px
+        0 28px 82px
         rgba(23,27,31,.09);
 
 }
-
 
 .home-page .home-event-gallery{
 
     position:relative;
 
-    min-height:655px;
+    min-height:650px;
 
     overflow:hidden;
 
     background:#171B1F;
 
 }
-
 
 .home-page .home-event-gallery-track,
 .home-page .home-event-slide{
@@ -104941,7 +104738,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     inset:0;
 
 }
-
 
 .home-page .home-event-slide{
 
@@ -104959,7 +104755,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-slide.is-active{
 
     opacity:1;
@@ -104970,17 +104765,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-slide img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
 }
-
 
 .home-page .home-event-gallery-overlay{
 
@@ -104991,27 +104783,23 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     z-index:2;
 
     background:
-
         linear-gradient(
             180deg,
-            rgba(15,18,21,.35),
-            transparent 35%,
-            rgba(15,18,21,.72) 100%
+            rgba(15,18,21,.25),
+            transparent 38%,
+            rgba(15,18,21,.74) 100%
         );
 
     pointer-events:none;
 
 }
 
-
 .home-page .home-event-gallery-top{
 
     position:absolute;
 
     top:23px;
-
     left:24px;
-
     right:24px;
 
     z-index:5;
@@ -105019,20 +104807,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:20px;
 
 }
 
-
 .home-page .home-event-gallery-top span{
 
-    color:
-        #E9D7A9;
+    color:var(--home-champagne);
 
-    font-size:.60rem;
+    font-size:.59rem;
 
     font-weight:900;
 
@@ -105040,26 +104825,22 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-gallery-top strong{
 
     color:#FFFFFF;
 
-    font-size:.72rem;
+    font-size:.73rem;
 
-    letter-spacing:.05em;
+    letter-spacing:.04em;
 
 }
-
 
 .home-page .home-event-gallery-controls{
 
     position:absolute;
 
     left:24px;
-
     right:24px;
-
     bottom:23px;
 
     z-index:5;
@@ -105067,44 +104848,38 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     display:flex;
 
     align-items:center;
-
     justify-content:space-between;
 
     gap:15px;
 
 }
 
-
 .home-page .home-event-gallery-controls > button{
 
-    width:40px;
-
-    height:40px;
+    width:42px;
+    height:42px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border:
         1px solid
-        rgba(255,255,255,.17);
+        rgba(255,255,255,.29);
 
     border-radius:50%;
 
     background:
-        rgba(23,27,31,.35);
-
-    backdrop-filter:
-        blur(8px);
+        rgba(8,11,13,.70);
 
     color:#FFFFFF;
+
+    font-weight:900;
 
     cursor:pointer;
 
 }
-
 
 .home-page .home-event-gallery-controls > div{
 
@@ -105116,11 +104891,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-gallery-controls > div button{
 
     width:7px;
-
     height:7px;
 
     padding:0;
@@ -105130,7 +104903,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     border-radius:999px;
 
     background:
-        rgba(255,255,255,.38);
+        rgba(255,255,255,.43);
 
     cursor:pointer;
 
@@ -105140,17 +104913,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
-.home-page .home-event-gallery-controls
-> div button.active{
+.home-page .home-event-gallery-controls > div button.active{
 
     width:24px;
 
     background:
-        var(--home-gold);
+        var(--home-champagne);
 
 }
-
 
 .home-page .home-event-content{
 
@@ -105164,7 +104934,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-category{
 
     color:#9A7D48;
@@ -105176,7 +104945,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     letter-spacing:.17em;
 
 }
-
 
 .home-page .home-event-heading{
 
@@ -105192,11 +104960,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-date-big{
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:3rem;
 
@@ -105208,22 +104974,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-date-big span{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
     font-size:1.55rem;
 
 }
 
-
 .home-page .home-event-heading small{
 
     color:#A0814B;
 
-    font-size:.61rem;
+    font-size:.60rem;
 
     font-weight:900;
 
@@ -105231,24 +104994,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-heading h3{
 
-    max-width:530px;
+    max-width:540px;
 
     margin-top:9px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:2.55rem;
 
     line-height:1.04;
 
-    letter-spacing:-.04em;
+    letter-spacing:-.042em;
 
 }
-
 
 .home-page .home-event-description{
 
@@ -105263,7 +105023,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     line-height:1.78;
 
 }
-
 
 .home-page .home-event-meta-grid{
 
@@ -105284,7 +105043,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-meta-grid div{
 
     display:flex;
@@ -105294,7 +105052,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     gap:4px;
 
 }
-
 
 .home-page .home-event-meta-grid span{
 
@@ -105308,11 +105065,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-meta-grid strong{
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:.79rem;
 
@@ -105320,31 +105075,27 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-ticket{
 
     display:grid;
 
-    grid-template-columns:
-        1fr auto;
+    grid-template-columns:1fr auto;
 
     gap:3px 16px;
 
     margin-top:23px;
 
-    padding:
-        15px 16px;
+    padding:15px 16px;
 
     border:
         1px solid
-        rgba(198,161,91,.18);
+        rgba(198,161,91,.20);
 
     border-radius:17px;
 
     background:#F6F0E4;
 
 }
-
 
 .home-page .home-event-ticket span{
 
@@ -105360,7 +105111,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-ticket strong{
 
     grid-column:1;
@@ -105371,13 +105121,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-ticket small{
 
-    grid-row:
-        1 / 3;
-
     grid-column:2;
+
+    grid-row:1 / 3;
 
     align-self:center;
 
@@ -105388,7 +105136,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     font-weight:900;
 
 }
-
 
 .home-page .home-event-days{
 
@@ -105403,11 +105150,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-day{
 
-    padding:
-        14px 15px;
+    padding:14px 15px;
 
     border:
         1px solid
@@ -105418,7 +105163,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:#FFFFFF;
 
 }
-
 
 .home-page .home-event-day > span{
 
@@ -105432,22 +105176,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-day strong{
 
     display:block;
 
     margin-top:6px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:.74rem;
 
     line-height:1.35;
 
 }
-
 
 .home-page .home-event-day em{
 
@@ -105457,14 +105198,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     color:#947443;
 
-    font-style:normal;
-
     font-size:.66rem;
+
+    font-style:normal;
 
     font-weight:900;
 
 }
-
 
 .home-page .home-event-day p{
 
@@ -105477,7 +105217,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     line-height:1.4;
 
 }
-
 
 .home-page .home-event-day small{
 
@@ -105493,53 +105232,41 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-event-actions{
 
-    margin-top:22px;
+    margin-top:23px;
 
 }
 
-
 /* ==========================================================
-   MEMORIES
+   19. MEMORIES
    ========================================================== */
 
 .home-page .home-memories{
 
-    background:
-        #171B1F;
+    color:#FFFFFF;
+
+    background:#171B1F;
+
+}
+
+.home-page .home-memories .home-overline{
+
+    color:var(--home-champagne);
+
+}
+
+.home-page .home-memories .home-section-head h2{
 
     color:#FFFFFF;
 
 }
 
+.home-page .home-memories .home-section-head h2 span{
 
-.home-page .home-memories
-.home-overline{
-
-    color:
-        var(--home-gold-light);
+    color:var(--home-champagne);
 
 }
-
-
-.home-page .home-memories
-.home-section-head h2{
-
-    color:#FFFFFF;
-
-}
-
-
-.home-page .home-memories
-.home-section-head h2 span{
-
-    color:
-        var(--home-gold-light);
-
-}
-
 
 .home-page .home-memory-counter{
 
@@ -105547,12 +105274,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     align-items:baseline;
 
-    gap:7px;
+    gap:6px;
 
     color:#7F8A91;
 
 }
-
 
 .home-page .home-memory-counter strong{
 
@@ -105562,13 +105288,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-counter span{
 
-    font-size:.68rem;
+    font-size:.66rem;
 
 }
-
 
 .home-page .home-memory-layout{
 
@@ -105576,14 +105300,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     grid-template-columns:
         minmax(0,1fr)
-        260px;
+        275px;
 
     gap:18px;
 
     margin-top:45px;
 
 }
-
 
 .home-page .home-memory-stage{
 
@@ -105599,7 +105322,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-slide{
 
     position:absolute;
@@ -105607,7 +105329,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     inset:0;
 
     opacity:0;
-
     visibility:hidden;
 
     transform:
@@ -105620,17 +105341,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-slide.is-active{
 
     opacity:1;
-
     visibility:visible;
-
     transform:none;
 
 }
-
 
 .home-page .home-memory-slide::after{
 
@@ -105644,31 +105361,26 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         linear-gradient(
             180deg,
             transparent 42%,
-            rgba(10,13,15,.78) 100%
+            rgba(10,13,15,.79) 100%
         );
 
 }
 
-
 .home-page .home-memory-slide img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
 }
 
-
 .home-page .home-memory-caption{
 
     position:absolute;
 
     left:27px;
-
-    right:110px;
-
+    right:120px;
     bottom:28px;
 
     z-index:3;
@@ -105681,20 +105393,17 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-caption span{
 
-    color:
-        var(--home-gold-light);
+    color:var(--home-champagne);
 
-    font-size:.58rem;
+    font-size:.57rem;
 
     font-weight:900;
 
     letter-spacing:.15em;
 
 }
-
 
 .home-page .home-memory-caption strong{
 
@@ -105706,13 +105415,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-controls{
 
     position:absolute;
 
     right:23px;
-
     bottom:23px;
 
     z-index:4;
@@ -105723,37 +105430,30 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-controls button{
 
-    width:40px;
-
-    height:40px;
+    width:42px;
+    height:42px;
 
     display:flex;
 
     align-items:center;
-
     justify-content:center;
 
     border:
         1px solid
-        rgba(255,255,255,.16);
+        rgba(255,255,255,.25);
 
     border-radius:50%;
 
     background:
-        rgba(23,27,31,.52);
-
-    backdrop-filter:
-        blur(9px);
+        rgba(8,11,13,.70);
 
     color:#FFFFFF;
 
     cursor:pointer;
 
 }
-
 
 .home-page .home-memory-aside{
 
@@ -105763,29 +105463,28 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     justify-content:flex-end;
 
+    min-height:300px;
+
     padding:
-        25px 8px 11px 13px;
+        25px 10px 11px 13px;
 
     border-top:
         1px solid
-        rgba(255,255,255,.10);
+        rgba(255,255,255,.11);
 
 }
 
-
 .home-page .home-memory-aside > span{
 
-    color:
-        var(--home-gold-light);
+    color:var(--home-champagne);
 
-    font-size:.57rem;
+    font-size:.56rem;
 
     font-weight:900;
 
     letter-spacing:.15em;
 
 }
-
 
 .home-page .home-memory-aside strong{
 
@@ -105801,22 +105500,19 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-memory-aside p{
 
     margin-top:15px;
 
-    color:#939EA5;
+    color:#949EA5;
 
-    font-size:.79rem;
+    font-size:.78rem;
 
-    line-height:1.7;
+    line-height:1.72;
 
 }
 
-
-.home-page .home-memory-aside
-.home-minimal-button{
+.home-page .home-memory-aside .home-minimal-button{
 
     margin-top:23px;
 
@@ -105824,9 +105520,8 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 /* ==========================================================
-   COMMUNITY
+   20. COMMUNITY VOICE
    ========================================================== */
 
 .home-page .home-community{
@@ -105834,7 +105529,6 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:#F6F6F4;
 
 }
-
 
 .home-page .home-community-grid{
 
@@ -105850,40 +105544,35 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-community-mark{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold);
 
     font-size:8rem;
 
-    line-height:.6;
+    line-height:.58;
 
     font-family:Georgia,serif;
 
 }
 
-
 .home-page .home-community-content{
 
-    max-width:920px;
+    max-width:930px;
 
 }
-
 
 .home-page .home-community-content blockquote{
 
     margin-top:18px;
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:
         clamp(
-            2.2rem,
-            4.5vw,
-            4.7rem
+            2.15rem,
+            4.4vw,
+            4.6rem
         );
 
     line-height:1.04;
@@ -105892,16 +105581,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-community-content blockquote em{
 
-    color:
-        var(--home-gold);
+    color:var(--home-gold-deep);
 
     font-style:normal;
 
 }
-
 
 .home-page .home-community-person{
 
@@ -105915,11 +105601,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-community-avatar{
 
     width:48px;
-
     height:48px;
 
     overflow:hidden;
@@ -105930,17 +105614,14 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-community-avatar img{
 
     width:100%;
-
     height:100%;
 
     object-fit:cover;
 
 }
-
 
 .home-page .home-community-person div:last-child{
 
@@ -105952,28 +105633,24 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-community-person strong{
 
-    color:
-        var(--home-black);
+    color:var(--home-black);
 
     font-size:.80rem;
 
 }
 
-
 .home-page .home-community-person span{
 
-    color:#818B92;
+    color:#7F8990;
 
-    font-size:.66rem;
+    font-size:.65rem;
 
 }
 
-
 /* ==========================================================
-   FINAL
+   21. FINAL CTA
    ========================================================== */
 
 .home-page .home-final{
@@ -105987,24 +105664,21 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         linear-gradient(
             135deg,
-            #1B2024,
-            #30383F
+            #171B1F 0%,
+            #252D33 100%
         );
 
 }
-
 
 .home-page .home-final-light{
 
     position:absolute;
 
     width:650px;
-
     height:650px;
 
     left:50%;
-
-    top:-440px;
+    top:-445px;
 
     transform:
         translateX(-50%);
@@ -106014,7 +105688,7 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     background:
         radial-gradient(
             circle,
-            rgba(198,161,91,.18),
+            rgba(198,161,91,.20),
             transparent 70%
         );
 
@@ -106022,14 +105696,13 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-final-grid{
 
     position:absolute;
 
     inset:0;
 
-    opacity:.18;
+    opacity:.20;
 
     background-image:
 
@@ -106044,18 +105717,16 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
             transparent 1px
         );
 
-    background-size:
-        72px 72px;
+    background-size:74px 74px;
 
     mask-image:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,.5),
-            transparent 78%
+            rgba(0,0,0,.55),
+            transparent 80%
         );
 
 }
-
 
 .home-page .home-final-content{
 
@@ -106063,77 +105734,149 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     z-index:2;
 
+    width:100%;
+
+    max-width:1050px;
+
+    margin:0 auto;
+
     padding:
-        60px 0 75px;
+        92px 20px 100px;
 
     text-align:center;
 
 }
 
+.home-page .home-final-content .home-overline{
 
-.home-page .home-final .home-overline{
+    width:max-content;
 
-    color:
-        var(--home-gold-light);
+    max-width:100%;
+
+    margin:0 auto;
+
+    color:var(--home-champagne);
 
 }
 
-
 .home-page .home-final-content h2{
 
-    max-width:920px;
+    width:100%;
+
+    max-width:1000px;
 
     margin:
-        17px auto 0;
+        19px auto 0;
 
     color:#FFFFFF;
 
     font-size:
         clamp(
-            3rem,
-            6.7vw,
-            6.3rem
+            3.15rem,
+            6.5vw,
+            6.45rem
         );
 
-    line-height:.93;
+    line-height:.92;
 
-    letter-spacing:-.055em;
+    letter-spacing:-.06em;
+
+    text-align:center;
 
 }
-
 
 .home-page .home-final-content h2 span{
 
     display:block;
 
-    color:
-        var(--home-gold-light);
+    color:var(--home-champagne);
 
 }
-
 
 .home-page .home-final-content p{
 
-    max-width:610px;
+    width:100%;
+
+    max-width:650px;
 
     margin:
-        20px auto 0;
+        22px auto 0;
 
-    color:#C8D0D5;
+    color:#D0D7DB;
 
-    line-height:1.75;
+    font-size:.98rem;
+
+    line-height:1.76;
+
+    text-align:center;
 
 }
-
 
 .home-page .home-final-actions{
 
+    display:flex;
+
+    align-items:center;
+
     justify-content:center;
 
-    margin-top:29px;
+    gap:14px;
+
+    width:100%;
+
+    margin:
+        32px auto 0;
 
 }
 
+.home-page .home-final-actions .home-action{
+
+    min-width:238px;
+
+    min-height:61px;
+
+    font-size:.76rem;
+
+}
+
+.home-page .home-final-actions .home-action-primary{
+
+    color:#FFFFFF;
+
+    background:
+        linear-gradient(
+            135deg,
+            #DAB36B,
+            #AD833D
+        );
+
+    box-shadow:
+        0 19px 45px
+        rgba(198,161,91,.24);
+
+}
+
+.home-page .home-final-actions .home-action-secondary{
+
+    color:#FFFFFF;
+
+    background:
+        rgba(255,255,255,.065);
+
+    border-color:
+        rgba(255,255,255,.30);
+
+}
+
+.home-page .home-final-actions .home-action-secondary:hover{
+
+    background:
+        rgba(255,255,255,.11);
+
+    border-color:
+        rgba(255,255,255,.50);
+
+}
 
 .home-page .home-final-footer{
 
@@ -106153,11 +105896,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     border-top:
         1px solid
-        rgba(255,255,255,.10);
+        rgba(255,255,255,.11);
 
-    color:#8E999F;
+    color:#99A3A9;
 
-    font-size:.53rem;
+    font-size:.52rem;
 
     font-weight:900;
 
@@ -106165,1767 +105908,15 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
-
 .home-page .home-final-footer span:first-child,
 .home-page .home-final-footer span:last-child{
 
-    color:#D1D7DB;
-
-}
-
-
-/* ==========================================================
-   MOTION + ACCESSIBILITY
-   ========================================================== */
-
-@media(prefers-reduced-motion:reduce){
-
-    .home-page *,
-    .home-page *::before,
-    .home-page *::after{
-
-        scroll-behavior:auto !important;
-
-        animation-duration:.001ms !important;
-
-        animation-iteration-count:1 !important;
-
-        transition-duration:.001ms !important;
-
-    }
-
-
-    .home-page .reveal{
-
-        opacity:1;
-
-        transform:none;
-
-    }
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE 1100
-   ========================================================== */
-
-@media(max-width:1100px){
-
-    .home-page .home-hero-main{
-
-        grid-template-columns:
-            minmax(0,1fr)
-            minmax(350px,.8fr);
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        min-height:560px;
-
-    }
-
-
-    .home-page .home-hero-product-stage{
-
-        width:
-            min(470px,43vw);
-
-        height:530px;
-
-    }
-
-
-    .home-page .home-hero-product img{
-
-        max-height:460px;
-
-    }
-
-
-    .home-page .home-product-grid{
-
-        grid-template-columns:
-            repeat(3,1fr);
-
-    }
-
-
-    .home-page .home-product-card.is-featured{
-
-        grid-column:
-            span 2;
-
-    }
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE 900
-   ========================================================== */
-
-@media(max-width:900px){
-
-    .home-page .home-hero{
-
-        min-height:860px;
-
-    }
-
-
-    .home-page .home-hero-container{
-
-        min-height:860px;
-
-    }
-
-
-    .home-page .home-hero-main{
-
-        grid-template-columns:1fr;
-
-        gap:0;
-
-        padding-top:25px;
-
-    }
-
-
-    .home-page .home-hero-copy{
-
-        max-width:790px;
-
-        padding-left:0;
-
-    }
-
-
-    .home-page .home-hero-content{
-
-        min-height:290px;
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        position:absolute;
-
-        right:-90px;
-
-        bottom:55px;
-
-        width:55vw;
-
-        min-height:0;
-
-        height:520px;
-
-        opacity:.86;
-
-        pointer-events:none;
-
-    }
-
-
-    .home-page .home-hero-copy{
-
-        position:relative;
-
-        z-index:6;
-
-    }
-
-
-    .home-page .home-hero-phrase{
-
-        position:static;
-
-        margin-top:11px;
-
-    }
-
-
-    .home-page .home-hero-product-stage{
-
-        width:420px;
-
-        height:490px;
-
-    }
-
-
-    .home-page .home-hero-product img{
-
-        max-height:430px;
-
-    }
-
-
-    .home-page .home-hero-object-meta{
-
-        right:30px;
-
-        bottom:25px;
-
-    }
-
-
-    .home-page .home-hero-visual-index{
-
-        right:30px;
-
-        top:6%;
-
-    }
-
-
-    .home-page .home-pillar-grid,
-    .home-page .home-event-card{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-event-gallery{
-
-        min-height:500px;
-
-    }
-
-
-    .home-page .home-memory-layout{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-memory-aside{
-
-        min-height:230px;
-
-        padding:
-            23px 0 0;
-
-        border-top:
-            1px solid
-            rgba(255,255,255,.10);
-
-    }
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE 700
-   ========================================================== */
-
-@media(max-width:700px){
-
-    .home-page .home-container{
-
-        width:
-            min(
-                calc(100% - 32px),
-                1180px
-            );
-
-    }
-
-
-    .home-page .section{
-
-        padding:84px 0;
-
-    }
-
-
-    .home-page .section-sm{
-
-        padding:74px 0;
-
-    }
-
-
-    .home-page .home-hero{
-
-        min-height:800px;
-
-    }
-
-
-    .home-page .home-hero-container{
-
-        min-height:800px;
-
-    }
-
-
-    .home-page .home-hero-topline{
-
-        padding-top:20px;
-
-    }
-
-
-    .home-page .home-brand-lockup img{
-
-        width:37px;
-
-        height:37px;
-
-    }
-
-
-    .home-page .home-brand-lockup strong{
-
-        font-size:.61rem;
-
-    }
-
-
-    .home-page .home-brand-lockup span{
-
-        font-size:.52rem;
-
-    }
-
-
-    .home-page .home-hero-edition{
-
-        display:none;
-
-    }
-
-
-    .home-page .home-hero-main{
-
-        padding-bottom:30px;
-
-    }
-
-
-    .home-page .home-hero-content{
-
-        min-height:260px;
-
-        margin-top:21px;
-
-    }
-
-
-    .home-page .home-hero-slide h1{
-
-        font-size:
-            clamp(
-                3rem,
-                14vw,
-                4.65rem
-            );
-
-        letter-spacing:-.065em;
-
-    }
-
-
-    .home-page .home-hero-slide > p{
-
-        max-width:390px;
-
-        font-size:.91rem;
-
-        line-height:1.65;
-
-    }
-
-
-    .home-page .home-hero-product-tag{
-
-        margin-top:17px;
-
-    }
-
-
-    .home-page .home-hero-actions{
-
-        display:grid;
-
-        grid-template-columns:
-            1fr 1fr;
-
-        width:
-            min(
-                390px,
-                100%
-            );
-
-    }
-
-
-    .home-page .home-action{
-
-        min-height:47px;
-
-        font-size:.68rem;
-
-    }
-
-
-    .home-page .home-hero-controls{
-
-        margin-top:22px;
-
-    }
-
-
-    .home-page .home-hero-progress{
-
-        width:
-            min(
-                150px,
-                30vw
-            );
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        right:-95px;
-
-        bottom:30px;
-
-        width:65vw;
-
-        height:420px;
-
-        opacity:.55;
-
-    }
-
-
-    .home-page .home-hero-product-stage{
-
-        width:330px;
-
-        height:400px;
-
-    }
-
-
-    .home-page .home-hero-product img{
-
-        max-height:355px;
-
-        max-width:86%;
-
-    }
-
-
-    .home-page .home-hero-halo{
-
-        width:390px;
-
-        height:390px;
-
-    }
-
-
-    .home-page .home-hero-halo-secondary{
-
-        width:330px;
-
-        height:330px;
-
-    }
-
-
-    .home-page
-    .home-hero-orbit.orbit-one{
-
-        width:420px;
-
-        height:150px;
-
-    }
-
-
-    .home-page
-    .home-hero-orbit.orbit-two{
-
-        width:350px;
-
-        height:350px;
-
-    }
-
-
-    .home-page .home-hero-object-meta{
-
-        right:8px;
-
-        bottom:5px;
-
-        transform:
-            scale(.88);
-
-        transform-origin:
-            right bottom;
-
-    }
-
-
-    .home-page .home-hero-visual-index{
-
-        display:none;
-
-    }
-
-
-    .home-page .home-hero-bottom-rail{
-
-        gap:9px;
-
-        font-size:.47rem;
-
-        letter-spacing:.12em;
-
-    }
-
-
-    .home-page .home-signature-track{
-
-        justify-content:flex-start;
-
-        width:max-content;
-
-        padding:
-            0 20px;
-
-        animation:
-            homeMarquee 20s linear infinite;
-
-    }
-
-
-    @keyframes homeMarquee{
-
-        from{
-
-            transform:
-                translateX(0);
-
-        }
-
-        to{
-
-            transform:
-                translateX(-35%);
-
-        }
-
-    }
-
-
-    .home-page .home-section-head{
-
-        align-items:flex-start;
-
-        flex-direction:column;
-
-    }
-
-
-    .home-page .home-section-head h2{
-
-        font-size:
-            clamp(
-                2.4rem,
-                11vw,
-                4rem
-            );
-
-    }
-
-
-    .home-page .home-manifesto-layout{
-
-        grid-template-columns:1fr;
-
-        gap:20px;
-
-        margin-top:45px;
-
-    }
-
-
-    .home-page .home-manifesto-copy h2{
-
-        font-size:
-            clamp(
-                2.8rem,
-                12vw,
-                4.6rem
-            );
-
-    }
-
-
-    .home-page .home-manifesto-foot{
-
-        grid-template-columns:
-            1fr 1fr;
-
-        row-gap:15px;
-
-        margin-top:45px;
-
-    }
-
-
-    .home-page .home-pillar{
-
-        min-height:490px;
-
-        padding:23px;
-
-    }
-
-
-    .home-page .home-pillar-visual{
-
-        height:230px;
-
-    }
-
-
-    .home-page .home-pillar-content h3{
-
-        font-size:2rem;
-
-    }
-
-
-    .home-page .home-universe{
-
-        grid-template-columns:
-            50px 1fr 32px;
-
-        gap:12px;
-
-        min-height:120px;
-
-    }
-
-
-    .home-page .home-universe p{
-
-        grid-column:
-            2 / 4;
-
-        padding-bottom:17px;
-
-    }
-
-
-    .home-page .home-product-grid{
-
-        grid-template-columns:
-            1fr 1fr;
-
-    }
-
-
-    .home-page .home-product-card,
-    .home-page .home-product-card.is-featured{
-
-        min-height:400px;
-
-    }
-
-
-    .home-page .home-product-card.is-featured{
-
-        grid-column:
-            span 2;
-
-    }
-
-
-    .home-page .home-event-gallery{
-
-        min-height:420px;
-
-    }
-
-
-    .home-page .home-event-content{
-
-        padding:
-            31px 23px;
-
-    }
-
-
-    .home-page .home-event-heading h3{
-
-        font-size:2rem;
-
-    }
-
-
-    .home-page .home-event-meta-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-event-days{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-event-actions{
-
-        flex-direction:column;
-
-    }
-
-
-    .home-page .home-event-actions .home-action{
-
-        width:100%;
-
-    }
-
-
-    .home-page .home-memory-stage{
-
-        min-height:460px;
-
-    }
-
-
-    .home-page .home-memory-caption{
-
-        left:20px;
-
-        right:20px;
-
-        bottom:20px;
-
-    }
-
-
-    .home-page .home-memory-caption strong{
-
-        font-size:1.25rem;
-
-    }
-
-
-    .home-page .home-community-grid{
-
-        grid-template-columns:1fr;
-
-        gap:10px;
-
-    }
-
-
-    .home-page .home-community-mark{
-
-        font-size:5.8rem;
-
-    }
-
-
-    .home-page .home-community-content blockquote{
-
-        font-size:
-            clamp(
-                2rem,
-                9.5vw,
-                3.5rem
-            );
-
-    }
-
-
-    .home-page .home-final-content h2{
-
-        font-size:
-            clamp(
-                2.7rem,
-                11vw,
-                4.5rem
-            );
-
-    }
-
-
-    .home-page .home-final-footer{
-
-        grid-template-columns:
-            repeat(2,1fr);
-
-        gap:12px;
-
-    }
-
-}
-
-
-/* ==========================================================
-   RESPONSIVE 520
-   ========================================================== */
-
-@media(max-width:520px){
-
-    .home-page .home-hero{
-
-        min-height:760px;
-
-    }
-
-
-    .home-page .home-hero-container{
-
-        min-height:760px;
-
-    }
-
-
-    .home-page .home-hero-topline{
-
-        padding-top:16px;
-
-    }
-
-
-    .home-page .home-hero-content{
-
-        min-height:240px;
-
-    }
-
-
-    .home-page .home-hero-slide > p{
-
-        max-width:330px;
-
-    }
-
-
-    .home-page .home-hero-actions{
-
-        grid-template-columns:1fr;
-
-        width:100%;
-
-    }
-
-
-    .home-page .home-hero-actions
-    .home-action{
-
-        width:100%;
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        right:-115px;
-
-        bottom:21px;
-
-        width:76vw;
-
-        height:355px;
-
-        opacity:.44;
-
-    }
-
-
-    .home-page .home-hero-product-stage{
-
-        width:300px;
-
-        height:340px;
-
-    }
-
-
-    .home-page .home-hero-product img{
-
-        max-height:310px;
-
-    }
-
-
-    .home-page .home-hero-bottom-rail{
-
-        padding-bottom:17px;
-
-        gap:7px;
-
-    }
-
-
-    .home-page
-    .home-hero-bottom-rail
-    span:nth-of-type(3),
-
-    .home-page
-    .home-hero-bottom-rail
-    span:nth-of-type(4),
-
-    .home-page
-    .home-hero-bottom-rail
-    i:nth-of-type(3){
-
-        display:none;
-
-    }
-
-
-    .home-page .home-product-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-product-card.is-featured{
-
-        grid-column:auto;
-
-    }
-
-
-    .home-page .home-event-gallery{
-
-        min-height:340px;
-
-    }
-
-
-    .home-page .home-event-heading{
-
-        grid-template-columns:1fr;
-
-    }
-
-
-    .home-page .home-event-date-big{
-
-        font-size:2.7rem;
-
-    }
-
-
-    .home-page .home-event-heading h3{
-
-        font-size:1.8rem;
-
-    }
-
-
-    .home-page .home-memory-stage{
-
-        min-height:370px;
-
-    }
-
-
-    .home-page .home-memory-counter{
-
-        align-self:flex-start;
-
-    }
-
-
-    .home-page .home-final-actions{
-
-        flex-direction:column;
-
-    }
-
-
-    .home-page .home-final-actions .home-action{
-
-        width:100%;
-
-    }
+    color:#E0E5E8;
 
 }
 
 /* ==========================================================
-   HOME MASTER OVERRIDE
-   HERO REFINEMENT + FINAL CTA
-   ----------------------------------------------------------
-   Cole este bloco NO FIM do home.css
-   ========================================================== */
-
-
-/* ==========================================================
-   01. HERO — COMPOSIÇÃO PRINCIPAL
-   ========================================================== */
-
-.home-page .home-hero{
-
-    min-height:
-        max(
-            860px,
-            min(940px,96svh)
-        );
-
-    background:
-        #15191D;
-
-}
-
-
-.home-page .home-hero-container{
-
-    min-height:
-        max(
-            860px,
-            min(940px,96svh)
-        );
-
-}
-
-
-/* ==========================================================
-   02. HERO — ATMOSFERA MAIS ESCURA
-   ----------------------------------------------------------
-   Evita o aspecto esbranquiçado da imagem enviada.
-   ========================================================== */
-
-.home-page .home-hero-background{
-
-    background:
-
-        radial-gradient(
-            circle at 78% 49%,
-            color-mix(
-                in srgb,
-                var(--home-hero-atmosphere) 34%,
-                transparent
-            ),
-            transparent 22%
-        ),
-
-        radial-gradient(
-            circle at 72% 57%,
-            color-mix(
-                in srgb,
-                var(--home-hero-tone) 18%,
-                transparent
-            ),
-            transparent 30%
-        ),
-
-        linear-gradient(
-            120deg,
-            #0D1012 0%,
-            #171B1F 48%,
-            #242A2F 100%
-        );
-
-}
-
-
-.home-page .home-hero-background::after{
-
-    background:
-
-        radial-gradient(
-            circle at 76% 50%,
-            rgba(255,255,255,.035),
-            transparent 23%
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(8,10,12,.96) 0%,
-            rgba(8,10,12,.86) 34%,
-            rgba(8,10,12,.33) 67%,
-            rgba(8,10,12,.55) 100%
-        ),
-
-        linear-gradient(
-            0deg,
-            rgba(8,10,12,.82),
-            rgba(8,10,12,.02) 54%,
-            rgba(8,10,12,.18) 100%
-        );
-
-}
-
-
-/* ==========================================================
-   03. HERO — MAIN GRID
-   ========================================================== */
-
-.home-page .home-hero-main{
-
-    grid-template-columns:
-        minmax(560px,1.08fr)
-        minmax(430px,.92fr);
-
-    gap:30px;
-
-    padding:
-        20px 0 52px;
-
-}
-
-
-/* ==========================================================
-   04. HERO — COPY
-   ========================================================== */
-
-.home-page .home-hero-copy{
-
-    max-width:760px;
-
-    padding-left:4px;
-
-    z-index:8;
-
-}
-
-
-.home-page .home-hero-index-label{
-
-    margin-bottom:0;
-
-}
-
-
-.home-page .home-hero-content{
-
-    min-height:330px;
-
-    margin-top:24px;
-
-    max-width:700px;
-
-}
-
-
-/* ==========================================================
-   05. HERO — REMOVE NOISE INFORMATION
-   ========================================================== */
-
-/*
-   O JS continua a gerar estas informações.
-   Aqui elas deixam de aparecer visualmente,
-   mantendo a arquitectura intacta.
-*/
-
-.home-page .home-hero-pretitle{
-
-    display:none !important;
-
-}
-
-
-.home-page .home-hero-product-tag{
-
-    display:none !important;
-
-}
-
-
-.home-page .home-hero-phrase{
-
-    display:none !important;
-
-}
-
-
-.home-page .home-hero-object-meta{
-
-    display:none !important;
-
-}
-
-
-.home-page .home-hero-visual-index{
-
-    display:none !important;
-
-}
-
-
-.home-page .home-hero-bottom-rail{
-
-    display:none !important;
-
-}
-
-
-/* ==========================================================
-   06. HERO — EYEBROW
-   ========================================================== */
-
-.home-page .home-hero-eyebrow{
-
-    margin-bottom:15px;
-
-    color:
-        var(--home-gold-light);
-
-    font-size:.67rem;
-
-    letter-spacing:.23em;
-
-}
-
-
-/* ==========================================================
-   07. HERO — TITLE
-   ========================================================== */
-
-.home-page .home-hero-slide h1{
-
-    width:100%;
-
-    max-width:740px;
-
-    margin-top:0;
-
-    color:#FFFFFF;
-
-    font-size:
-        clamp(
-            3.7rem,
-            5.65vw,
-            6.55rem
-        );
-
-    line-height:.89;
-
-    letter-spacing:-.065em;
-
-    font-weight:800;
-
-    text-wrap:balance;
-
-}
-
-
-.home-page .home-hero-slide h1 span{
-
-    display:block;
-
-    margin-top:2px;
-
-    color:
-        var(--home-gold-light);
-
-}
-
-
-/* ==========================================================
-   08. HERO — DESCRIPTION
-   ========================================================== */
-
-.home-page .home-hero-slide > p{
-
-    max-width:510px;
-
-    margin-top:25px;
-
-    color:#C9D0D4;
-
-    font-size:
-        clamp(
-            .94rem,
-            1.1vw,
-            1.06rem
-        );
-
-    line-height:1.7;
-
-}
-
-
-/* ==========================================================
-   09. HERO — BUTTONS
-   ========================================================== */
-
-.home-page .home-hero-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:13px;
-
-    margin-top:29px;
-
-}
-
-
-.home-page .home-hero-actions .home-action{
-
-    min-width:218px;
-
-    min-height:58px;
-
-    padding:
-        0 21px 0 22px;
-
-    border-radius:999px;
-
-    font-size:.76rem;
-
-    letter-spacing:.015em;
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #C9A45D,
-            #A47F3E
-        );
-
-    color:#FFFFFF;
-
-    box-shadow:
-        0 17px 42px
-        rgba(198,161,91,.22);
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-primary:hover{
-
-    box-shadow:
-        0 22px 50px
-        rgba(198,161,91,.30);
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-secondary{
-
-    border:
-        1px solid
-        rgba(255,255,255,.22);
-
-    background:
-        rgba(20,24,27,.72);
-
-    color:#FFFFFF;
-
-    box-shadow:
-        0 10px 25px
-        rgba(0,0,0,.14);
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-secondary:hover{
-
-    background:
-        rgba(255,255,255,.10);
-
-    border-color:
-        rgba(255,255,255,.38);
-
-}
-
-
-/* ==========================================================
-   10. HERO — CONTROLS
-   ========================================================== */
-
-.home-page .home-hero-controls{
-
-    margin-top:27px;
-
-    gap:12px;
-
-}
-
-
-.home-page .home-hero-controls > button{
-
-    width:43px;
-
-    height:43px;
-
-    background:
-        rgba(255,255,255,.045);
-
-}
-
-
-.home-page .home-hero-progress{
-
-    width:
-        min(245px,27vw);
-
-    height:2px;
-
-}
-
-
-.home-page .home-hero-number{
-
-    margin-left:4px;
-
-}
-
-
-.home-page .home-hero-number strong{
-
-    font-size:1.3rem;
-
-}
-
-
-/* ==========================================================
-   11. HERO — PRODUCT STAGE
-   ========================================================== */
-
-.home-page .home-hero-visual{
-
-    min-height:640px;
-
-    transform:
-        translateX(18px);
-
-}
-
-
-.home-page .home-hero-product-stage{
-
-    width:
-        min(560px,46vw);
-
-    height:600px;
-
-}
-
-
-.home-page .home-hero-product img{
-
-    max-width:88%;
-
-    max-height:520px;
-
-}
-
-
-.home-page .home-hero-halo{
-
-    width:570px;
-
-    height:570px;
-
-}
-
-
-.home-page .home-hero-halo-secondary{
-
-    width:460px;
-
-    height:460px;
-
-}
-
-
-.home-page .home-hero-orbit.orbit-one{
-
-    width:600px;
-
-    height:195px;
-
-}
-
-
-.home-page .home-hero-orbit.orbit-two{
-
-    width:500px;
-
-    height:500px;
-
-}
-
-
-/* ==========================================================
-   12. HERO — PRODUCT VISUAL DEPTH
-   ========================================================== */
-
-.home-page .home-hero-product-shadow{
-
-    width:275px;
-
-    height:46px;
-
-    bottom:45px;
-
-}
-
-
-.home-page .home-hero-product-glow{
-
-    width:360px;
-
-    height:360px;
-
-}
-
-
-/* ==========================================================
-   13. HERO — TOP BAR
-   ========================================================== */
-
-.home-page .home-hero-topline{
-
-    padding-top:27px;
-
-}
-
-
-.home-page .home-brand-lockup img{
-
-    width:40px;
-
-    height:40px;
-
-}
-
-
-/* ==========================================================
-   14. FINAL CTA — CENTRALIZAÇÃO ABSOLUTA
-   ========================================================== */
-
-.home-page .home-final{
-
-    text-align:center;
-
-}
-
-
-.home-page .home-final-content{
-
-    width:100%;
-
-    max-width:1100px;
-
-    margin:
-        0 auto;
-
-    padding:
-        90px 24px 100px;
-
-    text-align:center;
-
-}
-
-
-.home-page .home-final-content
-.home-overline{
-
-    display:block;
-
-    width:max-content;
-
-    max-width:100%;
-
-    margin:
-        0 auto;
-
-}
-
-
-.home-page .home-final-content h2{
-
-    width:100%;
-
-    max-width:1000px;
-
-    margin:
-        20px auto 0;
-
-    text-align:center;
-
-    font-size:
-        clamp(
-            3.1rem,
-            6.8vw,
-            6.7rem
-        );
-
-    line-height:.92;
-
-    letter-spacing:-.06em;
-
-}
-
-
-.home-page .home-final-content h2 span{
-
-    display:block;
-
-    color:
-        var(--home-gold-light);
-
-}
-
-
-.home-page .home-final-content p{
-
-    width:100%;
-
-    max-width:650px;
-
-    margin:
-        23px auto 0;
-
-    text-align:center;
-
-    font-size:
-        clamp(
-            .92rem,
-            1.15vw,
-            1.04rem
-        );
-
-    line-height:1.75;
-
-}
-
-
-/* ==========================================================
-   15. FINAL CTA — BOTÕES IMPACTANTES
-   ========================================================== */
-
-.home-page .home-final-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:13px;
-
-    width:100%;
-
-    margin:
-        32px auto 0;
-
-}
-
-
-.home-page .home-final-actions .home-action{
-
-    min-width:225px;
-
-    min-height:59px;
-
-    padding:
-        0 23px;
-
-    border-radius:999px;
-
-    font-size:.76rem;
-
-}
-
-
-.home-page .home-final-actions
-.home-action-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #C9A45D,
-            #A47F3E
-        );
-
-    color:#FFFFFF;
-
-    box-shadow:
-        0 18px 43px
-        rgba(198,161,91,.23);
-
-}
-
-
-.home-page .home-final-actions
-.home-action-secondary{
-
-    border:
-        1px solid
-        rgba(255,255,255,.22);
-
-    background:
-        rgba(255,255,255,.055);
-
-    color:#FFFFFF;
-
-}
-
-
-.home-page .home-final-actions
-.home-action-secondary:hover{
-
-    background:
-        rgba(255,255,255,.10);
-
-    border-color:
-        rgba(255,255,255,.38);
-
-}
-
-
-/* ==========================================================
-   16. FINAL FOOTER
-   ========================================================== */
-
-.home-page .home-final-footer{
-
-    width:100%;
-
-    max-width:1180px;
-
-    margin:
-        0 auto;
-
-    text-align:left;
-
-}
-
-
-/* ==========================================================
-   17. DESKTOP LARGE
+   22. LARGE DESKTOP
    ========================================================== */
 
 @media(min-width:1400px){
@@ -107938,13 +105929,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-
     .home-page .home-hero-copy{
 
         max-width:790px;
 
     }
-
 
     .home-page .home-hero-slide h1{
 
@@ -107959,19 +105948,10 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-
-    .home-page .home-hero-visual{
-
-        transform:
-            translateX(5px);
-
-    }
-
 }
 
-
 /* ==========================================================
-   18. TABLET
+   23. TABLET 1100
    ========================================================== */
 
 @media(max-width:1100px){
@@ -107979,240 +105959,195 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
     .home-page .home-hero-main{
 
         grid-template-columns:
-            minmax(500px,1fr)
-            minmax(360px,.78fr);
+            minmax(480px,1fr)
+            minmax(370px,.82fr);
 
-        gap:15px;
+        gap:25px;
 
     }
-
 
     .home-page .home-hero-slide h1{
 
         font-size:
             clamp(
-                3.55rem,
+                3.6rem,
                 5.9vw,
-                5.9rem
+                6rem
             );
 
     }
 
-
     .home-page .home-hero-product-stage{
 
-        width:430px;
-
-        height:540px;
+        width:450px;
+        height:545px;
 
     }
-
 
     .home-page .home-hero-product img{
 
-        max-height:455px;
+        max-height:460px;
 
     }
 
+    .home-page .home-product-grid{
 
-    .home-page .home-hero-visual{
+        grid-template-columns:
+            repeat(3,1fr);
 
-        transform:
-            translateX(10px);
+    }
+
+    .home-page .home-product-card.is-featured{
+
+        grid-column:
+            span 2;
 
     }
 
 }
 
-
 /* ==========================================================
-   19. MOBILE / 800
+   24. TABLET 900
    ========================================================== */
 
-@media(max-width:800px){
+@media(max-width:900px){
 
     .home-page .home-hero{
 
-        min-height:
-            790px;
+        min-height:850px;
 
     }
-
 
     .home-page .home-hero-container{
 
-        min-height:
-            790px;
+        min-height:850px;
 
     }
 
+    .home-page .home-hero-background::before{
+
+        width:44%;
+
+    }
+
+    .home-page .home-hero-background::after{
+
+        left:51%;
+
+    }
 
     .home-page .home-hero-main{
 
-        display:block;
+        grid-template-columns:1fr;
+
+        gap:0;
 
         padding:
-            25px 0 35px;
+            28px 0 35px;
 
     }
-
 
     .home-page .home-hero-copy{
 
-        width:100%;
-
-        max-width:100%;
+        max-width:780px;
 
     }
-
 
     .home-page .home-hero-content{
 
-        min-height:275px;
-
-        margin-top:21px;
+        min-height:320px;
 
     }
-
-
-    .home-page .home-hero-slide h1{
-
-        max-width:620px;
-
-        font-size:
-            clamp(
-                3.25rem,
-                10vw,
-                5rem
-            );
-
-        line-height:.91;
-
-    }
-
-
-    .home-page .home-hero-slide > p{
-
-        max-width:430px;
-
-    }
-
 
     .home-page .home-hero-visual{
 
         position:absolute;
 
-        right:-85px;
+        right:-95px;
+        bottom:35px;
 
-        bottom:34px;
-
-        width:57vw;
-
-        height:430px;
+        width:52vw;
 
         min-height:0;
 
-        transform:none;
+        height:500px;
 
-        opacity:.42;
-
-        z-index:2;
+        opacity:.54;
 
         pointer-events:none;
 
     }
 
-
     .home-page .home-hero-product-stage{
 
-        width:360px;
-
-        height:400px;
+        width:400px;
+        height:455px;
 
     }
-
 
     .home-page .home-hero-product img{
 
-        max-height:365px;
+        max-height:410px;
 
     }
 
+    .home-page .home-hero-object-meta{
 
-    .home-page .home-hero-halo{
-
-        width:410px;
-
-        height:410px;
+        right:20px;
+        bottom:18px;
 
     }
 
+    .home-page .home-hero-visual-index{
 
-    .home-page .home-hero-halo-secondary{
-
-        width:350px;
-
-        height:350px;
+        right:20px;
+        top:3%;
 
     }
 
+    .home-page .home-pillar-grid{
 
-    .home-page .home-hero-orbit.orbit-one{
-
-        width:440px;
-
-        height:145px;
+        grid-template-columns:1fr;
 
     }
 
+    .home-page .home-event-card{
 
-    .home-page .home-hero-orbit.orbit-two{
-
-        width:360px;
-
-        height:360px;
+        grid-template-columns:1fr;
 
     }
 
+    .home-page .home-event-gallery{
 
-    .home-page .home-hero-controls{
-
-        position:relative;
-
-        z-index:9;
+        min-height:515px;
 
     }
 
+    .home-page .home-memory-layout{
 
-    .home-page .home-final-content{
+        grid-template-columns:1fr;
+
+    }
+
+    .home-page .home-memory-aside{
+
+        min-height:240px;
 
         padding:
-            78px 18px 85px;
-
-    }
-
-
-    .home-page .home-final-content h2{
-
-        max-width:720px;
-
-        font-size:
-            clamp(
-                2.65rem,
-                9vw,
-                4.5rem
-            );
+            25px 0 0;
 
     }
 
 }
 
-
 /* ==========================================================
-   20. MOBILE / 600
+   25. MOBILE SAFETY — 700
+   ----------------------------------------------------------
+   No absolute visual overlap.
+   Hero becomes genuinely stacked.
    ========================================================== */
 
-@media(max-width:600px){
+@media(max-width:700px){
 
     .home-page .home-container{
 
@@ -108221,54 +106156,127 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
+    .home-page .section{
+
+        padding:
+            86px 0;
+
+    }
+
+    .home-page .section-sm{
+
+        padding:
+            74px 0;
+
+    }
 
     .home-page .home-hero{
 
         min-height:
-            750px;
+            1030px;
+
+        background:
+            #F5F2EB;
 
     }
-
 
     .home-page .home-hero-container{
 
         min-height:
-            750px;
+            1030px;
 
     }
 
+    .home-page .home-hero-background::before{
+
+        top:55%;
+
+        width:100%;
+
+        height:45%;
+
+        clip-path:none;
+
+        background:
+            linear-gradient(
+                180deg,
+                #20262B,
+                #171B1F
+            );
+
+    }
+
+    .home-page .home-hero-background::after{
+
+        display:none;
+
+    }
 
     .home-page .home-hero-topline{
 
-        padding-top:16px;
+        padding-top:18px;
 
     }
-
 
     .home-page .home-brand-lockup img{
 
-        width:35px;
-
-        height:35px;
+        width:36px;
+        height:36px;
 
     }
 
+    .home-page .home-brand-lockup strong{
+
+        font-size:.61rem;
+
+    }
+
+    .home-page .home-brand-lockup span{
+
+        font-size:.51rem;
+
+    }
+
+    .home-page .home-hero-edition{
+
+        display:none;
+
+    }
+
+    .home-page .home-hero-main{
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        justify-content:flex-start;
+
+        gap:0;
+
+        padding:
+            24px 0 18px;
+
+    }
 
     .home-page .home-hero-copy{
 
-        padding:0;
+        width:100%;
+
+        max-width:100%;
+
+        flex:0 0 auto;
 
     }
-
 
     .home-page .home-hero-content{
 
-        min-height:255px;
+        min-height:315px;
 
-        margin-top:18px;
+        margin-top:21px;
 
     }
-
 
     .home-page .home-hero-slide h1{
 
@@ -108277,25 +106285,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
         font-size:
             clamp(
                 3rem,
-                13vw,
-                4.4rem
+                12.5vw,
+                4.65rem
             );
 
-        line-height:.91;
+        line-height:.90;
 
     }
 
+    .home-page .home-hero-pretitle{
+
+        max-width:390px;
+
+        font-size:.57rem;
+
+    }
 
     .home-page .home-hero-slide > p{
 
-        max-width:350px;
+        max-width:360px;
 
         margin-top:20px;
 
-        font-size:.89rem;
+        color:#58636B;
+
+        font-size:.90rem;
 
     }
 
+    .home-page .home-hero-product-tag{
+
+        margin-top:17px;
+
+    }
 
     .home-page .home-hero-actions{
 
@@ -108305,10 +106327,9 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         width:100%;
 
-        margin-top:23px;
+        margin-top:24px;
 
     }
-
 
     .home-page .home-hero-actions .home-action{
 
@@ -108320,1256 +106341,348 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-
     .home-page .home-hero-controls{
 
-        margin-top:20px;
+        position:relative;
+
+        z-index:10;
+
+        margin-top:18px;
 
     }
-
-
-    .home-page .home-hero-progress{
-
-        width:
-            min(145px,31vw);
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        right:-110px;
-
-        bottom:23px;
-
-        width:72vw;
-
-        height:355px;
-
-        opacity:.28;
-
-    }
-
-
-    .home-page .home-hero-product-stage{
-
-        width:315px;
-
-        height:345px;
-
-    }
-
-
-    .home-page .home-hero-product img{
-
-        max-height:310px;
-
-    }
-
-
-    .home-page .home-final-content{
-
-        padding:
-            70px 16px 78px;
-
-    }
-
-
-    .home-page .home-final-content h2{
-
-        font-size:
-            clamp(
-                2.6rem,
-                11vw,
-                4rem
-            );
-
-        line-height:.94;
-
-    }
-
-
-    .home-page .home-final-content p{
-
-        max-width:370px;
-
-    }
-
-
-    .home-page .home-final-actions{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        width:100%;
-
-        max-width:390px;
-
-    }
-
-
-    .home-page .home-final-actions .home-action{
-
-        width:100%;
-
-        min-width:0;
-
-        min-height:56px;
-
-    }
-
-
-    .home-page .home-final-footer{
-
-        grid-template-columns:
-            1fr 1fr;
-
-        text-align:left;
-
-    }
-
-}
-
-
-/* ==========================================================
-   21. VERY SMALL PHONES
-   ========================================================== */
-
-@media(max-width:420px){
-
-    .home-page .home-hero{
-
-        min-height:
-            735px;
-
-    }
-
-
-    .home-page .home-hero-container{
-
-        min-height:
-            735px;
-
-    }
-
-
-    .home-page .home-hero-slide h1{
-
-        font-size:
-            clamp(
-                2.8rem,
-                12.5vw,
-                3.65rem
-            );
-
-    }
-
-
-    .home-page .home-hero-progress{
-
-        width:110px;
-
-    }
-
-
-    .home-page .home-hero-number{
-
-        font-size:.58rem;
-
-    }
-
-
-    .home-page .home-hero-number strong{
-
-        font-size:1.1rem;
-
-    }
-
-
-    .home-page .home-hero-visual{
-
-        right:-125px;
-
-        opacity:.22;
-
-    }
-
-
-}
-
-/* ==========================================================
-   AD LIFESTYLE V2
-   HOME — HERO CONTRAST MASTER
-   ----------------------------------------------------------
-   OBJECTIVO:
-   - contraste máximo sem perder sofisticação
-   - categoria/produto novamente visíveis
-   - controlos claramente perceptíveis
-   - linhas e indicadores visíveis
-   - botões mais fortes
-   - fundo escuro premium
-   ========================================================== */
-
-
-/* ==========================================================
-   01. PALETA ESPECÍFICA DO HERO
-   ========================================================== */
-
-.home-page{
-
-    --home-hero-white:#FFFFFF;
-
-    --home-hero-ivory:#F8F4EA;
-
-    --home-hero-champagne:#F0D28A;
-
-    --home-hero-gold:#D8AC58;
-
-    --home-hero-gold-deep:#A87B2F;
-
-    --home-hero-muted:#B8C0C5;
-
-    --home-hero-line:rgba(255,255,255,.24);
-
-    --home-hero-panel:rgba(16,20,23,.78);
-
-    --home-hero-panel-light:rgba(255,255,255,.07);
-
-}
-
-
-/* ==========================================================
-   02. FUNDO — MAIS CONTROLADO
-   ========================================================== */
-
-.home-page .home-hero{
-
-    background:#13171A;
-
-}
-
-
-.home-page .home-hero-background{
-
-    background:
-
-        radial-gradient(
-            circle at 76% 47%,
-            rgba(216,172,88,.16),
-            transparent 21%
-        ),
-
-        radial-gradient(
-            circle at 70% 55%,
-            rgba(248,244,234,.055),
-            transparent 26%
-        ),
-
-        linear-gradient(
-            118deg,
-            #0B0E10 0%,
-            #15191D 46%,
-            #22282D 100%
-        );
-
-}
-
-
-.home-page .home-hero-background::after{
-
-    background:
-
-        linear-gradient(
-            90deg,
-            rgba(7,10,12,.97) 0%,
-            rgba(7,10,12,.88) 32%,
-            rgba(7,10,12,.32) 65%,
-            rgba(7,10,12,.48) 100%
-        ),
-
-        linear-gradient(
-            0deg,
-            rgba(7,10,12,.82),
-            transparent 52%
-        );
-
-}
-
-
-/* ==========================================================
-   03. GRID — MAIS VISÍVEL
-   ========================================================== */
-
-.home-page .home-hero-grid{
-
-    opacity:.48;
-
-    background-image:
-
-        linear-gradient(
-            rgba(255,255,255,.06) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(255,255,255,.06) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        76px 76px;
-
-}
-
-
-/* ==========================================================
-   04. MARCA NO TOPO
-   ========================================================== */
-
-.home-page .home-brand-lockup strong{
-
-    color:
-        var(--home-hero-white);
-
-}
-
-
-.home-page .home-brand-lockup span{
-
-    color:
-        var(--home-hero-muted);
-
-}
-
-
-.home-page .home-hero-edition{
-
-    color:
-        #AEB7BC;
-
-}
-
-
-.home-page .home-hero-edition strong{
-
-    color:
-        var(--home-hero-champagne);
-
-}
-
-
-/* ==========================================================
-   05. ÍNDICE DISCOVER
-   ========================================================== */
-
-.home-page .home-hero-index-label{
-
-    color:
-        #AAB4BA;
-
-}
-
-
-.home-page .home-hero-index-label span:first-child{
-
-    color:
-        var(--home-hero-champagne);
-
-}
-
-
-.home-page .home-hero-index-label span:last-child{
-
-    color:
-        #D4DADF;
-
-}
-
-
-.home-page .home-hero-index-label i{
-
-    width:72px;
-
-    height:2px;
-
-    background:
-        var(--home-hero-line);
-
-}
-
-
-/* ==========================================================
-   06. PRODUCT CATEGORY / PRETITLE
-   ----------------------------------------------------------
-   VOLTA A APARECER
-   ========================================================== */
-
-.home-page .home-hero-pretitle{
-
-    display:block !important;
-
-    margin-top:13px;
-
-    color:
-        var(--home-hero-champagne) !important;
-
-    font-size:.65rem;
-
-    font-weight:900;
-
-    letter-spacing:.16em;
-
-}
-
-
-/* ==========================================================
-   07. EYEBROW
-   ========================================================== */
-
-.home-page .home-hero-eyebrow{
-
-    color:
-        var(--home-hero-champagne);
-
-    font-size:.70rem;
-
-    font-weight:900;
-
-    letter-spacing:.22em;
-
-}
-
-
-/* ==========================================================
-   08. TÍTULO
-   ========================================================== */
-
-.home-page .home-hero-slide h1{
-
-    color:
-        var(--home-hero-white);
-
-    text-shadow:
-        0 4px 30px
-        rgba(0,0,0,.16);
-
-}
-
-
-.home-page .home-hero-slide h1 span{
-
-    color:
-        var(--home-hero-champagne);
-
-    text-shadow:
-        0 5px 32px
-        rgba(216,172,88,.18);
-
-}
-
-
-/* ==========================================================
-   09. DESCRIÇÃO
-   ========================================================== */
-
-.home-page .home-hero-slide > p{
-
-    color:
-        #D7DEE2;
-
-    font-size:
-        clamp(
-            .96rem,
-            1.1vw,
-            1.08rem
-        );
-
-    line-height:1.72;
-
-    text-shadow:
-        0 2px 18px
-        rgba(0,0,0,.24);
-
-}
-
-
-/* ==========================================================
-   10. PRODUCT TAG
-   ----------------------------------------------------------
-   VOLTA A APARECER
-   ========================================================== */
-
-.home-page .home-hero-product-tag{
-
-    display:inline-flex !important;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-top:20px;
-
-    min-height:42px;
-
-    padding:
-        0 14px;
-
-    border:
-        1px solid
-        rgba(240,210,138,.34);
-
-    border-radius:999px;
-
-    background:
-        rgba(12,15,17,.72);
-
-    box-shadow:
-        0 9px 25px
-        rgba(0,0,0,.14);
-
-    backdrop-filter:
-        blur(10px);
-
-}
-
-
-.home-page .home-hero-product-tag span{
-
-    color:
-        #AEB7BD;
-
-    font-size:.58rem;
-
-    font-weight:900;
-
-    letter-spacing:.13em;
-
-}
-
-
-.home-page .home-hero-product-tag strong{
-
-    color:
-        var(--home-hero-ivory);
-
-    font-size:.73rem;
-
-    font-weight:900;
-
-}
-
-
-/* separador elegante */
-
-.home-page .home-hero-product-tag span::after{
-
-    content:"";
-
-    display:inline-block;
-
-    width:4px;
-
-    height:4px;
-
-    margin:
-        0 0 2px 10px;
-
-    border-radius:50%;
-
-    background:
-        var(--home-hero-gold);
-
-}
-
-
-/* ==========================================================
-   11. FRASE EXTRA
-   ----------------------------------------------------------
-   Continua removida porque é informação redundante.
-   ========================================================== */
-
-.home-page .home-hero-phrase{
-
-    display:none !important;
-
-}
-
-
-/* ==========================================================
-   12. BOTÕES — CONTRASTE FORTE
-   ========================================================== */
-
-.home-page .home-hero-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    margin-top:27px;
-
-}
-
-
-.home-page .home-hero-actions .home-action{
-
-    min-width:230px;
-
-    min-height:60px;
-
-    padding:
-        0 22px;
-
-    border-radius:999px;
-
-    font-size:.77rem;
-
-    font-weight:900;
-
-}
-
-
-/* PRIMARY */
-
-.home-page .home-hero-actions
-.home-action-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #E0B967 0%,
-            #B98A3B 100%
-        ) !important;
-
-    color:#FFFFFF !important;
-
-    border:
-        1px solid
-        rgba(255,255,255,.12);
-
-    box-shadow:
-        0 18px 42px
-        rgba(216,172,88,.25);
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-primary:hover{
-
-    background:
-        linear-gradient(
-            135deg,
-            #E8C778 0%,
-            #C09340 100%
-        ) !important;
-
-    box-shadow:
-        0 23px 53px
-        rgba(216,172,88,.34);
-
-}
-
-
-/* SECONDARY */
-
-.home-page .home-hero-actions
-.home-action-secondary{
-
-    background:
-        rgba(20,24,27,.88) !important;
-
-    color:
-        #FFFFFF !important;
-
-    border:
-        1px solid
-        rgba(255,255,255,.30) !important;
-
-    box-shadow:
-        0 10px 28px
-        rgba(0,0,0,.22);
-
-}
-
-
-.home-page .home-hero-actions
-.home-action-secondary:hover{
-
-    background:
-        rgba(255,255,255,.10) !important;
-
-    border-color:
-        rgba(240,210,138,.65) !important;
-
-}
-
-
-/* ==========================================================
-   13. CONTROLOS DE SLIDE
-   ========================================================== */
-
-.home-page .home-hero-controls{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:12px;
-
-    margin-top:27px;
-
-}
-
-
-/* BOTÕES ← → */
-
-.home-page .home-hero-controls > button{
-
-    position:relative;
-
-    width:46px;
-
-    height:46px;
-
-    flex:0 0 46px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.30);
-
-    border-radius:50%;
-
-    background:
-        rgba(11,14,16,.86);
-
-    color:
-        #FFFFFF;
-
-    box-shadow:
-        0 9px 23px
-        rgba(0,0,0,.20);
-
-    font-size:1rem;
-
-    font-weight:900;
-
-    cursor:pointer;
-
-    transition:
-        transform .25s ease,
-        background .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
-
-}
-
-
-.home-page .home-hero-controls > button:hover{
-
-    transform:
-        translateY(-2px);
-
-    background:
-        rgba(216,172,88,.18);
-
-    border-color:
-        rgba(240,210,138,.75);
-
-    box-shadow:
-        0 13px 30px
-        rgba(0,0,0,.27);
-
-}
-
-
-/* LINHA */
-
-.home-page .home-hero-progress{
-
-    position:relative;
-
-    width:
-        min(
-            270px,
-            28vw
-        );
-
-    height:3px;
-
-    overflow:hidden;
-
-    background:
-        rgba(255,255,255,.19);
-
-}
-
-
-.home-page .home-hero-progress::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:0;
-
-    background:
-        rgba(255,255,255,.12);
-
-}
-
-
-.home-page .home-hero-progress div{
-
-    position:relative;
-
-    z-index:2;
-
-    height:100%;
-
-    background:
-        linear-gradient(
-            90deg,
-            #B78737,
-            #F0D28A
-        );
-
-}
-
-
-/* NÚMERO */
-
-.home-page .home-hero-number{
-
-    display:flex;
-
-    align-items:baseline;
-
-    gap:6px;
-
-    margin-left:5px;
-
-    color:
-        #A7B0B6;
-
-    font-size:.67rem;
-
-}
-
-
-.home-page .home-hero-number strong{
-
-    color:
-        #FFFFFF;
-
-    font-size:1.32rem;
-
-}
-
-
-/* ==========================================================
-   14. ELEMENTOS DECORATIVOS DO VISUAL
-   ========================================================== */
-
-.home-page .home-hero-halo{
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(240,210,138,.22) 0%,
-            rgba(216,172,88,.08) 34%,
-            transparent 70%
-        );
-
-}
-
-
-.home-page .home-hero-halo-secondary{
-
-    border-color:
-        rgba(240,210,138,.34);
-
-    box-shadow:
-
-        0 0 95px
-        rgba(216,172,88,.10),
-
-        inset 0 0 70px
-        rgba(240,210,138,.07);
-
-}
-
-
-.home-page .home-hero-orbit{
-
-    border-color:
-        rgba(240,210,138,.20);
-
-}
-
-
-.home-page .home-hero-orbit.orbit-two{
-
-    border-color:
-        rgba(255,255,255,.10);
-
-}
-
-
-/* ==========================================================
-   15. PRODUTO
-   ========================================================== */
-
-.home-page .home-hero-product-shadow{
-
-    background:
-        rgba(0,0,0,.50);
-
-}
-
-
-.home-page .home-hero-product-glow{
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(240,210,138,.18),
-            transparent 69%
-        );
-
-}
-
-
-/* ==========================================================
-   16. HERO CHANGING STATE
-   ========================================================== */
-
-.home-page .home-hero.is-changing
-.home-hero-product.is-active{
-
-    animation:
-        homeProductEntrance .75s
-        cubic-bezier(
-            .22,
-            .61,
-            .36,
-            1
-        );
-
-}
-
-
-@keyframes homeProductEntrance{
-
-    from{
-
-        opacity:0;
-
-        transform:
-            translateY(18px)
-            scale(.96);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:
-            translateY(0)
-            scale(1);
-
-    }
-
-}
-
-
-/* ==========================================================
-   17. FINAL CTA
-   ========================================================== */
-
-.home-page .home-final{
-
-    background:
-        linear-gradient(
-            135deg,
-            #171C20 0%,
-            #252D33 100%
-        );
-
-}
-
-
-.home-page .home-final-content{
-
-    text-align:center;
-
-}
-
-
-.home-page .home-final-content
-.home-overline{
-
-    color:
-        var(--home-hero-champagne);
-
-}
-
-
-.home-page .home-final-content h2{
-
-    color:
-        #FFFFFF;
-
-}
-
-
-.home-page .home-final-content h2 span{
-
-    color:
-        var(--home-hero-champagne);
-
-}
-
-
-.home-page .home-final-content p{
-
-    color:
-        #D0D8DC;
-
-}
-
-
-/* ==========================================================
-   18. FINAL CTA BUTTONS
-   ========================================================== */
-
-.home-page .home-final-actions{
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:14px;
-
-}
-
-
-.home-page .home-final-actions .home-action{
-
-    min-width:235px;
-
-    min-height:60px;
-
-    padding:
-        0 23px;
-
-    font-size:.77rem;
-
-}
-
-
-.home-page .home-final-actions
-.home-action-primary{
-
-    background:
-        linear-gradient(
-            135deg,
-            #E0B967,
-            #B98A3B
-        );
-
-    color:#FFFFFF;
-
-    box-shadow:
-        0 18px 42px
-        rgba(216,172,88,.23);
-
-}
-
-
-.home-page .home-final-actions
-.home-action-secondary{
-
-    background:
-        rgba(255,255,255,.06);
-
-    color:#FFFFFF;
-
-    border:
-        1px solid
-        rgba(255,255,255,.27);
-
-}
-
-
-/* ==========================================================
-   19. FINAL FOOTER
-   ========================================================== */
-
-.home-page .home-final-footer{
-
-    color:
-        #AAB4BA;
-
-}
-
-
-.home-page .home-final-footer span:first-child,
-.home-page .home-final-footer span:last-child{
-
-    color:
-        #E1E5E7;
-
-}
-
-
-/* ==========================================================
-   20. TABLET
-   ========================================================== */
-
-@media(max-width:800px){
-
-    .home-page .home-hero-actions{
-
-        width:
-            min(
-                500px,
-                100%
-            );
-
-    }
-
-
-    .home-page .home-hero-actions
-    .home-action{
-
-        min-width:0;
-
-        flex:1;
-
-    }
-
-
-    .home-page .home-hero-progress{
-
-        width:
-            min(
-                190px,
-                28vw
-            );
-
-    }
-
-}
-
-
-/* ==========================================================
-   21. MOBILE
-   ========================================================== */
-
-@media(max-width:600px){
-
-    .home-page .home-hero-pretitle{
-
-        font-size:.56rem;
-
-        letter-spacing:.12em;
-
-    }
-
-
-    .home-page .home-hero-product-tag{
-
-        min-height:39px;
-
-        margin-top:16px;
-
-        padding:
-            0 12px;
-
-    }
-
-
-    .home-page .home-hero-product-tag span{
-
-        font-size:.53rem;
-
-    }
-
-
-    .home-page .home-hero-product-tag strong{
-
-        font-size:.66rem;
-
-    }
-
-
-    .home-page .home-hero-actions{
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        width:100%;
-
-    }
-
-
-    .home-page .home-hero-actions
-    .home-action{
-
-        width:100%;
-
-        min-height:55px;
-
-        flex:none;
-
-    }
-
-
-    .home-page .home-hero-controls{
-
-        gap:9px;
-
-    }
-
 
     .home-page .home-hero-controls > button{
 
         width:42px;
-
         height:42px;
 
         flex-basis:42px;
 
     }
 
-
     .home-page .home-hero-progress{
 
         width:
             min(
-                120px,
-                28vw
+                145px,
+                30vw
             );
 
     }
 
+    .home-page .home-hero-visual{
 
-    .home-page .home-hero-number strong{
+        position:relative;
 
-        font-size:1.15rem;
+        right:auto;
+        bottom:auto;
+
+        width:100%;
+
+        height:300px;
+
+        min-height:300px;
+
+        margin-top:8px;
+
+        opacity:1;
+
+        transform:none !important;
+
+        pointer-events:none;
 
     }
 
+    .home-page .home-hero-product-stage{
+
+        width:100%;
+
+        height:290px;
+
+    }
+
+    .home-page .home-hero-product img{
+
+        max-width:72%;
+
+        max-height:265px;
+
+    }
+
+    .home-page .home-hero-halo{
+
+        width:360px;
+        height:360px;
+
+    }
+
+    .home-page .home-hero-halo-secondary{
+
+        width:290px;
+        height:290px;
+
+    }
+
+    .home-page .home-hero-orbit.orbit-one{
+
+        width:390px;
+        height:125px;
+
+    }
+
+    .home-page .home-hero-orbit.orbit-two{
+
+        width:320px;
+        height:320px;
+
+    }
+
+    .home-page .home-hero-object-meta{
+
+        right:15px;
+        bottom:0;
+
+    }
+
+    .home-page .home-hero-visual-index{
+
+        display:none;
+
+    }
+
+    .home-page .home-hero-bottom-rail{
+
+        display:none;
+
+    }
+
+    .home-page .home-section-head{
+
+        align-items:flex-start;
+
+        flex-direction:column;
+
+    }
+
+    .home-page .home-section-head h2{
+
+        font-size:
+            clamp(
+                2.4rem,
+                10.7vw,
+                4rem
+            );
+
+    }
+
+    .home-page .home-manifesto-layout{
+
+        grid-template-columns:1fr;
+
+        gap:18px;
+
+        margin-top:46px;
+
+    }
+
+    .home-page .home-manifesto-copy h2{
+
+        font-size:
+            clamp(
+                2.8rem,
+                11.5vw,
+                4.5rem
+            );
+
+    }
+
+    .home-page .home-manifesto-foot{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        margin-top:45px;
+
+    }
+
+    .home-page .home-pillar{
+
+        min-height:485px;
+
+        padding:23px;
+
+    }
+
+    .home-page .home-pillar-visual{
+
+        height:230px;
+
+    }
+
+    .home-page .home-pillar-content h3{
+
+        font-size:2rem;
+
+    }
+
+    .home-page .home-universe{
+
+        grid-template-columns:
+            50px
+            1fr
+            32px;
+
+        gap:12px;
+
+        min-height:120px;
+
+        padding:0;
+
+    }
+
+    .home-page .home-universe:hover{
+
+        padding:0;
+
+    }
+
+    .home-page .home-universe p{
+
+        grid-column:
+            2 / 4;
+
+        padding-bottom:17px;
+
+    }
+
+    .home-page .home-product-grid{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .home-page .home-product-card,
+    .home-page .home-product-card.is-featured{
+
+        min-height:405px;
+
+    }
+
+    .home-page .home-product-card.is-featured{
+
+        grid-column:
+            span 2;
+
+    }
+
+    .home-page .home-event-gallery{
+
+        min-height:430px;
+
+    }
+
+    .home-page .home-event-content{
+
+        padding:
+            31px 23px;
+
+    }
+
+    .home-page .home-event-heading h3{
+
+        font-size:2rem;
+
+    }
+
+    .home-page .home-event-meta-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .home-page .home-event-days{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .home-page .home-event-actions{
+
+        flex-direction:column;
+
+    }
+
+    .home-page .home-event-actions .home-action{
+
+        width:100%;
+
+    }
+
+    .home-page .home-memory-stage{
+
+        min-height:465px;
+
+    }
+
+    .home-page .home-memory-caption{
+
+        left:20px;
+
+        right:110px;
+
+        bottom:20px;
+
+    }
+
+    .home-page .home-memory-caption strong{
+
+        font-size:1.28rem;
+
+    }
+
+    .home-page .home-community-grid{
+
+        grid-template-columns:1fr;
+
+        gap:8px;
+
+    }
+
+    .home-page .home-community-mark{
+
+        font-size:5.8rem;
+
+    }
+
+    .home-page .home-community-content blockquote{
+
+        font-size:
+            clamp(
+                2rem,
+                9.2vw,
+                3.5rem
+            );
+
+    }
+
+    .home-page .home-final-content{
+
+        padding:
+            76px 16px 84px;
+
+    }
+
+    .home-page .home-final-content h2{
+
+        font-size:
+            clamp(
+                2.65rem,
+                10.7vw,
+                4.4rem
+            );
+
+    }
 
     .home-page .home-final-actions{
 
@@ -109577,19 +106690,11 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
         align-items:stretch;
 
-        width:100%;
-
         max-width:390px;
-
-        margin-left:auto;
-
-        margin-right:auto;
 
     }
 
-
-    .home-page .home-final-actions
-    .home-action{
+    .home-page .home-final-actions .home-action{
 
         width:100%;
 
@@ -109599,26 +106704,180 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
+    .home-page .home-final-footer{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:12px;
+
+    }
+
 }
 
+/* ==========================================================
+   26. MOBILE — 520
+   ========================================================== */
+
+@media(max-width:520px){
+
+    .home-page .home-hero{
+
+        min-height:1010px;
+
+    }
+
+    .home-page .home-hero-container{
+
+        min-height:1010px;
+
+    }
+
+    .home-page .home-hero-content{
+
+        min-height:310px;
+
+    }
+
+    .home-page .home-hero-visual{
+
+        height:285px;
+
+        min-height:285px;
+
+        margin-top:5px;
+
+    }
+
+    .home-page .home-hero-product-stage{
+
+        height:270px;
+
+    }
+
+    .home-page .home-hero-product img{
+
+        max-width:70%;
+
+        max-height:245px;
+
+    }
+
+    .home-page .home-hero-controls{
+
+        flex-wrap:nowrap;
+
+    }
+
+    .home-page .home-product-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .home-page .home-product-card.is-featured{
+
+        grid-column:auto;
+
+    }
+
+    .home-page .home-event-gallery{
+
+        min-height:345px;
+
+    }
+
+    .home-page .home-event-heading{
+
+        grid-template-columns:1fr;
+
+        gap:12px;
+
+    }
+
+    .home-page .home-event-heading h3{
+
+        font-size:1.82rem;
+
+    }
+
+    .home-page .home-event-date-big{
+
+        font-size:2.65rem;
+
+    }
+
+    .home-page .home-memory-stage{
+
+        min-height:375px;
+
+    }
+
+    .home-page .home-memory-caption{
+
+        left:18px;
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+    .home-page .home-memory-controls{
+
+        right:18px;
+
+        bottom:18px;
+
+    }
+
+    .home-page .home-final-content h2{
+
+        font-size:
+            clamp(
+                2.55rem,
+                10.8vw,
+                3.95rem
+            );
+
+    }
+
+}
 
 /* ==========================================================
-   22. MOBILE VERY SMALL
+   27. VERY SMALL — 420
    ========================================================== */
 
 @media(max-width:420px){
+
+    .home-page .home-hero{
+
+        min-height:995px;
+
+    }
+
+    .home-page .home-hero-container{
+
+        min-height:995px;
+
+    }
+
+    .home-page .home-hero-content{
+
+        min-height:300px;
+
+    }
 
     .home-page .home-hero-slide h1{
 
         font-size:
             clamp(
-                2.7rem,
-                12.5vw,
-                3.65rem
+                2.65rem,
+                12.4vw,
+                3.45rem
             );
 
     }
-
 
     .home-page .home-hero-pretitle{
 
@@ -109628,18 +106887,39 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
-
     .home-page .home-hero-controls{
 
-        margin-top:17px;
+        gap:7px;
 
     }
 
+    .home-page .home-hero-controls > button{
+
+        width:39px;
+        height:39px;
+
+        flex-basis:39px;
+
+    }
 
     .home-page .home-hero-progress{
 
-        width:92px;
+        width:72px;
+
+    }
+
+    .home-page .home-hero-number{
+
+        margin-left:1px;
+
+    }
+
+    .home-page .home-hero-bottom-rail{
+
+        display:none;
 
     }
 
 }
+
+
