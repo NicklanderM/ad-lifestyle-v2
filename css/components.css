@@ -108495,4 +108495,1151 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
     }
 
+
+}
+
+/* ==========================================================
+   AD LIFESTYLE V2
+   HOME — HERO CONTRAST MASTER
+   ----------------------------------------------------------
+   OBJECTIVO:
+   - contraste máximo sem perder sofisticação
+   - categoria/produto novamente visíveis
+   - controlos claramente perceptíveis
+   - linhas e indicadores visíveis
+   - botões mais fortes
+   - fundo escuro premium
+   ========================================================== */
+
+
+/* ==========================================================
+   01. PALETA ESPECÍFICA DO HERO
+   ========================================================== */
+
+.home-page{
+
+    --home-hero-white:#FFFFFF;
+
+    --home-hero-ivory:#F8F4EA;
+
+    --home-hero-champagne:#F0D28A;
+
+    --home-hero-gold:#D8AC58;
+
+    --home-hero-gold-deep:#A87B2F;
+
+    --home-hero-muted:#B8C0C5;
+
+    --home-hero-line:rgba(255,255,255,.24);
+
+    --home-hero-panel:rgba(16,20,23,.78);
+
+    --home-hero-panel-light:rgba(255,255,255,.07);
+
+}
+
+
+/* ==========================================================
+   02. FUNDO — MAIS CONTROLADO
+   ========================================================== */
+
+.home-page .home-hero{
+
+    background:#13171A;
+
+}
+
+
+.home-page .home-hero-background{
+
+    background:
+
+        radial-gradient(
+            circle at 76% 47%,
+            rgba(216,172,88,.16),
+            transparent 21%
+        ),
+
+        radial-gradient(
+            circle at 70% 55%,
+            rgba(248,244,234,.055),
+            transparent 26%
+        ),
+
+        linear-gradient(
+            118deg,
+            #0B0E10 0%,
+            #15191D 46%,
+            #22282D 100%
+        );
+
+}
+
+
+.home-page .home-hero-background::after{
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(7,10,12,.97) 0%,
+            rgba(7,10,12,.88) 32%,
+            rgba(7,10,12,.32) 65%,
+            rgba(7,10,12,.48) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(7,10,12,.82),
+            transparent 52%
+        );
+
+}
+
+
+/* ==========================================================
+   03. GRID — MAIS VISÍVEL
+   ========================================================== */
+
+.home-page .home-hero-grid{
+
+    opacity:.48;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.06) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        76px 76px;
+
+}
+
+
+/* ==========================================================
+   04. MARCA NO TOPO
+   ========================================================== */
+
+.home-page .home-brand-lockup strong{
+
+    color:
+        var(--home-hero-white);
+
+}
+
+
+.home-page .home-brand-lockup span{
+
+    color:
+        var(--home-hero-muted);
+
+}
+
+
+.home-page .home-hero-edition{
+
+    color:
+        #AEB7BC;
+
+}
+
+
+.home-page .home-hero-edition strong{
+
+    color:
+        var(--home-hero-champagne);
+
+}
+
+
+/* ==========================================================
+   05. ÍNDICE DISCOVER
+   ========================================================== */
+
+.home-page .home-hero-index-label{
+
+    color:
+        #AAB4BA;
+
+}
+
+
+.home-page .home-hero-index-label span:first-child{
+
+    color:
+        var(--home-hero-champagne);
+
+}
+
+
+.home-page .home-hero-index-label span:last-child{
+
+    color:
+        #D4DADF;
+
+}
+
+
+.home-page .home-hero-index-label i{
+
+    width:72px;
+
+    height:2px;
+
+    background:
+        var(--home-hero-line);
+
+}
+
+
+/* ==========================================================
+   06. PRODUCT CATEGORY / PRETITLE
+   ----------------------------------------------------------
+   VOLTA A APARECER
+   ========================================================== */
+
+.home-page .home-hero-pretitle{
+
+    display:block !important;
+
+    margin-top:13px;
+
+    color:
+        var(--home-hero-champagne) !important;
+
+    font-size:.65rem;
+
+    font-weight:900;
+
+    letter-spacing:.16em;
+
+}
+
+
+/* ==========================================================
+   07. EYEBROW
+   ========================================================== */
+
+.home-page .home-hero-eyebrow{
+
+    color:
+        var(--home-hero-champagne);
+
+    font-size:.70rem;
+
+    font-weight:900;
+
+    letter-spacing:.22em;
+
+}
+
+
+/* ==========================================================
+   08. TÍTULO
+   ========================================================== */
+
+.home-page .home-hero-slide h1{
+
+    color:
+        var(--home-hero-white);
+
+    text-shadow:
+        0 4px 30px
+        rgba(0,0,0,.16);
+
+}
+
+
+.home-page .home-hero-slide h1 span{
+
+    color:
+        var(--home-hero-champagne);
+
+    text-shadow:
+        0 5px 32px
+        rgba(216,172,88,.18);
+
+}
+
+
+/* ==========================================================
+   09. DESCRIÇÃO
+   ========================================================== */
+
+.home-page .home-hero-slide > p{
+
+    color:
+        #D7DEE2;
+
+    font-size:
+        clamp(
+            .96rem,
+            1.1vw,
+            1.08rem
+        );
+
+    line-height:1.72;
+
+    text-shadow:
+        0 2px 18px
+        rgba(0,0,0,.24);
+
+}
+
+
+/* ==========================================================
+   10. PRODUCT TAG
+   ----------------------------------------------------------
+   VOLTA A APARECER
+   ========================================================== */
+
+.home-page .home-hero-product-tag{
+
+    display:inline-flex !important;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:20px;
+
+    min-height:42px;
+
+    padding:
+        0 14px;
+
+    border:
+        1px solid
+        rgba(240,210,138,.34);
+
+    border-radius:999px;
+
+    background:
+        rgba(12,15,17,.72);
+
+    box-shadow:
+        0 9px 25px
+        rgba(0,0,0,.14);
+
+    backdrop-filter:
+        blur(10px);
+
+}
+
+
+.home-page .home-hero-product-tag span{
+
+    color:
+        #AEB7BD;
+
+    font-size:.58rem;
+
+    font-weight:900;
+
+    letter-spacing:.13em;
+
+}
+
+
+.home-page .home-hero-product-tag strong{
+
+    color:
+        var(--home-hero-ivory);
+
+    font-size:.73rem;
+
+    font-weight:900;
+
+}
+
+
+/* separador elegante */
+
+.home-page .home-hero-product-tag span::after{
+
+    content:"";
+
+    display:inline-block;
+
+    width:4px;
+
+    height:4px;
+
+    margin:
+        0 0 2px 10px;
+
+    border-radius:50%;
+
+    background:
+        var(--home-hero-gold);
+
+}
+
+
+/* ==========================================================
+   11. FRASE EXTRA
+   ----------------------------------------------------------
+   Continua removida porque é informação redundante.
+   ========================================================== */
+
+.home-page .home-hero-phrase{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+   12. BOTÕES — CONTRASTE FORTE
+   ========================================================== */
+
+.home-page .home-hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-top:27px;
+
+}
+
+
+.home-page .home-hero-actions .home-action{
+
+    min-width:230px;
+
+    min-height:60px;
+
+    padding:
+        0 22px;
+
+    border-radius:999px;
+
+    font-size:.77rem;
+
+    font-weight:900;
+
+}
+
+
+/* PRIMARY */
+
+.home-page .home-hero-actions
+.home-action-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #E0B967 0%,
+            #B98A3B 100%
+        ) !important;
+
+    color:#FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
+
+    box-shadow:
+        0 18px 42px
+        rgba(216,172,88,.25);
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-primary:hover{
+
+    background:
+        linear-gradient(
+            135deg,
+            #E8C778 0%,
+            #C09340 100%
+        ) !important;
+
+    box-shadow:
+        0 23px 53px
+        rgba(216,172,88,.34);
+
+}
+
+
+/* SECONDARY */
+
+.home-page .home-hero-actions
+.home-action-secondary{
+
+    background:
+        rgba(20,24,27,.88) !important;
+
+    color:
+        #FFFFFF !important;
+
+    border:
+        1px solid
+        rgba(255,255,255,.30) !important;
+
+    box-shadow:
+        0 10px 28px
+        rgba(0,0,0,.22);
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-secondary:hover{
+
+    background:
+        rgba(255,255,255,.10) !important;
+
+    border-color:
+        rgba(240,210,138,.65) !important;
+
+}
+
+
+/* ==========================================================
+   13. CONTROLOS DE SLIDE
+   ========================================================== */
+
+.home-page .home-hero-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:27px;
+
+}
+
+
+/* BOTÕES ← → */
+
+.home-page .home-hero-controls > button{
+
+    position:relative;
+
+    width:46px;
+
+    height:46px;
+
+    flex:0 0 46px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.30);
+
+    border-radius:50%;
+
+    background:
+        rgba(11,14,16,.86);
+
+    color:
+        #FFFFFF;
+
+    box-shadow:
+        0 9px 23px
+        rgba(0,0,0,.20);
+
+    font-size:1rem;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
+
+
+.home-page .home-hero-controls > button:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:
+        rgba(216,172,88,.18);
+
+    border-color:
+        rgba(240,210,138,.75);
+
+    box-shadow:
+        0 13px 30px
+        rgba(0,0,0,.27);
+
+}
+
+
+/* LINHA */
+
+.home-page .home-hero-progress{
+
+    position:relative;
+
+    width:
+        min(
+            270px,
+            28vw
+        );
+
+    height:3px;
+
+    overflow:hidden;
+
+    background:
+        rgba(255,255,255,.19);
+
+}
+
+
+.home-page .home-hero-progress::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        rgba(255,255,255,.12);
+
+}
+
+
+.home-page .home-hero-progress div{
+
+    position:relative;
+
+    z-index:2;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #B78737,
+            #F0D28A
+        );
+
+}
+
+
+/* NÚMERO */
+
+.home-page .home-hero-number{
+
+    display:flex;
+
+    align-items:baseline;
+
+    gap:6px;
+
+    margin-left:5px;
+
+    color:
+        #A7B0B6;
+
+    font-size:.67rem;
+
+}
+
+
+.home-page .home-hero-number strong{
+
+    color:
+        #FFFFFF;
+
+    font-size:1.32rem;
+
+}
+
+
+/* ==========================================================
+   14. ELEMENTOS DECORATIVOS DO VISUAL
+   ========================================================== */
+
+.home-page .home-hero-halo{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(240,210,138,.22) 0%,
+            rgba(216,172,88,.08) 34%,
+            transparent 70%
+        );
+
+}
+
+
+.home-page .home-hero-halo-secondary{
+
+    border-color:
+        rgba(240,210,138,.34);
+
+    box-shadow:
+
+        0 0 95px
+        rgba(216,172,88,.10),
+
+        inset 0 0 70px
+        rgba(240,210,138,.07);
+
+}
+
+
+.home-page .home-hero-orbit{
+
+    border-color:
+        rgba(240,210,138,.20);
+
+}
+
+
+.home-page .home-hero-orbit.orbit-two{
+
+    border-color:
+        rgba(255,255,255,.10);
+
+}
+
+
+/* ==========================================================
+   15. PRODUTO
+   ========================================================== */
+
+.home-page .home-hero-product-shadow{
+
+    background:
+        rgba(0,0,0,.50);
+
+}
+
+
+.home-page .home-hero-product-glow{
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(240,210,138,.18),
+            transparent 69%
+        );
+
+}
+
+
+/* ==========================================================
+   16. HERO CHANGING STATE
+   ========================================================== */
+
+.home-page .home-hero.is-changing
+.home-hero-product.is-active{
+
+    animation:
+        homeProductEntrance .75s
+        cubic-bezier(
+            .22,
+            .61,
+            .36,
+            1
+        );
+
+}
+
+
+@keyframes homeProductEntrance{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(18px)
+            scale(.96);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   17. FINAL CTA
+   ========================================================== */
+
+.home-page .home-final{
+
+    background:
+        linear-gradient(
+            135deg,
+            #171C20 0%,
+            #252D33 100%
+        );
+
+}
+
+
+.home-page .home-final-content{
+
+    text-align:center;
+
+}
+
+
+.home-page .home-final-content
+.home-overline{
+
+    color:
+        var(--home-hero-champagne);
+
+}
+
+
+.home-page .home-final-content h2{
+
+    color:
+        #FFFFFF;
+
+}
+
+
+.home-page .home-final-content h2 span{
+
+    color:
+        var(--home-hero-champagne);
+
+}
+
+
+.home-page .home-final-content p{
+
+    color:
+        #D0D8DC;
+
+}
+
+
+/* ==========================================================
+   18. FINAL CTA BUTTONS
+   ========================================================== */
+
+.home-page .home-final-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
+
+}
+
+
+.home-page .home-final-actions .home-action{
+
+    min-width:235px;
+
+    min-height:60px;
+
+    padding:
+        0 23px;
+
+    font-size:.77rem;
+
+}
+
+
+.home-page .home-final-actions
+.home-action-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #E0B967,
+            #B98A3B
+        );
+
+    color:#FFFFFF;
+
+    box-shadow:
+        0 18px 42px
+        rgba(216,172,88,.23);
+
+}
+
+
+.home-page .home-final-actions
+.home-action-secondary{
+
+    background:
+        rgba(255,255,255,.06);
+
+    color:#FFFFFF;
+
+    border:
+        1px solid
+        rgba(255,255,255,.27);
+
+}
+
+
+/* ==========================================================
+   19. FINAL FOOTER
+   ========================================================== */
+
+.home-page .home-final-footer{
+
+    color:
+        #AAB4BA;
+
+}
+
+
+.home-page .home-final-footer span:first-child,
+.home-page .home-final-footer span:last-child{
+
+    color:
+        #E1E5E7;
+
+}
+
+
+/* ==========================================================
+   20. TABLET
+   ========================================================== */
+
+@media(max-width:800px){
+
+    .home-page .home-hero-actions{
+
+        width:
+            min(
+                500px,
+                100%
+            );
+
+    }
+
+
+    .home-page .home-hero-actions
+    .home-action{
+
+        min-width:0;
+
+        flex:1;
+
+    }
+
+
+    .home-page .home-hero-progress{
+
+        width:
+            min(
+                190px,
+                28vw
+            );
+
+    }
+
+}
+
+
+/* ==========================================================
+   21. MOBILE
+   ========================================================== */
+
+@media(max-width:600px){
+
+    .home-page .home-hero-pretitle{
+
+        font-size:.56rem;
+
+        letter-spacing:.12em;
+
+    }
+
+
+    .home-page .home-hero-product-tag{
+
+        min-height:39px;
+
+        margin-top:16px;
+
+        padding:
+            0 12px;
+
+    }
+
+
+    .home-page .home-hero-product-tag span{
+
+        font-size:.53rem;
+
+    }
+
+
+    .home-page .home-hero-product-tag strong{
+
+        font-size:.66rem;
+
+    }
+
+
+    .home-page .home-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        width:100%;
+
+    }
+
+
+    .home-page .home-hero-actions
+    .home-action{
+
+        width:100%;
+
+        min-height:55px;
+
+        flex:none;
+
+    }
+
+
+    .home-page .home-hero-controls{
+
+        gap:9px;
+
+    }
+
+
+    .home-page .home-hero-controls > button{
+
+        width:42px;
+
+        height:42px;
+
+        flex-basis:42px;
+
+    }
+
+
+    .home-page .home-hero-progress{
+
+        width:
+            min(
+                120px,
+                28vw
+            );
+
+    }
+
+
+    .home-page .home-hero-number strong{
+
+        font-size:1.15rem;
+
+    }
+
+
+    .home-page .home-final-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        width:100%;
+
+        max-width:390px;
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .home-page .home-final-actions
+    .home-action{
+
+        width:100%;
+
+        min-width:0;
+
+        min-height:57px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   22. MOBILE VERY SMALL
+   ========================================================== */
+
+@media(max-width:420px){
+
+    .home-page .home-hero-slide h1{
+
+        font-size:
+            clamp(
+                2.7rem,
+                12.5vw,
+                3.65rem
+            );
+
+    }
+
+
+    .home-page .home-hero-pretitle{
+
+        max-width:300px;
+
+        line-height:1.35;
+
+    }
+
+
+    .home-page .home-hero-controls{
+
+        margin-top:17px;
+
+    }
+
+
+    .home-page .home-hero-progress{
+
+        width:92px;
+
+    }
+
 }
