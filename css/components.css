@@ -107170,3 +107170,1329 @@ body[data-theme="dark"] .page-zenbru .zenbru-information-box p{
 
 }
 
+/* ==========================================================
+   HOME MASTER OVERRIDE
+   HERO REFINEMENT + FINAL CTA
+   ----------------------------------------------------------
+   Cole este bloco NO FIM do home.css
+   ========================================================== */
+
+
+/* ==========================================================
+   01. HERO — COMPOSIÇÃO PRINCIPAL
+   ========================================================== */
+
+.home-page .home-hero{
+
+    min-height:
+        max(
+            860px,
+            min(940px,96svh)
+        );
+
+    background:
+        #15191D;
+
+}
+
+
+.home-page .home-hero-container{
+
+    min-height:
+        max(
+            860px,
+            min(940px,96svh)
+        );
+
+}
+
+
+/* ==========================================================
+   02. HERO — ATMOSFERA MAIS ESCURA
+   ----------------------------------------------------------
+   Evita o aspecto esbranquiçado da imagem enviada.
+   ========================================================== */
+
+.home-page .home-hero-background{
+
+    background:
+
+        radial-gradient(
+            circle at 78% 49%,
+            color-mix(
+                in srgb,
+                var(--home-hero-atmosphere) 34%,
+                transparent
+            ),
+            transparent 22%
+        ),
+
+        radial-gradient(
+            circle at 72% 57%,
+            color-mix(
+                in srgb,
+                var(--home-hero-tone) 18%,
+                transparent
+            ),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            120deg,
+            #0D1012 0%,
+            #171B1F 48%,
+            #242A2F 100%
+        );
+
+}
+
+
+.home-page .home-hero-background::after{
+
+    background:
+
+        radial-gradient(
+            circle at 76% 50%,
+            rgba(255,255,255,.035),
+            transparent 23%
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(8,10,12,.96) 0%,
+            rgba(8,10,12,.86) 34%,
+            rgba(8,10,12,.33) 67%,
+            rgba(8,10,12,.55) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            rgba(8,10,12,.82),
+            rgba(8,10,12,.02) 54%,
+            rgba(8,10,12,.18) 100%
+        );
+
+}
+
+
+/* ==========================================================
+   03. HERO — MAIN GRID
+   ========================================================== */
+
+.home-page .home-hero-main{
+
+    grid-template-columns:
+        minmax(560px,1.08fr)
+        minmax(430px,.92fr);
+
+    gap:30px;
+
+    padding:
+        20px 0 52px;
+
+}
+
+
+/* ==========================================================
+   04. HERO — COPY
+   ========================================================== */
+
+.home-page .home-hero-copy{
+
+    max-width:760px;
+
+    padding-left:4px;
+
+    z-index:8;
+
+}
+
+
+.home-page .home-hero-index-label{
+
+    margin-bottom:0;
+
+}
+
+
+.home-page .home-hero-content{
+
+    min-height:330px;
+
+    margin-top:24px;
+
+    max-width:700px;
+
+}
+
+
+/* ==========================================================
+   05. HERO — REMOVE NOISE INFORMATION
+   ========================================================== */
+
+/*
+   O JS continua a gerar estas informações.
+   Aqui elas deixam de aparecer visualmente,
+   mantendo a arquitectura intacta.
+*/
+
+.home-page .home-hero-pretitle{
+
+    display:none !important;
+
+}
+
+
+.home-page .home-hero-product-tag{
+
+    display:none !important;
+
+}
+
+
+.home-page .home-hero-phrase{
+
+    display:none !important;
+
+}
+
+
+.home-page .home-hero-object-meta{
+
+    display:none !important;
+
+}
+
+
+.home-page .home-hero-visual-index{
+
+    display:none !important;
+
+}
+
+
+.home-page .home-hero-bottom-rail{
+
+    display:none !important;
+
+}
+
+
+/* ==========================================================
+   06. HERO — EYEBROW
+   ========================================================== */
+
+.home-page .home-hero-eyebrow{
+
+    margin-bottom:15px;
+
+    color:
+        var(--home-gold-light);
+
+    font-size:.67rem;
+
+    letter-spacing:.23em;
+
+}
+
+
+/* ==========================================================
+   07. HERO — TITLE
+   ========================================================== */
+
+.home-page .home-hero-slide h1{
+
+    width:100%;
+
+    max-width:740px;
+
+    margin-top:0;
+
+    color:#FFFFFF;
+
+    font-size:
+        clamp(
+            3.7rem,
+            5.65vw,
+            6.55rem
+        );
+
+    line-height:.89;
+
+    letter-spacing:-.065em;
+
+    font-weight:800;
+
+    text-wrap:balance;
+
+}
+
+
+.home-page .home-hero-slide h1 span{
+
+    display:block;
+
+    margin-top:2px;
+
+    color:
+        var(--home-gold-light);
+
+}
+
+
+/* ==========================================================
+   08. HERO — DESCRIPTION
+   ========================================================== */
+
+.home-page .home-hero-slide > p{
+
+    max-width:510px;
+
+    margin-top:25px;
+
+    color:#C9D0D4;
+
+    font-size:
+        clamp(
+            .94rem,
+            1.1vw,
+            1.06rem
+        );
+
+    line-height:1.7;
+
+}
+
+
+/* ==========================================================
+   09. HERO — BUTTONS
+   ========================================================== */
+
+.home-page .home-hero-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    margin-top:29px;
+
+}
+
+
+.home-page .home-hero-actions .home-action{
+
+    min-width:218px;
+
+    min-height:58px;
+
+    padding:
+        0 21px 0 22px;
+
+    border-radius:999px;
+
+    font-size:.76rem;
+
+    letter-spacing:.015em;
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #C9A45D,
+            #A47F3E
+        );
+
+    color:#FFFFFF;
+
+    box-shadow:
+        0 17px 42px
+        rgba(198,161,91,.22);
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-primary:hover{
+
+    box-shadow:
+        0 22px 50px
+        rgba(198,161,91,.30);
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-secondary{
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    background:
+        rgba(20,24,27,.72);
+
+    color:#FFFFFF;
+
+    box-shadow:
+        0 10px 25px
+        rgba(0,0,0,.14);
+
+}
+
+
+.home-page .home-hero-actions
+.home-action-secondary:hover{
+
+    background:
+        rgba(255,255,255,.10);
+
+    border-color:
+        rgba(255,255,255,.38);
+
+}
+
+
+/* ==========================================================
+   10. HERO — CONTROLS
+   ========================================================== */
+
+.home-page .home-hero-controls{
+
+    margin-top:27px;
+
+    gap:12px;
+
+}
+
+
+.home-page .home-hero-controls > button{
+
+    width:43px;
+
+    height:43px;
+
+    background:
+        rgba(255,255,255,.045);
+
+}
+
+
+.home-page .home-hero-progress{
+
+    width:
+        min(245px,27vw);
+
+    height:2px;
+
+}
+
+
+.home-page .home-hero-number{
+
+    margin-left:4px;
+
+}
+
+
+.home-page .home-hero-number strong{
+
+    font-size:1.3rem;
+
+}
+
+
+/* ==========================================================
+   11. HERO — PRODUCT STAGE
+   ========================================================== */
+
+.home-page .home-hero-visual{
+
+    min-height:640px;
+
+    transform:
+        translateX(18px);
+
+}
+
+
+.home-page .home-hero-product-stage{
+
+    width:
+        min(560px,46vw);
+
+    height:600px;
+
+}
+
+
+.home-page .home-hero-product img{
+
+    max-width:88%;
+
+    max-height:520px;
+
+}
+
+
+.home-page .home-hero-halo{
+
+    width:570px;
+
+    height:570px;
+
+}
+
+
+.home-page .home-hero-halo-secondary{
+
+    width:460px;
+
+    height:460px;
+
+}
+
+
+.home-page .home-hero-orbit.orbit-one{
+
+    width:600px;
+
+    height:195px;
+
+}
+
+
+.home-page .home-hero-orbit.orbit-two{
+
+    width:500px;
+
+    height:500px;
+
+}
+
+
+/* ==========================================================
+   12. HERO — PRODUCT VISUAL DEPTH
+   ========================================================== */
+
+.home-page .home-hero-product-shadow{
+
+    width:275px;
+
+    height:46px;
+
+    bottom:45px;
+
+}
+
+
+.home-page .home-hero-product-glow{
+
+    width:360px;
+
+    height:360px;
+
+}
+
+
+/* ==========================================================
+   13. HERO — TOP BAR
+   ========================================================== */
+
+.home-page .home-hero-topline{
+
+    padding-top:27px;
+
+}
+
+
+.home-page .home-brand-lockup img{
+
+    width:40px;
+
+    height:40px;
+
+}
+
+
+/* ==========================================================
+   14. FINAL CTA — CENTRALIZAÇÃO ABSOLUTA
+   ========================================================== */
+
+.home-page .home-final{
+
+    text-align:center;
+
+}
+
+
+.home-page .home-final-content{
+
+    width:100%;
+
+    max-width:1100px;
+
+    margin:
+        0 auto;
+
+    padding:
+        90px 24px 100px;
+
+    text-align:center;
+
+}
+
+
+.home-page .home-final-content
+.home-overline{
+
+    display:block;
+
+    width:max-content;
+
+    max-width:100%;
+
+    margin:
+        0 auto;
+
+}
+
+
+.home-page .home-final-content h2{
+
+    width:100%;
+
+    max-width:1000px;
+
+    margin:
+        20px auto 0;
+
+    text-align:center;
+
+    font-size:
+        clamp(
+            3.1rem,
+            6.8vw,
+            6.7rem
+        );
+
+    line-height:.92;
+
+    letter-spacing:-.06em;
+
+}
+
+
+.home-page .home-final-content h2 span{
+
+    display:block;
+
+    color:
+        var(--home-gold-light);
+
+}
+
+
+.home-page .home-final-content p{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:
+        23px auto 0;
+
+    text-align:center;
+
+    font-size:
+        clamp(
+            .92rem,
+            1.15vw,
+            1.04rem
+        );
+
+    line-height:1.75;
+
+}
+
+
+/* ==========================================================
+   15. FINAL CTA — BOTÕES IMPACTANTES
+   ========================================================== */
+
+.home-page .home-final-actions{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:13px;
+
+    width:100%;
+
+    margin:
+        32px auto 0;
+
+}
+
+
+.home-page .home-final-actions .home-action{
+
+    min-width:225px;
+
+    min-height:59px;
+
+    padding:
+        0 23px;
+
+    border-radius:999px;
+
+    font-size:.76rem;
+
+}
+
+
+.home-page .home-final-actions
+.home-action-primary{
+
+    background:
+        linear-gradient(
+            135deg,
+            #C9A45D,
+            #A47F3E
+        );
+
+    color:#FFFFFF;
+
+    box-shadow:
+        0 18px 43px
+        rgba(198,161,91,.23);
+
+}
+
+
+.home-page .home-final-actions
+.home-action-secondary{
+
+    border:
+        1px solid
+        rgba(255,255,255,.22);
+
+    background:
+        rgba(255,255,255,.055);
+
+    color:#FFFFFF;
+
+}
+
+
+.home-page .home-final-actions
+.home-action-secondary:hover{
+
+    background:
+        rgba(255,255,255,.10);
+
+    border-color:
+        rgba(255,255,255,.38);
+
+}
+
+
+/* ==========================================================
+   16. FINAL FOOTER
+   ========================================================== */
+
+.home-page .home-final-footer{
+
+    width:100%;
+
+    max-width:1180px;
+
+    margin:
+        0 auto;
+
+    text-align:left;
+
+}
+
+
+/* ==========================================================
+   17. DESKTOP LARGE
+   ========================================================== */
+
+@media(min-width:1400px){
+
+    .home-page .home-hero-main{
+
+        grid-template-columns:
+            minmax(650px,1.08fr)
+            minmax(480px,.92fr);
+
+    }
+
+
+    .home-page .home-hero-copy{
+
+        max-width:790px;
+
+    }
+
+
+    .home-page .home-hero-slide h1{
+
+        max-width:780px;
+
+        font-size:
+            clamp(
+                4.6rem,
+                5.15vw,
+                6.8rem
+            );
+
+    }
+
+
+    .home-page .home-hero-visual{
+
+        transform:
+            translateX(5px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   18. TABLET
+   ========================================================== */
+
+@media(max-width:1100px){
+
+    .home-page .home-hero-main{
+
+        grid-template-columns:
+            minmax(500px,1fr)
+            minmax(360px,.78fr);
+
+        gap:15px;
+
+    }
+
+
+    .home-page .home-hero-slide h1{
+
+        font-size:
+            clamp(
+                3.55rem,
+                5.9vw,
+                5.9rem
+            );
+
+    }
+
+
+    .home-page .home-hero-product-stage{
+
+        width:430px;
+
+        height:540px;
+
+    }
+
+
+    .home-page .home-hero-product img{
+
+        max-height:455px;
+
+    }
+
+
+    .home-page .home-hero-visual{
+
+        transform:
+            translateX(10px);
+
+    }
+
+}
+
+
+/* ==========================================================
+   19. MOBILE / 800
+   ========================================================== */
+
+@media(max-width:800px){
+
+    .home-page .home-hero{
+
+        min-height:
+            790px;
+
+    }
+
+
+    .home-page .home-hero-container{
+
+        min-height:
+            790px;
+
+    }
+
+
+    .home-page .home-hero-main{
+
+        display:block;
+
+        padding:
+            25px 0 35px;
+
+    }
+
+
+    .home-page .home-hero-copy{
+
+        width:100%;
+
+        max-width:100%;
+
+    }
+
+
+    .home-page .home-hero-content{
+
+        min-height:275px;
+
+        margin-top:21px;
+
+    }
+
+
+    .home-page .home-hero-slide h1{
+
+        max-width:620px;
+
+        font-size:
+            clamp(
+                3.25rem,
+                10vw,
+                5rem
+            );
+
+        line-height:.91;
+
+    }
+
+
+    .home-page .home-hero-slide > p{
+
+        max-width:430px;
+
+    }
+
+
+    .home-page .home-hero-visual{
+
+        position:absolute;
+
+        right:-85px;
+
+        bottom:34px;
+
+        width:57vw;
+
+        height:430px;
+
+        min-height:0;
+
+        transform:none;
+
+        opacity:.42;
+
+        z-index:2;
+
+        pointer-events:none;
+
+    }
+
+
+    .home-page .home-hero-product-stage{
+
+        width:360px;
+
+        height:400px;
+
+    }
+
+
+    .home-page .home-hero-product img{
+
+        max-height:365px;
+
+    }
+
+
+    .home-page .home-hero-halo{
+
+        width:410px;
+
+        height:410px;
+
+    }
+
+
+    .home-page .home-hero-halo-secondary{
+
+        width:350px;
+
+        height:350px;
+
+    }
+
+
+    .home-page .home-hero-orbit.orbit-one{
+
+        width:440px;
+
+        height:145px;
+
+    }
+
+
+    .home-page .home-hero-orbit.orbit-two{
+
+        width:360px;
+
+        height:360px;
+
+    }
+
+
+    .home-page .home-hero-controls{
+
+        position:relative;
+
+        z-index:9;
+
+    }
+
+
+    .home-page .home-final-content{
+
+        padding:
+            78px 18px 85px;
+
+    }
+
+
+    .home-page .home-final-content h2{
+
+        max-width:720px;
+
+        font-size:
+            clamp(
+                2.65rem,
+                9vw,
+                4.5rem
+            );
+
+    }
+
+}
+
+
+/* ==========================================================
+   20. MOBILE / 600
+   ========================================================== */
+
+@media(max-width:600px){
+
+    .home-page .home-container{
+
+        width:
+            calc(100% - 32px);
+
+    }
+
+
+    .home-page .home-hero{
+
+        min-height:
+            750px;
+
+    }
+
+
+    .home-page .home-hero-container{
+
+        min-height:
+            750px;
+
+    }
+
+
+    .home-page .home-hero-topline{
+
+        padding-top:16px;
+
+    }
+
+
+    .home-page .home-brand-lockup img{
+
+        width:35px;
+
+        height:35px;
+
+    }
+
+
+    .home-page .home-hero-copy{
+
+        padding:0;
+
+    }
+
+
+    .home-page .home-hero-content{
+
+        min-height:255px;
+
+        margin-top:18px;
+
+    }
+
+
+    .home-page .home-hero-slide h1{
+
+        max-width:100%;
+
+        font-size:
+            clamp(
+                3rem,
+                13vw,
+                4.4rem
+            );
+
+        line-height:.91;
+
+    }
+
+
+    .home-page .home-hero-slide > p{
+
+        max-width:350px;
+
+        margin-top:20px;
+
+        font-size:.89rem;
+
+    }
+
+
+    .home-page .home-hero-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        width:100%;
+
+        margin-top:23px;
+
+    }
+
+
+    .home-page .home-hero-actions .home-action{
+
+        width:100%;
+
+        min-width:0;
+
+        min-height:54px;
+
+    }
+
+
+    .home-page .home-hero-controls{
+
+        margin-top:20px;
+
+    }
+
+
+    .home-page .home-hero-progress{
+
+        width:
+            min(145px,31vw);
+
+    }
+
+
+    .home-page .home-hero-visual{
+
+        right:-110px;
+
+        bottom:23px;
+
+        width:72vw;
+
+        height:355px;
+
+        opacity:.28;
+
+    }
+
+
+    .home-page .home-hero-product-stage{
+
+        width:315px;
+
+        height:345px;
+
+    }
+
+
+    .home-page .home-hero-product img{
+
+        max-height:310px;
+
+    }
+
+
+    .home-page .home-final-content{
+
+        padding:
+            70px 16px 78px;
+
+    }
+
+
+    .home-page .home-final-content h2{
+
+        font-size:
+            clamp(
+                2.6rem,
+                11vw,
+                4rem
+            );
+
+        line-height:.94;
+
+    }
+
+
+    .home-page .home-final-content p{
+
+        max-width:370px;
+
+    }
+
+
+    .home-page .home-final-actions{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+        width:100%;
+
+        max-width:390px;
+
+    }
+
+
+    .home-page .home-final-actions .home-action{
+
+        width:100%;
+
+        min-width:0;
+
+        min-height:56px;
+
+    }
+
+
+    .home-page .home-final-footer{
+
+        grid-template-columns:
+            1fr 1fr;
+
+        text-align:left;
+
+    }
+
+}
+
+
+/* ==========================================================
+   21. VERY SMALL PHONES
+   ========================================================== */
+
+@media(max-width:420px){
+
+    .home-page .home-hero{
+
+        min-height:
+            735px;
+
+    }
+
+
+    .home-page .home-hero-container{
+
+        min-height:
+            735px;
+
+    }
+
+
+    .home-page .home-hero-slide h1{
+
+        font-size:
+            clamp(
+                2.8rem,
+                12.5vw,
+                3.65rem
+            );
+
+    }
+
+
+    .home-page .home-hero-progress{
+
+        width:110px;
+
+    }
+
+
+    .home-page .home-hero-number{
+
+        font-size:.58rem;
+
+    }
+
+
+    .home-page .home-hero-number strong{
+
+        font-size:1.1rem;
+
+    }
+
+
+    .home-page .home-hero-visual{
+
+        right:-125px;
+
+        opacity:.22;
+
+    }
+
+}
