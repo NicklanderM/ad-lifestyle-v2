@@ -383,10 +383,10 @@ const FEATURED_EVENT = {
     dateLabel:"04 e 05 de Outubro de 2026",
 
     gallery:[
-        "./assets/IMAGES/independente.png",
-        "./assets/IMAGES/idependente 1.png",
-        "./assets/IMAGES/idependente 2.png",
-        "./assets/IMAGES/idependente 3.png"
+        "./assets/images/independente.png",
+        "./assets/images/idependente 1.png",
+        "./assets/images/idependente 2.png",
+        "./assets/images/idependente 3.png"
     ],
 
     days:[
